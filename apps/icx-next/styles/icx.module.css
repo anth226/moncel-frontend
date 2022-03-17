@@ -1,0 +1,76 @@
+.page {
+    @font-face {
+        font-family: 'Courier New';
+    }
+    min-height: 100vh;
+    min-width: 100vw;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr minmax(500px, 1124px) 1fr;
+    grid-template-rows: [header] 100px [hero] 500px [steps] 350px 500px auto 250px 250px;
+}
+
+.center { 
+    grid-column: 2;
+}
+
+.header-bg {
+    background-color: #14131A;
+    grid-column: 1 / end;
+    grid-row: header;
+}
+
+.header { 
+    background-color: #14131A;
+    grid-column: 2;
+    grid-row: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+    padding: 0 1rem;
+}
+
+.hero-bg {
+    background-color: #14131A;
+    background-image: url('/hero-bg.jpg');
+    background-position: top;
+    background-repeat: repeat-y;
+    background-size: inherit;
+
+    grid-column: 1 / end;
+    grid-row: hero;
+}
+.hero {
+    color:white;
+
+    grid-column: 2;
+    grid-row: hero;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.hero-left {
+    grid-column: 1;
+}
+
+.hero-right {
+    grid-column: 2;
+}
+
+.highlight {
+    font-weight: bold;
+    color: #ffd65a;
+}
+
+.page a {
+    text-decoration: none;
+}
