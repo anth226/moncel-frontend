@@ -7,7 +7,7 @@ const STORYBLOK_API_URL = "https://api.storyblok.com/v1/cdn";
 
 
 const queryStoryblok = async () => {
-    const siteName = process.env.SITE_NAME;
+    const siteName = process.env.STORYBLOK_SITE_NAME;
     const token = process.env.STORYBLOK_TOKEN;
 
     if(!(siteName && token)) throw Error('Required environment variables are missing.');
