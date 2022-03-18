@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const withTM = require("next-transpile-modules")(["moncel-one-sdk"]);
 
-module.exports = nextConfig
+module.exports = withTM({
+  reactStrictMode: true,
+});

@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import jsonata from 'jsonata';
 
-import { getStoryblokStories, StoryblokLayoutHeaderLink as HeaderLink } from 'lib/cdn';
+import { getStoryblokStories, StoryblokLayoutHeaderLink as HeaderLink } from 'moncel-one-sdk/cdn';
 
 import StepsSection from './landing/steps';
 
