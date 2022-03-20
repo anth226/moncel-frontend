@@ -45,6 +45,7 @@
 
     grid-column: 1 / end;
     grid-row: hero;
+    
 }
 .hero {
     color:white;
@@ -73,4 +74,10 @@
 
 .page a {
     text-decoration: none;
+}
+
+.clickable {
+    &:active {
+        padding-top:2px;
+    }
 }

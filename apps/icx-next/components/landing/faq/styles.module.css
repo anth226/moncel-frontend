@@ -1,0 +1,33 @@
+.container {
+    background: #F5FAF8;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    grid-auto-flow: row;
+    gap: 10px;
+    padding: 4rem 0;
+}
+
+.column {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    background: #14141B;
+    color: white;
+
+    grid-column: 2;
+}
+
+.right {
+    color: #14141B;
+
+    grid-column: 3;
+}
+
+.highlight {
+    font-size: 5rem;
+}
