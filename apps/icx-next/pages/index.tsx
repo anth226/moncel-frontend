@@ -1,20 +1,23 @@
-import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
 import jsonata from 'jsonata';
 
-import { getStoryblokStories, StoryblokLayoutHeaderLink as HeaderLink } from 'moncel-one-sdk/cdn';
+import { getStoryblokStories } from 'moncel-one-sdk/cdn';
+import { StoryblokLayoutHeaderLink as HeaderLink } from 'moncel-one-sdk/cdn/types';
 
 import StepsSection from 'components/landing/steps';
 import PricingSection from 'components/landing/pricing';
 import FAQSection from 'components/landing/faq';
+import CTASection from 'components/landing/cta';
+import Footer from 'components/landing/footer';
 
 import icxstyles from '../styles/icx.module.scss'
 
 const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const headerLinks = props.layout.content.header[0].navigation;
+  const headerLinks = props.layout?.content?.header?.[0].navigation;
   const faqs = jsonata('content.body[component="section_faqs"]').evaluate(props.home)
-
+  const footer = props.layout?.content?.footer?.[0]
   return (
     <div>
       <Head>
@@ -59,6 +62,8 @@ const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
           <StepsSection />
           <PricingSection />
           <FAQSection faqs={faqs} />
+          <CTASection />
+          <Footer footer={footer} />
         </div>
       </main>
     </div>
@@ -68,7 +73,6 @@ const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 export default Home
 
 export const getStaticProps = async () => {
-  // The entire story json is available here on server side; the ui container can split/prune it for data that the ui depends on
   const stories = { stories: await getStoryblokStories() };
   const layout = jsonata("stories[slug='layout']").evaluate(stories);
   const home = jsonata("stories[name='Home']").evaluate(stories);

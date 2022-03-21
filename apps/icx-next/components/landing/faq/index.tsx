@@ -1,11 +1,22 @@
-import jsonata from 'jsonata';
+import { useState } from 'react';
+import { Collapse } from 'react-bootstrap';
 
 import { SectionFAQsData } from './types';
 
-import styles from './styles.module.css'
+import styles from './styles.module.css';
 
 const FAQSection = ({ faqs }: { faqs: SectionFAQsData}) => {
+    const [ expanded, setExpanded ] = useState(-1);
     const cards = faqs.faqs_cards; // TODO set fallbacks
+
+    const handleClick = (i: number) => {
+        if(i === expanded) {
+            setExpanded(-1);
+        }
+        else {
+            setExpanded(i);
+        }
+    };
 
     return <div className={styles.container}>
         <div className={`${styles.column} ${styles.left}`}>
@@ -15,10 +26,10 @@ const FAQSection = ({ faqs }: { faqs: SectionFAQsData}) => {
         {
             cards.map(((card, i) => {
                 const id = `faq-collapse-${i}`;
-                return <>
-                    <button className="btn" type="button" data-toggle="collapse" data-target={`#${id}`}>{card.question}</button>
-                    <div className="collapse" id={id}>{card.answer}</div>
-                </>
+                return <div key={`faq-${i}`}>
+                    <button onClick={() => handleClick(i)}>{card.question}</button>
+                    <Collapse className="collapse" in={i === expanded}><p>{card.answer}</p></Collapse>
+                </div>
             }))
         }
         </div>

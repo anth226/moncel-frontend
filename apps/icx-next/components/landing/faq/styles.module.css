@@ -1,5 +1,5 @@
 .container {
-    background: #F5FAF8;
+    background: var(--tertiary);
     display: grid;
     grid-template-columns: 150px 1fr;
     grid-auto-flow: row;
@@ -16,7 +16,7 @@
 }
 
 .left {
-    background: #14141B;
+    background: var(--secondary);
     color: white;
 
     grid-column: 2;

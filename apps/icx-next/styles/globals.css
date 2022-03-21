@@ -13,4 +13,8 @@ a {
 
 * {
   box-sizing: border-box;
+  --primary: #FFD65A;
+  --secondary: #14141B;
+  --tertiary: #F5FAF8;
+  --section-padding: 4rem 8rem;
 }

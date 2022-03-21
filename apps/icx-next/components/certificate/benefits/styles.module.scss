@@ -1,0 +1,23 @@
+.section {
+    width: 100%;
+    display: grid;
+    grid-auto-flow: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    grid-template-columns: 35% 35%;
+    gap: 20px;
+    padding: var(--section-padding);
+
+    .card {
+        display: grid;
+        grid-template-rows: [icon] 60px [title] 50px [description] auto [padding-bottom] 10px;
+        grid-auto-flow: row;
+        h1 {
+            font-size: 1.5rem;
+            padding-top: 10px;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}
