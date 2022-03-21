@@ -90,6 +90,13 @@ export interface StoryBlokHeader extends StoryBlokComponent {
     navigation: Array<StoryBlokLink>;
 }
 
+export interface StoryBlokFooter extends StoryBlokComponent {
+    copyright: string;
+    logo: StoryBlokImage;
+    navigation: Array<StoryBlokLink>;
+    terms: Array<StoryBlokLink>
+}
+
 export type StoryBlokCertificateStory = {
     content: StoryBlokPage;
     full_slug: string;

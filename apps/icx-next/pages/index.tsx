@@ -4,21 +4,21 @@ import Image from 'next/image';
 import jsonata from 'jsonata';
 
 import { getStoryblokStories } from 'moncel-one-sdk/cdn';
-import { StoryBlokLink, StoryBlokHeader } from 'moncel-one-sdk/cdn/types';
+import { StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk/cdn/types';
 
 import { Header } from 'components/layout';
 import StepsSection from 'components/landing/steps';
 import PricingSection from 'components/landing/pricing';
 import FAQSection from 'components/landing/faq';
 import CTASection from 'components/landing/cta';
-import Footer from 'components/landing/footer';
+import Footer from 'components/layout/footer';
 
 import icxstyles from '../styles/icx.module.scss';
 
 const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const layout = jsonata('content[component="template_layout"]').evaluate(props.layout);
   const faqs = jsonata('content.body[component="section_faqs"]').evaluate(props.home)
-  const footer = props.layout?.content?.footer?.[0]
+  const footer: StoryBlokFooter = layout.footer?.[0];
   const header: StoryBlokHeader = layout.header?.[0];
 
   return (
