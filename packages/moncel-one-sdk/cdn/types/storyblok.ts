@@ -66,6 +66,11 @@ export interface StoryBlokCertificateStatisticsContent extends StoryBlokComponen
     statistics: Array<StoryBlokStatistic>;
 }
 
+export interface StoryBlokCertificatesFaqsContent extends StoryBlokComponent {
+    title: string;
+    faqs_cards: Array<StoryBlokFaqCard>;
+}
+
 export interface StoryBlokCertificateBenefitCard extends StoryBlokComponent {
     description: string;
     title: string;
@@ -76,6 +81,11 @@ export interface StoryBlokRecommendationCard extends StoryBlokComponent {
     author: string;
     image: StoryBlokImage;
     quote: string;
+}
+
+export interface StoryBlokFaqCard extends StoryBlokComponent {
+    answer: string;
+    question: string;
 }
 
 export interface StoryBlokStatistic extends StoryBlokComponent {

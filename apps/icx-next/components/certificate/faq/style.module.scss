@@ -1,0 +1,16 @@
+.faq-secondary {
+    width: 100%;
+    display: grid;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--section-padding);
+    .line {
+        border-top: 10px solid black;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .faqs {
+        padding: 10px 0;
+    }
+}

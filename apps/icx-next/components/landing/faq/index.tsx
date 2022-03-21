@@ -3,7 +3,7 @@ import { Collapse } from 'react-bootstrap';
 
 import { SectionFAQsData } from './types';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 const FAQSection = ({ faqs }: { faqs: SectionFAQsData}) => {
     const [ expanded, setExpanded ] = useState(-1);
@@ -20,15 +20,16 @@ const FAQSection = ({ faqs }: { faqs: SectionFAQsData}) => {
 
     return <div className={styles.container}>
         <div className={`${styles.column} ${styles.left}`}>
+            <div className={`${styles.line}`} />
             <h1>FAQs</h1>
         </div>
         <div className={`${styles.column} ${styles.right}`}>
         {
             cards.map(((card, i) => {
-                const id = `faq-collapse-${i}`;
-                return <div key={`faq-${i}`}>
-                    <button onClick={() => handleClick(i)}>{card.question}</button>
-                    <Collapse className="collapse" in={i === expanded}><p>{card.answer}</p></Collapse>
+
+                return <div className={styles.question} key={`faq-${i}`}>
+                    <button className={styles.cell} onClick={() => handleClick(i)}>{card.question}</button>
+                    <Collapse className={styles.cell} in={i === expanded}><div>{card.answer}</div></Collapse>
                 </div>
             }))
         }

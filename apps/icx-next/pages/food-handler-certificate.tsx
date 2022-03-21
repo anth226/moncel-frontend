@@ -2,13 +2,14 @@ import type { InferGetStaticPropsType } from 'next'
 import jsonata from 'jsonata';
 
 import { getStoryblokStories } from 'moncel-one-sdk/cdn';
-import { StoryBlokCertificateHeroContent, StoryBlokCertificateBenefitContent, StoryBlokCertificateRecommendationContent, StoryBlokCertificateStatisticsContent, StoryBlokCertificateStory, StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk/cdn/types';
+import { StoryBlokCertificateHeroContent, StoryBlokCertificateBenefitContent, StoryBlokCertificateRecommendationContent, StoryBlokCertificateStatisticsContent, StoryBlokCertificateStory, StoryBlokHeader, StoryBlokFooter, StoryBlokCertificatesFaqsContent } from 'moncel-one-sdk/cdn/types';
 
 import { Header, Footer } from 'components/layout';
 import CertificateHero from 'components/certificate/hero';
 import Benefits from 'components/certificate/benefits';
 import Recommendations from 'components/certificate/recommendation';
 import Statistics from 'components/certificate/statistics';
+import Faqs from 'components/certificate/faq';
 import icxstyles from '../styles/icx_secondary.module.scss'
 
 const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -19,6 +20,7 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const benefits: StoryBlokCertificateBenefitContent = jsonata('body[component="section_benefits"]').evaluate(props.certificate?.content);
     const recommendations: StoryBlokCertificateRecommendationContent = jsonata('body[component="section_recommendation"]').evaluate(props.certificate?.content);
     const statistics: StoryBlokCertificateStatisticsContent = jsonata('body[component="section_statistics"]').evaluate(props.certificate?.content);
+    const faqs: StoryBlokCertificatesFaqsContent = jsonata('body[component="section_faqs_secondary"]').evaluate(props.certificate?.content);
 
     return <div>
         <Header header={header} />
@@ -28,6 +30,7 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
             <Recommendations recommendations={recommendations} />
             <Statistics statistics={statistics} />
             <Footer footer={footer} />
+            <Faqs faqs={faqs} />
         </div>;
     </div>
 }

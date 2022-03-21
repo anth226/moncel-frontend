@@ -50,12 +50,18 @@ const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
         <div className={icxstyles.center}>
           <StepsSection />
+        </div>
+        <div className={`${icxstyles['full-row']} ${icxstyles['bg-tertiary']}`}>
           <PricingSection />
+        </div>
+        <div className={icxstyles.center}>
           <FAQSection faqs={faqs} />
+        </div>
+        <div className={icxstyles['full-row']}>
           <CTASection />
-          <Footer footer={footer} />
         </div>
       </main>
+      <Footer footer={footer} />
     </div>
   )
 }
