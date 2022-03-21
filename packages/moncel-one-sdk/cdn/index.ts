@@ -42,5 +42,3 @@ export const getStoryblokStories = async () => {
         }
     }
 };
-
-export * from './types';
