@@ -4,7 +4,7 @@ import Image from 'next/image';
 import jsonata from 'jsonata';
 
 import { getStoryblokStories } from 'moncel-one-sdk/cdn';
-import { StoryblokLayoutHeaderLink as HeaderLink } from 'moncel-one-sdk/cdn/types';
+import { StoryBlokLink } from 'moncel-one-sdk/cdn/types';
 
 import StepsSection from 'components/landing/steps';
 import PricingSection from 'components/landing/pricing';
@@ -16,8 +16,11 @@ import icxstyles from '../styles/icx.module.scss'
 
 const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const headerLinks = props.layout?.content?.header?.[0].navigation;
+  const layout = jsonata('content[component="template_layout"]').evaluate(props.layout);
   const faqs = jsonata('content.body[component="section_faqs"]').evaluate(props.home)
   const footer = props.layout?.content?.footer?.[0]
+  const header = layout.header?.[0];
+  debugger;
   return (
     <div>
       <Head>
@@ -37,7 +40,7 @@ const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
             <Image src="/icx_logo_white.svg" alt="icx-logo" width={160} height={30} />
           </div>
           <div>
-            { headerLinks.map((link: HeaderLink) => {
+            { headerLinks.map((link: StoryBlokLink) => {
               return <a key={`header-link-${link.label}}`} href={link.url}>{link.label}</a>
             })}
           </div>

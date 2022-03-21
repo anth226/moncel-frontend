@@ -1,7 +1,6 @@
 export interface StoryBlokComponent {
     component: string;
     _uid: string;
-    [key: string]: unknown;
 }
 
 export interface StoryBlokImage extends StoryBlokComponent {
@@ -15,6 +14,13 @@ export interface StoryBlokPage extends StoryBlokComponent {
     body: Array<StoryBlokComponent>;
     seo_title: string;
     seo_description: string;
+}
+
+export interface StoryBlokLink extends StoryBlokComponent {
+    label: string;
+    url: string;
+    new_tab: boolean;
+    is_external: boolean;
 }
 
 export interface ComponentList extends StoryBlokComponent {
@@ -32,17 +38,8 @@ export type StoryblokStory = {
     [key: string]: unknown;
 }
 
-export type StoryblokLayoutHeaderLink = {
-    label: string;
-    url: string;
-}
-
 export type StoryblokStoryQueryResponse = {
     stories: Array<StoryblokStory>;
-}
-
-export const isErrnoException = (candidate: any): candidate is NodeJS.ErrnoException => {
-    return candidate instanceof Error && candidate.hasOwnProperty('code');
 }
 
 export interface StoryBlokCertificateHeroContent extends StoryBlokComponent {
@@ -84,6 +81,13 @@ export interface StoryBlokRecommendationCard extends StoryBlokComponent {
 export interface StoryBlokStatistic extends StoryBlokComponent {
     percent: string;
     description: string;
+}
+
+export interface StoryBlokHeader extends StoryBlokComponent {
+    button_link: string;
+    button_text: string;
+    logo: StoryBlokImage;
+    navigation: Array<unknown>;
 }
 
 export type StoryBlokCertificateStory = {
