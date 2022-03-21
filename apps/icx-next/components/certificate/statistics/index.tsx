@@ -9,7 +9,7 @@ const Statistics = ({ statistics: statisticsContent }: { statistics: StoryBlokCe
 
     return <div className={styles.section}>
         { statistics.map((stat, i) => {
-            return <div className={styles.row}>
+            return <div className={styles.row} key={`statistics-${i}`}>
                 <h1 className={styles.percent}>{stat.percent}<sup>%</sup></h1>
                 <h1 className={styles.description}>{stat.description}</h1>
             </div>

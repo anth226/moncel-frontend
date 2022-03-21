@@ -13,7 +13,7 @@ const Recommendation = ({ recommendations }: { recommendations: StoryBlokCertifi
         <div className={styles.recommendations}>
             {recommendations.cards.map((card, i) => {
                 return <div className={styles.card} key={`recommendation-card-${i}`}>
-                    <Image src={card.image.image} width={150} height={27} layout="fixed" />
+                    <Image src={card.image.image} width={150} height={27} layout="fixed" alt={`recommendation-card-${i}-icon`} />
                     <blockquote>{card.quote}</blockquote>
                     <cite>{card.author}</cite>
                 </div>

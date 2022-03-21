@@ -9,7 +9,7 @@ const Benefits = ({ benefits }: { benefits: StoryBlokCertificateBenefitContent})
     return <div className={styles.section}>
         {cards.map((card: StoryBlokCertificateBenefitCard, i) => {
             return <div className={styles.card} key={`benefits-${i}`}>
-                <Image src={card.icon.image} width={55} height={50} layout="fixed" />
+                <Image src={card.icon.image} width={55} height={50} layout="fixed" alt={`benefits-${i}-icon`}/>
                 <h1>{card.title}</h1>
                 <p>{card.description}</p>
             </div>;

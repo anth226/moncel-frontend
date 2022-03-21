@@ -15,7 +15,7 @@ const Footer = ({ footer }: { footer: any}) => {
 
     return <div className={styles.container}>
         <div className={styles.top}>
-            <Image src={footer.logo?.image} width={179} height={32} layout="fixed" />
+            <Image src={footer.logo?.image} width={179} height={32} layout="fixed" alt="footer-logo" />
             <div className={styles.links}>
                 {navigation.map((link: Navigation) => {
                     return <Link href={link.url} key={`footer-navigation-${link.label}`}>{link.label}</Link>

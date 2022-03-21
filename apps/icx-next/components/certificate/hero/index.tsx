@@ -9,9 +9,9 @@ const CertificateHero2 = ({ hero }: { hero: StoryBlokCertificateHeroContent }) =
         <div className={styles.content}>
             <h1>{hero.title}</h1>
             <ul>
-            {heroListItems.map((listItem: ComponentListItem) => {
-                return <li key={`hero-list-item-${listItem.text}}`}>
-                    <Image src={"/icons/check-black.svg"} height={18} width={18} layout="fixed" />
+            {heroListItems.map((listItem: ComponentListItem, i) => {
+                return <li key={`hero-list-item-${i}}`}>
+                    <Image src={"/icons/check-black.svg"} height={18} width={18} layout="fixed" alt={`hero-list-item-${i}}-icon`}/>
                     {listItem.text}
                 </li>
             })}
