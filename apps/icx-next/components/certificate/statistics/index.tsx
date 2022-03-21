@@ -5,7 +5,6 @@ import styles from './styles.module.scss';
 
 const Statistics = ({ statistics: statisticsContent }: { statistics: StoryBlokCertificateStatisticsContent }) => {
     const { statistics } = statisticsContent;
-    debugger;
 
     return <div className={styles.section}>
         { statistics.map((stat, i) => {
