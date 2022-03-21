@@ -4,20 +4,20 @@ import Image from 'next/image';
 import jsonata from 'jsonata';
 
 import { getStoryblokStories } from 'moncel-one-sdk/cdn';
-import { StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk/cdn/types';
+import { StoryBlokHeader, StoryBlokFooter, StoryBlokHomePricingContent } from 'moncel-one-sdk/cdn/types';
 
-import { Header } from 'components/layout';
+import { Header, Footer } from 'components/layout';
 import StepsSection from 'components/landing/steps';
 import PricingSection from 'components/landing/pricing';
 import FAQSection from 'components/landing/faq';
 import CTASection from 'components/landing/cta';
-import Footer from 'components/layout/footer';
 
 import icxstyles from '../styles/icx.module.scss';
 
 const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const layout = jsonata('content[component="template_layout"]').evaluate(props.layout);
   const faqs = jsonata('content.body[component="section_faqs"]').evaluate(props.home)
+  const pricing: StoryBlokHomePricingContent = jsonata('content.body[component="section_benefits_and_price"]').evaluate(props.home)
   const footer: StoryBlokFooter = layout.footer?.[0];
   const header: StoryBlokHeader = layout.header?.[0];
 
@@ -52,7 +52,9 @@ const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
           <StepsSection />
         </div>
         <div className={`${icxstyles['full-row']} ${icxstyles['bg-tertiary']}`}>
-          <PricingSection />
+          <div className={icxstyles.center}>
+            <PricingSection pricing={pricing} />
+          </div>
         </div>
         <div className={icxstyles.center}>
           <FAQSection faqs={faqs} />

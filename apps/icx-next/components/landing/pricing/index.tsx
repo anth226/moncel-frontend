@@ -1,20 +1,21 @@
-import styles from './styles.module.css'
+import Link from 'next/link';
 
-const PricingSection = () => {
+import { StoryBlokHomePricingContent } from 'moncel-one-sdk/cdn/types';
+import styles from './styles.module.scss'
 
+const PricingSection = ({ pricing }: { pricing: StoryBlokHomePricingContent }) => {
     return <div className={styles.container}>
         <div className={`${styles.column} ${styles.left}`}>
-            <h1>No hidden fees</h1>
-            <h1 className={styles.highlight}>$49</h1>
-            <h3>{"It's never been easier to get your food handler certificate"}</h3>
-            {/* Button link to /food-handler-certificated */}
+            <h1>{ pricing.top_price_text }</h1>
+            <h1 className={styles.highlight}>{ pricing.price }</h1>
+            <h5>{ pricing.bottom_price_text }</h5>
+            <div className={styles['button-cta']} id="pricing-cta"><Link href={pricing.button_link}>Learn More</Link></div>
         </div>
         <div className={`${styles.column} ${styles.right}`}>
             <ul>
-                <li>100% Online</li>
-                <li>Same-day certification</li>
-                <li>Unlimited 30-day access</li>
-                <li>Official digital certificate</li>
+                { pricing.benefits.map((benefit, i) => {
+                    return <li key={`pricing-benefits-${i}`}>{benefit.text}</li>
+                })}
             </ul>
         </div>
     </div>

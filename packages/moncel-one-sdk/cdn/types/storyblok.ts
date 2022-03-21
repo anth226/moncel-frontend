@@ -66,9 +66,18 @@ export interface StoryBlokCertificateStatisticsContent extends StoryBlokComponen
     statistics: Array<StoryBlokStatistic>;
 }
 
-export interface StoryBlokCertificatesFaqsContent extends StoryBlokComponent {
+export interface StoryBlokCertificateFaqsContent extends StoryBlokComponent {
     title: string;
     faqs_cards: Array<StoryBlokFaqCard>;
+}
+
+export interface StoryBlokHomePricingContent extends StoryBlokComponent {
+    benefits: Array<ComponentListItem>;
+    bottom_price_text: string;
+    button_link: string;
+    button_text: string;
+    price: string;
+    top_price_text: string;
 }
 
 export interface StoryBlokCertificateBenefitCard extends StoryBlokComponent {
