@@ -4,23 +4,23 @@ import Image from 'next/image';
 import jsonata from 'jsonata';
 
 import { getStoryblokStories } from 'moncel-one-sdk/cdn';
-import { StoryBlokLink } from 'moncel-one-sdk/cdn/types';
+import { StoryBlokLink, StoryBlokHeader } from 'moncel-one-sdk/cdn/types';
 
+import { Header } from 'components/layout';
 import StepsSection from 'components/landing/steps';
 import PricingSection from 'components/landing/pricing';
 import FAQSection from 'components/landing/faq';
 import CTASection from 'components/landing/cta';
 import Footer from 'components/landing/footer';
 
-import icxstyles from '../styles/icx.module.scss'
+import icxstyles from '../styles/icx.module.scss';
 
 const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const headerLinks = props.layout?.content?.header?.[0].navigation;
   const layout = jsonata('content[component="template_layout"]').evaluate(props.layout);
   const faqs = jsonata('content.body[component="section_faqs"]').evaluate(props.home)
   const footer = props.layout?.content?.footer?.[0]
-  const header = layout.header?.[0];
-  debugger;
+  const header: StoryBlokHeader = layout.header?.[0];
+
   return (
     <div>
       <Head>
@@ -30,21 +30,8 @@ const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
         {/* <meta name="viewport" content="width=device-width, initial-scale=1" />  */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Header header={header} />
       <main className={icxstyles.page}>
-        
-        {/* header */}
-        <div className={icxstyles['header-bg']} />
-        <div className={icxstyles.header}>
-          <div className={icxstyles.logo}>
-            <Image src="/icx_logo_white.svg" alt="icx-logo" width={160} height={30} />
-          </div>
-          <div>
-            { headerLinks.map((link: StoryBlokLink) => {
-              return <a key={`header-link-${link.label}}`} href={link.url}>{link.label}</a>
-            })}
-          </div>
-        </div>
 
         {/* hero */}
         <div className={icxstyles['hero-bg']} />

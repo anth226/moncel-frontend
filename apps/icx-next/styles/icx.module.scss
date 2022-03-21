@@ -7,7 +7,7 @@
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 1fr minmax(500px, 1124px) 1fr;
-    grid-template-rows: [header] 100px [hero] 500px [steps] 350px 500px auto 250px 250px;
+    grid-template-rows: [hero] 500px [steps] 350px 500px auto 250px 250px;
 }
 
 .center { 

@@ -1,0 +1,26 @@
+.header-bg {
+    background-color: #14131A;
+    grid-column: 1 / end;
+    grid-row: header;
+}
+
+.header { 
+    background-color: #14131A;
+    grid-column: 2;
+    grid-row: header;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+    padding: 0 1rem;
+}
+
+.logo {
+    height: 1em;
+    margin-left: 0.5rem;
+  }

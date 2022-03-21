@@ -87,7 +87,7 @@ export interface StoryBlokHeader extends StoryBlokComponent {
     button_link: string;
     button_text: string;
     logo: StoryBlokImage;
-    navigation: Array<unknown>;
+    navigation: Array<StoryBlokLink>;
 }
 
 export type StoryBlokCertificateStory = {
