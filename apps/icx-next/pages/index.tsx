@@ -70,7 +70,6 @@ export const getStaticProps = async () => {
   const layout = jsonata("stories[slug='layout']").evaluate(stories);
   const home = jsonata("stories[name='Home']").evaluate(stories);
   return { props: {
-    // stories, // debug
     layout,
     home,
   } };
