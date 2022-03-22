@@ -29,8 +29,8 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
             <Benefits benefits={benefits} />
             <Recommendations recommendations={recommendations} />
             <Statistics statistics={statistics} />
-            <Footer footer={footer} />
             <Faqs faqs={faqs} />
+            <Footer footer={footer} />
         </div>;
     </div>
 }
