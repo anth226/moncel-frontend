@@ -2,7 +2,7 @@ import type { InferGetStaticPropsType } from 'next'
 import jsonata from 'jsonata';
 
 import { getStoryblokStories } from 'moncel-one-sdk/cdn';
-import { StoryBlokCertificateHeroContent, StoryBlokCertificateBenefitContent, StoryBlokCertificateRecommendationContent, StoryBlokCertificateStatisticsContent, StoryBlokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokCertificateFaqsContent } from 'moncel-one-sdk/cdn/types';
+import { StoryBlokCertificateHeroContent, StoryBlokCertificateBenefitContent, StoryBlokCertificateRecommendationContent, StoryBlokCertificateStatisticsContent, StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokCertificateFaqsContent } from 'moncel-one-sdk/cdn/types';
 
 import { Header, Footer } from 'components/layout';
 import CertificateHero from 'components/certificate/hero';
@@ -40,6 +40,6 @@ export default Certificate;
 export const getStaticProps = async () => {
     const stories = { stories: await getStoryblokStories() };
     const layout = jsonata("stories[slug='layout']").evaluate(stories);
-    const certificate: StoryBlokStory = jsonata('stories[name="Certificate"]').evaluate(stories);
+    const certificate: StoryblokStory = jsonata('stories[name="Certificate"]').evaluate(stories);
     return { props: { certificate, layout } };
 }

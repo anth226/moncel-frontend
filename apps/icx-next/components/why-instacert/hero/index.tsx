@@ -19,6 +19,7 @@ const CertificateHero2 = ({ hero }: { hero: StoryBlokCertificateHeroContent }) =
                 </li>
             })}
             </ul>
+            <p>{ text2 }</p>
         </div>
     </div>
 }
