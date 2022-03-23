@@ -4,10 +4,13 @@ import { StoryBlokCertificateHeroContent, ComponentListItem } from 'moncel-one-s
 import styles from './styles.module.scss';
 
 const CertificateHero2 = ({ hero }: { hero: StoryBlokCertificateHeroContent }) => {
-    const heroListItems = ("list_items" in hero.body?.[0]) ? hero.body?.[0]?.list_items : [];
+    const text1 = ("text" in hero.body?.[0]) ? hero.body?.[0].text : ""; // this is bad. please add a slug or something in storyblok to make this suck less.
+    const heroListItems = ("list_items" in hero.body?.[1]) ? hero.body?.[1]?.list_items : [];
+    const text2 = ("text" in hero.body?.[2]) ? hero.body?.[2].text : ""; 
     return <div className={styles['hero-secondary']}>
         <div className={styles.content}>
             <h1>{hero.title}</h1>
+            <p>{text1}</p>
             <ul>
             {heroListItems.map((listItem: ComponentListItem, i) => {
                 return <li key={`hero-list-item-${i}}`}>

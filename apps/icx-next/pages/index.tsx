@@ -63,7 +63,7 @@ const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   )
 }
 
-export default Home
+export default Home;
 
 export const getStaticProps = async () => {
   const stories = { stories: await getStoryblokStories() };

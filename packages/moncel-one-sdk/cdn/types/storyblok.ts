@@ -42,9 +42,9 @@ export type StoryblokStoryQueryResponse = {
     stories: Array<StoryblokStory>;
 }
 
-export interface StoryBlokCertificateHeroContent extends StoryBlokComponent {
+export interface StoryBlokSectionHeroSecondary extends StoryBlokComponent {
     title: string;
-    body: Array<ComponentList>,
+    body: Array<ComponentList | ComponentListItem>,
     button_link: string;
     button_text: string;
     product_list: Array<ComponentListItem>,
@@ -52,6 +52,8 @@ export interface StoryBlokCertificateHeroContent extends StoryBlokComponent {
     product_price: string;
     [key: string]: unknown;
 }
+
+export interface StoryBlokCertificateHeroContent extends StoryBlokSectionHeroSecondary {}
 
 export interface StoryBlokCertificateBenefitContent extends StoryBlokComponent {
     benefits: Array<StoryBlokCertificateBenefitCard>;
@@ -114,10 +116,4 @@ export interface StoryBlokFooter extends StoryBlokComponent {
     logo: StoryBlokImage;
     navigation: Array<StoryBlokLink>;
     terms: Array<StoryBlokLink>
-}
-
-export type StoryBlokCertificateStory = {
-    content: StoryBlokPage;
-    full_slug: string;
-    [key: string]: unknown;
 }
