@@ -3,6 +3,7 @@
     min-width: 100vw;
     display: grid;
     grid-auto-flow: row;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     justify-content: flex-start;
     align-items: flex-start;
@@ -20,6 +21,7 @@
     .full-row {
         grid-row: 1;
         grid-column: 1 / end;
+        width: 100%;
     }
 }
 
