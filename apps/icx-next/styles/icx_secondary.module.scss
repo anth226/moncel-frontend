@@ -4,4 +4,32 @@
     display: grid;
     grid-auto-flow: row;
     grid-template-rows: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.three-col-section {
+    padding: var(--section-padding);
+    display: grid;
+    grid-template-columns: 1fr minmax(500px, 1124px) 1fr;
+    grid-template-rows: auto;
+    .center {
+        grid-row: 1;
+        grid-column: 2;
+    }
+    .full-row {
+        grid-row: 1;
+        grid-column: 1 / end;
+    }
+}
+
+.line {
+    border-top: 10px solid black;
+    width: 150px;
+    height: 30px;
+}
+
+.hero {
+    background: var(--primary);
+    width: 100%;
 }

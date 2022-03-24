@@ -2,8 +2,6 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
@@ -17,4 +15,6 @@ a {
   --secondary: #14141B;
   --tertiary: #F5FAF8;
   --section-padding: 4rem 8rem;
+  --max-length-mid: 1124px;
+  font-family: 'rubrik-new';
 }
