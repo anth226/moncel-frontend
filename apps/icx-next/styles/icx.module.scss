@@ -1,3 +1,4 @@
+// For landing page
 .page {
     min-height: 100vh;
     min-width: 100vw;
@@ -7,6 +8,10 @@
     grid-template-rows: [hero] 500px [steps] 350px [pricing] 500px [faqs] auto [cta] 280px;
 }
 
+.three-col {
+    display: grid;
+    grid-template-columns: 1fr minmax(500px, 1124px) 1fr;
+}
 .center { 
     grid-column: 2;
 }

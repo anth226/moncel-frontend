@@ -1,10 +1,10 @@
+// For everything except landing page
 .page {
     min-height: 100vh;
     min-width: 100vw;
     display: grid;
     grid-auto-flow: row;
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
     justify-content: flex-start;
     align-items: flex-start;
 }

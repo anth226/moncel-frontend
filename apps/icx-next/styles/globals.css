@@ -15,6 +15,7 @@ a {
   --secondary: #14141B;
   --tertiary: #F5FAF8;
   --section-padding: 4rem 8rem;
+  --min-length-mid: 500px;
   --max-length-mid: 1124px;
   font-family: 'rubrik-new';
 }
