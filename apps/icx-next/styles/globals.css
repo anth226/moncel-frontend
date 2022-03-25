@@ -19,3 +19,7 @@ a {
   --max-length-mid: 1124px;
   font-family: 'rubrik-new';
 }
+
+button:hover {
+  cursor: pointer;
+}

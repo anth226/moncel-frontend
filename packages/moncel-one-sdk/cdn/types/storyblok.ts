@@ -68,7 +68,7 @@ export interface StoryBlokCertificateStatisticsContent extends StoryBlokComponen
     statistics: Array<StoryBlokStatistic>;
 }
 
-export interface StoryBlokCertificateFaqsContent extends StoryBlokComponent {
+export interface StoryBlokFaqsSection extends StoryBlokComponent {
     title: string;
     faqs_cards: Array<StoryBlokFaqCard>;
 }
