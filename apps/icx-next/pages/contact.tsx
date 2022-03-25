@@ -5,12 +5,13 @@ import { StoryblokStory, StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk
 
 import { Header, Footer } from 'components/layout';
 import contactStyles from 'styles/contact.module.scss';
-import styles from 'styles/icx_secondary.module.scss'
+import styles from 'styles/icx_secondary.module.scss';
 
 const Contact = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const layout = jsonata('content[component="template_layout"]').evaluate(props.layout);
     const header: StoryBlokHeader = layout.header?.[0];
     const footer: StoryBlokFooter = layout.footer?.[0];
+
     return <div className={styles.page}>
         <Header header={header} />
         <div className={`${styles['three-col-section']} ${styles.hero}`}>
@@ -18,9 +19,9 @@ const Contact = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <h1>Contact Us</h1>
             </div>
         </div>
-        <div className={`${contactStyles['contact-form']} ${styles['three-col-section']}`}>
+        <div className={`${styles.body} ${styles['three-col-section']}`}>
             <div className={styles.center}>
-                <div className={contactStyles.title}>
+                <div className={styles.title}>
                     <div className={styles.line} />
                     <h2>General Enquiry</h2>
                 </div>

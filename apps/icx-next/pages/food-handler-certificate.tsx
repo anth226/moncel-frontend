@@ -2,7 +2,7 @@ import type { InferGetStaticPropsType } from 'next'
 import jsonata from 'jsonata';
 
 import { getStoryblokStories } from 'moncel-one-sdk/cdn';
-import { StoryBlokCertificateHeroContent, StoryBlokCertificateBenefitContent, StoryBlokCertificateRecommendationContent, StoryBlokCertificateStatisticsContent, StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokCertificateFaqsContent } from 'moncel-one-sdk/cdn/types';
+import { StoryBlokCertificateHeroContent, StoryBlokCertificateBenefitContent, StoryBlokCertificateRecommendationContent, StoryBlokCertificateStatisticsContent, StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokFaqsSection } from 'moncel-one-sdk/cdn/types';
 
 import { Header, Footer } from 'components/layout';
 import CertificateHero from 'components/certificate/hero';
@@ -20,7 +20,7 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const benefits: StoryBlokCertificateBenefitContent = jsonata('body[component="section_benefits"]').evaluate(props.certificate?.content);
     const recommendations: StoryBlokCertificateRecommendationContent = jsonata('body[component="section_recommendation"]').evaluate(props.certificate?.content);
     const statistics: StoryBlokCertificateStatisticsContent = jsonata('body[component="section_statistics"]').evaluate(props.certificate?.content);
-    const faqs: StoryBlokCertificateFaqsContent = jsonata('body[component="section_faqs_secondary"]').evaluate(props.certificate?.content);
+    const faqs: StoryBlokFaqsSection = jsonata('body[component="section_faqs_secondary"]').evaluate(props.certificate?.content);
 
     return <div>
         <Header header={header} />

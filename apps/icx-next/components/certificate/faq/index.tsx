@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Collapse } from 'react-bootstrap';
-import { StoryBlokCertificateFaqsContent } from 'moncel-one-sdk/cdn/types';
+import { StoryBlokFaqsSection } from 'moncel-one-sdk/cdn/types';
 
 import styles from './styles.module.scss';
 
-const Faq = ({ faqs }: { faqs: StoryBlokCertificateFaqsContent }) => {
+const Faq = ({ faqs }: { faqs: StoryBlokFaqsSection }) => {
     const [ expanded, setExpanded ] = useState(-1);
     const handleClick = (i: number) => {
         if(i === expanded) {
