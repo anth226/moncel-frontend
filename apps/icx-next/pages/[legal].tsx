@@ -9,10 +9,15 @@ import { markdownToHtml } from 'moncel-one-sdk';
 import styles from 'styles/icx_secondary.module.scss';
 
 const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) => {
+    const router = useRouter();
     const layout = jsonata('content[component="template_layout"]').evaluate(props.layout);
-    const header: StoryBlokHeader = layout.header?.[0];
-    const footer: StoryBlokFooter = layout.footer?.[0];
-    debugger;
+
+    const header: StoryBlokHeader = layout?.header?.[0] || null;
+    const footer: StoryBlokFooter = layout?.footer?.[0] || null;
+
+    if(router.isFallback) {
+        return null;
+    }
 
     return <div className={styles.page}>
     <Header header={header} />
