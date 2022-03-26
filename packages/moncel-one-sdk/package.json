@@ -4,7 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^4.5.3",
-    "tsconfig": "*"
+    "tsconfig": "*",
+    "typescript": "^4.5.3"
+  },
+  "dependencies": {
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.1"
   }
 }

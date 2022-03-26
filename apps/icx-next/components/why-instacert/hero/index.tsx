@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { StoryBlokCertificateHeroContent, ComponentListItem } from 'moncel-one-sdk/cdn/types';
+import { StoryBlokCertificateHeroContent, ComponentListItem } from 'moncel-one-sdk/cms/types';
 
 import styles from './styles.module.scss';
 

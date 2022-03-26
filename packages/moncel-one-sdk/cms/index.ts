@@ -42,3 +42,5 @@ export const getStoryblokStories = async () => {
         }
     }
 };
+
+export * from './lib';

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Collapse } from 'react-bootstrap';
-import { StoryBlokFaqsSection } from 'moncel-one-sdk/cdn/types';
+import { StoryBlokFaqsSection } from 'moncel-one-sdk/cms/types';
 
 import styles from './styles.module.scss';
 

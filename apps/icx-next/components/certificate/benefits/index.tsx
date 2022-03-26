@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { StoryBlokCertificateBenefitContent, StoryBlokCertificateBenefitCard } from 'moncel-one-sdk/cdn/types';
+import { StoryBlokCertificateBenefitContent, StoryBlokCertificateBenefitCard } from 'moncel-one-sdk/cms/types';
 import styles from './styles.module.scss';
 
 const Benefits = ({ benefits }: { benefits: StoryBlokCertificateBenefitContent}) => {

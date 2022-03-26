@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { StoryBlokCertificateStatisticsContent } from 'moncel-one-sdk/cdn/types';
+import { StoryBlokCertificateStatisticsContent } from 'moncel-one-sdk/cms/types';
 import styles from './styles.module.scss';
 
 const Statistics = ({ statistics: statisticsContent }: { statistics: StoryBlokCertificateStatisticsContent }) => {

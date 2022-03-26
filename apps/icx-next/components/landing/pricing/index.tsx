@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { StoryBlokHomePricingContent } from 'moncel-one-sdk/cdn/types';
+import { StoryBlokHomePricingContent } from 'moncel-one-sdk/cms/types';
 import styles from './styles.module.scss'
 
 const PricingSection = ({ pricing }: { pricing: StoryBlokHomePricingContent }) => {

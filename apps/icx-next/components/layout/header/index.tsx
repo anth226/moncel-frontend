@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { StoryBlokHeader } from 'moncel-one-sdk/cdn/types';
+import { StoryBlokHeader } from 'moncel-one-sdk/cms/types';
 import styles from './styles.module.scss';
 
 const Header = ({ header }: { header: StoryBlokHeader}) => {

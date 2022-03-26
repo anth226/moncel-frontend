@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './styles.module.scss';
 
-import { StoryBlokFooter } from 'moncel-one-sdk/cdn/types';
+import { StoryBlokFooter } from 'moncel-one-sdk/cms/types';
 
 const Footer = ({ footer }: { footer: StoryBlokFooter}) => {
     const logo = footer.logo?.image;

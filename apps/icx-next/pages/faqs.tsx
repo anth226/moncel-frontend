@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Collapse } from 'react-bootstrap';
 import type { InferGetStaticPropsType } from 'next';
 import jsonata from 'jsonata';
-import { getStoryblokStories } from 'moncel-one-sdk/cdn';
-import { StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokFaqsSection } from 'moncel-one-sdk/cdn/types';
+import { getStoryblokStories } from 'moncel-one-sdk/cms';
+import { StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokFaqsSection } from 'moncel-one-sdk/cms/types';
 
 import { Header, Footer } from 'components/layout';
 import styles from 'styles/icx_secondary.module.scss';
