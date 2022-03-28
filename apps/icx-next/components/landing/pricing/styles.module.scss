@@ -1,3 +1,5 @@
+@import "styles/globals";
+
 .container {
     background: var(--tertiary);
     display: grid;
@@ -5,6 +7,9 @@
     grid-auto-flow: row;
     gap: 10px;
     padding: 4rem 0;
+    @media (max-width: $breakpoint-tablet) {
+        grid-template-columns: 1fr auto 1fr;
+    }
 }
 
 .column {
@@ -22,6 +27,11 @@
     grid-column: 2;
     background: var(--secondary);
     color: white;
+    @media (max-width: $breakpoint-tablet) {
+        grid-column: 2;
+        width: 540px;
+        max-width: 90vw;
+    }
 }
 
 .right {
@@ -32,6 +42,13 @@
     font-size: 1.5rem;
     width: 100%;
     padding: 2rem;
+
+    @media (max-width: $breakpoint-tablet) {
+        grid-column: 2;
+        width: 540px;
+        max-width: 90vw;
+    }
+
     ul li {
         padding: 10px 0;
         width: 100%;
