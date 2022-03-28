@@ -38,11 +38,12 @@
     padding: 1rem;
 
     @media (max-width: $breakpoint-tablet) {
-        padding: 1.5rem;
+        padding: 1.5rem 0;
         width: 580px;
         max-width: 100vw;
         margin-left: auto;
         margin-right: auto;
+        grid-column: 1 / end;
     }
 }
 
