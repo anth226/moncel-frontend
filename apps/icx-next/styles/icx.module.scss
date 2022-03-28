@@ -1,3 +1,5 @@
+
+@import "styles/globals";
 // For landing page
 .page {
     min-height: 100vh;
@@ -5,7 +7,16 @@
     display: grid;
     grid-auto-flow: column;
     grid-template-columns: 1fr minmax(500px, 1124px) 1fr;
-    grid-template-rows: [hero] 500px [steps] 350px [pricing] 500px [faqs] auto [cta] 280px;
+    grid-template-rows: [hero] auto [steps] auto [pricing] auto [faqs] auto [cta] auto;
+
+    @media (max-width: $breakpoint-tablet) {
+        grid-template-columns: 1fr minmax(390px, 1124px) 1fr;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        grid-template-columns: 1fr minmax(200px, 1124px) 1fr;
+    }
+
 }
 
 .three-col {
@@ -49,37 +60,6 @@
     padding: 0 1rem;
 }
 
-.hero-bg {
-    background-color: #14131A;
-    background-image: url('/hero-bg.jpg');
-    background-position: top;
-    background-repeat: repeat-y;
-    background-size: inherit;
-
-    grid-column: 1 / end;
-    grid-row: hero;
-}
-
-.hero {
-    color:white;
-
-    grid-column: 2;
-    grid-row: hero;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    align-items: center;
-}
-
-.hero-left {
-    grid-column: 1;
-}
-
-.hero-right {
-    grid-column: 2;
-}
-
 .highlight {
     font-weight: bold;
     color: #ffd65a;
@@ -104,4 +84,9 @@
 .cta-center {
     grid-column: 2;
     grid-row: cta;
+}
+
+.hero {
+    grid-column: 2;
+    grid-row: hero;
 }

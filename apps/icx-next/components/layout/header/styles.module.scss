@@ -1,3 +1,23 @@
+@import "styles/globals";
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr minmax(var(--min-length-mid), var(--max-length-mid)) 1fr;
+    grid-template-rows: 1fr;
+
+    .collapse {
+        @media (min-width: $breakpoint-tablet) {
+            display: none;
+            width: 100%;
+        }
+    }
+    .hamburger {
+        height: 30px;
+        width: 30px;
+        color: white;
+    }
+}
+
 .header-bg {
     background-color: #14131A;
     grid-column: 1 / end;
@@ -12,6 +32,13 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem;
+
+    @media (max-width: $breakpoint-tablet) {
+        padding: 1.5rem;
+        width: 580px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .header a {

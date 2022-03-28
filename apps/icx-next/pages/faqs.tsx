@@ -14,7 +14,6 @@ const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const header: StoryBlokHeader = layout.header?.[0];
     const footer: StoryBlokFooter = layout.footer?.[0];
     const faqs: StoryBlokFaqsSection = jsonata('content.body[component="section_faqs_secondary"]').evaluate(props.faqs);
-    debugger;
 
     const handleClick = (i: number) => {
         if(i === expanded) {

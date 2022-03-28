@@ -7,6 +7,7 @@ import { StoryBlokHeader, StoryBlokFooter, StoryBlokHomePricingContent } from 'm
 
 import Head from 'components/Head';
 import { Header, Footer } from 'components/layout';
+import HeroSection from 'components/landing/hero';
 import StepsSection from 'components/landing/steps';
 import PricingSection from 'components/landing/pricing';
 import FAQSection from 'components/landing/faq';
@@ -26,20 +27,8 @@ const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
       <Head />
       <Header header={header} />
       <main className={icxstyles.page}>
-
-        {/* hero */}
-        <div className={icxstyles['hero-bg']} />
-        <div className={icxstyles.hero}>
-          <div>
-            <h1>Get your <span className={icxstyles.highlight}>Food Handler Certificate</span> online</h1>
-            <h1 className={icxstyles.clickable}>
-              <a 
-                href="https://my.instacert.ca/urlcheckout/add?product=7&qty=1"
-                className={icxstyles.highlight}
-                target="_blank"
-                rel="noreferrer">Register now</a></h1>
-          </div>
-          <Image src="/icc-value.png" alt="icc-value-graphic" width={350} height={311} layout="fixed" />
+        <div className={icxstyles['full-row']}>
+          <HeroSection />
         </div>
 
         <div className={icxstyles.center}>

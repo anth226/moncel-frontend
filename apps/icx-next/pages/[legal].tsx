@@ -1,5 +1,5 @@
 import jsonata from 'jsonata';
-import type { InferGetStaticPropsType, GetStaticPaths } from 'next';
+import type { GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
 
 import { Header, Footer } from 'components/layout';

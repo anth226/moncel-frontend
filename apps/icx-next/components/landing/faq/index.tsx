@@ -20,8 +20,7 @@ const FAQSection = ({ faqs }: { faqs: SectionFAQsData}) => {
 
     return <div className={styles.container}>
         <div className={`${styles.column} ${styles.left}`}>
-            <div className={`${styles.line}`} />
-            <h1>FAQs</h1>
+            <h2>FAQs</h2>
         </div>
         <div className={`${styles.column} ${styles.right}`}>
         {

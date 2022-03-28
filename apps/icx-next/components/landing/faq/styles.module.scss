@@ -1,3 +1,5 @@
+@import "styles/globals";
+
 .container {
     display: grid;
     grid-template-columns: 150px 1fr;
@@ -6,6 +8,12 @@
     justify-content: flex-start;
     gap: 40px;
     padding: 4rem 0;
+
+    @media (max-width: $breakpoint-tablet) {
+        grid-template-columns: 1fr;
+        padding: $section-padding-tablet;
+        gap: 10px;
+    }
 }
 
 .column {
@@ -14,16 +22,29 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-}
-
-.line {
-    border-top: 10px solid black;
-    width: 150px;
-    height: 30px;
+    @media (max-width: $breakpoint-tablet) {
+        padding: 1rem 2rem 1rem;
+    }
 }
 
 .left {
     color: var(--secondary);
+    width: 100%;
+
+    @media (max-width: $breakpoint-tablet) {
+        display: flex;
+        align-items: center;
+    }
+
+    h2 {
+        width: 150px;
+        border-top: 10px solid black;
+        padding-top: 20px;
+
+        @media (max-width: $breakpoint-tablet) {
+            text-align:center;
+        }
+    }
 }
 
 .right {

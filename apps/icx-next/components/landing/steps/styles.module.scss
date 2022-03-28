@@ -1,0 +1,42 @@
+@import "styles/globals";
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    gap: 30px;
+    padding: $section-padding;
+
+    @media (max-width: $breakpoint-tablet) {
+        padding: $section-padding-tablet;
+
+        grid-template-columns: 1fr;
+        grid-auto-flow: row;
+        justify-content: center;
+        align-items: center;
+
+    }
+}
+
+.step1 {
+    margin-right: 70px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    h2 {
+        border-top: 10px solid black;
+        max-width: 150px;
+        padding-top:20px;
+        @media (max-width: $breakpoint-tablet) {
+            text-align: center;
+        }
+    }
+}
+
+.step {
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

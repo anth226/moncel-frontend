@@ -8,9 +8,9 @@ const Footer = ({ footer }: { footer: StoryBlokFooter}) => {
     const logo = footer.logo?.image;
     const { navigation, copyright, terms } = footer;
 
-    return <div className={styles.container}>
+    return <nav className={styles.container}>
         <div className={styles.top}>
-            <Image src={footer.logo?.image} width={179} height={32} layout="fixed" alt="footer-logo" />
+            <div className={styles.logo}><Image src={logo} width={179} height={32} layout="fixed" alt="footer-logo" /></div>
             <div className={styles.links}>
                 {navigation.map((link) => {
                     return <Link href={link.url} key={`footer-navigation-${link.label}`}>{link.label}</Link>
@@ -25,7 +25,7 @@ const Footer = ({ footer }: { footer: StoryBlokFooter}) => {
                 return <Link href={link.url} key={`footer-terms-${link.label}`}>{link.label}</Link>
             })}
         </div>
-    </div>
+    </nav>
 };
 
 export default Footer;
