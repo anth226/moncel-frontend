@@ -5,6 +5,10 @@
     grid-template-columns: 1fr minmax(var(--min-length-mid), var(--max-length-mid)) 1fr;
     grid-template-rows: 1fr;
 
+    @media (max-width: $breakpoint-tablet) {
+        grid-template-columns: auto;
+    }
+
     .collapse {
         @media (min-width: $breakpoint-tablet) {
             display: none;
@@ -36,6 +40,7 @@
     @media (max-width: $breakpoint-tablet) {
         padding: 1.5rem;
         width: 580px;
+        max-width: 100vw;
         margin-left: auto;
         margin-right: auto;
     }
