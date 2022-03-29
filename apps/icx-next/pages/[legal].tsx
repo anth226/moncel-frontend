@@ -3,7 +3,7 @@ import type { GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
 
 import { Header, Footer } from 'components/layout';
-import { getStoryblokStories } from 'moncel-one-sdk/cms';
+import { getStoryblokStories } from 'lib';
 import { StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokFaqsSection } from 'moncel-one-sdk/cms/types';
 import { markdownToHtml } from 'moncel-one-sdk';
 import styles from 'styles/icx_secondary.module.scss';

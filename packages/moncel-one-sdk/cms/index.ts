@@ -6,9 +6,7 @@ import { StoryblokStory, StoryblokStoryQueryResponse, isErrnoException } from '.
 const STORYBLOK_API_URL = "https://api.storyblok.com/v1/cdn";
 
 
-const queryStoryblok = async () => {
-    const siteName = process.env.STORYBLOK_SITE_NAME;
-    const token = process.env.STORYBLOK_TOKEN;
+const queryStoryblok = async (siteName: string, token: string) => {
 
     if(!(siteName && token)) throw Error('Required environment variables are missing.');
 
@@ -24,7 +22,7 @@ const queryStoryblok = async () => {
 /**
  * Ping the storyblok api once and reuse the data for each page that depends on it
  */
-export const getStoryblokStories = async () => {
+export const getStoryblokStories = async (siteName: string, token: string) => {
     const CACHE_PATH = path.join(__dirname, '.stories');
 
     try {
@@ -32,7 +30,7 @@ export const getStoryblokStories = async () => {
     } catch(e) {
         if(isErrnoException(e) && e.code === 'ENOENT') {
             //cache miss
-            const stories = await queryStoryblok();
+            const stories = await queryStoryblok(siteName, token);
             await fs.writeFileSync(CACHE_PATH, JSON.stringify(stories), 'utf8');
             return stories;
         }

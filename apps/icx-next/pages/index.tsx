@@ -2,7 +2,7 @@ import type { InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import jsonata from 'jsonata';
 
-import { getStoryblokStories } from 'moncel-one-sdk/cms';
+import { getStoryblokStories } from 'lib';
 import { StoryBlokHeader, StoryBlokFooter, StoryBlokHomePricingContent } from 'moncel-one-sdk/cms/types';
 
 import Head from 'components/Head';

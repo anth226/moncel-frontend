@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Collapse } from 'react-bootstrap';
 import type { InferGetStaticPropsType } from 'next';
 import jsonata from 'jsonata';
-import { getStoryblokStories } from 'moncel-one-sdk/cms';
+import { getStoryblokStories } from 'lib';
 import { StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokFaqsSection } from 'moncel-one-sdk/cms/types';
 
 import { Header, Footer } from 'components/layout';
@@ -38,7 +38,6 @@ const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                         return <div key={`faq-${i}`} className={styles.question}>
                             <button className={styles.cell} onClick={() => handleClick(i)}>{card.question}</button>
                             <Collapse className={styles.cell} in={i === expanded}><div>{card.answer}</div></Collapse>
-
                         </div>
                     })
                 }

@@ -24,4 +24,7 @@ jobs:
         run: echo "Installing dependencies..."
       - run: yarn
       - name: Full build
+        env:
+          STORYBLOK_TOKEN: ${{ secrets.ICX_NEXT_STORYBLOK_TOKEN }}
+          STORYBLOK_SITE_NAME: ${{ secrets.ICX_NEXT_STORYBLOK_SITE_NAME }}
         run: yarn build

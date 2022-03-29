@@ -1,6 +1,6 @@
 import type { InferGetStaticPropsType } from 'next';
 import jsonata from 'jsonata';
-import { getStoryblokStories } from 'moncel-one-sdk/cms';
+import { getStoryblokStories } from 'lib';
 import { StoryblokStory, StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk/cms/types';
 
 import { Header, Footer } from 'components/layout';

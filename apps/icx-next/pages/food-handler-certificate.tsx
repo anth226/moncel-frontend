@@ -2,7 +2,7 @@ import { useMediaQuery } from 'react-responsive'
 import type { InferGetStaticPropsType } from 'next'
 import jsonata from 'jsonata';
 
-import { getStoryblokStories } from 'moncel-one-sdk/cms';
+import { getStoryblokStories } from 'lib';
 import { StoryBlokCertificateHeroContent, StoryBlokCertificateBenefitContent, StoryBlokCertificateRecommendationContent, StoryBlokCertificateStatisticsContent, StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokFaqsSection } from 'moncel-one-sdk/cms/types';
 
 import { Header, Footer } from 'components/layout';
