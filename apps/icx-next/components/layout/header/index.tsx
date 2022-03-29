@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive'
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -22,16 +22,16 @@ const Header = ({ header }: { header: StoryBlokHeader}) => {
             {/* Desktop links */}
             { isMobile ? null : <div>
                 { header.navigation.map((link, i) => {
-                return <a key={`header-link-${link.label}}`} href={link.url}>{link.label}</a>
+                return <a key={`header-link-${link.label}}`} href={link.url}>{link.label.toUpperCase()}</a>
                 })}
             </div>
             }
 
             {/* Mobile dropdown */}
             { isMobile ? 
-                <button className="navbar-toggler px-0 py-0" aria-expanded={false} aria-label="Toggle header navigation">
+                (<button className="navbar-toggler px-0 py-0" aria-expanded={expanded} aria-label="Toggle header navigation">
                     <FontAwesomeIcon className={styles.hamburger} icon={faBars} />
-                </button>
+                </button>)
             
 
              : null }

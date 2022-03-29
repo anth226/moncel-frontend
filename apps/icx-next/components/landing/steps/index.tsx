@@ -4,7 +4,7 @@ import styles from './styles.module.scss'
 
 const StepsSection = () => {
     return <div className={styles.container}>
-        <h1 className={styles.step1}><h2>3 easy steps</h2></h1>
+        <h2 className={styles.step1}>3 easy steps</h2>
         <div className={styles.step}>
             <Image alt="register-icon" src="/icons/register-1.svg" width={90} height={90} layout="fixed" />
             <h5>Register</h5>

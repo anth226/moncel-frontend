@@ -1,3 +1,4 @@
+import { useMediaQuery } from 'react-responsive'
 import type { InferGetStaticPropsType } from 'next'
 import jsonata from 'jsonata';
 
@@ -10,9 +11,15 @@ import Benefits from 'components/certificate/benefits';
 import Recommendations from 'components/certificate/recommendation';
 import Statistics from 'components/certificate/statistics';
 import Faqs from 'components/certificate/faq';
+import SidebarCTA from 'components/sidebar-cta';
+
 import icxstyles from '../styles/icx_secondary.module.scss'
 
 const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const isDesktop = useMediaQuery({
+        query: '(min-width: 768px)'
+    });
+
     const layout = jsonata('content[component="template_layout"]').evaluate(props.layout);
     const header: StoryBlokHeader = layout.header?.[0];
     const footer: StoryBlokFooter = layout.footer?.[0];
@@ -32,6 +39,7 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
             <Faqs faqs={faqs} />
             <Footer footer={footer} />
         </div>;
+        { isDesktop ? <SidebarCTA /> : null }
     </div>
 }
 

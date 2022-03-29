@@ -1,19 +1,30 @@
+@import "styles/globals";
+
 .hero-secondary {
     background: var(--primary);
     width: 100%;
     display: grid;
-    grid-auto-flow: row;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr auto 1fr;
     align-items: flex-start;
     justify-content: flex-start;
     padding: var(--section-padding);
 
     h1 {
-        font-size: 4rem;
+        font-size: 3rem;
         padding-bottom: 10px;
     }
 
     .content {
-        width: 70%;
+        grid-column: 2;
+        max-width: $mid-column-max-width;
+
+        .column {
+            width: 60%;
+            @media(max-width: $breakpoint-tablet) {
+                width: 75%;
+            }
+        }
         ul {
             padding: 0px;
         }
@@ -25,7 +36,7 @@
             justify-content: flex-start;
             gap: 10px;
             padding: 10px 0;
-            font-size: 1.5rem;
+            font-size: 1.125rem;
         }
     }
 }
