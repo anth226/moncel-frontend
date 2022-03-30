@@ -27,4 +27,3 @@ jobs:
           STORYBLOK_TOKEN: ${{ secrets.ICX_NEXT_STORYBLOK_TOKEN }}
           STORYBLOK_SITE_NAME: ${{ secrets.ICX_NEXT_STORYBLOK_SITE_NAME }}
         run: yarn build
-  
