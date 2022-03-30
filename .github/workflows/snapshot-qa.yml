@@ -1,10 +1,8 @@
 
-name: Monorepo CI
+name: Moncel Frontend QA environment Snapshot Test
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  repository_dispatch:
+    types: [netlify-build-complete]
 
 jobs:
   Build:
@@ -23,8 +21,8 @@ jobs:
       - name: Install dependencies
         run: echo "Installing dependencies..."
       - run: yarn
-      - name: Full build
+      - name: Generate snapshots
         env:
-          STORYBLOK_TOKEN: ${{ secrets.ICX_NEXT_STORYBLOK_TOKEN }}
-          STORYBLOK_SITE_NAME: ${{ secrets.ICX_NEXT_STORYBLOK_SITE_NAME }}
-        run: yarn build
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+        run: yarn snapshot-qa
+      
