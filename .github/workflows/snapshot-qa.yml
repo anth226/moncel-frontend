@@ -2,7 +2,7 @@
 name: Moncel Frontend QA environment Snapshot Test
 on:
   repository_dispatch:
-    types: [netlify-build-complete]
+    types: [netlify_deploy_succeeded]
 
 jobs:
   Build:

@@ -11,7 +11,7 @@ const handler: Handler = async () => {
       "Authorization": "Basic bWtvby1tb25jZWw6Z2hwX2lBb3lwN0lxUDBzMU8zOU9rSzlWaE9mdUpjNFdUcTMwcTViaQ==",
     },
     body: JSON.stringify({
-      "event_type": "deploy_succeeded",
+      "event_type": "netlify_deploy_succeeded",
     })
   });
 
