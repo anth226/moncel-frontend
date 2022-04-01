@@ -4,17 +4,17 @@ import { StoryBlokHomePricingContent } from 'moncel-one-sdk/cms/types';
 import styles from './styles.module.scss'
 
 const PricingSection = ({ pricing }: { pricing: StoryBlokHomePricingContent }) => {
-    return <div className={styles.container}>
-        <div className={`${styles.column} ${styles.left}`}>
-            <h1>{ pricing.top_price_text }</h1>
-            <h1 className={styles.highlight}>{ pricing.price }</h1>
-            <h5>{ pricing.bottom_price_text }</h5>
-            <div className={styles['button-cta']} id="pricing-cta"><Link href={pricing.button_link}>Learn More</Link></div>
+    return <div className="row align-items-center">
+        <div className="col-12 col-md-6 col-lg-4 offset-lg-2 text-center p-5 order-2 order-md-1 bg-dark">
+            <h2 className="text-white">{ pricing.top_price_text }</h2>
+            <div className="text-white price">{ pricing.price }</div>
+            <p className="text-white">{ pricing.bottom_price_text }</p>
+            <div className="btn btn-primary text-white mt-6" id="pricing-cta"><Link href={pricing.button_link}>Learn More</Link></div>
         </div>
-        <div className={`${styles.column} ${styles.right}`}>
-            <ul>
+        <div className="col-12 col-md-6 col-lg-4 order-1 order-md-2 pb-4 pb-md-0">
+            <ul className="list-container ms-4">
                 { pricing.benefits.map((benefit, i) => {
-                    return <li key={`pricing-benefits-${i}`}>{benefit.text}</li>
+                    return <li key={`pricing-benefits-${i}`} className="mb-3">{benefit.text}</li>
                 })}
             </ul>
         </div>

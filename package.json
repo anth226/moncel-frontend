@@ -14,6 +14,8 @@
     "snapshot-qa": "percy snapshot snapshots-qa.yml"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.4",
+    "postcss": "^8.4.12",
     "prettier": "^2.5.1",
     "turbo": "latest"
   },
@@ -21,5 +23,8 @@
     "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
-  "packageManager": "yarn@1.22.17"
+  "packageManager": "yarn@1.22.17",
+  "dependencies": {
+    "bootstrap": "^5.1.3"
+  }
 }

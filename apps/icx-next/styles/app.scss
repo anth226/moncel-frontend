@@ -3,6 +3,9 @@ html,
 body {
   padding: 0;
   margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--secondary);
 }
 
 a {
@@ -13,15 +16,125 @@ a {
 * {
   box-sizing: border-box;
   --primary: #FFD65A;
+  --bs-primary-rgb: 255, 214, 90;
   --secondary: #14141B;
   --tertiary: #F5FAF8;
   --primary-hover: #e6e4e4;
   --section-padding: 4rem 8rem;
   --min-length-mid: 500px;
   --max-length-mid: 1124px;
+  --bs-dark-rgb:20,20,27;
   font-family: 'rubrik-new';
 }
 
 button:hover {
   cursor: pointer;
+}
+
+.container {
+  padding:3rem 0;
+}
+
+h1 {
+  font-weight:600;
+}
+
+h2 {
+  font-size: 1.675rem;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight:600;
+}
+
+.cta {
+  font-size:36px;
+}
+
+.line {
+  width: 150px;
+  padding-top: 1.5rem;
+  border-top: 10px solid var(--secondary);
+  display: inline-block;
+}
+
+.price {
+  font-family: 'bebas-kai',sans-serif;
+  font-size: 5rem;
+  line-height: 1.2em;
+}
+
+.hero-bg {
+  background-image: url('/hero-bg.jpg');
+  background-position: top;
+  background-repeat: repeat-y;
+  background-size: inherit;
+}
+
+.btn {
+  border-radius: 0;
+  border-width: 0px;
+  border-style: solid;
+  padding: 1rem 2rem;
+  text-align: center;
+  white-space: normal;
+  vertical-align: middle;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.125rem;
+  touch-action: manipulation;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -webkit-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+  -ms-touch-action: manipulation;
+  user-select: none;
+  display: inline-block;
+  margin-bottom: 0;
+  color: var(--secondary) !important;
+  text-transform: uppercase;
+}
+
+.btn-primary {
+  background: linear-gradient(to bottom, #FFD65A, #FFD65A);
+  border: solid 4px #fff !important;
+  width: 100%;
+  max-width: 250px;
+}
+
+.list-container {
+  list-style: none;
+  li::before {
+    content: url(/icons/check-black.svg);
+    display: block;
+    height: 18px;
+    width: 18px;
+    top: 0.8em;
+    margin-left: -2em;
+    float: left;
+  }
+}
+
+
+.accordion {
+  .btn {
+    text-decoration:none;
+    text-transform: none;
+    &::after {
+      content: '+';
+      display: block;
+      float: right;
+    }
+  }
+  .card {
+    border: 4px solid var(--secondary);
+    .collapse {
+      border-top:4px solid var(--secondary);
+    }
+  }
+}
+
+.footer {
+  font-size:.8rem;
 }
