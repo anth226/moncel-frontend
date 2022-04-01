@@ -4,10 +4,6 @@ import Image from 'next/image';
 import styles from './styles.module.scss';
 
 const Hero = () => {
-    const isMobile = useMediaQuery({
-        query: '(max-width: 575px)'
-    });
-
     const isTablet = useMediaQuery({
         query: '(max-width: 768px)'
     });

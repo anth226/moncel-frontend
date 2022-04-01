@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { Collapse } from 'react-bootstrap';
 import type { InferGetStaticPropsType } from 'next';
 import jsonata from 'jsonata';
-import { getStoryblokStories } from 'moncel-one-sdk/cms';
+import { getStoryblokStories } from 'lib';
 import { StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokFaqsSection } from 'moncel-one-sdk/cms/types';
 
-import { Header, Footer } from 'components/layout';
+import OneCol from 'components/layout/one-col';
 import styles from 'styles/icx_secondary.module.scss';
 
 const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -25,27 +25,25 @@ const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     };
 
     return <div className={styles.page}>
-    <Header header={header} />
-        <div className={`${styles['three-col-section']} ${styles.hero}`}>
-            <div className={styles.center}>
-                <h1>FAQs</h1>
+        <OneCol header={header} footer={footer}>
+            <div className={`${styles['three-col-section']} ${styles.hero}`}>
+                <div className={styles.center}>
+                    <h1>FAQs</h1>
+                </div>
             </div>
-        </div>;
-        <div className={`${styles.body} ${styles['three-col-section']}`}>
-            <div className={styles.center}>
-                {
-                    faqs.faqs_cards.map((card, i) => {
-                        return <div key={`faq-${i}`} className={styles.question}>
-                            <button className={styles.cell} onClick={() => handleClick(i)}>{card.question}</button>
-                            <Collapse className={styles.cell} in={i === expanded}><div>{card.answer}</div></Collapse>
-
-                        </div>
-                    })
-                }
+            <div className={`${styles.body} ${styles['three-col-section']}`}>
+                <div className={styles.center}>
+                    {
+                        faqs.faqs_cards.map((card, i) => {
+                            return <div key={`faq-${i}`} className={styles.question}>
+                                <button className={styles.cell} onClick={() => handleClick(i)}>{card.question}</button>
+                                <Collapse className={styles.cell} in={i === expanded}><div>{card.answer}</div></Collapse>
+                            </div>
+                        })
+                    }
+                </div>
             </div>
-        </div>
-        <Footer footer={footer} />
-
+        </OneCol>
     </div>
 }
 
