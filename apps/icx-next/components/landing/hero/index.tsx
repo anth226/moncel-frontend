@@ -19,8 +19,9 @@ const Hero = () => {
         <div className="col-12 col-md-7 col-lg-6 py-5 py-md-8">
             <h1 className="text-white">Get your <span className="text-primary">Food Handler Certificate</span> online</h1>
             <a 
-                href="/food-handler-certificate"
+                href="https://my.instacert.ca/urlcheckout/add?product=7&qty=1"
                 className={styles.highlight}
+                target="_blank"
                 rel="noreferrer">
                     <div className="btn btn-primary mt-4">Learn More</div>
             </a>
