@@ -9,7 +9,6 @@ import Hero from 'components/why-instacert/hero';
 import Recommendation from 'components/why-instacert/recommendation';
 import SidebarCTA from 'components/sidebar-cta';
 import OneCol from 'components/layout/one-col';
-import icxstyles from '../styles/icx_secondary.module.scss'
 
 const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 

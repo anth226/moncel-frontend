@@ -1,7 +1,6 @@
 import jsonata from 'jsonata';
 import type { GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
-
 import { getStoryblokStories } from 'lib';
 import { StoryblokStory, StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk/cms/types';
 import { markdownToHtml } from 'moncel-one-sdk';

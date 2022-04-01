@@ -1,5 +1,4 @@
 import type { InferGetStaticPropsType } from 'next';
-import Image from 'next/image';
 import jsonata from 'jsonata';
 
 import { getStoryblokStories } from 'lib';

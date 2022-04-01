@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive'
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -8,7 +8,7 @@ import { StoryBlokHeader } from 'moncel-one-sdk/cms/types';
 import styles from './styles.module.scss';
 
 const Header = ({ header }: { header: StoryBlokHeader}) => {
-    const [ expanded, setExpanded ] = useState(false);
+    const [ expanded ] = useState(false);
     const isMobile = useMediaQuery({
         query: '(max-width: 768px)'
     });
@@ -21,7 +21,7 @@ const Header = ({ header }: { header: StoryBlokHeader}) => {
             </div>
             {/* Desktop links */}
             { isMobile ? null : <div>
-                { header.navigation.map((link, i) => {
+                { header.navigation.map(link => {
                 return <a key={`header-link-${link.label}}`} href={link.url}>{link.label.toUpperCase()}</a>
                 })}
             </div>
