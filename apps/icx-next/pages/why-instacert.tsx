@@ -5,10 +5,10 @@ import jsonata from 'jsonata';
 import { getStoryblokStories } from 'lib';
 import { StoryblokStory, StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk/cms/types';
 
-import { Header, Footer } from 'components/layout';
 import Hero from 'components/why-instacert/hero';
 import Recommendation from 'components/why-instacert/recommendation';
 import SidebarCTA from 'components/sidebar-cta';
+import OneCol from 'components/layout/one-col';
 import icxstyles from '../styles/icx_secondary.module.scss'
 
 const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -24,12 +24,10 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const recommendations = jsonata('content.body[component="section_recommendation"]').evaluate(props.whyInstacert);
 
     return <div>
-        <Header header={header} />
-        <div className={icxstyles.page}>
+        <OneCol header={header} footer={footer}>
             <Hero hero={heroSecondary} />
             <Recommendation recommendations={recommendations} />
-            <Footer footer={footer} />
-        </div>;
+        </OneCol>
         { isDesktop ? <SidebarCTA /> : null }
     </div>
 }

@@ -2,10 +2,10 @@ import jsonata from 'jsonata';
 import type { GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
 
-import { Header, Footer } from 'components/layout';
 import { getStoryblokStories } from 'lib';
-import { StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokFaqsSection } from 'moncel-one-sdk/cms/types';
+import { StoryblokStory, StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk/cms/types';
 import { markdownToHtml } from 'moncel-one-sdk';
+import OneCol from 'components/layout/one-col';
 import styles from 'styles/icx_secondary.module.scss';
 
 const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) => {
@@ -20,16 +20,16 @@ const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) =
     }
 
     return <div className={styles.page}>
-    <Header header={header} />
-        <div className={`${styles['three-col-section']} ${styles.hero}`}>
-            <div className={styles.center}>
-                <h1>Privacy Policy</h1>
+        <OneCol header={header} footer={footer}>
+            <div className={`${styles['three-col-section']} ${styles.hero}`}>
+                <div className={styles.center}>
+                    <h1>Privacy Policy</h1>
+                </div>
             </div>
-        </div>
-        <div className={`${styles.body} ${styles['three-col-section']}`}>
-            <div className={styles.center} dangerouslySetInnerHTML={{ __html: props.body }} />
-        </div>
-        <Footer footer={footer} />
+            <div className={`${styles.body} ${styles['three-col-section']}`}>
+                <div className={styles.center} dangerouslySetInnerHTML={{ __html: props.body }} />
+            </div>
+        </OneCol>
     </div>
 }
 
