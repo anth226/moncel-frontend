@@ -1,4 +1,3 @@
-import { useMediaQuery } from 'react-responsive';
 import Link from 'next/link';
 import styles from './styles.module.scss';
 

@@ -4,7 +4,8 @@ import { StoryBlokCertificateHeroContent, ComponentListItem } from 'moncel-one-s
 import styles from './styles.module.scss';
 
 const CertificateHero2 = ({ hero }: { hero: StoryBlokCertificateHeroContent }) => {
-    const heroListItems = ("list_items" in hero.body?.[0]) ? hero.body?.[0]?.list_items : [];
+    const heroBody = hero.body?.[0] || {};
+    const heroListItems = ("list_items" in heroBody) ? heroBody.list_items : [];
     return <div className={styles['hero-secondary']}>
         <div className={styles.content}>
             <div className={styles.column}>

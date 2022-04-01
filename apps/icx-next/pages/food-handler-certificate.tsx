@@ -5,7 +5,6 @@ import jsonata from 'jsonata';
 import { getStoryblokStories } from 'lib';
 import { StoryBlokCertificateHeroContent, StoryBlokCertificateBenefitContent, StoryBlokCertificateRecommendationContent, StoryBlokCertificateStatisticsContent, StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokFaqsSection } from 'moncel-one-sdk/cms/types';
 
-import { Header, Footer } from 'components/layout';
 import CertificateHero from 'components/certificate/hero';
 import Benefits from 'components/certificate/benefits';
 import Recommendations from 'components/certificate/recommendation';
@@ -13,8 +12,6 @@ import Statistics from 'components/certificate/statistics';
 import Faqs from 'components/certificate/faq';
 import SidebarCTA from 'components/sidebar-cta';
 import OneCol from 'components/layout/one-col';
-
-import icxstyles from '../styles/icx_secondary.module.scss'
 
 const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const isDesktop = useMediaQuery({
