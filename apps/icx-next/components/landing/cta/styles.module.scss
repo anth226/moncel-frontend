@@ -1,50 +1,50 @@
-@import "styles/globals";
+// @import "styles/globals";
 
-.container {
-    background: var(--secondary);
-    color: white;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-flow: row;
-    gap: 10px;
-    padding: 4rem;
-    width:100%;
+// .container {
+//     background: var(--secondary);
+//     color: white;
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+//     grid-auto-flow: row;
+//     gap: 10px;
+//     padding: 4rem;
+//     width:100%;
 
-    @media (max-width: $breakpoint-tablet) {
-        grid-template-columns: 1fr;
-    }
+//     @media (max-width: $breakpoint-tablet) {
+//         grid-template-columns: 1fr;
+//     }
 
-    h1 {
-        font-size: 2.5rem;
-        @media (max-width: $breakpoint-tablet) {
-            text-align: center;
-        }
-    }
-}
+//     h1 {
+//         font-size: 2.5rem;
+//         @media (max-width: $breakpoint-tablet) {
+//             text-align: center;
+//         }
+//     }
+// }
 
-.highlight {
-    color: var(--primary);
-}
+// .highlight {
+//     color: var(--primary);
+// }
 
-.button-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+// .button-wrapper {
+//     width: 100%;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
 
-    @media (max-width: $breakpoint-tablet) {
-        margin-top: 10px;
-    }
-}
+//     @media (max-width: $breakpoint-tablet) {
+//         margin-top: 10px;
+//     }
+// }
 
-.button {
-    background: var(--primary);
-    border: 5px solid white;
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 250px;
-    max-height: 65px;
-    padding: 15px 0;
-}
+// .button {
+//     background: var(--primary);
+//     border: 5px solid white;
+//     color: black;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 250px;
+//     max-height: 65px;
+//     padding: 15px 0;
+// }

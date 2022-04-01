@@ -18,17 +18,17 @@ const FAQSection = ({ faqs }: { faqs: SectionFAQsData}) => {
         }
     };
 
-    return <div className={styles.container}>
-        <div className={`${styles.column} ${styles.left}`}>
-            <h2>FAQs</h2>
+    return <div className="row py-6 text-center text-md-start">
+        <div className="col-12 col-md-3">
+            <h2 className="line">FAQs</h2>
         </div>
-        <div className={`${styles.column} ${styles.right}`}>
+        <div className="accordion col-12 col-md-9">
         {
             cards.map(((card, i) => {
 
-                return <div className={styles.question} key={`faq-${i}`}>
-                    <button className={styles.cell} onClick={() => handleClick(i)}>{card.question}</button>
-                    <Collapse className={styles.cell} in={i === expanded}><div>{card.answer}</div></Collapse>
+                return <div className="card mb-3 rounded-0" key={`faq-${i}`}>
+                    <button className="btn btn-link text-start p-3" onClick={() => handleClick(i)}>{card.question}</button>
+                    <Collapse className="p-3" in={i === expanded}><div>{card.answer}</div></Collapse>
                 </div>
             }))
         }

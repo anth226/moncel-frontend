@@ -1,69 +1,69 @@
-@import "styles/globals";
+// @import "styles/globals";
 
-.container {
-    display: grid;
-    grid-template-columns: 150px 1fr;
-    grid-auto-flow: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 40px;
-    padding: 4rem 0;
+// .container {
+//     display: grid;
+//     grid-template-columns: 150px 1fr;
+//     grid-auto-flow: row;
+//     align-items: flex-start;
+//     justify-content: flex-start;
+//     gap: 40px;
+//     padding: 4rem 0;
 
-    @media (max-width: $breakpoint-tablet) {
-        grid-template-columns: 1fr;
-        padding: $section-padding-tablet;
-        gap: 10px;
-    }
-}
+//     @media (max-width: $breakpoint-tablet) {
+//         grid-template-columns: 1fr;
+//         padding: $section-padding-tablet;
+//         gap: 10px;
+//     }
+// }
 
-.column {
-    padding: 3rem 2rem 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    @media (max-width: $breakpoint-tablet) {
-        padding: 1rem 2rem 1rem;
-    }
-}
+// .column {
+//     padding: 3rem 2rem 3rem;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: flex-start;
+//     @media (max-width: $breakpoint-tablet) {
+//         padding: 1rem 2rem 1rem;
+//     }
+// }
 
-.left {
-    color: var(--secondary);
-    width: 100%;
+// .left {
+//     color: var(--secondary);
+//     width: 100%;
 
-    @media (max-width: $breakpoint-tablet) {
-        display: flex;
-        align-items: center;
-    }
+//     @media (max-width: $breakpoint-tablet) {
+//         display: flex;
+//         align-items: center;
+//     }
 
-    h2 {
-        width: 150px;
-        border-top: 10px solid black;
-        padding-top: 20px;
+//     h2 {
+//         width: 150px;
+//         border-top: 10px solid black;
+//         padding-top: 20px;
 
-        @media (max-width: $breakpoint-tablet) {
-            text-align:center;
-        }
-    }
-}
+//         @media (max-width: $breakpoint-tablet) {
+//             text-align:center;
+//         }
+//     }
+// }
 
-.right {
-    color: #14141B;
-}
+// .right {
+//     color: #14141B;
+// }
 
-.highlight {
-    font-size: 5rem;
-}
+// .highlight {
+//     font-size: 5rem;
+// }
 
-.question {
-    width: 100%;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    .cell {
-        background: none;
-        padding: 20px;
-        border: 4px solid black;
-        width: 100%;
-        text-align: left;
-    }
-}
+// .question {
+//     width: 100%;
+//     margin-bottom: 20px;
+//     font-size: 1.5rem;
+//     .cell {
+//         background: none;
+//         padding: 20px;
+//         border: 4px solid black;
+//         width: 100%;
+//         text-align: left;
+//     }
+// }

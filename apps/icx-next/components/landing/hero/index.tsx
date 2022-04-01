@@ -1,7 +1,6 @@
 import { useMediaQuery } from 'react-responsive'
 import Image from 'next/image';
 
-
 import styles from './styles.module.scss';
 
 const Hero = () => {
@@ -15,18 +14,18 @@ const Hero = () => {
 
     const imageDimensions = isTablet ? [270, 240] : [350, 311];
 
-    return <div className={styles.container}><div className={styles['hero-bg']} />
-        <div className={styles.hero}>
-        <div className={styles['hero-left']}>
-            <h1>Get your <span className={styles.highlight}>Food Handler Certificate</span> online</h1>
-            <h1 className={styles.clickable}>
+    return <div className="container">
+        <div className="row align-items-center px-4 px-sm-0">
+        <div className="col-12 col-md-7 col-lg-6 py-5 py-md-8">
+            <h1 className="text-white">Get your <span className="text-primary">Food Handler Certificate</span> online</h1>
             <a 
-                href="https://my.instacert.ca/urlcheckout/add?product=7&qty=1"
+                href="/food-handler-certificate"
                 className={styles.highlight}
-                target="_blank"
-                rel="noreferrer">Register now</a></h1>
+                rel="noreferrer">
+                    <div className="btn btn-primary mt-4">Learn More</div>
+            </a>
         </div>
-        { isTablet ? null : <div className={styles['hero-right']}>
+        { isTablet ? null : <div className={'col-12 col-md-5 col-lg-4 offset-lg-2 d-none d-md-block'}>
 
             <div style={{
                 width: imageDimensions[0],

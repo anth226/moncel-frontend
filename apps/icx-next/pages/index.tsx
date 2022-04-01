@@ -27,28 +27,26 @@ const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
       <Head />
       <Header header={header} />
       <main className={icxstyles.page}>
-        <div className={icxstyles['full-row']}>
+        <div className="bg-dark hero-bg">
           <HeroSection />
         </div>
-        <h1 className="text-3xl font-bold underline">
-          Hello world!
-        </h1>
-        <div className={icxstyles.center}>
+        <div className="container">
           <StepsSection />
         </div>
-        <div className={`${icxstyles['full-row']} ${icxstyles['bg-tertiary']}`}>
-          <div className={icxstyles.center}>
+        <div className="bg-light">
+          <div className="container">
             <PricingSection pricing={pricing} />
           </div>
         </div>
-        <div className={icxstyles.center}>
+        <div className="container">
           <FAQSection faqs={faqs} />
         </div>
-        <div className={icxstyles['cta-bg']} />
-        <div className={icxstyles['cta-center']}><CTASection /></div>
-        <div className={icxstyles.center}>
+        <div className="bg-dark">
+          <CTASection />
+        </div>
+        <div className="footer">
           <Footer footer={footer} />
-      </div>
+        </div>
       </main>
     </div>
   )
