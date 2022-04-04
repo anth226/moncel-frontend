@@ -1,52 +1,53 @@
-@import 'styles/globals';
+// @import 'styles/globals';
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items:center;
+// .container {
+    // display: flex;
+    // flex-direction: column;
+    // align-items:center;
+    // border-top: 1rem solid white !important;
+    // border:4px solid white;
+    // top: 150px;
+    // right: max(20px, 4%);
+    // position: fixed;
+    // background: var(--secondary);
+    // z-index: 1000;
+    // width: 300px;
 
-    top: 150px;
-    right: max(20px, 6.25%);
-    position: fixed;
-    background: var(--secondary);
-    z-index: 1000;
-    width: 300px;
+    // @media (min-width: $breakpoint-desktop) {
+    //     width: 350px;
+    //     right: 8.5%;
+    // }
+    // padding:2rem 1rem;
 
-    @media (min-width: $breakpoint-desktop) {
-        width: 350px;
-        right: 12.5%;
-    }
-    padding: 24px;
-
-    h1 {
-        font-size: 1.5rem;
-        color: var(--primary);
-    }
+    // h1 {
+    //     font-size: 1.5rem;
+    //     color: var(--primary);
+    // }
 
     // ul class square list
-    li {
-        font-size: 1.125rem;
-        color: white;
-    }
+    // li {
+    //     font-size: 1.125rem;
+    //     color: white;
+    // }
 
-    .price {
-        font-weight: 500;
-        font-size: 5rem;
-        font-family: 'bebas-kai','sans-serif'
-    }
+    // .price {
+    //     font-weight: 500;
+    //     font-size: 5rem;
+    //     font-family: 'bebas-kai','sans-serif'
+    // }
 
-    .btn {
-        border: solid 4px white;
-        max-width: 250px;
-        background: var(--primary);
-        padding: 16px 32px;
-        &:hover {
-            background: var(--primary-hover);
-        }
-        a {
-            color: black;
-            text-decoration: none;
-        }
-    }
-};
+    // .btn {
+    //     border: solid 4px white;
+    //     max-width: 250px;
+    //     background: var(--primary);
+    //     padding: 16px 32px;
+    //     &:hover {
+    //         background: var(--primary-hover);
+    //     }
+    //     a {
+    //         color: black;
+    //         text-decoration: none;
+    //     }
+    // }
+// };
 
