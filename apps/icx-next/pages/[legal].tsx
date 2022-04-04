@@ -6,7 +6,6 @@ import { StoryblokStory, StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk
 import { markdownToHtml } from 'moncel-one-sdk';
 
 import OneCol from 'components/layout/one-col';
-import CertificateHero from 'components/certificate/hero';
 
 const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) => {
     const router = useRouter();
