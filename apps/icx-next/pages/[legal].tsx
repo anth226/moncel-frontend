@@ -4,8 +4,9 @@ import { useRouter } from 'next/router';
 import { getStoryblokStories } from 'lib';
 import { StoryblokStory, StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk/cms/types';
 import { markdownToHtml } from 'moncel-one-sdk';
+
 import OneCol from 'components/layout/one-col';
-import styles from 'styles/icx_secondary.module.scss';
+import CertificateHero from 'components/certificate/hero';
 
 const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) => {
     const router = useRouter();
@@ -18,18 +19,21 @@ const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) =
         return null;
     }
 
-    return <div className={styles.page}>
+    return <>
         <OneCol header={header} footer={footer}>
-            <div className={`${styles['three-col-section']} ${styles.hero}`}>
-                <div className={styles.center}>
+            <div className="bg-primary">
+                <div className="container">
                     <h1>Privacy Policy</h1>
                 </div>
             </div>
-            <div className={`${styles.body} ${styles['three-col-section']}`}>
-                <div className={styles.center} dangerouslySetInnerHTML={{ __html: props.body }} />
+            <div className="container">
+                <div className="row">       
+                <div className="col-12 col-md-7 col-lg-8" dangerouslySetInnerHTML={{ __html: props.title }} />         
+                    <div className="col-12 col-md-7 col-lg-8" dangerouslySetInnerHTML={{ __html: props.body }} />
+                </div>      
             </div>
         </OneCol>
-    </div>
+    </>
 }
 
 export default Privacy;
