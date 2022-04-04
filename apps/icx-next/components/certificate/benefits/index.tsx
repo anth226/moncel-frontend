@@ -6,12 +6,12 @@ import styles from './styles.module.scss';
 const Benefits = ({ benefits }: { benefits: StoryBlokCertificateBenefitContent}) => {
     const { benefits: cards } = benefits;
 
-    return <div className={styles.section}>
+    return <div className="row ps-6 pe-4 text-center text-md-start">
         {cards.map((card: StoryBlokCertificateBenefitCard, i) => {
-            return <div className={styles.card} key={`benefits-${i}`}>
+            return <div className="col-12 col-md-6 mb-5" key={`benefits-${i}`}>
                 <Image src={card.icon.image} width={55} height={50} layout="fixed" alt={`benefits-${i}-icon`}/>
-                <h1>{card.title}</h1>
-                <p>{card.description}</p>
+                <h5 className="mt-3">{card.title}</h5>
+                <p className="mb-0">{card.description}</p>
             </div>;
         })}
     </div>;
