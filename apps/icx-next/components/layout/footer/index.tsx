@@ -8,7 +8,8 @@ const Footer = ({ footer }: { footer: StoryBlokFooter}) => {
     const logo = footer.logo?.image;
     const { navigation, copyright, terms } = footer;
 
-    return <nav className="container">
+    return <div className="footer">
+        <nav className="container">
 
             <div className="row mb-3">
                 <div className="col-12 col-md-3 text-center text-md-start">
@@ -20,7 +21,7 @@ const Footer = ({ footer }: { footer: StoryBlokFooter}) => {
                             return <Link href={link.url} key={`footer-navigation-${link.label}`}>{link.label}</Link>
                         })}
                     </div>
-    
+
                 </div>
             </div>
             <div className="row">
@@ -31,8 +32,10 @@ const Footer = ({ footer }: { footer: StoryBlokFooter}) => {
                     })}
                 </div>
             </div>
-
-    </nav>
+        </nav>
+    </div>
+        
+      
 };
 
 export default Footer;

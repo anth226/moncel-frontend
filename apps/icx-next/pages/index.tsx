@@ -43,9 +43,7 @@ const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
         <div className="bg-dark">
           <CTASection />
         </div>
-        <div className="footer">
-          <Footer footer={footer} />
-        </div>
+        <Footer footer={footer} />
       </main>
     </div>
   )
