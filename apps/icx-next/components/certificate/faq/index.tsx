@@ -15,17 +15,21 @@ const Faq = ({ faqs }: { faqs: StoryBlokFaqsSection }) => {
         }
     };
 
-    return <div className={styles.container}>
-        <div className={styles.line} />
-        <h1 className={styles.title}>{faqs.title}</h1>
-        {faqs.faqs_cards.map((card, i) => {
-            return <div className={styles.question} key={`faq-${i}`}>
-                <button className={styles.cell} onClick={() => handleClick(i)}>
-                    { card.question }
-                </button>
-                <Collapse className={styles.cell}  in={i === expanded}><div>{card.answer}</div></Collapse>
+    return <div className="row">
+        <div className="col-12">
+            <div className="line" />
+            <h2 className="mb-5">{faqs.title}</h2>
+            <div className="accordion col-12 col-md-9">
+            {faqs.faqs_cards.map((card, i) => {
+            return <div className="card mb-3 rounded-0" key={`faq-${i}`}>
+                <button className="btn btn-link text-start p-3" onClick={() => handleClick(i)}><span className="w-75 d-inline-block">{card.question}</span></button>
+                <Collapse className="p-3" in={i === expanded}><div>{card.answer}</div></Collapse>
             </div>
         })}
+        </div>
+        </div>
+
+       
     </div>
 
 };

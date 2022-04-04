@@ -29,13 +29,46 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
     return <div>
         <OneCol header={header} footer={footer}>
-            <CertificateHero hero={heroSecondary} />
-            <Benefits benefits={benefits} />
-            <Recommendations recommendations={recommendations} />
-            <Statistics statistics={statistics} />
-            <Faqs faqs={faqs} />
+            <div className="bg-primary">
+                <CertificateHero hero={heroSecondary} />
+            </div>
+            
+            <div className="container">
+                <div className="row">
+                    <div className="col-12 col-md-7 col-lg-8">
+                        <Benefits benefits={benefits} />  
+                    </div>
+                </div>
+            </div>
+            <div className="bg-light">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 col-md-7 col-lg-8">
+                            <Recommendations recommendations={recommendations} />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="container">
+                <div className="row">
+                    <div className="col-12 col-md-6">
+                        <Statistics statistics={statistics} /> 
+                    </div>
+                </div>
+            </div>
+            <div className="bg-light">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 col-md-7 col-lg-8">
+                            <Faqs faqs={faqs} />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
         </OneCol>
-        { isDesktop ? <SidebarCTA /> : null }
+        { isDesktop ? <div className="container"><SidebarCTA /></div> : null }
     </div>
 }
 
