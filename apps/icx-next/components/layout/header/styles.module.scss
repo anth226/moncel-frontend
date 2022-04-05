@@ -1,59 +1,59 @@
-@import "styles/globals";
+// @import "styles/globals";
 
-.container {
-    display: grid;
-    grid-template-columns: 1fr minmax(var(--min-length-mid), var(--max-length-mid)) 1fr;
-    grid-template-rows: 1fr;
+// .container {
+//     display: grid;
+//     grid-template-columns: 1fr minmax(var(--min-length-mid), var(--max-length-mid)) 1fr;
+//     grid-template-rows: 1fr;
 
-    @media (max-width: $breakpoint-tablet) {
-        grid-template-columns: auto;
-    }
+//     @media (max-width: $breakpoint-tablet) {
+//         grid-template-columns: auto;
+//     }
 
-    .collapse {
-        @media (min-width: $breakpoint-tablet) {
-            display: none;
-            width: 100%;
-        }
-    }
-    .hamburger {
-        height: 30px;
-        width: 30px;
-        color: white;
-    }
-}
+//     .collapse {
+//         @media (min-width: $breakpoint-tablet) {
+//             display: none;
+//             width: 100%;
+//         }
+//     }
+//     .hamburger {
+//         height: 30px;
+//         width: 30px;
+//         color: white;
+//     }
+// }
 
-.header-bg {
-    background-color: #14131A;
-    grid-column: 1 / end;
-    grid-row: header;
-}
+// .header-bg {
+//     background-color: #14131A;
+//     grid-column: 1 / end;
+//     grid-row: header;
+// }
 
-.header { 
-    background-color: #14131A;
-    grid-column: 2;
-    grid-row: header;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 2rem 1rem;
+// .header { 
+//     background-color: #14131A;
+//     grid-column: 2;
+//     grid-row: header;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     padding: 2rem 1rem;
 
-    @media (max-width: $breakpoint-tablet) {
-        padding: 1.5rem 2rem;
-        width: 100%;
-        max-width: 100vw;
-        margin-left: auto;
-        margin-right: auto;
-        grid-column: 1 / end;
-    }
-}
+//     @media (max-width: $breakpoint-tablet) {
+//         padding: 1.5rem 2rem;
+//         width: 100%;
+//         max-width: 100vw;
+//         margin-left: auto;
+//         margin-right: auto;
+//         grid-column: 1 / end;
+//     }
+// }
 
-.header a {
-    text-decoration: none;
-    color: white;
-    padding: 0 1rem;
-}
+// .header a {
+//     text-decoration: none;
+//     color: white;
+//     padding: 0 1rem;
+// }
 
-.logo {
-    height: 1em;
-    margin-left: 0.5rem;
-  }
+// .logo {
+//     height: 1em;
+//     margin-left: 0.5rem;
+//   }

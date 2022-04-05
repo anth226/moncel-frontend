@@ -21,6 +21,7 @@ export interface StoryBlokLink extends StoryBlokComponent {
     url: string;
     new_tab: boolean;
     is_external: boolean;
+    class: string;
 }
 
 export interface ComponentList extends StoryBlokComponent {

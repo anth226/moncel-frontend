@@ -5,38 +5,37 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 import { StoryBlokHeader } from 'moncel-one-sdk/cms/types';
-import styles from './styles.module.scss';
 
-const Header = ({ header }: { header: StoryBlokHeader}) => {
-    const [ expanded ] = useState(false);
+const Header = ({ header }: { header: StoryBlokHeader }) => {
+    const [expanded] = useState(false);
     const isMobile = useMediaQuery({
         query: '(max-width: 768px)'
     });
 
-    return <nav className={styles.container}>
-        <div className={styles['header-bg']} />
-        <div className={styles.header}>
-            <div className={styles.logo}>
-                <Image src={header.logo.image} alt="icx-logo" width={160} height={30} />
-            </div>
-            {/* Desktop links */}
-            { isMobile ? null : <div>
-                { header.navigation.map(link => {
-                return <a key={`header-link-${link.label}}`} href={link.url}>{link.label.toUpperCase()}</a>
-                })}
-            </div>
-            }
+    return <div className="bg-dark">
+        <nav className="container py-4">
+            <div className="d-flex justify-content-between align-items-center">
+                <div>
+                    <Image src={header.logo.image} alt="icx-logo" width={160} height={30} />
+                </div>
+                {/* Desktop links */}
+                {isMobile ? null : <div>
+                    {header.navigation.map(link => {
+                        return <a className="text-white ms-4" key={`header-link-${link.label}}`} href={link.url}>{link.label.toUpperCase()} {link.class}</a>
+                    })}
+                </div>
+                }
 
-            {/* Mobile dropdown */}
-            { isMobile ? 
-                (<button className="navbar-toggler px-0 py-0" aria-expanded={expanded} aria-label="Toggle header navigation">
-                    <FontAwesomeIcon className={styles.hamburger} icon={faBars} />
-                </button>)
-            
+                {/* Mobile dropdown */}
+                {isMobile ?
+                    (<button className="navbar-toggler px-0 py-0" aria-expanded={expanded} aria-label="Toggle header navigation">
+                        <FontAwesomeIcon className="mobile-menu" icon={faBars} />
+                    </button>)
+                    : null}
+            </div>
+        </nav>
+    </div>
 
-             : null }
-        </div>
-    </nav>;
 };
 
 export default Header;
