@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { useScrollPosition } from './scroll.js'
 
+interface Point {
+    readonly currPos: { x: number; y: number };
+}
+
 const Sidebar = () => {
 
-    type Scroll = {
-        currPos: any;
-    };
-
-    useScrollPosition(({ currPos }:Scroll) => {
+    useScrollPosition(( {currPos }:Point ) => {
         const sidebar = document.getElementById('sidebar-cta')!;
         const position = currPos.y;
 
