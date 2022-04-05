@@ -2,10 +2,16 @@ import Link from 'next/link';
 import { useScrollPosition } from './scroll.js'
 
 const Sidebar = () => {
-    useScrollPosition(({ currPos }) => {
-        const sidebar : HTMLElement = document.getElementById('sidebar-cta')!;
-        
-        if (currPos.y <= -120) {
+
+    type Scroll = {
+        currPos: any;
+    };
+
+    useScrollPosition(({ currPos }:Scroll) => {
+        const sidebar = document.getElementById('sidebar-cta')!;
+        const position = currPos.y;
+
+        if (position <= -120) {
             sidebar.classList.add('affix');
         } else {
             sidebar.classList.remove('affix');
