@@ -6,7 +6,7 @@ import { getStoryblokStories } from 'lib';
 import { StoryblokStory, StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk/cms/types';
 
 import Hero from 'components/why-instacert/hero';
-import Recommendation from 'components/why-instacert/recommendation';
+import Recommendations from 'components/certificate/recommendation';
 import SidebarCTA from 'components/sidebar-cta';
 import OneCol from 'components/layout/one-col';
 
@@ -24,10 +24,28 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
     return <div>
         <OneCol header={header} footer={footer}>
-            <Hero hero={heroSecondary} />
-            <Recommendation recommendations={recommendations} />
+            <div className="bg-primary">
+                <Hero hero={heroSecondary} />
+            </div>
+            <div className="bg-light">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 col-md-7 col-lg-8">
+                            <Recommendations recommendations={recommendations} />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="bg-dark d-md-none">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <SidebarCTA />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </OneCol>
-        { isDesktop ? <SidebarCTA /> : null }
     </div>
 }
 

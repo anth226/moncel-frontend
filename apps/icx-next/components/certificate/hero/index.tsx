@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { StoryBlokCertificateHeroContent, ComponentListItem } from 'moncel-one-sdk/cms/types';
+import SidebarCTA from 'components/sidebar-cta';
 
 import styles from './styles.module.scss';
 
@@ -17,6 +18,9 @@ const CertificateHero2 = ({ hero }: { hero: StoryBlokCertificateHeroContent }) =
                     </li>
                 })}
                 </ul>
+            </div>
+            <div className="col-12 col-md-5 col-lg-4 d-none d-md-block">
+                <SidebarCTA />
             </div>
         </div>
     </div>

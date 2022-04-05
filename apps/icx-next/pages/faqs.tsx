@@ -6,6 +6,7 @@ import { getStoryblokStories } from 'lib';
 import { StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokFaqsSection } from 'moncel-one-sdk/cms/types';
 
 import OneCol from 'components/layout/one-col';
+import SidebarCTA from 'components/sidebar-cta';
 import styles from 'styles/icx_secondary.module.scss';
 
 const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -26,21 +27,41 @@ const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
     return <div className={styles.page}>
         <OneCol header={header} footer={footer}>
-            <div className={`${styles['three-col-section']} ${styles.hero}`}>
-                <div className={styles.center}>
-                    <h1>FAQs</h1>
+            <div className="bg-primary">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 col-md-7 col-lg-8">
+                            <h1>FAQs</h1>
+                        </div>
+                        <div className="col-12 col-md-5 col-lg-4 d-none d-md-block">
+                            <SidebarCTA />
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div className={`${styles.body} ${styles['three-col-section']}`}>
-                <div className={styles.center}>
-                    {
-                        faqs.faqs_cards.map((card, i) => {
-                            return <div key={`faq-${i}`} className={styles.question}>
-                                <button className={styles.cell} onClick={() => handleClick(i)}>{card.question}</button>
-                                <Collapse className={styles.cell} in={i === expanded}><div>{card.answer}</div></Collapse>
-                            </div>
-                        })
-                    }
+            <div className="bg-light">
+                <div className="container">
+                    <div className="row">
+                        <div className="accordion col-12 col-md-7 col-lg-8">
+                            {
+                                faqs.faqs_cards.map((card, i) => {
+                                    return <div className="card mb-3 rounded-0" key={`faq-${i}`}>
+                                        <button className="btn btn-link text-start p-3" onClick={() => handleClick(i)}>{card.question}</button>
+                                        <Collapse className="p-3" in={i === expanded}><div>{card.answer}</div></Collapse>
+                                    </div>
+                                })
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="bg-dark d-md-none">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <SidebarCTA />
+                        </div>
+                    </div>
                 </div>
             </div>
         </OneCol>

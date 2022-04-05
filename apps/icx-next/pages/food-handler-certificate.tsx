@@ -65,10 +65,16 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     </div>
                 </div>
             </div>
-            
-            
+            <div className="bg-dark d-md-none">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            <SidebarCTA />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </OneCol>
-        { isDesktop ? <div className="container"><SidebarCTA /></div> : null }
     </div>
 }
 
