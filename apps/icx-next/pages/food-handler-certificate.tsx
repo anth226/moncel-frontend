@@ -1,4 +1,3 @@
-import { useMediaQuery } from 'react-responsive'
 import type { InferGetStaticPropsType } from 'next'
 import jsonata from 'jsonata';
 
@@ -14,10 +13,6 @@ import SidebarCTA from 'components/sidebar-cta';
 import OneCol from 'components/layout/one-col';
 
 const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-    const isDesktop = useMediaQuery({
-        query: '(min-width: 768px)',
-    });
-
     const layout = jsonata('content[component="template_layout"]').evaluate(props.layout);
     const header: StoryBlokHeader = layout.header?.[0];
     const footer: StoryBlokFooter = layout.footer?.[0];
@@ -69,7 +64,7 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <SidebarCTA />
+                            { <SidebarCTA /> }
                         </div>
                     </div>
                 </div>

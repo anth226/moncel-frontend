@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
 import { StoryBlokCertificateRecommendationContent } from 'moncel-one-sdk/cms/types';
-import styles from './styles.module.scss';
 
 const Recommendation = ({ recommendations }: { recommendations: StoryBlokCertificateRecommendationContent}) => {
 
