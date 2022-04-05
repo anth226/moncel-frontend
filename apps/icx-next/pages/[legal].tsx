@@ -6,6 +6,7 @@ import { StoryblokStory, StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk
 import { markdownToHtml } from 'moncel-one-sdk';
 
 import OneCol from 'components/layout/one-col';
+import SidebarCTA from 'components/sidebar-cta';
 
 const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) => {
     const router = useRouter();
@@ -22,7 +23,14 @@ const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) =
         <OneCol header={header} footer={footer}>
             <div className="bg-primary">
                 <div className="container">
-                    <h1>Privacy Policy</h1>
+                    <div className="row">
+                        <div className="col-12 col-md-7 col-lg-8">
+                        <h1>Privacy Policy</h1>
+                        </div>
+                        <div className="col-12 col-md-5 col-lg-4 d-none d-md-block">
+                            {<SidebarCTA />}
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className="container">
@@ -30,6 +38,15 @@ const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) =
                 <div className="col-12 col-md-7 col-lg-8" dangerouslySetInnerHTML={{ __html: props.title }} />         
                     <div className="col-12 col-md-7 col-lg-8" dangerouslySetInnerHTML={{ __html: props.body }} />
                 </div>      
+            </div>
+            <div className="bg-dark d-md-none">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12">
+                            {<SidebarCTA />}
+                        </div>
+                    </div>
+                </div>
             </div>
         </OneCol>
     </>

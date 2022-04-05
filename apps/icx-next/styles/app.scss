@@ -152,8 +152,12 @@ blockquote {
   color: #fff;
   border-top: 1rem solid white !important;
   border:4px solid white;
-  position:fixed;
+  position:absolute;
   width: 350px;
+  &.affix {
+    position:fixed !important;
+    top:20px;
+  }
   @media (max-width: $breakpoint-desktop) {
     width:300px;
   }
