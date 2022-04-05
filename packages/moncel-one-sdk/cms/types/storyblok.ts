@@ -53,10 +53,15 @@ export interface StoryBlokSectionHeroSecondary extends StoryBlokComponent {
     [key: string]: unknown;
 }
 
+export interface StoryBlokStepsSection extends StoryBlokComponent {
+    steps: StoryBlokCard[];
+    title: string;
+}
+
 export interface StoryBlokCertificateHeroContent extends StoryBlokSectionHeroSecondary {}
 
 export interface StoryBlokCertificateBenefitContent extends StoryBlokComponent {
-    benefits: Array<StoryBlokCertificateBenefitCard>;
+    benefits: Array<StoryBlokCard>;
 }
 
 export interface StoryBlokCertificateRecommendationContent extends StoryBlokComponent {
@@ -82,7 +87,7 @@ export interface StoryBlokHomePricingContent extends StoryBlokComponent {
     top_price_text: string;
 }
 
-export interface StoryBlokCertificateBenefitCard extends StoryBlokComponent {
+export interface StoryBlokCard extends StoryBlokComponent {
     description: string;
     title: string;
     icon: StoryBlokImage;

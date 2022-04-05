@@ -64,7 +64,7 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            { <SidebarCTA /> }
+                            <SidebarCTA />
                         </div>
                     </div>
                 </div>
