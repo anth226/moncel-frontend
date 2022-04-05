@@ -1,8 +1,18 @@
 import Link from 'next/link';
+import { useScrollPosition } from './scroll.js'
 
 const Sidebar = () => {
-
-    return <div className="sidebar-cta p-0 p-md-4 text-center">
+    useScrollPosition(({ currPos }) => {
+        const sidebar : HTMLElement = document.getElementById('sidebar-cta')!;
+        
+        if (currPos.y <= -120) {
+            sidebar.classList.add('affix');
+        } else {
+            sidebar.classList.remove('affix');
+        }
+    })
+    
+    return <div className="sidebar-cta p-0 p-md-4 text-center" id="sidebar-cta">
         <h4 className="text-primary pb-2">Food Handler Certificate</h4>
         <ul className="text-white text-start list-square">
             <li className="pb-1">100% online</li>
