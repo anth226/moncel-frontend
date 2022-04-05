@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import styles from './styles.module.scss';
 
 const CtaSection = () => {
     return <div className="container">

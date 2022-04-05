@@ -1,8 +1,5 @@
-import Image from 'next/image';
 import { StoryBlokCertificateHeroContent, ComponentListItem, ComponentList } from 'moncel-one-sdk/cms/types';
 import SidebarCTA from 'components/sidebar-cta';
-
-import styles from './styles.module.scss';
 
 const CertificateHero2 = ({ hero }: { hero: StoryBlokCertificateHeroContent }) => {
     // this is bad. please add a slug or type name in storyblok to make this suck less

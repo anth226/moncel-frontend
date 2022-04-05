@@ -1,7 +1,5 @@
 import Link from 'next/link';
-import styles from './styles.module.scss';
 
-// god i really hate how this is implemented in storyblok
 const Sidebar = () => {
 
     return <div className="sidebar-cta p-0 p-md-4 text-center">

@@ -1,7 +1,5 @@
 import Image from 'next/image'
 
-import styles from './styles.module.scss'
-
 const StepsSection = () => {
     return <div className="row">
         <div className="col-12 col-md-3">

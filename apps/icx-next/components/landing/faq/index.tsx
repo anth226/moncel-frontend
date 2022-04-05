@@ -3,8 +3,6 @@ import { Collapse } from 'react-bootstrap';
 
 import { SectionFAQsData } from './types';
 
-import styles from './styles.module.scss';
-
 const FAQSection = ({ faqs }: { faqs: SectionFAQsData}) => {
     const [ expanded, setExpanded ] = useState(-1);
     const cards = faqs.faqs_cards; // TODO set fallbacks
