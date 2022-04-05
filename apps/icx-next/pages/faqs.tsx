@@ -31,7 +31,7 @@ const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-md-7 col-lg-8">
-                            <h1>FAQs</h1>
+                            <h1 className="text-center text-md-start">FAQs</h1>
                         </div>
                         <div className="col-12 col-md-5 col-lg-4 d-none d-md-block">
                             <SidebarCTA />

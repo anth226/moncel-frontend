@@ -12,7 +12,7 @@ const Footer = ({ footer }: { footer: StoryBlokFooter}) => {
         <nav className="container">
 
             <div className="row mb-3">
-                <div className="col-12 col-md-3 text-center text-md-start">
+                <div className="col-12 col-md-3 text-center text-md-start mb-3 mb-md-0">
                     <Image src={logo} width={179} height={32} layout="fixed" alt="footer-logo" />
                 </div>
                 <div className="col-12 col-md-9 text-center text-md-end">
@@ -24,7 +24,7 @@ const Footer = ({ footer }: { footer: StoryBlokFooter}) => {
 
                 </div>
             </div>
-            <div className="row">
+            <div className="row text-center text-md-start">
                 <p>{copyright}</p>
                 <div className={styles.linksBottom}>
                     {terms.map((link) => {

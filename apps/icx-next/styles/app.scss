@@ -12,6 +12,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  display:inline-block;
 }
 
 * {
@@ -34,6 +35,9 @@ button:hover {
 
 .container {
   padding:3rem 0;
+  @media (max-width: $breakpoint-tablet) {
+    padding:3rem 1rem;
+  }
 }
 
 h1 {
@@ -129,6 +133,7 @@ blockquote {
 
 
 .accordion {
+  text-align: left;
   .btn {
     text-decoration:none;
     text-transform: none;
@@ -139,10 +144,12 @@ blockquote {
     }
   }
   .card {
-    border: 4px solid var(--secondary);
-    .collapse {
-      border-top:4px solid var(--secondary);
+    button {
+      border-bottom:4px solid var(--secondary);
+      box-shadow:none;
+      margin-bottom:-4px;
     }
+    border: 4px solid var(--secondary);
   }
 }
 
@@ -166,7 +173,6 @@ blockquote {
     position:relative;
     border-top:0 !important;
     border:0 !important;
-
   }
 }
 

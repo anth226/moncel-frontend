@@ -17,7 +17,7 @@ const FAQSection = ({ faqs }: { faqs: SectionFAQsData}) => {
     };
 
     return <div className="row py-6 text-center text-md-start">
-        <div className="col-12 col-md-3">
+        <div className="col-12 col-md-3 mb-3 mb-md-0">
             <h2 className="line">FAQs</h2>
         </div>
         <div className="accordion col-12 col-md-9">

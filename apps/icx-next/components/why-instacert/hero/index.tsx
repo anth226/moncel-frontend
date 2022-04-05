@@ -11,7 +11,7 @@ const CertificateHero2 = ({ hero }: { hero: StoryBlokCertificateHeroContent }) =
     return <div className="container">
         <div className="row">
             <div className="col-12 col-md-7 col-lg-8">
-                <h1 className="mb-4">{hero.title}</h1>
+                <h1 className="mb-4 text-center text-md-start">{hero.title}</h1>
                 <p>{text1}</p>
                 <ul className="list-container">
                 {heroListItems.map((listItem: ComponentListItem, i) => {
