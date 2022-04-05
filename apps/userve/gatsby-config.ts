@@ -31,6 +31,12 @@ const config: GatsbyConfig = {
       resolveModules: [path.join(__dirname)],
       public: [path.join(__dirname, "public")]
     }
+  },
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [],
+    },
   }]
 };
 
