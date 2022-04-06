@@ -1,4 +1,4 @@
-// @import "styles/globals";
+@import "styles/globals";
 
 // .container {
 //     display: grid;
@@ -79,12 +79,20 @@
 // }
 .linksTop {
     a {
-        margin-right:1rem;
+        margin-left:1rem;
+        @media (max-width: $breakpoint-tablet) {
+            margin-left:.5rem;
+            margin-right:.5rem;
+        }
     }
 }
 
 .linksBottom {
     a {
         margin-right:1rem;
+        @media (max-width: $breakpoint-tablet) {
+            margin-left:.5rem;
+            margin-right:.5rem;
+        }
     }
 }

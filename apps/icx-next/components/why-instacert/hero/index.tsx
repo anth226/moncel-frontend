@@ -23,7 +23,7 @@ const CertificateHero2 = ({ hero }: { hero: StoryBlokCertificateHeroContent }) =
                 </ul>
                 <p>{ text2 }</p>
             </div>
-            <div className="col-12 col-md-5 col-lg-4 d-none d-md-block">
+            <div className="col-12 col-md-5 col-lg-4 d-none d-md-flex justify-content-end">
                 <SidebarCTA />
             </div>
         </div>

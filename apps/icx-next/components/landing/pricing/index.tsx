@@ -8,7 +8,7 @@ const PricingSection = ({ pricing }: { pricing: StoryBlokHomePricingContent }) =
             <h2 className="text-white">{ pricing.top_price_text }</h2>
             <div className="text-white price">{ pricing.price }</div>
             <p className="text-white">{ pricing.bottom_price_text }</p>
-            <div className="btn btn-primary text-white mt-6" id="pricing-cta"><Link href={pricing.button_link}>Learn More</Link></div>
+            <Link href={pricing.button_link} passHref><div className="btn btn-primary text-white mt-6" id="pricing-cta">Learn More</div></Link>
         </div>
         <div className="col-12 col-md-6 col-lg-4 order-1 order-md-2 pb-4 pb-md-0">
             <ul className="list-container ms-4">

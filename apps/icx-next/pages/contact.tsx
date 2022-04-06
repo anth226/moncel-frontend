@@ -19,7 +19,7 @@ const Contact = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                         <div className="col-12 col-md-7 col-lg-8">
                             <h1 className="text-center text-md-start">Contact Us</h1>
                         </div>
-                        <div className="col-12 col-md-5 col-lg-4 d-none d-md-block">
+                        <div className="col-12 col-md-5 col-lg-4 d-none d-md-flex justify-content-end">
                             <SidebarCTA />
                         </div>
                     </div>

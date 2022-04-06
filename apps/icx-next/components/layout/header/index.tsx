@@ -21,7 +21,7 @@ const Header = ({ header }: { header: StoryBlokHeader }) => {
                 {/* Desktop links */}
                 {isMobile ? null : <div>
                     {header.navigation.map(link => {
-                        return <a className="text-white ms-4" key={`header-link-${link.label}}`} href={link.url}>{link.label.toUpperCase()} {link.class}</a>
+                        return <a className={`text-white ms-4 ${link.class}`} key={`header-link-${link.label}}`} href={link.url}>{link.label.toUpperCase()}</a>
                     })}
                 </div>
                 }

@@ -11,7 +11,7 @@ const Footer = ({ footer }: { footer: StoryBlokFooter}) => {
     return <div className="footer">
         <nav className="container">
 
-            <div className="row mb-3">
+            <div className="row mb-3 d-flex align-items-center">
                 <div className="col-12 col-md-3 text-center text-md-start mb-3 mb-md-0">
                     <Image src={logo} width={179} height={32} layout="fixed" alt="footer-logo" />
                 </div>
