@@ -33,10 +33,10 @@ const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) =
                     </div>
                 </div>
             </div>
-            <div className="container">
+            <div className="container legal">
                 <div className="row">       
-                <div className="col-12 col-md-7 col-lg-8" dangerouslySetInnerHTML={{ __html: props.title }} />         
-                    <div className="col-12 col-md-7 col-lg-8" dangerouslySetInnerHTML={{ __html: props.body }} />
+                    <div className="col-12 col-md-7 col-lg-8" dangerouslySetInnerHTML={{ __html: props.title }} />         
+                    <div className="col-12 col-md-7 col-lg-8 content" dangerouslySetInnerHTML={{ __html: props.body }} />
                 </div>      
             </div>
             <div className="bg-dark d-md-none">
@@ -49,6 +49,7 @@ const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) =
                 </div>
             </div>
         </OneCol>
+        <div className="d-md-none mobile-space"></div>
     </>
 }
 
