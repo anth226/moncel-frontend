@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "src/components/core";
+import { Link, ExternalLink } from "src/components/core";
 import { StaticImage } from "gatsby-plugin-image";
 
 import Phone from "src/components/icons/phone";
@@ -51,9 +51,9 @@ const Footer = () => {
 
 const Social = () => {
     return <div className="flex gap-x-2">
-        <Link to="https://twitter.com/UserveInc"><StaticImage src="../../images/usx_social_tw.svg" alt="usx twitter" /></Link>
-        <Link to="https://www.facebook.com/Userve-100597588758651/"><StaticImage src="../../images/usx_social_fb.svg" alt="usx facebook" /></Link>
-        <Link to="https://www.linkedin.com/company/userve-inc/"><StaticImage src="../../images/usx_social_li.svg" alt="usx linkedin" /></Link>
+        <ExternalLink to="https://twitter.com/UserveInc"><StaticImage src="../../images/usx_social_tw.svg" alt="usx twitter" /></ExternalLink>
+        <ExternalLink to="https://www.facebook.com/Userve-100597588758651/"><StaticImage src="../../images/usx_social_fb.svg" alt="usx facebook" /></ExternalLink>
+        <ExternalLink to="https://www.linkedin.com/company/userve-inc/"><StaticImage src="../../images/usx_social_li.svg" alt="usx linkedin" /></ExternalLink>
     </div>
 }
 
