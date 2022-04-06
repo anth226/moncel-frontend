@@ -3,6 +3,7 @@ import { useMediaQuery } from 'react-responsive'
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import Link from 'next/link';
 
 import { StoryBlokHeader } from 'moncel-one-sdk/cms/types';
 
@@ -16,7 +17,7 @@ const Header = ({ header }: { header: StoryBlokHeader }) => {
         <nav className="container py-4">
             <div className="d-flex justify-content-between align-items-center">
                 <div>
-                <a href="/"><Image src={header.logo.image} alt="icx-logo" width={160} height={30} /></a>
+                    <Link href="/" passHref><a><Image src={header.logo.image} alt="icx-logo" width={160} height={30} /></a></Link>
                 </div>
                 {/* Desktop links */}
                 {isMobile ? null : <div>
