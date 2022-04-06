@@ -13,7 +13,7 @@ const queryStoryblok = async (siteName: string, token: string) => {
     const filterExpression = `starts_with=${siteName}`;
     const tokenExpression = `token=${token}`
     const versionExpression = `version=published`;
-    const queryUrl = `${STORYBLOK_API_URL}/stories/?${filterExpression}/&${versionExpression}&${tokenExpression}`;
+    const queryUrl = `${STORYBLOK_API_URL}/stories/?${filterExpression}/&${versionExpression}&${tokenExpression}&cv=${new Date().getTime()}`;
 
     const data: StoryblokStoryQueryResponse = await (await fetch(queryUrl)).json();
     if(data.stories.length < 1) throw Error(`Storyblok story request did not match any stories:\n${queryUrl}`); // Error out to stop build
