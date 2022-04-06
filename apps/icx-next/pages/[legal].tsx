@@ -25,10 +25,11 @@ const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) =
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-md-7 col-lg-8">
-                        <h1 className="text-center text-md-start">Privacy Policy</h1>
+                        <h1 className="text-center text-md-start">{props.name}</h1>
                         </div>
                         <div className="col-12 col-md-5 col-lg-4 d-none d-md-flex justify-content-end">
                             {<SidebarCTA />}
+                            {console.log(props)}
                         </div>
                     </div>
                 </div>
@@ -72,10 +73,11 @@ export const getStaticProps = async ({ params }: LegalRouteParams) => {
     const stories = { stories: await getStoryblokStories() };
     const layout = jsonata("stories[slug='layout']").evaluate(stories);
     
-    const _story: StoryblokStory = jsonata(`stories[full_slug="ICX/${slug}"]`).evaluate(stories)
+    const _story: StoryblokStory = jsonata(`stories[full_slug="ICX/${slug}"]`).evaluate(stories);
     // const privacy: StoryblokStory = jsonata('stories[full_slug="ICX/privacy"]').evaluate(stories);
     const { body: privacyBody } = jsonata('content.body[component="section_markdown"]').evaluate(_story);
+    const name: StoryblokStory  = jsonata('name').evaluate(_story);
     const markdownBody = await (markdownToHtml(privacyBody));
 
-    return { props: { stories, slug, [slug]: _story, layout, body: markdownBody } };
+    return { props: { stories, slug, [slug]: _story, layout, body: markdownBody, name } };
 }
