@@ -26,7 +26,7 @@ const FAQSection = ({ faqs }: { faqs: SectionFAQsData}) => {
 
                 return <div className="card mb-3 rounded-0" key={`faq-${i}`}>
                     <button className="btn btn-link text-start p-3" onClick={() => handleClick(i)}>{card.question}</button>
-                    <Collapse className="p-3" in={i === expanded}><div>{card.answer}</div></Collapse>
+                    <Collapse className="p-3" in={i === expanded}><div>{card.answer}</div></Collapse> 
                 </div>
             }))
         }

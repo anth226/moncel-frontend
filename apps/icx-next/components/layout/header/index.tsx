@@ -16,7 +16,7 @@ const Header = ({ header }: { header: StoryBlokHeader }) => {
         <nav className="container py-4">
             <div className="d-flex justify-content-between align-items-center">
                 <div>
-                    <Image src={header.logo.image} alt="icx-logo" width={160} height={30} />
+                <a href="/"><Image src={header.logo.image} alt="icx-logo" width={160} height={30} /></a>
                 </div>
                 {/* Desktop links */}
                 {isMobile ? null : <div>

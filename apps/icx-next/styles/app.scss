@@ -9,10 +9,32 @@ body {
   color: var(--secondary);
 }
 
+.legal {
+  .content {
+    min-height:500px;
+    @media (max-width: $breakpoint-tablet) {
+      min-height:1px;
+    }
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
   display:inline-block;
+  &:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+  }
+  &.login {
+    border: 2px solid white;
+    padding:.5rem 1.2rem;
+    &:hover {
+      color: var(--secondary) !important;
+      text-decoration:none;
+      background-color: var(--primary);
+    }
+  }
 }
 
 * {
