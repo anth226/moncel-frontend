@@ -29,7 +29,6 @@ const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) =
                         </div>
                         <div className="col-12 col-md-5 col-lg-4 d-none d-md-flex justify-content-end">
                             {<SidebarCTA />}
-                            {console.log(props)}
                         </div>
                     </div>
                 </div>
