@@ -49,6 +49,7 @@ const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) =
                 </div>
             </div>
         </OneCol>
+        <div className="d-md-none mobile-space"></div>
     </>
 }
 

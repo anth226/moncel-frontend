@@ -27,7 +27,7 @@ const Sidebar = () => {
             <li className="pb-1">{'All notes & course materials'}</li>
             <li>Free exam retakes</li>
         </ul>
-        <div className="display-2 price mt-2 mb-3 text-white">$49</div>
+        <div className="display-2 price my-0 mt-lg-2 mb-lg-3 text-white">$49</div>
         <Link href="https://my.instacert.ca/urlcheckout/add?product=7&amp;qty=1" passHref><div className="btn btn-primary">REGISTER NOW</div></Link>         
     </div>
 };

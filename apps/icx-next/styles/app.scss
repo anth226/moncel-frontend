@@ -227,6 +227,14 @@ blockquote {
     position:relative;
     border-top:0 !important;
     border:0 !important;
+    .btn-primary {
+      position:fixed;
+      bottom:20px;
+      left:5%;
+      max-width: none;
+      width:90%;
+      padding:.75rem;
+    }
   }
 }
 
@@ -266,4 +274,8 @@ form {
 
 .footer {
   font-size:.8rem;
+}
+
+.mobile-space {
+  height: 75px;
 }

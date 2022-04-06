@@ -65,6 +65,7 @@ const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 </div>
             </div>
         </OneCol>
+        <div className="d-md-none mobile-space"></div>
     </div>
 }
 
