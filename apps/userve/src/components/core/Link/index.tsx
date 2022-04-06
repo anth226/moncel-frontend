@@ -12,4 +12,10 @@ const Link = (props: LinkProps) => {
     </div>
 }
 
+export const ExternalLink = (props: LinkProps) => {
+    return <div className="flex text-inherit">
+        <a href={props.to}>{props.children}</a>
+    </div>
+}
+
 export default Link;
