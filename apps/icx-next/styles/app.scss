@@ -29,9 +29,6 @@ a {
   font-family: 'rubrik-new';
 }
 
-button:hover {
-  cursor: pointer;
-}
 
 .container {
   padding:3rem 0;
@@ -105,6 +102,9 @@ blockquote {
   margin-bottom: 0;
   color: var(--secondary) !important;
   text-transform: uppercase;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .btn-primary {
@@ -112,6 +112,9 @@ blockquote {
   border: solid 4px #fff !important;
   width: 100%;
   max-width: 250px;
+  &:hover {
+    background: linear-gradient(to bottom, #ffe38d, #ffe38d);;
+  }
 }
 
 .list-container {

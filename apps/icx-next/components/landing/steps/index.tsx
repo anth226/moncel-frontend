@@ -3,7 +3,8 @@ import Image from 'next/image'
 const StepsSection = () => {
     return <div className="row text-center text-md-start">
         <div className="col-12 col-md-3 mb-3 mb-md-0">
-            <h2 className="line">3 easy steps</h2>
+            <div className="line"/>
+            <h2>3 Easy Steps</h2>
         </div>
         <div className="col-12 col-md-3 mb-3 mb-md-0">
             <Image alt="register-icon" src="/icons/register-1.svg" width={90} height={90} layout="fixed" />
