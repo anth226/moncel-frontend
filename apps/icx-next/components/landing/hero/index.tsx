@@ -12,7 +12,7 @@ const Hero = () => {
 
     return <div className="container">
         <div className="row align-items-center px-4 px-sm-0">
-        <div className="col-12 col-md-7 col-lg-6 py-5 py-md-8">
+        <div className="col-12 col-md-7 col-lg-6 py-0 py-md-8 text-center text-md-start">
             <h1 className="text-white">Get your <span className="text-primary">Food Handler Certificate</span> online</h1>
             <a 
                 href="https://my.instacert.ca/urlcheckout/add?product=7&qty=1"

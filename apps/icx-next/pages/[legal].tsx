@@ -25,7 +25,7 @@ const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) =
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-md-7 col-lg-8">
-                        <h1>Privacy Policy</h1>
+                        <h1 className="text-center text-md-start">Privacy Policy</h1>
                         </div>
                         <div className="col-12 col-md-5 col-lg-4 d-none d-md-block">
                             {<SidebarCTA />}

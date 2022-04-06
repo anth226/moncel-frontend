@@ -7,7 +7,7 @@ interface Point {
 
 const Sidebar = () => {
 
-    useScrollPosition(( {currPos }:Point ) => {
+    useScrollPosition(( { currPos }:Point ) => {
         const sidebar = document.getElementById('sidebar-cta')!;
         const position = currPos.y;
 

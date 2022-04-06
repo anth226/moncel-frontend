@@ -28,7 +28,7 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <CertificateHero hero={heroSecondary} />
             </div>
             
-            <div className="container">
+            <div className="container pb-0">
                 <div className="row">
                     <div className="col-12 col-md-7 col-lg-8">
                         <Benefits benefits={benefits} />  
