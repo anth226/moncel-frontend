@@ -12,7 +12,7 @@ body {
 .legal {
   .content {
     min-height:500px;
-    @media (max-width: $breakpoint-tablet) {
+    @media (max-width: $breakpoint-md) {
       min-height:1px;
     }
   }
@@ -33,6 +33,15 @@ a {
       color: var(--secondary) !important;
       text-decoration:none;
       background-color: var(--primary);
+      @media (max-width: $breakpoint-md) {
+        color: white !important;
+        background-color: transparent;
+        text-decoration:underline;
+      }
+    }
+    @media (max-width: $breakpoint-md) {
+      border: 0;
+      padding:0;
     }
   }
 }
@@ -54,7 +63,7 @@ a {
 
 .container {
   padding:3rem 0;
-  @media (max-width: $breakpoint-tablet) {
+  @media (max-width: $breakpoint-md) {
     padding:3rem 1rem;
   }
 }
@@ -154,6 +163,27 @@ blockquote {
 
 .list-square {
   list-style: square;
+  padding-left:1rem;
+}
+
+.navbar-light {
+  .navbar-toggler {
+    border:0;
+    color:rgba(255,255,255,1); 
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  .navbar-collapse {
+    font-size:.9em;
+    @media (max-width: $breakpoint-md) {
+      border-top: solid 4px #fff;
+      border-bottom: solid 1px rgba(255,255,255,0.2);
+      margin-top:.5rem;
+      padding-bottom:.5rem;
+      margin-bottom:1rem;
+    }
+  }
 }
 
 .accordion {
@@ -184,15 +214,15 @@ blockquote {
   border-top: 1rem solid white !important;
   border:4px solid white;
   position:absolute;
-  width: 350px;
+  width: 320px;
   &.affix {
     position:fixed !important;
     top:20px;
   }
-  @media (max-width: $breakpoint-desktop) {
+  @media (max-width: $breakpoint-lg) {
     width:280px;
   }
-  @media (max-width: $breakpoint-tablet) {
+  @media (max-width: $breakpoint-md) {
     width:100%;
     position:relative;
     border-top:0 !important;
