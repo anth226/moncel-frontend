@@ -13,7 +13,7 @@ const _Head = () => {
         {/* <!–[if IE]> */}
         {/* <link rel="stylesheet" href="https://use.typekit.net/eqi8luf.css" crossorigin="anonymous" /> */}
         {/* <![endif]–> */}
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 };
 
