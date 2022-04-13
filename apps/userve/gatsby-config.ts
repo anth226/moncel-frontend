@@ -1,6 +1,10 @@
 import type { GatsbyConfig } from "gatsby";
 import path from 'path';
 
+require("dotenv").config({
+  path: `.env`,
+})
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `new`,
@@ -37,6 +41,14 @@ const config: GatsbyConfig = {
     options: {
       plugins: [],
     },
+  },
+  {
+    resolve: 'gatsby-source-storyblok',
+    options: {
+      accessToken: `${process.env.STORYBLOK_TOKEN}`,
+      version: 'published',
+      localAssets: true, // Optional parameter to download the images to use with Gatsby Image Plugin
+    }
   }]
 };
 
