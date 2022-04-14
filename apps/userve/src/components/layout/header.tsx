@@ -13,7 +13,7 @@ const Header = () => {
             </Link>
             <div className="flex gap-8 ml-8 text-slate-700 font-semibold text-xl">
                 <Link to="/us/courses">Courses</Link>
-                <Link to="/us/businesses">Businesses</Link>
+                <Link to="/us/business">Business</Link>
                 <Link to="/us/resources">Resources</Link>
                 <Link to="/us/about-us">About Us</Link>
                 <Link to="/us/knowledge">Help Center</Link>
