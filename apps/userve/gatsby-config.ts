@@ -45,7 +45,7 @@ const config: GatsbyConfig = {
   {
     resolve: 'gatsby-source-storyblok',
     options: {
-      accessToken: `${process.env.STORYBLOK_TOKEN}`,
+      accessToken: `${process.env.USERVE_STORYBLOK_TOKEN || process.env.STORYBLOK_TOKEN}`,
       version: 'published',
       localAssets: true, // Optional parameter to download the images to use with Gatsby Image Plugin
     }

@@ -54,13 +54,13 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
   const blogsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.blog).shift();
   const testimonialsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.testimonials).shift();
 
-  const heroContent: SectionStoryblok = JSON.parse(heroSlug?.content || "");
-  const coursesContent: FeaturedCoursesStoryblok = JSON.parse(coursesSlug?.content || "");
-  const logosContent = JSON.parse(logosSlug?.content || "");
-  const benefitsContent: BenefitsStoryblok = JSON.parse(benefitsSlug?.content || "");
-  const blogsContent = JSON.parse(blogsSlug?.content || "");
-  const businessContent = JSON.parse(businessSlug?.content || "");
-  const testimonialsContent = JSON.parse(testimonialsSlug?.content || "");
+  const heroContent: SectionStoryblok = JSON.parse(heroSlug?.content || "{}");
+  const coursesContent: FeaturedCoursesStoryblok = JSON.parse(coursesSlug?.content || "{}");
+  const logosContent = JSON.parse(logosSlug?.content || "{}");
+  const benefitsContent: BenefitsStoryblok = JSON.parse(benefitsSlug?.content || "{}");
+  const blogsContent = JSON.parse(blogsSlug?.content || "{}");
+  const businessContent = JSON.parse(businessSlug?.content || "{}");
+  const testimonialsContent = JSON.parse(testimonialsSlug?.content || "{}");
 
   return (
     <div>
