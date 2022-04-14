@@ -8,12 +8,11 @@
     "gatsby"
   ],
   "scripts": {
-    "env": "export $(cat .env | xargs)",
     "clean": "gatsby clean",
-    "develop": "yarn env && gatsby develop",
-    "start": "yarn env && gatsby develop",
-    "build": "yarn env && gatsby clean && gatsby build",
-    "serve": "yarn env && gatsby serve",
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby clean && gatsby build",
+    "serve": "gatsby serve",
     "typecheck": "tsc --noEmit",
     "storyblok-pull": "storyblok pull-components --space=153125",
     "generate-storyblok-types": "yarn storyblok-pull && storyblok-generate-ts source=./components.153125.json target=./src/storyblok-component-types"

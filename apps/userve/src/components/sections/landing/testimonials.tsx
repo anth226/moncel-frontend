@@ -11,8 +11,8 @@ const Quote = (quote: QuoteStoryblok) => {
 
 const TestimonialsSection = (props: TestimonialsStoryblok) => {
 
-    return <SectionFullWidth className="bg-slate-300">
-        <h1>{props.title}</h1>
+    return <SectionFullWidth className="bg-[url('../images/usx-home-testimonials.jpg')]">
+        <h1 className="text-5xl font-extrabold text-slate-700">{props.title}</h1>
         <div className="grid grid-cols-2 grid-flow-row">
             { (props.quotes || []).map((quote, i) => {
                 return <Quote {...quote} key={`testimonials-${i}`}/>;

@@ -8,7 +8,7 @@ import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { Card as CourseCard } from 'src/components/courses';
 import StatePicker from 'src/components/core/StatePicker';
 
-import { BenefitsSection, BusinessSection, LogosSection, BlogsSection } from 'src/components/sections/landing';
+import { BenefitsSection, BusinessSection, LogosSection, BlogsSection, TestimonialsSection } from 'src/components/sections/landing';
 import { SectionStoryblok, FeaturedCoursesStoryblok, BenefitsStoryblok, SeoStoryblok } from 'src/storyblok-component-types';
 
 // styles
@@ -39,6 +39,7 @@ enum SLUGS {
   benefits="benefits",
   blog="featured-blog",
   business="business",
+  testimonials="testimonials",
 }
 
 // markup
@@ -51,6 +52,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
   const benefitsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.benefits).shift();
   const businessSlug = landingSlugs.filter(slug => slug.slug === SLUGS.business).shift();
   const blogsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.blog).shift();
+  const testimonialsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.testimonials).shift();
 
   const heroContent: SectionStoryblok = JSON.parse(heroSlug?.content || "");
   const coursesContent: FeaturedCoursesStoryblok = JSON.parse(coursesSlug?.content || "");
@@ -58,6 +60,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
   const benefitsContent: BenefitsStoryblok = JSON.parse(benefitsSlug?.content || "");
   const blogsContent = JSON.parse(blogsSlug?.content || "");
   const businessContent = JSON.parse(businessSlug?.content || "");
+  const testimonialsContent = JSON.parse(testimonialsSlug?.content || "");
 
   return (
     <div>
@@ -78,12 +81,12 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
 
           {/* Featured Courses */}
           <SectionFullWidth className="bg-[url('../images/usx-home-courses.jpg')]">
-            <div className="grid grid-cols-3 grid-rows-2 gap-10 items-center">
+            <Section className="grid grid-cols-3 grid-rows-2 gap-10 items-center">
               <h1 className="col-start-1 row-start-1 text-5xl font-bold text-white">{heroContent.Header || ""}</h1>
               <p className="col-start-1 row-start-2 text-white">{heroContent.Subheader || ""}</p>
               { coursesContent.course_cards[0] && <CourseCard className="col-start-2 col-span-1 row-start-1  row-span-3" {...coursesContent.course_cards[0]} imageSrc={coursesContent.course_cards[0].image?.filename} /> }
               { coursesContent.course_cards[0] && <CourseCard className="col-start-3 col-span-1 row-start-1 row-span-3" {...coursesContent.course_cards[1]} imageSrc={coursesContent.course_cards[1].image?.filename} /> }
-            </div>
+            </Section>
           </SectionFullWidth>
 
           {/* Benefits */}
@@ -96,6 +99,9 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           <LogosSection {...logosContent} />
 
           {/* Testimonials */}
+          <TestimonialsSection {...testimonialsContent}/>
+
+          {/* Blog */}
           <BlogsSection {...blogsContent} />
 
         </main>
