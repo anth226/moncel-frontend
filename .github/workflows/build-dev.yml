@@ -21,10 +21,15 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
-        run: echo "Installing dependencies..."
+        env:
+          USERVE_STORYBLOK_TOKEN: ${{ secrets.USERVE_STORYBLOK_TOKEN }}
+          STORYBLOK_TOKEN: ${{ secrets.ICX_NEXT_STORYBLOK_TOKEN }}
+          STORYBLOK_SITE_NAME: ${{ secrets.ICX_NEXT_STORYBLOK_SITE_NAME }}
+        run: echo "Using yarn version $(yarn --version)"
       - run: yarn
       - name: Full build
         env:
+          USERVE_STORYBLOK_TOKEN: ${{ secrets.USERVE_STORYBLOK_TOKEN }}
           STORYBLOK_TOKEN: ${{ secrets.ICX_NEXT_STORYBLOK_TOKEN }}
           STORYBLOK_SITE_NAME: ${{ secrets.ICX_NEXT_STORYBLOK_SITE_NAME }}
         run: yarn build
