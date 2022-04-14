@@ -43,7 +43,7 @@
       "name": "blog_post_card",
       "display_name": null,
       "created_at": "2022-04-10T16:04:01.184Z",
-      "updated_at": "2022-04-10T16:04:31.227Z",
+      "updated_at": "2022-04-14T21:40:53.379Z",
       "id": 2347404,
       "schema": {
         "title": {
@@ -60,6 +60,9 @@
           "type": "text"
         },
         "link": {
+          "type": "text"
+        },
+        "imageSrc": {
           "type": "text"
         }
       },
@@ -429,6 +432,33 @@
       "icon": null
     },
     {
+      "name": "list",
+      "display_name": null,
+      "created_at": "2022-04-14T19:27:21.864Z",
+      "updated_at": "2022-04-14T19:31:05.577Z",
+      "id": 2361561,
+      "schema": {
+        "title": {
+          "type": "text"
+        },
+        "description": {
+          "type": "markdown",
+          "rich_markdown": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": false,
+      "preview_tmpl": null,
+      "is_nestable": true,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "list",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
       "name": "logos",
       "display_name": null,
       "created_at": "2022-04-10T15:57:25.480Z",
@@ -675,6 +705,79 @@
       "all_presets": [],
       "preset_id": null,
       "real_name": "testimonials",
+      "component_group_uuid": null,
+      "color": null,
+      "icon": null
+    },
+    {
+      "name": "two_col",
+      "display_name": "Two Columns",
+      "created_at": "2022-04-14T17:40:58.923Z",
+      "updated_at": "2022-04-14T20:34:20.456Z",
+      "id": 2361420,
+      "schema": {
+        "title": {
+          "type": "text"
+        },
+        "content": {
+          "type": "text"
+        },
+        "image": {
+          "type": "asset",
+          "filetypes": [
+            "images"
+          ],
+          "description": ""
+        },
+        "layout": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "value": "img-right",
+              "name": "Left Content, Right Image"
+            },
+            {
+              "value": "img-left",
+              "name": "Right Content, Left Image"
+            }
+          ],
+          "required": true
+        },
+        "list": {
+          "type": "bloks",
+          "maximum": "",
+          "restrict_components": true,
+          "component_whitelist": [
+            "list"
+          ]
+        },
+        "listLayout": {
+          "type": "option",
+          "use_uuid": true,
+          "options": [
+            {
+              "value": "list-three",
+              "name": "Three Items"
+            },
+            {
+              "value": "list-four",
+              "name": "Four Items"
+            }
+          ],
+          "display_name": "",
+          "exclude_empty_option": false,
+          "required": true
+        }
+      },
+      "image": null,
+      "preview_field": null,
+      "is_root": true,
+      "preview_tmpl": null,
+      "is_nestable": false,
+      "all_presets": [],
+      "preset_id": null,
+      "real_name": "Two Columns",
       "component_group_uuid": null,
       "color": null,
       "icon": null

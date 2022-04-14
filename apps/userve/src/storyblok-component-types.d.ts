@@ -20,6 +20,7 @@ export interface BlogPostCardStoryblok {
   };
   tags?: string;
   link?: string;
+  imageSrc?: string;
   _uid: string;
   component: "blog_post_card";
   [k: string]: any;
@@ -129,6 +130,14 @@ export interface LandingStoryblok {
   Courses?: CourseCardStoryblok[];
   _uid: string;
   component: "Landing";
+  [k: string]: any;
+}
+
+export interface ListStoryblok {
+  title?: string;
+  description?: string;
+  _uid: string;
+  component: "list";
   [k: string]: any;
 }
 
@@ -260,5 +269,24 @@ export interface TestimonialsStoryblok {
   quotes?: QuoteStoryblok[];
   _uid: string;
   component: "testimonials";
+  [k: string]: any;
+}
+
+export interface TwoColStoryblok {
+  title?: string;
+  content?: string;
+  image?: {
+    alt?: string;
+    copyright?: string;
+    id: number;
+    filename: string;
+    name: string;
+    title?: string;
+  };
+  layout: "" | "img-right" | "img-left";
+  list?: ListStoryblok[];
+  listLayout: "" | "list-three" | "list-four";
+  _uid: string;
+  component: "two_col";
   [k: string]: any;
 }
