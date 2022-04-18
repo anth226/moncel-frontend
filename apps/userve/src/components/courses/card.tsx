@@ -6,6 +6,7 @@ import { CourseCardStoryblok } from 'src/storyblok-component-types';
 
 interface ReactProps {
     className?: string;
+    isAvailable?: boolean;
 }
 
 const Card = (props: CourseCardStoryblok & ReactProps) => {

@@ -10,26 +10,13 @@ import StatePicker from 'src/components/core/StatePicker';
 
 import { BenefitsSection, BusinessSection, LogosSection, BlogsSection, TestimonialsSection, AboutUsSection } from 'src/components/sections/landing';
 import { SectionStoryblok, FeaturedCoursesStoryblok, BenefitsStoryblok, SeoStoryblok } from 'src/storyblok-component-types';
+import { DataProps } from 'src/lib/storyblokSourceTypes';
 
 // styles
 const pageStyles = {
   color: "#232129",
   padding: "96px 0",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-
-interface Slug {
-  slug: string;
-  full_slug: string;
-  content: string
-}
-interface DataProps {
-  allStoryblokEntry: {
-    nodes: Slug[];
-  }
-  seo: {
-    nodes: SeoStoryblok[],
-  }
 }
 
 enum SLUGS {

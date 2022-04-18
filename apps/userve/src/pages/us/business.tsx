@@ -4,30 +4,16 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from 'src/components/layout';
 import Head from 'src/components/head';
-import { Section, SectionFullWidth } from 'src/components/core/Section';
+import { Section } from 'src/components/core/Section';
 
 import { BusinessSection, LogosSection, TestimonialsSection } from 'src/components/sections/landing';
-import { TwoColSection } from 'src/components/sections/shared';
-import { SectionStoryblok, BenefitsStoryblok, SeoStoryblok } from 'src/storyblok-component-types';
+import { TwoColSection } from 'src/components/shared';
+import { DataProps } from 'src/lib/storyblokSourceTypes';
 
 // styles
 const pageStyles = {
     color: "#232129",
     fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-
-interface Slug {
-    slug: string;
-    full_slug: string;
-    content: string
-}
-interface DataProps {
-    allStoryblokEntry: {
-        nodes: Slug[];
-    }
-    seo: {
-        nodes: SeoStoryblok[],
-    }
 }
 
 enum SLUGS {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Section, SectionFullWidth } from 'src/components/core/Section';
-import { ButtonTransparent } from "../shared";
+import { ButtonTransparent } from "../../shared";
 import { AboutUsStoryblok } from 'src/storyblok-component-types';
 
 const AboutUsSection = (props: AboutUsStoryblok) => {
