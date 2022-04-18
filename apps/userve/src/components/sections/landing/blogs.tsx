@@ -22,7 +22,7 @@ const BlogCard = (blog: BlogPostCardStoryblok) => {
                 })}
             </div>
             <Link to={blog.link || ""}>
-                <p className="text-lg text-slate-700">{blog.title}</p>
+                <p className="inline-block text-lg text-slate-700">{blog.title}</p>
             </Link>
             <h2 className="text-base text-slate-500">{blog.summary}</h2>
         </div>
@@ -30,7 +30,6 @@ const BlogCard = (blog: BlogPostCardStoryblok) => {
 };
 
 const FeaturedBlogsSection = (props: FeaturedBlogStoryblok) => {
-    debugger;
     return <Section>
         <h1 className="text-5xl font-extrabold text-slate-700">{props.title}</h1>
         <p className="text-lg text-slate-500 mb-8">{props.description}</p>

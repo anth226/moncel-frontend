@@ -8,7 +8,7 @@ import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { Card as CourseCard } from 'src/components/courses';
 import StatePicker from 'src/components/core/StatePicker';
 
-import { BenefitsSection, BusinessSection, LogosSection, BlogsSection, TestimonialsSection } from 'src/components/sections/landing';
+import { BenefitsSection, BusinessSection, LogosSection, BlogsSection, TestimonialsSection, AboutUsSection } from 'src/components/sections/landing';
 import { SectionStoryblok, FeaturedCoursesStoryblok, BenefitsStoryblok, SeoStoryblok } from 'src/storyblok-component-types';
 
 // styles
@@ -40,6 +40,7 @@ enum SLUGS {
   blog="featured-blog",
   business="business",
   testimonials="testimonials",
+  aboutUs="about-us",
 }
 
 // markup
@@ -53,14 +54,18 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
   const businessSlug = landingSlugs.filter(slug => slug.slug === SLUGS.business).shift();
   const blogsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.blog).shift();
   const testimonialsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.testimonials).shift();
+  const aboutUsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.aboutUs).shift();
 
-  const heroContent: SectionStoryblok = JSON.parse(heroSlug?.content || "{}");
-  const coursesContent: FeaturedCoursesStoryblok = JSON.parse(coursesSlug?.content || "{}");
-  const logosContent = JSON.parse(logosSlug?.content || "{}");
-  const benefitsContent: BenefitsStoryblok = JSON.parse(benefitsSlug?.content || "{}");
-  const blogsContent = JSON.parse(blogsSlug?.content || "{}");
-  const businessContent = JSON.parse(businessSlug?.content || "{}");
-  const testimonialsContent = JSON.parse(testimonialsSlug?.content || "{}");
+  // parsing "" into JSON will error out/fail builds.
+  // this is intentional and indicates an error retrieving data from storyblok
+  const heroContent: SectionStoryblok = JSON.parse(heroSlug?.content || "");
+  const coursesContent: FeaturedCoursesStoryblok = JSON.parse(coursesSlug?.content || "");
+  const logosContent = JSON.parse(logosSlug?.content || "");
+  const benefitsContent: BenefitsStoryblok = JSON.parse(benefitsSlug?.content || "");
+  const blogsContent = JSON.parse(blogsSlug?.content || "");
+  const businessContent = JSON.parse(businessSlug?.content || "");
+  const testimonialsContent = JSON.parse(testimonialsSlug?.content || "");
+  const aboutUsContent = JSON.parse(aboutUsSlug?.content || "");
 
   return (
     <div>
@@ -100,6 +105,9 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
 
           {/* Testimonials */}
           <TestimonialsSection {...testimonialsContent}/>
+
+          {/* About us */}
+          <AboutUsSection {...aboutUsContent} />
 
           {/* Blog */}
           <BlogsSection {...blogsContent} />

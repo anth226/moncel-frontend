@@ -1,3 +1,28 @@
+export interface AboutUsStoryblok {
+  header?: string;
+  subheader?: string;
+  link_text?: string;
+  image?: {
+    alt?: string;
+    copyright?: string;
+    id: number;
+    filename: string;
+    name: string;
+    title?: string;
+  };
+  bg_image?: {
+    alt?: string;
+    copyright?: string;
+    id: number;
+    filename: string;
+    name: string;
+    title?: string;
+  };
+  _uid: string;
+  component: "AboutUs";
+  [k: string]: any;
+}
+
 export interface BenefitsStoryblok {
   title: string;
   benefits_cards?: IconCardStoryblok[];

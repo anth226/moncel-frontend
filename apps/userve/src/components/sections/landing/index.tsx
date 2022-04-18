@@ -3,3 +3,4 @@ export { default as BusinessSection } from './business';
 export { default as LogosSection } from './logos';
 export { default as TestimonialsSection } from './testimonials';
 export { default as BlogsSection } from './blogs';
+export { default as AboutUsSection } from './about-us';
