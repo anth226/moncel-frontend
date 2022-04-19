@@ -67,6 +67,13 @@ export interface BusinessStoryblok {
   [k: string]: any;
 }
 
+export interface CardsStoryblok {
+  cards?: HighlightCardStoryblok[];
+  _uid: string;
+  component: "Cards";
+  [k: string]: any;
+}
+
 export interface CourseCardStoryblok {
   image?: {
     alt?: string;
