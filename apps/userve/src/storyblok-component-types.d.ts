@@ -32,6 +32,12 @@ export interface BenefitsStoryblok {
   [k: string]: any;
 }
 
+export interface BlankStoryblok {
+  _uid: string;
+  component: "Blank";
+  [k: string]: any;
+}
+
 export interface BlogPostCardStoryblok {
   title?: string;
   summary?: string;
@@ -107,6 +113,22 @@ export interface GridStoryblok {
   columns?: any[];
   _uid: string;
   component: "grid";
+  [k: string]: any;
+}
+
+export interface HeroStoryblok {
+  title?: string;
+  description?: string;
+  graphic?: {
+    alt?: string;
+    copyright?: string;
+    id: number;
+    filename: string;
+    name: string;
+    title?: string;
+  };
+  _uid: string;
+  component: "hero";
   [k: string]: any;
 }
 

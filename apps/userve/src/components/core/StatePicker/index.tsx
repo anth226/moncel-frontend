@@ -11,14 +11,15 @@ const StatePicker = () => {
     const selectedState = useAppSelector(state => state.selectedState.selected) || null;
 
     const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        dispatch(selectState(e.target.value))
+        const newState = (e.target.value === STATE_SELECT_PLACEHOLDER) ? "" : e.target.value;
+        dispatch(selectState(newState));
     }
 
     return <div className="flex rounded p-4 shadow-lg bg-white">
         <div className="flex flex-col text-ink-blue text-3xl">
             <select onChange={handleSelect}>
                 {StateList.map(state => {
-                    return <option value={state} key={`option-${state}`}>{state || STATE_SELECT_PLACEHOLDER}</option>
+                    return <option value={state} key={`option-${state}`} selected={state == selectedState} disabled={!state}>{state || STATE_SELECT_PLACEHOLDER}</option>
                 })}
             </select>
             <h1 className="text-5xl opacity-60 font-bold">{selectedState || "\u00A0"}</h1>

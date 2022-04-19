@@ -4,6 +4,7 @@ import { Section, SectionFullWidth } from 'src/components/core/Section';
 import Card from 'src/components/courses/card'
 import { CourseCardStoryblok } from 'src/storyblok-component-types';
 import { Header2 } from 'src/components/shared/typography';
+import { useAppSelector } from 'src/store';
 
 interface DummyCourse extends CourseCardStoryblok {
     isAvailable: boolean;
@@ -51,10 +52,12 @@ const dummyCourseData: (course: string) => DummyCourse[] = (course) => [
 const STATE = "California";
 
 export default () => {
-    const cardsData = dummyCourseData(STATE);
+    const selectedState = useAppSelector(state => state.selectedState.selected) || null;
+    const cardsData = dummyCourseData(selectedState || "");
 
+    if(!selectedState) return null;
     return <Section>
-        <Header2 className="mb-8">{`Courses available in ${STATE}`}</Header2>
+        <Header2 className="mb-8">{`Courses available in ${selectedState}`}</Header2>
         <div className="grid grid-cols-3 grid-flow-row gap-8">
             { cardsData.map(cardData => <Card className="col-span-1 shadow-lg bg-inherit" {...cardData}></Card>) }
             </div>

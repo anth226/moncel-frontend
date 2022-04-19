@@ -3,11 +3,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '..';
 
 interface stateType {
-    selected: string | null;
+    selected: string | undefined;
 }
 
 const initialState: stateType = {
-    selected: null,
+    selected: undefined,
 }
 const stateSlice = createSlice({
     name: 'usState',

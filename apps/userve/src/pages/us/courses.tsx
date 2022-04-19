@@ -23,6 +23,9 @@ enum SLUGS {
 export default ({ data }: PageProps<DataProps>) => {
   const landingSlugs = data.landing?.nodes || [];
   const aboutUsSlug = landingSlugs.filter(slug => slug.full_slug === SLUGS.aboutUs).shift();
+
+  // parsing "" into JSON will error out/fail builds.
+  // this is intentional and indicates an error retrieving data from storyblok
   const aboutUsContent = JSON.parse(aboutUsSlug?.content || "");
   const seoContent = data.seo.nodes[0];
   return <div>
