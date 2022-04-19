@@ -68,7 +68,7 @@ export interface BusinessStoryblok {
 }
 
 export interface CardsStoryblok {
-  cards?: HighlightCardStoryblok[];
+  cards: HighlightCardStoryblok[];
   _uid: string;
   component: "Cards";
   [k: string]: any;
