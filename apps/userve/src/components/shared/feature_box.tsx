@@ -7,6 +7,7 @@ import { FeatureBoxStoryblok, ListStoryblok } from 'src/storyblok-component-type
 const List = (list: ListStoryblok) => {
     { console.log(list) }
     return <div className="flex flex-col">
+        <img src={list.image?.filename} className="block max-w-none h-16 mb-4" height="64" width="64" alt={list.title} />
         {list.title == '' ? '' : <h5 className="text-lg font-bold mb-4">{list.title}</h5>}
         <div className="checklist">
             <ReactMarkdown>{list.description}</ReactMarkdown>
