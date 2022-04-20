@@ -8,11 +8,9 @@ const List = (list: ListStoryblok) => {
     { console.log(list) }
     return <div className="flex flex-col">
         {list.title == '' ? '' : <h5 className="text-lg font-bold mb-2">{list.title}</h5>}
-        <ul className="checklist">
-            <li>
-                <ReactMarkdown>{list.description}</ReactMarkdown>
-            </li>
-        </ul>
+        <div className="checklist">
+            <ReactMarkdown>{list.description}</ReactMarkdown>
+        </div>
     </div>
 };
 
