@@ -10,8 +10,8 @@ const ProductFormSection = (props: ProductFormStoryblok) => {
         <Section className="grid grid-cols-12">
             <div className="order-first col-span-6">
                 <h2 className="text-3xl font-bold text-white mb-6">{props.title}</h2>
-                <div className="text-white"><ReactMarkdown>{props.description}</ReactMarkdown></div>
-                <a className="btn btn-invert btn-white mt-6">{props.button}</a>
+                <div className="text-white checklist form"><ReactMarkdown>{props.description}</ReactMarkdown></div>
+                <a className="btn btn-invert btn-light mt-6">{props.button}</a>
             </div>
 
             <div className="order-last col-span-5 col-end-13">

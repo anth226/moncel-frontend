@@ -13,9 +13,39 @@
   li {
     color: #72809d;
   }
+  .text-white {
+    p, li {
+      color:white;
+      margin-bottom:1rem;
+    }
+  }
+  .checklist {
+    ul {
+      list-style-image: url(https://www.userve.com/hubfs/icons/usx-check.svg);
+      li {
+        margin-left:20px;
+        padding:0 0 1rem 10px;
+        &:last-child {
+          padding:0 0 0 10px;
+        }
+      }
+    }
+    &.form {
+      ul {
+        li {
+          padding:0 0 0 10px;
+        }
+      }
+    }
+  }
+  .checktitle {
+    padding:0 0 1rem 2rem;
+    &::before {
+      content: url(https://www.userve.com/hubfs/icons/usx-check.svg);
+      position:absolute;
+      margin-left:-2rem;
 
-  #form-target {
-      background:red !important;
+    }
   }
   .btn {
     padding: 15px 2rem;
@@ -35,6 +65,10 @@
   .btn-invert {
     border: 1px solid #000eb8;
     color: #000eb8;
+  }
+  .btn-light {
+    border-color:white;
+    color:white;
   }
 }
 

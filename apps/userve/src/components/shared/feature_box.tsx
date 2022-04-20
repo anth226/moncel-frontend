@@ -7,7 +7,7 @@ import { FeatureBoxStoryblok, ListStoryblok } from 'src/storyblok-component-type
 const List = (list: ListStoryblok) => {
     { console.log(list) }
     return <div className="flex flex-col">
-        {list.title == '' ? '' : <h5 className="text-lg font-bold mb-2">{list.title}</h5>}
+        {list.title == '' ? '' : <h5 className="text-lg font-bold mb-4">{list.title}</h5>}
         <div className="checklist">
             <ReactMarkdown>{list.description}</ReactMarkdown>
         </div>
