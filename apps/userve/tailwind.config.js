@@ -6,7 +6,9 @@ module.exports = {
         ink: {
           blue: "#000b8f",
         },
-        "sky-blue": "#000eb8cc",
+        "bluewood": "#35425B",
+        "sky-blue": "#000EB8CC",
+        "lynch": "#72809D",
       },
     },
     borderWidth: {
