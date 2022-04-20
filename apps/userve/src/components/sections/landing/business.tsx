@@ -5,26 +5,26 @@ import { BusinessStoryblok, HighlightCardStoryblok } from 'src/storyblok-compone
 
 const StatsCard = (props: HighlightCardStoryblok) => {
     return <div className="flex flex-col">
-        <h1 className="text-indigo-800 text-5xl">{props.title}</h1>
+        <div className="text-sky-blue text-5xl font-extrabold mb-2">{props.title}</div>
         <p className="text-base">{props.subtext}</p>
     </div>;
 }
 
 const BusinessSection = (props: BusinessStoryblok) => {
-    return <SectionFullWidth className="bg-slate-100">
-        <Section className="grid grid-cols-2 grid-flow-column gap-10">
-            <div className="col-start-1 col-span-1">
-                <h1 className="text-4xl font-extrabold text-slate-900">{props.title}</h1>
+    return <div className="bg-slate-100">
+        <Section className="grid grid-cols-12 grid-flow-column gap-10">
+            <div className="col-start-1 col-span-5">
+                <h2 className="text-4xl font-bold mb-6">{props.title}</h2>
                 <p className="text-slate-500 text-base">{props.description}</p>
-                <div>{props.link}</div>
+                <a className="btn btn-invert">{props.link}</a>
             </div>
-            <div className="col-start-2 grid grid-cols-2 grid-rows-2 gap-10">
+            <div className="col-start-7 col-span-6 grid grid-cols-2 grid-rows-2 gap-10">
                 { props.stats?.map((stat, i) => {
                     return <StatsCard key={`business-stats-${i}`} {...stat} />
                 })}
             </div>
         </Section>
-    </SectionFullWidth>
+    </div>
 }
 
 export default BusinessSection;

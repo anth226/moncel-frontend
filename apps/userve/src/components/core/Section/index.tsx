@@ -6,13 +6,13 @@ interface SectionPropTypes {
 }
 
 export const Section = (props: SectionPropTypes) => {
-    return <div className={`max-w-6xl m-auto px-4 py-20 ${props.className}`}>
+    return <div className={`max-w-6xl m-auto py-20 ${props.className}`}>
         { props.children }
     </div>
 };
 
 export const SectionFullWidth = (props: SectionPropTypes) => {
-    return <div className={`w-screen px-4 py-20 ${props.className}`}>
+    return <div className={`w-screen py-20 ${props.className}`}>
         { props.children }
     </div>
 };

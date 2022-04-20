@@ -1,3 +1,42 @@
 @tailwind base;
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #35425b;
+  }
+  p,
+  li {
+    color: #72809d;
+  }
+
+  #form-target {
+      background:red !important;
+  }
+  .btn {
+    padding: 15px 2rem;
+    font-family: Inter, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 9px;
+    text-transform: none;
+    display: inline-block;
+  }
+  .btn-primary {
+    border: 1px solid #000eb8;
+    background-color: rgba(0, 14, 184, 1);
+    color: #fff;
+  }
+  .btn-invert {
+    border: 1px solid #000eb8;
+    color: #000eb8;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;

@@ -7,7 +7,7 @@ import Head from 'src/components/head';
 import { Section } from 'src/components/core/Section';
 
 import { BusinessSection, LogosSection, TestimonialsSection } from 'src/components/sections/landing';
-import { TwoColSection } from 'src/components/shared';
+import { TwoColSection, ProductFormSection, FeatureBoxSection } from 'src/components/shared';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
 
 // styles
@@ -23,7 +23,9 @@ enum SLUGS {
     features = "features",
     accounts = "accounts",
     service = "service",
-    compliance = "compliance"
+    compliance = "compliance",
+    product = "product",
+    accounts = "accounts"
 }
 
 // markup
@@ -34,17 +36,19 @@ const BusinessPage = ({ data }: PageProps<DataProps>) => {
     const logosSlug = landingSlugs.filter(slug => slug.slug === SLUGS.customers).shift();
     const businessSlug = landingSlugs.filter(slug => slug.slug === SLUGS.statistics).shift();
     const featuresSlug = landingSlugs.filter(slug => slug.slug === SLUGS.features).shift();
-    const accountsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.accounts).shift();
     const serviceSlug = landingSlugs.filter(slug => slug.slug === SLUGS.service).shift();
     const complianceSlug = landingSlugs.filter(slug => slug.slug === SLUGS.compliance).shift();
+    const productSlug = landingSlugs.filter(slug => slug.slug === SLUGS.product).shift();
+    const accountsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.accounts).shift();
 
     const testimonialsContent = JSON.parse(testimonialsSlug?.content || "");
     const logosContent = JSON.parse(logosSlug?.content || "");
     const businessContent = JSON.parse(businessSlug?.content || "");
     const featuresContent = JSON.parse(featuresSlug?.content || "");
-    const accountsContent = JSON.parse(accountsSlug?.content || "");
     const serviceContent = JSON.parse(serviceSlug?.content || "");
     const complianceContent = JSON.parse(complianceSlug?.content || "");
+    const productContent = JSON.parse(productSlug?.content || "");
+    const accountsContent = JSON.parse(accountsSlug?.content || "");
 
     return (
         <div>
@@ -52,37 +56,45 @@ const BusinessPage = ({ data }: PageProps<DataProps>) => {
             <Layout>
                 <main style={pageStyles}>
                     {/* Hero */}
-                    <Section className="grid grid-cols-2 grid-rows-2 items-center">
-                        <h1 className="col-start-1 col-span-1 row-start-1 text-5xl font-bold text-slate-700">Business Training Solutions</h1>
-                        <p className="col-start-1 col-span-1 row-start-2 text-lg text-slate-400">With over 10 years of experience in hospitality training, the Userve Team knows how to make managing your staff's alcohol server and food handler training as simple as possible.</p>
-                        <div className="col-start-1 col-span-1 row-start-3">
+                    <Section className="grid grid-cols-2 grid-rows-1 items-center">
+                        <div className="col-start-1">
+                            <h1 className="text-5xl font-bold mb-6">Business Training Solutions</h1>
+                            <p className="text-md mb-6">With over 10 years of experience in hospitality training, the Userve Team knows how to make managing your staff's alcohol server and food handler training as simple as possible.</p>
+                            <div>
+                                <a className="btn btn-primary md:mr-4 mb-2 md:mb-0" href="#buslmform" rel="noopener">
+                                    Get in Touch
+                                </a>
+                                <a className="btn btn-invert" href="https://hello.userve.com/schedule" target="_blank" rel="noopener">
+                                    Schedule a Call
+                                </a>
+                            </div>
                         </div>
-                        <div className="col-start-2 row-span-3">
-                            <StaticImage src="../images/usx_hero_home.png" alt="usx logo" />
+                        <div className="col-start-2">
+                            <StaticImage src="../images/usx_business_hero.png" alt="usx logo" />
                         </div>
                     </Section>
 
                     {/* Logos */}
                     <LogosSection {...logosContent} />
 
+                    <FeatureBoxSection {...accountsContent} />
+
+
                     {/* Featured */}
                     <TwoColSection {...featuresContent} />
 
                     {/* Business */}
                     <BusinessSection {...businessContent} />
-                    
-                    {/* Personalization */}
-                    <TwoColSection {...serviceContent} />
 
                     <TwoColSection {...complianceContent} />
+
+                    {/* Personalization */}
+                    <TwoColSection {...serviceContent} />
 
                     {/* Testimonials */}
                     <TestimonialsSection {...testimonialsContent} />
 
-
-
-
-
+                    <ProductFormSection {...productContent} />
                 </main>
             </Layout>
         </div>
