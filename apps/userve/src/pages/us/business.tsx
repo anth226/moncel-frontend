@@ -21,7 +21,6 @@ enum SLUGS {
     customers = "customers",
     testimonials = "testimonials",
     features = "features",
-    accounts = "accounts",
     service = "service",
     compliance = "compliance",
     product = "product",
@@ -70,7 +69,7 @@ const BusinessPage = ({ data }: PageProps<DataProps>) => {
                             </div>
                         </div>
                         <div className="col-start-2">
-                            <StaticImage src="../images/usx_business_hero.png" alt="usx logo" />
+                            <StaticImage src="../../images/usx_business_hero.png" alt="usx logo" />
                         </div>
                     </Section>
 
