@@ -70,6 +70,67 @@
     border-color:white;
     color:white;
   }
+  #hubspotForm {
+    label {
+      font-size: 14px;
+      margin-bottom:.5rem;
+      display:block;
+    }
+    label[placeholder="Enter your Industry Subsector"] {
+      margin-top:1rem;
+    }
+    input[type=text],input[type=email],input[type=tel], select, textarea {
+      padding: 14.5px 14.5px;
+      border-radius: .5rem;
+      border: 1px solid #72809d;
+      min-height: 55px;
+      width:100%;
+    }
+    input[type=submit] {
+      padding: 15px 2rem;
+      font-family: Inter, sans-serif;
+      font-style: normal;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 9px;
+      text-transform: none;
+      display: inline-block;
+      border: 1px solid #000eb8;
+      background-color: rgba(0, 14, 184, 1);
+      color: #fff;
+      width:98%;
+      margin-top:1rem;
+      cursor:pointer;
+    }
+    fieldset {
+      padding-bottom:1rem;
+      div {
+        div {
+          &:last-child {
+      
+          }
+        }
+      }
+
+    }
+    ul {
+      li {
+        color:#000b8f;
+        label {
+          font-size:12px;
+        }
+        &[role="checkbox"] {
+          color:black;
+          label {
+            font-size:14px;
+          }
+          input {
+            margin-right:.5rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 @tailwind components;
