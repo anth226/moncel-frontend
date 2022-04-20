@@ -1,13 +1,18 @@
 import React from 'react';
-import { Section } from 'src/components/core/Section';
+import ReactMarkdown from 'react-markdown';
 
+import { Section } from 'src/components/core/Section';
 import { FeatureBoxStoryblok, ListStoryblok } from 'src/storyblok-component-types';
 
 const List = (list: ListStoryblok) => {
     { console.log(list) }
     return <div className="flex flex-col">
         {list.title == '' ? '' : <h5 className="text-lg font-bold mb-2">{list.title}</h5>}
-        <ul><li>{list.description}</li></ul>
+        <ul className="checklist">
+            <li>
+                <ReactMarkdown>{list.description}</ReactMarkdown>
+            </li>
+        </ul>
     </div>
 };
 
