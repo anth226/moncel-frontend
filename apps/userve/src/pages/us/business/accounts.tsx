@@ -10,6 +10,8 @@ import { BusinessSection, LogosSection, TestimonialsSection } from 'src/componen
 import { TwoColSection, ProductFormSection, FeatureBoxSection } from 'src/components/shared';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
 
+import { Header1, Text } from 'src/components/shared/typography';
+
 // styles
 const pageStyles = {
     color: "#232129",
@@ -57,8 +59,8 @@ const BusinessPage = ({ data }: PageProps<DataProps>) => {
                     {/* Hero */}
                     <Section className="grid grid-cols-2 grid-rows-1 items-center">
                         <div className="col-start-1">
-                            <h1 className="text-5xl font-bold mb-6">Business Training Solutions</h1>
-                            <p className="text-md mb-6">With over 10 years of experience in hospitality training, the Userve Team knows how to make managing your staff's alcohol server and food handler training as simple as possible.</p>
+                            <Header1>Business Training Solutions</Header1>
+                            <Text>With over 10 years of experience in hospitality training, the Userve Team knows how to make managing your staff's alcohol server and food handler training as simple as possible.</Text>
                             <div>
                                 <a className="btn btn-primary md:mr-4 mb-2 md:mb-0" href="#buslmform" rel="noopener">
                                     Get in Touch
@@ -69,7 +71,7 @@ const BusinessPage = ({ data }: PageProps<DataProps>) => {
                             </div>
                         </div>
                         <div className="col-start-2">
-                            <StaticImage src="../../images/usx_business_hero.png" alt="usx logo" />
+                            <StaticImage src="../../images/usx_business_hero.png" alt="Business Training Solutions" />
                         </div>
                     </Section>
 
@@ -77,7 +79,6 @@ const BusinessPage = ({ data }: PageProps<DataProps>) => {
                     <LogosSection {...logosContent} />
 
                     <FeatureBoxSection {...accountsContent} />
-
 
                     {/* Featured */}
                     <TwoColSection {...featuresContent} />

@@ -6,7 +6,13 @@ module.exports = {
         ink: {
           blue: "#000b8f",
         },
-        "sky-blue": "#000eb8cc",
+        "navy":"#000B8F", // primary
+        "bluewood": "#35425B", // titles
+        "sky-blue": "#000EB8CC", // bright blue, stats
+        "lynch": "#72809D", // text
+        "mischka": "#D5D9E1", // header border
+        "lilac": "#F1F1F9", // light primary
+        "athens": "#F5F7F9", // footer bg
       },
     },
     borderWidth: {

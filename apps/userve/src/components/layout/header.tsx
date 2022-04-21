@@ -5,22 +5,26 @@ import { Link } from "src/components/core";
 import Phone from "src/components/icons/phone";
 
 const Header = () => {
-    return <nav className="flex justify-between max-w-6xl m-auto py-6 lg:py-8 border-b-2 border-slate-200">
+    return <nav className="flex justify-between max-w-6xl m-auto py-6 lg:py-4 border-b-1 border-mischka">
         {/* Desktop+ menu */}
         <div className="hidden lg:flex items-center">
-            <Link to="/us">
-                <StaticImage src="../../images/usx-logo-solid.svg" alt="usx logo" width={200} />
+            <Link to="/">
+                <StaticImage src="../../images/usx-logo-solid.svg" alt="Userve" width={100} />
             </Link>
-            <div className="flex gap-8 ml-8 text-slate-700 font-semibold text-xl">
+            <div className="flex gap-6 ml-6 text-bluewood font-medium text-base">
                 <Link to="/us/courses">Courses</Link>
-                <Link to="/us/business">Business</Link>
-                <Link to="/us/resources">Resources</Link>
-                <Link to="/us/about-us">About Us</Link>
-                <Link to="/us/knowledge">Help Center</Link>
+                <Link to="/us/business/accounts">Business</Link>
+                <Link to="/us/resources/blog">Resources</Link>
+                <Link to="/us/about/about-us">About Us</Link>
+                <a href="https://help.userve.com/knowledge" target="_blank">Help Center</a>
+                <Link to="/us/contact">Contact</Link>
             </div>
         </div>
+        <div className="flex flex-row items-center text-bluewood font-medium">
+            <Phone className="px-3 py-2 bg-lilac rounded"/>
+            <a href="https://my.userve.com/customer/account/login" className="ml-6">Login</a>
+        </div>
 
-        <Phone />
     </nav>;
 }
 
