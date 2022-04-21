@@ -5,7 +5,7 @@ import { StaticImage } from "gatsby-plugin-image";
 import Layout from 'src/components/layout';
 import Head from 'src/components/head';
 import { Section, SectionFullWidth } from 'src/components/core/Section';
-import { Card as CourseCard } from 'src/components/courses';
+import { Card as CourseCard } from 'src/components/coursePages';
 import StatePicker from 'src/components/core/StatePicker';
 
 import { BenefitsSection, BusinessSection, LogosSection, BlogsSection, TestimonialsSection, AboutUsSection } from 'src/components/sections/landing';

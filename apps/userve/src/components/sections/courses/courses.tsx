@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Section, SectionFullWidth } from 'src/components/core/Section';
-import Card from 'src/components/courses/card'
+import Card from 'src/components/coursePages/card'
 import { CourseCardStoryblok } from 'src/storyblok-component-types';
 import { Header2 } from 'src/components/shared/typography';
 import { useAppSelector } from 'src/store';

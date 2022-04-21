@@ -15,18 +15,21 @@ export const genHighlightMarkup = (s: string, highlights: string[]) => {
     return { __html: `<h1 class="text-inherit">${result}</h1>` };
 };
 
+export const Text = (props: PropTypes) => {
+    return <p className={`text-slate-500 text-lg my-4 ${props.className || ""}`}>{props.children}</p>
+}
 export const Header1 = (props: PropTypes) => {
-    return <h1 className={`text-5xl text-slate-800 font-extrabold ${props.className || ""}`}>{props.children}</h1>
+    return <h1 className={`text-5xl text-slate-800 font-extrabold my-4 ${props.className || ""}`}>{props.children}</h1>
 }
 
 export const Header2 = (props: PropTypes) => {
-    return <h1 className={`text-4xl text-slate-800 font-extrabold ${props.className || ""}`}>{props.children}</h1>
+    return <h1 className={`text-4xl text-slate-800 font-extrabold my-4 ${props.className || ""}`}>{props.children}</h1>
 }
 
 export const Header4 = (props: PropTypes) => {
-    return <h4 className={`text-lg text-slate-800 font-extrabold ${props.className || ""}`}>{props.children}</h4>
+    return <h4 className={`text-lg text-slate-800 font-extrabold my-4 ${props.className || ""}`}>{props.children}</h4>
 }
 
 export const SubText = (props: PropTypes) => {
-    return <p className={`text-lg text-slate-500 ${props.className || ""}`}>{props.children}</p>
+    return <p className={`text-lg text-slate-500 my-4 ${props.className || ""}`}>{props.children}</p>
 }

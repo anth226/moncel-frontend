@@ -91,10 +91,37 @@ export interface CourseCardStoryblok {
   [k: string]: any;
 }
 
+export interface CoursePageStoryblok {
+  title?: string;
+  desc?: string;
+  tag?: string;
+  type?: string;
+  price?: string;
+  image?: {
+    alt?: string;
+    copyright?: string;
+    id: number;
+    filename: string;
+    name: string;
+    title?: string;
+  };
+  _uid: string;
+  component: "CoursePage";
+  [k: string]: any;
+}
+
 export interface FeatureStoryblok {
   name?: string;
   _uid: string;
   component: "feature";
+  [k: string]: any;
+}
+
+export interface FeatureBoxStoryblok {
+  title?: string;
+  list?: ListStoryblok[];
+  _uid: string;
+  component: "feature_box";
   [k: string]: any;
 }
 
@@ -190,6 +217,14 @@ export interface LandingStoryblok {
 export interface ListStoryblok {
   title?: string;
   description?: string;
+  image?: {
+    alt?: string;
+    copyright?: string;
+    id: number;
+    filename: string;
+    name: string;
+    title?: string;
+  };
   _uid: string;
   component: "list";
   [k: string]: any;
@@ -255,6 +290,15 @@ export interface PageStoryblok {
   _uid: string;
   component: "page";
   uuid?: string;
+  [k: string]: any;
+}
+
+export interface ProductFormStoryblok {
+  title?: string;
+  description?: string;
+  button?: string;
+  _uid: string;
+  component: "product_form";
   [k: string]: any;
 }
 

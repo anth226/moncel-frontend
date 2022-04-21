@@ -4,7 +4,6 @@ import { Section } from 'src/components/core/Section';
 import { CardsStoryblok, HeroStoryblok } from 'src/storyblok-component-types';
 import { Header4, SubText } from 'src/components/shared/typography';
 
-
 export default ({ hero, benefits }: { hero: HeroStoryblok, benefits: CardsStoryblok}) => {
     const cards = benefits.cards || [];
     return <Section className="grid grid-cols-2 grid-rows-3 gap-10 items-center justify-start">
