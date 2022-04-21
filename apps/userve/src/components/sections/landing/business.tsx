@@ -12,11 +12,11 @@ const StatsCard = (props: HighlightCardStoryblok) => {
 }
 
 const BusinessSection = (props: BusinessStoryblok) => {
-    return <div className="bg-slate-100">
+    return <div>
         <Section className="grid grid-cols-12 grid-flow-column gap-10">
             <div className="col-start-1 col-span-5">
                 <Header2>{props.title}</Header2>
-                <p className="text-slate-500 text-base">{props.description}</p>
+                <Text>{props.description}</Text>
                 <a className="btn btn-invert">{props.link}</a>
             </div>
             <div className="col-start-7 col-span-6 grid grid-cols-2 grid-rows-2 gap-10">

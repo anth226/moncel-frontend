@@ -2,43 +2,47 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { Section } from 'src/components/core/Section';
 import { FeaturedBlogStoryblok, BlogPostCardStoryblok } from 'src/storyblok-component-types';
+import { Header2, Header5, Text } from 'src/components/shared/typography';
 
 const BlogTag = ({ tag }: { tag: string }) => {
-    return <div className="bg-indigo-500 text-white mb-4 p-2 rounded">
-        { tag }
+    return <div className="text-xs bg-cornflower text-white mb-4 px-2 py-1 rounded">
+        {tag}
     </div>
 };
 
 const BlogCard = (blog: BlogPostCardStoryblok) => {
     const tags = (blog.tags || "").split(',');
-    return <div className="flex flex-col shadow-lg rounded-xl overflow-hidden">
-        <Link to={blog.link || ""}>
-            <img src={blog.imageSrc || blog.image?.filename || ""} />
-        </Link>
-        <div className="flex flex-col py-4 px-8">
+    return <div className="card flex flex-col rounded-2xl overflow-hidden bg-white drop-shadow-xl">
+        <div className="card-image z-0 relative hover:md:transform-none">
+            <Link to={blog.link || ""}>
+                <img src={blog.imageSrc || blog.image?.filename || ""} alt={blog.title} />
+            </Link>
+        </div>
+        <div className="card-body z-10 p-6 bg-white relative hover:md:transform-none">
             <div className="flex">
-                { tags.map((tag, i) => {
+                {tags.map((tag, i) => {
                     return <BlogTag tag={tag} />
                 })}
             </div>
-            <Link to={blog.link || ""}>
-                <p className="inline-block text-lg text-slate-700">{blog.title}</p>
-            </Link>
-            <h2 className="text-base text-slate-500">{blog.summary}</h2>
+            <Link to={blog.link || ""}><Header5>{blog.title}</Header5></Link>
+            <p className="text-lynch mt-4">{blog.summary}</p>
+        </div>
+        <div className="card-button z-20 px-6 pb-6 absolute w-full bg-white">
+            <Link to={blog.link || ""}><button className="btn btn-primary w-full">Learn More</button></Link>
         </div>
     </div>
 };
 
 const FeaturedBlogsSection = (props: FeaturedBlogStoryblok) => {
     return <Section>
-        <h1 className="text-5xl font-extrabold text-slate-700">{props.title}</h1>
-        <p className="text-lg text-slate-500 mb-8">{props.description}</p>
-        <div className="grid grid-cols-3 grid-flow-row gap-10">
-            { (props.blogs || []).map((blog, i) => {
-                return <BlogCard {...blog} key={`testimonials-${i}`}/>;
-            })}
-        </div>
-    </Section>
+            <Header2>{props.title}</Header2>
+            <Text>{props.description}</Text>
+            <div className="grid grid-cols-3 grid-flow-row gap-10">
+                {(props.blogs || []).map((blog, i) => {
+                    return <BlogCard {...blog} key={`blog-${i}`} />;
+                })}
+            </div>
+        </Section>
 };
 
 export default FeaturedBlogsSection;

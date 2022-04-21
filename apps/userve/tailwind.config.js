@@ -13,6 +13,8 @@ module.exports = {
         "mischka": "#D5D9E1", // header border
         "lilac": "#F1F1F9", // light primary
         "athens": "#F5F7F9", // footer bg
+        "dodger": "#4756FF", // highlight
+        "cornflower": "#707bFF", // tags
       },
     },
     borderWidth: {

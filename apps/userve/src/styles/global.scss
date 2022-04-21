@@ -123,6 +123,52 @@
       }
     }
   }
+  .card {
+    .card-image {
+      transition: 0.7s;
+      transform: translateY(0px);
+    }
+    .card-body {
+      transition: 0.6s;
+      transform: translateY(0px);
+    }
+    .card-button {
+      bottom: -50px;
+      transform: translateY(40px);
+      transition: 0.6s;
+    }
+    &:hover {
+      .card-image {
+        transform: translateY(-40px);
+        &::before {
+          transform: translateY(-40px);
+        }
+      }
+      .card-body {
+        transform: translateY(-80px);
+      }
+      .card-button {
+        transform: translateY(0px);
+        bottom: 0px;
+      }
+    }
+    &.coming-soon {
+      .card-image {
+        &::before {
+          content: "Coming Soon";
+          padding: 4px 8px;
+          background-color: white;
+          border-radius: 8px;
+          position: absolute;
+          z-index: 2;
+          bottom: 20px;
+          left: 1.5rem;
+          font-size: 12px;
+          transition: 0.8s;
+        }
+      }
+    }
+  }  
 }
 
 @tailwind components;

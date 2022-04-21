@@ -12,22 +12,23 @@ import { BenefitsSection, BusinessSection, LogosSection, BlogsSection, Testimoni
 import { SectionStoryblok, FeaturedCoursesStoryblok, BenefitsStoryblok, SeoStoryblok } from 'src/storyblok-component-types';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
 
+import { Header1, Header2, Text } from 'src/components/shared/typography';
+
 // styles
 const pageStyles = {
   color: "#232129",
-  padding: "96px 0",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+  fontFamily: "Inter,sans-serif",
 }
 
 enum SLUGS {
-  hero= "hero",
-  courses="featured-courses",
-  logos="logos",
-  benefits="benefits",
-  blog="featured-blog",
-  business="business",
-  testimonials="testimonials",
-  aboutUs="about-us",
+  hero = "hero",
+  courses = "featured-courses",
+  logos = "logos",
+  benefits = "benefits",
+  blog = "featured-blog",
+  business = "business",
+  testimonials = "testimonials",
+  aboutUs = "about-us",
 }
 
 // markup
@@ -56,28 +57,30 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
 
   return (
     <div>
-      <Head seo={seoContent}/>
+      <Head seo={seoContent} />
       <Layout>
         <main style={pageStyles}>
           {/* Hero */}
-          <Section className="grid grid-cols-2 grid-rows-3 items-center">
-            <h1 className="col-start-1 col-span-1 row-start-1 text-5xl font-bold text-slate-700">Get your certificate in hours not days.</h1>
-            <p className="col-start-1 col-span-1 row-start-2 text-lg text-slate-400">Flexible courses for alcohol servers and food handlers, with no prior experience required.</p>
-            <div className="col-start-1 col-span-1 row-start-3">
+          <Section className="grid grid-cols-2 grid-rows-1 items-center">
+            <div className="col-start-1">
+              <Header1>Get your certificate in hours not days.</Header1>
+              <Text>Flexible courses for alcohol servers and food handlers, with no prior experience required.</Text>
               <StatePicker />
             </div>
-            <div className="col-start-2 row-span-3">
-              <StaticImage src="../images/usx_hero_home.png" alt="usx logo" />
+            <div className="col-start-2">
+              <StaticImage src="../images/usx_hero_home.png" alt="Get your certificate in hours not days" className="ml-12" />
             </div>
           </Section>
 
           {/* Featured Courses */}
-          <SectionFullWidth className="bg-[url('../images/usx-home-courses.jpg')]">
-            <Section className="grid grid-cols-3 grid-rows-2 gap-10 items-center">
-              <h1 className="col-start-1 row-start-1 text-5xl font-bold text-white">{heroContent.Header || ""}</h1>
-              <p className="col-start-1 row-start-2 text-white">{heroContent.Subheader || ""}</p>
-              { coursesContent.course_cards[0] && <CourseCard className="col-start-2 col-span-1 row-start-1  row-span-3" {...coursesContent.course_cards[0]} imageSrc={coursesContent.course_cards[0].image?.filename} /> }
-              { coursesContent.course_cards[0] && <CourseCard className="col-start-3 col-span-1 row-start-1 row-span-3" {...coursesContent.course_cards[1]} imageSrc={coursesContent.course_cards[1].image?.filename} /> }
+          <SectionFullWidth className="bg-[url('../images/usx-home-courses.jpg')] bg-cover bg-center">
+            <Section className="grid grid-cols-3 gap-10 items-start -mb-28">
+              <div className="col-start-1">
+                <Header2><span className="text-white">{heroContent.Header || ""}</span></Header2>
+                <Text><span className="text-white">{heroContent.Subheader || ""}</span></Text>
+              </div>
+              {coursesContent.course_cards[0] && <CourseCard className="col-start-2" {...coursesContent.course_cards[0]} imageSrc={coursesContent.course_cards[0].image?.filename} />}
+              {coursesContent.course_cards[0] && <CourseCard className="col-start-3" {...coursesContent.course_cards[1]} imageSrc={coursesContent.course_cards[1].image?.filename} />}
             </Section>
           </SectionFullWidth>
 
@@ -91,7 +94,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           <LogosSection {...logosContent} />
 
           {/* Testimonials */}
-          <TestimonialsSection {...testimonialsContent}/>
+          <TestimonialsSection {...testimonialsContent} />
 
           {/* About us */}
           <AboutUsSection {...aboutUsContent} />

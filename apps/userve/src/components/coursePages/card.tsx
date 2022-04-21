@@ -11,13 +11,18 @@ interface ReactProps {
 
 const Card = (props: CourseCardStoryblok & ReactProps) => {
     const { link, title, description, image } = props;
-    return <div className={`flex flex-col rounded-2xl overflow-hidden bg-slate-100 ${props.className}`}>
-        <Link to={link || ""}>
-            <img src={image?.filename} alt={`${title}-course-image`} />
-        </Link>
-        <div className="p-6">
-            <Link className="text-slate-900 text-3xl text-extrabold" to={link || ""}>{title || ""}</Link>
-            <p className="text-slate-500 text-lg my-4">{description}</p>
+    return <div className={`card flex flex-col rounded-2xl overflow-hidden bg-white drop-shadow-xl ${props.className}`}>
+        <div className="card-image z-0 relative hover:md:transform-none">
+            <Link to={link || ""}>
+                <img src={image?.filename} alt={`${title}-course-image`} />
+            </Link>
+        </div>
+        <div className="card-body z-10 p-6 bg-white relative hover:md:transform-none">
+            <Link className="text-bluewood text-lg font-semibold" to={link || ""}>{title || ""}</Link>
+            <p className="text-lynch mt-4">{description}</p>
+        </div>
+        <div className="card-button z-20 px-6 pb-6 absolute w-full bg-white">
+            <Link to={link || ""}><button className="btn btn-primary w-full">Learn More</button></Link>
         </div>
 
     </div>

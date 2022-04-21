@@ -12,7 +12,7 @@ export const Section = (props: SectionPropTypes) => {
 };
 
 export const SectionFullWidth = (props: SectionPropTypes) => {
-    return <div className={`w-screen py-20 ${props.className}`}>
+    return <div className={`w-full ${props.className}`}>
         { props.children }
     </div>
 };
