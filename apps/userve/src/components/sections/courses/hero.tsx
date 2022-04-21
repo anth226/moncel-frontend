@@ -12,7 +12,7 @@ const HeroSection = () => {
           <StatePicker />
         </div>
         <div className="col-start-2 row-span-3">
-          <StaticImage src="../images/usx_hero_home.png" alt="usx logo" />
+          <StaticImage src="../../../images/usx_hero_home.png" alt="usx logo" />
         </div>
     </Section>
 };

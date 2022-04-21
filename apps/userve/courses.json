@@ -126,7 +126,7 @@
         "title": "RBS Certification Training",
         "desc": "State-approved responsible alcohol server training program required for all servers and their managers in California.",
         "url": "/us/ca/alcohol-service/rbs-certification",
-        "type": "al",
+        "type": "rbs",
         "button": "primary"
     },
     {
@@ -135,7 +135,7 @@
         "title": "Certificación RBS de California",
         "desc": "Programa de certificación y capacitación aprobado por el estado para servidores responsables de alcohol, requerido para todas las personas que sirven alcohol en California.",
         "url": "/us/ca/alcohol-service/espanol-rbs-certification",
-        "type": "al",
+        "type": "rbs",
         "button": "primary btn-es"
     },
     {
@@ -374,7 +374,7 @@
         "title": "BASSET Certification",
         "desc": "State-approved alcohol server training program required for alcohol servers in Illinois, including bartenders, bar backs, servers and managers.",
         "url": "/us/il/alcohol-service/basset-certification",
-        "type": "al",
+        "type": "basset",
         "button": "primary"
     },
     {

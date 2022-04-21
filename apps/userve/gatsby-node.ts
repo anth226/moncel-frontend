@@ -8,6 +8,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions }) => {
     const rawData = fs.readFileSync('./courses.json', 'utf8');
     const courseData: CourseData[] = JSON.parse(rawData);
     courseData.forEach(course => {
+        if(course.url === "#notify") return;
         createPage({
             path: `${course.url}`,
             context: {

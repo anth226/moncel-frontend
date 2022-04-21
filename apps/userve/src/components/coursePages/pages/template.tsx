@@ -3,8 +3,8 @@ import { graphql, PageProps } from "gatsby";
 
 import Head from 'src/components/head';
 import Layout from 'src/components/layout';
-import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
+import { CoursePageStoryblok } from "src/storyblok-component-types";
 import { HeroSection } from '../sections';
 
 const pageStyles = {
@@ -13,17 +13,18 @@ const pageStyles = {
     fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
 
-const CoursePageTemplate = ({ data, pageContext }: PageProps<DataProps>) => {
+export default ({ data, pageContext }: PageProps<DataProps>) => {
     const stories = data.allStoryblokEntry.nodes;
     const seoContent = data.seo.nodes[0];
     const pageStory = stories.filter(slug => slug.slug === pageContext.type).shift();
+    const pageContent: CoursePageStoryblok = JSON.parse(pageStory?.content || "");
     return <div>
-    <Head seo={seoContent}/>
-    <Layout>
-        <main style={pageStyles}>
-            <HeroSection />
-        </main>
-    </Layout>
+        <Head seo={seoContent}/>
+        <Layout>
+            <main style={pageStyles}>
+                <HeroSection {...pageContent} />
+            </main>
+        </Layout>
     </div>
 
 }
