@@ -71,7 +71,7 @@ const BusinessPage = ({ data }: PageProps<DataProps>) => {
                             </div>
                         </div>
                         <div className="col-start-2">
-                            <StaticImage src="../../images/usx_business_hero.png" alt="usx logo" placeholder="none" />
+                            <StaticImage src="../../images/usx_business_hero.png" alt="Business Training Solutions" />
                         </div>
                     </Section>
 
@@ -79,7 +79,6 @@ const BusinessPage = ({ data }: PageProps<DataProps>) => {
                     <LogosSection {...logosContent} />
 
                     <FeatureBoxSection {...accountsContent} />
-
 
                     {/* Featured */}
                     <TwoColSection {...featuresContent} />

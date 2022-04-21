@@ -30,6 +30,15 @@ const config: GatsbyConfig = {
     },
     __key: "pages"
   }, {
+    resolve: 'gatsby-plugin-sharp',
+    options: {
+      defaults: {
+        formats: [`auto`, `webp`],
+        placeholder: `none`,
+        breakpoints: [750, 1080, 1366, 1920],
+      },
+    },
+  }, {
     resolve: 'gatsby-plugin-root-import',
     options: {
       resolveModules: [path.join(__dirname)],
