@@ -4,6 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { CoursePageStoryblok } from "src/storyblok-component-types";
 import { Text, Header1 } from 'src/components/shared/typography';
 import { Section } from 'src/components/core/Section';
+import { CourseData } from 'src/components/coursePages/types';
 
 import fhGraphic from 'src/images/usx_fh_ge_hero.jpg';
 import alGraphic from 'src/images/usx_al_ge_hero.jpg';
@@ -18,29 +19,34 @@ const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?
     </div>
 };
 
-export default (props: CoursePageStoryblok) => {
-    const imagesPath = "../../../images/";
+export default ({content, context}: { content: CoursePageStoryblok, context: CourseData } ) => {
     let defaultGraphic = "";
-    switch(props.type){
-        case "fh":
+    switch(true){
+        case (context.type === "fh"):
             defaultGraphic = fhGraphic;
-        case "ah":
+            break;
+        case (context.type === "al"):
             defaultGraphic = alGraphic;
-        case "fm":
+            break;
+        case (context.type === "fm"):
             defaultGraphic = ``;
-        case "rbs":
+            break;
+        case (context.type === "rbs"):
             defaultGraphic = rbsGraphic;
-        case "basset":
+            break;
+        case (context.type === "basset"):
             defaultGraphic = bassetGraphic;
     }
 
-    const imageComp = props.image?.filename ? <img src={props.image?.filename} /> : <img src={defaultGraphic} alt="Course Hero Image" />
+    const imageComp = content.image?.filename ? <img src={content.image?.filename} /> : <img src={defaultGraphic} alt="Course Hero Image" />
+    // replace state placeholder with state name
+    const title = (content.title || "").replace("$STATE", context.state)
 
     return <Section className="grid grid-cols-3 gap-16 grid-flow-row pt-0">
         <div className="col-start-1 col-span-1 flex flex-col gap-8">
-            { props.tag ? <Tag>{props.tag}</Tag>: null}
-            <Header1>{props.title || ""}</Header1>
-            <Text>{props.desc || "" }</Text>
+            { content.tag ? <Tag>{content.tag}</Tag>: null}
+            <Header1>{ title }</Header1>
+            <Text>{ content.desc || "" }</Text>
         </div>
         <div className="col-start-2 col-span-2">
             { imageComp }

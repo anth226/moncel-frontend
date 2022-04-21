@@ -4,7 +4,7 @@ export interface CourseData {
     title: string;
     desc: string;
     url: string;
-    type: "al" | "fh" | "fm";
+    type: "al" | "fh" | "fm" | "rbs" | "basset";
     button: string;
     tag?: string;
 }

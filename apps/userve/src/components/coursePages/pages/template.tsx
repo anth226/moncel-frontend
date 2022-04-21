@@ -4,6 +4,7 @@ import { graphql, PageProps } from "gatsby";
 import Head from 'src/components/head';
 import Layout from 'src/components/layout';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
+import { CourseData } from 'src/components/coursePages/types';
 import { CoursePageStoryblok } from "src/storyblok-component-types";
 import { HeroSection } from '../sections';
 
@@ -13,7 +14,7 @@ const pageStyles = {
     fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
 
-export default ({ data, pageContext }: PageProps<DataProps>) => {
+export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
     const stories = data.allStoryblokEntry.nodes;
     const seoContent = data.seo.nodes[0];
     const pageStory = stories.filter(slug => slug.slug === pageContext.type).shift();
@@ -22,7 +23,7 @@ export default ({ data, pageContext }: PageProps<DataProps>) => {
         <Head seo={seoContent}/>
         <Layout>
             <main style={pageStyles}>
-                <HeroSection {...pageContent} />
+                <HeroSection content={pageContent} context={pageContext} />
             </main>
         </Layout>
     </div>
