@@ -9638,6 +9638,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-transformer-json@npm:^4.12.1":
+  version: 4.12.1
+  resolution: "gatsby-transformer-json@npm:4.12.1"
+  dependencies:
+    "@babel/runtime": ^7.15.4
+    bluebird: ^3.7.2
+  peerDependencies:
+    gatsby: ^4.0.0-next
+  checksum: 1e499395ec5a09b0eed8b83eee308c0724f0054028d1538bf5c55e1c9fef221e61e6ae149700bf8c74821b69a39dfa748f13f5bb9ddeea4eeba87cecccfd6402
+  languageName: node
+  linkType: hard
+
 "gatsby-transformer-remark@npm:^5.11.1":
   version: 5.12.1
   resolution: "gatsby-transformer-remark@npm:5.12.1"
@@ -19746,6 +19758,7 @@ __metadata:
     gatsby-source-filesystem: ^4.11.1
     gatsby-source-storyblok: ^3.1.2
     gatsby-storyblok-image: ^0.3.0
+    gatsby-transformer-json: ^4.12.1
     gatsby-transformer-remark: ^5.11.1
     gatsby-transformer-sharp: ^4.11.0
     postcss: ^8.4.12
