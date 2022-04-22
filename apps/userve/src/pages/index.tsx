@@ -85,7 +85,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           </SectionFullWidth>
 
           {/* Benefits */}
-          <BenefitsSection {...benefitsContent} />
+          <BenefitsSection {...benefitsContent} className="pt-16" />
 
           {/* Business */}
           <BusinessSection {...businessContent} />

@@ -1,19 +1,18 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 import { Section } from 'src/components/core/Section';
 import { HeroStoryblok } from 'src/storyblok-component-types';
-import { genHighlightMarkup } from 'src/components/shared/typography';
+import { Text } from 'src/components/shared/typography';
 
-const HIGHLIGHT_WORDS = ['you'];
 export default (props: HeroStoryblok) => {
-    const title = props.title || "";
-    return <Section className="grid grid-cols-2 grid-rows-2 items-center justify-start">
-        <div className="col-start-1 row-span-2 flex flex-col">
-            <h1 className="text-5xl font-bold text-slate-700 my-6" dangerouslySetInnerHTML={genHighlightMarkup(title, HIGHLIGHT_WORDS)} />
-            <p className="text-lg text-slate-400">{props.description || ""}</p>
+    return <Section className="grid grid-cols-12 grid-rows-1 items-center">
+        <div className="col-start-1 col-span-6">
+            <ReactMarkdown>{props.title || ""}</ReactMarkdown>
+            <Text>{props.description || ""}</Text>
         </div>
-        <div className="col-start-2 row-span-3">
-            <img src={props.graphic?.filename || ""} alt="hero graphic" />
+        <div className="col-start-8 col-span-5">
+            <img src={props.graphic?.filename || ""} alt={props.title} />
         </div>
-    </Section>;
+    </Section>
 };

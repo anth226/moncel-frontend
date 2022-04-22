@@ -18,10 +18,10 @@ const BenefitsSection = (props: BenefitsStoryblok) => {
     const cards = props.benefits_cards || [];
     const title = props.title || "";
     const highlightWords = (props.highlight_words || "").split(',');
-    return <SectionFullWidth className="bg-white pt-12">
+    return <SectionFullWidth className={`bg-white ${props.className || ""}`}>
         <Section>
             <div className="max-w-3xl" dangerouslySetInnerHTML={genHighlightMarkup(title, highlightWords)} />
-                <div className="grid grid-cols-3 grid-rows-2 grid-flow-row gap-10">
+                <div className="grid grid-cols-3 grid-flow-row gap-10">
                     { cards.map((card, i) => <div key={`benefits-card-${i}`}><BenefitsCard card={card}/></div> )}
                 </div>
         </Section>
