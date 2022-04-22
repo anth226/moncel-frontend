@@ -35,7 +35,6 @@ const EnrollButton = ({ children }: { children: React.ReactNode}) => {
 
 export default ({content, context}: { content: CoursePageStoryblok, context: CourseData } ) => {
     let defaultGraphic = "";
-    debugger;
     switch(true){
         case (context.type === "fh"):
             defaultGraphic = fhGraphic;
@@ -58,8 +57,11 @@ export default ({content, context}: { content: CoursePageStoryblok, context: Cou
     if(!content.price) throw Error(`Price was not found for page ${context.url}`);
     const title = (content.title || "").replace("$STATE", context.state);
 
-    return <Section className="grid grid-cols-3 gap-16 grid-flow-row pt-0">
-        <div className="col-start-1 col-span-1 row-start-1 row-span-3 flex flex-col gap-4 h-full">
+    return <Section className="flex flex-col md:grid grid-cols-1 md:grid-cols-3 gap-16 grid-flow-col md:grid-flow-row pt-0">
+        <div className="md:col-start-2 md:col-span-2 md:row-start-1 row-span-2">
+            { imageComp }
+        </div>
+        <div className="col-start-1 col-span-1 md:row-start-1 row-span-3 flex flex-col gap-4 h-full">
             { content.tag ? <Tag>{content.tag}</Tag>: null}
             <Header1 className="mt-0">{ title }</Header1>
             <Text className="text-xl">{ content.desc || "" }</Text>
@@ -69,10 +71,7 @@ export default ({content, context}: { content: CoursePageStoryblok, context: Cou
             </EnrollButton>
             <MoneyBackGuarantee />
         </div>
-        <div className="col-start-2 col-span-2 row-start-1 row-span-2">
-            { imageComp }
-        </div>
-        <div className="col-start-2 col-span-2 row-start-3">
+        <div className="md:col-start-2 col-span-2 md:row-start-3">
             <Header2>{`We make it easier to get your ${context.title.toLowerCase()}.`}</Header2>
         </div>
     </Section>;
