@@ -1,4 +1,5 @@
 import { SeoStoryblok } from 'src/storyblok-component-types';
+import { CourseData } from 'src/components/coursePages/types';
 
 export interface Slug {
     slug: string;
@@ -11,6 +12,9 @@ export interface DataProps {
       nodes: Slug[];
     }
     landing?: {
+      nodes: Slug[];
+    }
+    hero?: {
       nodes: Slug[];
     }
     seo: {

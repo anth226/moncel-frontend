@@ -4,8 +4,9 @@ import { graphql, PageProps } from "gatsby";
 import Head from 'src/components/head';
 import Layout from 'src/components/layout';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
+import { CourseData } from 'src/components/coursePages/types';
 import { CoursePageStoryblok } from "src/storyblok-component-types";
-import { HeroSection } from '../sections';
+import Hero from './hero';
 
 const pageStyles = {
     color: "#232129",
@@ -13,16 +14,17 @@ const pageStyles = {
     fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
 
-export default ({ data, pageContext }: PageProps<DataProps>) => {
-    const stories = data.allStoryblokEntry.nodes;
+export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
+    const heroStories = data.hero?.nodes || [];
     const seoContent = data.seo.nodes[0];
-    const pageStory = stories.filter(slug => slug.slug === pageContext.type).shift();
+    const pageStory = heroStories.filter(slug => slug.slug === pageContext.type).shift();
     const pageContent: CoursePageStoryblok = JSON.parse(pageStory?.content || "");
     return <div>
         <Head seo={seoContent}/>
         <Layout>
             <main style={pageStyles}>
-                <HeroSection {...pageContent} />
+                <Hero content={pageContent} context={pageContext} />
+
             </main>
         </Layout>
     </div>
@@ -33,7 +35,7 @@ export default ({ data, pageContext }: PageProps<DataProps>) => {
 {/* const query = ``; // query default copy, then query copy for this url */}
 export const pageQuery = graphql`
   query {
-    allStoryblokEntry(filter: {full_slug: {regex: "/^courses/course-pages.*/"}}) {
+    hero:allStoryblokEntry(filter: {full_slug: {regex: "/^courses/course-pages/hero.*/"}}) {
       nodes {
         content
         slug

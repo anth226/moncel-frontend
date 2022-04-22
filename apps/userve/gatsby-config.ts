@@ -7,15 +7,15 @@ require("dotenv").config({
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `new`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Alcohol Server & Food Safety Training Online`,
+    siteUrl: `https://userve.com`
   },
   plugins: ["gatsby-plugin-sass", "gatsby-plugin-postcss", {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
       "trackingId": "GOOGLE_ANALYTICS_TRACKING_ID"
     }
-  }, "gatsby-plugin-image", "gatsby-plugin-react-head", "gatsby-plugin-sitemap", "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
+  }, "gatsby-plugin-image", "gatsby-plugin-react-head", "gatsby-plugin-sitemap", "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", "gatsby-transformer-json", {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
@@ -29,6 +29,13 @@ const config: GatsbyConfig = {
       "path": "./src/pages/"
     },
     __key: "pages"
+  }, {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "data",
+        "path": "./src/data/"
+      },
+      __key: "pages"
   }, {
     resolve: 'gatsby-plugin-sharp',
     options: {

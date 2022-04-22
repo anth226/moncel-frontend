@@ -4,13 +4,14 @@ import { graphql, PageProps } from "gatsby";
 import Layout from 'src/components/layout';
 import Head from 'src/components/head';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
+
 import { BusinessStoryblok, HeroStoryblok, AboutUsStoryblok, TwoColStoryblok, BenefitsStoryblok } from 'src/storyblok-component-types';
 import { HeroSection } from 'src/components/sections/about';
 import { BusinessSection, AboutUsSection, BenefitsSection } from 'src/components/sections/landing';
 import { TwoColSection } from 'src/components/shared';
 
 const pageStyles = {
-    color: "#232129",
+    color: "#232129"
 }
 
 enum SLUGS {
