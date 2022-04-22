@@ -14,6 +14,9 @@ export interface DataProps {
     landing?: {
       nodes: Slug[];
     }
+    hero?: {
+      nodes: Slug[];
+    }
     seo: {
       nodes: SeoStoryblok[],
     }

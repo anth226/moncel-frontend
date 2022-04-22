@@ -1,8 +1,8 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
-import { CoursePageStoryblok } from "src/storyblok-component-types";
-import { Text, Header1, Header2 } from 'src/components/shared/typography';
+import { CoursePageStoryblok, IconCardStoryblok } from "src/storyblok-component-types";
+import { Text, Header1, Header2, Header5 } from 'src/components/shared/typography';
 import { Section } from 'src/components/core/Section';
 import { CourseData } from 'src/components/coursePages/types';
 
@@ -33,8 +33,32 @@ const EnrollButton = ({ children }: { children: React.ReactNode}) => {
     </div>
 };
 
+const Features = ({ features }: { features: IconCardStoryblok[] }) => {
+    return <div className="flex flex-col gap-10">
+        { features.map( feature => {
+            return <div className="flex flex-row gap-4 items-center">
+                <img src={feature.Icon?.filename || ""} width={20} height={20} />
+                <Text className="mb-0">{feature.Title || ""}</Text>
+            </div>
+        } )}
+    </div>
+}
+
+const Benefits = ({ benefits }: { benefits: IconCardStoryblok[] }) => {
+    return <div className="flex flex-col gap-10">
+        { benefits.map( benefits => {
+            return <div className="flex flex-row gap-4 items-center">
+                <img src={benefits.Icon?.filename || ""} width={20} height={20} />
+                <Header5>{benefits.Title || ""}</Header5>
+                <Text>{benefits.Description || ""}</Text>
+            </div>
+        } )}
+    </div>
+}
+
 export default ({content, context}: { content: CoursePageStoryblok, context: CourseData } ) => {
     let defaultGraphic = "";
+    debugger;
     switch(true){
         case (context.type === "fh"):
             defaultGraphic = fhGraphic;
@@ -70,9 +94,11 @@ export default ({content, context}: { content: CoursePageStoryblok, context: Cou
                 <a className="text-inherit" href={context.enroll} >Enroll Now</a>
             </EnrollButton>
             <MoneyBackGuarantee />
+            <Features features={content.features || []}/>
         </div>
         <div className="md:col-start-2 col-span-2 md:row-start-3">
             <Header2>{`We make it easier to get your ${context.title.toLowerCase()}.`}</Header2>
+            <Benefits benefits={content.benefits || []} />
         </div>
     </Section>;
 };

@@ -6,7 +6,7 @@ import Layout from 'src/components/layout';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
 import { CourseData } from 'src/components/coursePages/types';
 import { CoursePageStoryblok } from "src/storyblok-component-types";
-import Content from './content';
+import Hero from './hero';
 
 const pageStyles = {
     color: "#232129",
@@ -15,15 +15,15 @@ const pageStyles = {
 }
 
 export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
-    const stories = data.allStoryblokEntry.nodes;
+    const heroStories = data.hero?.nodes || [];
     const seoContent = data.seo.nodes[0];
-    const pageStory = stories.filter(slug => slug.slug === pageContext.type).shift();
+    const pageStory = heroStories.filter(slug => slug.slug === pageContext.type).shift();
     const pageContent: CoursePageStoryblok = JSON.parse(pageStory?.content || "");
     return <div>
         <Head seo={seoContent}/>
         <Layout>
             <main style={pageStyles}>
-                <Content content={pageContent} context={pageContext} />
+                <Hero content={pageContent} context={pageContext} />
 
             </main>
         </Layout>
@@ -35,7 +35,7 @@ export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
 {/* const query = ``; // query default copy, then query copy for this url */}
 export const pageQuery = graphql`
   query {
-    allStoryblokEntry(filter: {full_slug: {regex: "/^courses/course-pages.*/"}}) {
+    hero:allStoryblokEntry(filter: {full_slug: {regex: "/^courses/course-pages/hero.*/"}}) {
       nodes {
         content
         slug
