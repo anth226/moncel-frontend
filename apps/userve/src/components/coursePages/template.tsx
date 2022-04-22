@@ -6,7 +6,7 @@ import Layout from 'src/components/layout';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
 import { CourseData } from 'src/components/coursePages/types';
 import { CoursePageStoryblok } from "src/storyblok-component-types";
-import { HeroSection } from '../sections';
+import Content from './content';
 
 const pageStyles = {
     color: "#232129",
@@ -23,7 +23,8 @@ export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
         <Head seo={seoContent}/>
         <Layout>
             <main style={pageStyles}>
-                <HeroSection content={pageContent} context={pageContext} />
+                <Content content={pageContent} context={pageContext} />
+
             </main>
         </Layout>
     </div>

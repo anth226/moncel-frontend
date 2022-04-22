@@ -38,6 +38,7 @@
     "gatsby-source-filesystem": "^4.11.1",
     "gatsby-source-storyblok": "^3.1.2",
     "gatsby-storyblok-image": "^0.3.0",
+    "gatsby-transformer-json": "^4.12.1",
     "gatsby-transformer-remark": "^5.11.1",
     "gatsby-transformer-sharp": "^4.11.0",
     "postcss": "^8.4.12",

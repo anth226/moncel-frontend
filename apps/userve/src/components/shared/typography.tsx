@@ -32,9 +32,9 @@ export const Header5 = (props: PropTypes) => {
 }
 
 export const SubText = (props: PropTypes) => {
-    return <p className={`text-lg text-lynch ${props.className || ""}`}>{props.children}</p>
+    return <p className={`text-md text-lynch ${props.className || ""}`}>{props.children}</p>
 }
 
 export const Text = (props: PropTypes) => {
-    return <p className={`text-md text-lynch mb-6 ${props.className || ""}`}>{props.children}</p>
+    return <p className={`text-lg text-lynch mb-6 ${props.className || ""}`}>{props.children}</p>
 }

@@ -1,0 +1,17 @@
+{
+    "al": {
+        "enroll": "https://my.userve.com/urlcheckout/add?product=5&amp;qty=1"
+    },
+    "fh": {
+        "enroll": "https://my.userve.com/urlcheckout/add?product=6&amp;qty=1"
+    },
+    "rbs": {
+        "enroll": "https://my.userve.com/urlcheckout/add?product=2&amp;qty=1"
+    },
+    "basset": {
+        "enroll": ""
+    },
+    "fm": {
+        "enroll": ""
+    }
+}
