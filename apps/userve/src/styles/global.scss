@@ -10,6 +10,9 @@
   p,
   li {
     color: #72809d;
+    a {
+      @apply font-semibold text-navy hover:underline;
+    }
   }
   .text-white {
     p, li {
@@ -187,9 +190,7 @@
   .accordion-body {
     p {
       @apply mb-6 last:mb-0;
-      a {
-        @apply font-semibold text-navy hover:underline;
-      }
+    
     }
   }
 }

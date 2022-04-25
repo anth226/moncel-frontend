@@ -12,7 +12,7 @@ export default (props: CoursePageInfoSectionStoryblok) => {
     return <SectionFullWidth className={props.className || ""}>
         <Section className="grid grid-cols-12">
             <div className="col-span-3">
-                {props.layout == "title-left" ? <><Header2>{props.title}</Header2><ReactMarkdown>{props.desc}</ReactMarkdown></> : <img src={props.image?.filename} alt={props.title}/>}                
+                {props.layout == "title-left" ? <><Header2>{props.title}</Header2><ReactMarkdown>{props.desc}</ReactMarkdown></> : <img src={props.image?.filename} alt={props.title} />}
             </div>
             <div className="col-span-8 col-end-13">
                 <div>
@@ -26,14 +26,14 @@ export default (props: CoursePageInfoSectionStoryblok) => {
                             </button>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                <ReactMarkdown>{card.Description || ""}</ReactMarkdown>
+                                    <ReactMarkdown>{card.Description || ""}</ReactMarkdown>
                                 </div>
                             </div>
                         </div>
                     })}
                 </div>
                 <div className="mt-6">
-                    <Text className="text-center">Can't find the answers you're looking for? Visit our <a href="https://help.userve.com/knowledge" className="font-semibold text-navy">Userve Help Center</a> for more information.</Text>
+                    {props.disclaimer == '' ? '' : <ReactMarkdown className="text-center">{props.disclaimer}</ReactMarkdown>}
                 </div>
             </div>
 
