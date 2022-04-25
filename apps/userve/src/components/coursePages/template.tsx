@@ -12,8 +12,7 @@ import BenefitsSection from './benefits';
 
 const pageStyles = {
     color: "#232129",
-    padding: "96px 0",
-    fontFamily: "-apple-system, Roboto, sans-serif, serif",
+    fontFamily: "Inter,sans-serif",
 }
 
 export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
