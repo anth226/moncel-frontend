@@ -2,27 +2,27 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import { CourseCardStoryblok } from 'src/storyblok-component-types';
-
+import { CourseData } from 'src/components/coursePages/types';
 
 interface ReactProps {
     className?: string;
     isAvailable?: boolean;
 }
 
-const Card = (props: CourseCardStoryblok & ReactProps) => {
-    const { link, title, description, image } = props;
+const Card = (props: CourseData & ReactProps) => {
+    const { url, title, desc, image } = props;
     return <div className={`card flex flex-col rounded-2xl overflow-hidden bg-white drop-shadow-xl ${props.className}`}>
         <div className="card-image z-0 relative hover:md:transform-none">
-            <Link to={link || ""}>
-                <img src={image?.filename} alt={`${title}-course-image`} />
+            <Link className="cursor-pointer" to={url || ""}>
+                <img src={image} alt={`${title}-course-image`} />
             </Link>
         </div>
         <div className="card-body z-10 p-6 bg-white relative hover:md:transform-none">
-            <Link className="text-bluewood text-lg font-semibold" to={link || ""}>{title || ""}</Link>
-            <p className="text-lynch mt-4">{description}</p>
+            <Link className="text-bluewood text-lg font-semibold cursor-pointer" to={url || ""}>{title || ""}</Link>
+            <p className="text-lynch mt-4">{desc}</p>
         </div>
         <div className="card-button z-20 px-6 pb-6 absolute w-full bg-white">
-            <Link to={link || ""}><button className="btn btn-primary w-full">Learn More</button></Link>
+            <Link to={url || ""}><button className="btn btn-primary w-full cursor-pointer">Learn More</button></Link>
         </div>
 
     </div>

@@ -58,7 +58,7 @@ const Benefits = ({ benefits }: { benefits: IconCardStoryblok[] }) => {
 
 export default ({content, context}: { content: CoursePageStoryblok, context: CourseData } ) => {
     let defaultGraphic = "";
-    debugger;
+
     switch(true){
         case (context.type === "fh"):
             defaultGraphic = fhGraphic;
