@@ -9,7 +9,7 @@ import { ExternalLink } from '../core';
 export default (props: CoursePageInfoSectionStoryblok) => {
 
     const infoCards = props.info || [];
-    return <SectionFullWidth>
+    return <SectionFullWidth className={props.className || ""}>
         <Section className="grid grid-cols-12">
             <div className="col-span-3">
                 {props.layout == "title-left" ? <><Header2>{props.title}</Header2><ReactMarkdown>{props.desc}</ReactMarkdown></> : <img src={props.image?.filename} alt={props.title}/>}                
