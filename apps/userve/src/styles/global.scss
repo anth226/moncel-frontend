@@ -184,6 +184,14 @@
   .accordion-button {
     @apply relative flex items-center w-full text-navy text-left font-semibold text-lg mb-2; 
   }
+  .accordion-body {
+    p {
+      @apply mb-6 last:mb-0;
+      a {
+        @apply font-semibold text-navy hover:underline;
+      }
+    }
+  }
 }
 
 @tailwind components;
