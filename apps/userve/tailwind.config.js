@@ -15,6 +15,7 @@ module.exports = {
         "athens": "#F5F7F9", // footer bg
         "dodger": "#4756FF", // highlight
         "cornflower": "#707bFF", // tags
+        "melrose": "#C2C7FF", // accreditation
       },
     },
     borderWidth: {
