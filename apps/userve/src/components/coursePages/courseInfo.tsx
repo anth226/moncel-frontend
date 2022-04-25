@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import { Header2, Text } from 'src/components/shared/typography';
 import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { CoursePageInfoSectionStoryblok } from 'src/storyblok-component-types';
+import { ExternalLink } from '../core';
 
 export default (props: CoursePageInfoSectionStoryblok) => {
 
@@ -25,11 +26,14 @@ export default (props: CoursePageInfoSectionStoryblok) => {
                             </button>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <Text className="!mb-0">{card.Description || ""}</Text>
+                                <ReactMarkdown>{card.Description || ""}</ReactMarkdown>
                                 </div>
                             </div>
                         </div>
                     })}
+                </div>
+                <div className="mt-6">
+                    <Text className="text-center">Can't find the answers you're looking for? Visit our <a href="https://help.userve.com/knowledge" className="font-semibold text-navy">Userve Help Center</a> for more information.</Text>
                 </div>
             </div>
 
