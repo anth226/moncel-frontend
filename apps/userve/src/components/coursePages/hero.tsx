@@ -47,11 +47,11 @@ const Features = ({ features }: { features: IconCardStoryblok[] }) => {
 }
 
 const Benefits = ({ benefits }: { benefits: IconCardStoryblok[] }) => {
-    return <div className="flex flex-col gap-10">
+    return <div className="grid grid-cols-3 gap-6">
         { benefits.map( benefits => {
-            return <div className="flex flex-column gap-4 items-center">
-                <img src={benefits.Icon?.filename || ""} width={20} height={20} />
-                <Header5>{benefits.Title || ""}</Header5>
+            return <div className="flex flex-col gap-4 items-start">
+                <img src={benefits.Icon?.filename || ""} width={60} height={60} className="block max-w-none h-16 mb-4"/>
+                <Header5 className="!mb-0">{benefits.Title || ""}</Header5>
                 <Text className="mb-0">{benefits.Description || ""}</Text>
             </div>
         } )}
@@ -83,7 +83,7 @@ export default ({content, context}: { content: CoursePageStoryblok, context: Cou
     if(!content.price) throw Error(`Price was not found for page ${context.url}`);
     const title = (content.title || "").replace("$STATE", context.state);
 
-    return <Section className="flex flex-col md:grid grid-cols-1 md:grid-cols-3 gap-16 grid-flow-col md:grid-flow-row">
+    return <Section className="flex flex-col md:grid grid-cols-1 md:grid-cols-3 gap-10 grid-flow-col md:grid-flow-row">
         <div className="md:col-start-2 md:col-span-2 md:row-start-1 row-span-2">
             { imageComp }
         </div>
@@ -99,7 +99,7 @@ export default ({content, context}: { content: CoursePageStoryblok, context: Cou
             <Features features={content.features || []}/>
         </div>
         <div className="md:col-start-2 col-span-2 md:row-start-3">
-            <Header2>{`We make it easier to get your ${context.title.toLowerCase()}.`}</Header2>
+            <Header2 className="!text-2xl">{`We make it easier to get your ${context.title.toLowerCase()}.`}</Header2>
             <Benefits benefits={content.benefits || []} />
         </div>
     </Section>;
