@@ -181,6 +181,9 @@
       @apply text-sky-blue;
     }
   }
+  .accordion-button {
+    @apply relative flex items-center w-full text-navy text-left font-semibold text-lg mb-2; 
+  }
 }
 
 @tailwind components;
