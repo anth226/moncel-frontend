@@ -6,7 +6,6 @@ import { BusinessStoryblok, HighlightCardStoryblok } from 'src/storyblok-compone
 import { Header2, Text } from 'src/components/shared/typography';
 
 const StatsCard = (props: HighlightCardStoryblok) => {
-    console.log(props);
     return <div className="flex flex-col">
         <div className="text-sky-blue text-5xl font-extrabold mb-2">{props.title}</div>
         <Text className="mb-0"> <ReactMarkdown>{props.subtext}</ReactMarkdown></Text>

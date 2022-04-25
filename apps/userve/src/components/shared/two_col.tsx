@@ -5,7 +5,6 @@ import { TwoColStoryblok, ListStoryblok } from 'src/storyblok-component-types';
 import { Header2, Header5, Text } from 'src/components/shared/typography';
 
 const List = (list: ListStoryblok) => {
-    // { console.log(list) }
     return <div className="flex flex-col checktitle">
         {list.title == '' ? '' : <Header5 className="mb-1">{list.title}</Header5>}
         <ul><li>{list.description}</li></ul>
@@ -13,7 +12,6 @@ const List = (list: ListStoryblok) => {
 };
 
 const TwoColSection = (props: TwoColStoryblok) => {
-    // { console.log(props) }
     return <div>
         <Section className="grid grid-cols-12">
             <div className={props.layout == 'img-right' ? 'order-first col-span-7' : 'order-last col-span-7 col-end-13'}>

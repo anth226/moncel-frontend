@@ -25,17 +25,17 @@ const StatePicker = () => {
         dispatch(selectState(newState));
     }
 
-    // react devs are _really_ annoying sometimes
+    // react devs are really annoying sometimes
     // https://github.com/facebook/create-react-app/issues/2070
-    if(window) {
+    // suppresses react complaining about controlled/uncontrolled forms in dev console
+    // you cannot start with disabled options selected in forms managed by react
         const ignored = 'Use the `defaultValue` or `value` props on <select> instead of setting `selected` on <option>.';
-        const temp = window.console.error;
-        window.console.error = (msg: string, ...args) => {
-            if (!msg.match(ignored)) {
+        const temp = console.error;
+        console.error = (msg: string | null | undefined, ...args) => {
+            if (!!msg && !msg.match(ignored)) {
                 temp.apply(console, args);
               }
         }
-    }
 
     return <div className="flex justify-between rounded p-4 shadow-lg bg-white">
         <div className="flex flex-col w-2/3 text-navy mr-4">

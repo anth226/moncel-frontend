@@ -17,7 +17,13 @@ export interface DataProps {
     hero?: {
       nodes: Slug[];
     }
+    courseInfo?: {
+      nodes: Slug[];
+    }
+    benefits?: {
+      nodes: Slug[];
+    }
     seo: {
-      nodes: SeoStoryblok[],
+      nodes: SeoStoryblok[];
     }
 };

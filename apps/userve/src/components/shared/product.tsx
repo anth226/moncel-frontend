@@ -8,7 +8,6 @@ import { ProductFormStoryblok } from 'src/storyblok-component-types';
 import { Header2 } from 'src/components/shared/typography';
 
 const ProductFormSection = (props: ProductFormStoryblok) => {
-    { console.log(props) }
     return <div id="buslmform" className="bg-cover bg-[url('https://www.userve.com/hubfs/web-assets/usx_business_bg.jpg')]">
         <Section className="grid grid-cols-12">
             <div className="order-first col-span-6">
