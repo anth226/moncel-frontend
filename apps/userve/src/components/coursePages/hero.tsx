@@ -39,7 +39,7 @@ const Features = ({ features }: { features: IconCardStoryblok[] }) => {
     return <div className="flex flex-col gap-4"> 
         { features.map( feature => {
             return <div className="flex flex-row gap-4 items-start">
-                <img src={feature.Icon?.filename || ""} width={20} height={20} />
+                <img src={feature.Icon?.filename || ""} width={20} height={20} alt={feature.Title}/>
                 <Text className="!mb-0">{feature.Title || ""}</Text>
             </div>
         } )}
@@ -50,7 +50,7 @@ const Benefits = ({ benefits }: { benefits: IconCardStoryblok[] }) => {
     return <div className="grid grid-cols-3 gap-6">
         { benefits.map( benefits => {
             return <div className="flex flex-col gap-4 items-start">
-                <img src={benefits.Icon?.filename || ""} width={60} height={60} className="block max-w-none h-16 mb-4"/>
+                <img src={benefits.Icon?.filename || ""} width={60} height={60} className="block max-w-none h-16 mb-4" alt={benefits.Title}/>
                 <Header5 className="!mb-0">{benefits.Title || ""}</Header5>
                 <Text className="mb-0">{benefits.Description || ""}</Text>
             </div>
@@ -77,11 +77,12 @@ export default ({content, context}: { content: CoursePageStoryblok, context: Cou
         case (context.type === "basset"):
             defaultGraphic = bassetGraphic;
     }
-
-    const imageComp = content.image?.filename ? <img src={content.image?.filename} alt={content.title} className="rounded-md"/> : <img src={defaultGraphic} alt={content.title} className="rounded-md"/>
+    
+    const title = (content.title || "").replace("$STATE", context.state);
+    const imageComp = content.image?.filename ? <img src={content.image?.filename} alt={content.title} className="rounded-md"/> : <img src={defaultGraphic} alt={title} className="rounded-md"/>
     // replace state placeholder with state name
     if(!content.price) throw Error(`Price was not found for page ${context.url}`);
-    const title = (content.title || "").replace("$STATE", context.state);
+    
 
     return <Section className="flex flex-col md:grid grid-cols-1 md:grid-cols-3 gap-10 grid-flow-col md:grid-flow-row">
         <div className="md:col-start-2 md:col-span-2 md:row-start-1 row-span-2">
