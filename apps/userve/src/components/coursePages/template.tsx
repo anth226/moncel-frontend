@@ -12,7 +12,6 @@ import BenefitsSection from './benefits';
 import { AboutUsSection, TestimonialsSection } from 'src/components/sections/landing';
 
 const pageStyles = {
-    color: "#232129",
     fontFamily: "Inter,sans-serif",
 }
 
@@ -60,7 +59,7 @@ export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
         <Layout>
             <main style={pageStyles}>
                 <HeroSection content={pageContent} context={pageContext} />
-                <CourseInfoSection {...courseInfoContent} />
+                <CourseInfoSection {...courseInfoContent} className="bg-gradient-to-b from-lilac to-white"/>
                 <BenefitsSection {...benefitsContent} />
                 <TestimonialsSection {...testimonialsContent} />
                 <CourseInfoSection {...faqsContent} />
