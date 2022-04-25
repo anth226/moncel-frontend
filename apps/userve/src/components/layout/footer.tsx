@@ -26,6 +26,12 @@ const Footer = () => {
                     <Link to="/us/about/about-us">About Us</Link>
                     <ExternalLink to="https://help.userve.com/knowledge">Help Center</ExternalLink>
                     <Link to="/us/about/contact-us">Contact</Link>
+                    <Link to="/us/ca/alcohol-service/rbs-certification">RBS EN</Link>
+                    <Link to="/us/ca/alcohol-service/espanol-rbs-certification">RBS ES</Link>
+                    <Link to="/us/il/alcohol-service/basset-certification">Basset</Link>
+                    <Link to="/us/al/alcohol-service/server-seller-training">AL</Link>
+                    <Link to="/us/ar/food-service/food-handler-training">FH</Link>
+                    
                 </div>
             </div>
             <div className="col-start-2 col-span-2">
