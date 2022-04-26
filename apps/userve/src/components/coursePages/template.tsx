@@ -36,6 +36,7 @@ export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
     const testimonialsStory = testimonialsStories.filter(slug => slug.slug === pageContext.type)[0];
     const faqsStory = faqsStories.filter(slug => slug.slug === pageContext.type)[0];
 
+
     // Parse content strings to json
     // Parsing empty strings will error; this is intentional as it indicates an error fetching data
     // TODO: try/catch is there to handle errors while course pages are still under construction in storyblok but should be removed once that data is populated
