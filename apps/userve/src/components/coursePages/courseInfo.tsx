@@ -5,7 +5,7 @@ import { Header2, Text } from 'src/components/shared/typography';
 import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { CoursePageInfoSectionStoryblok } from 'src/storyblok-component-types';
 import { ExternalLink } from '../core';
-import 'tw-elements';
+
 
 export default (props: CoursePageInfoSectionStoryblok) => {
 
@@ -15,7 +15,8 @@ export default (props: CoursePageInfoSectionStoryblok) => {
     return <SectionFullWidth className={props.className || ""}>
         <Section className="grid grid-cols-12">
             <div className="col-span-3">
-                {props.layout == "title-left" ? <><Header2>{props.title}</Header2><ReactMarkdown>{props.desc}</ReactMarkdown></> : <img src={props.image?.filename} alt={props.title} />}
+                {props.layout == "title-left" ? <><Header2>{props.title}</Header2><ReactMarkdown>{props.desc}</ReactMarkdown></> : ''}
+                {props.image?.filename == null ? '' : <img src={props.image?.filename} alt={props.title} />}
             </div>
 
 
