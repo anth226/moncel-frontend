@@ -185,12 +185,12 @@
     }
   }
   .accordion-button {
-    @apply relative flex items-center w-full text-navy text-left font-semibold text-lg mb-2; 
+    @apply relative flex items-center w-full text-left font-semibold text-lg; 
   }
   .accordion-body {
+    @apply mt-2;
     p {
       @apply mb-6 last:mb-0;
-    
     }
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, ExternalLink } from "src/components/core";
 import { StaticImage } from "gatsby-plugin-image";
+import TWElements from 'src/components/shared/TWElements';
 
 import Phone from "src/components/icons/phone";
 
@@ -47,6 +48,7 @@ const Footer = () => {
             </div>
         </div>
         <div className="max-w-6xl m-auto text-center text-lynch">Copyright {(new Date().getFullYear())} © Userve Inc. All rights reserved.</div>
+        <TWElements/>
     </div>;
 }
 

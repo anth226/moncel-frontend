@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./src/**/*.{tsx,ts}"],
+  content: ["./src/**/*.{tsx,ts}", "./src/**/*.{html,js}", "./node_modules/tw-elements/dist/js/**/*.js"],
   theme: {
     extend: {
       colors: {
@@ -34,5 +34,7 @@ module.exports = {
         black: 900,
     },
   },
-  plugins: [],
+  plugins: [
+    require('tw-elements/dist/plugin')
+  ],
 };
