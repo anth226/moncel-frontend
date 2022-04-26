@@ -1,4 +1,4 @@
-type CourseType = "al" | "fh" | "fm" | "rbs" | "basset";
+export type CourseType = "al" | "fh" | "fm" | "rbs" | "basset";
 export interface CourseData {
     image: string;
     state: string;
@@ -12,7 +12,6 @@ export interface CourseData {
 }
 
 export type CourseTypeData = {
-    [key in CourseType]: {
-        enroll: string
-    }
+    type: CourseType;
+    enroll: string;
 }

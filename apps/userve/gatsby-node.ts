@@ -5,11 +5,14 @@ import { CourseData, CourseTypeData } from 'src/components/coursePages/types';
 
 export const createPages: GatsbyNode['createPages'] = async ({ actions }) => {
     const { createPage } = actions;
-    const rawCourseData = fs.readFileSync('./src/data/courses.json', 'utf8');
-    const rawCourseTypeData = fs.readFileSync('./src/data/courseTypes.json', 'utf8');
+    const rawCourseData = fs.readFileSync('./src/data/courses/courses.json', 'utf8');
+    const rawCourseTypeData = fs.readFileSync('./src/data/courseTypes/courseTypes.json', 'utf8');
 
     const courseData: CourseData[] = JSON.parse(rawCourseData);
-    const courseTypeData: CourseTypeData = JSON.parse(rawCourseTypeData);
+    const courseTypeData: CourseTypeData = JSON.parse(rawCourseTypeData).reduce((enrollByType, courseType) => {
+        enrollByType[courseType.type] = courseType.enroll;
+        return enrollByType;
+    }, {});
     courseData.forEach(course => {
         if(course.url === "#notify") return;
         const courseType = courseTypeData[course.type];

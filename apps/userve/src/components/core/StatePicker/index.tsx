@@ -1,20 +1,12 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 import { useAppDispatch, useAppSelector, AppActions } from 'src/store';
 import StateList from './stateList';
 
+const ButtonHref = "/us/courses";
 const { selectState } = AppActions;
 const STATE_SELECT_PLACEHOLDER = "Select Your State";
-
-// react devs are dumb sometimes
-const backup = console.warn;
-console.warn = function filterWarnings(msg) {
-    const supressedWarnings = ['Use the `defaultValue` or `value` props on <select> instead of setting `selected` on <option>.'];
-  
-    if (!supressedWarnings.some(entry => msg.includes(entry))) {
-      backup.apply(console);
-    }
-};
 
 const StatePicker = () => {
     const dispatch = useAppDispatch();
@@ -46,7 +38,7 @@ const StatePicker = () => {
             </select>
             <h1 className="text-3xl text-navy opacity-50 font-bold">{selectedState || "\u00A0"}</h1>
         </div>
-        <button className="btn btn-primary px-4 py-2">Find Your Course</button>
+        <Link to={ButtonHref}><button className="btn btn-primary px-4 py-2">Find Your Course</button></Link>
     </div>;
 };
 

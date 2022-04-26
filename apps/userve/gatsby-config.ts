@@ -32,10 +32,17 @@ const config: GatsbyConfig = {
   }, {
       resolve: 'gatsby-source-filesystem',
       options: {
-        "name": "data",
-        "path": "./src/data/"
+        "name": "courses",
+        "path": "./src/data/courses"
       },
-      __key: "pages"
+      __key: "courses"
+  }, {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      "name": "courseTypes",
+      "path": "./src/data/courseTypes"
+    },
+    __key: "courseTypes"
   }, {
     resolve: 'gatsby-plugin-sharp',
     options: {

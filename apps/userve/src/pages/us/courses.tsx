@@ -22,15 +22,19 @@ enum SLUGS {
 export default ({ data }: PageProps<DataProps>) => {
   const landingSlugs = data.landing?.nodes || [];
   const courseSlugs = data.allStoryblokEntry?.nodes || [];
-  const aboutUsSlug = landingSlugs.filter(slug => slug.full_slug === SLUGS.aboutUs).shift();
+  const aboutUsSlug = landingSlugs.filter(slug => slug.full_slug === SLUGS.aboutUs)[0];
   const coursePageStories = courseSlugs.filter(slug => slug.full_slug.match(SLUGS.coursePages));
 
   // parsing "" into JSON will error out/fail builds.
   // this is intentional and indicates an error retrieving data from storyblok
   const aboutUsContent = JSON.parse(aboutUsSlug?.content || "");
-  const coursePageContent: CoursePageStoryblok[] = coursePageStories.map(story => {
-    return JSON.parse(story.content || "") as CoursePageStoryblok;
-  })
+  const coursePageContent: CoursePageStoryblok[] = coursePageStories.reduce((coursePageStories: CoursePageStoryblok[], slug) => {
+    const content = JSON.parse(slug.content || "") as CoursePageStoryblok;
+    if(content.component === "CoursePage") {
+      coursePageStories.push(content);
+    }
+    return coursePageStories;
+  }, []);
   const seoContent = data.seo.nodes[0];
 
   return <div>
@@ -38,7 +42,7 @@ export default ({ data }: PageProps<DataProps>) => {
     <Layout>
       <main style={pageStyles}>
         <HeroSection />
-        <CoursesSection />
+        <CoursesSection coursePageContent={coursePageContent}/>
         <AboutUsSection {...aboutUsContent} />
       </main>
     </Layout>

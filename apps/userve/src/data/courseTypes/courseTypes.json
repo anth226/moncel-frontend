@@ -1,17 +1,22 @@
-{
-    "al": {
+[
+    {
+        "type": "al",
         "enroll": "https://my.userve.com/urlcheckout/add?product=5&amp;qty=1"
     },
-    "fh": {
+    {
+        "type": "fh",
         "enroll": "https://my.userve.com/urlcheckout/add?product=6&amp;qty=1"
     },
-    "rbs": {
+    {
+        "type": "rbs",
         "enroll": "https://my.userve.com/urlcheckout/add?product=2&amp;qty=1"
     },
-    "basset": {
+    {
+        "type": "basset",
         "enroll": ""
     },
-    "fm": {
+    {
+        "type": "fm",
         "enroll": ""
     }
-}
+]
