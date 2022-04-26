@@ -25,12 +25,11 @@ export default (props: CoursePageInfoSectionStoryblok) => {
                 </div>
                 <div className="accordion" id={`accordion_${random}`}>
                     {infoCards.map((card, i) => {
-                        return <div className="accordion-item border-solid border-1 p-6 border-slate-300 bg-white rounded-xl mb-6 last:mb-0">
-                            <div className="accordion-header" id={`heading_${random}_${i}`}>
-                                <button className={i == "0" ? "accordion-button" : "accordion-button collapsed"} type="button" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} aria-expanded={i == "0" ? "true" : "false"} aria-controls={`collapse_${random}_${i}`}>
-                                    {card.Title || ""}
-                                </button>
-                            </div>   
+                        return <div className="border-solid border-1 p-6 border-slate-300 bg-white rounded-xl mb-6 last:mb-0">
+                            <button className={`accordion-button !text-navy !shadow-none ${i == "0" ? "" : "collapsed"}`} type="button" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} aria-expanded={i == "0" ? "true" : "false"} aria-controls={`collapse_${random}_${i}`} id={`heading_${random}_${i}`}>
+                                {card.Title || ""}
+                            </button>
+                         
                             <div id={`collapse_${random}_${i}`} className={i == "0" ? "accordion-collapse collapse show" : "accordion-collapse collapse"} aria-labelledby={`heading_${random}_${i}`} data-bs-parent={`#accordion_${random}`}>
                                 <div className="accordion-body">
                                     <ReactMarkdown>{card.Description || ""}</ReactMarkdown>
