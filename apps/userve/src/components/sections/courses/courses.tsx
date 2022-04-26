@@ -53,12 +53,7 @@ export default ({ coursePageContent }: { coursePageContent: CoursePageStoryblok[
         <Header2 className="mb-8">{`Courses available in ${selectedState}`}</Header2>
         <div className="grid grid-cols-3 grid-flow-row gap-8">
             { courses.map(courseData => {
-                const cardData = {
-                    ...courseData,
-                    enrollLink: enrollByCourseType[courseData.type],
-                    storyblokImageSrc: storyblokDataByCourseType[courseData.type]?.image?.filename,
-                }
-                return <Card className="col-span-1 shadow-lg bg-inherit" {...cardData}></Card>
+                return <Card className="col-span-1 shadow-lg bg-inherit" {...courseData}></Card>
             }) }
         </div>
     </Section>

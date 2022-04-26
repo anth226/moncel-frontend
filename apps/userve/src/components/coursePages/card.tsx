@@ -4,24 +4,37 @@ import { Link } from 'gatsby';
 import { CourseCardStoryblok } from 'src/storyblok-component-types';
 import { CourseData } from 'src/components/coursePages/types';
 
-const FALLBACK_IMAGE_HOST = "https://www.userve.com/hs-fs/";
+const FALLBACK_IMAGE_HOST = "https://www.userve.com/hs-fs";
 // Course Data from json to be supplemented with data from storyblok
 interface ReactProps {
     className?: string;
     isAvailable?: boolean;
     tag?: string;
-    storyblokImageSrc?: string;
-    enrollLink: string;
+    storyblokDefaultImg?: string; // if datasource is courses.json 
 }
 
-const Card = (props: CourseData & ReactProps) => {
-    const { url, title, desc, image } = props;
-    const imageSrc = props.storyblokImageSrc || `${FALLBACK_IMAGE_HOST}${image}`
+const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
+    // const { url, title, desc, image } = props;
+    let url, title, desc, image;
 
+    if("component" in props) {
+        // Component has been passed a CourseCardStoryblok as props
+        url = props.link;
+        title = props.title;
+        desc = props.description;
+        image = props.image?.filename;
+    }
+    else {
+        // Component has been passed CourseData from json
+        url = props.url;
+        title = props.title;
+        desc = props.desc;
+        image = `${FALLBACK_IMAGE_HOST}${props.image}`;
+    }
     return <div className={`card flex flex-col rounded-2xl overflow-hidden bg-white drop-shadow-xl ${props.className}`}>
         <div className="card-image z-0 relative hover:md:transform-none">
             <Link className="cursor-pointer" to={url || ""}>
-                <img src={imageSrc} alt={`${title}-course-image`} />
+                <img src={image} alt={`${title}-course-image`} />
             </Link>
         </div>
         <div className="card-body z-10 p-6 bg-white relative hover:md:transform-none">
