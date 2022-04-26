@@ -35,14 +35,14 @@ enum SLUGS {
 const IndexPage = ({ data }: PageProps<DataProps>) => {
   const landingSlugs = data.allStoryblokEntry.nodes;
   const seoContent = data.seo.nodes[0];
-  const heroSlug = landingSlugs.filter(slug => slug.slug === SLUGS.hero).shift();
-  const coursesSlug = landingSlugs.filter(slug => slug.slug === SLUGS.courses).shift();
-  const logosSlug = landingSlugs.filter(slug => slug.slug === SLUGS.logos).shift();
-  const benefitsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.benefits).shift();
-  const businessSlug = landingSlugs.filter(slug => slug.slug === SLUGS.business).shift();
-  const blogsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.blog).shift();
-  const testimonialsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.testimonials).shift();
-  const aboutUsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.aboutUs).shift();
+  const heroSlug = landingSlugs.filter(slug => slug.slug === SLUGS.hero)[0];
+  const coursesSlug = landingSlugs.filter(slug => slug.slug === SLUGS.courses)[0];
+  const logosSlug = landingSlugs.filter(slug => slug.slug === SLUGS.logos)[0];
+  const benefitsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.benefits)[0];
+  const businessSlug = landingSlugs.filter(slug => slug.slug === SLUGS.business)[0];
+  const blogsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.blog)[0];
+  const testimonialsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.testimonials)[0];
+  const aboutUsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.aboutUs)[0];
 
   // parsing "" into JSON will error out/fail builds.
   // this is intentional and indicates an error retrieving data from storyblok

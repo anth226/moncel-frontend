@@ -25,9 +25,9 @@ export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
     const benefitsStories = data.benefits?.nodes || [];
 
     // Filter storyblok data by the course type for this page
-    const pageStory = heroStories.filter(slug => slug.slug === pageContext.type).shift();
-    const courseInfoStory = courseInfoStories.filter(slug => slug.slug === pageContext.type).shift();
-    const benefitsStory = benefitsStories.filter(slug => slug.slug === pageContext.type).shift();
+    const pageStory = heroStories.filter(slug => slug.slug === pageContext.type)[0];
+    const courseInfoStory = courseInfoStories.filter(slug => slug.slug === pageContext.type)[0];
+    const benefitsStory = benefitsStories.filter(slug => slug.slug === pageContext.type)[0];
 
     // Parse content strings to json
     // Parsing empty strings will error; this is intentional as it indicates an error fetching data

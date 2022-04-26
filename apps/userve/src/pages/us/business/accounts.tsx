@@ -33,14 +33,14 @@ enum SLUGS {
 const BusinessPage = ({ data }: PageProps<DataProps>) => {
     const landingSlugs = data.allStoryblokEntry.nodes;
     const seoContent = data.seo.nodes[0];
-    const testimonialsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.testimonials).shift();
-    const logosSlug = landingSlugs.filter(slug => slug.slug === SLUGS.customers).shift();
-    const businessSlug = landingSlugs.filter(slug => slug.slug === SLUGS.statistics).shift();
-    const featuresSlug = landingSlugs.filter(slug => slug.slug === SLUGS.features).shift();
-    const serviceSlug = landingSlugs.filter(slug => slug.slug === SLUGS.service).shift();
-    const complianceSlug = landingSlugs.filter(slug => slug.slug === SLUGS.compliance).shift();
-    const productSlug = landingSlugs.filter(slug => slug.slug === SLUGS.product).shift();
-    const accountsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.accounts).shift();
+    const testimonialsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.testimonials)[0];
+    const logosSlug = landingSlugs.filter(slug => slug.slug === SLUGS.customers)[0];
+    const businessSlug = landingSlugs.filter(slug => slug.slug === SLUGS.statistics)[0];
+    const featuresSlug = landingSlugs.filter(slug => slug.slug === SLUGS.features)[0];
+    const serviceSlug = landingSlugs.filter(slug => slug.slug === SLUGS.service)[0];
+    const complianceSlug = landingSlugs.filter(slug => slug.slug === SLUGS.compliance)[0];
+    const productSlug = landingSlugs.filter(slug => slug.slug === SLUGS.product)[0];
+    const accountsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.accounts)[0];
 
     const testimonialsContent = JSON.parse(testimonialsSlug?.content || "");
     const logosContent = JSON.parse(logosSlug?.content || "");

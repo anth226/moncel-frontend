@@ -25,12 +25,12 @@ enum SLUGS {
 
 export default ({ data }: PageProps<DataProps>) => {
     const slugs = data.allStoryblokEntry.nodes;
-    const heroSlug = slugs.filter(slug => slug.full_slug === SLUGS.hero).shift();
-    const statisticsSlug = slugs.filter(slug => slug.full_slug === SLUGS.statistics).shift();
-    const ctaSlug = slugs.filter(slug => slug.full_slug === SLUGS.cta).shift();
-    const heartSlug = slugs.filter(slug => slug.full_slug === SLUGS.heart).shift();
-    const personalizedSlug = slugs.filter(slug => slug.full_slug === SLUGS.personalized).shift();
-    const workSlug = slugs.filter(slug => slug.full_slug === SLUGS.work).shift();
+    const heroSlug = slugs.filter(slug => slug.full_slug === SLUGS.hero)[0];
+    const statisticsSlug = slugs.filter(slug => slug.full_slug === SLUGS.statistics)[0];
+    const ctaSlug = slugs.filter(slug => slug.full_slug === SLUGS.cta)[0];
+    const heartSlug = slugs.filter(slug => slug.full_slug === SLUGS.heart)[0];
+    const personalizedSlug = slugs.filter(slug => slug.full_slug === SLUGS.personalized)[0];
+    const workSlug = slugs.filter(slug => slug.full_slug === SLUGS.work)[0];
 
     // parsing "" into JSON will error out/fail builds.
     // this is intentional and indicates an error retrieving data from storyblok

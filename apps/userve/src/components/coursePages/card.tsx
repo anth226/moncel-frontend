@@ -4,17 +4,24 @@ import { Link } from 'gatsby';
 import { CourseCardStoryblok } from 'src/storyblok-component-types';
 import { CourseData } from 'src/components/coursePages/types';
 
+const FALLBACK_IMAGE_HOST = "https://www.userve.com/hs-fs/";
+// Course Data from json to be supplemented with data from storyblok
 interface ReactProps {
     className?: string;
     isAvailable?: boolean;
+    tag?: string;
+    storyblokImageSrc?: string;
+    enrollLink: string;
 }
 
 const Card = (props: CourseData & ReactProps) => {
     const { url, title, desc, image } = props;
+    const imageSrc = props.storyblokImageSrc || `${FALLBACK_IMAGE_HOST}${image}`
+
     return <div className={`card flex flex-col rounded-2xl overflow-hidden bg-white drop-shadow-xl ${props.className}`}>
         <div className="card-image z-0 relative hover:md:transform-none">
             <Link className="cursor-pointer" to={url || ""}>
-                <img src={image} alt={`${title}-course-image`} />
+                <img src={imageSrc} alt={`${title}-course-image`} />
             </Link>
         </div>
         <div className="card-body z-10 p-6 bg-white relative hover:md:transform-none">
