@@ -11,6 +11,7 @@ import StatePicker from 'src/components/core/StatePicker';
 import { BenefitsSection, BusinessSection, LogosSection, BlogsSection, TestimonialsSection, AboutUsSection } from 'src/components/sections/landing';
 import { SectionStoryblok, FeaturedCoursesStoryblok, BenefitsStoryblok, SeoStoryblok } from 'src/storyblok-component-types';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
+import HeroImage from 'src/images/usx_hero_home.png';
 
 import { Header1, Header2, Text } from 'src/components/shared/typography';
 
@@ -54,6 +55,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
   const businessContent = JSON.parse(businessSlug?.content || "");
   const testimonialsContent = JSON.parse(testimonialsSlug?.content || "");
   const aboutUsContent = JSON.parse(aboutUsSlug?.content || "");
+  debugger;
 
   return (
     <div>
@@ -63,12 +65,12 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           {/* Hero */}
           <Section className="grid grid-cols-2 grid-rows-1 items-center">
             <div className="col-start-1">
-              <Header1>Get your certificate in hours not days.</Header1>
-              <Text>Flexible courses for alcohol servers and food handlers, with no prior experience required.</Text>
+              <Header1>{ heroContent.Header || "Get your certificate in hours not days." }</Header1>
+              <Text>{ heroContent.Subheader || "Flexible courses for alcohol servers and food handlers, with no prior experience required." }</Text>
               <StatePicker />
             </div>
             <div className="col-start-2">
-              <StaticImage src="../images/usx_hero_home.png" alt="Get your certificate in hours not days" className="ml-12" />
+              <img src={heroContent.Image?.filename || HeroImage} alt="Get your certificate in hours not days" className="ml-12" />
             </div>
           </Section>
 
