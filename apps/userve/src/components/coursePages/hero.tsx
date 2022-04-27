@@ -22,10 +22,10 @@ const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?
     {props.children}
 </div>;
 
-const MoneyBackGuarantee = ({ type }: { type: IconCardStoryblok[] }) => {
+const MoneyBackGuarantee = ({ lang }: { lang: IconCardStoryblok[] }) => {
     return <div className="bg-green-100 text-green-700 rounded-xl p-2 my-6 flex flex-row items-center justify-center text-sm text-center">
         <img src={DollarIcon} className="h-4 pr-2" />
-        {type == "rbses" ? "Garantía de devolución de dinero" : "100% Money Back Guarantee"}
+        {lang == "lang-es" ? "Garantía de devolución de dinero" : "100% Money Back Guarantee"}
         <img src={InfoIcon} className="h-4 pl-2" />
     </div>;
 };
@@ -100,13 +100,13 @@ export default ({ content, context }: { content: CoursePageStoryblok, context: C
             <Text>{content.desc || ""}</Text>
             <div className="mb-6 text-4xl font-extrabold">{content.price}</div>
             <EnrollButton>
-                <a className="text-inherit" href={context.enroll}>{content.type == "rbses" ? "Regístrate" : "Enroll Now"}</a>
+                <a className="text-inherit" href={context.enroll}>{content.lang == "lang-es" ? "Regístrate" : "Enroll Now"}</a>
             </EnrollButton>
-            <MoneyBackGuarantee type={content.type || []} />
+            <MoneyBackGuarantee lang={content.lang || []} />
             <Features features={content.features || []} />
         </div>
         <div className="md:col-start-2 col-span-2 md:row-start-3">
-            <Header2 className="!text-2xl">{`We make it easier to get your ${context.title.toLowerCase()}.`}</Header2>
+            <Header2 className="!text-2xl">{content.subtitle}</Header2>
             <Benefits benefits={content.benefits || []} />
         </div>
     </Section>;
