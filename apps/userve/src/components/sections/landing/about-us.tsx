@@ -12,9 +12,9 @@ const AboutUsSection = (props: AboutUsStoryblok) => {
             <div className="col-span-12 md:col-span-6 text-white flex flex-col justify-center p-10 md:p-14">
                 <Header2 className="!text-white">{props.header}</Header2>
                 <Text className="!mb-0">{props.subheader}</Text>
-                <Link to={props.url.url}>
+                <a href={props.url.url}>
                     <ButtonTransparent>{props.link_text}</ButtonTransparent>
-                </Link>
+                </a>
             </div>
             <div className="md:col-span-6 hidden justify-center relative md:flex self-end">
                 <img src={props.image?.filename || ""} alt="About Userve" className="block absolute max-w-[400px] bottom-0" />
