@@ -92,7 +92,6 @@ export default ({ content, context }: { content: CoursePageStoryblok, context: C
     return <Section className="flex flex-col md:grid grid-cols-1 md:grid-cols-3 gap-10 grid-flow-col md:grid-flow-row">
         <div className="md:col-start-2 md:col-span-2 md:row-start-1 row-span-2">
             {imageComp}
-            {console.log(content)}
         </div>
         <div className="col-start-1 col-span-1 md:row-start-1 row-span-3 flex flex-col h-full">
             {content.tag ? <Tag>{content.tag}</Tag> : null}
