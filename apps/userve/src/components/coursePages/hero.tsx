@@ -10,6 +10,7 @@ import { CourseData } from 'src/components/coursePages/types';
 import fhGraphic from 'src/images/usx_fh_ge_hero.jpg';
 import alGraphic from 'src/images/usx_al_ge_hero.jpg';
 import rbsGraphic from 'src/images/usx_ca_hero.jpg';
+import rbsesGraphic from 'src/images/usx_al_ca_es_hero.jpg';
 import bassetGraphic from 'src/images/usx_al_il_hero.jpg';
 import MedalIcon from 'src/images/usx_medal.svg';
 import DollarIcon from 'src/images/usx_dollar.svg';
@@ -73,6 +74,9 @@ export default ({content, context}: { content: CoursePageStoryblok, context: Cou
             break;
         case (context.type === "rbs"):
             defaultGraphic = rbsGraphic;
+            break;
+        case (context.type === "rbses"):
+            defaultGraphic = rbsesGraphic;
             break;
         case (context.type === "basset"):
             defaultGraphic = bassetGraphic;
