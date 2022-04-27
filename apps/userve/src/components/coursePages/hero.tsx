@@ -21,7 +21,7 @@ const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?
     { props.children }
 </div>;
 
-const MoneyBackGuarantee = () => <div className="bg-green-100 text-green-700 rounded-xl p-2 my-6 flex flex-row items-center justify-center text-sm">
+const MoneyBackGuarantee = () => <div className="bg-green-100 text-green-700 rounded-xl p-2 my-6 flex flex-row items-center justify-center text-sm text-center">
     <img src={DollarIcon} className="h-4 pr-2" />
     100% Money Back Guarantee
     <img src={InfoIcon} className="h-4 pl-2" />
@@ -47,12 +47,12 @@ const Features = ({ features }: { features: IconCardStoryblok[] }) => {
 }
 
 const Benefits = ({ benefits }: { benefits: IconCardStoryblok[] }) => {
-    return <div className="grid grid-cols-3 gap-6">
+    return <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         { benefits.map( benefits => {
             return <div className="flex flex-col gap-4 items-start">
                 <img src={benefits.Icon?.filename || ""} width={60} height={60} className="block max-w-none h-16 mb-4" alt={benefits.Title}/>
                 <Header5 className="!mb-0">{benefits.Title || ""}</Header5>
-                <Text className="mb-0">{benefits.Description || ""}</Text>
+                <Text className="!mb-0">{benefits.Description || ""}</Text>
             </div>
         } )}
     </div>

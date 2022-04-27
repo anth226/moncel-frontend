@@ -6,7 +6,7 @@ interface SectionPropTypes {
 }
 
 export const Section = (props: SectionPropTypes) => {
-    return <div className={`max-w-6xl m-auto px-4 xl:px-0 py-20 ${props.className}`}>
+    return <div className={`max-w-6xl m-auto px-4 xl:px-0 py-12 ${props.className}`}>
         { props.children }
     </div>
 };
