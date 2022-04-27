@@ -16,6 +16,7 @@ module.exports = {
         "dodger": "#4756FF", // highlight
         "cornflower": "#707bFF", // tags
         "melrose": "#C2C7FF", // accreditation
+        "hawkes": "#E1E4FE66", // gradient bg
       },
     },
     fontSize: {
