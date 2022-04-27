@@ -14,7 +14,7 @@ const Header = () => {
             <div className="flex gap-6 ml-6 text-bluewood font-medium text-base">
                 <Link to="/us/courses">Courses</Link>
                 <Link to="/us/business/accounts">Business</Link>
-                <Link to="/us/resources/blog">Resources</Link>
+                <a href="/us/resources/blog">Resources</a>
                 <Link to="/us/about/about-us">About Us</Link>
                 <a href="https://help.userve.com/knowledge" target="_blank">Help Center</a>
                 <Link to="/us/contact">Contact</Link>
