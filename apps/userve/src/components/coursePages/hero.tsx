@@ -90,9 +90,9 @@ export default ({content, context}: { content: CoursePageStoryblok, context: Cou
         </div>
         <div className="col-start-1 col-span-1 md:row-start-1 row-span-3 flex flex-col h-full">
             { content.tag ? <Tag>{content.tag}</Tag>: null}
-            <Header1 className="mb-0 leading-8"><span className="text-4xl">{ title }</span></Header1>
+            <Header1 className="mb-0 leading-8 !text-3xl md:!text-4xl">{ title }</Header1>
             <Text>{ content.desc || "" }</Text>
-            <div className="mb-6 text-5xl font-extrabold">{ content.price }</div>
+            <div className="mb-6 text-4xl font-extrabold">{ content.price }</div>
             <EnrollButton>
                 <a className="text-inherit" href={context.enroll} >Enroll Now</a>
             </EnrollButton>

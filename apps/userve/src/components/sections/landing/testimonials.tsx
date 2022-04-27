@@ -6,7 +6,7 @@ import { Header2 } from 'src/components/shared/typography';
 
 const Quote = (quote: QuoteStoryblok) => {
     return <div className="flex flex-col items-center w-full">
-        <div className="py-4 px-8 text-xl text-center">{quote.quote}</div>
+        <div className="py-4 px-8 text-md md:text-xl text-center">{quote.quote}</div>
         <div className="text-slate-500 font-bold">{quote.author}</div>
     </div>
 };

@@ -16,7 +16,7 @@ export default (props: CoursePageInfoSectionStoryblok) => {
         <Section className="grid grid-cols-12 md:gap-10">
             <div className="col-span-12 md:col-span-4 lg:col-span-3">
                 {props.layout == "title-left" ? <><Header2>{props.title}</Header2><ReactMarkdown>{props.desc}</ReactMarkdown></> : ''}
-                {props.image.id == null ? '' : <img src={props.image?.filename} alt={props.title} className="w-100"/> }
+                {props.image.id == null ? '' : <img src={props.image?.filename} alt={props.title} className="mb-6 md:mb-0"/> }
             </div>
             <div className="col-span-12 md:col-span-8 lg:col-span-9 col-end-13">
                 <div>
