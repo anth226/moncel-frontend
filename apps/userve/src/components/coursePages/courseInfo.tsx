@@ -19,7 +19,7 @@ export default (props: CoursePageInfoSectionStoryblok) => {
                 {props.image.id == null ? '' : <img src={props.image?.filename} alt={props.title} className="mb-6 md:mb-0"/> }
             </div>
             <div className="col-span-12 md:col-span-8 lg:col-span-9 col-end-13">
-                <div>
+                <div className="p">
                     {props.layout == "title-right" ? <div className="mb-6"><Header2>{props.title}</Header2><ReactMarkdown>{props.desc}</ReactMarkdown></div> : ""}
                 </div>
                 <div className="accordion w-full" id={`accordion_${random}`}>
