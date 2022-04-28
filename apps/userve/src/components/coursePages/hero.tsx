@@ -22,7 +22,7 @@ const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?
     {props.children}
 </div>;
 
-const MoneyBackGuarantee = ({ lang }: { lang: IconCardStoryblok[] }) => {
+const MoneyBackGuarantee = ({ lang }: { lang: CoursePageStoryblok[] }) => {
     return <div className="bg-green-100 text-green-700 rounded-xl p-2 my-6 flex flex-row items-center justify-center text-sm text-center">
         <img src={DollarIcon} className="h-4 pr-2" />
         {lang == "lang-es" ? "Garantía de devolución de dinero" : "100% Money Back Guarantee"}
