@@ -17,7 +17,6 @@ import { Header1, Header2, Text } from 'src/components/shared/typography';
 
 // styles
 const pageStyles = {
-  color: "#232129",
   fontFamily: "Inter,sans-serif",
 }
 
@@ -55,7 +54,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
   const businessContent = JSON.parse(businessSlug?.content || "");
   const testimonialsContent = JSON.parse(testimonialsSlug?.content || "");
   const aboutUsContent = JSON.parse(aboutUsSlug?.content || "");
-  debugger;
+  // debugger;
 
   return (
     <div>
@@ -87,7 +86,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           </SectionFullWidth>
 
           {/* Benefits */}
-          <BenefitsSection {...benefitsContent} className="pt-16" />
+          <BenefitsSection {...benefitsContent} className="pt-16 bg-gradient-to-b from-hawkes to-white" />
 
           {/* Business */}
           <BusinessSection {...businessContent} />

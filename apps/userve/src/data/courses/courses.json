@@ -135,7 +135,7 @@
         "title": "Certificación RBS de California",
         "desc": "Programa de certificación y capacitación aprobado por el estado para servidores responsables de alcohol, requerido para todas las personas que sirven alcohol en California.",
         "url": "/us/ca/alcohol-service/espanol-rbs-certification",
-        "type": "rbs",
+        "type": "rbses",
         "button": "primary btn-es"
     },
     {

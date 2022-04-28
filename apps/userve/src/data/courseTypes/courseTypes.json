@@ -12,6 +12,10 @@
         "enroll": "https://my.userve.com/urlcheckout/add?product=2&amp;qty=1"
     },
     {
+        "type": "rbses",
+        "enroll": "https://my.userve.com/urlcheckout/add?product=2&amp;qty=1"
+    },
+    {
         "type": "basset",
         "enroll": ""
     },

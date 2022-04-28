@@ -16,7 +16,22 @@ module.exports = {
         "dodger": "#4756FF", // highlight
         "cornflower": "#707bFF", // tags
         "melrose": "#C2C7FF", // accreditation
+        "hawkes": "#E1E4FE66", // gradient bg
       },
+    },
+    fontSize: {
+      'xs': '.75rem',
+      'sm': '.875rem',
+      'tiny': '.875rem',
+      'base': '1rem',
+      'lg': '1.125rem',
+      'xl': '1.25rem',
+      '2xl': ['1.5rem','1.2em'],
+      '3xl': ['1.875rem','1.2em'],
+      '4xl': ['2.5rem','1.2em'],
+      '5xl': ['3rem','1.2em'],
+      '6xl': ['4rem','1.2em'],
+      '7xl': ['5rem','1.2em'],
     },
     borderWidth: {
       DEFAULT: "1px",

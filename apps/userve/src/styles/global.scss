@@ -14,6 +14,11 @@
       @apply font-semibold text-navy hover:underline;
     }
   }
+  .p {
+    p {
+      @apply mb-6 last:mb-0;
+    }
+  }
   .text-white {
     p, li {
       color:white;

@@ -7,16 +7,16 @@ import { Header2, Text } from 'src/components/shared/typography';
 
 const AboutUsSection = (props: AboutUsStoryblok) => {
     return <Section>
-        <div className="bg-[url('../images/usx-cta-background.svg')] bg-[#72809d] bg-cover	rounded-2xl grid grid-cols-2 grid-flow-row">
-            <div className="text-white flex flex-col justify-center p-16">
-                <Header2><span className="text-white">{props.header}</span></Header2>
-                <Text>{props.subheader}</Text>
-                <ButtonTransparent className="mt-4 w-fit">
-                    <Link to="/us/about/about-us">{props.link_text}</Link>
-                </ButtonTransparent>
+        <div className="bg-[url('../images/usx-cta-background.svg')] bg-[#72809d] bg-cover	rounded-2xl grid grid-cols-12 grid-flow-row drop-shadow-lg">
+            <div className="col-span-12 md:col-span-6 text-white flex flex-col justify-center p-10 md:p-14">
+                <Header2 className="!text-white">{props.header}</Header2>
+                <Text className="!mb-0">{props.subheader}</Text>
+                <a href={props.url}>
+                    <ButtonTransparent>{props.link_text}</ButtonTransparent>
+                </a>
             </div>
-            <div className="justify-center relative flex self-end">
-                <img src={props.image?.filename || ""} alt="About Userve" className="block absolute max-w-[450px] bottom-0"/>
+            <div className="md:col-span-6 hidden justify-center relative md:flex self-end">
+                <img src={props.image?.filename || ""} alt="About Userve" className="block absolute max-w-[400px] bottom-0" />
             </div>
         </div>
     </Section>;

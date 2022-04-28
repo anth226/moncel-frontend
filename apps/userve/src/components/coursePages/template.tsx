@@ -60,7 +60,7 @@ export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
         <Layout>
             <main style={pageStyles}>
                 <HeroSection content={pageContent} context={pageContext} />
-                <CourseInfoSection {...courseInfoContent} className="bg-gradient-to-b from-lilac to-white"/>
+                <CourseInfoSection {...courseInfoContent} className="bg-gradient-to-b from-hawkes to-white"/>
                 <BenefitsSection {...benefitsContent} />
                 <TestimonialsSection {...testimonialsContent} />
                 <CourseInfoSection {...faqsContent} />

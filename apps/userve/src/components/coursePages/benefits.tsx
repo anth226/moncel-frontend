@@ -19,7 +19,7 @@ export default (props: BenefitsStoryblok) => {
     return <SectionFullWidth className={`bg-white ${props.className || ""}`}>
         <Section>
             <Header2 className="max-w-3xl">{title}</Header2>
-                <div className="grid grid-cols-3 grid-flow-row gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-3 grid-flow-row gap-10">
                     { cards.map((card, i) => <div key={`benefits-card-${i}`}><BenefitsCard card={card}/></div> )}
                 </div>
         </Section>

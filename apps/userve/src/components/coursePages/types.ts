@@ -1,4 +1,4 @@
-export type CourseType = "al" | "fh" | "fm" | "rbs" | "basset";
+export type CourseType = "al" | "fh" | "fm" | "rbs" | "basset" | "rbses";
 export interface CourseData {
     image: string;
     state: string;
