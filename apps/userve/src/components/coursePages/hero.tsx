@@ -4,7 +4,8 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { CoursePageStoryblok, IconCardStoryblok } from "src/storyblok-component-types";
 import { Text, Header1, Header2, Header5 } from 'src/components/shared/typography';
 import { Section } from 'src/components/core/Section';
-import { CourseData } from 'src/components/coursePages/types';
+import { CourseData, CourseType } from 'src/components/coursePages/types';
+import { courseLang } from 'src/lib/courseLang';
 
 // images
 import fhGraphic from 'src/images/usx_fh_ge_hero.jpg';
@@ -22,7 +23,8 @@ const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?
     {props.children}
 </div>;
 
-const MoneyBackGuarantee = ({ lang }: { lang: CoursePageStoryblok[] }) => {
+const MoneyBackGuarantee = ({x}:{x:CourseType}) => {
+    const lang = courseLang(x);
     return <div className="bg-green-100 text-green-700 rounded-xl p-2 my-6 flex flex-row items-center justify-center text-sm text-center">
         <img src={DollarIcon} className="h-4 pr-2" />
         {lang == "lang-es" ? "Garantía de devolución de dinero" : "100% Money Back Guarantee"}
@@ -84,11 +86,12 @@ export default ({ content, context }: { content: CoursePageStoryblok, context: C
     }
 
     const title = (content.title || "").replace("$STATE", context.state);
+    const lang = courseLang(context.type);
+
     const imageComp = content.image?.filename ? <img src={content.image?.filename} alt={content.title} className="rounded-md" /> : <img src={defaultGraphic} alt={title} className="rounded-md" />
     // replace state placeholder with state name
     if (!content.price) throw Error(`Price was not found for page ${context.url}`);
-
-
+    
     return <Section className="flex flex-col md:grid grid-cols-1 md:grid-cols-3 gap-10 grid-flow-col md:grid-flow-row">
         <div className="md:col-start-2 md:col-span-2 md:row-start-1 row-span-2">
             {imageComp}
@@ -99,9 +102,9 @@ export default ({ content, context }: { content: CoursePageStoryblok, context: C
             <Text>{content.desc || ""}</Text>
             <div className="mb-6 text-4xl font-extrabold">{content.price}</div>
             <EnrollButton>
-                <a className="text-inherit" href={context.enroll}>{content.lang == "lang-es" ? "Regístrate" : "Enroll Now"}</a>
+                <a className="text-inherit" href={context.enroll}>{lang == "lang-es" ? "Regístrate" : "Enroll Now"}</a>
             </EnrollButton>
-            <MoneyBackGuarantee lang={content.lang || []} />
+            <MoneyBackGuarantee x={context.type} />
             <Features features={content.features || []} />
         </div>
         <div className="md:col-start-2 col-span-2 md:row-start-3">
