@@ -20,9 +20,15 @@ const Header = () => {
                 <Link to="/us/contact">Contact</Link>
             </div>
         </div>
-        <div className="flex flex-row items-center text-bluewood font-medium">
+        <div className="hidden lg:flex flex-row items-center text-bluewood font-medium">
             <Phone className="px-3 py-2 bg-lilac rounded"/>
             <a href="https://my.userve.com/customer/account/login" className="ml-6">Login</a>
+        </div>
+
+        {/* mobile-tablet */}
+        <div className="lg:hidden flex justify-between w-full px-4">
+            <Logo />
+            <HamburgerMenu />
         </div>
 
     </nav>;
@@ -40,3 +46,8 @@ const HamburgerMenu = () => <div className="inline-flex items-center justify-cen
 
 const DropdownMenu = () => null;
 
+const Logo = () => {
+    return <Link to="/">
+        <StaticImage src="../../images/usx-logo-solid.svg" alt="Userve" width={100} />
+    </Link>
+};

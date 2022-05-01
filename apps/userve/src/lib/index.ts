@@ -1,2 +1,3 @@
 export * from './storyblokSourceTypes';
-export * from './highlight';
+export * from './courseLang';
+export * from './images';

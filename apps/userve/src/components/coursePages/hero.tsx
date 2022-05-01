@@ -1,5 +1,5 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import { CoursePageStoryblok, IconCardStoryblok } from "src/storyblok-component-types";
 import { Text, Header1, Header2, Header5 } from 'src/components/shared/typography';

@@ -1,6 +1,5 @@
 import * as React from "react"
 import { graphql, PageProps } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from 'src/components/layout';
 import Head from 'src/components/head';
@@ -12,6 +11,7 @@ import { BenefitsSection, BusinessSection, LogosSection, BlogsSection, Testimoni
 import { SectionStoryblok, FeaturedCoursesStoryblok, BenefitsStoryblok, SeoStoryblok } from 'src/storyblok-component-types';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
 import HeroImage from 'src/images/usx_hero_home.png';
+import { getFilename, findMatchingLocalFileNode, DynamicImage } from 'src/lib';
 
 import { Header1, Header2, Text } from 'src/components/shared/typography';
 
@@ -54,7 +54,9 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
   const businessContent = JSON.parse(businessSlug?.content || "");
   const testimonialsContent = JSON.parse(testimonialsSlug?.content || "");
   const aboutUsContent = JSON.parse(aboutUsSlug?.content || "");
-  // debugger;
+
+  const filename = getFilename(heroContent.Image?.filename || "");
+  const heroImageLocalFileNode = findMatchingLocalFileNode(getFilename(heroContent.Image?.filename || ""), heroSlug);
 
   return (
     <div>
@@ -69,7 +71,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
               <StatePicker />
             </div>
             <div className="col-start-2">
-              <img src={heroContent.Image?.filename || HeroImage} alt="Get your certificate in hours not days" className="ml-12" />
+              <DynamicImage fileNode={heroImageLocalFileNode} alt="Hero image" className="ml-12" />
             </div>
           </Section>
 
@@ -118,6 +120,12 @@ export const pageQuery = graphql`
         content
         slug
         full_slug
+        imageFileSrc {
+          publicURL
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
     }
     seo:allStoryblokEntry(filter: {full_slug: {eq: "seo"}}) {

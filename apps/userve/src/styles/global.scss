@@ -198,6 +198,12 @@
       @apply mb-6 last:mb-0;
     }
   }
+
+  .gatsby-image-wrapper [data-main-image] {
+
+  }
+
+
 }
 
 @tailwind components;
