@@ -78,6 +78,9 @@
     color:white;
   }
   #hubspotForm {
+    h4 {
+      @apply text-2xl font-bold mb-6 text-bluewood;
+    }
     label {
       font-size: 14px;
       margin-bottom:.5rem;
@@ -105,20 +108,25 @@
       border: 1px solid #000eb8;
       background-color: rgba(0, 14, 184, 1);
       color: #fff;
-      width:98%;
+      width:99%;
       margin-top:1rem;
       cursor:pointer;
     }
+    li {
+      label {
+        margin-top:.5rem;
+      }
+    }
     fieldset {
       padding-bottom:1rem;
+      max-width:100%;
       div {
         div {
           &:last-child {
-      
+            @apply mb-6 last:mb-0;
           }
         }
       }
-
     }
     ul {
       li {
@@ -198,14 +206,24 @@
       @apply mb-6 last:mb-0;
     }
   }
-
   .gatsby-image-wrapper [data-main-image] {
     opacity: 1;
     transition: none;
   }
-
-
 }
 
 @tailwind components;
+
+@layer components {
+  .nav-tabs {
+    .nav-link {
+      &.active {
+        @apply text-navy bg-melrose;
+      }
+    }
+  }
+}
+
 @tailwind utilities;
+
+
