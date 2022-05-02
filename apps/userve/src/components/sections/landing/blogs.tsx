@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { Section } from 'src/components/core/Section';
 import { FeaturedBlogStoryblok, BlogPostCardStoryblok } from 'src/storyblok-component-types';
-import { Header2, Header5, Text } from 'src/components/shared/typography';
+import { Header2, Header5, Text } from 'src/components/core/typography';
 
 const BlogTag = ({ tag }: { tag: string }) => {
     return <div className="text-xs bg-cornflower text-white mb-4 px-2 py-1 rounded">
@@ -37,7 +37,7 @@ const FeaturedBlogsSection = (props: FeaturedBlogStoryblok) => {
     return <Section>
             <Header2>{props.title}</Header2>
             <Text>{props.description}</Text>
-            <div className="grid grid-cols-3 grid-flow-row gap-10">
+            <div className="flex flex-col md:grid md:grid-cols-3 grid-flow-md:row gap-10">
                 {(props.blogs || []).map((blog, i) => {
                     return <BlogCard {...blog} key={`blog-${i}`} />;
                 })}

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Section } from 'src/components/core/Section';
 import { CardsStoryblok, HeroStoryblok } from 'src/storyblok-component-types';
-import { SubText } from 'src/components/shared/typography';
+import { SubText } from 'src/components/core/typography';
 
 
 export default ({ hero, benefits }: { hero: HeroStoryblok, benefits: CardsStoryblok}) => {

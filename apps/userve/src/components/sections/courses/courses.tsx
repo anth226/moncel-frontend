@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { Section } from 'src/components/core/Section';
 import Card from 'src/components/coursePages/card'
 import { CourseCardStoryblok } from 'src/storyblok-component-types';
-import { Header2 } from 'src/components/shared/typography';
+import { Header2 } from 'src/components/core/typography';
 import { useAppSelector } from 'src/store';
 import { CourseData, CourseTypeData, CourseType } from 'src/components/coursePages/types';
 import { CoursePageStoryblok } from "src/storyblok-component-types";

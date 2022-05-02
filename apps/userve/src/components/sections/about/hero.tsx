@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 
 import { Section } from 'src/components/core/Section';
 import { HeroStoryblok } from 'src/storyblok-component-types';
-import { Text } from 'src/components/shared/typography';
+import { Text } from 'src/components/core/typography';
 
 export default (props: HeroStoryblok) => {
     return <Section className="grid grid-cols-12 grid-rows-1 items-center">

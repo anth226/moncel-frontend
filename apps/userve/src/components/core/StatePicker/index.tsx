@@ -29,16 +29,16 @@ const StatePicker = () => {
               }
         }
 
-    return <div className="flex justify-between rounded p-4 shadow-lg bg-white">
+    return <div className="flex flex-col md:flex-row justify-between rounded p-4 shadow-lg bg-white">
         <div className="flex flex-col w-2/3 text-navy mr-4">
-            <select onChange={handleSelect}>
+            <select onChange={handleSelect} className={`bg-white ${selectedState ? "" : "mb-4"}`}>
                 {StateList.map(state => {
                     return <option key={`option-${state}`} selected={state == selectedState} disabled={!state}>{state || STATE_SELECT_PLACEHOLDER}</option>
                 })}
             </select>
-            <h1 className="text-3xl text-navy opacity-50 font-bold">{selectedState || "\u00A0"}</h1>
+            { selectedState ? <h1 className={`text-3xl text-navy opacity-50 font-bold`}>{selectedState || "\u00A0"}</h1> : null }
         </div>
-        <Link to={ButtonHref}><button className="btn btn-primary px-4 py-2">Find Your Course</button></Link>
+        <Link to={ButtonHref}><button className="btn btn-primary px-4 py-2 w-full lg:w-auto">Find Your Course</button></Link>
     </div>;
 };
 

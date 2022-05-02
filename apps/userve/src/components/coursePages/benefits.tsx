@@ -2,7 +2,7 @@ import React from 'react';
 import { Section, SectionFullWidth } from 'src/components/core/Section';
 
 import { BenefitsStoryblok, IconCardStoryblok } from 'src/storyblok-component-types';
-import { Header5, Header2, Text } from 'src/components/shared/typography';
+import { Header5, Header2, Text } from 'src/components/core/typography';
 
 const BenefitsCard = ({ card }: { card: IconCardStoryblok }) => {
     return <div className="flex flex-col">

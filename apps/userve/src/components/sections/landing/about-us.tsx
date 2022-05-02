@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { ButtonTransparent } from "../../shared";
 import { AboutUsStoryblok } from 'src/storyblok-component-types';
-import { Header2, Text } from 'src/components/shared/typography';
+import { Header2, Text } from 'src/components/core/typography';
 
 const AboutUsSection = (props: AboutUsStoryblok) => {
     return <Section>
