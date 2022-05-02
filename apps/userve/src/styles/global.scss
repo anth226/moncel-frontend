@@ -54,7 +54,7 @@
     }
   }
   .btn {
-    @apply text-center font-medium hover:opacity-90 cursor-pointer;
+    @apply text-center font-medium hover:opacity-90 cursor-pointer w-full md:w-fit;
     padding: 15px 2rem;
     font-family: Inter, sans-serif;
     font-style: normal;
@@ -118,13 +118,11 @@
       }
     }
     fieldset {
-      padding-bottom:1rem;
+      @apply pb-2;
       max-width:100%;
       div {
-        div {
-          &:last-child {
-            @apply mb-6 last:mb-0;
-          }
+        &:last-child {
+          @apply mt-2 md:mt-0;
         }
       }
     }

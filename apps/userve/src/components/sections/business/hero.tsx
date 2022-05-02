@@ -1,0 +1,26 @@
+import React from 'react';
+import ReactMarkdown from 'react-markdown';
+
+import { Section } from 'src/components/core/Section';
+import { HeroStoryblok } from 'src/storyblok-component-types';
+import { Text } from 'src/components/core/typography';
+
+export default (props: HeroStoryblok) => {
+    return <Section className="grid grid-cols-12 grid-rows-1 items-center">
+        <div className="order-12 md:order-1 md:col-start-1 col-span-12 md:col-span-6">
+            <ReactMarkdown>{props.title || ""}</ReactMarkdown>
+            <Text>{props.description || ""}</Text>
+            <div>
+                <a className="btn btn-primary md:mr-4 mb-2 md:mb-0" href="#buslmform" rel="noopener">
+                    {props.primary_btn}
+                </a>
+                <a className="btn btn-invert" href="https://hello.userve.com/schedule" target="_blank" rel="noopener">
+                    {props.secondary_btn}
+                </a>
+            </div>
+        </div>
+        <div className="order-1 md:order-12 md:col-start-8 col-span-12 md:col-span-5 mb-6 md:mb-0 flex justify-center">
+            <img src={props.graphic?.filename || ""} alt={props.title} className="max-w-[300px] md:max-w-full" />
+        </div>
+    </Section>
+};
