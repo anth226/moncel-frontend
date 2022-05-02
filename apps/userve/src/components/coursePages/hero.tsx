@@ -1,8 +1,8 @@
 import React from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import { CoursePageStoryblok, IconCardStoryblok } from "src/storyblok-component-types";
-import { Text, Header1, Header2, Header5 } from 'src/components/shared/typography';
+import { Text, Header1, Header2, Header5 } from 'src/components/core/typography';
 import { Section } from 'src/components/core/Section';
 import { CourseData, CourseType } from 'src/components/coursePages/types';
 import { courseLang } from 'src/lib/courseLang';

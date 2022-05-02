@@ -2,7 +2,7 @@ import React from 'react';
 import { Section, SectionFullWidth } from 'src/components/core/Section';
 
 import { TwoColStoryblok, ListStoryblok } from 'src/storyblok-component-types';
-import { Header2, Header5, Text } from 'src/components/shared/typography';
+import { Header2, Header5, Text } from 'src/components/core/typography';
 
 const List = (list: ListStoryblok) => {
     return <div className="flex flex-col checktitle">

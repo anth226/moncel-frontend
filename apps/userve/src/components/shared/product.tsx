@@ -5,7 +5,7 @@ import HubspotContactForm from 'src/components/shared/Form';
 import { Section } from 'src/components/core/Section';
 import { ProductFormStoryblok } from 'src/storyblok-component-types';
 
-import { Header2 } from 'src/components/shared/typography';
+import { Header2 } from 'src/components/core/typography';
 
 const ProductFormSection = (props: ProductFormStoryblok) => {
     return <div id="buslmform" className="bg-cover bg-[url('https://www.userve.com/hubfs/web-assets/usx_business_bg.jpg')]">

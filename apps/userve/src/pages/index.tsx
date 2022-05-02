@@ -1,6 +1,5 @@
 import * as React from "react"
 import { graphql, PageProps } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from 'src/components/layout';
 import Head from 'src/components/head';
@@ -8,12 +7,12 @@ import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { Card as CourseCard } from 'src/components/coursePages';
 import StatePicker from 'src/components/core/StatePicker';
 
-import { BenefitsSection, BusinessSection, LogosSection, BlogsSection, TestimonialsSection, AboutUsSection } from 'src/components/sections/landing';
+import { BenefitsSection, BusinessSection, LogosSection, BlogsSection, TestimonialsSection, AboutUsSection, HeroSection } from 'src/components/sections/landing';
 import { SectionStoryblok, FeaturedCoursesStoryblok, BenefitsStoryblok, SeoStoryblok } from 'src/storyblok-component-types';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
-import HeroImage from 'src/images/usx_hero_home.png';
+import { getFilename, findMatchingLocalFileNode, DynamicImage } from 'src/lib';
 
-import { Header1, Header2, Text } from 'src/components/shared/typography';
+import { Header1, Header2, Text } from 'src/components/core/typography';
 
 // styles
 const pageStyles = {
@@ -54,7 +53,6 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
   const businessContent = JSON.parse(businessSlug?.content || "");
   const testimonialsContent = JSON.parse(testimonialsSlug?.content || "");
   const aboutUsContent = JSON.parse(aboutUsSlug?.content || "");
-  // debugger;
 
   return (
     <div>
@@ -62,23 +60,14 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
       <Layout>
         <main style={pageStyles}>
           {/* Hero */}
-          <Section className="grid grid-cols-2 grid-rows-1 items-center">
-            <div className="col-start-1">
-              <Header1>{ heroContent.Header || "Get your certificate in hours not days." }</Header1>
-              <Text>{ heroContent.Subheader || "Flexible courses for alcohol servers and food handlers, with no prior experience required." }</Text>
-              <StatePicker />
-            </div>
-            <div className="col-start-2">
-              <img src={heroContent.Image?.filename || HeroImage} alt="Get your certificate in hours not days" className="ml-12" />
-            </div>
-          </Section>
+          <HeroSection content={heroContent} slug={heroSlug} />
 
           {/* Featured Courses */}
           <SectionFullWidth className="bg-[url('../images/usx-home-courses.jpg')] bg-cover bg-center">
-            <Section className="grid grid-cols-3 gap-10 items-start -mb-28">
+            <Section className="flex flex-col md:grid md:grid-cols-3 gap-10 items-start -mb-28">
               <div className="col-start-1">
-                <Header2><span className="text-white">{heroContent.Header || ""}</span></Header2>
-                <Text><span className="text-white">{heroContent.Subheader || ""}</span></Text>
+                <Header2><span className="text-white">{coursesContent.title || ""}</span></Header2>
+                <Text><span className="text-white">{coursesContent.description || ""}</span></Text>
               </div>
               {coursesContent.course_cards[0] && <CourseCard className="col-start-2" {...coursesContent.course_cards[0]} storyblokDefaultImg={coursesContent.course_cards[0].image?.filename} />}
               {coursesContent.course_cards[0] && <CourseCard className="col-start-3" {...coursesContent.course_cards[1]} storyblokDefaultImg={coursesContent.course_cards[1].image?.filename} />}
@@ -118,6 +107,12 @@ export const pageQuery = graphql`
         content
         slug
         full_slug
+        imageFileSrc {
+          publicURL
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
     }
     seo:allStoryblokEntry(filter: {full_slug: {eq: "seo"}}) {

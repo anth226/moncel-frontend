@@ -10,7 +10,7 @@ import { BusinessSection, LogosSection, TestimonialsSection } from 'src/componen
 import { TwoColSection, ProductFormSection, FeatureBoxSection } from 'src/components/shared';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
 
-import { Header1, Text } from 'src/components/shared/typography';
+import { Header1, Text } from 'src/components/core/typography';
 
 // styles
 const pageStyles = {
