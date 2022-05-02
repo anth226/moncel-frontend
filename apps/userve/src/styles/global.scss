@@ -148,6 +148,21 @@
     .card-image {
       transition: 0.7s;
       transform: translateY(0px);
+      &.coming-soon {
+        &::before {
+          content: "Coming Soon";
+          padding: 4px 8px;
+          background-color: white;
+          border-radius: 8px;
+          position: absolute;
+          z-index: 2;
+          bottom: 20px;
+          left: 1.5rem;
+          font-size: 12px;
+          transition: 0.8s;
+          @apply text-navy;
+        }
+      }
     }
     .card-body {
       transition: 0.6s;
@@ -171,22 +186,6 @@
       .card-button {
         transform: translateY(0px);
         bottom: 0px;
-      }
-    }
-    &.coming-soon {
-      .card-image {
-        &::before {
-          content: "Coming Soon";
-          padding: 4px 8px;
-          background-color: white;
-          border-radius: 8px;
-          position: absolute;
-          z-index: 2;
-          bottom: 20px;
-          left: 1.5rem;
-          font-size: 12px;
-          transition: 0.8s;
-        }
       }
     }
   }  

@@ -15,13 +15,15 @@ interface ReactProps {
 
 const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
     // const { url, title, desc, image } = props;
-    let url, title, desc, image;
+    let url, title, desc, image, tag;
 
+    console.log(props)
     if("component" in props) {
         // Component has been passed a CourseCardStoryblok as props
         url = props.link;
         title = props.title;
         desc = props.description;
+        tag = props.tag;
         image = props.image?.filename;
     }
     else {
@@ -29,10 +31,12 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
         url = props.url;
         title = props.title;
         desc = props.desc;
+        tag = props.tag;
         image = `${FALLBACK_IMAGE_HOST}${props.image}`;
     }
     return <div className={`card flex flex-col rounded-2xl overflow-hidden bg-white drop-shadow-xl ${props.className}`}>
-        <div className="card-image z-0 relative hover:md:transform-none">
+        
+        <div className={`card-image z-0 relative hover:md:transform-none ${tag == "coming-soon" ? "coming-soon" : ""}`}>
             <Link className="cursor-pointer" to={url || ""}>
                 <img src={image} alt={`${title}-course-image`} />
             </Link>

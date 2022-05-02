@@ -1,20 +1,20 @@
 import React from 'react';
-import { StaticImage } from "gatsby-plugin-image";
+import ReactMarkdown from 'react-markdown';
 
-import { Section } from 'src/components/core/Section';
 import StatePicker from 'src/components/core/StatePicker';
+import { Section } from 'src/components/core/Section';
+import { HeroStoryblok } from 'src/storyblok-component-types';
+import { Header1, Text } from 'src/components/core/typography';
 
-const HeroSection = () => {
-    return <Section className="grid grid-cols-2 grid-rows-3 items-center">
-        <h1 className="col-start-1 col-span-1 row-start-1 text-5xl font-bold text-slate-700">Get your certificate in hours not days.</h1>
-        <p className="col-start-1 col-span-1 row-start-2 text-lg text-slate-400">Flexible courses for alcohol servers and food handlers, with no prior experience required.</p>
-        <div className="col-start-1 col-span-1 row-start-3">
-          <StatePicker />
+export default (props: HeroStoryblok) => {
+    return <Section className="grid grid-cols-12 grid-rows-1 items-center">
+        <div className="order-12 md:order-1 md:col-start-1 col-span-12 md:col-span-6">
+            <Header1><ReactMarkdown className="hello">{props.title || ""}</ReactMarkdown></Header1>
+            <Text>{props.description || ""}</Text>
+            <StatePicker />
         </div>
-        <div className="col-start-2 row-span-3">
-          <StaticImage src="../../../images/usx_hero_home.png" alt="usx logo" />
+        <div className="order-1 md:order-12 md:col-start-8 col-span-12 md:col-span-5 mb-6 md:mb-0 flex justify-center">
+            <img src={props.graphic?.filename || ""} alt={props.title} className="max-w-[300px] md:max-w-full" />
         </div>
     </Section>
 };
-
-export default HeroSection;

@@ -51,9 +51,9 @@ export default ({ coursePageContent }: { coursePageContent: CoursePageStoryblok[
     if(!selectedState) return null;
     return <Section>
         <Header2 className="mb-8">{`Courses available in ${selectedState}`}</Header2>
-        <div className="grid grid-cols-3 grid-flow-row gap-8">
+        <div className="flex flex-col md:grid md:grid-cols-3 grid-flow-md:row gap-10">
             { courses.map(courseData => {
-                return <Card className="col-span-1 shadow-lg bg-inherit" {...courseData}></Card>
+                return <Card {...courseData}></Card>
             }) }
         </div>
     </Section>
