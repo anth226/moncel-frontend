@@ -5,7 +5,7 @@ import { TwoColStoryblok, ListStoryblok } from 'src/storyblok-component-types';
 import { Header2, Header5, Text } from 'src/components/core/typography';
 
 const List = (list: ListStoryblok) => {
-    return <div className="flex flex-col checktitle">
+    return <div className="flex flex-col col-span-12 md:col-span-6 checktitle">
         {list.title == '' ? '' : <Header5 className="mb-1">{list.title}</Header5>}
         <ul><li>{list.description}</li></ul>
     </div>
@@ -14,19 +14,19 @@ const List = (list: ListStoryblok) => {
 const TwoColSection = (props: TwoColStoryblok) => {
     return <div>
         <Section className="grid grid-cols-12">
-            <div className={props.layout == 'img-right' ? 'order-first col-span-7' : 'order-last col-span-7 col-end-13'}>
+            <div className={props.layout == 'img-right' ? 'order-last md:order-first col-span-12 md:col-span-7' : 'order-last col-span-12 md:col-span-7 col-end-13'}>
 
                 {props.title == '' ? '' : <Header2>{props.title}</Header2>}
                 {props.content == '' ? '' : <Text>{props.content}</Text>}
             
-                <div className={props.listLayout == 'list-four' ? 'grid grid-cols-2 grid-rows-2 gap-6' : 'List 3'}>
+                <div className={props.listLayout == 'list-four' ? 'grid grid-cols-12 grid-rows-2 gap-6' : 'List 3'}>
                     {(props.list || []).map((list, i) => {
                         return <List {...list} key={`list-${i}`} />;
                     })}
                 </div>
             </div>
-
-            <div className={props.layout == 'img-right' ? 'order-last col-span-4 col-end-13' : 'order-first col-span-4'}>
+            <div className="col-span-1" />
+            <div className={props.layout == 'img-right' ? 'order-first md:order-last col-span-12 md:col-span-4 mb-6 md:mb-0' : 'order-first col-span-12 md:col-span-4 mb-6 md:mb-0'}>
                 <img src={props.image.filename} className="rounded-lg"/>
             </div>
         </Section>

@@ -7,10 +7,9 @@ import Head from 'src/components/head';
 import { Section } from 'src/components/core/Section';
 
 import { BusinessSection, LogosSection, TestimonialsSection } from 'src/components/sections/landing';
-import { TwoColSection, ProductFormSection, FeatureBoxSection } from 'src/components/shared';
+import { ProductFormSection, HeroSection } from 'src/components/sections/business';
+import { TwoColSection, FeatureBoxSection } from 'src/components/shared';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
-
-import { Header1, Text } from 'src/components/core/typography';
 
 // styles
 const pageStyles = {
@@ -19,6 +18,7 @@ const pageStyles = {
 }
 
 enum SLUGS {
+    hero='hero',
     statistics = "statistics",
     customers = "customers",
     testimonials = "testimonials",
@@ -41,6 +41,7 @@ const BusinessPage = ({ data }: PageProps<DataProps>) => {
     const complianceSlug = landingSlugs.filter(slug => slug.slug === SLUGS.compliance)[0];
     const productSlug = landingSlugs.filter(slug => slug.slug === SLUGS.product)[0];
     const accountsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.accounts)[0];
+    const heroSlug = landingSlugs.filter(slug => slug.slug === SLUGS.hero)[0];
 
     const testimonialsContent = JSON.parse(testimonialsSlug?.content || "");
     const logosContent = JSON.parse(logosSlug?.content || "");
@@ -50,6 +51,7 @@ const BusinessPage = ({ data }: PageProps<DataProps>) => {
     const complianceContent = JSON.parse(complianceSlug?.content || "");
     const productContent = JSON.parse(productSlug?.content || "");
     const accountsContent = JSON.parse(accountsSlug?.content || "");
+    const heroContent = JSON.parse(heroSlug?.content || "");
 
     return (
         <div>
@@ -57,23 +59,7 @@ const BusinessPage = ({ data }: PageProps<DataProps>) => {
             <Layout>
                 <main style={pageStyles}>
                     {/* Hero */}
-                    <Section className="grid grid-cols-2 grid-rows-1 items-center">
-                        <div className="col-start-1">
-                            <Header1>Business Training Solutions</Header1>
-                            <Text>With over 10 years of experience in hospitality training, the Userve Team knows how to make managing your staff's alcohol server and food handler training as simple as possible.</Text>
-                            <div>
-                                <a className="btn btn-primary md:mr-4 mb-2 md:mb-0" href="#buslmform" rel="noopener">
-                                    Get in Touch
-                                </a>
-                                <a className="btn btn-invert" href="https://hello.userve.com/schedule" target="_blank" rel="noopener">
-                                    Schedule a Call
-                                </a>
-                            </div>
-                        </div>
-                        <div className="col-start-2">
-                            <StaticImage src="../../../images/usx_business_hero.png" alt="Business Training Solutions" />
-                        </div>
-                    </Section>
+                    <HeroSection {...heroContent} />
 
                     {/* Logos */}
                     <LogosSection {...logosContent} />

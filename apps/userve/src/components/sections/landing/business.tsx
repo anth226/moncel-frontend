@@ -6,27 +6,30 @@ import { BusinessStoryblok, HighlightCardStoryblok } from 'src/storyblok-compone
 import { Header2, Text } from 'src/components/core/typography';
 
 const StatsCard = (props: HighlightCardStoryblok) => {
-    return <div className="flex flex-col">
+    return <div className="flex flex-col col-span-12 md:col-span-6">
         <div className="text-sky-blue text-5xl font-extrabold mb-2">{props.title}</div>
-        <Text className="mb-0"> <ReactMarkdown>{props.subtext}</ReactMarkdown></Text>
+        <Text className="!mb-0"><ReactMarkdown>{props.subtext}</ReactMarkdown></Text>
     </div>;
 }
 
 const BusinessSection = (props: BusinessStoryblok) => {
     return <div className={props.className || ""}>
-        <Section className="statistic flex flex-col md:grid md:grid-cols-12 grid-flow-column gap-6 justify-items-center">
-            <div className={props.layout == 'left-layout' ? 'col-start-1 col-span-5' : 'col-start-1 col-span-12 text-center'}>
+        <Section className="statistic grid grid-cols-12 grid-flow-column gap-0 md:gap-6">
+            <div className={props.layout == 'left-layout' ? 'col-start-1 col-span-12 md:col-span-6 lg:col-span-5' : 'col-start-1 col-span-12 text-center'}>
                 <Header2>{props.title}</Header2>
                 <Text>{props.description}</Text>
-                {props.link == '' ? '' : <a className="btn btn-invert">{props.link}</a>}
+                {props.link == '' ? '' : <a className="btn btn-invert hidden md:block">{props.link}</a>}
             </div>
-            <div className={props.layout == 'left-layout' ? 'col-start-8 col-span-6 flex flex-col md:grid md:grid-cols-2 grid-rows-2 gap-10' : 'col-start-3 col-span-8 text-center flex flex-col md:grid md:grid-cols-3 gap-10'}>    
+            <div className={props.layout == 'left-layout' ? 'col-start-1 md:col-start-8 col-span-12 md:col-span-6 grid grid-cols-12 gap-6 md:gap-10' : 'col-start-3 col-span-8 text-center grid grid-cols-3 gap-10'}>    
                 { props.stats?.map((stat, i) => {
-                    return <StatsCard key={`business-stats-${i}`} {...stat} />
+                    return <StatsCard key={`business-stats-${i}`} {...stat}/>
                 })}
             </div>
+            <div className="block md:hidden col-span-12 mt-6 md:mt-0">
+                {props.link == '' ? '' : <a className="btn btn-invert">{props.link}</a>}
+            </div>
+
         </Section>
     </div>
 }
-
 export default BusinessSection;

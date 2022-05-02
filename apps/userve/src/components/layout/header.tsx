@@ -17,7 +17,7 @@ const Header = () => {
                 <a href="/us/resources/blog">Resources</a>
                 <Link to="/us/about/about-us">About Us</Link>
                 <a href="https://help.userve.com/knowledge" target="_blank">Help Center</a>
-                <Link to="/us/contact">Contact</Link>
+                <Link to="/us/about/contact-us">Contact</Link>
             </div>
         </div>
         <div className="hidden lg:flex flex-row items-center text-bluewood font-medium">
