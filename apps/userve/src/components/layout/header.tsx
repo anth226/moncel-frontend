@@ -5,7 +5,7 @@ import { Link } from "src/components/core";
 import Phone from "src/components/icons/phone";
 
 const Header = () => {
-    return <nav className="flex justify-between w-screen xl:max-w-6xl mx-4 xl:m-auto py-6 lg:py-4 border-b-1 border-mischka">
+    return <nav className="flex justify-between w-screen xl:max-w-6xl md:mx-4 xl:m-auto py-6 lg:py-4 border-b-1 border-mischka">
         {/* Desktop+ menu */}
         <div className="hidden lg:flex items-center">
             <Link to="/">
