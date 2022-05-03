@@ -22,8 +22,8 @@ const HeroSection = ({ content, slug }: PropTypes) => {
             <Text>{ content.Subheader || "Flexible courses for alcohol servers and food handlers, with no prior experience required." }</Text>
             <StatePicker />
         </div>
-        <div className="col-span-12 md:col-span-6 order-1 md:order-12">
-            <DynamicImage fileNode={heroImageLocalFileNode} alt="Hero image" className="ml-12" />
+        <div className="col-span-12 md:col-span-6 order-1 md:order-12 mb-6 md:mb-0 flex justify-center">
+            <DynamicImage fileNode={heroImageLocalFileNode} alt="Hero image" className="md:ml-12 max-w-[300px] md:max-w-full" />
         </div>
     </Section>
 }
