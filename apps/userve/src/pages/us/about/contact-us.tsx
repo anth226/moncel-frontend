@@ -10,6 +10,8 @@ import { DataProps } from 'src/lib/storyblokSourceTypes';
 import { ContactStoryblok } from 'src/storyblok-component-types';
 import { ContactSection } from 'src/components/sections/contact';
 
+import { Header2, Text } from 'src/components/core/typography';
+
 enum SLUGS {
   contact = "contact/contact"
 }

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'gatsby';
 
 import { useAppDispatch, useAppSelector, AppActions } from 'src/store';
 import StateList from './stateList';
+import { getState } from 'src/lib/geolocation';
 
 const ButtonHref = "/us/courses";
 const { selectState } = AppActions;
@@ -16,6 +17,12 @@ const StatePicker = () => {
         const newState = (e.target.value === STATE_SELECT_PLACEHOLDER) ? "" : e.target.value;
         dispatch(selectState(newState));
     }
+
+    useEffect(() => {
+        getState().then((state) => {
+            dispatch(selectState(state));
+        });
+    });
 
     // react devs are really annoying sometimes
     // https://github.com/facebook/create-react-app/issues/2070
