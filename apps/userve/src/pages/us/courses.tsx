@@ -8,6 +8,7 @@ import { Section } from 'src/components/core/Section';
 
 import { HeroSection, CoursesSection } from 'src/components/sections/courses';
 import { AboutUsSection } from 'src/components/sections/landing';
+import NotifyFormSection from 'src/components/coursePages/notify';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
 import { CoursePageStoryblok, AboutUsStoryblok } from 'src/storyblok-component-types';
 
@@ -50,11 +51,12 @@ const CoursePage = ({ data }: PageProps<DataProps>) => {
                     {/* Hero */}
                     <HeroSection {...heroContent} />
 
-                    <CoursesSection coursePageContent={coursePageContent}/>
+                    <CoursesSection coursePageContent={coursePageContent} />
 
                     <AboutUsSection {...ctaContent} />
                 </main>
             </Layout>
+            <NotifyFormSection />
         </div>
     )
 }

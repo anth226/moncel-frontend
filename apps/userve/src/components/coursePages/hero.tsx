@@ -34,7 +34,7 @@ const MoneyBackGuarantee = ({x}:{x:CourseType}) => {
 
 const EnrollButton = ({ children }: { children: React.ReactNode }) => {
     // basset needs a modal
-    return <div className="btn btn-primary">
+    return <div className="btn btn-primary w-full">
         {children}
     </div>
 };

@@ -2,7 +2,7 @@
 
 @layer base {
   h1 {
-    @apply text-5xl font-bold mb-6 text-bluewood;
+    @apply text-4xl md:text-5xl font-bold mb-6 text-bluewood;
     strong {
       @apply text-dodger font-bold;  
     }
@@ -78,6 +78,9 @@
     color:white;
   }
   #hubspotForm {
+    img {
+      @apply mb-4;
+    }
     h4 {
       @apply text-2xl font-bold mb-6 text-bluewood;
     }
@@ -146,8 +149,7 @@
   }
   .card {
     .card-image {
-      transition: 0.7s;
-      transform: translateY(0px);
+      @apply duration-[0700ms] translate-y-[0px] relative z-0;
       &.coming-soon {
         &::before {
           content: "Coming Soon";
@@ -165,27 +167,23 @@
       }
     }
     .card-body {
-      transition: 0.6s;
-      transform: translateY(0px);
+      @apply duration-[0600ms] transform-none md:translate-y-[0px] z-10 p-6 bg-white relative;
     }
     .card-button {
-      bottom: -50px;
-      transform: translateY(40px);
-      transition: 0.6s;
+      @apply bottom-0 md:bottom-[-50px] relative md:absolute md:translate-y-[40px] duration-[600ms] z-20 px-6 pb-6 w-full bg-white;
     }
     &:hover {
       .card-image {
-        transform: translateY(-40px);
+        @apply translate-y-[0px] md:translate-y-[-40px];
         &::before {
-          transform: translateY(-40px);
+          @apply transform-none md:translate-y-[-40px];
         }
       }
       .card-body {
-        transform: translateY(-80px);
+        @apply transform-none md:translate-y-[-80px];
       }
       .card-button {
-        transform: translateY(0px);
-        bottom: 0px;
+        @apply transform-none md:translate-y-0 bottom-0;
       }
     }
   }  
