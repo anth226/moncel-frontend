@@ -1,53 +1,65 @@
 import * as React from "react"
 import { graphql, PageProps } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 import Layout from 'src/components/layout';
 import Head from 'src/components/head';
-import { AboutUsSection } from 'src/components/sections/landing';
-import { HeroSection, CoursesSection } from 'src/components/sections/courses'
-import { DataProps } from 'src/lib/storyblokSourceTypes';
-import { CoursePageStoryblok } from 'src/storyblok-component-types';
+import { Section } from 'src/components/core/Section';
 
+import { HeroSection, CoursesSection } from 'src/components/sections/courses';
+import { AboutUsSection } from 'src/components/sections/landing';
+import { DataProps } from 'src/lib/storyblokSourceTypes';
+import { CoursePageStoryblok, AboutUsStoryblok } from 'src/storyblok-component-types';
+
+// styles
 const pageStyles = {
-  color: "#232129",
-  padding: "96px 0",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+    color: "#232129",
+    fontFamily: "-apple-system, Roboto, sans-serif, serif",
 }
 
 enum SLUGS {
-  aboutUs="landing/about-us",
-  coursePages="courses/course-pages"
+    hero='hero',
+    cta = "cta",
+    coursePages="courses/course-pages"
 }
 
-export default ({ data }: PageProps<DataProps>) => {
-  const landingSlugs = data.landing?.nodes || [];
-  const courseSlugs = data.allStoryblokEntry?.nodes || [];
-  const aboutUsSlug = landingSlugs.filter(slug => slug.full_slug === SLUGS.aboutUs)[0];
-  const coursePageStories = courseSlugs.filter(slug => slug.full_slug.match(SLUGS.coursePages));
+// markup
+const CoursePage = ({ data }: PageProps<DataProps>) => {
+    const landingSlugs = data.allStoryblokEntry.nodes;
+    const courseSlugs = data.allStoryblokEntry?.nodes || [];
+    const heroSlug = landingSlugs.filter(slug => slug.slug === SLUGS.hero)[0];
+    const ctaSlug = landingSlugs.filter(slug => slug.slug === SLUGS.cta)[0];
+    const coursePageStories = courseSlugs.filter(slug => slug.full_slug.match(SLUGS.coursePages));
 
-  // parsing "" into JSON will error out/fail builds.
-  // this is intentional and indicates an error retrieving data from storyblok
-  const aboutUsContent = JSON.parse(aboutUsSlug?.content || "");
-  const coursePageContent: CoursePageStoryblok[] = coursePageStories.reduce((coursePageStories: CoursePageStoryblok[], slug) => {
-    const content = JSON.parse(slug.content || "") as CoursePageStoryblok;
-    if(content.component === "CoursePage") {
-      coursePageStories.push(content);
-    }
-    return coursePageStories;
-  }, []);
-  const seoContent = data.seo.nodes[0];
+    const heroContent = JSON.parse(heroSlug?.content || "");
+    const ctaContent: AboutUsStoryblok = JSON.parse(ctaSlug?.content || "");
+    const coursePageContent: CoursePageStoryblok[] = coursePageStories.reduce((coursePageStories: CoursePageStoryblok[], slug) => {
+      const content = JSON.parse(slug.content || "") as CoursePageStoryblok;
+      if(content.component === "CoursePage") {
+        coursePageStories.push(content);
+      }
+      return coursePageStories;
+    }, []);
+    const seoContent = data.seo.nodes[0];
 
-  return <div>
-    <Head seo={seoContent} />
-    <Layout>
-      <main style={pageStyles}>
-        <HeroSection />
-        <CoursesSection coursePageContent={coursePageContent}/>
-        <AboutUsSection {...aboutUsContent} />
-      </main>
-    </Layout>
-  </div>;
+    return (
+        <div>
+            <Head seo={seoContent} />
+            <Layout>
+                <main style={pageStyles}>
+                    {/* Hero */}
+                    <HeroSection {...heroContent} />
+
+                    <CoursesSection coursePageContent={coursePageContent}/>
+
+                    <AboutUsSection {...ctaContent} />
+                </main>
+            </Layout>
+        </div>
+    )
 }
+
+export default CoursePage;
 
 export const pageQuery = graphql`
   query {
@@ -56,13 +68,12 @@ export const pageQuery = graphql`
         content
         slug
         full_slug
-      }
-    }
-    landing:allStoryblokEntry(filter: {full_slug: {regex: "/^landing.*/"}}) {
-      nodes {
-        content
-        slug
-        full_slug
+        imageFileSrc {
+          publicURL
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
     }
     seo:allStoryblokEntry(filter: {full_slug: {eq: "seo"}}) {
