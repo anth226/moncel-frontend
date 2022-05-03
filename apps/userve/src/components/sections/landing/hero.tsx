@@ -16,13 +16,13 @@ interface PropTypes {
 
 const HeroSection = ({ content, slug }: PropTypes) => {
     const heroImageLocalFileNode = findMatchingLocalFileNode(getFilename(content.Image?.filename || ""), slug);
-    return <Section className="flex flex-col-reverse md:flex-row items-center">
-        <div className="lg:col-start-1">
+    return <Section className="grid grid-cols-12 items-center ">
+        <div className="col-span-12 md:col-span-6 order-12 md:order-1">
             <Header1>{ content.Header || "Get your certificate in hours not days." }</Header1>
             <Text>{ content.Subheader || "Flexible courses for alcohol servers and food handlers, with no prior experience required." }</Text>
             <StatePicker />
         </div>
-        <div className="lg:col-start-2">
+        <div className="col-span-12 md:col-span-6 order-1 md:order-12">
             <DynamicImage fileNode={heroImageLocalFileNode} alt="Hero image" className="ml-12" />
         </div>
     </Section>
