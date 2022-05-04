@@ -20,7 +20,7 @@ const BusinessSection = (props: BusinessStoryblok) => {
                 <Text>{props.description}</Text>
                 {props.link == '' ? '' : <a className="btn btn-invert hidden md:block">{props.link}</a>}
             </div>
-            <div className={props.layout == 'left-layout' ? 'col-start-1 md:col-start-8 col-span-12 md:col-span-6 grid grid-cols-12 gap-6 md:gap-10' : 'col-start-3 col-span-8 text-center grid grid-cols-3 gap-10'}>    
+            <div className={props.layout == 'left-layout' ? 'col-start-1 md:col-start-7 col-span-12 md:col-span-6 grid grid-cols-12' : 'col-start-3 col-span-8 text-center grid grid-cols-3 gap-10'}>    
                 { props.stats?.map((stat, i) => {
                     return <StatsCard key={`business-stats-${i}`} {...stat}/>
                 })}

@@ -37,15 +37,15 @@ const StatePicker = () => {
         }
 
     return <div className="flex flex-col md:flex-row justify-between rounded-md p-4 shadow-xl bg-white">
-        <div className="flex flex-col w-100 md:w-2/3 text-navy md:mr-4 mb-4 md:mb-0">
-            <select onChange={handleSelect} className={`bg-white outline-0 ${selectedState ? "" : "mb-4"}`}>
+        <div className="flex flex-col w-full md:w-1/2 lg:w-2/3 text-navy md:mr-4 mb-4 md:mb-0 before:content-[url('https://f.hubspotusercontent30.net/hubfs/21498581/Icons/usx-down-arrow.svg')] before:absolute before:top-0 before:right-0 relative ">
+            <select onChange={handleSelect} className={`bg-transparent outline-0 pb-9 z-10 appearance-none text-base ${selectedState ? "" : "mb-4"}`}>
                 {StateList.map(state => {
                     return <option key={`option-${state}`} selected={state == selectedState} disabled={!state}>{state || STATE_SELECT_PLACEHOLDER}</option>
                 })}
             </select>
-            { selectedState ? <div className={`text-3xl text-navy opacity-50 font-bold`}>{selectedState || "\u00A0"}</div> : null }
+            { selectedState ? <div className={`text-3xl text-navy opacity-50 font-bold absolute pt-7 leading-7`}>{selectedState || "\u00A0"}</div> : null }
         </div>
-        <Link to={ButtonHref}><button className="btn btn-primary px-4 py-4 w-full lg:w-auto">Find Your Course</button></Link>
+        <Link to={ButtonHref}><button className="btn btn-primary px-4 py-4 w-full md:w-auto">Find Your Course</button></Link>
     </div>;
 };
 
