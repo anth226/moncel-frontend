@@ -5,9 +5,9 @@ import { TwoColStoryblok, ListStoryblok } from 'src/storyblok-component-types';
 import { Header2, Header5, Text } from 'src/components/core/typography';
 
 const List = (list: ListStoryblok) => {
-    return <div className="flex flex-col col-span-12 md:col-span-6 checktitle">
+    return <div className="col-span-12 md:col-span-6 checktitle">
         {list.title == '' ? '' : <Header5 className="mb-1">{list.title}</Header5>}
-        <ul><li>{list.description}</li></ul>
+        <ul className="mb-0 pb-0"><li className="mb-0 pb-0">{list.description}</li></ul>
     </div>
 };
 
@@ -19,7 +19,7 @@ const TwoColSection = (props: TwoColStoryblok) => {
                 {props.title == '' ? '' : <Header2>{props.title}</Header2>}
                 {props.content == '' ? '' : <Text>{props.content}</Text>}
             
-                <div className={props.listLayout == 'list-four' ? 'grid grid-cols-12 grid-rows-2 gap-6' : 'List 3'}>
+                <div className={props.listLayout == 'list-four' ? 'grid grid-cols-12 md:gap-6' : 'List 3'}>
                     {(props.list || []).map((list, i) => {
                         return <List {...list} key={`list-${i}`} />;
                     })}
