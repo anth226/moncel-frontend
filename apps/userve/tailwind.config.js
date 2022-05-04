@@ -7,6 +7,7 @@ module.exports = {
           blue: "#000b8f",
         },
         "navy":"#000B8F", // primary
+        "half-navy":"#000b8f80", // navy with 0.5 opacity
         "bluewood": "#35425B", // titles
         "sky-blue": "#000EB8CC", // bright blue, stats
         "lynch": "#72809D", // text

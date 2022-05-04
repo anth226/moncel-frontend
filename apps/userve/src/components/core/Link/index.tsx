@@ -4,11 +4,12 @@ import { Link as GatsbyLink } from "gatsby";
 interface LinkProps {
     to: string;
     children?: JSX.Element | JSX.Element[] | string;
+    className?: string
 }
 
 const Link = (props: LinkProps) => {
-    return <div className="flex text-inherit">
-        <GatsbyLink to={props.to}>{props.children}</GatsbyLink>
+    return <div className={`flex text-inherit ${props.className}`}>
+        <GatsbyLink to={props.to} className={props.className}>{props.children}</GatsbyLink>
     </div>
 }
 

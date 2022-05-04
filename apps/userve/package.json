@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "clean": "gatsby clean",
-    "develop": "gatsby develop",
+    "develop": "yarn generate-storyblok-types && gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
