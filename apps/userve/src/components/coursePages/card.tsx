@@ -22,7 +22,6 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
     let url, title, desc, image, type, courseTitle;
     const lang = courseLang(props.type);
     const tag = props.tag;
-    console.log(props)
 
     if ("component" in props) {
         // Component has been passed a CourseCardStoryblok as props
@@ -44,7 +43,11 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
     if (lang == "lang-es") {
         courseTitle = title
     } else {
-        courseTitle = props.state + " " + title;
+        if (props.state == undefined) {
+            courseTitle = title;
+        } else {
+            courseTitle = props.state + " " + title;
+        }
     }
 
     return <div className={`card flex flex-col rounded-2xl overflow-hidden bg-white drop-shadow-xl ${props.className}`}>
@@ -57,7 +60,7 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
             <Link className="text-bluewood text-lg font-semibold cursor-pointer" to={url || ""}>{courseTitle || ""}</Link>
             <p className="text-lynch mt-4">{desc}</p>
         </div>
-        <div className="card-button">   
+        <div className="card-button">
             <CardButton lang={lang} tag={tag || ""} url={url || ""}/>
         </div>
     </div>
