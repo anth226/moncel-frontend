@@ -5,8 +5,10 @@ import { Section } from 'src/components/core/Section';
 import { BusinessStoryblok, HighlightCardStoryblok } from 'src/storyblok-component-types';
 import { Header2, Text } from 'src/components/core/typography';
 
-const StatsCard = (props: HighlightCardStoryblok) => {
-    return <div className="flex flex-col col-span-12 md:col-span-6">
+const StatsCard = (props: HighlightCardStoryblok, ) => {
+    console.log(props)
+
+    return <div className={`flex flex-col col-span-12 mb-6 md:mb-0 last:mb-0 ${props.layout == "center-layout" ? "md:col-span-4" : "md:col-span-6"}`}>
         <div className="text-sky-blue text-5xl font-extrabold mb-2">{props.title}</div>
         <Text className="!mb-0"><ReactMarkdown>{props.subtext}</ReactMarkdown></Text>
     </div>;
@@ -20,9 +22,9 @@ const BusinessSection = (props: BusinessStoryblok) => {
                 <Text>{props.description}</Text>
                 {props.link == '' ? '' : <a className="btn btn-invert hidden md:block">{props.link}</a>}
             </div>
-            <div className={props.layout == 'left-layout' ? 'col-start-1 md:col-start-8 col-span-12 md:col-span-6 grid grid-cols-12 gap-6 md:gap-10' : 'col-start-3 col-span-8 text-center grid grid-cols-3 gap-10'}>    
+            <div className={props.layout == 'left-layout' ? 'col-start-1 md:col-start-7 col-span-12 md:col-span-6 grid grid-cols-12' : 'col-start-1 col-span-12 text-center grid grid-cols-12 md:gap-10'}>    
                 { props.stats?.map((stat, i) => {
-                    return <StatsCard key={`business-stats-${i}`} {...stat}/>
+                    return <StatsCard key={`business-stats-${i}`} {...stat} layout={props.layout}/>
                 })}
             </div>
             <div className="block md:hidden col-span-12 mt-6 md:mt-0">
