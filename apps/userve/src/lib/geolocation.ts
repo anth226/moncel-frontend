@@ -14,7 +14,13 @@ type ResponseType = {
 
 const DEFAULT_NO_MATCH="California";
 export const getState = async () => {
-    const { data: { region, country } } = await axios.get<ResponseType>('https://ipinfo.io/?token=8d569c1240a97f');
-    if(country !== "US" || !stateList.includes(region)) return DEFAULT_NO_MATCH;
-    return region;
+    let state;
+    try {
+        const { data: { region, country } } = await axios.get<ResponseType>('https://ipinfo.io/?token=8d569c1240a97f');
+        if(country !== "US" || !stateList.includes(region)) return DEFAULT_NO_MATCH;
+        return region;
+    } catch(e) {
+        // do nothing
+    }
+    return DEFAULT_NO_MATCH;
 }

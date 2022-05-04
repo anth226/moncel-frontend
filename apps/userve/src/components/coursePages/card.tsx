@@ -19,9 +19,8 @@ interface ReactProps {
 
 const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
     // const { url, title, desc, image } = props;
-    let url, title, desc, image, type, courseTitle;
+    let url, title, desc, image, type, courseTitle, tag;
     const lang = courseLang(props.type);
-    const tag = props.tag;
 
     if ("component" in props) {
         // Component has been passed a CourseCardStoryblok as props
@@ -30,6 +29,7 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
         desc = props.description;
         image = props.image?.filename;
         type = props.type;
+        tag = props.tag;
     }
     else {
         // Component has been passed CourseData from json
@@ -38,6 +38,7 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
         desc = props.desc;
         type = props.type;
         image = `${FALLBACK_IMAGE_HOST}${props.image}`;
+        tag = props.tag;
     }
 
     if (lang == "lang-es") {
