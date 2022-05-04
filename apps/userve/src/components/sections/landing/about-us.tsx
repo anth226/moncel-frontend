@@ -8,7 +8,7 @@ import { Header2, Text } from 'src/components/core/typography';
 const AboutUsSection = (props: AboutUsStoryblok) => {
     return <Section>
         <div className="bg-[url('../images/usx-cta-background.svg')] bg-[#72809d] bg-cover	rounded-2xl grid grid-cols-12 grid-flow-row drop-shadow-lg">
-            <div className="col-span-12 md:col-span-6 text-white flex flex-col justify-center p-10 md:p-14">
+            <div className="col-span-12 md:col-span-6 text-white flex flex-col justify-center p-10 md:py-14 md:pl-14 md:pr-0">
                 <Header2 className="!text-white">{props.header}</Header2>
                 <Text className="!mb-0">{props.subheader}</Text>
                 <a href={props.url}>

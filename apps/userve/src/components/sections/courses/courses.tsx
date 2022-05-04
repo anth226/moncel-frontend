@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { Section } from 'src/components/core/Section';
 import Card from 'src/components/coursePages/card'
 import { CourseCardStoryblok } from 'src/storyblok-component-types';
-import { Header2 } from 'src/components/core/typography';
+import { Header3 } from 'src/components/core/typography';
 import { useAppSelector } from 'src/store';
 import { CourseData, CourseTypeData, CourseType } from 'src/components/coursePages/types';
 import { CoursePageStoryblok } from "src/storyblok-component-types";
@@ -49,8 +49,8 @@ export default ({ coursePageContent }: { coursePageContent: CoursePageStoryblok[
         setCourses(retrieveCourseData(selectedState, courseEdges));
     }, [selectedState]);
     if(!selectedState) return null;
-    return <Section>
-        <Header2 className="mb-8">{`Courses available in ${selectedState}`}</Header2>
+    return <Section className="!py-0">
+        <Header3>{`Courses available in ${selectedState}`}</Header3>
         <div className="flex flex-col md:grid md:grid-cols-3 grid-flow-md:row gap-10">
             { courses.map(courseData => {
                 return <Card {...courseData}></Card>

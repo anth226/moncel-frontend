@@ -1,54 +1,68 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import { courseLang } from 'src/lib/courseLang';
 import { CourseCardStoryblok } from 'src/storyblok-component-types';
 import { CourseData } from 'src/components/coursePages/types';
+import CardButton from 'src/components/coursePages/button';
 
 const FALLBACK_IMAGE_HOST = "https://www.userve.com/hs-fs";
 // Course Data from json to be supplemented with data from storyblok
 interface ReactProps {
     className?: string;
     isAvailable?: boolean;
-    tag?: string;
+    tag?: string | null;
     storyblokDefaultImg?: string; // if datasource is courses.json 
+    courseTitle: string;
+    url:string;
 }
 
 const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
     // const { url, title, desc, image } = props;
-    let url, title, desc, image, tag;
+    let url, title, desc, image, type, courseTitle;
+    const lang = courseLang(props.type);
+    const tag = props.tag;
 
-    console.log(props)
-    if("component" in props) {
+    if ("component" in props) {
         // Component has been passed a CourseCardStoryblok as props
         url = props.link;
         title = props.title;
         desc = props.description;
-        tag = props.tag;
         image = props.image?.filename;
+        type = props.type;
     }
     else {
         // Component has been passed CourseData from json
         url = props.url;
         title = props.title;
         desc = props.desc;
-        tag = props.tag;
+        type = props.type;
         image = `${FALLBACK_IMAGE_HOST}${props.image}`;
     }
+
+    if (lang == "lang-es") {
+        courseTitle = title
+    } else {
+        if (props.state == undefined) {
+            courseTitle = title;
+        } else {
+            courseTitle = props.state + " " + title;
+        }
+    }
+
     return <div className={`card flex flex-col rounded-2xl overflow-hidden bg-white drop-shadow-xl ${props.className}`}>
-        
-        <div className={`card-image z-0 relative hover:md:transform-none ${tag == "coming-soon" ? "coming-soon" : ""}`}>
+        <div className={`card-image ${tag == "coming-soon" ? "coming-soon" : ""}`}>
             <Link className="cursor-pointer" to={url || ""}>
                 <img src={image} alt={`${title}-course-image`} />
             </Link>
         </div>
-        <div className="card-body z-10 p-6 bg-white relative hover:md:transform-none">
-            <Link className="text-bluewood text-lg font-semibold cursor-pointer" to={url || ""}>{title || ""}</Link>
+        <div className="card-body">
+            <Link className="text-bluewood text-lg font-semibold cursor-pointer" to={url || ""}>{courseTitle || ""}</Link>
             <p className="text-lynch mt-4">{desc}</p>
         </div>
-        <div className="card-button z-20 px-6 pb-6 absolute w-full bg-white">
-            <Link to={url || ""}><button className="btn btn-primary w-full cursor-pointer">Learn More</button></Link>
+        <div className="card-button">
+            <CardButton lang={lang} tag={tag || ""} url={url || ""}/>
         </div>
-
     </div>
 };
 

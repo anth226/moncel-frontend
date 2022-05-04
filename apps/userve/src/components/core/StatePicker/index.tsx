@@ -36,7 +36,7 @@ const StatePicker = () => {
               }
         }
 
-    return <div className="flex flex-col md:flex-row justify-between rounded-md p-4 shadow-lg bg-white">
+    return <div className="flex flex-col md:flex-row justify-between rounded-md p-4 shadow-xl bg-white">
         <div className="flex flex-col w-100 md:w-2/3 text-navy md:mr-4 mb-4 md:mb-0">
             <select onChange={handleSelect} className={`bg-white outline-0 ${selectedState ? "" : "mb-4"}`}>
                 {StateList.map(state => {
