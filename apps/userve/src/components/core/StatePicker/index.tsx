@@ -43,7 +43,7 @@ const StatePicker = () => {
                     return <option key={`option-${state}`} selected={state == selectedState} disabled={!state}>{state || STATE_SELECT_PLACEHOLDER}</option>
                 })}
             </select>
-            { selectedState ? <div className={`text-3xl text-navy opacity-50 font-bold`}>{selectedState || "\u00A0"}</div> : null }
+            { selectedState ? <div className={`text-3xl text-half-navy font-bold`}>{selectedState || "\u00A0"}</div> : null }
         </div>
         <Link to={ButtonHref}><button className="btn btn-primary px-4 py-4 w-full lg:w-auto">Find Your Course</button></Link>
     </div>;
