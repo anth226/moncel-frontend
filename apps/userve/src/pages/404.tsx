@@ -1,9 +1,11 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link, graphql, PageProps } from "gatsby"
 
 import Layout from 'src/components/layout';
 import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { Header1, Header2, Header5, Text } from 'src/components/core/typography';
+import { DataProps } from 'src/lib/storyblokSourceTypes';
+import { PageNotFoundStoryblok } from 'src/storyblok-component-types';
 
 import ArrowRight from "../images/usx_arrow_right.svg";
 // styles
@@ -14,19 +16,22 @@ const pageStyles = {
 
 interface HelpfulLinkProps {
   title: string,
-  description: string,
-  href: string,
+  description?: string,
+  link: string,
 }
-const HelpfulLink = ({ title, description, href }: HelpfulLinkProps) => {
+const HelpfulLink = ({ title, description, link }: HelpfulLinkProps) => {
 
   return <div className="bg-white w-full max-w-[200px] rounded-xl shadow-xl flex flex-col p-4 gap-2">
     <Header5>{title}</Header5>
-    <Text>{description}</Text>
-    <Link to={href} className="text-navy font-bold flex gap-2 items-center">Access <img src={ArrowRight} width={12} height={12}/></Link>
+    <Text>{description || ""}</Text>
+    <Link to={link} className="text-navy font-bold flex gap-2 items-center">Access <img src={ArrowRight} width={12} height={12}/></Link>
   </div>
 }
 
-const NotFoundPage = () => {
+const NotFoundPage = ({ data }: PageProps<DataProps>) => {
+  const slugs = data.allStoryblokEntry.nodes[0];
+  const content: PageNotFoundStoryblok = JSON.parse(slugs?.content || "");
+
   return (
     <Layout>
         <main style={pageStyles}>
@@ -34,15 +39,15 @@ const NotFoundPage = () => {
           <SectionFullWidth className="bg-[url('../images/usx_404_bg.jpg')] bg-cover bg-center px-4 py-40 flex flex-col md:flex-row gap-4">
             <Section className="w-full lg:flex lg:justify-between">
               <div className="max-w-[400px]">
-                <Header1>404</Header1>
-                <Header2>Page not found</Header2>
-                <Text>The page you are looking for was removed or does not exist. Try one of these helpful links instead.</Text>
+                <Header1>{content.title || ""}</Header1>
+                <Header2>{content.subtitle || ""}</Header2>
+                <Text>{content.desc || ""}</Text>
               </div>
 
               <div className="flex flex-col md:flex-row gap-4">
-                <HelpfulLink title="Home" description="Learn how fast and easy it is to get your training online." href="/us"/>
-                <HelpfulLink title="Help Center" description="Answers to the most frequently asked questions." href="https://help.userve.com/knowledge"/>
-                <HelpfulLink title="Contact" description="Get in touch! We're here to answer your questions." href="/us/about/contact-us"/>
+                { (content.helpful_links || []).map((link, i) => {
+                  return <HelpfulLink key={`link-${i}`} {...link} />
+                })}
               </div>
             </Section>
           </SectionFullWidth>
@@ -53,4 +58,15 @@ const NotFoundPage = () => {
   )
 }
 
-export default NotFoundPage
+export default NotFoundPage;
+
+export const pageQuery = graphql`
+  query {
+    allStoryblokEntry(filter: {full_slug: {regex: "/^404/"}}) {
+      nodes {
+        content
+        slug
+        full_slug
+      }
+    }
+}`;
