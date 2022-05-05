@@ -94,7 +94,13 @@ interface MobileLinkProps {
     icon: typeof CoursesIcon,
 }
 const MobileLink = ({ displayName, href, icon }: MobileLinkProps) => {
-    return <Link to={href} className="w-full">
+    const dispatch = useAppDispatch();
+
+    const handleClick = () => {
+        dispatch(toggleNavbarOpen(false))
+    }
+
+    return <Link to={href} className="w-full" onClick={handleClick}>
         <div className="w-full flex justify-between items-center p-4">
             <div className="flex items-center gap-4">
                 <img src={icon} />
