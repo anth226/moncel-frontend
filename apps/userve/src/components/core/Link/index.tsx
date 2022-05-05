@@ -7,10 +7,19 @@ interface LinkProps {
     className?: string
 }
 
+const isInternalLink = (s: string) => {
+    return !!s.match(/^\/w+/);
+}
+
 const Link = (props: LinkProps) => {
-    return <div className={`flex text-inherit ${props.className}`}>
-        <GatsbyLink to={props.to} className={props.className}>{props.children}</GatsbyLink>
-    </div>
+    if(isInternalLink(props.to)) {
+        return <div className={`flex text-inherit ${props.className}`}>
+            <GatsbyLink to={props.to} className={props.className}>{props.children}</GatsbyLink>
+        </div>
+    }
+    else {
+        return <ExternalLink {...props} />
+    }
 }
 
 export const ExternalLink = (props: LinkProps) => {
