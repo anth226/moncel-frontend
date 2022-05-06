@@ -22,7 +22,7 @@ const StatePicker = () => {
         getState().then((state) => {
             dispatch(selectState(state));
         });
-    });
+    }, []);
 
     // react devs are really annoying sometimes
     // https://github.com/facebook/create-react-app/issues/2070
