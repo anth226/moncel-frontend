@@ -28,7 +28,7 @@ export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
     const faqsStories = data.faqs?.nodes || [];
 
     // Filter storyblok data by the course type for this page
-    const pageStory = heroStories.filter(slug => slug.slug === pageContext.type)[0];
+    const heroStory = heroStories.filter(slug => slug.slug === pageContext.type)[0];
     const courseInfoStory = courseInfoStories.filter(slug => slug.slug === pageContext.type)[0];
     const benefitsStory = benefitsStories.filter(slug => slug.slug === pageContext.type)[0];
     const accountsStory = accountsStories.filter(slug => slug.slug === pageContext.type)[0];
@@ -36,13 +36,15 @@ export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
     const testimonialsStory = testimonialsStories.filter(slug => slug.slug === pageContext.type)[0];
     const faqsStory = faqsStories.filter(slug => slug.slug === pageContext.type)[0];
 
+    // Parse additional data
+    const modalStories = heroStories.filter(slug => slug.full_slug.startsWith("courses/course-pages/hero/modals"));
 
     // Parse content strings to json
     // Parsing empty strings will error; this is intentional as it indicates an error fetching data
     // TODO: try/catch is there to handle errors while course pages are still under construction in storyblok but should be removed once that data is populated
-    let pageContent: CoursePageStoryblok, courseInfoContent: CoursePageInfoSectionStoryblok, benefitsContent: BenefitsStoryblok, accountsContent: AboutUsStoryblok, featuresContent: BenefitsStoryblok, testimonialsContent: TestimonialsStoryblok, faqsContent: CoursePageInfoSectionStoryblok;
+    let heroContent: CoursePageStoryblok, courseInfoContent: CoursePageInfoSectionStoryblok, benefitsContent: BenefitsStoryblok, accountsContent: AboutUsStoryblok, featuresContent: BenefitsStoryblok, testimonialsContent: TestimonialsStoryblok, faqsContent: CoursePageInfoSectionStoryblok;
     try {
-      pageContent = JSON.parse(pageStory?.content || "");
+      heroContent = JSON.parse(heroStory?.content || "");
       courseInfoContent = JSON.parse(courseInfoStory?.content || "")
       benefitsContent = JSON.parse(benefitsStory?.content || "")
       accountsContent = JSON.parse(accountsStory?.content || "")
@@ -53,13 +55,13 @@ export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
     catch (e){
       console.error(`Error fetching data for page ${pageContext.url}`)
     }
-    if(!pageContent || !courseInfoContent || !benefitsContent || !accountsContent || !featuresContent || !testimonialsContent || !faqsContent) return null;
+    if(!heroContent || !courseInfoContent || !benefitsContent || !accountsContent || !featuresContent || !testimonialsContent || !faqsContent) return null;
 
     return <div>
         <Head seo={seoContent}/>
         <Layout>
             <main style={pageStyles}>
-                <HeroSection content={pageContent} context={pageContext} />
+                <HeroSection content={heroContent} modalStories={modalStories} context={pageContext} />
                 <CourseInfoSection {...courseInfoContent} className="bg-gradient-to-b from-hawkes to-white"/>
                 <BenefitsSection {...benefitsContent} />
                 <TestimonialsSection {...testimonialsContent} />
