@@ -48,7 +48,7 @@ export default ({ data, pageContext }: PageProps<DataProps, LegalData>) => {
 {/* const query = ``; // query default copy, then query copy for this url */}
 export const pageQuery = graphql`
   query {
-    content:allStoryblokEntry(filter: {full_slug: {regex: "/^legal/content.*/"}}) {
+    content:allStoryblokEntry(filter: {full_slug: {regex: "/^legal*/"}}) {
       nodes {
         content
         slug

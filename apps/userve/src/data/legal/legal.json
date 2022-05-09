@@ -11,10 +11,12 @@
     },
     {
         "title": "Cookies Policy",
-        "url": "/us/legal/cookie-policy"
+        "url": "/us/legal/cookie-policy",
+        "type":"cookies"
     },
     {
         "title": "Refund Policy",
-        "url": "/us/legal/refund-policy"
+        "url": "/us/legal/refund-policy",
+        "type":"refund"
     }
 ]

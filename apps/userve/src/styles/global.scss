@@ -215,13 +215,28 @@
     h4 {
       @apply text-2xl font-bold mb-4 text-bluewood;
     }
+    h5 {
+      @apply text-lg font-semibold mb-4 text-bluewood leading-6;
+    }
     hr {
       @apply my-12;
     }
     ul {
-      @apply ml-4;
+      @apply ml-4 mb-6;
       li {
         @apply list-disc mb-2 last:mb-0;
+        ul {
+          @apply mt-6;
+        }
+      }
+    }
+    ol {
+      @apply ml-4 mb-6;
+      li {
+        @apply list-decimal mb-2 last:mb-0;
+        ul {
+          @apply mt-6;
+        }
       }
     }
   }

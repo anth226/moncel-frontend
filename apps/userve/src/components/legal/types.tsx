@@ -1,4 +1,4 @@
-export type LegalType = "privacy" | "terms";
+export type LegalType = "privacy" | "terms" | "refund" | "cookies";
 
 export interface LegalData {
     title: string;
