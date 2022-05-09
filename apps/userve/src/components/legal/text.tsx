@@ -1,11 +1,11 @@
 import React from "react";
 import ReactMarkdown from 'react-markdown';
 
-import { TextStoryblok } from 'src/storyblok-component-types';
+import { LegalPageStoryblok } from 'src/storyblok-component-types';
 import { Header1 } from 'src/components/core/typography';
 import Section from "../core/Section";
 
-const TextSection = (props: TextStoryblok) => {
+const TextSection = (props: LegalPageStoryblok) => {
     return <Section>
         <div className="legal grid grid-cols-12">
             <div className="col-span-12 md:col-span-4 md:pr-10 lg:pr-0 lg:col-span-3 mb-6 md:mb-0">

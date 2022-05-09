@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'gatsby';
+
 import { Section } from 'src/components/core/Section';
 import { FeaturedBlogStoryblok, BlogPostCardStoryblok } from 'src/storyblok-component-types';
 import { Header2, Header5, Text } from 'src/components/core/typography';
+import Link from 'src/components/core/Link';
 
 const BlogTag = ({ tag }: { tag: string }) => {
     return <div className="text-xs bg-cornflower text-white mb-4 px-2 py-1 rounded">
@@ -13,20 +14,16 @@ const BlogTag = ({ tag }: { tag: string }) => {
 const BlogCard = (blog: BlogPostCardStoryblok) => {
     const tags = (blog.tags || "").split(',');
     return <div className="card flex flex-col rounded-2xl overflow-hidden bg-white drop-shadow-xl">
-        <div>
-            <div className="card-image">
-                <Link to={blog.link || ""}>
-                    <img src={blog.imageSrc || blog.image?.filename || ""} alt={blog.title} />
-                </Link>
-            </div>
-            <div className="card-body">
-                <div className="flex">
-                    {tags.map((tag, i) => {
-                        return <BlogTag tag={tag} />
-                    })}
-                </div>
-                <Link to={blog.link || ""}><Header5>{blog.title}</Header5></Link>
-                <p className="text-lynch mt-4">{blog.summary}</p>
+        <div className="card-image z-0 relative hover:md:transform-none">
+            <Link to={blog.link || ""}>
+                <img src={blog.imageSrc || blog.image?.filename || ""} alt={blog.title} />
+            </Link>
+        </div>
+        <div className="card-body z-10 p-6 bg-white relative hover:md:transform-none">
+            <div className="flex">
+                {tags.map((tag, i) => {
+                    return <BlogTag tag={tag} key={`blog-tag-${i}`} />
+                })}
             </div>
         </div>
         <div className="card-button">
