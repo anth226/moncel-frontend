@@ -2,7 +2,8 @@ import { GatsbyNode } from "gatsby";
 import { createRemoteFileNode } from 'gatsby-source-filesystem'
 import path from 'path';
 import fs from 'fs';
-import { CourseData, CourseTypeData } from 'src/components/coursePages/types';
+import { CourseData, CourseTypeData } from './src/components/coursePages/types';
+import { LegalData } from './src/components/legal/types';
 
 export const createPages: GatsbyNode['createPages'] = async ({ actions }) => {
     const { createPage } = actions;
@@ -30,6 +31,21 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions }) => {
             component: path.resolve(`src/components/coursePages/template.tsx`),
         });
     });
+
+    const rawLegalData = fs.readFileSync('./src/data/legal/legal.json', 'utf8');
+    const legalData: LegalData[] = JSON.parse(rawLegalData);
+    legalData.forEach(legal => {
+        createPage({
+            path: `${legal.url}`,
+            context: {
+                title: legal.title,
+                url: legal.url,
+                type: legal.type,
+            },
+            component: path.resolve(`src/components/legal/template.tsx`),
+        });
+    });
+
 };
 
 exports.createSchemaCustomization = ({ actions }) => {

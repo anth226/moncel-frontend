@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Privacy Policy",
+        "url": "/us/legal/privacy-policy",
+        "type":"privacy"
+    },
+    {
+        "title": "Terms of Use",
+        "url": "/us/legal/terms-of-use",
+        "type":"terms"
+    },
+    {
+        "title": "Cookies Policy",
+        "url": "/us/legal/cookie-policy"
+    },
+    {
+        "title": "Refund Policy",
+        "url": "/us/legal/refund-policy"
+    }
+]
