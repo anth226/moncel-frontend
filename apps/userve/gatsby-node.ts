@@ -2,9 +2,11 @@ import { GatsbyNode } from "gatsby";
 import { createRemoteFileNode } from 'gatsby-source-filesystem'
 import path from 'path';
 import fs from 'fs';
-import { CourseData, CourseTypeData } from 'src/components/coursePages/types';
+import { CourseData, CourseTypeData } from './src/components/coursePages/types';
+import { Slug, DataProps } from './src/lib/storyblokSourceTypes';
+import { LegalPageStoryblok } from './src/storyblok-component-types';
 
-export const createPages: GatsbyNode['createPages'] = async ({ actions }) => {
+export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions }) => {
     const { createPage } = actions;
     const rawCourseData = fs.readFileSync('./src/data/courses/courses.json', 'utf8');
     const rawCourseTypeData = fs.readFileSync('./src/data/courseTypes/courseTypes.json', 'utf8');
@@ -28,6 +30,31 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions }) => {
                 enroll: courseType.enroll,
             },
             component: path.resolve(`src/components/coursePages/template.tsx`),
+        });
+    });
+
+    const legalQueryData: { data?: DataProps } = await graphql(`
+        query {
+            allStoryblokEntry(filter: {full_slug: {regex: "/^legal*/"}}) {
+                nodes {
+                content
+                slug
+                full_slug
+                }
+            }
+        }`);
+    const legalPageSlugs: Slug[] = legalQueryData.data?.allStoryblokEntry.nodes || [];
+    // will fail build if retrieving storyblok data for any page fails
+    legalPageSlugs.forEach(legalPageSlug => {
+        const content: LegalPageStoryblok = JSON.parse(legalPageSlug?.content || "");
+        const { type } = content;
+        const url = `/us/legal/${type}`;
+        createPage({
+            path: url,
+            context: {
+                content,
+            },
+            component: path.resolve(`src/components/legal/template.tsx`),
         });
     });
 };

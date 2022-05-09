@@ -64,7 +64,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
 
           {/* Featured Courses */}
           <SectionFullWidth className="bg-[url('../images/usx-home-courses.jpg')] bg-cover bg-center">
-            <Section className="flex flex-col md:grid md:grid-cols-3 gap-10 items-start -mb-28">
+            <Section className="flex flex-col md:grid md:grid-cols-3 gap-10 items-stretch -mb-36">
               <div className="col-start-1">
                 <Header2><span className="text-white">{coursesContent.title || ""}</span></Header2>
                 <Text><span className="text-white">{coursesContent.description || ""}</span></Text>
@@ -75,7 +75,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           </SectionFullWidth>
 
           {/* Benefits */}
-          <BenefitsSection {...benefitsContent} className="pt-16 bg-gradient-to-b from-hawkes to-white" />
+          <BenefitsSection {...benefitsContent} className="pt-28 md:pt-16 bg-gradient-to-b from-hawkes to-white" />
 
           {/* Business */}
           <BusinessSection {...businessContent} />
