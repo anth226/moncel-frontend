@@ -52,14 +52,16 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
     }
 
     return <div className={`card flex flex-col rounded-2xl overflow-hidden bg-white drop-shadow-xl ${props.className}`}>
-        <div className={`card-image ${tag == "coming-soon" ? "coming-soon" : ""}`}>
-            <Link className="cursor-pointer" to={url || ""}>
-                <img src={image} alt={`${title}-course-image`} />
-            </Link>
-        </div>
-        <div className="card-body">
-            <Link className="text-bluewood text-lg font-semibold cursor-pointer" to={url || ""}>{courseTitle || ""}</Link>
-            <p className="text-lynch mt-4">{desc}</p>
+        <div>
+            <div className={`card-image ${tag == "coming-soon" ? "coming-soon" : ""}`}>
+                <Link className="cursor-pointer" to={url || ""}>
+                    <img src={image} alt={`${title}-course-image`} />
+                </Link>
+            </div>
+            <div className="card-body">
+                <Link className="text-bluewood text-lg font-semibold cursor-pointer" to={url || ""}>{courseTitle || ""}</Link>
+                <p className="text-lynch mt-4">{desc}</p>
+            </div>
         </div>
         <div className="card-button">
             <CardButton lang={lang} tag={tag || ""} url={url || ""}/>
