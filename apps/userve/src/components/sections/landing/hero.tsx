@@ -16,6 +16,7 @@ interface PropTypes {
 
 const HeroSection = ({ content, slug }: PropTypes) => {
     const heroImageLocalFileNode = findMatchingLocalFileNode(getFilename(content.Image?.filename || ""), slug);
+    if(heroImageLocalFileNode == null) console.error("Unable to find hero image data; falling back to default image.")
     return <Section className="grid grid-cols-12 items-center ">
         <div className="col-span-12 md:col-span-7 lg:col-span-6 order-12 md:order-1">
             <Header1>{ content.Header || "Get your certificate in hours not days." }</Header1>
@@ -23,7 +24,7 @@ const HeroSection = ({ content, slug }: PropTypes) => {
             <StatePicker />
         </div>
         <div className="col-span-12 md:col-span-5 lg:col-span-6 order-1 md:order-12 mb-6 md:mb-0 flex justify-center">
-            <DynamicImage fileNode={heroImageLocalFileNode} alt="Hero image" className="md:ml-12 max-w-[300px] md:max-w-full" />
+            <DynamicImage fileNode={heroImageLocalFileNode || DefaultHeroImage} alt="Hero image" className="md:ml-12 max-w-[300px] md:max-w-full" />
         </div>
     </Section>
 }

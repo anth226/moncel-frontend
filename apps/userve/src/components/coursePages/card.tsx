@@ -13,8 +13,6 @@ interface ReactProps {
     isAvailable?: boolean;
     tag?: string | null;
     storyblokDefaultImg?: string; // if datasource is courses.json 
-    courseTitle: string;
-    url:string;
 }
 
 const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
@@ -51,7 +49,7 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
         }
     }
 
-    return <div className={`card flex flex-col rounded-2xl overflow-hidden bg-white drop-shadow-xl ${props.className}`}>
+    return <div className={`card flex flex-col rounded-2xl overflow-hidden bg-white drop-shadow-xl ${props.className}`} data-test={`course-card-${encodeURIComponent(courseTitle || "")}`}>
         <div>
             <div className={`card-image ${tag == "coming-soon" ? "coming-soon" : ""}`}>
                 <Link className="cursor-pointer" to={url || ""}>
