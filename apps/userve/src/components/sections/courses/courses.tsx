@@ -52,8 +52,8 @@ export default ({ coursePageContent }: { coursePageContent: CoursePageStoryblok[
     return <Section className="!py-0">
         <Header3>{`Courses available in ${selectedState}`}</Header3>
         <div className="flex flex-col md:grid md:grid-cols-3 grid-flow-md:row gap-10">
-            { courses.map(courseData => {
-                return <Card {...courseData}></Card>
+            { courses.map((courseData, i) => {
+                return <Card {...courseData} key={`course-card-${i}`}></Card>
             }) }
         </div>
     </Section>

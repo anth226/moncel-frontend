@@ -7,6 +7,8 @@ module.exports = {
           blue: "#000b8f",
         },
         "navy":"#000B8F", // primary
+        "dark-blue": "#000eb8", // button primary
+        "navy-hover":"#000090", // button hover
         "half-navy":"#000b8f80", // navy with 0.5 opacity
         "bluewood": "#35425B", // titles
         "sky-blue": "#000EB8CC", // bright blue, stats
@@ -19,6 +21,9 @@ module.exports = {
         "melrose": "#C2C7FF", // accreditation
         "hawkes": "#E1E4FE66", // gradient bg
       },
+    },
+    fontFamily: {
+      'sans': ['Inter', 'sans-serif'],
     },
     fontSize: {
       'xs': '.75rem',

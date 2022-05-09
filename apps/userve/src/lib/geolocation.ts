@@ -12,15 +12,19 @@ type ResponseType = {
     [key: string]: unknown; // not unknown but unused
 }
 
-const DEFAULT_NO_MATCH="California";
+const DEFAULT_NO_MATCH = "California";
 export const getState = async () => {
-    let state;
+    // check localStorage first
+    const previouslySelectedState = localStorage.getItem('selected_state');
+    if(previouslySelectedState != null) return previouslySelectedState;
+
     try {
+        // TODO: This should call a backend service instead of exposing the token
         const { data: { region, country } } = await axios.get<ResponseType>('https://ipinfo.io/?token=8d569c1240a97f');
         if(country !== "US" || !stateList.includes(region)) return DEFAULT_NO_MATCH;
         return region;
     } catch(e) {
-        // do nothing
+        // probably an adblocker; do nothing
     }
     return DEFAULT_NO_MATCH;
 }

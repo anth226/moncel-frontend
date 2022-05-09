@@ -25,10 +25,8 @@ const BlogCard = (blog: BlogPostCardStoryblok) => {
                     return <BlogTag tag={tag} key={`blog-tag-${i}`} />
                 })}
             </div>
-            <Link to={blog.link || ""}><Header5>{blog.title}</Header5></Link>
-            <p className="text-lynch mt-4">{blog.summary}</p>
         </div>
-        <div className="card-button z-20 px-6 pb-6 absolute w-full bg-white">
+        <div className="card-button">
             <Link to={blog.link || ""}><button className="btn btn-primary w-full">Learn More</button></Link>
         </div>
     </div>
