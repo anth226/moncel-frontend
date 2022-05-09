@@ -1,6 +1,9 @@
 @tailwind base;
 
 @layer base {
+  body {
+    @apply font-sans;
+  }
   h1 {
     @apply text-4xl md:text-5xl font-bold mb-6 text-bluewood;
     strong {
@@ -50,32 +53,19 @@
       content: url(https://www.userve.com/hubfs/icons/usx-check.svg);
       position:absolute;
       margin-left:-2rem;
-
     }
   }
   .btn {
-    @apply text-center font-medium hover:opacity-90 cursor-pointer w-full md:w-fit;
-    padding: 15px 2rem;
-    font-family: Inter, sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: 9px;
-    text-transform: none;
-    display: inline-block;
+    @apply text-center font-medium cursor-pointer w-full md:w-fit border-1 border-solid transition-all no-underline normal-case inline-block rounded-md px-6 py-4 font-sans;
   }
   .btn-primary {
-    border: 1px solid #000eb8;
-    background-color: rgba(0, 14, 184, 1);
-    color: #fff;
+    @apply bg-dark-blue border-dark-blue hover:bg-navy-hover text-white;
   }
   .btn-invert {
-    border: 1px solid #000eb8;
-    color: #000eb8;
+    @apply border-dark-blue text-dark-blue hover:bg-dark-blue/10;
   }
   .btn-light {
-    border-color:white;
-    color:white;
+    @apply border-white text-white;
   }
   #hubspotForm {
     img {
@@ -100,20 +90,8 @@
       width:100%;
     }
     input[type=submit] {
-      padding: 15px 2rem;
-      font-family: Inter, sans-serif;
-      font-style: normal;
-      font-weight: 500;
-      text-decoration: none;
-      border-radius: 9px;
-      text-transform: none;
-      display: inline-block;
-      border: 1px solid #000eb8;
-      background-color: rgba(0, 14, 184, 1);
-      color: #fff;
-      width:99%;
-      margin-top:1rem;
-      cursor:pointer;
+      @apply text-center font-medium cursor-pointer md:w-fit border-1 border-solid transition-all no-underline normal-case inline-block rounded-md px-4 py-4 font-sans bg-dark-blue border-dark-blue hover:bg-navy-hover text-white mt-6;
+      width:99% !important;
     }
     li {
       label {
