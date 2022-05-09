@@ -1,8 +1,9 @@
 import React from 'react';
-import { Link } from 'gatsby';
+
 import { Section } from 'src/components/core/Section';
 import { FeaturedBlogStoryblok, BlogPostCardStoryblok } from 'src/storyblok-component-types';
 import { Header2, Header5, Text } from 'src/components/core/typography';
+import Link from 'src/components/core/Link';
 
 const BlogTag = ({ tag }: { tag: string }) => {
     return <div className="text-xs bg-cornflower text-white mb-4 px-2 py-1 rounded">
@@ -21,7 +22,7 @@ const BlogCard = (blog: BlogPostCardStoryblok) => {
         <div className="card-body z-10 p-6 bg-white relative hover:md:transform-none">
             <div className="flex">
                 {tags.map((tag, i) => {
-                    return <BlogTag tag={tag} />
+                    return <BlogTag tag={tag} key={`blog-tag-${i}`} />
                 })}
             </div>
             <Link to={blog.link || ""}><Header5>{blog.title}</Header5></Link>
