@@ -19,7 +19,12 @@
   }
   nav {
     a {
-      @apply font-sans font-medium text-bluewood;
+      @apply font-sans font-medium text-bluewood hover:text-navy;
+    }
+  }
+  .footer {
+    a {
+      @apply font-sans font-medium hover:underline hover:text-navy;
     }
   }
   .p {
