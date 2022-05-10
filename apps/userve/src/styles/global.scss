@@ -17,6 +17,11 @@
       @apply font-semibold text-navy hover:underline;
     }
   }
+  nav {
+    a {
+      @apply font-sans font-medium text-bluewood;
+    }
+  }
   .p {
     p {
       @apply mb-6 last:mb-0;

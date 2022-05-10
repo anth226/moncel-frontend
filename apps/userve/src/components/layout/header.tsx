@@ -22,7 +22,7 @@ const MOBILE_DROPDOWN_ID = "mobile-dropdown";
 
 const Header = () => {
     const isMobileMenuOpen = useAppSelector(state => state.navbar.isMobileMenuOpen);
-    return <nav className={`${isMobileMenuOpen ? "fixed z-10 accordion" : "flex"} justify-between w-screen xl:max-w-6xl md:mx-4 xl:m-auto md:py-6 lg:py-4 border-b-1 border-mischka`} id={NAVBAR_ID}>
+    return <nav className={`${isMobileMenuOpen ? "fixed z-10 accordion" : "flex"} justify-between w-screen md:w-auto xl:max-w-6xl mx-0 lg:mx-4 xl:m-auto md:py-4 border-b-1 border-mischka`} id={NAVBAR_ID}>
         {/* Desktop+ menu */}
         <div className="hidden lg:flex items-center">
             <Link to="/">
@@ -43,12 +43,12 @@ const Header = () => {
         </div>
 
         {/* mobile-tablet */}
-        <div className={`lg:hidden w-screen ${isMobileMenuOpen ? "h-screen" : "h-auto"} py-6 flex flex-col`}>
-            <div className="flex justify-between w-full px-4">
+        <div className={`lg:hidden w-full ${isMobileMenuOpen ? "h-screen" : "h-auto"} flex flex-col`}>
+            <div className="px-4 flex justify-between w-full">
                 <Logo />
                 <HamburgerMenu />
             </div>
-            <div className="w-screen grow">
+            <div className="w-screen h-full">
                 <MobileMenu />
             </div>
         </div>
@@ -79,7 +79,7 @@ const MobileMenu = () => {
                     <MobileLink displayName="Help Center" href="https://help.userve.com/knowledge" icon={HelpIcon} />
                     <MobileLink displayName="Contact" href="/us/about/contact-us" icon={MailIcon} />
                 </div>
-                <div className="flex flex-col gap-4 grow items-center justify-end text-bluewood font-medium w-full p-2">
+                <div className="flex flex-col gap-4 grow items-center justify-end text-bluewood font-medium w-full p-4 mb-8">
                     <Phone className="px-3 py-2 rounded-xl flex items-center justify-center border-navy border-1 w-full"/>
                     <a href="https://my.userve.com/customer/account/login" className="flex items-center justify-center rounded-xl py-2 w-full text-white bg-navy">Login</a>
                 </div>
@@ -101,10 +101,10 @@ const MobileLink = ({ displayName, href, icon }: MobileLinkProps) => {
     }
 
     return <Link to={href} className="w-full" onClick={handleClick}>
-        <div className="w-full flex justify-between items-center p-4">
+        <div className="w-screen flex justify-between items-center py-4 border-b-1 border-mischka">
             <div className="flex items-center gap-4">
                 <img src={icon} />
-                <Header5 className="!mb-0 text-navy">{displayName}</Header5>
+                <div className="!mb-0 text-navy font-sans font-medium">{displayName}</div>
             </div>
             <img src={ArrowIcon} />
         </div>
