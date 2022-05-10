@@ -32,7 +32,7 @@ const BlogCard = (blog: BlogPostCardStoryblok) => {
             </div>
         </div>
         <div className="card-button">
-            <a className="btn btn-primary w-full"href={blog.link || ""}>Learn More</a>
+            <a className="btn btn-primary w-full" href={blog.link || ""}>Learn More</a>
         </div>
     </div>
 };
