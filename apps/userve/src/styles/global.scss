@@ -17,6 +17,16 @@
       @apply font-semibold text-navy hover:underline;
     }
   }
+  nav {
+    a {
+      @apply font-sans font-medium text-bluewood hover:text-navy;
+    }
+  }
+  .footer {
+    a {
+      @apply font-sans font-medium hover:underline hover:text-navy;
+    }
+  }
   .p {
     p {
       @apply mb-6 last:mb-0;

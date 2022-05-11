@@ -49,8 +49,8 @@ const Footer = () => {
     if(isMobile) {
         return <MobileFooter />
     }
-    return <div className="bg-athens py-12 lg:py-16 p-x-2">
-        <div className="max-w-6xl m-auto grid grid-cols-3 grid-flow-row border-b-1 border-mischka pb-8 mb-8">
+    return <div className="footer bg-athens py-12 lg:py-16 px-4">
+        <div className="lg:max-w-6xl lg:mx-auto grid grid-cols-3 grid-flow-row border-b-1 border-mischka pb-8 mb-8">
             <div className="col-span-1 flex-col items-start text-navy font-normal">
                 <Link to="/us">
                     <StaticImage src="../../images/usx-logo-solid.svg" alt="Userve" width={100} className="mb-6" />
