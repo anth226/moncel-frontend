@@ -5,10 +5,7 @@ import { SeoStoryblok } from 'src/storyblok-component-types';
 import { CourseData } from 'src/components/coursePages/types';
 import "src/styles/global.scss";
 
-
-
-
-const Head = ({ seo, coursePageContext }: { seo: SeoStoryblok, coursePageContext: CourseData, }) => {
+const Head = ({ seo, coursePageContext }: { seo: SeoStoryblok, coursePageContext: CourseData }) => {
   return <>
     <Seo {...seo} coursePageContext={coursePageContext}/>
   </>
