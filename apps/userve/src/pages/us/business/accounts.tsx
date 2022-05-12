@@ -26,13 +26,14 @@ enum SLUGS {
     service = "service",
     compliance = "compliance",
     product = "product",
-    accounts = "accounts"
+    accounts = "accounts",
+    seo = "seo"
 }
 
 // markup
 const BusinessPage = ({ data }: PageProps<DataProps>) => {
     const landingSlugs = data.allStoryblokEntry.nodes;
-    const seoContent = data.seo.nodes[0];
+    const seoSlug = landingSlugs.filter(slug => slug.slug === SLUGS.seo)[0];
     const testimonialsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.testimonials)[0];
     const logosSlug = landingSlugs.filter(slug => slug.slug === SLUGS.customers)[0];
     const businessSlug = landingSlugs.filter(slug => slug.slug === SLUGS.statistics)[0];
@@ -52,6 +53,7 @@ const BusinessPage = ({ data }: PageProps<DataProps>) => {
     const productContent = JSON.parse(productSlug?.content || "");
     const accountsContent = JSON.parse(accountsSlug?.content || "");
     const heroContent = JSON.parse(heroSlug?.content || "");
+    const seoContent = JSON.parse(seoSlug?.content || "");
 
     return (
         <div>

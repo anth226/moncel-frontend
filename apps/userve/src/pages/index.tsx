@@ -28,12 +28,13 @@ enum SLUGS {
   business = "business",
   testimonials = "testimonials",
   aboutUs = "about-us",
+  seo = "seo",
 }
 
 // markup
 const IndexPage = ({ data }: PageProps<DataProps>) => {
   const landingSlugs = data.allStoryblokEntry.nodes;
-  const seoContent = data.seo.nodes[0];
+  const seoSlug = landingSlugs.filter(slug => slug.slug === SLUGS.seo)[0];
   const heroSlug = landingSlugs.filter(slug => slug.slug === SLUGS.hero)[0];
   const coursesSlug = landingSlugs.filter(slug => slug.slug === SLUGS.courses)[0];
   const logosSlug = landingSlugs.filter(slug => slug.slug === SLUGS.logos)[0];
@@ -53,6 +54,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
   const businessContent = JSON.parse(businessSlug?.content || "");
   const testimonialsContent = JSON.parse(testimonialsSlug?.content || "");
   const aboutUsContent = JSON.parse(aboutUsSlug?.content || "");
+  const seoContent = JSON.parse(seoSlug?.content || "");
 
   return (
     <div>
@@ -117,7 +119,9 @@ export const pageQuery = graphql`
     }
     seo:allStoryblokEntry(filter: {full_slug: {eq: "seo"}}) {
       nodes {
-      full_slug
+        full_slug
+        slug
+        content
       }
     }
 }`;

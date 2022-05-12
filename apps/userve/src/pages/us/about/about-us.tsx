@@ -15,12 +15,13 @@ const pageStyles = {
 }
 
 enum SLUGS {
-    hero='about/hero',
+    hero="about/hero",
     statistics="about/statistics",
     cta = "about/cta",
     heart = "about/heart",
     personalized = "about/personalized",
-    work = "about/work"
+    work = "about/work",
+    seo = "about/seo"
 }
 
 export default ({ data }: PageProps<DataProps>) => {
@@ -31,6 +32,7 @@ export default ({ data }: PageProps<DataProps>) => {
     const heartSlug = slugs.filter(slug => slug.full_slug === SLUGS.heart)[0];
     const personalizedSlug = slugs.filter(slug => slug.full_slug === SLUGS.personalized)[0];
     const workSlug = slugs.filter(slug => slug.full_slug === SLUGS.work)[0];
+    const seoSlug = slugs.filter(slug => slug.full_slug === SLUGS.seo)[0];
 
     // parsing "" into JSON will error out/fail builds.
     // this is intentional and indicates an error retrieving data from storyblok
@@ -40,8 +42,7 @@ export default ({ data }: PageProps<DataProps>) => {
     const heartContent: TwoColStoryblok = JSON.parse(heartSlug?.content || "");
     const personalizedContent: TwoColStoryblok = JSON.parse(personalizedSlug?.content || "");
     const workContent: BenefitsStoryblok = JSON.parse(workSlug?.content || "");
-
-    const seoContent = data.seo.nodes[0];
+    const seoContent = JSON.parse(seoSlug?.content || "");
 
     return <div>
     <Head seo={seoContent} />

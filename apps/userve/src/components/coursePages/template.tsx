@@ -5,7 +5,7 @@ import Head from 'src/components/head';
 import Layout from 'src/components/layout';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
 import { CourseData } from 'src/components/coursePages/types';
-import { CoursePageStoryblok, CoursePageInfoSectionStoryblok, BenefitsStoryblok, AboutUsStoryblok, TestimonialsStoryblok } from "src/storyblok-component-types";
+import { CoursePageStoryblok, CoursePageInfoSectionStoryblok, BenefitsStoryblok, AboutUsStoryblok, TestimonialsStoryblok, SeoStoryblok } from "src/storyblok-component-types";
 import HeroSection from './hero';
 import CourseInfoSection from './courseInfo';
 import BenefitsSection from './benefits';
@@ -16,8 +16,6 @@ const pageStyles = {
 }
 
 export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
-    const seoContent = data.seo.nodes[0];
-
     // Retrieve storyblok data by section
     const heroStories = data.hero?.nodes || [];
     const courseInfoStories = data.courseInfo?.nodes || [];
@@ -26,6 +24,7 @@ export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
     const featuresStories = data.features?.nodes || [];
     const testimonialsStories = data.testimonials?.nodes || [];
     const faqsStories = data.faqs?.nodes || [];
+    const seoStories = data.seo?.nodes || [];
 
     // Filter storyblok data by the course type for this page
     const heroStory = heroStories.filter(slug => slug.slug === pageContext.type)[0];
@@ -35,14 +34,15 @@ export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
     const featuresStory = featuresStories.filter(slug => slug.slug === pageContext.type)[0];
     const testimonialsStory = testimonialsStories.filter(slug => slug.slug === pageContext.type)[0];
     const faqsStory = faqsStories.filter(slug => slug.slug === pageContext.type)[0];
-
+    const seoStory = seoStories.filter(slug => slug.slug === pageContext.type)[0];
+    
     // Parse additional data
     const modalStories = heroStories.filter(slug => slug.full_slug.startsWith("courses/course-pages/hero/modals"));
 
     // Parse content strings to json
     // Parsing empty strings will error; this is intentional as it indicates an error fetching data
     // TODO: try/catch is there to handle errors while course pages are still under construction in storyblok but should be removed once that data is populated
-    let heroContent: CoursePageStoryblok, courseInfoContent: CoursePageInfoSectionStoryblok, benefitsContent: BenefitsStoryblok, accountsContent: AboutUsStoryblok, featuresContent: BenefitsStoryblok, testimonialsContent: TestimonialsStoryblok, faqsContent: CoursePageInfoSectionStoryblok;
+    let heroContent: CoursePageStoryblok, courseInfoContent: CoursePageInfoSectionStoryblok, benefitsContent: BenefitsStoryblok, accountsContent: AboutUsStoryblok, featuresContent: BenefitsStoryblok, testimonialsContent: TestimonialsStoryblok, faqsContent: CoursePageInfoSectionStoryblok, seoContent: SeoStoryblok;
     try {
       heroContent = JSON.parse(heroStory?.content || "");
       courseInfoContent = JSON.parse(courseInfoStory?.content || "")
@@ -51,14 +51,15 @@ export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
       featuresContent = JSON.parse(featuresStory?.content || "")
       testimonialsContent = JSON.parse(testimonialsStory?.content || "")
       faqsContent = JSON.parse(faqsStory?.content || "")
+      seoContent = JSON.parse(seoStory?.content || "")
     }
     catch (e){
       console.error(`Error fetching data for page ${pageContext.url}`)
     }
-    if(!heroContent || !courseInfoContent || !benefitsContent || !accountsContent || !featuresContent || !testimonialsContent || !faqsContent) return null;
+    if(!heroContent || !courseInfoContent || !benefitsContent || !accountsContent || !featuresContent || !testimonialsContent || !faqsContent || !seoContent) return null;
 
     return <div>
-        <Head seo={seoContent}/>
+        <Head seo={seoContent} coursePageContext={pageContext}/>
         <Layout>
             <main style={pageStyles}>
                 <HeroSection content={heroContent} modalStories={modalStories} context={pageContext} />
@@ -127,9 +128,11 @@ export const pageQuery = graphql`
         full_slug
       }
     }
-    seo:allStoryblokEntry(filter: {full_slug: {eq: "seo"}}) {
+    seo:allStoryblokEntry(filter: {full_slug: {regex: "/^courses/course-pages/seo.*/"}}) {
       nodes {
-      full_slug
+        content
+        slug
+        full_slug
       }
     }
 }`;

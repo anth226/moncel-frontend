@@ -1,61 +1,52 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import { SeoStoryblok } from 'src/storyblok-component-types';
+import { useLocation } from '@reach/router';
+import { CourseData } from 'src/components/coursePages/types';
 
-const Seo = ({
-  seo_description = '',
-  og_image = '',
-  lang = 'en',
-  meta = [],
-  seo_title,
-  og_site_name,
-  og_url,
-  og_type,
-  twitter_title,
-  twitter_site,
-  twitter_card,
-  og_description,
-  twitter_description,
-  title = '',
-  url,
-}: SeoStoryblok) => {
+let title, desc, image;
+
+const Seo = ({ storyblokData: { seo_description = '', og_image, lang = 'en-us', meta = [], seo_title, og_type }, coursePageContext }: { storyblokData: SeoStoryblok, coursePageContext?: CourseData }) => {
+
+  if (coursePageContext) {
+    title = seo_title.replace("$STATE", coursePageContext.state);
+    desc = seo_description.replace("$STATE", coursePageContext.state);
+  } else {
+    title = seo_title || 'Userve';
+    desc = seo_description;
+  }
+
+  if (og_image) {
+    image = og_image.filename;
+  } else {
+    image = ''
+  }
+
+  const location = useLocation();
+
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={seo_title}
-      defaultTitle={title}
+      title={title + ` | Userve`}
+      defaultTitle={seo_title}
+      link = {[
+        { rel : `canonical`, href : location.href }
+      ]}
       meta={[
         {
-          name: `keywords`,
-          content: 'food handler certification course, canada, alberta, ontario, bc, manitoba',
-        },
-        {
           name: `title`,
-          content: seo_title,
+          content: title,
         },
         {
           name: `description`,
-          content: og_description,
-        },
-        {
-          property: `og:site_name`,
-          content: og_site_name || 'Charm',
-        },
-        {
-          property: `og:url`,
-          content: og_url || url,
+          content: desc,
         },
         {
           property: `og:title`,
-          content: seo_title,
-        },
-        {
-          property: `og:description`,
-          content: og_description || seo_description,
+          content: title,
         },
         {
           property: `og:type`,
@@ -63,31 +54,67 @@ const Seo = ({
         },
         {
           property: `og:image`,
-          content: og_image,
+          content: image,
         },
         {
-          name: `twitter:site`,
-          content: twitter_site,
+          property: `og:image:width`,
+          content: `1200`,
+        },
+        {
+          property: `og:image:height`,
+          content: `675`,
+        },
+        {
+          property: `og:url`,
+          content: location.href,
+        },
+        {
+          property: `og:description`,
+          content: desc,
+        },
+        {
+          property: `og:site_name`,
+          content: `Userve`,
         },
         {
           property: `twitter:card`,
-          content: twitter_card || `summary_large_image`,
+          content: `summary`,
+        },
+        {
+          name: `twitter:site`,
+          content: `@UserveInc`,
+        },
+        {
+          property: `twitter:creator`,
+          content: `@UserveInc`,
         },
         {
           property: `twitter:url`,
-          content: url,
+          content: location.href,
         },
         {
           property: `twitter:title`,
-          content: twitter_title || seo_title,
+          content: title,
         },
         {
           property: `twitter:description`,
-          content: twitter_description || og_description,
+          content: desc,
         },
         {
           property: `twitter:image`,
-          content: og_image,
+          content: image,
+        },
+        {
+          property: `twitter:image:alt`,
+          content: title,
+        },
+        {
+          property: `fb:app_id`,
+          content: `100597588758651`,
+        },
+        {
+          name: `author`,
+          content: `Userve`,
         },
       ].concat(meta)}
     />
