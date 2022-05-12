@@ -15,7 +15,7 @@ const NotifyFormSection = () => {
                         <Header3 className="!mb-2">Get Notified</Header3>
                         <Text className="!text-bluewood">To learn more about our upcoming training program, complete the form below and our team will get back to you with more details.</Text>
 
-                        <HubspotContactForm portalId="21498581" formId="769b522c-30a7-42dc-9da5-11ea2d6b0a06" className="text-inherit !drop-shadow-none !p-0" />
+                        <HubspotContactForm portalId="21498581" formId="769b522c-30a7-42dc-9da5-11ea2d6b0a06" hubId="not" className="text-inherit !drop-shadow-none !p-0" />
                     </div>
                 </div>
             </div>
