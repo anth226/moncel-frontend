@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface stateType {
+interface StateSlice {
     selected: string | undefined;
 }
 
-const initialState: stateType = {
+const initialState: StateSlice = {
     selected: undefined,
 }
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import { StaticImage, GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-import { CoursePageStoryblok, IconCardStoryblok } from "src/storyblok-component-types";
 import { Text, Header1, Header2, Header5 } from 'src/components/core/typography';
 import { Section } from 'src/components/core/Section';
-import { CourseData, CourseType } from 'src/components/coursePages/types';
+import { CourseData, CourseType, CourseTypeData } from 'src/components/coursePages/types';
 import { courseLang } from 'src/lib/courseLang';
+import { Slug } from 'src/lib/storyblokSourceTypes';
+import { IconCardStoryblok, CoursePageStoryblok, BassetPurchaseModalStoryblok } from "src/storyblok-component-types";
 
 // images
 import fhGraphic from 'src/images/usx_fh_ge_hero.jpg';
@@ -16,7 +16,7 @@ import bassetGraphic from 'src/images/usx_al_il_hero.jpg';
 import MedalIcon from 'src/images/usx_medal.svg';
 import DollarIcon from 'src/images/usx_dollar.svg';
 import InfoIcon from 'src/images/usx_i.svg';
-import { propTypes } from 'gatsby-plugin-image/dist/src/components/gatsby-image.server';
+import PurchaseButton from './lib/purchaseFlow';
 
 const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?: string }) => <div className={`bg-melrose rounded-3xl text-sm px-4 py-[6px] mb-6 w-fit flex flex-row items-center ${props.className}`}>
     <img src={MedalIcon} className="h-4 pr-2" />
@@ -32,11 +32,13 @@ const MoneyBackGuarantee = ({x}:{x:CourseType}) => {
     </div>;
 };
 
-const EnrollButton = ({ children }: { children: React.ReactNode }) => {
+const EnrollButton = ({ children, courseType }: { children: React.ReactNode, courseType: CourseTypeData }) => {
     // basset needs a modal
-    return <div className="btn btn-primary w-full">
-        {children}
-    </div>
+    return <PurchaseButton courseType={courseType}>
+        <div className="btn btn-primary w-full">
+            { children }
+        </div>
+    </PurchaseButton>
 };
 
 const Features = ({ features }: { features: IconCardStoryblok[] }) => {
@@ -62,7 +64,10 @@ const Benefits = ({ benefits }: { benefits: IconCardStoryblok[] }) => {
     </div>
 }
 
-export default ({ content, context }: { content: CoursePageStoryblok, context: CourseData }) => {
+export default ({ content, modalStories, context }: { content: CoursePageStoryblok, context: CourseData, modalStories: Slug[] }) => {
+    const modalContent = modalStories.map(slug => {
+        return JSON.parse(slug.content || "");
+    });
     let defaultGraphic = "";
 
     switch (true) {
@@ -91,7 +96,7 @@ export default ({ content, context }: { content: CoursePageStoryblok, context: C
     const imageComp = content.image?.filename ? <img src={content.image?.filename} alt={content.title} className="rounded-md" /> : <img src={defaultGraphic} alt={title} className="rounded-md" />
     // replace state placeholder with state name
     if (!content.price) throw Error(`Price was not found for page ${context.url}`);
-    
+
     return <Section className="flex flex-col md:grid grid-cols-1 md:grid-cols-3 gap-10 grid-flow-col md:grid-flow-row">
         <div className="md:col-start-2 md:col-span-2 md:row-start-1 row-span-2">
             {imageComp}
@@ -101,14 +106,14 @@ export default ({ content, context }: { content: CoursePageStoryblok, context: C
             <Header1 className="mb-0 leading-8 !text-3xl md:!text-4xl">{title}</Header1>
             <Text>{content.desc || ""}</Text>
             <div className="mb-6 text-4xl font-extrabold">{content.price}</div>
-            <EnrollButton>
+            <EnrollButton courseType={{ type: context.type, enroll: context.enroll }}>
                 <a className="text-inherit" href={context.enroll}>{lang == "lang-es" ? "Regístrate" : "Enroll Now"}</a>
             </EnrollButton>
             <MoneyBackGuarantee x={context.type} />
             <Features features={content.features || []} />
         </div>
         <div className="md:col-start-2 col-span-2 md:row-start-3">
-            <Header2 className="!text-2xl">{content.subtitle}</Header2>
+            <Header2 className="!text-2xl">{content.subtitle || ""}</Header2>
             <Benefits benefits={content.benefits || []} />
         </div>
     </Section>;

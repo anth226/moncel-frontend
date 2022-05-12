@@ -12,13 +12,13 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
     const rawCourseTypeData = fs.readFileSync('./src/data/courseTypes/courseTypes.json', 'utf8');
 
     const courseData: CourseData[] = JSON.parse(rawCourseData);
-    const courseTypeData: CourseTypeData = JSON.parse(rawCourseTypeData).reduce((enrollByType, courseType) => {
+    const courseTypeEnrolls: Record<string, string> = JSON.parse(rawCourseTypeData).reduce((enrollByType, courseType) => { // TYPE IS WRONG
         enrollByType[courseType.type] = courseType.enroll;
         return enrollByType;
     }, {});
     courseData.forEach(course => {
         if(course.url === "#notify") return;
-        const courseType = courseTypeData[course.type];
+        const enroll = courseTypeEnrolls[course.type];
         createPage({
             path: `${course.url}`,
             context: {
@@ -27,7 +27,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
                 title: course.title,
                 url: course.url,
                 type: course.type,
-                enroll: courseType.enroll,
+                enroll,
             },
             component: path.resolve(`src/components/coursePages/template.tsx`),
         });
