@@ -4,58 +4,39 @@ import { Helmet } from 'react-helmet';
 
 import { SeoStoryblok } from 'src/storyblok-component-types';
 
+let title, desc;
+
 const Seo = ({
-  seo_description = '',
-  og_image = '',
-  lang = 'en',
-  meta = [],
-  seo_title,
-  og_site_name,
-  og_url,
-  og_type,
-  twitter_title,
-  twitter_site,
-  twitter_card,
-  og_description,
-  twitter_description,
-  title = '',
-  url,
+  seo_description = '', og_image = '', lang = 'en-us', meta = [], seo_title, og_type, url = window.location.href, context = ''
 }: SeoStoryblok) => {
+
+  if (context) {
+    title = seo_title.replace("$STATE", context.state);
+    desc = seo_description.replace("$STATE", context.state);
+  } else {
+    title = seo_title || 'Userve';
+    desc = seo_description;
+  }
+
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={seo_title}
-      defaultTitle={title}
+      title={title + ` | Userve`}
+      defaultTitle={seo_title}
       meta={[
         {
-          name: `keywords`,
-          content: 'food handler certification course, canada, alberta, ontario, bc, manitoba',
-        },
-        {
           name: `title`,
-          content: seo_title,
+          content: title,
         },
         {
           name: `description`,
-          content: og_description,
-        },
-        {
-          property: `og:site_name`,
-          content: og_site_name || 'Charm',
-        },
-        {
-          property: `og:url`,
-          content: og_url || url,
+          content: desc,
         },
         {
           property: `og:title`,
-          content: seo_title,
-        },
-        {
-          property: `og:description`,
-          content: og_description || seo_description,
+          content: title,
         },
         {
           property: `og:type`,
@@ -63,15 +44,39 @@ const Seo = ({
         },
         {
           property: `og:image`,
-          content: og_image,
+          content: og_image.filename,
         },
         {
-          name: `twitter:site`,
-          content: twitter_site,
+          property: `og:image:width`,
+          content: `1200`,
+        },
+        {
+          property: `og:image:height`,
+          content: `675`,
+        },
+        {
+          property: `og:url`,
+          content: url,
+        },
+        {
+          property: `og:description`,
+          content: desc,
+        },
+        {
+          property: `og:site_name`,
+          content: `Userve`,
         },
         {
           property: `twitter:card`,
-          content: twitter_card || `summary_large_image`,
+          content: `summary`,
+        },
+        {
+          name: `twitter:site`,
+          content: `@UserveInc`,
+        },
+        {
+          property: `twitter:creator`,
+          content: `@UserveInc`,
         },
         {
           property: `twitter:url`,
@@ -79,15 +84,27 @@ const Seo = ({
         },
         {
           property: `twitter:title`,
-          content: twitter_title || seo_title,
+          content: title,
         },
         {
           property: `twitter:description`,
-          content: twitter_description || og_description,
+          content: desc,
         },
         {
           property: `twitter:image`,
-          content: og_image,
+          content: og_image.filename,
+        },
+        {
+          property: `twitter:image:alt`,
+          content: title,
+        },
+        {
+          property: `fb:app_id`,
+          content: `100597588758651`,
+        },
+        {
+          name: `author`,
+          content: `Userve`,
         },
       ].concat(meta)}
     />
