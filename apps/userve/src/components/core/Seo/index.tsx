@@ -7,12 +7,12 @@ import { SeoStoryblok } from 'src/storyblok-component-types';
 let title, desc;
 
 const Seo = ({
-  seo_description = '', og_image = '', lang = 'en-us', meta = [], seo_title, og_type, context = '', location = ''
+  seo_description = '', og_image = '', lang = 'en-us', meta = [], seo_title, og_type, coursePageContext = '', location = ''
 }: SeoStoryblok) => {
 
-  if (context) {
-    title = seo_title.replace("$STATE", context.state);
-    desc = seo_description.replace("$STATE", context.state);
+  if (coursePageContext) {
+    title = seo_title.replace("$STATE", coursePageContext.state);
+    desc = seo_description.replace("$STATE", coursePageContext.state);
   } else {
     title = seo_title || 'Userve';
     desc = seo_description;

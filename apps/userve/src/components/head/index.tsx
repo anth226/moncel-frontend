@@ -10,10 +10,10 @@ interface LocationData {
   href: string;
 }
 
-const Head = ({ seo, context, location }: { seo: SeoStoryblok, context: CourseData, location:LocationData}) => {
+const Head = ({ seo, coursePageContext, location }: { seo: SeoStoryblok, coursePageContext: CourseData, location:LocationData}) => {
   location = useLocation();
   return <>
-    <Seo {...seo} context={context} location={location.href}/>
+    <Seo {...seo} coursePageContext={coursePageContext} location={location.href}/>
     <link rel="canonical" href={seo.canonical || location.href} />
   </>
 };

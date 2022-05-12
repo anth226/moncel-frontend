@@ -59,7 +59,7 @@ export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
     if(!heroContent || !courseInfoContent || !benefitsContent || !accountsContent || !featuresContent || !testimonialsContent || !faqsContent || !seoContent) return null;
 
     return <div>
-        <Head seo={seoContent} context={pageContext}/>
+        <Head seo={seoContent} coursePageContext={pageContext}/>
         <Layout>
             <main style={pageStyles}>
                 <HeroSection content={heroContent} modalStories={modalStories} context={pageContext} />
