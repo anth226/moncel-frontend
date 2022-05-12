@@ -18,6 +18,7 @@ const Seo = ({ storyblokData: { seo_description = '', og_image, lang = 'en-us', 
   }
 
   const location = useLocation();
+  const image = og_image;
 
   return (
     <Helmet
@@ -48,7 +49,7 @@ const Seo = ({ storyblokData: { seo_description = '', og_image, lang = 'en-us', 
         },
         {
           property: `og:image`,
-          content: og_image.filename,
+          content: image.filename,
         },
         {
           property: `og:image:width`,
@@ -96,7 +97,7 @@ const Seo = ({ storyblokData: { seo_description = '', og_image, lang = 'en-us', 
         },
         {
           property: `twitter:image`,
-          content: og_image.filename,
+          content: image.filename,
         },
         {
           property: `twitter:image:alt`,
