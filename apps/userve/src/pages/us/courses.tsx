@@ -21,7 +21,8 @@ const pageStyles = {
 enum SLUGS {
     hero='hero',
     cta = "cta",
-    coursePages="courses/course-pages"
+    coursePages="courses/course-pages",
+    seo = "seo"
 }
 
 // markup
@@ -30,6 +31,7 @@ const CoursePage = ({ data }: PageProps<DataProps>) => {
     const courseSlugs = data.allStoryblokEntry?.nodes || [];
     const heroSlug = landingSlugs.filter(slug => slug.slug === SLUGS.hero)[0];
     const ctaSlug = landingSlugs.filter(slug => slug.slug === SLUGS.cta)[0];
+    const seoSlug = landingSlugs.filter(slug => slug.slug === SLUGS.seo)[0];
     const coursePageStories = courseSlugs.filter(slug => slug.full_slug.match(SLUGS.coursePages));
 
     const heroContent = JSON.parse(heroSlug?.content || "");
@@ -41,7 +43,7 @@ const CoursePage = ({ data }: PageProps<DataProps>) => {
       }
       return coursePageStories;
     }, []);
-    const seoContent = data.seo.nodes[0];
+    const seoContent = JSON.parse(seoSlug?.content || "");
 
     return (
         <div>
