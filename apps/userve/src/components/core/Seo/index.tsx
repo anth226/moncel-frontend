@@ -7,7 +7,7 @@ import { SeoStoryblok } from 'src/storyblok-component-types';
 let title, desc;
 
 const Seo = ({
-  seo_description = '', og_image = '', lang = 'en-us', meta = [], seo_title, og_type, context = '', location = ''
+  seo_description = '', og_image, lang = 'en-us', meta = [], seo_title, og_type, context = '', location = ''
 }: SeoStoryblok) => {
 
   if (context) {
