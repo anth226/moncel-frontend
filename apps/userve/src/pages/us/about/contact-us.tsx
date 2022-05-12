@@ -7,24 +7,25 @@ import { Section, SectionFullWidth } from 'src/components/core/Section';
 import Head from 'src/components/head';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
 
-import { ContactStoryblok } from 'src/storyblok-component-types';
+import { ContactStoryblok, SeoStoryblok } from 'src/storyblok-component-types';
 import { ContactSection } from 'src/components/sections/contact';
 
 import { Header2, Text } from 'src/components/core/typography';
 
 enum SLUGS {
-  contact = "contact/contact"
+  contact = "contact/contact",
+  seo = "contact/seo"
 }
 
 export default ({ data }: PageProps<DataProps>) => {
   const slugs = data.allStoryblokEntry.nodes;
   const contactSlug = slugs.filter(slug => slug.full_slug === SLUGS.contact)[0];
+  const seoSlug = slugs.filter(slug => slug.full_slug === SLUGS.seo)[0];
 
   // parsing "" into JSON will error out/fail builds.
   // this is intentional and indicates an error retrieving data from storyblok
   const contactContent: ContactStoryblok = JSON.parse(contactSlug?.content || "");
-
-  const seoContent = data.seo.nodes[0];
+  const seoContent: SeoStoryblok = JSON.parse(seoSlug?.content || "");
 
   return <div>
     <Head seo={seoContent} />
