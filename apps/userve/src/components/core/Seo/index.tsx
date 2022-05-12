@@ -28,6 +28,9 @@ const Seo = ({
       }}
       title={title + ` | Userve`}
       defaultTitle={seo_title}
+      link = {[
+        { rel : `canonical`, href : location.href }
+      ]}
       meta={[
         {
           name: `title`,
