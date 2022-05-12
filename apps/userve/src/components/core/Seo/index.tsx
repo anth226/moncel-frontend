@@ -1,15 +1,13 @@
-
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import { SeoStoryblok } from 'src/storyblok-component-types';
 import { useLocation } from '@reach/router';
+import { CourseData } from 'src/components/coursePages/types';
 
 let title, desc;
 
-const Seo = ({
-  seo_description = '', og_image = '', lang = 'en-us', meta = [], seo_title, og_type, coursePageContext = ''
-}: SeoStoryblok) => {
+const Seo = ({ storyblokData: { seo_description = '', og_image, lang = 'en-us', meta = [], seo_title, og_type }, coursePageContext }: { storyblokData: SeoStoryblok, coursePageContext?: CourseData }) => {
 
   if (coursePageContext) {
     title = seo_title.replace("$STATE", coursePageContext.state);
