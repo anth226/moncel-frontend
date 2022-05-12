@@ -3,12 +3,12 @@ import React, { useEffect } from "react";
 interface FormInfo {
     portalId: string;
     formId: string;
-    className: string;
+    className?: string;
+    hubId: string;
 }
 
 const HubspotContactForm = (props: FormInfo) => {
-    const { portalId, formId } = props;
-    let formNum: number = Math.floor(Math.random() * 100000) + 1;
+    const { portalId, formId, hubId } = props;
 
     useEffect(() => {
         const script = document.createElement('script');
@@ -23,7 +23,7 @@ const HubspotContactForm = (props: FormInfo) => {
                     region: "na1",
                     portalId: portalId,
                     formId: formId,
-                    target: '#hub' + formNum
+                    target: '#hub-' + hubId
                 })
             }
         });
@@ -31,7 +31,7 @@ const HubspotContactForm = (props: FormInfo) => {
 
     return (
         <div id="hubspotForm">
-            <div id={`hub${formNum}`} className={`p-8 rounded-md bg-white drop-shadow-lg ${props.className || ""}`}></div>
+            <div id={`hub-${hubId}`} className={`p-8 rounded-md bg-white drop-shadow-lg ${props.className || ""}`}></div>
         </div>
     );
 

@@ -54,16 +54,16 @@ const ContactSection = (props: ContactStoryblok) => {
             </ul>
             <div className="tab-content" id="tabs-tabContentFill">
                 <div className="tab-pane fade show active" id="tabs-individual" role="tabpanel" aria-labelledby="tabs-home-tabFill">
-                    <HubspotContactForm portalId="21498581" formId="ce0ce7ff-c3fe-4ba5-b756-a851de2e5cb7" className="p-0 md:p-8 bg-transparent !drop-shadow-none md:bg-white md:!drop-shadow-lg" />
+                    <HubspotContactForm portalId="21498581" formId="ce0ce7ff-c3fe-4ba5-b756-a851de2e5cb7" hubId="ind" className="p-0 md:p-8 bg-transparent !drop-shadow-none md:bg-white md:!drop-shadow-lg" />
                 </div>
                 <div className="tab-pane fade" id="tabs-business" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
-                    <HubspotContactForm portalId="21498581" formId="d9990f75-9696-45f7-a914-53127b508254" className="p-0 md:p-8 bg-transparent !drop-shadow-none md:bg-white md:!drop-shadow-lg" />
+                    <HubspotContactForm portalId="21498581" formId="d9990f75-9696-45f7-a914-53127b508254" hubId="bus" className="p-0 md:p-8 bg-transparent !drop-shadow-none md:bg-white md:!drop-shadow-lg" />
                 </div>
                 <div className="tab-pane fade" id="tabs-support" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
-                    <HubspotContactForm portalId="21498581" formId="2821dfb1-e4b4-4267-81dd-a6691ab71671" className="p-0 md:p-8 bg-transparent !drop-shadow-none md:bg-white md:!drop-shadow-lg" />
+                    <HubspotContactForm portalId="21498581" formId="2821dfb1-e4b4-4267-81dd-a6691ab71671" hubId="sup" className="p-0 md:p-8 bg-transparent !drop-shadow-none md:bg-white md:!drop-shadow-lg" />
                 </div>
                 <div className="tab-pane fade" id="tabs-general" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
-                    <HubspotContactForm portalId="21498581" formId="38cfb103-d6e5-4248-90f1-df9a1a90210d" className="p-0 md:p-8 bg-transparent !drop-shadow-none md:bg-white md:!drop-shadow-lg" />
+                    <HubspotContactForm portalId="21498581" formId="38cfb103-d6e5-4248-90f1-df9a1a90210d" hubId="gen" className="p-0 md:p-8 bg-transparent !drop-shadow-none md:bg-white md:!drop-shadow-lg" />
                 </div>
             </div>
         </div>
