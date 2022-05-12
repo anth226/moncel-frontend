@@ -5,7 +5,7 @@ import { SeoStoryblok } from 'src/storyblok-component-types';
 import { useLocation } from '@reach/router';
 import { CourseData } from 'src/components/coursePages/types';
 
-let title, desc;
+let title, desc, image;
 
 const Seo = ({ storyblokData: { seo_description = '', og_image, lang = 'en-us', meta = [], seo_title, og_type }, coursePageContext }: { storyblokData: SeoStoryblok, coursePageContext?: CourseData }) => {
 
@@ -17,8 +17,13 @@ const Seo = ({ storyblokData: { seo_description = '', og_image, lang = 'en-us', 
     desc = seo_description;
   }
 
+  if (og_image) {
+    image = og_image.filename;
+  } else {
+    image = ''
+  }
+
   const location = useLocation();
-  const image = og_image;
 
   return (
     <Helmet
@@ -49,7 +54,7 @@ const Seo = ({ storyblokData: { seo_description = '', og_image, lang = 'en-us', 
         },
         {
           property: `og:image`,
-          content: image.filename,
+          content: image,
         },
         {
           property: `og:image:width`,
@@ -97,7 +102,7 @@ const Seo = ({ storyblokData: { seo_description = '', og_image, lang = 'en-us', 
         },
         {
           property: `twitter:image`,
-          content: image.filename,
+          content: image,
         },
         {
           property: `twitter:image:alt`,
