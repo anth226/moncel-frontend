@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 import { Text, Header1, Header2, Header5 } from 'src/components/core/typography';
 import { Section } from 'src/components/core/Section';
@@ -46,7 +47,7 @@ const Features = ({ features }: { features: IconCardStoryblok[] }) => {
         {features.map(feature => {
             return <div className="flex flex-row gap-4 items-start">
                 <img src={feature.Icon?.filename || ""} width={20} height={20} alt={feature.Title} />
-                <Text className="!mb-0">{feature.Title || ""}</Text>
+                <Text className="!mb-0"><ReactMarkdown>{feature.Title || ""}</ReactMarkdown></Text>
             </div>
         })}
     </div>
@@ -103,7 +104,7 @@ export default ({ content, modalStories, context }: { content: CoursePageStorybl
         </div>
         <div className="col-start-1 col-span-1 md:row-start-1 row-span-3 flex flex-col h-full">
             {content.tag ? <Tag>{content.tag}</Tag> : null}
-            <Header1 className="mb-0 leading-8 !text-3xl md:!text-4xl">{title}</Header1>
+            <Header1 className="leading-8 !text-3xl md:!text-4xl">{title}</Header1>
             <Text>{content.desc || ""}</Text>
             <div className="mb-6 text-4xl font-extrabold">{content.price}</div>
             <EnrollButton courseType={{ type: context.type, enroll: context.enroll }}>
