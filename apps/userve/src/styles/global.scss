@@ -175,6 +175,15 @@
     p {
       @apply mb-6 last:mb-0;
     }
+    ul {
+      @apply ml-4 mb-6;
+      li {
+        @apply list-disc mb-2 last:mb-0;
+        ul {
+          @apply mt-6;
+        }
+      }
+    }
   }
   .gatsby-image-wrapper [data-main-image] {
     opacity: 1;
