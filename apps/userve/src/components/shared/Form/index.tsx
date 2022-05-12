@@ -8,7 +8,7 @@ interface FormInfo {
 
 const HubspotContactForm = (props: FormInfo) => {
     const { portalId, formId } = props;
-    const formNum: number = Math.floor(Math.random() * 100000) + 1;
+    let formNum: number = Math.floor(Math.random() * 100000) + 1;
 
     useEffect(() => {
         const script = document.createElement('script');
