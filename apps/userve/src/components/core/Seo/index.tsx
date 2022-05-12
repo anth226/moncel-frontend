@@ -3,11 +3,12 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 import { SeoStoryblok } from 'src/storyblok-component-types';
+import { useLocation } from '@reach/router';
 
 let title, desc;
 
 const Seo = ({
-  seo_description = '', og_image = '', lang = 'en-us', meta = [], seo_title, og_type, coursePageContext = '', location = ''
+  seo_description = '', og_image = '', lang = 'en-us', meta = [], seo_title, og_type, coursePageContext = ''
 }: SeoStoryblok) => {
 
   if (coursePageContext) {
@@ -17,6 +18,8 @@ const Seo = ({
     title = seo_title || 'Userve';
     desc = seo_description;
   }
+
+  const location = useLocation();
 
   return (
     <Helmet
@@ -56,7 +59,7 @@ const Seo = ({
         },
         {
           property: `og:url`,
-          content: location,
+          content: location.href,
         },
         {
           property: `og:description`,
@@ -80,7 +83,7 @@ const Seo = ({
         },
         {
           property: `twitter:url`,
-          content: location,
+          content: location.href,
         },
         {
           property: `twitter:title`,
