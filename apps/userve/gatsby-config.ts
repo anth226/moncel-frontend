@@ -50,7 +50,7 @@ const config: GatsbyConfig = {
         formats: [`auto`, `webp`],
         placeholder: `none`,
         breakpoints: [750, 1080, 1366, 1920],
-      },
+      }
     },
   }, {
     resolve: 'gatsby-plugin-root-import',
@@ -72,6 +72,10 @@ const config: GatsbyConfig = {
       version: 'published',
       localAssets: true, // Optional parameter to download the images to use with Gatsby Image Plugin
     }
+  },
+  {
+    resolve: 'gatsby-plugin-manifest',
+    options: { icon: 'src/images/favicon.png' }
   }]
 };
 
