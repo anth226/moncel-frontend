@@ -23,5 +23,5 @@ jobs:
       - run: yarn
       - name: Generate snapshots
         env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          PERCY_TOKEN: ${{ github.event.client_payload.PERCY_TOKEN }}
         run: yarn snapshot-qa
