@@ -61,6 +61,7 @@
     "wait-on": "^6.0.1"
   },
   "devDependencies": {
+    "@percy/cli": "^1.1.4",
     "@types/reach__router": "^1.3.10",
     "@types/react-helmet": "^6.1.5",
     "cypress": "^9.6.0",

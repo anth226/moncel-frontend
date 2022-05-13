@@ -52,4 +52,4 @@ describe('Course purchasing', () => {
     cy.get('@purchaseRequest').should('have.been.called');
   });
 
-})
+});
