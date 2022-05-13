@@ -48,7 +48,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
     legalPageSlugs.forEach(legalPageSlug => {
         const content: LegalPageStoryblok = JSON.parse(legalPageSlug?.content || "");
         const { type } = content;
-        const url = `/us/legal/${type}`;
+        const url = `/us/${type}`;
         createPage({
             path: url,
             context: {
