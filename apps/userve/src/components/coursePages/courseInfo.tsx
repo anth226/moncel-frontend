@@ -6,7 +6,6 @@ import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { CoursePageInfoSectionStoryblok } from 'src/storyblok-component-types';
 import { ExternalLink } from '../core';
 
-
 export default (props: CoursePageInfoSectionStoryblok) => {
 
     const infoCards = props.info || [];
@@ -24,7 +23,7 @@ export default (props: CoursePageInfoSectionStoryblok) => {
                 </div>
                 <div className="accordion w-full" id={`accordion_${random}`}>
                     {infoCards.map((card, i) => {
-                        return <div className="border-solid border-1 p-6 border-slate-300 bg-white rounded-xl mb-6 last:mb-0 w-full">
+                        return <div className="border-solid border-1 p-6 border-slate-300 bg-white rounded-xl mb-6 last:mb-0 w-full" key={`info-${i}`}>
                             <button className={`accordion-button !text-navy !shadow-none ${i == "0" ? "" : "collapsed"}`} type="button" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} aria-expanded={i == "0" ? "true" : "false"} aria-controls={`collapse_${random}_${i}`} id={`heading_${random}_${i}`}>
                                 {card.Title || ""}
                             </button>
