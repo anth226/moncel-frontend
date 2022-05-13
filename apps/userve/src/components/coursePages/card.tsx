@@ -52,12 +52,10 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
     return <div className={`card flex flex-col rounded-2xl overflow-hidden bg-white drop-shadow-xl ${props.className}`} data-test={`course-card-${encodeURIComponent(courseTitle || "")}`}>
         <div>
             <div className={`card-image ${tag == "coming-soon" ? "coming-soon" : ""}`}>
-                <Link className="cursor-pointer" to={url || ""}>
-                    <img src={image} alt={`${title}-course-image`} />
-                </Link>
+                { tag == "coming-soon" ? <a className="cursor-pointer" data-bs-toggle="modal" data-bs-target={url}><img src={image} alt={`${title}`} /></a> : <a className="cursor-pointer" href={url}><img src={image} alt={`${title}`} /></a>}
             </div>
             <div className="card-body">
-                <Link className="text-bluewood text-lg font-semibold cursor-pointer" to={url || ""}>{courseTitle || ""}</Link>
+                { tag == "coming-soon" ? <a className="text-bluewood text-lg font-semibold cursor-pointer" data-bs-toggle="modal" data-bs-target={url}>{courseTitle}</a> : <a className="text-bluewood text-lg font-semibold cursor-pointer" href={url}>{courseTitle}</a>}
                 <p className="text-lynch mt-4">{desc}</p>
             </div>
         </div>
