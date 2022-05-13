@@ -13,7 +13,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "cyrun": "cypress run",
+    "cy:run": "cypress run",
+    "run-integration": "yarn build && start-server-and-test serve http://localhost:9000 cy:run",
     "typecheck": "tsc --noEmit",
     "storyblok-pull": "storyblok pull-components --space=153125",
     "generate-storyblok-types": "yarn storyblok-pull && storyblok-generate-ts source=./components.153125.json target=./src/storyblok-component-types"
@@ -63,6 +64,7 @@
     "@types/react-helmet": "^6.1.5",
     "cypress": "^9.6.0",
     "gatsby-cli": "^4.11.2",
+    "start-server-and-test": "^1.14.0",
     "storyblok": "^3.10.4",
     "storyblok-generate-ts": "^1.4.1",
     "typescript": "^4.6.3"

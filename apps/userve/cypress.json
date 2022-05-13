@@ -1,4 +1,5 @@
 {
     "baseUrl": "http://localhost:9000",
-    "testFiles": ["**/*.spec.ts", "**/*.spec.js"]
+    "testFiles": ["**/*.spec.ts", "**/*.spec.js"],
+    "chromeWebSecurity": false
 }

@@ -34,7 +34,7 @@ export const purchaseFlow = (courseType: CourseTypeData): PurchaseActionResponse
             payload: courseType.type,
         }
     }
-    if(courseType.enroll != null) {
+    else if(!!courseType.enroll) {
         return {
             action: PurchaseActions.REDIRECT,
             payload: courseType.enroll,
