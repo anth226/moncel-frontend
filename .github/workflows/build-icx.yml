@@ -6,12 +6,16 @@ on:
     branches:
       - 'main'
     paths:
-      - 'apps/icx-next'
+      - 'apps/icx-next/**'
   pull_request:
     branches:
       - 'main'
     paths:
-      - 'apps/icx-next'
+      - 'apps/icx-next/**'
+
+defaults:
+  run:
+    working-directory: ./apps/icx-next
 
 jobs:
   Build:

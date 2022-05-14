@@ -14,7 +14,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "cy:run": "cypress run",
-    "run-integration": "yarn build && start-server-and-test serve http://localhost:9000 cy:run",
+    "run-integration": "start-server-and-test serve http://localhost:9000 cy:run",
     "typecheck": "tsc --noEmit",
     "storyblok-pull": "storyblok pull-components --space=153125",
     "generate-storyblok-types": "yarn storyblok-pull && storyblok-generate-ts source=./components.153125.json target=./src/storyblok-component-types"
