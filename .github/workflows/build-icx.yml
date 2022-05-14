@@ -3,7 +3,15 @@
 name: Moncel Frontend Prod Environment Pipeline
 on:
   push:
-    branches: [ main ]
+    branches:
+      - 'main'
+    paths:
+      - 'apps/icx-next'
+  pull_request:
+    branches:
+      - 'main'
+    paths:
+      - 'apps/icx-next'
 
 jobs:
   Build:

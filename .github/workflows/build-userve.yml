@@ -1,10 +1,17 @@
 
-name: Moncel Frontend Dev Environment Pipeline
+
+name: Moncel Frontend Prod Environment Pipeline
 on:
   push:
-    branches-ignore: [ main ]
+    branches:
+      - 'main'
+    paths:
+      - 'apps/userve'
   pull_request:
-    branches-ignore: [ main ]
+    branches:
+      - 'main'
+    paths:
+      - 'apps/userve'
 
 jobs:
   Build:
@@ -33,3 +40,6 @@ jobs:
           STORYBLOK_TOKEN: ${{ secrets.ICX_NEXT_STORYBLOK_TOKEN }}
           STORYBLOK_SITE_NAME: ${{ secrets.ICX_NEXT_STORYBLOK_SITE_NAME }}
         run: yarn build
+      - name: UI test
+        run: echo "Running cypress smoke tests"
+      - run: yarn run-integration
