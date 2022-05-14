@@ -1,6 +1,6 @@
 
 
-name: Moncel Frontend Prod Environment Pipeline
+name: ICX Build Pipeline
 on:
   push:
     branches:

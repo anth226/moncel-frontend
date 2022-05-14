@@ -1,6 +1,6 @@
 
 
-name: Moncel Frontend Prod Environment Pipeline
+name: Userve Build Pipeline
 on:
   push:
     branches:

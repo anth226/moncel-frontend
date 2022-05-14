@@ -1,5 +1,5 @@
 
-name: Moncel Frontend QA environment Snapshot Test
+name: Userve Snapshot Test
 on:
   repository_dispatch:
     types: [userve_deploy_succeeded]

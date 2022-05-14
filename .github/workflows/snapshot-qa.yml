@@ -1,5 +1,5 @@
 
-name: Moncel Frontend QA environment Snapshot Test
+name: ICX Snapshot Test
 on:
   repository_dispatch:
     types: [icx_deploy_succeeded]
