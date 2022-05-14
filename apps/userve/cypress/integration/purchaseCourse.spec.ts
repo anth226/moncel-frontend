@@ -18,10 +18,10 @@ describe('State picker', () => {
     let state = 'Illinois';
     const expectedCourseTitle = "Illinois BASSET Certification";
     const statepicker = cy.get('[data-test=statepicker]');
-    statepicker.select(state).should('have.value', state);
+    statepicker.select(state).wait(500).should('have.value', state);
     const statepickerBtn = cy.get('[data-test=statepicker-btn]');
     statepickerBtn.click();
-    cy.get('[data-test=statepicker]').should('have.value', state);
+    cy.wait(500).get('[data-test=statepicker]').should('have.value', state); // localstorage sometimes takes a moment
 
     // Expect a unique course on this page
     cy.get(`[data-test="course-card-${encodeURIComponent(expectedCourseTitle)}"]`).should('be.visible');
