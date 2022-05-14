@@ -1,10 +1,21 @@
 
-name: Moncel Frontend Dev Environment Pipeline
+
+name: ICX Build Pipeline
 on:
   push:
-    branches-ignore: [ main ]
+    branches:
+      - 'main'
+    paths:
+      - 'apps/icx-next/**'
   pull_request:
-    branches-ignore: [ main ]
+    branches:
+      - 'main'
+    paths:
+      - 'apps/icx-next/**'
+
+defaults:
+  run:
+    working-directory: ./apps/icx-next
 
 jobs:
   Build:

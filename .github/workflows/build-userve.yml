@@ -1,9 +1,21 @@
 
 
-name: Moncel Frontend Prod Environment Pipeline
+name: Userve Build Pipeline
 on:
   push:
-    branches: [ main ]
+    branches:
+      - 'main'
+    paths:
+      - 'apps/userve/**'
+  pull_request:
+    branches:
+      - 'main'
+    paths:
+      - 'apps/userve/**'
+
+defaults:
+  run:
+    working-directory: ./apps/userve
 
 jobs:
   Build:
@@ -26,9 +38,17 @@ jobs:
           STORYBLOK_SITE_NAME: ${{ secrets.ICX_NEXT_STORYBLOK_SITE_NAME }}
         run: echo "Using yarn version $(yarn --version)"
       - run: yarn
-      - name: Full build
+      - name: Build
         env:
           USERVE_STORYBLOK_TOKEN: ${{ secrets.USERVE_STORYBLOK_TOKEN }}
           STORYBLOK_TOKEN: ${{ secrets.ICX_NEXT_STORYBLOK_TOKEN }}
           STORYBLOK_SITE_NAME: ${{ secrets.ICX_NEXT_STORYBLOK_SITE_NAME }}
         run: yarn build
+      - name: Build & UI test
+        run: echo "Running cypress smoke tests"
+      - run: echo $(pwd)
+      - run: yarn run-integration
+        env:
+          USERVE_STORYBLOK_TOKEN: ${{ secrets.USERVE_STORYBLOK_TOKEN }}
+          STORYBLOK_TOKEN: ${{ secrets.ICX_NEXT_STORYBLOK_TOKEN }}
+          STORYBLOK_SITE_NAME: ${{ secrets.ICX_NEXT_STORYBLOK_SITE_NAME }}
