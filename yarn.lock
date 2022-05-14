@@ -20533,6 +20533,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "turborepo-basic-shared@workspace:."
   dependencies:
+    "@percy/cli": ^1.1.4
     autoprefixer: ^10.4.4
     postcss: ^8.4.12
     prettier: ^2.5.1
