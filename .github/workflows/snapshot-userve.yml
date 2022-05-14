@@ -3,8 +3,6 @@ name: Moncel Frontend QA environment Snapshot Test
 on:
   repository_dispatch:
     types: [userve_deploy_succeeded]
-  paths:
-    - 'apps/userve/**'
 
 jobs:
   Build:
