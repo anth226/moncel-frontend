@@ -74,6 +74,14 @@ const config: GatsbyConfig = {
     }
   },
   {
+    resolve: 'gatsby-plugin-robots-txt',
+    options: {
+      host: 'https://www.userve.com',
+      sitemap: 'https://www.userve.com/sitemap/sitemap-index.xml',
+      policy: [{userAgent: '*', allow: '/'}]
+    }
+  },
+  {
     resolve: 'gatsby-plugin-manifest',
     options: { icon: 'src/images/favicon.png' }
   }]
