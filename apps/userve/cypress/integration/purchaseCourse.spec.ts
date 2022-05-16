@@ -7,21 +7,22 @@ describe('State picker', () => {
 
   it('works', () => {
     const firstState = 'Arkansas'; // needs to be in state list
-    const statepicker = cy.get('[data-test=statepicker]');
-    statepicker.select(firstState).should('have.value', firstState);
+    cy.get('[data-test=statepicker]').select(firstState);
+    cy.get('[data-test=statepicker-value]').should('have.text', firstState);
 
     const secondState= 'Illinois';
-    statepicker.select(secondState).should('have.value', secondState);
+    cy.get('[data-test=statepicker]').select(secondState);
+    cy.get('[data-test=statepicker-value]').should('have.text', secondState);
   });
 
   it('preserves state selection on navigation, showing some expected courses', () => {
     let state = 'Illinois';
     const expectedCourseTitle = "Illinois BASSET Certification";
-    const statepicker = cy.get('[data-test=statepicker]');
-    statepicker.select(state).wait(500).should('have.value', state);
+    cy.get('[data-test=statepicker]').select(state).wait(500);
+    cy.get('[data-test=statepicker-value]').should('have.text', state);
     const statepickerBtn = cy.get('[data-test=statepicker-btn]');
-    statepickerBtn.click();
-    cy.wait(500).get('[data-test=statepicker]').should('have.value', state); // localstorage sometimes takes a moment
+    statepickerBtn.click().wait(500);
+    cy.get('[data-test=statepicker-value]').should('have.text', state);
 
     // Expect a unique course on this page
     cy.get(`[data-test="course-card-${encodeURIComponent(expectedCourseTitle)}"]`).should('be.visible');
@@ -40,7 +41,7 @@ describe('Course purchasing', () => {
     cy.get('[data-test=statepicker]').select(state);
     // Navigate to courses page
     cy.get('[data-test=statepicker-btn]').click();
-    cy.get('[data-test=statepicker]').should('have.value', state);
+    cy.get('[data-test=statepicker-value]').should('have.text', state);
 
     const expectedDocumentCourseName = encodeURIComponent("Food Handler Training")
     cy.get(`[data-test*="${expectedDocumentCourseName}" i]`).should('be.visible');
