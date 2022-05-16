@@ -8,7 +8,7 @@ interface LinkProps {
 }
 
 const isInternalLink = (s: string) => {
-    return !!s.match(/^\/w+/);
+    return !!s.match(/^\/\w+/);
 }
 
 const Link = (props: LinkProps) => {
@@ -23,8 +23,8 @@ const Link = (props: LinkProps) => {
 }
 
 export const ExternalLink = (props: LinkProps) => {
-    return <div className="flex text-inherit">
-        <a href={props.to}>{props.children}</a>
+    return <div className={`flex text-inherit ${props.className}`}>
+        <a href={props.to} className={props.className}>{props.children}</a>
     </div>
 }
 

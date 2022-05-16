@@ -38,7 +38,7 @@ describe('Course purchasing', () => {
     const state = 'Arkansas';
     const PURCHASE_URL = "https://my.userve.com/urlcheckout/add?product=6&amp;qty=1";
     // Select state
-    cy.get('[data-test=statepicker]').select(state);
+    cy.get('[data-test=statepicker]').select(state).wait(500);
     // Navigate to courses page
     cy.get('[data-test=statepicker-btn]').click();
     cy.get('[data-test=statepicker-value]').should('have.text', state);

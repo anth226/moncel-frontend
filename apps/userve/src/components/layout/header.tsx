@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from '@reach/router';
 import { StaticImage } from "gatsby-plugin-image";
 
 import { Link } from "src/components/core";
@@ -29,12 +30,12 @@ const Header = () => {
                 <StaticImage src="../../images/usx-logo-solid.svg" alt="Userve" width={100} />
             </Link>
             <div className="flex gap-6 ml-6 text-bluewood font-medium text-base">
-                <Link to="/us/courses">Courses</Link>
-                <Link to="/us/business/accounts">Business</Link>
-                <a href="/us/resources/blog">Resources</a>
-                <Link to="/us/about/about-us">About Us</Link>
-                <a href="https://help.userve.com/knowledge" target="_blank">Help Center</a>
-                <Link to="/us/about/contact-us">Contact</Link>
+                <HeaderLink to="/us/courses">Courses</HeaderLink>
+                <HeaderLink to="/us/business/accounts">Business</HeaderLink>
+                <HeaderLink to="/us/resources/blog">Resources</HeaderLink>
+                <HeaderLink to="/us/about/about-us">About Us</HeaderLink>
+                <HeaderLink to="https://help.userve.com/knowledge">Help Center</HeaderLink>
+                <HeaderLink to="/us/about/contact-us">Contact</HeaderLink>
             </div>
         </div>
         <div className="hidden lg:flex flex-row items-center text-bluewood font-medium">
@@ -56,10 +57,15 @@ const Header = () => {
     </nav>;
 }
 
+const HeaderLink = ({ to, children }: { to: string, children: JSX.Element | JSX.Element[] | string }) => {
+    const location = useLocation();
+    const className = (to === location.pathname) ? "text-navy" : ""
+    return <Link to={to} className={className}>{ children }</Link>
+};
+
 const HamburgerMenu = () => {
     const dispatch = useAppDispatch();
     const isMobileMenuOpen = useAppSelector(state => state.navbar.isMobileMenuOpen);
-    // return <button className="inline-flex items-center justify-center p2 rounded-md" aria-controls="mobile-menu" aria-expanded="false" onClick={() => dispatch(toggleNavbarOpen())} data-bs-toggle="collapse" data-bs-target={`#${MOBILE_DROPDOWN_ID}`}>
     return <button className="inline-flex items-center justify-center p2 rounded-md" aria-controls="mobile-menu" aria-expanded="false" onClick={() => dispatch(toggleNavbarOpen())}>
         {isMobileMenuOpen ? <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#000b8f" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg> : <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#000b8f" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>}
     </button>
