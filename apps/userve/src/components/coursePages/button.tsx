@@ -2,17 +2,16 @@ import React from 'react';
 
 interface ReactProps {
     lang: string;
-    buttonText: string;
-    notify: string | null;
+    buttonText?: string;
+    notify?: string | null;
     tag: string | null;
     url: string;
-    courseUrl: HTMLElement | string;
-    modal: HTMLElement | string;
+    courseUrl?: HTMLElement | string;
 }
 
 const CardButton = (props: ReactProps) => {
     
-    let buttonText, modal;
+    let buttonText;
     let lang = props.lang;
     let notify = props.tag;
     let courseUrl = props.url;

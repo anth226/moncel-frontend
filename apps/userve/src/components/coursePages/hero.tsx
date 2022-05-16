@@ -7,6 +7,7 @@ import { CourseData, CourseType, CourseTypeData } from 'src/components/coursePag
 import { courseLang } from 'src/lib/courseLang';
 import { Slug } from 'src/lib/storyblokSourceTypes';
 import { IconCardStoryblok, CoursePageStoryblok, BassetPurchaseModalStoryblok } from "src/storyblok-component-types";
+import { Tooltip } from './tooltip';
 
 // images
 import fhGraphic from 'src/images/usx_fh_ge_hero.jpg';
@@ -29,7 +30,7 @@ const MoneyBackGuarantee = ({x}:{x:CourseType}) => {
     return <div className="bg-green-100 text-green-700 rounded-xl p-2 my-6 flex flex-row items-center justify-center text-sm text-center">
         <img src={DollarIcon} className="h-4 pr-2" />
         {lang == "lang-es" ? "Garantía de devolución de dinero" : "100% Money Back Guarantee"}
-        <img src={InfoIcon} className="h-4 pl-2" />
+        <Tooltip message={lang == "lang-es" ? "¡Estamos seguros de que te van a encantar nuestros cursos! Si no es así, te haremos un reembolso completo de acuerdo con nuestra política de devoluciones." : "We're confident you'll love our courses! If not, we provide full refunds subject to our refund policy."}><img src={InfoIcon} className="h-4 pl-2" /></Tooltip>
     </div>;
 };
 
@@ -44,8 +45,8 @@ const EnrollButton = ({ children, courseType }: { children: React.ReactNode, cou
 
 const Features = ({ features }: { features: IconCardStoryblok[] }) => {
     return <div className="flex flex-col gap-4">
-        {features.map(feature => {
-            return <div className="flex flex-row gap-4 items-start">
+        {features.map((feature, i) => {
+            return <div className="flex flex-row gap-4 items-start" key={`feature-${i}`}>
                 <img src={feature.Icon?.filename || ""} width={20} height={20} alt={feature.Title} />
                 <ReactMarkdown>{feature.Title || ""}</ReactMarkdown>
             </div>
@@ -55,8 +56,8 @@ const Features = ({ features }: { features: IconCardStoryblok[] }) => {
 
 const Benefits = ({ benefits }: { benefits: IconCardStoryblok[] }) => {
     return <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {benefits.map(benefits => {
-            return <div className="flex flex-col gap-4 items-start">
+        {benefits.map((benefits, i) => {
+            return <div className="flex flex-col gap-4 items-start" key={`benefits-${i}`}>
                 <img src={benefits.Icon?.filename || ""} width={60} height={60} className="block max-w-none h-16 mb-4" alt={benefits.Title} />
                 <Header5 className="!mb-0">{benefits.Title || ""}</Header5>
                 <Text className="!mb-0">{benefits.Description || ""}</Text>

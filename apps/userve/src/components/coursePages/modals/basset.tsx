@@ -2,7 +2,7 @@ import { graphql, useStaticQuery, navigate } from 'gatsby';
 import ReactMarkdown from 'react-markdown';
 import React, { useState } from 'react';
 
-import { Text, Header1, Header5 } from 'src/components/core/typography';
+import { Text, Header4, Header5 } from 'src/components/core/typography';
 import { Slug } from 'src/lib/storyblokSourceTypes';
 import { CheckboxCardStoryblok, BassetPurchaseModalStoryblok } from "src/storyblok-component-types";
 
@@ -27,11 +27,11 @@ const BassetModal = () => {
         navigate(PURCHASE_REDIRECT);
     }
 
-    return <div className="flex flex-col items-center p-8 m-5 max-w-[800px] max-h-[700px] lg:max-h-auto rounded-2xl bg-white gap-4 md:gap-10 overflow-auto" onClick={(e) => e.stopPropagation()}>
-        <Header1>{content.title || ""}</Header1>
+    return <div className="flex flex-col items-start p-8 m-5 max-w-[800px] max-h-[700px] lg:max-h-auto rounded-2xl bg-white gap-4 md:gap-6 overflow-auto relative" onClick={(e) => e.stopPropagation()}>
+        <Header4 className="mb-0">{content.title || ""}</Header4>
         { (content.course_options || []).map((checkbox, i) => {
-            return <div key={`course-option-${i}`} className="flex flex-col md:flex-row gap-2 bg-lilac p-6 rounded-xl" onClick={() => setProductId(checkbox.product_id)}>
-                <div className="flex flex-col mb-4 lg:mb-8">
+            return <div key={`course-option-${i}`} className="flex flex-col md:flex-row gap-2 bg-lilac hover:bg-navy/10 p-6 rounded-xl" onClick={() => setProductId(checkbox.product_id)}>
+                <div className="flex flex-col">
                     <Header5 className="!text-navy !mb-2">
                         { checkbox.title || ""}
                     </Header5>

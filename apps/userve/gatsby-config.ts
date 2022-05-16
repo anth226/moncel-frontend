@@ -10,6 +10,7 @@ const config: GatsbyConfig = {
     title: `Alcohol Server & Food Safety Training Online`,
     siteUrl: `https://userve.com`
   },
+  trailingSlash: "never",
   plugins: ["gatsby-plugin-sass", "gatsby-plugin-postcss", {
     resolve: 'gatsby-plugin-google-analytics',
     options: {
