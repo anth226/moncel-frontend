@@ -16,6 +16,7 @@ const StatePicker = () => {
     const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newState = (e.target.value === STATE_SELECT_PLACEHOLDER) ? "" : e.target.value;
         dispatch(selectState(newState));
+        e.target.value = "Select Your State";
     }
 
     useEffect(() => {
@@ -38,12 +39,13 @@ const StatePicker = () => {
 
     return <div className="flex flex-col md:flex-row justify-between rounded-md p-4 shadow-xl bg-white">
         <div className="flex flex-col w-full md:w-1/2 lg:w-2/3 text-navy md:mr-4 mb-4 md:mb-0 before:content-[url('../images/usx_down_arrow.svg')] before:absolute before:top-0 before:right-0 relative ">
-            <select onChange={handleSelect} className={`bg-transparent outline-0 pb-9 z-10 appearance-none text-base ${selectedState ? "" : "mb-4"}`} data-test="statepicker">
+            <label for="stateSelect" className="hidden">Select Your State:</label>
+            <select id="stateSelect" onChange={handleSelect} className="bg-transparent outline-0 pb-9 z-10 appearance-none text-base" data-test="statepicker">
                 {StateList.map(state => {
-                    return <option key={`option-${state}`} selected={state == selectedState} disabled={!state}>{state || STATE_SELECT_PLACEHOLDER}</option>
+                    return <option key={`option-${state}`} selected={!state} disabled={!state}>{state || STATE_SELECT_PLACEHOLDER}</option>
                 })}
             </select>
-            { selectedState ? <div className={`text-3xl text-navy opacity-50 font-bold absolute pt-7 leading-7`}>{selectedState || "\u00A0"}</div> : null }
+            <div className={`text-3xl text-navy opacity-50 font-bold absolute pt-7 leading-7`} data-test="statepicker-value">{selectedState || "\u00A0"}</div>
         </div>
         <Link to={ButtonHref}><button className="btn btn-primary px-4 py-4 w-full md:w-auto" data-test="statepicker-btn">Find Your Course</button></Link>
     </div>;
