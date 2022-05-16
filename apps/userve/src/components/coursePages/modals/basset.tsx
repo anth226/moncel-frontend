@@ -27,7 +27,7 @@ const BassetModal = () => {
         navigate(PURCHASE_REDIRECT);
     }
 
-    return <div className="ddd flex flex-col items-start p-8 m-5 max-w-[800px] max-h-[700px] lg:max-h-auto rounded-2xl bg-white gap-4 md:gap-6 overflow-auto relative" onClick={(e) => e.stopPropagation()}>
+    return <div className="flex flex-col items-start p-8 m-5 max-w-[800px] max-h-[700px] lg:max-h-auto rounded-2xl bg-white gap-4 md:gap-6 overflow-auto relative" onClick={(e) => e.stopPropagation()}>
         <Header4 className="mb-0">{content.title || ""}</Header4>
         { (content.course_options || []).map((checkbox, i) => {
             return <div key={`course-option-${i}`} className="flex flex-col md:flex-row gap-2 bg-lilac hover:bg-navy/10 p-6 rounded-xl" onClick={() => setProductId(checkbox.product_id)}>
