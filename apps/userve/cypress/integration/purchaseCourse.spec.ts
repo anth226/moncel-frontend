@@ -8,10 +8,10 @@ describe('State picker', () => {
   it('works', () => {
     const firstState = 'Arkansas'; // needs to be in state list
     const statepicker = cy.get('[data-test=statepicker]');
-    statepicker.select(firstState).should('have.value', firstState);
+    statepicker.select(firstState).wait(500).should('have.value', firstState);
 
     const secondState= 'Illinois';
-    statepicker.select(secondState).should('have.value', secondState);
+    statepicker.select(secondState).wait(500).should('have.value', secondState);
   });
 
   it('preserves state selection on navigation, showing some expected courses', () => {
@@ -37,7 +37,7 @@ describe('Course purchasing', () => {
     const state = 'Arkansas';
     const PURCHASE_URL = "https://my.userve.com/urlcheckout/add?product=6&amp;qty=1";
     // Select state
-    cy.get('[data-test=statepicker]').select(state);
+    cy.get('[data-test=statepicker]').select(state).wait(500);
     // Navigate to courses page
     cy.get('[data-test=statepicker-btn]').click();
     cy.get('[data-test=statepicker]').should('have.value', state);
