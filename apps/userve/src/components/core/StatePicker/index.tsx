@@ -16,6 +16,7 @@ const StatePicker = () => {
     const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newState = (e.target.value === STATE_SELECT_PLACEHOLDER) ? "" : e.target.value;
         dispatch(selectState(newState));
+        e.target.value = "Select Your State";
     }
 
     useEffect(() => {
@@ -40,7 +41,7 @@ const StatePicker = () => {
         <div className="flex flex-col w-full md:w-1/2 lg:w-2/3 text-navy md:mr-4 mb-4 md:mb-0 before:content-[url('../images/usx_down_arrow.svg')] before:absolute before:top-0 before:right-0 relative ">
             <select onChange={handleSelect} className={`bg-transparent outline-0 pb-9 z-10 appearance-none text-base ${selectedState ? "" : "mb-4"}`} data-test="statepicker">
                 {StateList.map(state => {
-                    return <option key={`option-${state}`} selected={state == selectedState} disabled={!state}>{state || STATE_SELECT_PLACEHOLDER}</option>
+                    return <option key={`option-${state}`} selected={!state} disabled={!state}>{state || STATE_SELECT_PLACEHOLDER}</option>
                 })}
             </select>
             { selectedState ? <div className={`text-3xl text-navy opacity-50 font-bold absolute pt-7 leading-7`}>{selectedState || "\u00A0"}</div> : null }
