@@ -44,6 +44,13 @@
   status = 200
   force = true
 
+# A redirect rule with many of the supported properties
+[[redirects]]
+  from = "/"
+  to = "/us"
+  status = 200
+  force = true
+
   # Redirect based on conditions including browser language, 
   # geolocation, identity role, and/or cookie presence.
   conditions = {Language = ["en"], Country = ["US"]}

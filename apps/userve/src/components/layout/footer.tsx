@@ -9,7 +9,7 @@ import { Header5 } from 'src/components/core/typography';
 import Phone from "src/components/icons/phone";
 
 const MobileFooter = () => {
-    return <div className="w-full m-auto flex flex-col px-4">
+    return <div className="w-full m-auto flex flex-col px-4 pt-12">
         <div className="flex justify-between">
             <Link to="/us">
                 <StaticImage src="../../images/usx-logo-solid.svg" alt="Userve" width={100} className="mb-6" />
@@ -91,9 +91,9 @@ const Footer = () => {
 
 const Social = () => {
     return <div className="flex gap-x-2">
-        <ExternalLink to="https://twitter.com/UserveInc"><StaticImage src="../../images/usx_social_tw.svg" alt="Userve on Twitter" width={18} className="mr-1" /></ExternalLink>
-        <ExternalLink to="https://www.facebook.com/Userve-100597588758651/"><StaticImage src="../../images/usx_social_fb.svg" alt="Userve on Facebook" width={18} className="mr-1" /></ExternalLink>
-        <ExternalLink to="https://www.linkedin.com/company/userve-inc/"><StaticImage src="../../images/usx_social_li.svg" alt="Userve on Linkedin" width={18} /></ExternalLink>
+        <ExternalLink to="https://twitter.com/UserveInc" target="_blank"><StaticImage src="../../images/usx_social_tw.svg" alt="Userve on Twitter" width={18} className="mr-1" /></ExternalLink>
+        <ExternalLink to="https://www.facebook.com/Userve-100597588758651/" target="_blank"><StaticImage src="../../images/usx_social_fb.svg" alt="Userve on Facebook" width={18} className="mr-1" /></ExternalLink>
+        <ExternalLink to="https://www.linkedin.com/company/userve-inc/" target="_blank"><StaticImage src="../../images/usx_social_li.svg" alt="Userve on Linkedin" width={18} /></ExternalLink>
     </div>
 }
 
