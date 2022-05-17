@@ -6,6 +6,7 @@ interface LinkProps {
     children?: JSX.Element | JSX.Element[] | string;
     className?: string;
     target?: string;
+    onClick?: JSX.Element | JSX.Element[];
 }
 
 const isInternalLink = (s: string) => {
@@ -25,7 +26,7 @@ const Link = (props: LinkProps) => {
 
 export const ExternalLink = (props: LinkProps) => {
     return <div className={`flex text-inherit ${props.className}`}>
-        <a href={props.to} className={props.className} target={props.target}>{props.children}</a>
+        <a href={props.to} className={props.className} target={props.target} onClick={props.onClick}>{props.children}</a>
     </div>
 }
 
