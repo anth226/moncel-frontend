@@ -9,7 +9,7 @@ import { Header5 } from 'src/components/core/typography';
 import Phone from "src/components/icons/phone";
 
 const MobileFooter = () => {
-    return <div className="w-full m-auto flex flex-col px-4">
+    return <div className="w-full m-auto flex flex-col px-4 pt-12">
         <div className="flex justify-between">
             <Link to="/us">
                 <StaticImage src="../../images/usx-logo-solid.svg" alt="Userve" width={100} className="mb-6" />
