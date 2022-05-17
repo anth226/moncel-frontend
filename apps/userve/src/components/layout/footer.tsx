@@ -91,9 +91,9 @@ const Footer = () => {
 
 const Social = () => {
     return <div className="flex gap-x-2">
-        <ExternalLink to="https://twitter.com/UserveInc"><StaticImage src="../../images/usx_social_tw.svg" alt="Userve on Twitter" width={18} className="mr-1" /></ExternalLink>
-        <ExternalLink to="https://www.facebook.com/Userve-100597588758651/"><StaticImage src="../../images/usx_social_fb.svg" alt="Userve on Facebook" width={18} className="mr-1" /></ExternalLink>
-        <ExternalLink to="https://www.linkedin.com/company/userve-inc/"><StaticImage src="../../images/usx_social_li.svg" alt="Userve on Linkedin" width={18} /></ExternalLink>
+        <ExternalLink to="https://twitter.com/UserveInc" target="_blank"><StaticImage src="../../images/usx_social_tw.svg" alt="Userve on Twitter" width={18} className="mr-1" /></ExternalLink>
+        <ExternalLink to="https://www.facebook.com/Userve-100597588758651/" target="_blank"><StaticImage src="../../images/usx_social_fb.svg" alt="Userve on Facebook" width={18} className="mr-1" /></ExternalLink>
+        <ExternalLink to="https://www.linkedin.com/company/userve-inc/" target="_blank"><StaticImage src="../../images/usx_social_li.svg" alt="Userve on Linkedin" width={18} /></ExternalLink>
     </div>
 }
 
