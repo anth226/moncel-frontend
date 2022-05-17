@@ -13,7 +13,7 @@ const ProductFormSection = (props: ProductFormStoryblok) => {
             <div className="order-first col-span-12 md:col-span-6 mb-10 md:mb-0">
                 <Header2><span className="text-white">{props.title}</span></Header2>
                 <div className="text-white checklist form"><ReactMarkdown>{props.description}</ReactMarkdown></div>
-                <a className="btn btn-invert btn-light mt-6">{props.button}</a>
+                <a href={props.url} target={props.target} className="btn btn-invert-white mt-6">{props.button}</a>
             </div>
             <div className="col-span-1"/>
             <div className="order-last col-span-12 md:col-span-5">

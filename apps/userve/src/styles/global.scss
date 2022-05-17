@@ -72,7 +72,10 @@
     @apply bg-dark-blue border-dark-blue hover:bg-navy-hover text-white;
   }
   .btn-invert {
-    @apply border-dark-blue text-dark-blue hover:bg-dark-blue/10;
+    @apply border-dark-blue text-dark-blue hover:bg-titan;
+  }
+  .btn-invert-white {
+    @apply border-white text-white hover:bg-white/30;
   }
   .btn-light {
     @apply border-white text-white;

@@ -19,7 +19,7 @@ const BusinessSection = (props: BusinessStoryblok) => {
             <div className={props.layout == 'left-layout' ? 'col-start-1 col-span-12 md:col-span-6 lg:col-span-5' : 'col-start-1 col-span-12 text-center'}>
                 <Header2>{props.title || ""}</Header2>
                 <Text>{props.description || ""}</Text>
-                {props.link == '' ? '' : <a className="btn btn-invert hidden md:block">{props.link}</a>}
+                {props.link == '' ? '' : <a href={props.url} className="btn btn-invert hidden md:block">{props.link}</a>}
             </div>
             <div className={props.layout == 'left-layout' ? 'col-start-1 md:col-start-7 col-span-12 md:col-span-6 grid grid-cols-12' : 'col-start-1 col-span-12 text-center grid grid-cols-12 md:gap-10'}>    
                 { props.stats?.map((stat, i) => {
@@ -27,7 +27,7 @@ const BusinessSection = (props: BusinessStoryblok) => {
                 })}
             </div>
             <div className="block md:hidden col-span-12 mt-6 md:mt-0">
-                {props.link == '' ? '' : <a className="btn btn-invert">{props.link}</a>}
+                {props.link == '' ? '' : <a href={props.url} className="btn btn-invert">{props.link}</a>}
             </div>
 
         </Section>
