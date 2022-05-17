@@ -22,7 +22,7 @@ const MOBILE_DROPDOWN_ID = "mobile-dropdown";
 
 const Header = () => {
     const isMobileMenuOpen = useAppSelector(state => state.navbar.isMobileMenuOpen);
-    return <nav className={`${isMobileMenuOpen ? "fixed z-10 accordion mx-0" : "flex md:mx-4" } justify-between w-full md:w-auto xl:max-w-6xl lg:mx-4 xl:m-auto md:py-4 border-b-1 border-mischka`} id={NAVBAR_ID}>
+    return <nav className={`${isMobileMenuOpen ? "fixed z-10 accordion mx-0" : "flex md:mx-4"} justify-between w-full md:w-auto xl:max-w-6xl lg:mx-4 xl:m-auto md:py-4 border-b-1 border-mischka`} id={NAVBAR_ID}>
 
         {/* Desktop+ menu */}
         <div className="hidden lg:flex items-center">
@@ -39,7 +39,7 @@ const Header = () => {
             </div>
         </div>
         <div className="hidden lg:flex flex-row items-center text-bluewood font-medium">
-            <Phone className="px-3 py-2 bg-lilac rounded"/>
+            <Phone className="px-3 py-2 bg-lilac rounded" />
             <a href="https://my.userve.com/customer/account/login" className="ml-6">Login</a>
         </div>
 
@@ -60,14 +60,14 @@ const Header = () => {
 const HeaderLink = ({ to, children }: { to: string, children: JSX.Element | JSX.Element[] | string }) => {
     const location = useLocation();
     const className = (to === location.pathname) ? "text-navy" : ""
-    return <Link to={to} className={className}>{ children }</Link>
+    return <Link to={to} className={className}>{children}</Link>
 };
 
 const HamburgerMenu = () => {
     const dispatch = useAppDispatch();
     const isMobileMenuOpen = useAppSelector(state => state.navbar.isMobileMenuOpen);
     return <button className="inline-flex items-center justify-center p2 rounded-md" aria-controls="mobile-menu" aria-expanded="false" onClick={() => dispatch(toggleNavbarOpen())}>
-        {isMobileMenuOpen ? <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#000b8f" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg> : <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#000b8f" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>}
+        {isMobileMenuOpen ? <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#000b8f" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg> : <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#000b8f" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>}
     </button>
 };
 
@@ -85,7 +85,7 @@ const MobileMenu = () => {
                     <MobileLink displayName="Contact" href="/us/about/contact-us" icon={MailIcon} />
                 </div>
                 <div className="flex flex-col gap-4 grow items-center justify-end text-bluewood font-medium w-full p-4 mb-8">
-                    <Phone className="px-3 py-3 rounded-md flex items-center justify-center border-navy border-1 w-full"/>
+                    <Phone className="px-3 py-3 rounded-md flex items-center justify-center border-navy border-1 w-full" />
                     <a href="https://my.userve.com/customer/account/login" className="flex items-center justify-center rounded-md py-3 w-full text-white bg-navy">Login</a>
                 </div>
             </div>
@@ -98,24 +98,25 @@ interface MobileLinkProps {
     href: string,
     icon: typeof CoursesIcon,
 }
+
 const MobileLink = ({ displayName, href, icon }: MobileLinkProps) => {
     const dispatch = useAppDispatch();
 
     const handleClick = () => {
-        dispatch(toggleNavbarOpen(false))
+        setTimeout(() => { dispatch(toggleNavbarOpen(false)); }, 500);
     }
 
     return <Link to={href} className="w-full" onClick={handleClick}>
         <div className="w-screen">
             <div className="flex justify-between border-b-1 border-mischka mx-4 py-4">
                 <div className="flex items-center gap-4">
-                    <img src={icon} />
+                    <img src={icon} alt={displayName} />
                     <div className="!mb-0 text-navy font-sans font-medium w-full">{displayName}</div>
                 </div>
-                <img src={ArrowIcon} />
+                <img src={ArrowIcon} alt="Arrow" />
             </div>
         </div>
-        
+
     </Link>
 };
 

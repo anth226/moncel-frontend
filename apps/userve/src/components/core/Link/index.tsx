@@ -15,7 +15,7 @@ const isInternalLink = (s: string) => {
 const Link = (props: LinkProps) => {
     if(isInternalLink(props.to)) {
         return <div className={`flex text-inherit ${props.className}`}>
-            <GatsbyLink to={props.to} className={props.className}>{props.children}</GatsbyLink>
+            <GatsbyLink to={props.to} className={props.className} onClick={props.onClick}>{props.children}</GatsbyLink>
         </div>
     }
     else {
