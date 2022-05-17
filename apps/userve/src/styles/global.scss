@@ -14,7 +14,7 @@
   li {
     color: #72809d;
     a {
-      @apply font-semibold text-navy hover:underline;
+      @apply font-semibold text-navy hover:underline break-all;
     }
   }
   nav {
