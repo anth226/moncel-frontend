@@ -47,7 +47,7 @@
 # A redirect rule with many of the supported properties
 [[redirects]]
   from = "/"
-  to = "https://www.userve.com/us"
+  to = "/us"
   status = 200
   force = true
 
