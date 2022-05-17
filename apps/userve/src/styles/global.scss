@@ -105,6 +105,9 @@
       min-height: 55px;
       width:100%;
     }
+    select {
+      @apply h-[55px];
+    }
     input[type=submit] {
       @apply text-center font-medium cursor-pointer md:w-fit border-1 border-solid transition-all no-underline normal-case inline-block rounded-md px-4 py-4 font-sans bg-dark-blue border-dark-blue hover:bg-navy-hover text-white mt-6;
       width:99% !important;

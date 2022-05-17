@@ -13,7 +13,7 @@ const BlogTag = ({ tag }: { tag: string }) => {
 
 const BlogCard = (blog: BlogPostCardStoryblok) => {
     const tags = (blog.tags || "").split(',');
-    return <div className="card flex flex-col rounded-2xl overflow-hidden bg-white drop-shadow-xl">
+    return <div className="card flex flex-col rounded-2xl overflow-hidden bg-white shadow-xl">
         <div>
             <div className="card-image">
                 <Link to={blog.link || ""}>
