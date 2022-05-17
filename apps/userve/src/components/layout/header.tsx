@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image";
 
 import { Link } from "src/components/core";
 
+import { debounce } from "lodash";
 import { useAppDispatch, useAppSelector, AppActions } from 'src/store';
 const { toggleNavbarOpen } = AppActions;
 
@@ -102,9 +103,9 @@ interface MobileLinkProps {
 const MobileLink = ({ displayName, href, icon }: MobileLinkProps) => {
     const dispatch = useAppDispatch();
 
-    const handleClick = () => {
-        setTimeout(() => { dispatch(toggleNavbarOpen(false)); }, 500);
-    }
+    const handleClick = debounce(() => {
+        dispatch(toggleNavbarOpen(false));
+    }, 500);
 
     return <Link to={href} className="w-full" onClick={handleClick}>
         <div className="w-screen">
