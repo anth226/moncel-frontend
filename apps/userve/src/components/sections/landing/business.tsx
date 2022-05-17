@@ -1,14 +1,14 @@
 import React from 'react';
-
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import { Section } from 'src/components/core/Section';
 import { BusinessStoryblok, HighlightCardStoryblok } from 'src/storyblok-component-types';
 import { Header2, Text } from 'src/components/core/typography';
 
 const StatsCard = (props: HighlightCardStoryblok) => {
     if(!props) return null;
-    return <div className={`flex flex-col col-span-12 mb-6 md:mb-0 last:mb-0 ${props.layout == "center-layout" ? "md:col-span-4" : "md:col-span-6"}`}>
+    return <div className={`flex flex-col col-span-12 mb-6 md:mb-0 last:mb-0 ${props.layout == "center-layout" ? "md:col-span-4" : "md:col-span-6 pb-2 pr-2 lg:pr-0 md:pb-6"}`}>
         <div className="text-sky-blue text-5xl font-extrabold mb-2">{props.title}</div>
-        <Text className="!mb-0">{props.subtext || ""}</Text>
+        <ReactMarkdown className="!mb-0">{props.subtext || ""}</ReactMarkdown>
     </div>;
 }
 
