@@ -26,6 +26,9 @@ export interface DataProps {
     hero?: {
       nodes: Slug[];
     }
+    courseInfo?: {
+      nodes: Slug[];
+    }
     benefits?: {
       nodes: Slug[];
     }
@@ -33,30 +36,3 @@ export interface DataProps {
       nodes: SeoStoryblok[];
     }
 };
-
-export interface CourseTemplateProps {
-  hero?: {
-    nodes: Slug[];
-  }
-  courseInfo?: {
-    nodes: Slug[];
-  }
-  benefits?: {
-    nodes: Slug[];
-  }
-  accounts?: {
-    nodes: Slug[];
-  }
-  features?: {
-    nodes: Slug[];
-  }
-  testimonials?: {
-    nodes: Slug[];
-  }
-  faqs?: {
-    nodes: Slug[];
-  }
-  seo: {
-    nodes: SeoStoryblok[];
-  }
-}
