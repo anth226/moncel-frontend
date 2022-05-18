@@ -85,7 +85,7 @@ const MobileMenu = () => {
                     <MobileLink displayName="Help Center" href="https://help.userve.com/knowledge" icon={HelpIcon} />
                     <MobileLink displayName="Contact" href="/us/about/contact-us" icon={MailIcon} />
                 </div>
-                <div className="flex flex-col gap-4 grow items-center justify-end text-bluewood font-medium w-full p-4 mb-8 sm:mb-16">
+                <div className="flex flex-col gap-4 grow items-center justify-end text-bluewood font-medium w-full p-4 mb-8 sm:mb-20">
                     <Phone className="px-3 py-3 rounded-md flex items-center justify-center border-navy border-1 w-full" />
                     <a href="https://my.userve.com/customer/account/login" className="flex items-center justify-center rounded-md py-3 w-full text-white bg-navy">Login</a>
                 </div>
