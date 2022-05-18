@@ -6,17 +6,22 @@ import { Header2, Text } from 'src/components/core/typography';
 import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { CoursePageInfoSectionStoryblok } from 'src/storyblok-component-types';
 import { ExternalLink } from '../core';
+import { getFilename, findMatchingLocalFileNode, DynamicImage, Slug } from 'src/lib';
 
-export default (props: CoursePageInfoSectionStoryblok) => {
+interface StoryProps {
+    story: Slug;
+}
 
+export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
     const infoCards = props.info || [];
     const random = Math.floor(Math.random() * 100000) + 1;
+    const heroImageLocalFileNode = findMatchingLocalFileNode(getFilename(props.image?.filename || ""), props.story);
 
     return <SectionFullWidth className={props.className || ""}>
         <Section className="grid grid-cols-12 md:gap-10">
             <div className="col-span-12 md:col-span-4 lg:col-span-3">
                 {props.layout == "title-left" ? <><Header2>{props.title}</Header2><ReactMarkdown>{props.desc}</ReactMarkdown></> : ''}
-                {props.image.id == null ? '' : <img src={props.image?.filename} alt={props.title} className="mb-6 md:mb-0"/> }
+                {!heroImageLocalFileNode ? '' : <DynamicImage fileNode={heroImageLocalFileNode} alt={props.title} className="mb-6 md:mb-0"/> }
             </div>
             <div className="col-span-12 md:col-span-8 lg:col-span-9 col-end-13">
                 <div className="p">

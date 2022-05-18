@@ -35,9 +35,6 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
     const testimonialsStory = testimonialsStories.filter(slug => slug.slug === pageContext.type)[0];
     const faqsStory = faqsStories.filter(slug => slug.slug === pageContext.type)[0];
     const seoStory = seoStories.filter(slug => slug.slug === pageContext.type)[0];
-    
-    // Parse additional data
-    const modalStories = heroStories.filter(slug => slug.full_slug.startsWith("courses/course-pages/hero/modals"));
 
     // Parse content strings to json
     // Parsing empty strings will error; this is intentional as it indicates an error fetching data
@@ -63,13 +60,13 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
         <Head seo={seoContent} coursePageContext={pageContext} />
         <Layout>
             <main style={pageStyles}>
-                <HeroSection content={heroContent} context={pageContext} heroStory={heroStories[0]} />
-                <CourseInfoSection {...courseInfoContent} className="bg-gradient-to-b from-hawkes to-white"/>
-                <BenefitsSection {...benefitsContent} />
+                <HeroSection content={heroContent} context={pageContext} heroStory={heroStory} />
+                <CourseInfoSection {...courseInfoContent} className="bg-gradient-to-b from-hawkes to-white" story={courseInfoStory} />
+                <BenefitsSection {...benefitsContent} story={benefitsStory}/>
                 <TestimonialsSection {...testimonialsContent} />
-                <CourseInfoSection {...faqsContent} />
+                <CourseInfoSection {...faqsContent} story={faqsStory}/>
                 <AboutUsSection {...accountsContent} />
-                <BenefitsSection {...featuresContent} />
+                <BenefitsSection {...featuresContent} story={featuresStory} />
             </main>
         </Layout>
     </div>
@@ -114,7 +111,13 @@ export const pageQuery = graphql`
         imageFileSrc {
           publicURL
           childImageSharp {
-            gatsbyImageData
+            fluid(toFormat: WEBP) {
+              base64
+              srcWebp
+              srcSetWebp
+              originalImg
+              originalName
+            }
           }
         }
       }
