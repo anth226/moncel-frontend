@@ -3,7 +3,7 @@ import { graphql, PageProps } from "gatsby";
 
 import Head from 'src/components/head';
 import Layout from 'src/components/layout';
-import { CourseTemplateProps } from 'src/lib/storyblokSourceTypes';
+import { DataProps } from 'src/lib/storyblokSourceTypes';
 import { CourseData } from 'src/components/coursePages/types';
 import { CoursePageStoryblok, CoursePageInfoSectionStoryblok, BenefitsStoryblok, AboutUsStoryblok, TestimonialsStoryblok, SeoStoryblok } from "src/storyblok-component-types";
 import HeroSection from './hero';
@@ -15,7 +15,7 @@ const pageStyles = {
     fontFamily: "Inter,sans-serif",
 }
 
-export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData>) => {
+export default ({ data, pageContext }: PageProps<DataProps, CourseData>) => {
     // Retrieve storyblok data by section
     const heroStories = data.hero?.nodes || [];
     const courseInfoStories = data.courseInfo?.nodes || [];
@@ -35,6 +35,9 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
     const testimonialsStory = testimonialsStories.filter(slug => slug.slug === pageContext.type)[0];
     const faqsStory = faqsStories.filter(slug => slug.slug === pageContext.type)[0];
     const seoStory = seoStories.filter(slug => slug.slug === pageContext.type)[0];
+    
+    // Parse additional data
+    const modalStories = heroStories.filter(slug => slug.full_slug.startsWith("courses/course-pages/hero/modals"));
 
     // Parse content strings to json
     // Parsing empty strings will error; this is intentional as it indicates an error fetching data
@@ -49,24 +52,23 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
       testimonialsContent = JSON.parse(testimonialsStory?.content || "")
       faqsContent = JSON.parse(faqsStory?.content || "")
       seoContent = JSON.parse(seoStory?.content || "")
-      if(!heroContent || !courseInfoContent || !benefitsContent || !accountsContent || !featuresContent || !testimonialsContent || !faqsContent || !seoContent) return null;
     }
     catch (e){
       console.error(`Error fetching data for page ${pageContext.url}`)
-      return null; // error or 404
     }
+    if(!heroContent || !courseInfoContent || !benefitsContent || !accountsContent || !featuresContent || !testimonialsContent || !faqsContent || !seoContent) return null;
 
     return <div>
-        <Head seo={seoContent} coursePageContext={pageContext} />
+        <Head seo={seoContent} coursePageContext={pageContext}/>
         <Layout>
             <main style={pageStyles}>
-                <HeroSection content={heroContent} context={pageContext} heroStory={heroStory} />
-                <CourseInfoSection {...courseInfoContent} className="bg-gradient-to-b from-hawkes to-white" story={courseInfoStory} />
-                <BenefitsSection {...benefitsContent} story={benefitsStory}/>
+                <HeroSection content={heroContent} modalStories={modalStories} context={pageContext} />
+                <CourseInfoSection {...courseInfoContent} className="bg-gradient-to-b from-hawkes to-white"/>
+                <BenefitsSection {...benefitsContent} />
                 <TestimonialsSection {...testimonialsContent} />
-                <CourseInfoSection {...faqsContent} story={faqsStory}/>
+                <CourseInfoSection {...faqsContent} />
                 <AboutUsSection {...accountsContent} />
-                <BenefitsSection {...featuresContent} story={featuresStory} />
+                <BenefitsSection {...featuresContent} />
             </main>
         </Layout>
     </div>
@@ -77,17 +79,11 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
 {/* const query = ``; // query default copy, then query copy for this url */}
 export const pageQuery = graphql`
   query {
-    hero:allStoryblokEntry(filter: {full_slug: {regex: "/^courses/course-pages/hero/[^/]*$/"}}) {
+    hero:allStoryblokEntry(filter: {full_slug: {regex: "/^courses/course-pages/hero.*/"}}) {
       nodes {
         content
         slug
         full_slug
-        imageFileSrc {
-          publicURL
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
     }
     courseInfo:allStoryblokEntry(filter: {full_slug: {regex: "/^courses/course-pages/course-info.*/"}}) {
@@ -95,12 +91,6 @@ export const pageQuery = graphql`
         content
         slug
         full_slug
-        imageFileSrc {
-          publicURL
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
     }
     benefits:allStoryblokEntry(filter: {full_slug: {regex: "/^courses/course-pages/benefits.*/"}}) {
@@ -108,12 +98,6 @@ export const pageQuery = graphql`
         content
         slug
         full_slug
-        imageFileSrc {
-          publicURL
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
     }
     accounts:allStoryblokEntry(filter: {full_slug: {regex: "/^courses/course-pages/accounts.*/"}}) {
@@ -121,12 +105,6 @@ export const pageQuery = graphql`
         content
         slug
         full_slug
-        imageFileSrc {
-          publicURL
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
     }
     features:allStoryblokEntry(filter: {full_slug: {regex: "/^courses/course-pages/features.*/"}}) {
@@ -134,12 +112,6 @@ export const pageQuery = graphql`
         content
         slug
         full_slug
-        imageFileSrc {
-          publicURL
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
     }
     testimonials:allStoryblokEntry(filter: {full_slug: {regex: "/^courses/course-pages/testimonials.*/"}}) {
@@ -147,12 +119,6 @@ export const pageQuery = graphql`
         content
         slug
         full_slug
-        imageFileSrc {
-          publicURL
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
     }
     faqs:allStoryblokEntry(filter: {full_slug: {regex: "/^courses/course-pages/faqs.*/"}}) {
@@ -160,12 +126,6 @@ export const pageQuery = graphql`
         content
         slug
         full_slug
-        imageFileSrc {
-          publicURL
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
     }
     seo:allStoryblokEntry(filter: {full_slug: {regex: "/^courses/course-pages/seo.*/"}}) {
@@ -173,12 +133,6 @@ export const pageQuery = graphql`
         content
         slug
         full_slug
-        imageFileSrc {
-          publicURL
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
     }
 }`;

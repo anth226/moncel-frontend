@@ -15,7 +15,7 @@ const body = {"event_type": GITHUB_ACTION_EVENT_TYPE, "client_payload": { "percy
 const handler: Handler = async () => {
   const response = await axios.post(repoDispatchUrl, body, { headers });
   console.log(response.status, response.statusText);
-
+  
   return {
     statusCode: 200,
   };
