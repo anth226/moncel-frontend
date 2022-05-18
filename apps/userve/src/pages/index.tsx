@@ -61,7 +61,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
       <Layout>
         <main style={pageStyles}>
           {/* Hero */}
-          <HeroSection content={heroContent} slug={heroSlug} />
+          <HeroSection content={heroContent} slug={heroSlug} className="bg-[url('../images/usx-hero-bg.jpg')] bg-cover bg-center"/>
 
           {/* Featured Courses */}
           <SectionFullWidth className="bg-[url('../images/usx-home-courses.jpg')] bg-cover bg-center">

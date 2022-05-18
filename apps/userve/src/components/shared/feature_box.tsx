@@ -17,7 +17,7 @@ const List = (list: ListStoryblok) => {
 };
 
 const FeatureBoxSection = (props: FeatureBoxStoryblok) => {
-    return <div>
+    return <div className="bg-gradient-to-b from-hawkes to-white">
         <Section className="grid grid-cols-12">
             <Header2 className="col-span-12 md:col-span-9">{props.title}</Header2>
 
