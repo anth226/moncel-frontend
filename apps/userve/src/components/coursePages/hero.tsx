@@ -12,22 +12,8 @@ import { IconCardStoryblok, CoursePageStoryblok, BassetPurchaseModalStoryblok } 
 import PurchaseButton from './lib/purchaseFlow';
 import { Tooltip } from './tooltip';
 
-// images
-import fhGraphic from 'src/images/usx_fh_ge_hero.jpg';
-import alGraphic from 'src/images/usx_al_ge_hero.jpg';
-import rbsGraphic from 'src/images/usx_ca_hero.jpg';
-import rbsesGraphic from 'src/images/usx_al_ca_es_hero.jpg';
-import bassetGraphic from 'src/images/usx_al_il_hero.jpg';
-import MedalIcon from 'src/images/usx_medal.svg';
-import DollarIcon from 'src/images/usx_dollar.svg';
-import InfoIcon from 'src/images/usx_i.svg';
-
+// images - non-optimized
 const IMAGE_DIR_PATH = "../../images";
-const fhGraphicPath = `${IMAGE_DIR_PATH}/usx_fh_ge_hero.jpg`;
-const alGraphicPath = `${IMAGE_DIR_PATH}/usx_al_ge_hero.jpg`;
-const rbsGraphicPath = `${IMAGE_DIR_PATH}/usx_ca_hero.jpg`;
-const rbsesGraphicPath = `${IMAGE_DIR_PATH}/usx_al_ca_es_hero.jpg`;
-const bassetGraphicPath = `${IMAGE_DIR_PATH}/usx_al_il_hero.jpg`;
 const medalIconGraphicPath = `${IMAGE_DIR_PATH}/usx_medal.svg`;
 const dollarIconGraphicPath = `${IMAGE_DIR_PATH}/usx_dollar.svg`;
 const infoIconGraphicPath = `${IMAGE_DIR_PATH}/usx_i.svg`;
@@ -133,6 +119,7 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
     </Section>;
 };
 
+// optimized images
 const imageQuery = graphql`
 query {
     foodHandler:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
