@@ -1,5 +1,6 @@
 {
     "baseUrl": "http://localhost:9000",
     "testFiles": ["**/*.spec.ts", "**/*.spec.js"],
-    "chromeWebSecurity": false
+    "chromeWebSecurity": false,
+    "retries": 2
 }

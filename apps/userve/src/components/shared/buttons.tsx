@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface PropTypes {
-    children: JSX.Element | JSX.Element[];
+    children: JSX.Element | JSX.Element[] | string;
     color?: string;
     className?: string;
 }

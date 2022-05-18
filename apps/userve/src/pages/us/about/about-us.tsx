@@ -58,7 +58,7 @@ export default ({ data }: PageProps<DataProps>) => {
 
         <BusinessSection {...statisticsContent} className="bg-gradient-to-b from-lilac to-white"/>
 
-        <AboutUsSection {...ctaContent} />
+        <AboutUsSection {...ctaContent} story={ctaSlug} />
       </main>
     </Layout>
   </div>;
@@ -71,6 +71,12 @@ export const pageQuery = graphql`
         content
         slug
         full_slug
+        imageFileSrc {
+          publicURL
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
     }
     seo:allStoryblokEntry(filter: {full_slug: {eq: "seo"}}) {

@@ -32,17 +32,17 @@ enum SLUGS {
 
 // markup
 const BusinessPage = ({ data }: PageProps<DataProps>) => {
-    const landingSlugs = data.allStoryblokEntry.nodes;
-    const seoSlug = landingSlugs.filter(slug => slug.slug === SLUGS.seo)[0];
-    const testimonialsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.testimonials)[0];
-    const logosSlug = landingSlugs.filter(slug => slug.slug === SLUGS.customers)[0];
-    const businessSlug = landingSlugs.filter(slug => slug.slug === SLUGS.statistics)[0];
-    const featuresSlug = landingSlugs.filter(slug => slug.slug === SLUGS.features)[0];
-    const serviceSlug = landingSlugs.filter(slug => slug.slug === SLUGS.service)[0];
-    const complianceSlug = landingSlugs.filter(slug => slug.slug === SLUGS.compliance)[0];
-    const productSlug = landingSlugs.filter(slug => slug.slug === SLUGS.product)[0];
-    const accountsSlug = landingSlugs.filter(slug => slug.slug === SLUGS.accounts)[0];
-    const heroSlug = landingSlugs.filter(slug => slug.slug === SLUGS.hero)[0];
+    const businessSlugs = data.allStoryblokEntry.nodes;
+    const seoSlug = businessSlugs.filter(slug => slug.slug === SLUGS.seo)[0];
+    const testimonialsSlug = businessSlugs.filter(slug => slug.slug === SLUGS.testimonials)[0];
+    const logosSlug = businessSlugs.filter(slug => slug.slug === SLUGS.customers)[0];
+    const businessSlug = businessSlugs.filter(slug => slug.slug === SLUGS.statistics)[0];
+    const featuresSlug = businessSlugs.filter(slug => slug.slug === SLUGS.features)[0];
+    const serviceSlug = businessSlugs.filter(slug => slug.slug === SLUGS.service)[0];
+    const complianceSlug = businessSlugs.filter(slug => slug.slug === SLUGS.compliance)[0];
+    const productSlug = businessSlugs.filter(slug => slug.slug === SLUGS.product)[0];
+    const accountsSlug = businessSlugs.filter(slug => slug.slug === SLUGS.accounts)[0];
+    const heroSlug = businessSlugs.filter(slug => slug.slug === SLUGS.hero)[0];
 
     const testimonialsContent = JSON.parse(testimonialsSlug?.content || "");
     const logosContent = JSON.parse(logosSlug?.content || "");
@@ -61,10 +61,10 @@ const BusinessPage = ({ data }: PageProps<DataProps>) => {
             <Layout>
                 <main style={pageStyles}>
                     {/* Hero */}
-                    <HeroSection {...heroContent} />
+                    <HeroSection {...heroContent} story={heroSlug}/>
 
                     {/* Logos */}
-                    <LogosSection {...logosContent} />
+                    <LogosSection {...logosContent} story={logosSlug} />
 
                     <FeatureBoxSection {...accountsContent} />
 
@@ -98,6 +98,12 @@ export const pageQuery = graphql`
         content
         slug
         full_slug
+        imageFileSrc {
+          publicURL
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
       }
     }
     seo:allStoryblokEntry(filter: {full_slug: {eq: "seo"}}) {

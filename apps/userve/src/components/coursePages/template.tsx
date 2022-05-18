@@ -65,7 +65,7 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
                 <BenefitsSection {...benefitsContent} story={benefitsStory}/>
                 <TestimonialsSection {...testimonialsContent} />
                 <CourseInfoSection {...faqsContent} story={faqsStory}/>
-                <AboutUsSection {...accountsContent} />
+                <AboutUsSection {...accountsContent} story={accountsStory}/>
                 <BenefitsSection {...featuresContent} story={featuresStory} />
             </main>
         </Layout>

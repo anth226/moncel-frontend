@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import { courseLang } from 'src/lib/courseLang';
+import { StoryblokStoryProps, getFilename, findMatchingLocalFileNode, DynamicImage } from 'src/lib/images';
 import { CourseCardStoryblok } from 'src/storyblok-component-types';
 import { CourseData } from 'src/components/coursePages/types';
 import CardButton from 'src/components/coursePages/button';
@@ -15,9 +16,9 @@ interface ReactProps {
     storyblokDefaultImg?: string; // if datasource is courses.json 
 }
 
-const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
+const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & StoryblokStoryProps) => {
     // const { url, title, desc, image } = props;
-    let url, title, desc, image, type, courseTitle, tag;
+    let url, title, desc, image, type, courseTitle, tag, fileNode;
     const lang = courseLang(props.type);
 
     if ("component" in props) {
@@ -28,6 +29,7 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
         image = props.image?.filename;
         type = props.type;
         tag = props.tag;
+        fileNode = findMatchingLocalFileNode(getFilename(image || ""), props.story)
     }
     else {
         // Component has been passed CourseData from json
@@ -49,10 +51,11 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps) => {
         }
     }
 
+    const imageComp = fileNode ? <DynamicImage fileNode={fileNode} alt={`${title} course preview image`}/>: <img src={image} alt={`${title}`} />;
     return <div className={`font-sans card flex flex-col rounded-2xl overflow-hidden bg-white shadow-xl ${props.className}`} data-test={`course-card-${encodeURIComponent(courseTitle || "")}`}>
         <div>
             <div className={`card-image ${tag == "coming-soon" ? "coming-soon" : ""}`}>
-                { tag == "coming-soon" ? <a className="cursor-pointer" data-bs-toggle="modal" data-bs-target={url}><img src={image} alt={`${title}`} /></a> : <a className="cursor-pointer" href={url}><img src={image} alt={`${title}`} /></a>}
+                { tag == "coming-soon" ? <a className="cursor-pointer" data-bs-toggle="modal" data-bs-target={url}>{imageComp}</a> : <a className="cursor-pointer" href={url}>{imageComp}</a>}
             </div>
             <div className="card-body">
                 { tag == "coming-soon" ? <a className="text-bluewood text-lg font-semibold cursor-pointer hover:underline" data-bs-toggle="modal" data-bs-target={url}>{courseTitle}</a> : <a className="text-bluewood text-lg font-semibold cursor-pointer hover:underline" href={url}>{courseTitle}</a>}

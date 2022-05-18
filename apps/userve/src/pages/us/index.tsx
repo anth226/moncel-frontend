@@ -1,18 +1,16 @@
-import * as React from "react"
+import React from "react"
 import { graphql, PageProps } from "gatsby";
 
 import Layout from 'src/components/layout';
 import Head from 'src/components/head';
 import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { Card as CourseCard } from 'src/components/coursePages';
-import StatePicker from 'src/components/core/StatePicker';
 
 import { BenefitsSection, BusinessSection, LogosSection, BlogsSection, TestimonialsSection, AboutUsSection, HeroSection } from 'src/components/sections/landing';
 import { SectionStoryblok, FeaturedCoursesStoryblok, BenefitsStoryblok, SeoStoryblok } from 'src/storyblok-component-types';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
-import { getFilename, findMatchingLocalFileNode, DynamicImage } from 'src/lib';
 
-import { Header1, Header2, Text } from 'src/components/core/typography';
+import { Header2, Text } from 'src/components/core/typography';
 
 // styles
 const pageStyles = {
@@ -54,7 +52,7 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
   const businessContent = JSON.parse(businessSlug?.content || "");
   const testimonialsContent = JSON.parse(testimonialsSlug?.content || "");
   const aboutUsContent = JSON.parse(aboutUsSlug?.content || "");
-  const seoContent = JSON.parse(seoSlug?.content || "");
+  const seoContent: SeoStoryblok = JSON.parse(seoSlug?.content || "");
 
   return (
     <div>
@@ -71,8 +69,8 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
                 <Header2><span className="text-white">{coursesContent.title || ""}</span></Header2>
                 <Text><span className="text-white">{coursesContent.description || ""}</span></Text>
               </div>
-              {coursesContent.course_cards[0] && <CourseCard className="col-start-2" {...coursesContent.course_cards[0]} storyblokDefaultImg={coursesContent.course_cards[0].image?.filename} />}
-              {coursesContent.course_cards[0] && <CourseCard className="col-start-3" {...coursesContent.course_cards[1]} storyblokDefaultImg={coursesContent.course_cards[1].image?.filename} />}
+              {coursesContent.course_cards[0] && <CourseCard className="col-start-2" {...coursesContent.course_cards[0]} storyblokDefaultImg={coursesContent.course_cards[0].image?.filename} story={coursesSlug} />}
+              {coursesContent.course_cards[0] && <CourseCard className="col-start-3" {...coursesContent.course_cards[1]} storyblokDefaultImg={coursesContent.course_cards[1].image?.filename} story={coursesSlug} />}
             </Section>
           </SectionFullWidth>
 
@@ -83,16 +81,16 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
           <BusinessSection {...businessContent} />
 
           {/* Logos */}
-          <LogosSection {...logosContent} />
+          <LogosSection {...logosContent} story={logosSlug} />
 
           {/* Testimonials */}
           <TestimonialsSection {...testimonialsContent} />
 
           {/* About us */}
-          <AboutUsSection {...aboutUsContent} />
+          <AboutUsSection {...aboutUsContent} story={aboutUsSlug} />
 
           {/* Blog */}
-          <BlogsSection {...blogsContent} />
+          <BlogsSection {...blogsContent} story={blogsSlug} />
 
         </main>
       </Layout>
