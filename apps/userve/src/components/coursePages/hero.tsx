@@ -1,12 +1,15 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import ReactMarkdown from 'react-markdown';
 
 import { Text, Header1, Header2, Header5 } from 'src/components/core/typography';
 import { Section } from 'src/components/core/Section';
 import { CourseData, CourseType, CourseTypeData } from 'src/components/coursePages/types';
 import { courseLang } from 'src/lib/courseLang';
-import { Slug } from 'src/lib/storyblokSourceTypes';
+import { getFilename, findMatchingLocalFileNode, DynamicImage, Slug, LocalFileSource } from 'src/lib';
 import { IconCardStoryblok, CoursePageStoryblok, BassetPurchaseModalStoryblok } from "src/storyblok-component-types";
+import PurchaseButton from './lib/purchaseFlow';
 import { Tooltip } from './tooltip';
 
 // images
@@ -18,19 +21,28 @@ import bassetGraphic from 'src/images/usx_al_il_hero.jpg';
 import MedalIcon from 'src/images/usx_medal.svg';
 import DollarIcon from 'src/images/usx_dollar.svg';
 import InfoIcon from 'src/images/usx_i.svg';
-import PurchaseButton from './lib/purchaseFlow';
+
+const IMAGE_DIR_PATH = "../../images";
+const fhGraphicPath = `${IMAGE_DIR_PATH}/usx_fh_ge_hero.jpg`;
+const alGraphicPath = `${IMAGE_DIR_PATH}/usx_al_ge_hero.jpg`;
+const rbsGraphicPath = `${IMAGE_DIR_PATH}/usx_ca_hero.jpg`;
+const rbsesGraphicPath = `${IMAGE_DIR_PATH}/usx_al_ca_es_hero.jpg`;
+const bassetGraphicPath = `${IMAGE_DIR_PATH}/usx_al_il_hero.jpg`;
+const medalIconGraphicPath = `${IMAGE_DIR_PATH}/usx_medal.svg`;
+const dollarIconGraphicPath = `${IMAGE_DIR_PATH}/usx_dollar.svg`;
+const infoIconGraphicPath = `${IMAGE_DIR_PATH}/usx_i.svg`;
 
 const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?: string }) => <div className={`bg-melrose rounded-3xl text-sm px-4 py-[6px] mb-6 w-fit flex flex-row items-center ${props.className}`}>
-    <img src={MedalIcon} className="h-4 pr-2" />
+    <StaticImage src={medalIconGraphicPath} alt="Medallion Icon" className="h-4 pr-2" />
     {props.children}
 </div>;
 
 const MoneyBackGuarantee = ({x}:{x:CourseType}) => {
     const lang = courseLang(x);
     return <div className="bg-green-100 text-green-700 rounded-xl p-2 my-6 flex flex-row items-center justify-center text-sm text-center">
-        <img src={DollarIcon} className="h-4 pr-2" />
+        <StaticImage src={dollarIconGraphicPath} alt="dollar icon" className="h-4 pr-2" />
         {lang == "lang-es" ? "Garantía de devolución de dinero" : "100% Money Back Guarantee"}
-        <Tooltip message={lang == "lang-es" ? "¡Estamos seguros de que te van a encantar nuestros cursos! Si no es así, te haremos un reembolso completo de acuerdo con nuestra política de devoluciones." : "We're confident you'll love our courses! If not, we provide full refunds subject to our refund policy."}><img src={InfoIcon} className="h-4 pl-2" /></Tooltip>
+        <Tooltip message={lang == "lang-es" ? "¡Estamos seguros de que te van a encantar nuestros cursos! Si no es así, te haremos un reembolso completo de acuerdo con nuestra política de devoluciones." : "We're confident you'll love our courses! If not, we provide full refunds subject to our refund policy."}><StaticImage src={infoIconGraphicPath} alt="info icon" className="h-4 pl-2" /></Tooltip>
     </div>;
 };
 
@@ -54,48 +66,48 @@ const Features = ({ features }: { features: IconCardStoryblok[] }) => {
     </div>
 }
 
-const Benefits = ({ benefits }: { benefits: IconCardStoryblok[] }) => {
+const Benefits = ({ benefits, heroStory }: { benefits: IconCardStoryblok[], heroStory: Slug }) => {
     return <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {benefits.map((benefits, i) => {
+        {benefits.map((benefit, i) => {
+            const gatsbyImageFileNode = findMatchingLocalFileNode(getFilename(benefit.Icon?.filename || ""), heroStory);
             return <div className="flex flex-col gap-4 items-start" key={`benefits-${i}`}>
-                <img src={benefits.Icon?.filename || ""} width={60} height={60} className="block max-w-none h-16 mb-4" alt={benefits.Title} />
-                <Header5 className="!mb-0">{benefits.Title || ""}</Header5>
-                <Text className="!mb-0">{benefits.Description || ""}</Text>
+                <DynamicImage fileNode={gatsbyImageFileNode} width={60} height={60} className="block max-w-none h-16 mb-4" alt={benefit.Title || ""} />
+                <Header5 className="!mb-0">{benefit.Title || ""}</Header5>
+                <Text className="!mb-0">{benefit.Description || ""}</Text>
             </div>
         })}
     </div>
 }
 
-export default ({ content, modalStories, context }: { content: CoursePageStoryblok, context: CourseData, modalStories: Slug[] }) => {
-    const modalContent = modalStories.map(slug => {
-        return JSON.parse(slug.content || "");
-    });
-    let defaultGraphic = "";
+export default ({ content, heroStory, context }: { content: CoursePageStoryblok, context: CourseData, heroStory: Slug }) => {
+    const imageData = useStaticQuery(imageQuery);
+    let defaultGraphicFileNode: LocalFileSource | undefined;
 
     switch (true) {
         case (context.type === "fh"):
-            defaultGraphic = fhGraphic;
+            defaultGraphicFileNode = imageData.foodHandler.nodes[0];
             break;
         case (context.type === "al"):
-            defaultGraphic = alGraphic;
+            defaultGraphicFileNode = imageData.alcoholServer.nodes[0];
             break;
         case (context.type === "fm"):
-            defaultGraphic = ``;
+            defaultGraphicFileNode = undefined;
             break;
         case (context.type === "rbs"):
-            defaultGraphic = rbsGraphic;
+            defaultGraphicFileNode = imageData.rbs.nodes[0];
             break;
         case (context.type === "rbses"):
-            defaultGraphic = rbsesGraphic;
+            defaultGraphicFileNode = imageData.rbses.nodes[0];
             break;
         case (context.type === "basset"):
-            defaultGraphic = bassetGraphic;
+            defaultGraphicFileNode = imageData.basset.nodes[0];
     }
 
     const title = (content.title || "").replace("$STATE", context.state);
     const lang = courseLang(context.type);
 
-    const imageComp = content.image?.filename ? <img src={content.image?.filename} alt={content.title} className="rounded-md" /> : <img src={defaultGraphic} alt={title} className="rounded-md" />
+    const gatsbyImageFileNode = findMatchingLocalFileNode(getFilename(content.Image?.filename || ""), heroStory);
+    const imageComp = <DynamicImage fileNode={gatsbyImageFileNode || defaultGraphicFileNode} alt={content.title || "Hero image"} className="rounded-md" />;
     // replace state placeholder with state name
     if (!content.price) throw Error(`Price was not found for page ${context.url}`);
 
@@ -116,7 +128,62 @@ export default ({ content, modalStories, context }: { content: CoursePageStorybl
         </div>
         <div className="md:col-start-2 col-span-2 md:row-start-3">
             <Header2 className="!text-2xl">{content.subtitle || ""}</Header2>
-            <Benefits benefits={content.benefits || []} />
+            <Benefits benefits={content.benefits || []} heroStory={heroStory} />
         </div>
     </Section>;
 };
+
+const imageQuery = graphql`
+query {
+    foodHandler:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+        nodes {
+            name
+            extension
+            childImageSharp {
+                gatsbyImageData
+            }
+            publicURL
+        }
+    }
+    alcoholServer:allFile(filter: { name: { eq: "usx_al_ge_hero" } }) {
+        nodes {
+            name
+            extension
+            childImageSharp {
+                gatsbyImageData
+            }
+            publicURL
+        }
+    }
+    rbs:allFile(filter: { name: { eq: "usx_ca_hero" } }) {
+        nodes {
+            name
+            extension
+            childImageSharp {
+                gatsbyImageData
+            }
+            publicURL
+        }
+    }
+    rbses:allFile(filter: { name: { eq: "usx_al_ca_es_hero" } }) {
+        nodes {
+            name
+            extension
+            childImageSharp {
+                gatsbyImageData
+            }
+            publicURL
+        }
+    }
+    basset:allFile(filter: { name: { eq: "usx_al_il_hero" } }) {
+        nodes {
+            name
+            extension
+            childImageSharp {
+                gatsbyImageData
+            }
+            publicURL
+        }
+    }
+}
+`;
