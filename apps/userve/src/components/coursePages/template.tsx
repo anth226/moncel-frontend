@@ -111,7 +111,13 @@ export const pageQuery = graphql`
         imageFileSrc {
           publicURL
           childImageSharp {
-            gatsbyImageData
+            fluid(toFormat: WEBP) {
+              base64
+              srcWebp
+              srcSetWebp
+              originalImg
+              originalName
+            }
           }
         }
       }
