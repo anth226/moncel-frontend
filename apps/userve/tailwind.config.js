@@ -7,13 +7,13 @@ module.exports = {
           blue: "#000b8f",
         },
         "navy":"#000B8F", // primary
+        "lynch": "#72809D", // text
         "dark-blue": "#000eb8", // button primary
         "navy-hover":"#000090", // button hover
         "half-navy":"#000b8f80", // navy with 0.5 opacity
         "titan":"#E8EAFF", // invert button hover
         "bluewood": "#35425B", // titles
         "sky-blue": "#000EB8CC", // bright blue, stats
-        "lynch": "#72809D", // text
         "mischka": "#D5D9E1", // header border
         "lilac": "#F1F1F9", // light primary
         "athens": "#F5F7F9", // footer bg
