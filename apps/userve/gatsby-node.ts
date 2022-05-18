@@ -8,6 +8,8 @@ import { LegalPageStoryblok } from './src/storyblok-component-types';
 
 export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions }) => {
     const { createPage } = actions;
+
+    // course pages
     const rawCourseData = fs.readFileSync('./src/data/courses/courses.json', 'utf8');
     const rawCourseTypeData = fs.readFileSync('./src/data/courseTypes/courseTypes.json', 'utf8');
 
@@ -33,6 +35,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
         });
     });
 
+    // legal pages
     const legalQueryData: { data?: DataProps } = await graphql(`
         query {
             allStoryblokEntry(filter: {full_slug: {regex: "/^legal*/"}}) {

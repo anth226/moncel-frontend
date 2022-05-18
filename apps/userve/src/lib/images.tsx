@@ -1,15 +1,19 @@
 import React from 'react';
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
+
 import { Slug, LocalFileSource } from 'src/lib/storyblokSourceTypes';
-import { createFileNodeFromBuffer } from 'gatsby-source-filesystem';
+
+// Stories contain imageFileSrc nodes and sometimes need to be passed to components
+export interface StoryblokStoryProps {
+    story: Slug;
+};
 
 // find a filename by existence of an extension
 export const getFilename = (s: string): string => {
     const match = s.match(/\/?(\w+\.\w+$)/);
-    if(!match || !match[1]) console.error(`unable to find file name in ${s}`)
+    if(!match || !match[1]) console.warn(`unable to find file name in file ${s}`);
     return match ? (match[1] || "") : "";
 };
-
 
 // Given a filename and a storyblok node, find a file node that matches filename (if it exists)
 // Note that gatsby-transformer-sharp does not support svg, and svg does not need it
@@ -27,11 +31,11 @@ interface DynamicImageProps {
     [key: string]: unknown;
 }
 export const DynamicImage = ({ fileNode, alt, ...rest }: DynamicImageProps) => {
-    // TODO: switch on file type; gatsby image does not handle svgs
     let image: IGatsbyImageData | string | undefined;
     if(fileNode == null) return null;
     if(!fileNode.childImageSharp) {
         image = fileNode.publicURL as string;
+        // publicURL exists with no childImageSharp data means svg
         return <img src={image} alt={alt} {...rest} />
     }
     else if(fileNode?.childImageSharp){

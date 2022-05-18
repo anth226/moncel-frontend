@@ -22,17 +22,15 @@ interface StoryProps {
 export default (props: BenefitsStoryblok & StoryProps) => {
     const cards = props.benefits_cards || [];
     const title = props.title || "";
-    debugger;
     return <SectionFullWidth className={`bg-white ${props.className || ""}`}>
         <Section>
             <Header2 className="max-w-3xl">{title}</Header2>
                 <div className="grid grid-cols-1 md:grid-cols-3 grid-flow-row gap-10">
                     { cards.map((card, i) => {
                         const localImageFileNode = findMatchingLocalFileNode(getFilename(card.Icon?.filename || ""), props.story);
-                        return <div key={`benefits-card-${i}`}><BenefitsCard card={card} fileNode={localImageFileNode}/></div>
+                        return <div key={`benefits-card-${i}`}><BenefitsCard card={card} fileNode={localImageFileNode} /></div>
                     })}
                 </div>
         </Section>
-    </SectionFullWidth>
-    
+    </SectionFullWidth>  
 };

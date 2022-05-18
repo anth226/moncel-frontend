@@ -55,7 +55,7 @@ const CoursePage = ({ data }: PageProps<DataProps>) => {
 
                     <CoursesSection coursePageContent={coursePageContent} />
 
-                    <AboutUsSection {...ctaContent} />
+                    <AboutUsSection {...ctaContent} story={ctaSlug} />
                 </main>
             </Layout>
             <NotifyFormSection />
