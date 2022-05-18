@@ -5,12 +5,10 @@ import Layout from 'src/components/layout';
 import Head from 'src/components/head';
 import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { Card as CourseCard } from 'src/components/coursePages';
-import StatePicker from 'src/components/core/StatePicker';
 
 import { BenefitsSection, BusinessSection, LogosSection, BlogsSection, TestimonialsSection, AboutUsSection, HeroSection } from 'src/components/sections/landing';
 import { SectionStoryblok, FeaturedCoursesStoryblok, BenefitsStoryblok, SeoStoryblok } from 'src/storyblok-component-types';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
-import { getFilename, findMatchingLocalFileNode, DynamicImage } from 'src/lib';
 
 import { Header1, Header2, Text } from 'src/components/core/typography';
 
@@ -54,8 +52,9 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
   const businessContent = JSON.parse(businessSlug?.content || "");
   const testimonialsContent = JSON.parse(testimonialsSlug?.content || "");
   const aboutUsContent = JSON.parse(aboutUsSlug?.content || "");
-  const seoContent = JSON.parse(seoSlug?.content || "");
+  const seoContent: SeoStoryblok = JSON.parse(seoSlug?.content || "");
 
+  const heroImages = heroSlug.imageFileSrc;
   return (
     <div>
       <Head seo={seoContent} />
