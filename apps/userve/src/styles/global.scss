@@ -40,7 +40,7 @@
   }
   .checklist {
     ul {
-      list-style-image: url(https://www.userve.com/hubfs/icons/usx-check.svg);
+      list-style-image: url(https://a.storyblok.com/f/153125/x/34afe2de07/usx-check.svg);
       li {
         margin-left:20px;
         padding:0 0 1rem 10px;
@@ -60,7 +60,7 @@
   .checktitle {
     padding:0 0 1rem 2rem;
     &::before {
-      content: url(https://www.userve.com/hubfs/icons/usx-check.svg);
+      content: url(https://a.storyblok.com/f/153125/x/34afe2de07/usx-check.svg);
       position:absolute;
       margin-left:-2rem;
     }
@@ -80,6 +80,16 @@
   .btn-light {
     @apply border-white text-white;
   }
+  .bg-lynch {
+    &.cta {
+      @apply bg-[#72809D] bg-[url("https://a.storyblok.com/f/153125/x/287f574701/usx-cta-bg-grey.svg")] bg-cover;
+    }
+  }
+  .bg-navy {
+    &.cta {
+      @apply bg-[url("https://a.storyblok.com/f/153125/x/9dde3929de/usx-cta-bg-navy.svg")] bg-cover ;
+    }
+  }  
   #hubspotForm {
     img {
       @apply mb-4;
@@ -251,5 +261,4 @@
 }
 
 @tailwind utilities;
-
 
