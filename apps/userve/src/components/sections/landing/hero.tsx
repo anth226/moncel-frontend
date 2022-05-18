@@ -24,7 +24,7 @@ const HeroSection = ({ content, slug }: PropTypes) => {
             <StatePicker />
         </div>
         <div className="col-span-12 md:col-span-5 lg:col-span-6 order-1 md:order-12 mb-6 md:mb-0 flex justify-center">
-            <DynamicImage fileNode={heroImageLocalFileNode || DefaultHeroImage} alt="Hero image" className="md:ml-12 max-w-[300px] md:max-w-full" />
+            <DynamicImage fileNode={heroImageLocalFileNode} alt="Hero image" className="md:ml-12 max-w-[300px] md:max-w-full" />
         </div>
     </Section>
 }
