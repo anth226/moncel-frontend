@@ -1,4 +1,5 @@
 import React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import ReactMarkdown from 'react-markdown';
 
 import { Header2, Text } from 'src/components/core/typography';

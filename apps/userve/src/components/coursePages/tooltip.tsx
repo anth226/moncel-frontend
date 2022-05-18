@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Tooltip = ({ message, children }: { message: string, children: string }) => {
+export const Tooltip = ({ message, children }: { message: string, children: string | JSX.Element | JSX.Element[] }) => {
     return (
         <div className="relative flex flex-col items-center group">
         {children}
