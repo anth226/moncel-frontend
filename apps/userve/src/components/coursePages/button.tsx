@@ -31,7 +31,7 @@ const CardButton = (props: ReactProps) => {
     }
 
     return (<span>
-        { notify == "coming-soon" ? <a data-bs-toggle="modal" data-bs-target={courseUrl}><button className="btn btn-primary w-full cursor-pointer">{buttonText}</button></a> : <a href={courseUrl}><button className="btn btn-primary w-full cursor-pointer">{buttonText}</button></a>}
+        { notify == "coming-soon" ? <a data-bs-toggle="modal" data-bs-target={courseUrl}><button className="btn btn-invert w-full cursor-pointer">{buttonText}</button></a> : <a href={courseUrl}><button className="btn btn-primary w-full cursor-pointer">{buttonText}</button></a>}
     </span>)
 
 };
