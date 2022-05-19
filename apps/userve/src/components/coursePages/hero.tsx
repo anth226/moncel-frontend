@@ -108,7 +108,7 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
             <div className="mb-6 text-4xl font-extrabold">{content.price}</div>
 
             <EnrollButton courseType={{ type: context.type, enroll: context.enroll || "" }}>
-                <p className="text-inherit" data-test="enroll-button">{lang == "lang-es" ? "Regístrate" : "Enroll Now"}</p>
+                <p className="text-inherit !mb-0" data-test="enroll-button">{lang == "lang-es" ? "Regístrate" : "Enroll Now"}</p>
             </EnrollButton>
             <MoneyBackGuarantee x={context.type} />
             <Features features={content.features || []} />
