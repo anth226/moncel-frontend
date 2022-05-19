@@ -13,15 +13,15 @@ const ContactSection = (props: ContactStoryblok) => {
                     <Header1 className="!text-4xl">{props.title}</Header1>
                     <Text>{props.desc}</Text>
                     <div className="flex-row gap-4 items-start mb-4 hidden md:flex">
-                        <img src="https://a.storyblok.com/f/153125/x/88f0e6aae4/usx-phone.svg" width={20} height={20} alt={props.phone} />
+                        <img src="https://a.storyblok.com/f/153125/x/88f0e6aae4/usx-phone.svg" width={20} height={20} alt="Phone" />
                         <ReactMarkdown>{props.phone}</ReactMarkdown>
                     </div>
                     <div className="flex-row gap-4 items-start mb-4 hidden md:flex">
-                        <img src="https://a.storyblok.com/f/153125/x/2f9f4a631b/usx_time.svg" width={20} height={20} alt={props.hours} />
+                        <img src="https://a.storyblok.com/f/153125/x/2f9f4a631b/usx_time.svg" width={20} height={20} alt="Hours" />
                         <ReactMarkdown>{props.hours}</ReactMarkdown>
                     </div>
                     <div className="flex-row gap-4 items-start hidden md:flex">
-                        <img src="https://a.storyblok.com/f/153125/x/4b4d8faad8/usx_location.svg" width={20} height={20} alt={props.address} />
+                        <img src="https://a.storyblok.com/f/153125/x/4b4d8faad8/usx_location.svg" width={20} height={20} alt="Address" />
                         <ReactMarkdown>{props.address}</ReactMarkdown>
                     </div>
                 </div>
