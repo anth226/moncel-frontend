@@ -16,11 +16,16 @@ const config: GatsbyConfig = {
     options: {
       "trackingId": "GOOGLE_ANALYTICS_TRACKING_ID"
     }
-  }, "gatsby-plugin-image", "gatsby-plugin-react-head", "gatsby-plugin-sitemap", "gatsby-plugin-mdx", "gatsby-transformer-sharp", "gatsby-transformer-json", 
+  }, "gatsby-plugin-image", "gatsby-plugin-react-head", "gatsby-plugin-sitemap", "gatsby-plugin-mdx",
+  {
+    resolve: "gatsby-transformer-sharp",
+    options: {
+      checkSupportedExtensions: false,
+    },
+  }, "gatsby-transformer-json", 
   {
     resolve: `gatsby-plugin-sharp`,
     options: {
-      checkSupportedExtensions: false,
       defaults: {
         placeholder: `blurred`,
         formats: [`auto`, `webp`]
