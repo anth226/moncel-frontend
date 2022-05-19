@@ -874,22 +874,22 @@
     },
 
     {
+        "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
+        "state": "New Mexico",
+        "title": "Alcohol Server / Seller Training",
+        "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
+        "url": "#notify",
+        "type": "fm",
+        "button": "invert",
+        "tag": "coming-soon"
+    },
+    {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "New Mexico",
         "title": "Food Handler Training",
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "#notify",
         "type": "fh",
-        "button": "invert",
-        "tag": "coming-soon"
-    },
-    {
-        "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
-        "state": "New Mexico",
-        "title": "Food Manager Training",
-        "desc": "This program is ideal for food service managers and is designed to meet the training requirements across various states and counties.",
-        "url": "#notify",
-        "type": "fm",
         "button": "invert",
         "tag": "coming-soon"
     },
