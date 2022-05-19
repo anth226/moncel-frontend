@@ -12,17 +12,24 @@ import { IconCardStoryblok, CoursePageStoryblok, BassetPurchaseModalStoryblok } 
 import PurchaseButton from './lib/purchaseFlow';
 import { Tooltip } from './tooltip';
 
+// images - non-optimized
+const IMAGE_DIR_PATH = "../../images";
+const medalIconGraphicPath = `${IMAGE_DIR_PATH}/usx_medal.svg`;
+const dollarIconGraphicPath = `${IMAGE_DIR_PATH}/usx_dollar.svg`;
+const infoIconGraphicPath = `${IMAGE_DIR_PATH}/usx_i.svg`;
+
 const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?: string }) => <div className={`bg-melrose rounded-3xl text-sm px-4 py-[6px] mb-6 w-fit flex flex-row items-center ${props.className}`}>
-    <img src="https://a.storyblok.com/f/153125/x/09770cedf2/usx_medal.svg" alt="Medallion Icon" className="mr-1" width={15} height={16}/>
+    <StaticImage src={medalIconGraphicPath} alt="Medallion Icon" className="mr-1" width={14} height={14}></StaticImage>
     {props.children}
 </div>;
 
 const MoneyBackGuarantee = ({x}:{x:CourseType}) => {
     const lang = courseLang(x);
     return <div className="bg-green-100 text-green-700 rounded-xl p-2 my-6 flex flex-row items-center justify-center text-sm text-center">
-        <img src="https://a.storyblok.com/f/153125/x/b7b56a500e/usx_dollar.svg" alt="Dollar Icon" className="mr-1" width={15} height={16}/>
+        <StaticImage src={dollarIconGraphicPath} alt="Dollar Icon" className="mr-2" width={20} height={13}></StaticImage>
         {lang == "lang-es" ? "Garantía de devolución de dinero" : "100% Money Back Guarantee"}
-        <Tooltip message={lang == "lang-es" ? "¡Estamos seguros de que te van a encantar nuestros cursos! Si no es así, te haremos un reembolso completo de acuerdo con nuestra política de devoluciones." : "We're confident you'll love our courses! If not, we provide full refunds subject to our refund policy."}><img src="https://a.storyblok.com/f/153125/x/e7c97592ff/usx_i.svg" alt="Info Icon" className="ml-1" width={16} height={16}/></Tooltip>
+        <Tooltip message={lang == "lang-es" ? "¡Estamos seguros de que te van a encantar nuestros cursos! Si no es así, te haremos un reembolso completo de acuerdo con nuestra política de devoluciones." : "We're confident you'll love our courses! If not, we provide full refunds subject to our refund policy."}><StaticImage src={infoIconGraphicPath} alt="Info Icon" className="ml-2" width={16} height={16}></StaticImage>
+        </Tooltip>
     </div>;
 };
 
