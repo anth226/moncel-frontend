@@ -15,7 +15,7 @@
   # publish = "public/" # DO NOT SET FOR MONOREPOS WITH MANY SITES
 
   # Default build command.
-  command = "CI='' yarn build"
+  command = "CI= yarn build"
 
   # This is where we will look for your lambda functions
   # functions = "project/functions/"
