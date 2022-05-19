@@ -879,7 +879,7 @@
         "title": "Alcohol Server / Seller Training",
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "#notify",
-        "type": "fm",
+        "type": "al",
         "button": "invert",
         "tag": "coming-soon"
     },
