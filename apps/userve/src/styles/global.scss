@@ -262,3 +262,12 @@
 
 @tailwind utilities;
 
+.h-mobile {
+  height: calc(100% - 85px);
+  @supports (-webkit-touch-callout: none) {
+    height: calc(100% - 105px);
+    @media only screen and (max-width: 786px) {
+      height: calc(100% - 165px);
+    }
+  }
+}
