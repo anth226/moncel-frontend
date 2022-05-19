@@ -11,7 +11,7 @@ export interface StoryblokStoryProps {
 // find a filename by existence of an extension
 export const getFilename = (s: string): string => {
     const match = s.match(/\/?(\w+\.\w+$)/);
-    if(!match || !match[1]) console.warn(`unable to find file name in file ${s}`);
+    if(!match || !match[1]) console.log(`unable to find file name in file ${s}`);
     return match ? (match[1] || "") : "";
 };
 
