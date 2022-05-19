@@ -20,6 +20,7 @@ const config: GatsbyConfig = {
   {
     resolve: `gatsby-plugin-sharp`,
     options: {
+      checkSupportedExtensions: false,
       defaults: {
         placeholder: `blurred`,
         formats: [`auto`, `webp`]
