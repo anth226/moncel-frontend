@@ -62,7 +62,7 @@ const PurchaseButton = ({ children, courseType }: PurchaseButtonProps) => {
         }
     }
 
-    return <div onClick={handleClick}>
+    return <div onClick={handleClick} data-test="enroll-button">
         { children }
     </div>;
 };
