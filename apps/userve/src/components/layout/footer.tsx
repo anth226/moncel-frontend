@@ -1,23 +1,65 @@
 import React from 'react';
-import { useMediaQuery } from 'react-responsive';
+import { graphql, useStaticQuery } from 'gatsby';
 import { Link, ExternalLink } from "src/components/core";
-import { StaticImage } from "gatsby-plugin-image";
 import TWElements from 'src/components/shared/TWElements';
-import { BREAKPOINTS } from 'src/lib';
+
 import { Header5 } from 'src/components/core/typography';
 
 import Phone from "src/components/icons/phone";
 
+const imageQuery = graphql`
+    query {
+        logo:allFile(filter: { name: { eq: "usx-logo-solid" }}) {
+            nodes {
+                name
+                publicURL
+                childImageSharp {
+                    gatsbyImageData
+                  }
+            }
+        }
+        twitter:allFile(filter: { name: { eq: "usx_social_tw" }}) {
+            nodes {
+                name
+                publicURL
+                childImageSharp {
+                    gatsbyImageData
+                }
+            }
+        }
+        facebook:allFile(filter: { name: { eq: "usx_social_fb" }}) {
+            nodes {
+                name
+                publicURL
+                childImageSharp {
+                    gatsbyImageData
+                }
+            }
+        }
+        linkedin:allFile(filter: { name: { eq: "usx_social_li" }}) {
+            nodes {
+                name
+                publicURL
+                childImageSharp {
+                    gatsbyImageData
+                }
+            }
+        }
+
+    }
+`;
+
 const MobileFooter = () => {
-    return <div className="w-full m-auto flex flex-col px-4 pt-12">
+    const imageData = useStaticQuery(imageQuery);
+    return <div className="md:hidden w-full m-auto flex flex-col px-4 pt-12">
         <div className="flex justify-between">
             <Link to="/us">
-                <StaticImage src="../../images/usx-logo-solid.svg" alt="Userve" width={100} className="mb-6" />
+                <img src={imageData.logo.nodes[0].publicURL} alt="Userve" width={100} className="mb-6" />
             </Link>
             <Social />
         </div>
-        <Phone className="mb-6" />
         
+        <Phone className="mb-6" />
         <Header5>Solutions</Header5>
 
         <div className="grid grid-cols-2 grid-flow-row gap-2 w-full text-md text-lynch">
@@ -43,17 +85,13 @@ const MobileFooter = () => {
     </div>
 };
 
-const Footer = () => {
-
-    const isMobile = useMediaQuery({ query: `(max-width: ${BREAKPOINTS.md}px)` });
-    if(isMobile) {
-        return <MobileFooter />
-    }
-    return <div className="footer bg-athens py-12 lg:py-16 px-4">
+const DesktopFooter = () => {
+    const imageData = useStaticQuery(imageQuery);
+    return <div className="hidden md:block footer bg-athens py-12 lg:py-16 px-4">
         <div className="lg:max-w-6xl lg:mx-auto grid grid-cols-3 grid-flow-row border-b-1 border-mischka pb-8 mb-8">
             <div className="col-span-1 flex-col items-start text-navy font-normal">
                 <Link to="/us">
-                    <StaticImage src="../../images/usx-logo-solid.svg" alt="Userve" width={100} className="mb-6" />
+                    <img src={imageData.logo.nodes[0].publicURL} alt="Userve" width={100} className="mb-6" />
                 </Link>
                 <Phone className="mb-6" />
                 <Social />
@@ -90,11 +128,17 @@ const Footer = () => {
 }
 
 const Social = () => {
-    return <div className="flex gap-x-2">
-        <ExternalLink to="https://twitter.com/UserveInc" target="_blank"><StaticImage src="../../images/usx_social_tw.svg" alt="Userve on Twitter" width={18} className="mr-1" /></ExternalLink>
-        <ExternalLink to="https://www.facebook.com/Userve-100597588758651/" target="_blank"><StaticImage src="../../images/usx_social_fb.svg" alt="Userve on Facebook" width={18} className="mr-1" /></ExternalLink>
-        <ExternalLink to="https://www.linkedin.com/company/userve-inc/" target="_blank"><StaticImage src="../../images/usx_social_li.svg" alt="Userve on Linkedin" width={18} /></ExternalLink>
+    const imageData = useStaticQuery(imageQuery);
+    return <div className="flex flex-row gap-x-2">
+        <a href="https://twitter.com/UserveInc" target="_blank"><img src={imageData.twitter.nodes[0].publicURL} alt="Userve on Twitter" width={18} className="mr-1" /></a>
+        <a href="https://www.facebook.com/Userve-100597588758651/" target="_blank"><img src={imageData.facebook.nodes[0].publicURL} alt="Userve on Facebook" width={18} className="mr-1" /></a>
+        <a href="https://www.linkedin.com/company/userve-inc/" target="_blank"><img src={imageData.linkedin.nodes[0].publicURL} alt="Userve on Linkedin" width={18} /></a>
     </div>
 }
 
-export default Footer;
+export default () => {
+    return <>
+        <DesktopFooter />
+        <MobileFooter />
+    </>
+};
