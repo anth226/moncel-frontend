@@ -1,8 +1,23 @@
 import React from 'react';
-import { StaticImage } from "gatsby-plugin-image"
+import { graphql, useStaticQuery } from 'gatsby';
 
+const imageQuery = graphql`
+    query {
+        phone:allFile(filter: { name: { eq: "usx-phone" }}) {
+            nodes {
+                name
+                publicURL
+                childImageSharp {
+                    gatsbyImageData
+                  }
+            }
+        }
+    }
+`;
 
-const Phone = ({...props}) => <a href="tel:1-855-546-1500" className={`flex items-center gap-x-2 text-navy ${props.className}`}><StaticImage src="../../../images/usx-phone.svg" alt="phone icon" />1 855-546-1500</a>
-
+const Phone = ({...props}) => {
+    const imageData = useStaticQuery(imageQuery);
+    return <a href="tel:1-855-546-1500" className={`flex items-center gap-x-2 text-navy ${props.className}`}><img src={imageData.phone.nodes[0].publicURL} alt="phone icon" />1 855-546-1500</a>
+};
 
 export default Phone;
