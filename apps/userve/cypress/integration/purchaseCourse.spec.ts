@@ -49,7 +49,7 @@ describe('Course purchasing', () => {
 
     // Purchase call should have been made
     cy.intercept(PURCHASE_URL, cy.spy().as('purchaseRequest'));
-    cy.get('[data-test="enroll-button"]').click();
+    cy.get('[data-test="enroll-button"]').click({multiple: true});
     cy.get('@purchaseRequest').should('have.been.called');
   });
 
