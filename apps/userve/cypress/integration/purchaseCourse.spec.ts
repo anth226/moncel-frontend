@@ -35,6 +35,7 @@ describe('Course purchasing', () => {
   });
 
   it('works for food handler', () => {
+    Cypress.config('defaultCommandTimeout', 10000);
     const state = 'Arkansas';
     const PURCHASE_URL = "https://my.userve.com/urlcheckout/add?product=6&amp;qty=1";
     // Select state
@@ -45,11 +46,11 @@ describe('Course purchasing', () => {
 
     const expectedDocumentCourseName = encodeURIComponent("Food Handler Training")
     cy.get(`[data-test*="${expectedDocumentCourseName}" i]`).should('be.visible');
-    cy.get(`[data-test*="${expectedDocumentCourseName}" i] img`).click();
+    cy.get(`[data-test*="${expectedDocumentCourseName}" i] img`).click().wait(1000);
 
     // Purchase call should have been made
     cy.intercept(PURCHASE_URL, cy.spy().as('purchaseRequest'));
-    cy.get('[data-test="enroll-button"]').click({multiple: true});
+    cy.get('[data-test="enroll-button"]').should("be.visible").click();
     cy.get('@purchaseRequest').should('have.been.called');
   });
 
