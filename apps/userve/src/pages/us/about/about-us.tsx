@@ -48,11 +48,11 @@ export default ({ data }: PageProps<DataProps>) => {
     <Head seo={seoContent} />
     <Layout>
       <main className="bg-[url('https://www.userve.com/hubfs/web-assets/usx_about_bg.jpg')] bg-contain bg-top bg-no-repeat">
-        <HeroSection {...heroContent} />
+        <HeroSection {...heroContent} story={heroSlug} />
 
-        <TwoColSection {...heartContent} />
+        <TwoColSection {...heartContent} story={heartSlug} />
 
-        <TwoColSection {...personalizedContent} />
+        <TwoColSection {...personalizedContent} story={personalizedSlug} />
 
         <BenefitsSection {...workContent} />
 
