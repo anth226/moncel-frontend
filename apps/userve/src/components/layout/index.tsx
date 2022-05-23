@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import { useAppSelector } from 'src/store';
+import Modal from 'src/components/core/Modal';
+import { useAppSelector, useAppDispatch, AppActions } from 'src/store';
 import Header from './header';
 import Footer from './footer';
-import Modal from 'src/components/core/Modal';
+
+const { toggleNavbarOpen } = AppActions;
 
 const Layout = ({ children }: { children: JSX.Element | JSX.Element[]}) => {
     const isMobileMenuOpen = useAppSelector(state => state.navbar.isMobileMenuOpen);
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        return () => {
+            setTimeout( () => dispatch(toggleNavbarOpen(false)), 50);
+        }
+    }, []);
 
     return <div>
         <Header />

@@ -68,7 +68,7 @@ const HamburgerMenu = () => {
     const dispatch = useAppDispatch();
     const isMobileMenuOpen = useAppSelector(state => state.navbar.isMobileMenuOpen);
     return <button className="inline-flex items-center justify-center p2 rounded-md" aria-controls="mobile-menu" aria-expanded="false" aria-label="mobile header hamburger menu" onClick={() => dispatch(toggleNavbarOpen())}>
-        {isMobileMenuOpen ? <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#000b8f" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg> : <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#000b8f" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>}
+        {isMobileMenuOpen ? <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#000b8f" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg> : <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#000b8f" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>}
     </button>
 };
 
@@ -102,12 +102,14 @@ interface MobileLinkProps {
 
 const MobileLink = ({ displayName, href, icon }: MobileLinkProps) => {
     const dispatch = useAppDispatch();
+    const location = useLocation();
 
-    const handleClick = debounce(() => {
-        dispatch(toggleNavbarOpen(false));
-    }, 500);
-
-    return <Link to={href} className="w-full" onClick={handleClick}>
+    const handleClick = () => {
+        if(location.pathname === href) {
+            dispatch(toggleNavbarOpen(false));
+        }
+    }
+    return <Link to={href} className="w-full active:bg-lilac" onClick={handleClick}>
         <div className="w-screen">
             <div className="flex justify-between border-b-1 border-mischka mx-4 py-4">
                 <div className="flex items-center gap-4">

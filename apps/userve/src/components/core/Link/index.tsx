@@ -6,7 +6,7 @@ interface LinkProps {
     children?: JSX.Element | JSX.Element[] | string;
     className?: string;
     target?: string;
-    onClick?: JSX.Element | JSX.Element[];
+    onClick?: () => unknown;
 }
 
 const isInternalLink = (s: string) => {
