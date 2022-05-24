@@ -36,7 +36,7 @@ export const DynamicImage = ({ fileNode, alt, ...rest }: DynamicImageProps) => {
     if(!fileNode.childImageSharp) {
         image = fileNode.publicURL as string;
         // publicURL exists with no childImageSharp data means svg
-        return <img src={image} alt={alt} {...rest} />
+        return <img src={image} alt={alt} {...rest} loading="lazy"/>
     }
     else if(fileNode?.childImageSharp){
         image = getImage(fileNode);

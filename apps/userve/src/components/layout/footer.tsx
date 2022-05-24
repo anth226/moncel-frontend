@@ -54,7 +54,7 @@ const MobileFooter = () => {
     return <div className="md:hidden w-full m-auto flex flex-col px-4 pt-12">
         <div className="flex justify-between">
             <Link to="/us">
-                <img src={imageData.logo.nodes[0].publicURL} alt="Userve" width={100} className="mb-6" />
+                <img src={imageData.logo.nodes[0].publicURL} alt="Userve" width={100} height={33} className="mb-6" />
             </Link>
             <Social />
         </div>
@@ -91,7 +91,7 @@ const DesktopFooter = () => {
         <div className="lg:max-w-6xl lg:mx-auto grid grid-cols-3 grid-flow-row border-b-1 border-mischka pb-8 mb-8">
             <div className="col-span-1 flex-col items-start text-navy font-normal">
                 <Link to="/us">
-                    <img src={imageData.logo.nodes[0].publicURL} alt="Userve" width={100} className="mb-6" />
+                    <img src={imageData.logo.nodes[0].publicURL} alt="Userve" width={100} height={33} className="mb-6" loading="lazy"/>
                 </Link>
                 <Phone className="mb-6" />
                 <Social />
@@ -130,9 +130,9 @@ const DesktopFooter = () => {
 const Social = () => {
     const imageData = useStaticQuery(imageQuery);
     return <div className="flex flex-row gap-x-2">
-        <a href="https://twitter.com/UserveInc" target="_blank"><img src={imageData.twitter.nodes[0].publicURL} alt="Userve on Twitter" width={18} className="mr-1" /></a>
-        <a href="https://www.facebook.com/Userve-100597588758651/" target="_blank"><img src={imageData.facebook.nodes[0].publicURL} alt="Userve on Facebook" width={18} className="mr-1" /></a>
-        <a href="https://www.linkedin.com/company/userve-inc/" target="_blank"><img src={imageData.linkedin.nodes[0].publicURL} alt="Userve on Linkedin" width={18} /></a>
+        <a href="https://twitter.com/UserveInc" target="_blank"><img src={imageData.twitter.nodes[0].publicURL} alt="Userve on Twitter" width={18} height={18} className="mr-1" loading="lazy"/></a>
+        <a href="https://www.facebook.com/Userve-100597588758651/" target="_blank"><img src={imageData.facebook.nodes[0].publicURL} alt="Userve on Facebook" width={18} height={18} className="mr-1" loading="lazy"/></a>
+        <a href="https://www.linkedin.com/company/userve-inc/" target="_blank"><img src={imageData.linkedin.nodes[0].publicURL} alt="Userve on Linkedin" width={18} height={18} loading="lazy"/></a>
     </div>
 }
 
