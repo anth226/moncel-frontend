@@ -102,7 +102,8 @@ const config: GatsbyConfig = {
     resolve: 'gatsby-plugin-manifest',
     options: { icon: 'src/images/favicon.png' }
   },
-  "gatsby-plugin-loadable-components-ssr"]
+  "gatsby-plugin-loadable-components-ssr",
+  "gatsby-plugin-react-helmet"]
 };
 
 export default config;
