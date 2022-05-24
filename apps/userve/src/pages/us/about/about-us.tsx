@@ -81,7 +81,9 @@ export const pageQuery = graphql`
     }
     seo:allStoryblokEntry(filter: {full_slug: {eq: "seo"}}) {
       nodes {
-      full_slug
+        full_slug
+        slug
+        content
       }
     }
 }`;
