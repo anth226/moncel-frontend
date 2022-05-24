@@ -17,7 +17,7 @@ const TwoColSection = (props: TwoColStoryblok & StoryblokStoryProps) => {
     if(props.story) {
         fileNode = findMatchingLocalFileNode(getFilename(props.image?.filename || ""), props.story);
     }
-    const imgComp = props.story ? <DynamicImage fileNode={fileNode} alt={`${props.title} image`} className="rounded-lg" /> : <img src={props.image?.filename} className="rounded-lg" />;
+    const imgComp = props.story ? <DynamicImage fileNode={fileNode} alt={`${props.title}`} className="rounded-lg" /> : <img src={props.image?.filename} className="rounded-lg" />;
     return <div>
         <Section className="grid grid-cols-12">
             <div className={props.layout == 'img-right' ? 'order-last md:order-first col-span-12 md:col-span-7' : 'order-last col-span-12 md:col-span-7 col-end-13'}>

@@ -69,15 +69,15 @@ const BusinessPage = ({ data }: PageProps<DataProps>) => {
                     <FeatureBoxSection {...accountsContent} />
 
                     {/* Featured */}
-                    <TwoColSection {...featuresContent} />
+                    <TwoColSection {...featuresContent} story={featuresSlug}/>
 
                     {/* Business */}
                     <BusinessSection {...businessContent} />
 
-                    <TwoColSection {...complianceContent} />
+                    <TwoColSection {...complianceContent} story={complianceSlug}/>
 
                     {/* Personalization */}
-                    <TwoColSection {...serviceContent} />
+                    <TwoColSection {...serviceContent} story={serviceSlug}/>
 
                     {/* Testimonials */}
                     <TestimonialsSection {...testimonialsContent} />
