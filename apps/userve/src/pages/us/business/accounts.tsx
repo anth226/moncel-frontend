@@ -1,15 +1,21 @@
-import * as React from "react"
+import React from "react"
 import { graphql, PageProps } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import loadable from '@loadable/component'
+
 
 import Layout from 'src/components/layout';
 import Head from 'src/components/head';
-import { Section } from 'src/components/core/Section';
 
-import { BusinessSection, LogosSection, TestimonialsSection } from 'src/components/sections/landing';
-import { ProductFormSection, HeroSection } from 'src/components/sections/business';
-import { TwoColSection, FeatureBoxSection } from 'src/components/shared';
+import { LogosSection } from 'src/components/sections/landing';
+import { HeroSection } from 'src/components/sections/business';
+import { FeatureBoxSection } from 'src/components/shared';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
+
+// defer loading these components
+const TestimonialsSection  = loadable(() => import('src/components/sections/landing/testimonials'), { fallback: undefined });
+const TwoColSection = loadable( () => import('src/components/shared/two_col'), { fallback: undefined });
+const ProductFormSection = loadable( () => import('src/components/sections/business/product'), { fallback: undefined } );
+const BusinessSection = loadable(() => import('src/components/sections/landing/business'), { fallback: undefined } );
 
 // styles
 const pageStyles = {

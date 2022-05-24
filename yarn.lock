@@ -815,7 +815,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-syntax-dynamic-import@npm:^7.8.3":
+"@babel/plugin-syntax-dynamic-import@npm:^7.7.4, @babel/plugin-syntax-dynamic-import@npm:^7.8.3":
   version: 7.8.3
   resolution: "@babel/plugin-syntax-dynamic-import@npm:7.8.3"
   dependencies:
@@ -1753,7 +1753,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5":
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.7.7, @babel/runtime@npm:^7.9.6":
   version: 7.18.0
   resolution: "@babel/runtime@npm:7.18.0"
   dependencies:
@@ -3053,6 +3053,53 @@ __metadata:
   dependencies:
     "@lezer/common": ^0.15.0
   checksum: e741225d6ac9cf08f8016bad49622fbd4a4e0d20c2e8c2b38a0abf0ddca69c58275b0ebdb9d5dde2905cf84f6977bc302f7ed5e5ba42c23afa27e9e65b900f36
+  languageName: node
+  linkType: hard
+
+"@loadable/babel-plugin@npm:^5.13.2":
+  version: 5.13.2
+  resolution: "@loadable/babel-plugin@npm:5.13.2"
+  dependencies:
+    "@babel/plugin-syntax-dynamic-import": ^7.7.4
+  peerDependencies:
+    "@babel/core": ^7.0.0-0
+  checksum: c7e8376d97d66f03a440e6d9e09d64234713a71403d418af2c551c4e4fdfc5943be7ac506ef2425701f6ceb971941822edb7b224e75b6d94bddbeb3492f5da34
+  languageName: node
+  linkType: hard
+
+"@loadable/component@npm:^5.15.2":
+  version: 5.15.2
+  resolution: "@loadable/component@npm:5.15.2"
+  dependencies:
+    "@babel/runtime": ^7.7.7
+    hoist-non-react-statics: ^3.3.1
+    react-is: ^16.12.0
+  peerDependencies:
+    react: ">=16.3.0"
+  checksum: dd027f3f9fb684613506fe48dcb656367a13731c139134fb71c2bc1734df4218fdb64e5ca80fa2575fdf52e1be0e0a2ec770f0ca77275706e66d1074d0835401
+  languageName: node
+  linkType: hard
+
+"@loadable/server@npm:^5.15.0":
+  version: 5.15.2
+  resolution: "@loadable/server@npm:5.15.2"
+  dependencies:
+    lodash: ^4.17.15
+  peerDependencies:
+    "@loadable/component": ^5.0.1
+    react: ">=16.3.0"
+  checksum: 9f7188b4d79717dd058ed9064fcf8454f236dc2165280203110d34e8a7f63cbe8ba9ab77a337174108a150b05715b64b0131295a28b2866b320514299f35db29
+  languageName: node
+  linkType: hard
+
+"@loadable/webpack-plugin@npm:^5.15.0":
+  version: 5.15.2
+  resolution: "@loadable/webpack-plugin@npm:5.15.2"
+  dependencies:
+    make-dir: ^3.0.2
+  peerDependencies:
+    webpack: ">=4.6.0"
+  checksum: fee31c7f8c158c1cf987dee57e1a8e7b822decd004fd3c00895e30c6780584410d0199e44d10e7bf225ea30bed439404755272396d515d51a65f02e8e3ae1db0
   languageName: node
   linkType: hard
 
@@ -4604,6 +4651,15 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: e009a2bfb50e90ca9b7c6e8f648f8464067271fd99116f881073fa6fa76dc8d0133181dd65e6614d5fb1220d671d67b0124aef7d97dc02d7e342ab143a47779d
+  languageName: node
+  linkType: hard
+
+"@types/loadable__component@npm:^5.13.4":
+  version: 5.13.4
+  resolution: "@types/loadable__component@npm:5.13.4"
+  dependencies:
+    "@types/react": "*"
+  checksum: a2d1c77b952eb15c45dfad841a7a0a3e4045f828e1f0ecbab997a306a56a48cd48ee12ee75bf79f59bbcff0347bbeb120106e8e66c91a38a530a028e1598b130
   languageName: node
   linkType: hard
 
@@ -10767,6 +10823,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-loadable-components-ssr@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "gatsby-plugin-loadable-components-ssr@npm:4.2.0"
+  dependencies:
+    "@babel/runtime": ^7.9.6
+    "@loadable/babel-plugin": ^5.13.2
+    "@loadable/server": ^5.15.0
+    "@loadable/webpack-plugin": ^5.15.0
+  peerDependencies:
+    "@loadable/component": ^5.15.0
+    gatsby: ^2.12.1 || ^3.0.0 || ^4.0.0
+    react-dom: ^16.12.0 || ^17.0.1
+  checksum: b96ca813c42b3df2f65a898a2372dc3d01e7137141dea5b1a423d625d8bc7471f44c6b4c21d7943b52020f8908411e071512434f06a601cba669514d8f330e66
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-manifest@npm:^4.14.0":
   version: 4.14.0
   resolution: "gatsby-plugin-manifest@npm:4.14.0"
@@ -12169,7 +12241,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.2":
+"hoist-non-react-statics@npm:^3.3.0, hoist-non-react-statics@npm:^3.3.1, hoist-non-react-statics@npm:^3.3.2":
   version: 3.3.2
   resolution: "hoist-non-react-statics@npm:3.3.2"
   dependencies:
@@ -18130,7 +18202,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^16.13.1, react-is@npm:^16.3.2, react-is@npm:^16.7.0":
+"react-is@npm:^16.12.0, react-is@npm:^16.13.1, react-is@npm:^16.3.2, react-is@npm:^16.7.0":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: f7a19ac3496de32ca9ae12aa030f00f14a3d45374f1ceca0af707c831b2a6098ef0d6bdae51bd437b0a306d7f01d4677fcc8de7c0d331eb47ad0f46130e53c5f
@@ -21985,11 +22057,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "userve@workspace:apps/userve"
   dependencies:
+    "@loadable/component": ^5.15.2
     "@mdx-js/mdx": ^1.6.22
     "@mdx-js/react": ^1.6.22
     "@netlify/plugin-lighthouse": ^2.1.3
     "@percy/cli": ^1.1.4
     "@reduxjs/toolkit": ^1.8.1
+    "@types/loadable__component": ^5.13.4
     "@types/reach__router": ^1.3.10
     "@types/react-helmet": ^6.1.5
     autoprefixer: ^10.4.4
@@ -22000,6 +22074,7 @@ __metadata:
     gatsby-image: ^3.11.0
     gatsby-plugin-google-analytics: ^4.11.0
     gatsby-plugin-image: ^2.11.1
+    gatsby-plugin-loadable-components-ssr: ^4.2.0
     gatsby-plugin-manifest: ^4.14.0
     gatsby-plugin-mdx: ^3.11.1
     gatsby-plugin-netlify-redirect: ^1.0.0
