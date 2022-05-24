@@ -51,7 +51,7 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
         }
     }
 
-    const imageComp = fileNode ? <DynamicImage fileNode={fileNode} alt={`${title} course preview image`}/>: <img src={image} alt={`${title}`} />;
+    const imageComp = fileNode ? <DynamicImage fileNode={fileNode} alt={`${title} course preview image`}/>: <img src={image} alt={`${title}`} loading="lazy" width={358} height={226}/>;
     return <div className={`font-sans card flex flex-col rounded-2xl overflow-hidden bg-white shadow-xl ${props.className}`} data-test={`course-card-${encodeURIComponent(courseTitle || "")}`}>
         <div>
             <div className={`card-image ${tag == "coming-soon" ? "coming-soon" : ""}`}>
