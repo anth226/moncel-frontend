@@ -6,7 +6,6 @@ import { StoryblokStoryProps, getFilename, findMatchingLocalFileNode, DynamicIma
 
 const LogosSection = (props: LogosStoryblok) => {
     const logos = [props.logo1, props.logo2, props.logo3, props.logo4, props.logo5, props.logo6 ] // does storyblok even support primitive lists?
-console.log(props)
     return <Section>
             <Header4 className="m-x-auto text-center">{props.title || ""}</Header4>
             <div className="grid grid-cols-12 grid-flow-row gap-3">
