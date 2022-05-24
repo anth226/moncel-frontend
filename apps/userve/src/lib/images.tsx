@@ -28,15 +28,17 @@ export const findMatchingLocalFileNode = (filename: string, node: Slug): LocalFi
 interface DynamicImageProps {
     fileNode: any;
     alt: string;
+    width?: number | string;
+    height?: number | string;
     [key: string]: unknown;
 }
-export const DynamicImage = ({ fileNode, alt, ...rest }: DynamicImageProps) => {
+export const DynamicImage = ({ fileNode, alt, width, height, ...rest }: DynamicImageProps) => {
     let image: IGatsbyImageData | string | undefined;
     if(fileNode == null) return null;
     if(!fileNode.childImageSharp) {
         image = fileNode.publicURL as string;
         // publicURL exists with no childImageSharp data means svg
-        return <img src={image} alt={alt} {...rest} loading="lazy"/>
+        return <img src={image} alt={alt} {...rest} width={width || "auto"} height={height || "auto"} loading="lazy"/>
     }
     else if(fileNode?.childImageSharp){
         image = getImage(fileNode);

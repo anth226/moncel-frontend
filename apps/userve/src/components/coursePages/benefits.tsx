@@ -6,7 +6,7 @@ import { Header5, Header2, Text } from 'src/components/core/typography';
 import { findMatchingLocalFileNode, getFilename, Slug, LocalFileSource, DynamicImage } from 'src/lib';
 
 const BenefitsCard = ({ card, fileNode }: { card: IconCardStoryblok, fileNode: LocalFileSource | null }) => {
-    const imgComp = !!fileNode ? <DynamicImage fileNode={fileNode} alt={`${card.Title} card icon`} className="h-16"/> : <img src={card.Icon?.filename || ""} alt={`${card.Title}`} width={60} height={60} className="block max-w-none h-16 mb-4"/>
+    const imgComp = !!fileNode ? <DynamicImage fileNode={fileNode} alt={`${card.Title} card icon`} className="h-16" width={60} height={60}/> : <img src={card.Icon?.filename || ""} alt={`${card.Title}`} width={60} height={60} className="block max-w-none h-16 mb-4"/>
     return <div className="flex flex-col">
         <div className="flex mb-6">
             { imgComp }
