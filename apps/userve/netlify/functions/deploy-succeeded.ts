@@ -12,7 +12,8 @@ const headers = {
 };
 const body = {"event_type": GITHUB_ACTION_EVENT_TYPE, "client_payload": { "percy_token": process.env.PERCY_TOKEN } };
 
-const handler: Handler = async () => {
+const handler: Handler = async (event, context) => {
+  console.log(`Event: ${JSON.stringify(event)}\nContext: ${JSON.stringify(context)}`)
   const response = await axios.post(repoDispatchUrl, body, { headers });
   console.log(response.status, response.statusText);
   
