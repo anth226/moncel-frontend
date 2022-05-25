@@ -6,10 +6,6 @@ import Head from 'src/components/head';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
 import { SeoStoryblok } from 'src/storyblok-component-types';
 
-enum SLUGS {
-    seo = "seo",
-};
-
 export default ({ data }: PageProps<DataProps>) => {
     const seoSlug = data.seo.nodes[0];
     const seoContent: SeoStoryblok = JSON.parse(seoSlug?.content || "");
