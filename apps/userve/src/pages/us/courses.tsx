@@ -1,16 +1,18 @@
 import * as React from "react"
 import { graphql, PageProps } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+import loadable from '@loadable/component'
 
 import Layout from 'src/components/layout';
 import Head from 'src/components/head';
-import { Section } from 'src/components/core/Section';
 
-import { HeroSection, CoursesSection } from 'src/components/sections/courses';
-import { AboutUsSection } from 'src/components/sections/landing';
+import { HeroSection } from 'src/components/sections/courses';
 import NotifyFormSection from 'src/components/coursePages/notify';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
 import { CoursePageStoryblok, AboutUsStoryblok } from 'src/storyblok-component-types';
+
+// defer loading these components
+const AboutUsSection = loadable(() => import('src/components/sections/landing/about-us'), { fallback: undefined });
+const CoursesSection = loadable(() => import('src/components/sections/courses/courses'), { fallback: undefined });
 
 // styles
 const pageStyles = {

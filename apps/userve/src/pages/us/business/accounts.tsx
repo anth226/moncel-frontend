@@ -2,7 +2,6 @@ import React from "react"
 import { graphql, PageProps } from "gatsby";
 import loadable from '@loadable/component'
 
-
 import Layout from 'src/components/layout';
 import Head from 'src/components/head';
 

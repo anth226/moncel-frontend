@@ -1,17 +1,24 @@
 import React from "react"
 import { graphql, PageProps } from "gatsby";
+import loadable from '@loadable/component'
 
 import Layout from 'src/components/layout';
 import Head from 'src/components/head';
 import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { Card as CourseCard } from 'src/components/coursePages';
 
-import { BenefitsSection, BusinessSection, LogosSection, BlogsSection, TestimonialsSection, AboutUsSection, HeroSection } from 'src/components/sections/landing';
+import { BenefitsSection, HeroSection } from 'src/components/sections/landing';
 import { SectionStoryblok, FeaturedCoursesStoryblok, BenefitsStoryblok, SeoStoryblok } from 'src/storyblok-component-types';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
 
 import { Header2, Text } from 'src/components/core/typography';
 
+// defer loading these components
+const BusinessSection  = loadable(() => import('src/components/sections/landing/business'), { fallback: undefined });
+const LogosSection  = loadable(() => import('src/components/sections/landing/logos'), { fallback: undefined });
+const TestimonialsSection  = loadable(() => import('src/components/sections/landing/testimonials'), { fallback: undefined });
+const AboutUsSection  = loadable(() => import('src/components/sections/landing/about-us'), { fallback: undefined });
+const BlogsSection  = loadable(() => import('src/components/sections/landing/blogs'), { fallback: undefined });
 // styles
 const pageStyles = {
   fontFamily: "Inter,sans-serif",

@@ -11,8 +11,7 @@ enum SLUGS {
 };
 
 export default ({ data }: PageProps<DataProps>) => {
-    const landingSlugs = data.allStoryblokEntry.nodes;
-    const seoSlug = landingSlugs.filter(slug => slug.slug === SLUGS.seo)[0];
+    const seoSlug = data.seo.nodes[0];
     const seoContent: SeoStoryblok = JSON.parse(seoSlug?.content || "");
     useEffect(() => {
         navigate('/us', { replace: true });
