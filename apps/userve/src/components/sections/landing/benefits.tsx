@@ -8,7 +8,7 @@ import { Header5, Text } from 'src/components/core/typography';
 
 const BenefitsCard = ({ card }: { card: IconCardStoryblok }) => {
     return <div className="flex flex-col">
-        <img src={card.Icon?.filename || ""} alt={`${card.Title}`} width={60} height={60} className="block max-w-none h-16 mb-4"/>
+        <img src={card.Icon?.filename || ""} alt={`${card.Title}`} width={60} height={60} className="block max-w-none h-16 mb-4" loading="lazy"/>
         <Header5>{card.Title}</Header5>
         <Text className="mb-0">{card.Description}</Text>
     </div>    

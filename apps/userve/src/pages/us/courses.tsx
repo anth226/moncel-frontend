@@ -51,7 +51,7 @@ const CoursePage = ({ data }: PageProps<DataProps>) => {
             <Layout>
                 <main style={pageStyles}>
                     {/* Hero */}
-                    <HeroSection {...heroContent} />
+                    <HeroSection {...heroContent} story={heroSlug}/>
 
                     <CoursesSection coursePageContent={coursePageContent} />
 

@@ -46,7 +46,7 @@ const Features = ({ features }: { features: IconCardStoryblok[] }) => {
     return <div className="flex flex-col gap-4">
         {features.map((feature, i) => {
             return <div className="flex flex-row gap-4 items-start" key={`feature-${i}`}>
-                <img src={feature.Icon?.filename || ""} width={20} height={20} alt={feature.Title} />
+                <img src={feature.Icon?.filename || ""} width={20} height={20} alt={feature.Title} loading="lazy" />
                 <ReactMarkdown>{feature.Title || ""}</ReactMarkdown>
             </div>
         })}
