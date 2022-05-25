@@ -6,7 +6,7 @@ import Card from 'src/components/coursePages/card'
 import { CourseCardStoryblok } from 'src/storyblok-component-types';
 import { Header3 } from 'src/components/core/typography';
 import { useAppSelector } from 'src/store';
-import { CourseData, CourseTypeData, CourseType } from 'src/components/coursePages/types';
+import { CourseData, CourseType } from 'src/components/coursePages/types';
 import { CoursePageStoryblok } from "src/storyblok-component-types";
 
 interface CourseEdge {
