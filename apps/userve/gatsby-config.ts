@@ -5,6 +5,8 @@ require("dotenv").config({
   path: `.env`,
 })
 
+const siteUrl = process.env.URL || `https://www.userve.com`
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Alcohol Server & Food Safety Training Online`,
@@ -97,6 +99,13 @@ const config: GatsbyConfig = {
       sitemap: 'https://www.userve.com/sitemap/sitemap-index.xml',
       policy: [{userAgent: '*', allow: '/'}]
     }
+  },
+  {
+    resolve: "gatsby-plugin-sitemap",
+    options: {
+      excludes: ['/', '/us/congratulations'],
+      resolveSiteUrl: () => siteUrl,
+    },
   },
   {
     resolve: 'gatsby-plugin-manifest',
