@@ -54,27 +54,22 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
     const imageData = useStaticQuery(imageQuery);
     let defaultGraphicFileNode: LocalFileSource | undefined;
     
-    switch (true) {
-        case (props.type === "fh"):
-            defaultGraphicFileNode = imageData.foodHandler.nodes[0];
-            break;
-        case (props.type === "al"):
-            defaultGraphicFileNode = imageData.alcoholServer.nodes[0];
-            break;
-        case (props.type === "fm"):
-            defaultGraphicFileNode = imageData.foodManager.nodes[0];
-            break;
-        case (props.type === "rbs"):
-            defaultGraphicFileNode = imageData.rbs.nodes[0];
-            break;
-        case (props.type === "rbses"):
-            defaultGraphicFileNode = imageData.rbses.nodes[0];
-            break;
-        case (props.type === "basset"):
-            defaultGraphicFileNode = imageData.basset.nodes[0];
+    if (props.type) {
+        defaultGraphicFileNode = imageData[props.type].nodes[0];
     }
 
-    const imageComp = fileNode ? <DynamicImage fileNode={fileNode} alt={`${title} course preview image`}/>: <DynamicImage fileNode={defaultGraphicFileNode} alt={`${title}`} />;
+    let imageComp;
+
+    if (fileNode) {
+        imageComp = <DynamicImage fileNode={fileNode} alt={`${title} course preview image`} />
+    } else {
+        if (defaultGraphicFileNode) {
+            imageComp = <DynamicImage fileNode={defaultGraphicFileNode} alt={`${title}`} />
+        } else {
+            imageComp = null;
+        }
+    }
+
     return <div className={`font-sans card flex flex-col rounded-2xl overflow-hidden bg-white shadow-xl ${props.className}`} data-test={`course-card-${encodeURIComponent(courseTitle || "")}`}>
         <div>
             <div className={`card-image ${tag == "coming-soon" ? "coming-soon" : ""}`}>
@@ -95,17 +90,7 @@ export default Card;
 
 const imageQuery = graphql`
     query {
-        foodManager:allFile(filter: { name: { eq: "usx_fm_ge_hero" } }) {
-            nodes {
-                name
-                publicURL
-                childImageSharp {
-                    gatsbyImageData
-                }
-                publicURL
-            }
-        }
-        foodHandler:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+        fm:allFile(filter: { name: { eq: "usx_fm_ge_hero" } }) {
             nodes {
                 name
                 extension
@@ -115,7 +100,17 @@ const imageQuery = graphql`
                 publicURL
             }
         }
-        alcoholServer:allFile(filter: { name: { eq: "usx_al_ge_hero" } }) {
+        fh:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+            nodes {
+                name
+                extension
+                childImageSharp {
+                    gatsbyImageData
+                }
+                publicURL
+            }
+        }
+        al:allFile(filter: { name: { eq: "usx_al_ge_hero" } }) {
             nodes {
                 name
                 extension
