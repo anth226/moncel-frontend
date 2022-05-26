@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'gatsby';
-
+import { graphql, useStaticQuery } from 'gatsby';
 import { courseLang } from 'src/lib/courseLang';
 import { StoryblokStoryProps, getFilename, findMatchingLocalFileNode, DynamicImage } from 'src/lib/images';
 import { CourseCardStoryblok } from 'src/storyblok-component-types';
 import { CourseData } from 'src/components/coursePages/types';
 import CardButton from 'src/components/coursePages/button';
+import { LocalFileSource } from 'src/lib';
 
 const FALLBACK_IMAGE_HOST = "https://www.userve.com/hs-fs";
 // Course Data from json to be supplemented with data from storyblok
@@ -51,7 +51,23 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
         }
     }
 
-    const imageComp = fileNode ? <DynamicImage fileNode={fileNode} alt={`${title} course preview image`}/>: <img src={image} alt={`${title}`} loading="lazy" width={358} height={226}/>;
+    const imageData = useStaticQuery(imageQuery);
+    let defaultGraphicFileNode: LocalFileSource | undefined;
+    
+    if (props.type) {
+        defaultGraphicFileNode = imageData[props.type].nodes[0];
+    }
+
+    let imageComp;
+
+    if (fileNode) {
+        imageComp = <DynamicImage fileNode={fileNode} alt={`${title} course preview image`} />
+    } else if (defaultGraphicFileNode) {
+            imageComp = <DynamicImage fileNode={defaultGraphicFileNode} alt={`${title}`} />
+    } else {
+            imageComp = null;
+    }
+
     return <div className={`font-sans card flex flex-col rounded-2xl overflow-hidden bg-white shadow-xl ${props.className}`} data-test={`course-card-${encodeURIComponent(courseTitle || "")}`}>
         <div>
             <div className={`card-image ${tag == "coming-soon" ? "coming-soon" : ""}`}>
@@ -69,3 +85,68 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
 };
 
 export default Card;
+
+const imageQuery = graphql`
+    query {
+        fm:allFile(filter: { name: { eq: "usx_fm_ge_hero" } }) {
+            nodes {
+                name
+                extension
+                childImageSharp {
+                    gatsbyImageData
+                }
+                publicURL
+            }
+        }
+        fh:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+            nodes {
+                name
+                extension
+                childImageSharp {
+                    gatsbyImageData
+                }
+                publicURL
+            }
+        }
+        al:allFile(filter: { name: { eq: "usx_al_ge_hero" } }) {
+            nodes {
+                name
+                extension
+                childImageSharp {
+                    gatsbyImageData
+                }
+                publicURL
+            }
+        }
+        rbs:allFile(filter: { name: { eq: "usx_ca_hero" } }) {
+            nodes {
+                name
+                extension
+                childImageSharp {
+                    gatsbyImageData
+                }
+                publicURL
+            }
+        }
+        rbses:allFile(filter: { name: { eq: "usx_al_ca_es_hero" } }) {
+            nodes {
+                name
+                extension
+                childImageSharp {
+                    gatsbyImageData
+                }
+                publicURL
+            }
+        }
+        basset:allFile(filter: { name: { eq: "usx_al_il_hero" } }) {
+            nodes {
+                name
+                extension
+                childImageSharp {
+                    gatsbyImageData
+                }
+                publicURL
+            }
+        }
+    }
+`;
