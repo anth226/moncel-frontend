@@ -33,8 +33,8 @@
 # A basic redirect rule
 [[redirects]]
   from = "/us/resources/blog"
-  to = "https://www.userve.com/us/resources/blog"
-  status = 200
+  to = "https://blog.userve.com/us/resources/blog"
+  status = 301
   force = true
 
 # A redirect rule with many of the supported properties

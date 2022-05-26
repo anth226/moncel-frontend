@@ -4,9 +4,7 @@
   "private": true,
   "description": "userve",
   "author": "mkoo-moncel",
-  "keywords": [
-    "gatsby"
-  ],
+  "browserslist": [">1% in US", "not dead", "last 2 versions"],
   "scripts": {
     "clean": "gatsby clean",
     "develop": "yarn generate-storyblok-types && gatsby develop",
@@ -71,6 +69,7 @@
     "@types/react-helmet": "^6.1.5",
     "cypress": "^9.6.0",
     "gatsby-cli": "^4.13.1",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.27",
     "start-server-and-test": "^1.14.0",
     "storyblok": "^3.10.4",
     "storyblok-generate-ts": "^1.4.1",
