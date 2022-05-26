@@ -30,7 +30,13 @@
 # For context-specific rules, use _headers or _redirects files,
 # which are PER-DEPLOY.
 
-# A basic redirect rule
+# History pushstate for SPAs
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# blog
 [[redirects]]
   from = "/us/resources/blog"
   to = "https://blog.userve.com/us/resources/blog"
@@ -41,7 +47,7 @@
 [[redirects]]
   from = "/us/about/knowledge"
   to = "https://help.userve.com/knowledge"
-  status = 200
+  status = 301
   force = true
 
 # Default to /us
@@ -62,12 +68,6 @@
   # [redirects.headers]
   #   X-From = "Netlify"
   #   X-Api-Key = "some-api-key-string"
-
-# History pushstate for SPAs
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
 
 [[headers]]
   # Define which paths this specific [[headers]] block will cover.
