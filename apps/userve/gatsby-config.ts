@@ -103,7 +103,7 @@ const config: GatsbyConfig = {
   {
     resolve: "gatsby-plugin-sitemap",
     options: {
-      excludes: ['/', '/us/congratulations'],
+      excludes: ['/', '/us/congratulations', '/404*'],
       resolveSiteUrl: () => siteUrl,
     },
   },
