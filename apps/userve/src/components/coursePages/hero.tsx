@@ -94,7 +94,7 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
     const lang = courseLang(context.type);
 
     const gatsbyImageFileNode = findMatchingLocalFileNode(getFilename(content.Image?.filename || ""), heroStory);
-    const imageComp = <DynamicImage fileNode={gatsbyImageFileNode || defaultGraphicFileNode} alt={content.title || "Hero image"} className="rounded-md" />;
+    const imageComp = <DynamicImage fileNode={gatsbyImageFileNode || defaultGraphicFileNode} alt={title || "Hero image"} className="rounded-md" />;
     // replace state placeholder with state name
     if (!content.price) throw Error(`Price was not found for page ${context.url}`);
 
