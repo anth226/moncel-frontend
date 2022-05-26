@@ -62,12 +62,10 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
 
     if (fileNode) {
         imageComp = <DynamicImage fileNode={fileNode} alt={`${title} course preview image`} />
-    } else {
-        if (defaultGraphicFileNode) {
+    } else if (defaultGraphicFileNode) {
             imageComp = <DynamicImage fileNode={defaultGraphicFileNode} alt={`${title}`} />
-        } else {
+    } else {
             imageComp = null;
-        }
     }
 
     return <div className={`font-sans card flex flex-col rounded-2xl overflow-hidden bg-white shadow-xl ${props.className}`} data-test={`course-card-${encodeURIComponent(courseTitle || "")}`}>
