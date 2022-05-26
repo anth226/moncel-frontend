@@ -8,7 +8,7 @@ require("dotenv").config({
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Alcohol Server & Food Safety Training Online`,
-    siteUrl: `https://userve.com`
+    siteUrl: `https://www.userve.com`
   },
   trailingSlash: "never",
   plugins: ["gatsby-plugin-sass", "gatsby-plugin-postcss", {

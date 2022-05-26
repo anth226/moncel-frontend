@@ -39,7 +39,7 @@
 # blog
 [[redirects]]
   from = "/us/resources/blog"
-  to = "https://blog.userve.com/us/resources/blog"
+  to = "https://blog.userve.com/us"
   status = 301
   force = true
 
