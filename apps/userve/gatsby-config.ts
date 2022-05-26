@@ -103,7 +103,13 @@ const config: GatsbyConfig = {
     options: { icon: 'src/images/favicon.png' }
   },
   "gatsby-plugin-loadable-components-ssr",
-  "gatsby-plugin-react-helmet"]
+  "gatsby-plugin-react-helmet",
+  {
+    resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+    options: {
+      disable: true,
+    },
+  }]
 };
 
 export default config;
