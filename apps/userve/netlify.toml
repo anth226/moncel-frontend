@@ -30,11 +30,11 @@
 # For context-specific rules, use _headers or _redirects files,
 # which are PER-DEPLOY.
 
-# History pushstate for SPAs
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# # History pushstate for SPAs
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
 
 # blog
 [[redirects]]
@@ -54,7 +54,6 @@
 [[redirects]]
   from = "/"
   to = "/us"
-  status = 301
   force = true
 
   # Redirect based on conditions including browser language, 
