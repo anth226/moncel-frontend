@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 export default () => {
     useEffect(() => {
         if(document) {
-            var _cio = _cio || [];
+            window._cio = _cio || [];
             (function() {
             var a,b,c;a=function(f){return function(){_cio.push([f].
             concat(Array.prototype.slice.call(arguments,0)))}};b=["load","identify",
