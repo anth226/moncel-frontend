@@ -33,9 +33,9 @@ const Header = () => {
             <div className="flex gap-6 ml-6 text-bluewood font-medium text-base">
                 <HeaderLink to="/us/courses">Courses</HeaderLink>
                 <HeaderLink to="/us/business/accounts">Business</HeaderLink>
-                <HeaderLink to="/us/resources/blog">Blog</HeaderLink>
+                <HeaderLink to="https://blog.userve.com/us">Blog</HeaderLink>
                 <HeaderLink to="/us/about/about-us">About Us</HeaderLink>
-                <HeaderLink to="/us/about/knowledge">Help Center</HeaderLink>
+                <HeaderLink to="https://help.userve.com/knowledge">Help Center</HeaderLink>
                 <HeaderLink to="/us/about/contact-us">Contact</HeaderLink>
             </div>
         </div>
@@ -80,9 +80,9 @@ const MobileMenu = () => {
                 <div className="flex flex-col">
                     <MobileLink displayName="Courses" href="/us/courses" icon={CoursesIcon} />
                     <MobileLink displayName="Business" href="/us/business/accounts" icon={BusinessIcon} />
-                    <MobileLink displayName="Blog" href="/us/resources/blog" icon={ResourcesIcon} />
+                    <MobileLink displayName="Blog" href="https://blog.userve.com/us" icon={ResourcesIcon} />
                     <MobileLink displayName="About Us" href="/us/about/about-us" icon={AboutIcon} />
-                    <MobileLink displayName="Help Center" href="/us/about/knowledge" icon={HelpIcon} />
+                    <MobileLink displayName="Help Center" href="https://help.userve.com/knowledge" icon={HelpIcon} />
                     <MobileLink displayName="Contact" href="/us/about/contact-us" icon={MailIcon} />
                 </div>
                 <div className="flex flex-col gap-4 grow items-center justify-end text-bluewood font-medium w-full p-4">

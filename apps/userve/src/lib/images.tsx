@@ -2,6 +2,7 @@ import React from 'react';
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image';
 
 import { Slug, LocalFileSource } from 'src/lib/storyblokSourceTypes';
+import { CSSProperties } from 'react';
 
 // Stories contain imageFileSrc nodes and sometimes need to be passed to components
 export interface StoryblokStoryProps {
@@ -30,9 +31,10 @@ interface DynamicImageProps {
     alt: string;
     width?: number | string;
     height?: number | string;
+    imgStyle?: CSSProperties;
     [key: string]: unknown;
 }
-export const DynamicImage = ({ fileNode, alt, width, height, ...rest }: DynamicImageProps) => {
+export const DynamicImage = ({ fileNode, alt, width, height, imgStyle, ...rest }: DynamicImageProps) => {
     let image: IGatsbyImageData | string | undefined;
     if(fileNode == null) return null;
     if(!fileNode.childImageSharp) {
@@ -42,7 +44,7 @@ export const DynamicImage = ({ fileNode, alt, width, height, ...rest }: DynamicI
     }
     else if(fileNode?.childImageSharp){
         image = getImage(fileNode);
-        return <GatsbyImage image={image!} alt={alt} {...rest}></GatsbyImage>
+        return <GatsbyImage image={image!} alt={alt} {...rest} imgStyle={imgStyle}></GatsbyImage>
     }
     else {
         throw Error(`Unable to retrieve image data for image:\n${fileNode}`);

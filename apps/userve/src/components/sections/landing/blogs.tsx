@@ -19,7 +19,7 @@ const BlogCard = ({ blog, fileNode }: { blog: BlogPostCardStoryblok, fileNode: L
         <div>
             <div className="card-image">
                 <Link to={blog.link || ""}>
-                    <DynamicImage fileNode={fileNode} alt={`preview image for blog post "${blog.title}"`}/>
+                    <DynamicImage fileNode={fileNode} alt={`preview image for blog post "${blog.title}"`} imgStyle={{borderTopRightRadius:'1rem',borderTopLeftRadius:'1rem'}}/>
                 </Link>
             </div>
             <div className="card-body">
