@@ -65,9 +65,9 @@ const MobileFooter = () => {
         <div className="grid grid-cols-2 grid-flow-row gap-2 w-full text-md text-lynch">
             <Link to="/us/courses">Courses</Link>
             <Link to="/us/business/accounts">Business</Link>
-            <Link to="/us/resources/blog">Blog</Link>
+            <ExternalLink to="https://blog.userve.com/us">Blog</ExternalLink>
             <Link to="/us/about/about-us">About Us</Link>
-            <ExternalLink to="/us/about/knowledge">Help Center</ExternalLink>
+            <ExternalLink to="https://help.userve.com/knowledge">Help Center</ExternalLink>
             <Link to="/us/about/contact-us">Contact</Link>
         </div>
 
@@ -103,7 +103,7 @@ const DesktopFooter = () => {
                     </div>
                     <Link to="/us/courses">Courses</Link>
                     <Link to="/us/business/accounts">Business</Link>
-                    <Link to="/us/resources/blog">Resources</Link>
+                    <ExternalLink to="https://blog.userve.com/us">Blog</ExternalLink>
                     <Link to="/us/about/about-us">About Us</Link>
                     <ExternalLink to="https://help.userve.com/knowledge">Help Center</ExternalLink>
                     <Link to="/us/about/contact-us">Contact</Link>
