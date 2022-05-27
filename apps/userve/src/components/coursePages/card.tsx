@@ -61,9 +61,9 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
     let imageComp;
 
     if (fileNode) {
-        imageComp = <DynamicImage fileNode={fileNode} alt={`${title} course preview image`} />
+        imageComp = <DynamicImage fileNode={fileNode} alt={`${title} course preview image`} imgStyle={{borderTopRightRadius:'1rem',borderTopLeftRadius:'1rem'}}/>
     } else if (defaultGraphicFileNode) {
-            imageComp = <DynamicImage fileNode={defaultGraphicFileNode} alt={`${title}`} />
+            imageComp = <DynamicImage fileNode={defaultGraphicFileNode} alt={`${title}`} imgStyle={{borderTopRightRadius:'1rem',borderTopLeftRadius:'1rem'}}/>
     } else {
             imageComp = null;
     }
