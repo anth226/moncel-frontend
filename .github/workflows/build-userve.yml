@@ -4,7 +4,8 @@ name: Userve Build Pipeline
 on:
   push:
     branches:
-      - 'main'
+      - main
+      - dev
     paths:
       - 'apps/userve/**'
   pull_request:
