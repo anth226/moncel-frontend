@@ -10,7 +10,8 @@ on:
       - 'apps/userve/**'
   pull_request:
     branches:
-      - 'main'
+      - main
+      - dev
     paths:
       - 'apps/userve/**'
 

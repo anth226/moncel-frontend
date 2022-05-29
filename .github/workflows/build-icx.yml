@@ -10,7 +10,8 @@ on:
       - 'apps/icx-next/**'
   pull_request:
     branches:
-      - 'main'
+      - main
+      - dev
     paths:
       - 'apps/icx-next/**'
 
