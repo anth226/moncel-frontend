@@ -4,3 +4,4 @@ node_modules/
 public
 storyblok-component-types.d.ts
 cypress/videos/*
+cypress/screenshots/*

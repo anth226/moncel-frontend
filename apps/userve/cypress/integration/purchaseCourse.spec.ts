@@ -46,7 +46,7 @@ describe('Course purchasing', () => {
 
     const expectedDocumentCourseName = encodeURIComponent("Food Handler Training")
     cy.get(`[data-test*="${expectedDocumentCourseName}" i]`).should('be.visible');
-    cy.get(`[data-test*="${expectedDocumentCourseName}" i] img`).click().wait(1000);
+    cy.get(`[data-test*="${expectedDocumentCourseName}" i] img`).click({ multiple: true, force: true }).wait(1000);
 
     // Purchase call should have been made
     cy.intercept(PURCHASE_URL, cy.spy().as('purchaseRequest'));
