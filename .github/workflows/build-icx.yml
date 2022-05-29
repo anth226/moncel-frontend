@@ -4,7 +4,8 @@ name: ICX Build Pipeline
 on:
   push:
     branches:
-      - 'main'
+      - main
+      - dev
     paths:
       - 'apps/icx-next/**'
   pull_request:
