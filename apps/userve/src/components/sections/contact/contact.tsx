@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import { ContactStoryblok } from 'src/storyblok-component-types';
-import { Header1, Text } from 'src/components/core/typography';
+import { Header1, Header5, Text } from 'src/components/core/typography';
 import HubspotContactForm from 'src/components/shared/Form';
 
 const ContactSection = (props: ContactStoryblok) => {
+    const [toggle, setToggle] = useState(false)
+
     return <>
         <div className="col-span-12 md:col-span-4 lg:col-span-3">
             <div>
@@ -28,7 +30,7 @@ const ContactSection = (props: ContactStoryblok) => {
             </div>
         </div>
         <div className="col-span-12 md:col-span-8 lg:col-span-9 col-end-13">
-            <ul className="nav nav-tabs mb-8 gap-8 grid grid-cols-12" id="tabs-tabFill"
+            <ul className="hidden md:grid nav nav-tabs mb-8 gap-8 grid-cols-12" id="tabs-tabFill"
                 role="tablist">
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
                     <a href="#tabs-individual" className="nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start active" id="tabs-home-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-individual" role="tab"
@@ -52,6 +54,35 @@ const ContactSection = (props: ContactStoryblok) => {
                         <img src="https://a.storyblok.com/f/153125/x/d00700cb55/usx_lg_chat.svg" className="mt-4 w-[50px] mx-auto" alt="General" loading="lazy" width={50} height={57}></img></a>
                 </li>
             </ul>
+
+            <div className="block md:hidden">
+                <Header5>How Can We Help You?</Header5>
+                <div className="group block relative mb-6">
+                    <button className="w-full bg-white border-1 border-bluewood text-bluewood font-semibold py-2 px-4 rounded flex justify-between items-center" onClick={() => setToggle(!toggle)}>
+                    <span className="mr-1">Select A Form</span>
+                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                    </svg>
+                    </button>
+                    {toggle && (
+                        <ul className="mobile-dropdown nav nav-tabs absolute hidden text-bluewood pt-1 group-hover:block z-40 border-1 w-full" id="tabs-tabFill" role="tablist">
+                            <li className="nav-item border-b" role="presentation">
+                                <a href="#tabs-individual" className="nav-link rounded-t bg-white hover:bg-white py-2 px-4 block whitespace-no-wrap hover:no-underline" id="tabs-home-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-individual" role="tab" aria-controls="tabs-individual" aria-selected="false" onClick={() => setToggle(!toggle)}>Individual Enrollment</a>
+                            </li>
+                            <li className="nav-item border-b" role="presentation">
+                                <a href="#tabs-business" className="nav-link bg-white hover:bg-white py-2 px-4 block whitespace-no-wrap hover:no-underline" id="tabs-profile-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-business" role="tab" aria-controls="tabs-business" aria-selected="false" onClick={() => setToggle(!toggle)}>Business Enrollment</a>
+                            </li>
+                            <li className="nav-item border-b" role="presentation">
+                                <a href="#tabs-support" className="nav-link bg-white hover:bg-white py-2 px-4 block whitespace-no-wrap hover:no-underline" id="tabs-messages-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-support" role="tab" aria-controls="tabs-support" aria-selected="false" onClick={() => setToggle(!toggle)}>Student Support</a>
+                            </li>
+                            <li className="nav-item" role="presentation">
+                                <a href="#tabs-general" className="nav-link rounded-b bg-white hover:bg-white py-2 px-4 block whitespace-no-wrap hover:no-underline" id="tabs-messages-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-general" role="tab" aria-controls="tabs-general" aria-selected="false" onClick={() => setToggle(!toggle)}><div>General</div></a>
+                            </li>
+                        </ul>
+                    )}  
+                </div>
+            </div>
+
             <div className="tab-content" id="tabs-tabContentFill">
                 <div className="tab-pane fade show active" id="tabs-individual" role="tabpanel" aria-labelledby="tabs-home-tabFill">
                     <HubspotContactForm portalId="21498581" formId="ce0ce7ff-c3fe-4ba5-b756-a851de2e5cb7" hubId="ind" className="p-0 md:p-8 bg-transparent !shadow-none md:bg-white md:!shadow-lg" />
