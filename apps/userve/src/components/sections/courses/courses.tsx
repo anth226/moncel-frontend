@@ -71,6 +71,7 @@ const courseDataQuery = graphql`
                     image
                     url
                     desc
+                    productCategoryLabel
                 }
             }
         }
