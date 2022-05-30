@@ -1,0 +1,5 @@
+
+export enum DEPLOY_EVENT_TYPES {
+    ICX="ICX_DEPLOY_SUCCESS",
+    userve="USERVE_DEPLOY_SUCCESS"
+};
