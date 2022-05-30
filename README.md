@@ -1,10 +1,4 @@
-# Turborepo starter
-
-This is an official Yarn v1 starter turborepo.
-
-## What's inside?
-
-This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It includes the following packages/apps:
+This is the monorepo for Moncel's Gatbsy/NextJS websites. Please use yarn v3.x.
 
 ### Apps and Packages
 
@@ -13,49 +7,21 @@ This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package ma
 
 ### Utilities
 
-This turborepo has some additional tools already setup for you:
+Code quality tools for the NextJS sites follow a shared config that you can find in `packages`.
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking and the configuration is in `/packages/tsconfig`
 - [ESLint](https://eslint.org/) for code linting and the configuration is in `/packages/config`
 - [Prettier](https://prettier.io) for code formatting and the configuration is in `/packages/config`
 
-## Setup
-
-This repository is used in the `npx create-turbo` command, and selected when choosing which package manager you wish to use with your monorepo (Yarn).
-
 ### Build
 
-To build all apps and packages, run the following command from the root of this repo:
+To build all apps and shared dependencies together, run the following command from the root of this repo:
 
 ```
 yarn build
 ```
 
-### Develop
-
-To develop all apps and packages, run the following command:
-
-```
-yarn run dev
-```
-
-### Remote Caching
-
-Turborepo can use a technique known as [Remote Caching (Beta)](https://turborepo.org/docs/features/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching (Beta) you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
-
-```
-npx turbo login
-```
-
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
-
-```
-npx turbo link
-```
+When installing a yarn dependency for a specific app, please run `yarn add` and update the `package.json` within the directory for that app, and include `yarn.lock` from the root of the monorepo when making PRs. 
 
 ## Useful Links
 
