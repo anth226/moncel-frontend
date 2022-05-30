@@ -65,7 +65,7 @@ const ContactSection = (props: ContactStoryblok) => {
                     </svg>
                     </button>
                     {toggle && (
-                        <ul className="mobile-dropdown nav nav-tabs absolute hidden text-bluewood pt-1 group-hover:block z-40 border-1 w-full" id="tabs-tabFill" role="tablist">
+                        <ul className="nav nav-tabs absolute hidden text-bluewood pt-1 group-hover:block z-40 border-1 w-full" id="tabs-tabFill" role="tablist">
                             <li className="nav-item border-b" role="presentation">
                                 <a href="#tabs-individual" className="nav-link rounded-t bg-white hover:bg-white py-2 px-4 block whitespace-no-wrap hover:no-underline" id="tabs-home-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-individual" role="tab" aria-controls="tabs-individual" aria-selected="false" onClick={() => setToggle(!toggle)}>Individual Enrollment</a>
                             </li>
