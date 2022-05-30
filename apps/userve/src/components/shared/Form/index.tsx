@@ -31,7 +31,7 @@ const HubspotContactForm = (props: FormInfo) => {
 
     return (
         <div id="hubspotForm">
-            <div id={`hub-${hubId}`} className={`p-8 rounded-md bg-white drop-shadow-lg ${props.className || ""}`}></div>
+            <div id={`hub-${hubId}`} className={`p-8 rounded-md bg-white ${props.className || ""}`}></div>
         </div>
     );
 
