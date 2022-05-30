@@ -6,7 +6,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/al/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -16,7 +17,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -26,9 +28,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Alaska",
@@ -37,7 +39,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -47,7 +50,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -57,9 +61,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Arizona",
@@ -68,7 +72,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -78,7 +83,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -88,9 +94,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Arkansas",
@@ -98,7 +104,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/ar/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -107,7 +114,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/ar/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -117,9 +125,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ca_hero.jpg",
         "state": "California",
@@ -127,7 +135,8 @@
         "desc": "State-approved responsible alcohol server training program required for all servers and their managers in California.",
         "url": "/us/ca/alcohol-service/rbs-certification",
         "type": "rbs",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_al_ca_es_hero.jpg",
@@ -136,7 +145,8 @@
         "desc": "Programa de certificación y capacitación aprobado por el estado para servidores responsables de alcohol, requerido para todas las personas que sirven alcohol en California.",
         "url": "/us/ca/alcohol-service/espanol-rbs-certification",
         "type": "rbses",
-        "button": "primary btn-es"
+        "button": "primary btn-es",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -146,7 +156,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -156,9 +167,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Colorado",
@@ -166,7 +177,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/co/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -175,7 +187,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/co/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -185,9 +198,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Connecticut",
@@ -195,7 +208,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/ct/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -204,7 +218,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/ct/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -214,9 +229,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Delaware",
@@ -224,7 +239,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/de/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
@@ -234,7 +250,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -244,9 +261,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Florida",
@@ -254,7 +271,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/fl/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -264,7 +282,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -274,9 +293,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Georgia",
@@ -284,7 +303,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/ga/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
@@ -294,7 +314,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -304,9 +325,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Hawaii",
@@ -315,7 +336,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -325,7 +347,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -335,9 +358,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Idaho",
@@ -345,7 +368,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/id/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
@@ -355,7 +379,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -365,9 +390,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_il_hero.jpg",
         "state": "Illinois",
@@ -375,7 +400,8 @@
         "desc": "State-approved alcohol server training program required for alcohol servers in Illinois, including bartenders, bar backs, servers and managers.",
         "url": "/us/il/alcohol-service/basset-certification",
         "type": "basset",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -385,7 +411,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -395,9 +422,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Indiana",
@@ -405,7 +432,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/in/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
@@ -415,7 +443,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -425,9 +454,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Iowa",
@@ -435,7 +464,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/ia/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -444,7 +474,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/ia/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -454,9 +485,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Kansas",
@@ -464,7 +495,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/ks/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -474,7 +506,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -484,9 +517,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-    
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Kentucky",
@@ -494,7 +527,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/ky/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -504,7 +538,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -514,9 +549,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Louisiana",
@@ -524,7 +559,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/la/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
@@ -534,7 +570,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -544,9 +581,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Maine",
@@ -554,7 +591,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/me/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -563,7 +601,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/me/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -573,9 +612,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Maryland",
@@ -583,7 +622,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/md/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
@@ -593,7 +633,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -603,9 +644,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Massachusetts",
@@ -613,7 +654,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/ma/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
@@ -623,7 +665,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -633,9 +676,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Michigan",
@@ -643,7 +686,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/mi/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_al_mi_hero.jpg",
@@ -653,7 +697,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -663,9 +708,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Minnesota",
@@ -673,7 +718,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/mn/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -682,7 +728,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/mn/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -692,9 +739,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Mississippi",
@@ -702,7 +749,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/ms/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -711,7 +759,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/ms/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -721,9 +770,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Missouri",
@@ -731,7 +780,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/mo/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -741,7 +791,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -751,9 +802,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Montana",
@@ -762,7 +813,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -772,7 +824,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -782,9 +835,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Nebraska",
@@ -792,7 +845,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/ne/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -802,7 +856,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -812,9 +867,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "New Hampshire",
@@ -822,7 +877,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/nh/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -831,7 +887,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/nh/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -841,9 +898,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "New Jersey",
@@ -851,7 +908,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/nj/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -860,7 +918,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/nj/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -870,9 +929,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "New Mexico",
@@ -881,7 +940,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -891,7 +951,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -901,9 +962,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-    
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "New York",
@@ -911,7 +972,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/ny/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -921,7 +983,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -931,9 +994,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Nevada",
@@ -942,7 +1005,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -952,7 +1016,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -962,9 +1027,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "North Carolina",
@@ -972,7 +1037,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/nc/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -981,7 +1047,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/nc/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -991,9 +1058,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "North Dakota",
@@ -1001,7 +1068,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/nd/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -1010,7 +1078,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/nd/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1020,9 +1089,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Ohio",
@@ -1030,7 +1099,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/oh/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -1039,7 +1109,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/oh/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1049,9 +1120,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Oklahoma",
@@ -1060,7 +1131,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -1070,7 +1142,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1080,9 +1153,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Oregon",
@@ -1090,7 +1163,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/or/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
@@ -1100,7 +1174,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1110,9 +1185,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Pennsylvania",
@@ -1120,7 +1195,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/pa/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
@@ -1130,7 +1206,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1140,9 +1217,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Rhode Island",
@@ -1150,7 +1227,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/ri/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
@@ -1160,7 +1238,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1170,9 +1249,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "South Carolina",
@@ -1180,7 +1259,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/sc/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -1190,7 +1270,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1200,9 +1281,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "South Dakota",
@@ -1210,7 +1291,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/sd/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -1219,7 +1301,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/sd/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1229,9 +1312,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Tennessee",
@@ -1239,7 +1322,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/tn/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
@@ -1249,7 +1333,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1259,9 +1344,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Texas",
@@ -1270,7 +1355,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -1280,7 +1366,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1290,9 +1377,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Utah",
@@ -1301,7 +1388,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -1311,7 +1399,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1321,9 +1410,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Vermont",
@@ -1331,7 +1420,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/vt/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
@@ -1341,7 +1431,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1351,9 +1442,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Virginia",
@@ -1361,7 +1452,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/va/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -1371,7 +1463,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1381,9 +1474,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Washington",
@@ -1392,7 +1485,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -1402,7 +1496,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1412,9 +1507,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "West Virginia",
@@ -1422,7 +1517,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/wv/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -1432,7 +1528,8 @@
         "url": "#notify",
         "type": "fh",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1442,9 +1539,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Wisconsin",
@@ -1452,7 +1549,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/wi/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
@@ -1462,7 +1560,8 @@
         "url": "#notify",
         "type": "al",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1472,9 +1571,9 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     },
-
     {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Wyoming",
@@ -1482,7 +1581,8 @@
         "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
         "url": "/us/wy/alcohol-service/server-seller-training",
         "type": "al",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Alcohol Service"
     },
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
@@ -1491,7 +1591,8 @@
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/wy/food-service/food-handler-training",
         "type": "fh",
-        "button": "primary"
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1501,6 +1602,7 @@
         "url": "#notify",
         "type": "fm",
         "button": "invert",
-        "tag": "coming-soon"
+        "tag": "coming-soon",
+        "productCategoryLabel": "Food Handling"
     }
 ]
