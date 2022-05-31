@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import { ContactStoryblok } from 'src/storyblok-component-types';
-import { Header1, Text } from 'src/components/core/typography';
+import { Header1, Header5, Text } from 'src/components/core/typography';
 import { ButtonTransparent } from 'src/components/shared';
 import HubspotContactForm from 'src/components/shared/Form';
 
@@ -15,7 +15,23 @@ const ChatWidgetButton = () => {
     return <ButtonTransparent color="navy" onClick={handleClick}>Start Live Chat</ButtonTransparent>
 
 }
+  
+interface ReactProps {
+    target?: string;
+    id?: string;
+    title?: string;
+    className?: string;
+}
+
 const ContactSection = (props: ContactStoryblok) => {
+    const [isMobileMenuOpen, setToggle] = useState(false);
+
+    const MobileMenuItem = (props:ReactProps) => {
+        return <li className={`nav-item ${props.className}`} role="presentation">
+            <a href={`#${props.target}`} className="nav-link bg-white hover:bg-white py-2 px-4 block whitespace-no-wrap hover:no-underline" id={`tabs-${props.id}-tabFill`} data-bs-toggle="pill" data-bs-target={`#${props.target}`}role="tab" aria-controls={props.target} aria-selected="false" onClick={() => setToggle(false)}>{props.title}</a>
+        </li>;
+    };
+
     return <>
         <div className="col-span-12 md:col-span-4 lg:col-span-3">
             <div>
@@ -39,7 +55,7 @@ const ContactSection = (props: ContactStoryblok) => {
             </div>
         </div>
         <div className="col-span-12 md:col-span-8 lg:col-span-9 col-end-13">
-            <ul className="nav nav-tabs mb-8 gap-8 grid grid-cols-12" id="tabs-tabFill"
+            <ul className="hidden md:grid nav nav-tabs mb-8 gap-8 grid-cols-12" id="tabs-tabFill"
                 role="tablist">
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
                     <a href="#tabs-individual" className="nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start active" id="tabs-home-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-individual" role="tab"
@@ -63,6 +79,27 @@ const ContactSection = (props: ContactStoryblok) => {
                         <img src="https://a.storyblok.com/f/153125/x/d00700cb55/usx_lg_chat.svg" className="mt-4 w-[50px] mx-auto" alt="General" loading="lazy" width={50} height={57}></img></a>
                 </li>
             </ul>
+
+            <div className="block md:hidden">
+                <Header5>How Can We Help You?</Header5>
+                <div className="group block relative mb-6">
+                    <button className="w-full bg-white border-1 border-bluewood text-bluewood font-semibold py-2 px-4 rounded flex justify-between items-center" onClick={() => setToggle(true)}>
+                    <span className="mr-1">Select A Form</span>
+                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                    </svg>
+                    </button>
+                    {isMobileMenuOpen && (
+                        <ul className="nav nav-tabs absolute hidden text-bluewood pt-1 group-hover:block z-40 border-1 w-full" id="tabs-tabFill" role="tablist">
+                            <MobileMenuItem target="tabs-individual" id="home" title="Individual Enrollment" className="border-b"/>
+                            <MobileMenuItem target="tabs-business" id="profile" title="Business Enrollment" className="border-b"/>
+                            <MobileMenuItem target="tabs-support" id="messages" title="Student Support" className="border-b"/>
+                            <MobileMenuItem target="tabs-general" id="messages" title="General"/>
+                        </ul>
+                    )}  
+                </div>
+            </div>
+
             <div className="tab-content" id="tabs-tabContentFill">
                 <div className="tab-pane fade show active" id="tabs-individual" role="tabpanel" aria-labelledby="tabs-home-tabFill">
                     <HubspotContactForm portalId="21498581" formId="ce0ce7ff-c3fe-4ba5-b756-a851de2e5cb7" hubId="ind" className="p-0 md:p-8 bg-transparent !shadow-none md:bg-white md:!shadow-lg" />
