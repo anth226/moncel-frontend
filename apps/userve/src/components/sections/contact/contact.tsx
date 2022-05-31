@@ -5,8 +5,21 @@ import { ContactStoryblok } from 'src/storyblok-component-types';
 import { Header1, Header5, Text } from 'src/components/core/typography';
 import HubspotContactForm from 'src/components/shared/Form';
 
+interface ReactProps {
+    target?: string;
+    id?: string;
+    title?: string;
+    className?: string;
+}
+
 const ContactSection = (props: ContactStoryblok) => {
-    const [toggle, setToggle] = useState(false)
+    const [toggle, setToggle] = useState(false);
+
+    const MobileMenu = (props:ReactProps) => {
+        return <li className={`nav-item ${props.className}`} role="presentation">
+            <a href={`#${props.target}`} className="nav-link bg-white hover:bg-white py-2 px-4 block whitespace-no-wrap hover:no-underline" id={`tabs-${props.id}-tabFill`} data-bs-toggle="pill" data-bs-target={`#${props.target}`}role="tab" aria-controls={props.target} aria-selected="false" onClick={() => setToggle(!toggle)}>{props.title}</a>
+        </li>;
+    };
 
     return <>
         <div className="col-span-12 md:col-span-4 lg:col-span-3">
@@ -66,18 +79,10 @@ const ContactSection = (props: ContactStoryblok) => {
                     </button>
                     {toggle && (
                         <ul className="nav nav-tabs absolute hidden text-bluewood pt-1 group-hover:block z-40 border-1 w-full" id="tabs-tabFill" role="tablist">
-                            <li className="nav-item border-b" role="presentation">
-                                <a href="#tabs-individual" className="nav-link rounded-t bg-white hover:bg-white py-2 px-4 block whitespace-no-wrap hover:no-underline" id="tabs-home-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-individual" role="tab" aria-controls="tabs-individual" aria-selected="false" onClick={() => setToggle(!toggle)}>Individual Enrollment</a>
-                            </li>
-                            <li className="nav-item border-b" role="presentation">
-                                <a href="#tabs-business" className="nav-link bg-white hover:bg-white py-2 px-4 block whitespace-no-wrap hover:no-underline" id="tabs-profile-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-business" role="tab" aria-controls="tabs-business" aria-selected="false" onClick={() => setToggle(!toggle)}>Business Enrollment</a>
-                            </li>
-                            <li className="nav-item border-b" role="presentation">
-                                <a href="#tabs-support" className="nav-link bg-white hover:bg-white py-2 px-4 block whitespace-no-wrap hover:no-underline" id="tabs-messages-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-support" role="tab" aria-controls="tabs-support" aria-selected="false" onClick={() => setToggle(!toggle)}>Student Support</a>
-                            </li>
-                            <li className="nav-item" role="presentation">
-                                <a href="#tabs-general" className="nav-link rounded-b bg-white hover:bg-white py-2 px-4 block whitespace-no-wrap hover:no-underline" id="tabs-messages-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-general" role="tab" aria-controls="tabs-general" aria-selected="false" onClick={() => setToggle(!toggle)}><div>General</div></a>
-                            </li>
+                            <MobileMenu target="tabs-individual" id="home" title="Individual Enrollment" className="border-b"/>
+                            <MobileMenu target="tabs-business" id="profile" title="Business Enrollment" className="border-b"/>
+                            <MobileMenu target="tabs-support" id="messages" title="Student Support" className="border-b"/>
+                            <MobileMenu target="tabs-general" id="messages" title="General"/>
                         </ul>
                     )}  
                 </div>
