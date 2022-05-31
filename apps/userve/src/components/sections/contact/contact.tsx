@@ -24,11 +24,11 @@ interface ReactProps {
 }
 
 const ContactSection = (props: ContactStoryblok) => {
-    const [isMobileMenuOpen, setToggle] = useState(false);
+    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const MobileMenuItem = (props:ReactProps) => {
         return <li className={`nav-item ${props.className}`} role="presentation">
-            <a href={`#${props.target}`} className="nav-link bg-white hover:bg-white py-2 px-4 block whitespace-no-wrap hover:no-underline" id={`tabs-${props.id}-tabFill`} data-bs-toggle="pill" data-bs-target={`#${props.target}`}role="tab" aria-controls={props.target} aria-selected="false" onClick={() => setToggle(false)}>{props.title}</a>
+            <a href={`#${props.target}`} className="nav-link bg-white hover:bg-white py-2 px-4 block whitespace-no-wrap hover:no-underline" id={`tabs-${props.id}-tabFill`} data-bs-toggle="pill" data-bs-target={`#${props.target}`}role="tab" aria-controls={props.target} aria-selected="false" onClick={() => setMobileMenuOpen(false)}>{props.title}</a>
         </li>;
     };
 
@@ -83,7 +83,7 @@ const ContactSection = (props: ContactStoryblok) => {
             <div className="block md:hidden">
                 <Header5>How Can We Help You?</Header5>
                 <div className="group block relative mb-6">
-                    <button className="w-full bg-white border-1 border-bluewood text-bluewood font-semibold py-2 px-4 rounded flex justify-between items-center" onClick={() => setToggle(true)}>
+                    <button className="w-full bg-white border-1 border-bluewood text-bluewood font-semibold py-2 px-4 rounded flex justify-between items-center" onClick={() => setMobileMenuOpen(true)}>
                     <span className="mr-1">Select A Form</span>
                     <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                         <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
