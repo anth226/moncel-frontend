@@ -9,6 +9,7 @@ export interface CourseData {
     button: string;
     tag?: string;
     enroll?: string;
+    productCategoryLabel: string;
 }
 
 export type CourseTypeData = {

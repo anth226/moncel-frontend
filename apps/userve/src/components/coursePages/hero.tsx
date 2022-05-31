@@ -42,11 +42,12 @@ const EnrollButton = ({ children, courseType }: { children: React.ReactNode, cou
     </PurchaseButton>
 };
 
-const Features = ({ features }: { features: IconCardStoryblok[] }) => {
+const Features = ({ features, heroStory }: { features: IconCardStoryblok[], heroStory: Slug }) => {
     return <div className="flex flex-col gap-4">
         {features.map((feature, i) => {
-            return <div className="flex flex-row gap-4 items-start" key={`feature-${i}`}>
-                <img src={feature.Icon?.filename || ""} width={20} height={20} alt={feature.Title} loading="lazy" />
+            const gatsbyImageFileNode = findMatchingLocalFileNode(getFilename(feature.Icon?.filename || ""), heroStory);
+            return <div className="flex flex-row gap-3 items-baseline" key={`features-${i}`}>
+                <DynamicImage fileNode={gatsbyImageFileNode} width={20} height={20} alt={feature.Title || ""} className="block max-w-none w-4" />
                 <ReactMarkdown>{feature.Title || ""}</ReactMarkdown>
             </div>
         })}
@@ -112,7 +113,7 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
                 <p className="text-inherit !mb-0" data-test="enroll-button">{lang == "lang-es" ? "Regístrate" : "Enroll Now"}</p>
             </EnrollButton>
             <MoneyBackGuarantee x={context.type} />
-            <Features features={content.features || []} />
+            <Features features={content.features || []} heroStory={heroStory}/>
         </div>
         <div className="md:col-start-2 col-span-2 md:row-start-3">
             <Header2 className="!text-2xl">{content.subtitle || ""}</Header2>

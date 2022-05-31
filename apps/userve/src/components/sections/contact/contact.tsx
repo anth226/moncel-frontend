@@ -3,8 +3,19 @@ import ReactMarkdown from 'react-markdown';
 
 import { ContactStoryblok } from 'src/storyblok-component-types';
 import { Header1, Header5, Text } from 'src/components/core/typography';
+import { ButtonTransparent } from 'src/components/shared';
 import HubspotContactForm from 'src/components/shared/Form';
 
+const ChatWidgetButton = () => {
+    const HUBSPOT_CHAT_KEY = 'HubSpotConversations';
+
+    const handleClick = () => {
+        if(HUBSPOT_CHAT_KEY in window) window[HUBSPOT_CHAT_KEY].widget.open();
+    }
+    return <ButtonTransparent color="navy" onClick={handleClick}>Start Live Chat</ButtonTransparent>
+
+}
+  
 interface ReactProps {
     target?: string;
     id?: string;
@@ -25,20 +36,21 @@ const ContactSection = (props: ContactStoryblok) => {
         <div className="col-span-12 md:col-span-4 lg:col-span-3">
             <div>
                 <div className="flex flex-col">
-                    <Header1 className="!text-4xl">{props.title}</Header1>
-                    <Text>{props.desc}</Text>
+                    <Header1 className="!text-4xl">{props.title || ""}</Header1>
+                    <Text>{props.desc || ""}</Text>
                     <div className="flex-row gap-4 items-start mb-4 hidden md:flex">
                         <img src="https://a.storyblok.com/f/153125/x/88f0e6aae4/usx-phone.svg" width={20} height={20} alt="Phone" loading="lazy"/>
-                        <ReactMarkdown>{props.phone}</ReactMarkdown>
+                        <ReactMarkdown>{props.phone || ""}</ReactMarkdown>
                     </div>
                     <div className="flex-row gap-4 items-start mb-4 hidden md:flex">
                         <img src="https://a.storyblok.com/f/153125/x/2f9f4a631b/usx_time.svg" width={20} height={20} alt="Hours" loading="lazy"/>
-                        <ReactMarkdown>{props.hours}</ReactMarkdown>
+                        <ReactMarkdown>{props.hours || ""}</ReactMarkdown>
                     </div>
                     <div className="flex-row gap-4 items-start hidden md:flex">
                         <img src="https://a.storyblok.com/f/153125/x/4b4d8faad8/usx_location.svg" width={20} height={20} alt="Address" loading="lazy"/>
-                        <ReactMarkdown>{props.address}</ReactMarkdown>
+                        <ReactMarkdown>{props.address || ""}</ReactMarkdown>
                     </div>
+                    <ChatWidgetButton />
                 </div>
             </div>
         </div>

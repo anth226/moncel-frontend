@@ -9,9 +9,9 @@ This is the monorepo for Moncel's Gatbsy/NextJS websites. Please use yarn v3.x.
 
 Code quality tools for the NextJS sites follow a shared config that you can find in `packages`.
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking and the configuration is in `/packages/tsconfig`
-- [ESLint](https://eslint.org/) for code linting and the configuration is in `/packages/config`
-- [Prettier](https://prettier.io) for code formatting and the configuration is in `/packages/config`
+- [TypeScript](https://www.typescriptlang.org/) for static type checking and the configuration is in `/packages/tsconfig`.
+- [ESLint](https://eslint.org/) for code linting and the configuration is in `/packages/config`.
+- [Prettier](https://prettier.io) for code formatting and the configuration is in `/packages/config`.
 
 ### Build
 
