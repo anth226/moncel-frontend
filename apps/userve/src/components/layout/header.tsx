@@ -113,7 +113,7 @@ const MobileLink = ({ displayName, href, icon }: MobileLinkProps) => {
         <div className="w-screen">
             <div className="flex justify-between border-b-1 border-mischka mx-4 py-4">
                 <div className="flex items-center gap-4">
-                    <img src={icon} alt={displayName} />
+                    <img src={icon} alt={displayName} height={20} width={20}/>
                     <div className="!mb-0 text-navy font-sans font-medium w-full">{displayName}</div>
                 </div>
                 <img src={ArrowIcon} alt="Arrow" />
