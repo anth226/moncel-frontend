@@ -13,6 +13,7 @@ interface ReactProps {
     className?: string;
     isAvailable?: boolean;
     tag?: string | null;
+    showButton?: boolean;
     storyblokDefaultImg?: string; // if datasource is courses.json 
 }
 
@@ -82,9 +83,11 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
                 <p className="text-lynch mt-4">{desc}</p>
             </div>
         </div>
-        <div className="card-button">
-            <CardButton lang={lang} tag={tag || ""} url={url || ""}/>
-        </div>
+        { props.showButton ?
+            <div className="card-button">
+                <CardButton lang={lang} tag={tag || ""} url={url || ""}/>
+            </div> : null
+        }
     </div>
 };
 
