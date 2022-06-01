@@ -161,7 +161,7 @@
       &.coming-soon {
         &::before {
           content: "Coming Soon";
-          @apply text-white bg-cornflower w-full text-center absolute px-1 py-1 top-0 text-xs z-10;
+          @apply text-white bg-cornflower w-full text-center absolute px-1 py-1 top-0 text-xs z-10 rounded-t-lg;
         }
       }
     }
