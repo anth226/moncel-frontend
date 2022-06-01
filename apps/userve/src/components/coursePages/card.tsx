@@ -69,8 +69,7 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
     } else {
             imageComp = null;
     }
-console.log(props)
-console.log('show',props.showButton)
+
     return <div className={`font-sans card flex flex-col rounded-2xl overflow-hidden bg-white shadow-xl ${props.className}`} data-test={`course-card-${encodeURIComponent(courseTitle || "")}`}>
         <div>
             <div className={`card-image ${tag == "coming-soon" ? "coming-soon" : ""}`}>
