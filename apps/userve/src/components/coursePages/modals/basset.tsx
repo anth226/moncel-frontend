@@ -47,7 +47,7 @@ const BassetModal = () => {
                 </div>
             </div>
         })}
-        <button className="w-full py-4 bg-navy text-white rounded-xl disabled:opacity-75" disabled={productId === null} onClick={submit}>Next Step</button>
+        <button className="w-full py-4 bg-navy text-white rounded-lg disabled:opacity-75" disabled={productId === null} onClick={submit}>Next Step</button>
     </div>;
 };
 

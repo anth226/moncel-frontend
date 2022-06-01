@@ -22,18 +22,18 @@ const CardButton = (props: ReactProps) => {
         if (notify == "coming-soon") {
             buttonText = "Get Notified"
         } else {
-            buttonText = "Learn More"
+            buttonText = "Get Started"
         }
     } else {
         if (notify == "coming-soon") {
             buttonText = "Ser Notificado"
         } else {
-            buttonText = "Aprende Más"
+            buttonText = "Empieza Aquí"
         }
     }
 
     return (<span>
-        { notify == "coming-soon" ? <a data-bs-toggle="modal" data-bs-target={courseUrl}><ButtonTransparent color="slate-400" className='font-semibold !border-3 !border-slate-600 !text-slate-400'>{buttonText}</ButtonTransparent></a> : <a href={courseUrl}><ButtonTransparent color="navy" className="font-semibold !border-3 !border-navy">{buttonText}</ButtonTransparent></a>}
+        { notify == "coming-soon" ? <a data-bs-toggle="modal" data-bs-target={courseUrl}><ButtonTransparent color="lynch">{buttonText}</ButtonTransparent></a> : <a href={courseUrl}><ButtonTransparent color="dark-blue">{buttonText}</ButtonTransparent></a>}
     </span>)
 
 };
