@@ -79,7 +79,7 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
                 {/* product category */}
                 { productCategoryLabel ? <div className="rounded-lg py-1 px-2 bg-[#707BFF] text-white w-fit mb-6">{productCategoryLabel}</div> : null }
 
-                { tag == "coming-soon" ? <a className="text-bluewood text-lg font-semibold cursor-pointer hover:underline" data-bs-toggle="modal" data-bs-target={url}>{courseTitle}</a> : <a className="text-bluewood text-lg font-semibold cursor-pointer hover:underline" href={url}>{courseTitle}</a> }
+                { tag == "coming-soon" ? <a className="text-bluewood text-lg font-semibold leading-4 cursor-pointer hover:underline" data-bs-toggle="modal" data-bs-target={url}>{courseTitle}</a> : <a className="text-bluewood text-lg font-semibold leading-4 cursor-pointer hover:underline" href={url}>{courseTitle}</a> }
                 <p className="text-lynch mt-4">{desc}</p>
             </div>
         </div>
