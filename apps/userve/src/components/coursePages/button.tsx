@@ -28,7 +28,7 @@ const CardButton = (props: ReactProps) => {
         if (notify == "coming-soon") {
             buttonText = "Ser Notificado"
         } else {
-            buttonText = "Empezar"
+            buttonText = "Empieza Aquí"
         }
     }
 
