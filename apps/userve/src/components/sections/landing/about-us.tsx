@@ -15,7 +15,7 @@ const AboutUsSection = (props: AboutUsStoryblok & StoryblokStoryProps) => {
                 <Header2 className="!text-white">{props.header || ""}</Header2>
                 <Text className="!mb-8">{props.subheader || ""}</Text>
                 <a href={props.url}>
-                    <ButtonTransparent className="w-fit hover:bg-white !font-normal">{props.link_text || ""}</ButtonTransparent>
+                    <ButtonTransparent className="w-fit !font-normal">{props.link_text || ""}</ButtonTransparent>
                 </a>
             </div>
             <div className="md:col-span-6 hidden justify-center relative md:flex self-end">
