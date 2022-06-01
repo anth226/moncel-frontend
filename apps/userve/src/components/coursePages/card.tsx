@@ -69,7 +69,8 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
     } else {
             imageComp = null;
     }
-
+console.log(props)
+console.log('show',props.showButton)
     return <div className={`font-sans card flex flex-col rounded-2xl overflow-hidden bg-white shadow-xl ${props.className}`} data-test={`course-card-${encodeURIComponent(courseTitle || "")}`}>
         <div>
             <div className={`card-image ${tag == "coming-soon" ? "coming-soon" : ""}`}>
@@ -77,7 +78,7 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
             </div>
             <div className="card-body">
                 {/* product category */}
-                { productCategoryLabel ? <div className="rounded-lg py-1 px-2 bg-[#707BFF] text-white w-fit mb-6">{productCategoryLabel}</div> : null }
+                { productCategoryLabel ? <div className="text-xs bg-cornflower text-white mb-4 px-2 py-1 rounded w-fit">{productCategoryLabel}</div> : null }
 
                 { tag == "coming-soon" ? <a className="text-bluewood text-lg font-semibold leading-4 cursor-pointer hover:underline" data-bs-toggle="modal" data-bs-target={url}>{courseTitle}</a> : <a className="text-bluewood text-lg font-semibold leading-4 cursor-pointer hover:underline" href={url}>{courseTitle}</a> }
                 <p className="text-lynch mt-4">{desc}</p>

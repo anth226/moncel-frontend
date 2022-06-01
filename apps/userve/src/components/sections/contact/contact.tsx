@@ -12,8 +12,7 @@ const ChatWidgetButton = () => {
     const handleClick = () => {
         if(HUBSPOT_CHAT_KEY in window) window[HUBSPOT_CHAT_KEY].widget.open();
     }
-    return <ButtonTransparent color="navy" onClick={handleClick}>Start Live Chat</ButtonTransparent>
-
+    return <ButtonTransparent color="navy" className="w-fit text-dark-blue border-dark-blue bg-white hover:bg-dark-blue mb-6 md:mb-0" onClick={handleClick}>Start Live Chat</ButtonTransparent>
 }
   
 interface ReactProps {
@@ -46,7 +45,7 @@ const ContactSection = (props: ContactStoryblok) => {
                         <img src="https://a.storyblok.com/f/153125/x/2f9f4a631b/usx_time.svg" width={20} height={20} alt="Hours" loading="lazy"/>
                         <ReactMarkdown>{props.hours || ""}</ReactMarkdown>
                     </div>
-                    <div className="flex-row gap-4 items-start hidden md:flex">
+                    <div className="flex-row gap-4 items-start mb-6 hidden md:flex">
                         <img src="https://a.storyblok.com/f/153125/x/4b4d8faad8/usx_location.svg" width={20} height={20} alt="Address" loading="lazy"/>
                         <ReactMarkdown>{props.address || ""}</ReactMarkdown>
                     </div>

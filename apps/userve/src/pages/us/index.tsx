@@ -76,8 +76,8 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
                 <Header2><span className="text-white">{coursesContent.title || ""}</span></Header2>
                 <Text><span className="text-white">{coursesContent.description || ""}</span></Text>
               </div>
-              {coursesContent.course_cards[0] && <CourseCard className="col-start-2" {...coursesContent.course_cards[0]} storyblokDefaultImg={coursesContent.course_cards[0].image?.filename} story={coursesSlug} />}
-              {coursesContent.course_cards[0] && <CourseCard className="col-start-3" {...coursesContent.course_cards[1]} storyblokDefaultImg={coursesContent.course_cards[1].image?.filename} story={coursesSlug} />}
+              {coursesContent.course_cards[0] && <CourseCard className="col-start-2" {...coursesContent.course_cards[0]} storyblokDefaultImg={coursesContent.course_cards[0].image?.filename} story={coursesSlug} showButton={true}/>}
+              {coursesContent.course_cards[0] && <CourseCard className="col-start-3" {...coursesContent.course_cards[1]} storyblokDefaultImg={coursesContent.course_cards[1].image?.filename} story={coursesSlug} showButton={true}/>}
             </Section>
           </SectionFullWidth>
 

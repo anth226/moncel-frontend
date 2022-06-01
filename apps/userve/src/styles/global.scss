@@ -66,7 +66,7 @@
     }
   }
   .btn {
-    @apply text-center font-medium cursor-pointer w-full md:w-fit border-1 border-solid transition-all no-underline normal-case inline-block rounded-md px-6 py-4 font-sans;
+    @apply text-center font-medium cursor-pointer w-full md:w-fit border-1 border-solid transition-all no-underline normal-case inline-block rounded-lg px-6 py-4 font-sans;
   }
   .btn-primary {
     @apply bg-dark-blue border-dark-blue hover:bg-navy-hover text-white;
@@ -161,16 +161,7 @@
       &.coming-soon {
         &::before {
           content: "Coming Soon";
-          padding: 4px 8px;
-          background-color: white;
-          border-radius: 8px;
-          position: absolute;
-          z-index: 2;
-          bottom: 20px;
-          left: 1.5rem;
-          font-size: 12px;
-          transition: 0.8s;
-          @apply text-navy;
+          @apply text-white bg-cornflower w-full text-center absolute px-1 py-1 top-0 text-xs z-10;
         }
       }
     }
