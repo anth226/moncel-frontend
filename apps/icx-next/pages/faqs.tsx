@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Collapse } from 'react-bootstrap';
+import ReactMarkdown from 'react-markdown';
 import type { InferGetStaticPropsType } from 'next';
 import jsonata from 'jsonata';
 import { getStoryblokStories } from 'lib';
@@ -47,7 +48,7 @@ const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                 faqs.faqs_cards.map((card, i) => {
                                     return <div className="card mb-3 rounded-0" key={`faq-${i}`}>
                                         <button className="btn btn-link text-start p-3" onClick={() => handleClick(i)}>{card.question}</button>
-                                        <Collapse className="p-3" in={i === expanded}><div>{card.answer}</div></Collapse>
+                                        <Collapse className="px-3 pt-3" in={i === expanded}><div><ReactMarkdown>{card.answer}</ReactMarkdown></div></Collapse>
                                     </div>
                                 })
                             }
