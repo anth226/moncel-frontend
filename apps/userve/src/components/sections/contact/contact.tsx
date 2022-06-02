@@ -12,7 +12,7 @@ const ChatWidgetButton = () => {
     const handleClick = () => {
         if(HUBSPOT_CHAT_KEY in window) window[HUBSPOT_CHAT_KEY].widget.open();
     }
-    return <ButtonTransparent color="dark-blue" className="w-fit bg-white mb-6 md:mb-0" onClick={handleClick}>Start Live Chat</ButtonTransparent>
+    return <ButtonTransparent className="w-fit bg-white mb-6 md:mb-0 text-dark-blue border-dark-blue hover:bg-dark-blue" onClick={handleClick}>Start Live Chat</ButtonTransparent>
 }
   
 interface ReactProps {
