@@ -33,7 +33,7 @@ const CardButton = (props: ReactProps) => {
     }
 
     return (<span>
-        { notify == "coming-soon" ? <a data-bs-toggle="modal" data-bs-target={courseUrl}><ButtonTransparent color="lynch">{buttonText}</ButtonTransparent></a> : <a href={courseUrl}><ButtonTransparent color="dark-blue">{buttonText}</ButtonTransparent></a>}
+        { notify == "coming-soon" ? <a data-bs-toggle="modal" data-bs-target={courseUrl}><ButtonTransparent className="text-lynch border-lynch hover:bg-lynch">{buttonText}</ButtonTransparent></a> : <a href={courseUrl}><ButtonTransparent className="text-dark-blue border-dark-blue hover:bg-dark-blue">{buttonText}</ButtonTransparent></a>}
     </span>)
 
 };
