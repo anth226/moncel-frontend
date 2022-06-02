@@ -1,11 +1,11 @@
-import { StoryBlokSectionHeroSecondary } from 'moncel-one-sdk/cms/types';
+import { StoryBlokCertificateHeroContent } from 'moncel-one-sdk/cms/types';
 import { useMediaQuery } from 'react-responsive'
 import ReactMarkdown from 'react-markdown'
 
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Hero = ({ hero }: { hero: StoryBlokSectionHeroSecondary  }) => {
+const Hero = ({ hero }: { hero: StoryBlokCertificateHeroContent  }) => {
 
     const isTablet = useMediaQuery({
         query: '(max-width: 768px)'
