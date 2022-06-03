@@ -10,10 +10,6 @@ const TWElements = () => {
         document.body.appendChild(script);
     }, []);
 
-    useEffect(()=>{
-        if (!loaded) return;
-    }, [loaded])
-
     return (
         <>
             {loaded ? '' : ''}
