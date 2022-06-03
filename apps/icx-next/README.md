@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, make sure your [environment variables](https://nextjs.org/docs/basic-features/environment-variables) are set up.
+First, make sure your [environment variables](https://nextjs.org/docs/basic-features/environment-variables) are set up. If you believe you have set up environment variables, you are not seeing "required environment variables are missing" errors, but your environment variables seem to be incorrect (ie. retrieving data from APIs still fails), double check the quote characters in your files.
 
 At the moment this app uses Storyblok as a CMS. So you need at minimum to set `STORYBLOK_TOKEN` and `STORYBLOK_SITE_NAME` in a file called `.env.local`. If you still run into errors related to environment variables, see the environment variables set for the site on Netlify, as those will be the source of truth for production.
 
