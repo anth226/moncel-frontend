@@ -1,6 +1,6 @@
 overwrite: true
 schema: "http://localhost:1337/graphql"
 generates:
-  src/generated/graphql.ts:
+  generated/strapi-types.ts:
     plugins:
       - "typescript"

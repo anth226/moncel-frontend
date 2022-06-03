@@ -4,6 +4,6 @@ const withTM = require("next-transpile-modules")(["moncel-one-sdk"]);
 module.exports = withTM({
   reactStrictMode: true,
   images: {
-    domains: ['a.storyblok.com']
+    domains: ['a.storyblok.com', 'localhost']
   }
 });

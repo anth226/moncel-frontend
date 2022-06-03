@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_landing_final_ctas",
+  "info": {
+    "displayName": "FinalCTA",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "core.link"
+    }
+  }
+}
