@@ -36,9 +36,11 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+src/generated/*
 
 .vscode
 .env.local
 
 # remove this
 yarn.lock
+
