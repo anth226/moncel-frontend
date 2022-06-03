@@ -51,6 +51,7 @@ export interface StoryBlokSectionHeroSecondary extends StoryBlokComponent {
     product_list: Array<ComponentListItem>,
     product_name: string;
     product_price: string;
+    image: StoryBlokImage;
     [key: string]: unknown;
 }
 
