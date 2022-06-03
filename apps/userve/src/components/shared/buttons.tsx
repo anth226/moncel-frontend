@@ -2,7 +2,6 @@ import React from 'react';
 
 interface PropTypes {
     children: JSX.Element | JSX.Element[] | string;
-    color?: string;
     className?: string;
     onClick?: (event: React.MouseEvent) => unknown;
 }
