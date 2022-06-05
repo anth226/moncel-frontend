@@ -32,6 +32,12 @@ npm run build
 yarn build
 ```
 
+In docker:
+```
+docker build -t icc-strapi .
+docker run -p 1337:1337 icc-strapi
+```
+
 ## ⚙️ Deployment
 
 Strapi gives you many possible deployment options for your project. Find the one that suits you on the [deployment section of the documentation](https://docs.strapi.io/developer-docs/latest/setup-deployment-guides/deployment.html).
@@ -55,3 +61,4 @@ Feel free to check out the [Strapi GitHub repository](https://github.com/strapi/
 ---
 
 <sub>🤫 Psst! [Strapi is hiring](https://strapi.io/careers).</sub>
+
