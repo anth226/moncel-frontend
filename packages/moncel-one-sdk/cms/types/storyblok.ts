@@ -124,3 +124,22 @@ export interface StoryBlokFooter extends StoryBlokComponent {
     navigation: Array<StoryBlokLink>;
     terms: Array<StoryBlokLink>
 }
+
+export interface SeoStoryblok extends StoryBlokComponent {
+    seo_title: string;
+    seo_description: string;
+    og_image?: {
+      alt_tag?: string;
+      caption?: string;
+      copyright_info?: string;
+      dominantColor?: string;
+      _uid: string;
+      image: string;
+      plugin?: string;
+      title?: string;
+    };
+    canonical?: string;
+    _uid: string;
+    component: string;
+    [k: string]: any;
+}

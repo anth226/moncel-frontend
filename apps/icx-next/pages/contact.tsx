@@ -1,7 +1,8 @@
 import type { InferGetStaticPropsType } from 'next';
 import jsonata from 'jsonata';
 import { getStoryblokStories } from 'lib';
-import { StoryblokStory, StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk/cms/types';
+import { StoryblokStory, StoryBlokHeader, StoryBlokFooter, SeoStoryblok } from 'moncel-one-sdk/cms/types';
+import Head from 'components/Head';
 import OneCol from 'components/layout/one-col';
 import SidebarCTA from 'components/sidebar-cta';
 import styles from 'styles/icx_secondary.module.scss';
@@ -10,8 +11,10 @@ const Contact = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const layout = jsonata('content[component="template_layout"]').evaluate(props.layout);
     const header: StoryBlokHeader = layout.header?.[0];
     const footer: StoryBlokFooter = layout.footer?.[0];
+    const seo:SeoStoryblok = jsonata('content').evaluate(props.contact);
 
     return <div className={styles.page}>
+        <Head seo={seo}/>
         <OneCol header={header} footer={footer}>
             <div className="bg-primary">
                 <div className="container">
@@ -67,6 +70,6 @@ export default Contact;
 export const getStaticProps = async () => {
     const stories = { stories: await getStoryblokStories() };
     const layout = jsonata("stories[slug='layout']").evaluate(stories);
-    const whyInstacert: StoryblokStory = jsonata('stories[full_slug="ICX/why-instacert"]').evaluate(stories);
-    return { props: { stories, whyInstacert, layout } };
+    const contact: StoryblokStory = jsonata('stories[full_slug="ICX/contact"]').evaluate(stories);
+    return { props: { stories, contact, layout } };
 }

@@ -2,7 +2,7 @@ import type { InferGetStaticPropsType } from 'next';
 import jsonata from 'jsonata';
 
 import { getStoryblokStories } from 'lib';
-import { StoryBlokHeader, StoryBlokFooter, StoryBlokHomePricingContent, StoryBlokCertificateHeroContent } from 'moncel-one-sdk/cms/types';
+import { StoryBlokHeader, StoryBlokFooter, StoryBlokHomePricingContent, StoryBlokCertificateHeroContent, SeoStoryblok } from 'moncel-one-sdk/cms/types';
 
 import Head from 'components/Head';
 import { Header, Footer } from 'components/layout';
@@ -21,10 +21,11 @@ const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
   const footer: StoryBlokFooter = layout.footer?.[0];
   const header: StoryBlokHeader = layout.header?.[0];
   const heroPrimary: StoryBlokCertificateHeroContent = jsonata('body[component="section_hero"]').evaluate(props.home?.content);
+  const seo:SeoStoryblok = jsonata('content').evaluate(props.home);
 
   return (
     <div>
-      <Head />
+      <Head seo={seo}/>
       <Header header={header} />
       <main className={icxstyles.page}>
         <div className="bg-dark hero-bg">
