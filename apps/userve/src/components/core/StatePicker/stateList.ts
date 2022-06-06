@@ -1,5 +1,4 @@
 export default [
-    undefined,
     "Alabama",
     "Alaska",
     "Arizona",
