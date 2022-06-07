@@ -1,4 +1,4 @@
-import { StoryBlokCertificateHeroContent } from 'moncel-one-sdk/cms/types';
+// import { StoryBlokCertificateHeroContent } from 'moncel-one-sdk/cms/types';
 import { useMediaQuery } from 'react-responsive'
 import ReactMarkdown from 'react-markdown'
 import { ComponentLandingHeroSection } from 'generated/strapi-types';
@@ -11,7 +11,7 @@ const Hero = ({ hero }: { hero: ComponentLandingHeroSection  }) => {
     const isTablet = useMediaQuery({
         query: '(max-width: 768px)'
     });
-    const strapiURL = "http://localhost:1337"; // TODO: globals or env vars
+    const strapiURL = process.env.STRAPI_URL;
     const imageDimensions = isTablet ? [270, 240] : [350, 311];
 
     return <div className="container">
