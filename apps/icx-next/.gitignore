@@ -36,7 +36,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-generated/*
+src/generated/*
 
 .vscode
 .env.local
