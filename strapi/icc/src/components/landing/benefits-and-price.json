@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_landing_benefits_and_prices",
+  "info": {
+    "displayName": "BenefitsAndPrice",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "TopPriceText": {
+      "type": "string"
+    },
+    "Price": {
+      "type": "string"
+    },
+    "BottomPriceText": {
+      "type": "string"
+    },
+    "Button": {
+      "type": "component",
+      "repeatable": false,
+      "component": "core.link"
+    },
+    "benefits": {
+      "type": "component",
+      "repeatable": true,
+      "component": "core.text"
+    }
+  }
+}

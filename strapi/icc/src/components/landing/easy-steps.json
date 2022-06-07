@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_landing_easy_steps",
+  "info": {
+    "displayName": "EasySteps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "core.graphic-text"
+    }
+  }
+}

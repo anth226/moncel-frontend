@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_landing_fa_qs",
+  "info": {
+    "displayName": "FAQs"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "Faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "core.faq"
+    }
+  }
+}
