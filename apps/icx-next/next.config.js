@@ -5,5 +5,8 @@ module.exports = withTM({
   reactStrictMode: true,
   images: {
     domains: ['a.storyblok.com']
+  },
+  env: {
+    BASE_URL: 'https://www.instacert.ca'
   }
 });

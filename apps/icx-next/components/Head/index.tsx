@@ -1,4 +1,3 @@
-
 // @ts-nocheck
 import Head from 'next/head';
 import { useRouter } from 'next/router'
@@ -13,7 +12,7 @@ const _Head = ({ seo }: { seo: SeoStoryblok }) => {
     <meta name="author" content="Instacert" />
 
     <meta property="og:title" content={seo.seo_title} />
-    <meta property="og:url" content={asPath} />
+    <meta property="og:url" content={`${process.env.BASE_URL}${asPath}`} />
     <meta property="og:description" content={seo.seo_description} />
     <meta property="og:site_name" content="Instacert" />
     <meta property="og:type" content="website" />
@@ -22,7 +21,7 @@ const _Head = ({ seo }: { seo: SeoStoryblok }) => {
     <meta property="twitter:title" content={seo.seo_title} />
     <meta property="twitter:description" content={seo.seo_description} />
 
-    <link rel="canonical" href={asPath} />
+    <link rel="canonical" href={`${process.env.BASE_URL}${asPath}`} />
 
     {/* bootstrap responsive viewport meta tag */}
     {/* <meta name="viewport" content="width=device-width, initial-scale=1" />  */}
