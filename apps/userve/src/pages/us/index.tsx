@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql, PageProps } from "gatsby";
 import loadable from '@loadable/component'
 
@@ -6,11 +6,9 @@ import Layout from 'src/components/layout';
 import Head from 'src/components/head';
 import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { Card as CourseCard } from 'src/components/coursePages';
-
 import { BenefitsSection, HeroSection } from 'src/components/sections/landing';
 import { SectionStoryblok, FeaturedCoursesStoryblok, BenefitsStoryblok, SeoStoryblok } from 'src/storyblok-component-types';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
-
 import { Header2, Text } from 'src/components/core/typography';
 
 // defer loading these components
