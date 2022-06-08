@@ -63,12 +63,12 @@ const FeaturedBlogsSection = (props: FeaturedBlogStoryblok & StoryblokStoryProps
         const parser = new DOMParser();
         const encodedDescription = parser.parseFromString(element.querySelector('description')?.textContent || "", 'text/html');
         const fakeBlogPost = {
-            title: element.querySelector('title')?.innerHTML || "",
+            title: element.querySelector('title')?.textContent || "",
             link: element.querySelector('link')?.innerHTML || "",
             tags: element.querySelector('category')?.innerHTML || "",
-            summary: encodedDescription.querySelector('p')?.textContent || "",
+            summary: encodedDescription.querySelector('h2')?.textContent || "",
         }
-        debugger;
+
         const encodedContent = parser.parseFromString(element.querySelector('encoded')!.textContent || "", 'text/html');
         const fakeFilenode = {
             publicURL: (encodedContent.querySelector('img.hs-featured-image') as HTMLImageElement).src,

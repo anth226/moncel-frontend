@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { graphql, PageProps } from "gatsby";
 import loadable from '@loadable/component'
 
@@ -16,7 +16,7 @@ const BusinessSection  = loadable(() => import('src/components/sections/landing/
 const LogosSection  = loadable(() => import('src/components/sections/landing/logos'), { fallback: undefined });
 const TestimonialsSection  = loadable(() => import('src/components/sections/landing/testimonials'), { fallback: undefined });
 const AboutUsSection  = loadable(() => import('src/components/sections/landing/about-us'), { fallback: undefined });
-const BlogsSection  = loadable(() => import('src/components/sections/landing/blogs'), { fallback: undefined });
+const BlogsSection  = loadable(() => import('src/components/sections/landing/blogs/blogs'), { fallback: undefined });
 // styles
 const pageStyles = {
   fontFamily: "Inter,sans-serif",
