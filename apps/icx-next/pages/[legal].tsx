@@ -2,24 +2,26 @@ import jsonata from 'jsonata';
 import type { GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
 import { getStoryblokStories } from 'lib';
-import { StoryblokStory, StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk/cms/types';
+import { StoryblokStory, StoryBlokHeader, StoryBlokFooter, SeoStoryblok } from 'moncel-one-sdk/cms/types';
 import { markdownToHtml } from 'moncel-one-sdk';
 
+import Head from 'components/Head';
 import OneCol from 'components/layout/one-col';
 import SidebarCTA from 'components/sidebar-cta';
 
 const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) => {
     const router = useRouter();
     const layout = jsonata('content[component="template_layout"]').evaluate(props.layout);
-
     const header: StoryBlokHeader = layout?.header?.[0] || null;
     const footer: StoryBlokFooter = layout?.footer?.[0] || null;
+    const seo: SeoStoryblok = jsonata(`stories[full_slug="ICX/${props.slug}"].content`).evaluate(props.stories);
 
     if(router.isFallback) {
         return null;
     }
 
     return <>
+        <Head seo={seo}/>
         <OneCol header={header} footer={footer}>
             <div className="bg-primary">
                 <div className="container">
