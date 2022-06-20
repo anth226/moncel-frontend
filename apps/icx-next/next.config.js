@@ -4,9 +4,9 @@ const withTM = require("next-transpile-modules")(["moncel-one-sdk"]);
 module.exports = withTM({
   reactStrictMode: true,
   images: {
-    domains: ['a.storyblok.com']
+    domains: ['a.storyblok.com', '167.99.181.174']
   },
   env: {
-    BASE_URL: 'https://www.instacert.ca'
+    STRAPI_URL: process.env.STRAPI_URL,
   }
 });
