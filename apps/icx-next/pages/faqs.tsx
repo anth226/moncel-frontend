@@ -4,9 +4,8 @@ import ReactMarkdown from 'react-markdown';
 import type { InferGetStaticPropsType } from 'next';
 import jsonata from 'jsonata';
 import { getStoryblokStories } from 'lib';
-import { StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokFaqsSection, SeoStoryblok } from 'moncel-one-sdk/cms/types';
+import { StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokFaqsSection } from 'moncel-one-sdk/cms/types';
 
-import Head from 'components/Head';
 import OneCol from 'components/layout/one-col';
 import SidebarCTA from 'components/sidebar-cta';
 import styles from 'styles/icx_secondary.module.scss';
@@ -17,7 +16,6 @@ const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const header: StoryBlokHeader = layout.header?.[0];
     const footer: StoryBlokFooter = layout.footer?.[0];
     const faqs: StoryBlokFaqsSection = jsonata('content.body[component="section_faqs_secondary"]').evaluate(props.faqs);
-    const seo:SeoStoryblok = jsonata('content').evaluate(props.faqs);
 
     const handleClick = (i: number) => {
         if(i === expanded) {
@@ -29,7 +27,6 @@ const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     };
 
     return <div className={styles.page}>
-        <Head seo={seo}/>
         <OneCol header={header} footer={footer}>
             <div className="bg-primary">
                 <div className="container">

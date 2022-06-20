@@ -1,26 +1,28 @@
 import Image from 'next/image'
+import { ComponentLandingEasySteps } from 'generated/strapi-types';
 
-const StepsSection = () => {
+const strapiURL = process.env.STRAPI_URL || "";
+
+const StepsSection = ({ data }: { data: ComponentLandingEasySteps  }) => {
     return <div className="row text-center text-md-start">
         <div className="col-12 col-md-3 mb-3 mb-md-0">
             <div className="line"/>
-            <h2>3 Easy Steps</h2>
+            <h2>{data.title}</h2>
         </div>
-        <div className="col-12 col-md-3 mb-3 mb-md-0">
-            <Image alt="register-icon" src="/icons/register-1.svg" width={90} height={90} layout="fixed" />
-            <h5 className="mt-2">Register</h5>
-            <p className="mb-0">Get immediate online access on any device.</p>
-        </div>
-        <div className="col-12 col-md-3 mb-3 mb-md-0">
-            <Image alt="register-icon" src="/icons/complete-2.svg" width={90} height={90} layout="fixed" />
-            <h5 className="mt-2">Complete</h5>
-            <p className="mb-0">{"You’ll be done in as little as 8 hours - that’s it!"}</p>
-        </div>
-        <div className="col-12 col-md-3">
-            <Image alt="register-icon" src="/icons/certified-3.svg" width={90} height={90} layout="fixed" />
-            <h5 className="mt-2">Print</h5>
-            <p className="mb-0">Your certificate will be emailed in minutes.</p>
-        </div>
+
+        {
+            data.steps.map((step, i) => {
+                if(!step) return null;
+                const imagesrc = step.image?.data?.attributes?.url ? `${strapiURL}${step.image.data.attributes.url}` : "";
+                return <div className="col-12 col-md-3 mb-3 mb-md-0" key={`easy-step-${i}`}>
+                    <Image alt={`${step.title}-icon`} src={imagesrc} width={90} height={90} layout="fixed" />
+                    <h5 className="mt-2">{step.title}</h5>
+                    <p className="mb-0">{step.description}</p>
+                </div> 
+            })
+        
+        }
+
     </div>
 }
 
