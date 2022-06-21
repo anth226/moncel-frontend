@@ -1,0 +1,6 @@
+overwrite: true
+schema: "http://167.99.181.174:1337/graphql"
+generates:
+  ./generated/strapi-types.ts:
+    plugins:
+      - "typescript"

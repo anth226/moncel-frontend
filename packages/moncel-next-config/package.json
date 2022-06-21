@@ -1,0 +1,26 @@
+{
+  "name": "moncel-next-config",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "gen-strapi-types": "./strapi/bin.js"
+  },
+  "files": [
+    "eslint-preset.js"
+  ],
+  "scripts": {
+    "gen:strapi-types": "run graphql-codegen --config ./strapi/codegen.yml && mv generated $INIT_CWD/src"
+  },
+  "dependencies": {
+    "eslint": "^8.12.0",
+    "eslint-config-next": "^12.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "7.28.0"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.6.2",
+    "@graphql-codegen/typescript": "2.4.11",
+    "@graphql-codegen/typescript-operations": "2.4.0"
+  }
+}

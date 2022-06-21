@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { Collapse } from 'react-bootstrap';
 import ReactMarkdown from 'react-markdown';
 
-import { SectionFAQsData } from './types';
+import { ComponentLandingFaQs } from 'generated/strapi-types';
 
-const FAQSection = ({ faqs }: { faqs: SectionFAQsData}) => {
+const FAQSection = ({ data }: { data: ComponentLandingFaQs}) => {
     const [ expanded, setExpanded ] = useState(-1);
-    const cards = faqs.faqs_cards; // TODO set fallbacks
+    // const cards = faqs.faqs_cards; // TODO set fallbacks
+    const cards = data.Faqs;
 
     const handleClick = (i: number) => {
         if(i === expanded) {
@@ -23,11 +24,11 @@ const FAQSection = ({ faqs }: { faqs: SectionFAQsData}) => {
         </div>
         <div className="accordion col-12 col-md-9">
         {
-            cards.map(((card, i) => {
-
+            cards && cards.map(((card, i) => {
+                if(!card) return null;
                 return <div className="card mb-3 rounded-0" key={`faq-${i}`}>
-                    <button className="btn btn-link text-start p-3" onClick={() => handleClick(i)}>{card.question}</button>
-                    <Collapse className="px-3 pt-3" in={i === expanded}><div><ReactMarkdown>{card.answer}</ReactMarkdown></div></Collapse> 
+                    <button className="btn btn-link text-start p-3" onClick={() => handleClick(i)}>{card.Question || ""}</button>
+                    <Collapse className="px-3 pt-3" in={i === expanded}><div><ReactMarkdown>{card.Answer || ""}</ReactMarkdown></div></Collapse> 
                 </div>
             }))
         }
