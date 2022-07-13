@@ -315,7 +315,7 @@
         ul {
           @apply relative;
           li {
-            @apply pl-6;
+            @apply pl-8;
             &::before {
               content: url('https://a.storyblok.com/f/153125/x/07ac27124f/usx-check-white.svg');
               @apply absolute left-0 w-[15px] h-[12px];
