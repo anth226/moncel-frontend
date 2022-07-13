@@ -43,6 +43,7 @@ module.exports = {
     borderWidth: {
       DEFAULT: "1px",
       1: "1px",
+      2: "2px",
     },
     fontWeight: {
         hairline: 100,
