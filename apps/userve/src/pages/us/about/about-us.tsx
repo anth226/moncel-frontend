@@ -5,10 +5,9 @@ import Layout from 'src/components/layout';
 import Head from 'src/components/head';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
 
-import { BusinessStoryblok, HeroStoryblok, AboutUsStoryblok, TwoColStoryblok, BenefitsStoryblok } from 'src/storyblok-component-types';
-import { HeroSection } from 'src/components/sections/about';
-import { BusinessSection, AboutUsSection, BenefitsSection } from 'src/components/sections/landing';
-import { TwoColSection } from 'src/components/shared';
+import { ThreeByTwoStoryblok, HeroStoryblok, TitleDescriptionStoryblok, AboutUsStoryblok } from 'src/storyblok-component-types';
+import { HeroSection, MissionSection, PeopleTrustSection } from 'src/components/sections/about';
+import { AboutUsSection } from 'src/components/sections/landing';
 
 const pageStyles = {
     color: "#232129"
@@ -16,48 +15,38 @@ const pageStyles = {
 
 enum SLUGS {
     hero="about/hero",
-    statistics="about/statistics",
+    mission="about/mission",
+    people="about/people",
+    trust="about/trust",
+    seo = "about/seo",
     cta = "about/cta",
-    heart = "about/heart",
-    personalized = "about/personalized",
-    work = "about/work",
-    seo = "about/seo"
 }
 
 export default ({ data }: PageProps<DataProps>) => {
     const slugs = data.allStoryblokEntry.nodes;
     const heroSlug = slugs.filter(slug => slug.full_slug === SLUGS.hero)[0];
-    const statisticsSlug = slugs.filter(slug => slug.full_slug === SLUGS.statistics)[0];
-    const ctaSlug = slugs.filter(slug => slug.full_slug === SLUGS.cta)[0];
-    const heartSlug = slugs.filter(slug => slug.full_slug === SLUGS.heart)[0];
-    const personalizedSlug = slugs.filter(slug => slug.full_slug === SLUGS.personalized)[0];
-    const workSlug = slugs.filter(slug => slug.full_slug === SLUGS.work)[0];
+    const missionSlug = slugs.filter(slug => slug.full_slug === SLUGS.mission)[0];
+    const peopleSlug = slugs.filter(slug => slug.full_slug === SLUGS.people)[0];
+    const trustSlug = slugs.filter(slug => slug.full_slug === SLUGS.trust)[0];
     const seoSlug = slugs.filter(slug => slug.full_slug === SLUGS.seo)[0];
+    const ctaSlug = slugs.filter(slug => slug.full_slug === SLUGS.cta)[0];
 
     // parsing "" into JSON will error out/fail builds.
     // this is intentional and indicates an error retrieving data from storyblok
     const heroContent: HeroStoryblok = JSON.parse(heroSlug?.content || "");
-    const statisticsContent: BusinessStoryblok = JSON.parse(statisticsSlug?.content || "");
-    const ctaContent: AboutUsStoryblok = JSON.parse(ctaSlug?.content || "");
-    const heartContent: TwoColStoryblok = JSON.parse(heartSlug?.content || "");
-    const personalizedContent: TwoColStoryblok = JSON.parse(personalizedSlug?.content || "");
-    const workContent: BenefitsStoryblok = JSON.parse(workSlug?.content || "");
+    const missionContent: ThreeByTwoStoryblok = JSON.parse(missionSlug?.content || "");
+    const peopleContent: TitleDescriptionStoryblok = JSON.parse(peopleSlug?.content || "");
+    const trustContent: TitleDescriptionStoryblok = JSON.parse(trustSlug?.content || "");
     const seoContent = JSON.parse(seoSlug?.content || "");
+    const ctaContent: AboutUsStoryblok = JSON.parse(ctaSlug?.content || "");
 
     return <div>
     <Head seo={seoContent} />
     <Layout>
-      <main className="bg-[url('https://www.userve.com/hubfs/web-assets/usx_about_bg.jpg')] bg-contain bg-top bg-no-repeat">
+      <main className="bg-[url('https://www.userve.com/hubfs/web-assets/usx_about_bg.jpg')] bg-cover bg-top bg-no-repeat">
         <HeroSection {...heroContent} story={heroSlug} />
-
-        <TwoColSection {...heartContent} story={heartSlug} />
-
-        <TwoColSection {...personalizedContent} story={personalizedSlug} />
-
-        <BenefitsSection {...workContent} />
-
-        <BusinessSection {...statisticsContent} className="bg-gradient-to-b from-lilac to-white"/>
-
+        <MissionSection {...missionContent} story={missionSlug} />
+        <PeopleTrustSection peopleData={peopleContent} trustData={trustContent} />
         <AboutUsSection {...ctaContent} story={ctaSlug} />
       </main>
     </Layout>
