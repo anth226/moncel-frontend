@@ -8,7 +8,7 @@ interface PropTypes {
 export const ButtonTransparent = (props: PropTypes) => {
     const optionalClasses = props.className || "";
 
-    return <div className={`text-center font-medium border-1 rounded-lg py-4 px-8 hover:bg-opacity-10 transition-all cursor-pointer ${optionalClasses}` } onClick={props.onClick}>
+    return <div className={`text-center font-semibold border-1 rounded-lg py-4 px-8 hover:bg-opacity-10 transition-all cursor-pointer ${optionalClasses}` } onClick={props.onClick}>
         { props.children }
     </div>;
 };

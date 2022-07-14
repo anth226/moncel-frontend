@@ -21,6 +21,8 @@ module.exports = {
         "cornflower": "#707bFF", // tags
         "melrose": "#C2C7FF", // accreditation
         "hawkes": "#E1E4FE66", // gradient bg
+        "gallery": "#F0F0F0", // card tag bg
+        "hawkes-blue": "#E7EEFE", // card tag bg
       },
     },
     fontFamily: {

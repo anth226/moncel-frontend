@@ -172,7 +172,13 @@
       &.coming-soon {
         &::before {
           content: "Coming Soon";
-          @apply text-white bg-cornflower w-full text-center absolute px-1 py-1 top-0 text-xs z-10 rounded-t-lg;
+          @apply text-bluewood bg-gallery w-full text-center absolute px-1 py-1 top-0 text-xs z-10 rounded-t-lg;
+        }
+      }
+      &.available {
+        &::before {
+          content: "Available Now";
+          @apply text-bluewood bg-hawkes-blue w-full text-center absolute px-1 py-1 top-0 text-xs z-10 rounded-t-lg;
         }
       }
     }
