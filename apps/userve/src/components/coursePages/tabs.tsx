@@ -39,7 +39,7 @@ const TabsSection = (props: AboutUsStoryblok & StoryblokStoryProps) => {
             <div className="hidden md:block col-span-12 md:col-span-8 tab-content md:bg-lilac" id="tabs-tabcontentcta">
                 {tabsContent.map((tab: AboutUsStoryblok, i:number) => {
                     return <div className={`tab-pane fade p-8 h-auto md:h-100 relative ${i == 0 ? "show active first bg-lynch" : "bg-lilac"}`} id={`tabs-${i}-cta`} role="tabpanel" aria-labelledby={`tabs-${i}-tabcta`} key={i}>
-                        <ReactMarkdown className={i == 0 ? "text-mischka" : ""}>{tab.body || ""}</ReactMarkdown>
+                        <ReactMarkdown className={i == 0 ? "mischka" : ""}>{tab.body || ""}</ReactMarkdown>
                         {i == 0 && <div className="hidden lg:block absolute bottom-0 right-8">
                             <DynamicImage fileNode={localImageFileNode} alt="About Userve" className="block max-w-[350px] " />
                         </div> }

@@ -38,17 +38,6 @@
       margin-bottom:1rem;
     }
   }
-  .text-mischka {
-    p, li {
-      color:#D5D9E1;
-    }
-    p {
-      @apply mb-4;
-    }
-    li {
-      @apply mb-2;
-    }
-  }
   .checklist {
     ul {
       list-style-image: url(https://a.storyblok.com/f/153125/x/34afe2de07/usx-check.svg);

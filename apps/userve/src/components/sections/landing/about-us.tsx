@@ -8,7 +8,6 @@ import { StoryblokStoryProps, getFilename, findMatchingLocalFileNode, DynamicIma
 
 const AboutUsSection = (props: AboutUsStoryblok & StoryblokStoryProps) => {
     const localImageFileNode = findMatchingLocalFileNode(getFilename(props.image?.filename || ""), props.story);
-    console.log(props)
     return <Section>
         <div className={`bg-${ props.bg_version } cta rounded-2xl grid grid-cols-12 grid-flow-row shadow-lg`}>
             <div className="col-span-12 md:col-span-6 text-white flex flex-col justify-center p-10 md:py-14 md:pl-14 md:pr-0">

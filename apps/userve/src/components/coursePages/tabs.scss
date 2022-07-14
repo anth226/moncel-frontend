@@ -37,3 +37,14 @@
     }
   }
 }
+.mischka {
+  p, li {
+    color:#D5D9E1;
+  }
+  p {
+    @apply mb-4;
+  }
+  li {
+    @apply mb-2;
+  }
+}
