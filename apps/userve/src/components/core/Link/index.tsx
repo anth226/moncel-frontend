@@ -15,7 +15,7 @@ const isInternalLink = (s: string) => {
 
 const Link = (props: LinkProps) => {
     if(isInternalLink(props.to)) {
-        return <div className={`flex text-inherit ${props.className || ''}`}>
+        return <div className={`flex text-inherit`}>
             <GatsbyLink to={props.to} className={props.className} onClick={props.onClick}>{props.children}</GatsbyLink>
         </div>;
     }
@@ -25,7 +25,7 @@ const Link = (props: LinkProps) => {
 }
 
 export const ExternalLink = (props: LinkProps) => {
-    return <div className={`flex text-inherit ${props.className || ''}`}>
+    return <div className={`flex text-inherit`}>
         <a href={props.to} className={props.className} target={props.target} onClick={props.onClick}>{props.children}</a>
     </div>
 }

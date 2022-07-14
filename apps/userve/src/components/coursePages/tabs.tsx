@@ -16,7 +16,7 @@ const TabsSection = (props: AboutUsStoryblok & StoryblokStoryProps) => {
     return <Section>
         {/* Mobile Only CTA  */}
         <div className={`tab-cta md:hidden bg-${ props.bg_version } bg-contain bg-bottom cta rounded-2xl grid grid-cols-12 grid-flow-row shadow-lg mb-20 overflow-hidden`}>
-            <div className="tab-pane first col-span-12 md:col-span-6 text-mischka flex flex-col justify-center p-10 md:py-14 md:pl-14 md:pr-0">
+            <div className="tab-pane first col-span-12 md:col-span-6 mischka flex flex-col justify-center p-10 md:py-14 md:pl-14 md:pr-0">
                 <Header2 className="!text-white">{firstTab.title || ""}</Header2>
                 <ReactMarkdown>{firstTab.body || ""}</ReactMarkdown>
             </div>
