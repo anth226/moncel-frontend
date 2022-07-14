@@ -7,6 +7,8 @@ import { CourseData } from 'src/components/coursePages/types';
 import CardButton from 'src/components/coursePages/button';
 import { LocalFileSource } from 'src/lib';
 
+import "./card.scss";
+
 const FALLBACK_IMAGE_HOST = "https://www.userve.com/hs-fs";
 // Course Data from json to be supplemented with data from storyblok
 interface ReactProps {
@@ -85,9 +87,10 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
             <div className="card-body">
                 <div className="flex flex-row">
                     {/* product category */}
-                    { productCategoryLabel ? <div className="text-xs bg-cornflower text-white mb-4 px-2 py-1 rounded w-fit">{productCategoryLabel}</div> : null }
+                    { productCategoryLabel ? <div className="mr-3 text-xs bg-cornflower text-white mb-4 px-2 py-1 rounded w-fit">{productCategoryLabel}</div> : null }
                     {/* language */}
-                    { lang ? <div className="ml-3 text-xs bg-gallery text-bluewood mb-4 px-2 py-1 rounded w-fit">{language}</div> : null }
+                    { lang ? <div className="text-xs bg-gallery text-bluewood mb-4 px-2 py-1 rounded w-fit">{language}</div> : null }
+                    {lang}
                 </div>
 
                 { tag == "coming-soon" ? <a className="text-bluewood text-lg font-semibold leading-4 cursor-pointer hover:underline" data-bs-toggle="modal" data-bs-target={url}>{courseTitle}</a> : <a className="text-bluewood text-lg font-semibold leading-4 cursor-pointer hover:underline" href={url}>{courseTitle}</a> }
