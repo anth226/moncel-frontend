@@ -2,17 +2,15 @@ import React from "react";
 
 import { Section } from 'src/components/core/Section';
 import { AboutUsStoryblok } from 'src/storyblok-component-types';
-import { Header2, Text } from 'src/components/core/typography';
+import { Header2 } from 'src/components/core/typography';
 import { StoryblokStoryProps, getFilename, findMatchingLocalFileNode, DynamicImage } from 'src/lib/images';
 import ReactMarkdown from 'react-markdown';
 
 const TabsSection = (props: AboutUsStoryblok & StoryblokStoryProps) => {
     const localImageFileNode = findMatchingLocalFileNode(getFilename(props.image?.filename || ""), props.story);
-
     const tabsContent = props.tabs || [];
-    console.log(tabsContent)
     const firstTab = tabsContent[0];
-    console.log(firstTab)
+
     return <Section>
         {/* Mobile Only CTA  */}
         <div className={`tab-cta md:hidden bg-${ props.bg_version } bg-contain bg-bottom cta rounded-2xl grid grid-cols-12 grid-flow-row shadow-lg mb-20 overflow-hidden`}>
@@ -50,7 +48,7 @@ const TabsSection = (props: AboutUsStoryblok & StoryblokStoryProps) => {
             {/* Mobile Body - Accordion */} 
             <div className="md:hidden accordion col-span-12" id="accordion-cta-mobile">
                 {tabsContent.map((tab: AboutUsStoryblok, i:number) => {
-                    return <div className={`faq relative p-6 pl-14 !shadow-none rounded-xl mb-6 last:mb-0 w-full ${i == 0 ? "hidden" : ""}`} type="button" data-bs-toggle="collapse" data-bs-target={`#collapse-${i}-cta`} aria-expanded={i == 0 ? "true" : "false"} aria-controls={`collapse-${i}-cta`}>
+                    return <div className={`faq relative p-6 pl-14 !shadow-none rounded-xl mb-6 last:mb-0 w-full ${i == 0 ? "hidden" : ""}`} data-bs-toggle="collapse" data-bs-target={`#collapse-${i}-cta`} aria-expanded={i == 0 ? "true" : "false"} aria-controls={`collapse-${i}-cta`}>
                         <h2 className="font-semibold !text-navy text-lg cursor-pointer md:mb-2" id={`heading-${i}-cta`}>{tab.title}</h2>
 
                         <div id={`collapse-${i}-cta`} className={`accordion-collapse collapse ${i == 0 ? "show" : ""}`} aria-labelledby={`heading-${i}-cta`} data-bs-parent="#accordion-cta-mobile">
@@ -62,10 +60,6 @@ const TabsSection = (props: AboutUsStoryblok & StoryblokStoryProps) => {
                 })}
             </div>   
         </div>
-
-
-
-
     </Section>;
 };
 

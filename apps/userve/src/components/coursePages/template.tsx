@@ -80,9 +80,7 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
             </main>
         </Layout>
     </div>
-
 }
-
 
 {/* const query = ``; // query default copy, then query copy for this url */}
 export const pageQuery = graphql`
