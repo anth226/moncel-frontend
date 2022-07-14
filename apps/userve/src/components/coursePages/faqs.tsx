@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
-import { Header2, Text } from 'src/components/core/typography';
+import { Header2 } from 'src/components/core/typography';
 import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { CoursePageInfoSectionStoryblok } from 'src/storyblok-component-types';
-import { ExternalLink } from '../core';
-import { getFilename, findMatchingLocalFileNode, DynamicImage, Slug } from 'src/lib';
+import { Slug } from 'src/lib';
 
 interface StoryProps {
     story: Slug;
@@ -15,7 +14,7 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
     const faqCards = props.faq || [];
 
     return <SectionFullWidth className={props.className || ""}>
-        <Section className="">
+        <Section>
             <div className="col-span-12">
                 <Header2>{props.title}</Header2>
                 <ReactMarkdown className="mb-10 hidden md:block">{props.desc || ""}</ReactMarkdown>
@@ -32,25 +31,25 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
                         const random = Math.floor(Math.random() * 100000) + 1;
                         return <div className={`tab-pane fade ${i == 0 ? "show active" : ""}`} id={`tabs-${i}-faq`} role="tabpanel" aria-labelledby={`tabs-${i}-tabfaq`} key={i}>
                         
-                        <h2 className="md:hidden text-lg text-navy font-semibold mb-4">{faqGroup.title}</h2>
-                        
-                        <div className="accordion w-full relative mb-6 md:mb-0" id={`accordion_${random}`}>
-                            {faqGroup.faq?.map((y,i) => {
-                                return  <div className="faq p-6 pl-14 !shadow-none collapsed md:!bg-lilac rounded-xl mb-6 w-full" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} aria-expanded="false" aria-controls={`collapse_${random}_${i}`} id={`heading_${random}_${i}`} key={`info-${i}`}>
-                                      <h3 className="font-semibold !text-navy text-lg cursor-pointer md:mb-2">{y.title || ""}</h3>
+                            <h2 className="md:hidden text-lg text-navy font-semibold mb-4">{faqGroup.title}</h2>
+                            
+                            <div className="accordion w-full relative mb-6 md:mb-0" id={`accordion_${random}`}>
+                                {faqGroup.faq?.map((y,i) => {
+                                    return  <div className="faq p-6 pl-14 !shadow-none collapsed md:!bg-lilac rounded-xl mb-6 w-full" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} aria-expanded="false" aria-controls={`collapse_${random}_${i}`} id={`heading_${random}_${i}`} key={`info-${i}`}>
+                                        <h3 className="font-semibold !text-navy text-lg cursor-pointer md:mb-2">{y.title || ""}</h3>
 
-                                      <ReactMarkdown className="intro">{y.intro || ""}</ReactMarkdown>
+                                        <ReactMarkdown className="intro">{y.intro || ""}</ReactMarkdown>
 
-                                      <div id={`collapse_${random}_${i}`} className="accordion-collapse collapse" aria-labelledby={`heading_${random}_${i}`} data-bs-parent={`#accordion_${random}`}>
-                                        <div className="accordion-body">
-                                            <ReactMarkdown>{y.desc || ""}</ReactMarkdown>
+                                        <div id={`collapse_${random}_${i}`} className="accordion-collapse collapse" aria-labelledby={`heading_${random}_${i}`} data-bs-parent={`#accordion_${random}`}>
+                                            <div className="accordion-body">
+                                                <ReactMarkdown>{y.desc || ""}</ReactMarkdown>
+                                            </div>
                                         </div>
-                                      </div>
 
-                                      <p className="hidden md:block read-more text-navy mt-2 cursor-pointer">Read More</p>
+                                        <p className="hidden md:block read-more text-navy mt-2 cursor-pointer">Read More</p>
                                     </div>
-                            })}
-                        </div>
+                                })}
+                            </div>
 
                         </div>
                     })}

@@ -261,7 +261,9 @@
     }
     .nav-item {
       .active {
-        @apply border-navy;
+        a {
+          @apply border-navy;
+        }
       }
     }
   }
