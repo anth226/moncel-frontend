@@ -43,7 +43,7 @@ export default ({ data }: PageProps<DataProps>) => {
     return <div>
     <Head seo={seoContent} />
     <Layout>
-      <main className="bg-[url('https://www.userve.com/hubfs/web-assets/usx_about_bg.jpg')] bg-cover bg-top bg-no-repeat">
+      <main className="bg-[url('src/images/usx_about_bg.webp')] bg-cover bg-top bg-no-repeat">
         <HeroSection {...heroContent} story={heroSlug} />
         <MissionSection {...missionContent} story={missionSlug} />
         <PeopleTrustSection peopleData={peopleContent} trustData={trustContent} />
