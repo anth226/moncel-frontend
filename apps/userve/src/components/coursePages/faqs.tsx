@@ -6,6 +6,8 @@ import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { CoursePageInfoSectionStoryblok } from 'src/storyblok-component-types';
 import { Slug } from 'src/lib';
 
+import "./faqs.scss";
+
 interface StoryProps {
     story: Slug;
 }

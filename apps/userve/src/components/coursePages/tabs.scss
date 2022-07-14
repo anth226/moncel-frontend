@@ -1,0 +1,39 @@
+.tab-cta {
+  .nav-item {
+    .active {
+      @apply bg-lilac text-bluewood;
+    }
+    &.first {
+      .active {
+        @apply bg-lynch text-white;
+      }
+    }
+  }
+  .tab-pane {
+    @media only screen and (max-width: 767px) {
+      @apply block opacity-100;
+    }
+    &.first {
+      @apply h-full bg-[url('src/images/usx-cta-background.svg')] bg-cover bg-bottom;
+      ul {
+        @apply relative;
+        li {
+          @apply pl-8 before:content-[url('src/images/usx-check-white.svg')] before:absolute before:left-0 before:w-[15px] before:h-[12px];
+        }
+      }
+      &.active {
+        @apply hidden md:grid;
+      }
+    }
+  }
+}
+.cta {
+  &.first {
+    ul {
+      @apply relative;
+      li {
+        @apply pl-6 before:content-[url('src/images/usx-check-white.svg')] before:absolute before:left-0 before:w-[15px] before:h-[12px];
+      }
+    }
+  }
+}

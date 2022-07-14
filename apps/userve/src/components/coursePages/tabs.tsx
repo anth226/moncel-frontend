@@ -6,6 +6,8 @@ import { Header2 } from 'src/components/core/typography';
 import { StoryblokStoryProps, getFilename, findMatchingLocalFileNode, DynamicImage } from 'src/lib/images';
 import ReactMarkdown from 'react-markdown';
 
+import "./tabs.scss";
+
 const TabsSection = (props: AboutUsStoryblok & StoryblokStoryProps) => {
     const localImageFileNode = findMatchingLocalFileNode(getFilename(props.image?.filename || ""), props.story);
     const tabsContent = props.tabs || [];
