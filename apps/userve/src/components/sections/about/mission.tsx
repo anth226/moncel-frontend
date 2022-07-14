@@ -10,7 +10,7 @@ import "./about.scss";
 
 export default (props: ThreeByTwoStoryblok & StoryblokStoryProps) => {
     const fileNode = findMatchingLocalFileNode(getFilename(props.Image?.filename || ""), props.story);
-    return <Section className="grid grid-cols-12 grid-rows-1 items-center">
+    return <Section className="grid grid-cols-12 grid-rows-1 items-center border-b-[2px] border-slate-200">
         <div className="highlight-bold order-12 md:order-1 md:col-start-1 col-span-12 md:col-span-6">
             <Header1>{props.Title || ""}</Header1>
             <Header4>{props.Subtitle || ""}</Header4>
