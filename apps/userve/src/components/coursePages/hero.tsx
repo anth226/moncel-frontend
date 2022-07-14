@@ -11,6 +11,7 @@ import { getFilename, findMatchingLocalFileNode, DynamicImage, Slug, LocalFileSo
 import { IconCardStoryblok, CoursePageStoryblok, BassetPurchaseModalStoryblok } from "src/storyblok-component-types";
 import PurchaseButton from './lib/purchaseFlow';
 import { Tooltip } from './tooltip';
+import { Link } from '@reach/router';
 
 // images - non-optimized
 const IMAGE_DIR_PATH = "../../images";
@@ -25,7 +26,7 @@ const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?
 
 const MoneyBackGuarantee = ({x}:{x:CourseType}) => {
     const lang = courseLang(x);
-    return <div className="bg-green-100 text-green-700 rounded-xl p-2 my-6 flex flex-row items-center justify-center text-sm text-center">
+    return <div className="bg-green-100 text-green-700 rounded-xl p-2 my-4 md:my-6 flex flex-row items-center justify-center text-sm text-center">
         <StaticImage src={dollarIconGraphicPath} alt="Dollar Icon" className="mr-2" width={20} height={13}></StaticImage>
         {lang == "lang-es" ? "Garantía de devolución de dinero" : "100% Money Back Guarantee"}
         <Tooltip message={lang == "lang-es" ? "¡Estamos seguros de que te van a encantar nuestros cursos! Si no es así, te haremos un reembolso completo de acuerdo con nuestra política de devoluciones." : "We're confident you'll love our courses! If not, we provide full refunds subject to our refund policy."}><StaticImage src={infoIconGraphicPath} alt="Info Icon" className="ml-2" width={16} height={16}></StaticImage>
@@ -41,6 +42,18 @@ const EnrollButton = ({ children, courseType }: { children: React.ReactNode, cou
         </div>
     </PurchaseButton>
 };
+
+const BusinessButton = ({x}:{x:CourseType}) => {
+    const lang = courseLang(x);
+    return <div>
+        <div className="hidden md:block w-full border border-navy p-4 rounded-lg mt-6 text-center">
+            <h3 className="text-bluewood text-sm leading-5 font-semibold">{lang == "lang-es" ? "Necesito Una Cuenta Comercial?" : "Need a Business Account?"}</h3>
+            <Link to="/us/about/contact-us" className="text-dark-blue font-normal text-xs leading-4 hover:underline">{lang == "lang-es" ? "Hablar Con Un Asesor" : "Speak With An Advisor"}</Link>
+        </div>
+        <Link to="/us/about/contact-us" className="md:hidden btn btn-invert border-2 border-melrose text-dark-blue mt-4">{lang == "lang-es" ? "Necesito Una Cuenta Comercial?" : "Need a Business Account?"}</Link>
+    </div>
+};
+
 
 const Features = ({ features, heroStory }: { features: IconCardStoryblok[], heroStory: Slug }) => {
     return <div className="flex flex-col gap-4">
@@ -112,6 +125,7 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
             <EnrollButton courseType={{ type: context.type, enroll: context.enroll || "" }}>
                 <p className="text-inherit !mb-0" data-test="enroll-button">{lang == "lang-es" ? "Regístrate" : "Enroll Now"}</p>
             </EnrollButton>
+            <BusinessButton x={context.type}/>
             <MoneyBackGuarantee x={context.type} />
             <Features features={content.features || []} heroStory={heroStory}/>
         </div>

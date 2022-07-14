@@ -40,7 +40,7 @@ const Header = () => {
             </div>
         </div>
         <div className="hidden lg:flex flex-row items-center text-bluewood font-medium">
-            <Phone className="px-3 py-2 bg-lilac rounded" />
+            <Phone className="px-3 py-2 rounded" />
             <a href="https://my.userve.com/customer/account/login" className="ml-6">Login</a>
         </div>
 
@@ -60,8 +60,8 @@ const Header = () => {
 
 const HeaderLink = ({ to, children }: { to: string, children: JSX.Element | JSX.Element[] | string }) => {
     const location = useLocation();
-    const className = (to === location.pathname) ? "text-navy" : ""
-    return <Link to={to} className={className}>{children}</Link>
+    const className = (to === location.pathname) ? "border-navy py-2 " : "border-transparent py-2";
+    return <Link to={to} className={`border-b-1 ${className}`}>{children}</Link>
 };
 
 const HamburgerMenu = () => {

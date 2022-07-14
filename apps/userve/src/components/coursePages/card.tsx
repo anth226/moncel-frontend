@@ -7,6 +7,8 @@ import { CourseData } from 'src/components/coursePages/types';
 import CardButton from 'src/components/coursePages/button';
 import { LocalFileSource } from 'src/lib';
 
+import "./card.scss";
+
 const FALLBACK_IMAGE_HOST = "https://www.userve.com/hs-fs";
 // Course Data from json to be supplemented with data from storyblok
 interface ReactProps {
@@ -70,14 +72,27 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
             imageComp = null;
     }
 
+    let language;
+    if (lang == "lang-en") {
+        language = "English"
+    } else {
+        language = "Spanish"
+    }
     return <div className={`font-sans card flex flex-col rounded-2xl overflow-hidden bg-white shadow-xl ${props.className}`} data-test={`course-card-${encodeURIComponent(courseTitle || "")}`}>
         <div>
-            <div className={`card-image ${tag == "coming-soon" ? "coming-soon" : ""}`}>
+            <div className={ props.state ? `card-image ${tag == "coming-soon" ? "coming-soon" : "available"}` : "card-image"}>
                 { tag == "coming-soon" ? <a className="cursor-pointer" data-bs-toggle="modal" data-bs-target={url}>{imageComp}</a> : <a className="cursor-pointer" href={url}>{imageComp}</a>}
             </div>
+
             <div className="card-body">
-                {/* product category */}
-                { productCategoryLabel ? <div className="text-xs bg-cornflower text-white mb-4 px-2 py-1 rounded w-fit">{productCategoryLabel}</div> : null }
+                { props.state ? <div>
+                    <div className="flex flex-row">
+                        {/* product category */}
+                        { productCategoryLabel ? <div className="mr-3 text-xs bg-cornflower text-white mb-4 px-2 py-1 rounded w-fit">{productCategoryLabel}</div> : null }
+                        {/* language */}
+                        { lang ? <div className="text-xs bg-gallery text-bluewood mb-4 px-2 py-1 rounded w-fit">{language}</div> : null }
+                    </div>
+                </div> : null }
 
                 { tag == "coming-soon" ? <a className="text-bluewood text-lg font-semibold leading-4 cursor-pointer hover:underline" data-bs-toggle="modal" data-bs-target={url}>{courseTitle}</a> : <a className="text-bluewood text-lg font-semibold leading-4 cursor-pointer hover:underline" href={url}>{courseTitle}</a> }
                 <p className="text-lynch mt-4">{desc}</p>

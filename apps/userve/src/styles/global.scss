@@ -154,24 +154,6 @@
       }
     }
   }
-  .card {
-    @apply justify-between;
-    .card-image {
-      @apply duration-[0700ms] translate-y-[0px] relative z-0;
-      &.coming-soon {
-        &::before {
-          content: "Coming Soon";
-          @apply text-white bg-cornflower w-full text-center absolute px-1 py-1 top-0 text-xs z-10 rounded-t-lg;
-        }
-      }
-    }
-    .card-body {
-      @apply duration-[0600ms] transform-none md:translate-y-[0px] z-10 p-6 bg-white relative;
-    }
-    .card-button {
-      @apply bottom-0 relative z-20 px-6 pb-6 w-full bg-white;
-    }
-  }  
   .statistic {
     strong {
       @apply text-sky-blue;
@@ -246,6 +228,13 @@
     .nav-link {
       &.active {
         @apply text-navy bg-melrose;
+      }
+    }
+    .nav-item {
+      .active {
+        a {
+          @apply border-navy;
+        }
       }
     }
   }

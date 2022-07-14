@@ -8,6 +8,8 @@ import { CourseData } from 'src/components/coursePages/types';
 import { CoursePageStoryblok, CoursePageInfoSectionStoryblok, BenefitsStoryblok, AboutUsStoryblok, TestimonialsStoryblok, SeoStoryblok } from "src/storyblok-component-types";
 import HeroSection from './hero';
 import CourseInfoSection from './courseInfo';
+import FaqsSection from './faqs';
+import TabsSection from './tabs';
 import BenefitsSection from './benefits';
 import { AboutUsSection, TestimonialsSection } from 'src/components/sections/landing';
 
@@ -56,6 +58,13 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
       return null; // error or 404
     }
 
+    let faqVersion;
+    if (pageContext.type == "rbs") {
+      faqVersion = "rbs"
+    } else {
+      faqVersion = "default"
+    };
+    
     return <div>
         <Head seo={seoContent} coursePageContext={pageContext} />
         <Layout>
@@ -64,15 +73,14 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
                 <CourseInfoSection {...courseInfoContent} className="bg-gradient-to-b from-hawkes to-white" story={courseInfoStory} />
                 <BenefitsSection {...benefitsContent} story={benefitsStory}/>
                 <TestimonialsSection {...testimonialsContent} />
-                <CourseInfoSection {...faqsContent} story={faqsStory}/>
-                <AboutUsSection {...accountsContent} story={accountsStory}/>
-                <BenefitsSection {...featuresContent} story={featuresStory} />
+
+                { faqVersion == "default" && <span><CourseInfoSection {...faqsContent} story={faqsStory}/><AboutUsSection {...accountsContent} story={accountsStory}/><BenefitsSection {...featuresContent} story={featuresStory} /></span> }
+
+                { faqVersion == "rbs" && <span><TabsSection {...accountsContent} story={accountsStory}/><FaqsSection {...faqsContent} story={faqsStory}/></span> }
             </main>
         </Layout>
     </div>
-
 }
-
 
 {/* const query = ``; // query default copy, then query copy for this url */}
 export const pageQuery = graphql`

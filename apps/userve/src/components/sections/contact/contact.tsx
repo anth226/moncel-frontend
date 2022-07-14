@@ -3,17 +3,7 @@ import ReactMarkdown from 'react-markdown';
 
 import { ContactStoryblok } from 'src/storyblok-component-types';
 import { Header1, Header5, Text } from 'src/components/core/typography';
-import { ButtonTransparent } from 'src/components/shared';
 import HubspotContactForm from 'src/components/shared/Form';
-
-const ChatWidgetButton = () => {
-    const HUBSPOT_CHAT_KEY = 'HubSpotConversations';
-
-    const handleClick = () => {
-        if(HUBSPOT_CHAT_KEY in window) window[HUBSPOT_CHAT_KEY].widget.open();
-    }
-    return <ButtonTransparent className="w-fit bg-white mb-6 md:mb-0 text-dark-blue border-dark-blue hover:bg-dark-blue" onClick={handleClick}>Start Live Chat</ButtonTransparent>
-}
   
 interface ReactProps {
     target?: string;
@@ -49,7 +39,6 @@ const ContactSection = (props: ContactStoryblok) => {
                         <img src="https://a.storyblok.com/f/153125/x/4b4d8faad8/usx_location.svg" width={20} height={20} alt="Address" loading="lazy"/>
                         <ReactMarkdown>{props.address || ""}</ReactMarkdown>
                     </div>
-                    <ChatWidgetButton />
                 </div>
             </div>
         </div>
