@@ -69,7 +69,7 @@
     @apply text-center font-medium cursor-pointer w-full md:w-fit border-1 border-solid transition-all no-underline normal-case inline-block rounded-lg px-6 py-4 font-sans;
   }
   .btn-primary {
-    @apply bg-dark-blue border-dark-blue hover:bg-navy-hover text-white;
+    @apply bg-dark-blue border-dark-blue hover:bg-navy-hover text-white font-semibold;
   }
   .btn-invert {
     @apply border-dark-blue text-dark-blue hover:bg-titan;
