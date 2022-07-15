@@ -83,6 +83,43 @@ export const getStaticProps = async () => {
     const { data } = await client.query({
         query: gql`
         query {
+            iccLandingPage {
+                data {
+                  attributes {
+                    header {
+                      logo {
+                        data {
+                          attributes {
+                            url
+                          }
+                        }
+                      }
+                      links { 
+                          href
+                        text
+                      }
+                    }
+                    footer {
+                      logo {
+                        data {
+                          attributes {
+                            url
+                          }
+                                    }
+                      }
+                      NavLinks {
+                        text
+                        href
+                      }
+                      LegalLinks {
+                        text
+                        href
+                      }
+                      Copyright
+                    }
+                  }
+                }
+            }
             iccCertificatePage {
               data {
                 attributes {

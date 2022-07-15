@@ -7,7 +7,8 @@
     "develop": "yarn dev",
     "build": "yarn gen:strapi-types && next build",
     "start": "next start -p 3001",
-    "lint": "next lint"
+    "lint": "next lint",
+    "codegen": "yarn gen:strapi-types"
   },
   "dependencies": {
     "@apollo/client": "^3.6.6",

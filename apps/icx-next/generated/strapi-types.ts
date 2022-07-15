@@ -653,6 +653,57 @@ export type ComponentIccAdditionalStatsSectionInput = {
   id?: InputMaybe<Scalars['ID']>;
 };
 
+export type ComponentIccLayoutFooter = {
+  __typename?: 'ComponentIccLayoutFooter';
+  Copyright?: Maybe<Scalars['String']>;
+  LegalLinks?: Maybe<Array<Maybe<ComponentCoreLink>>>;
+  NavLinks?: Maybe<Array<Maybe<ComponentCoreLink>>>;
+  id: Scalars['ID'];
+  logo?: Maybe<UploadFileEntityResponse>;
+};
+
+
+export type ComponentIccLayoutFooterLegalLinksArgs = {
+  filters?: InputMaybe<ComponentCoreLinkFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+export type ComponentIccLayoutFooterNavLinksArgs = {
+  filters?: InputMaybe<ComponentCoreLinkFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type ComponentIccLayoutFooterInput = {
+  Copyright?: InputMaybe<Scalars['String']>;
+  LegalLinks?: InputMaybe<Array<InputMaybe<ComponentCoreLinkInput>>>;
+  NavLinks?: InputMaybe<Array<InputMaybe<ComponentCoreLinkInput>>>;
+  id?: InputMaybe<Scalars['ID']>;
+  logo?: InputMaybe<Scalars['ID']>;
+};
+
+export type ComponentIccLayoutHeader = {
+  __typename?: 'ComponentIccLayoutHeader';
+  id: Scalars['ID'];
+  links?: Maybe<Array<Maybe<ComponentCoreLink>>>;
+  logo?: Maybe<UploadFileEntityResponse>;
+};
+
+
+export type ComponentIccLayoutHeaderLinksArgs = {
+  filters?: InputMaybe<ComponentCoreLinkFiltersInput>;
+  pagination?: InputMaybe<PaginationArg>;
+  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type ComponentIccLayoutHeaderInput = {
+  id?: InputMaybe<Scalars['ID']>;
+  links?: InputMaybe<Array<InputMaybe<ComponentCoreLinkInput>>>;
+  logo?: InputMaybe<Scalars['ID']>;
+};
+
 export type ComponentLandingBenefitsAndPrice = {
   __typename?: 'ComponentLandingBenefitsAndPrice';
   BottomPriceText?: Maybe<Scalars['String']>;
@@ -754,43 +805,6 @@ export type ComponentLandingHeroSectionInput = {
   title?: InputMaybe<Scalars['String']>;
 };
 
-export type ComponentLayoutFooter = {
-  __typename?: 'ComponentLayoutFooter';
-  Copyright?: Maybe<Scalars['String']>;
-  LegalLinks?: Maybe<Array<Maybe<ComponentCoreLink>>>;
-  NavLinks?: Maybe<Array<Maybe<ComponentCoreLink>>>;
-  id: Scalars['ID'];
-  logo?: Maybe<UploadFileEntityResponse>;
-};
-
-
-export type ComponentLayoutFooterLegalLinksArgs = {
-  filters?: InputMaybe<ComponentCoreLinkFiltersInput>;
-  pagination?: InputMaybe<PaginationArg>;
-  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-
-export type ComponentLayoutFooterNavLinksArgs = {
-  filters?: InputMaybe<ComponentCoreLinkFiltersInput>;
-  pagination?: InputMaybe<PaginationArg>;
-  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
-export type ComponentLayoutHeader = {
-  __typename?: 'ComponentLayoutHeader';
-  id: Scalars['ID'];
-  links?: Maybe<Array<Maybe<ComponentCoreLink>>>;
-  logo?: Maybe<UploadFileEntityResponse>;
-};
-
-
-export type ComponentLayoutHeaderLinksArgs = {
-  filters?: InputMaybe<ComponentCoreLinkFiltersInput>;
-  pagination?: InputMaybe<PaginationArg>;
-  sort?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
-};
-
 export type DateTimeFilterInput = {
   and?: InputMaybe<Array<InputMaybe<Scalars['DateTime']>>>;
   between?: InputMaybe<Array<InputMaybe<Scalars['DateTime']>>>;
@@ -848,7 +862,7 @@ export type FloatFilterInput = {
   startsWith?: InputMaybe<Scalars['Float']>;
 };
 
-export type GenericMorph = AfsGlobal | AfsLandingPage | ComponentAfsAddress | ComponentAfsFooter | ComponentAfsHeader | ComponentAfsHelpSection | ComponentAfsHelpSectionTab | ComponentAfsHeroSection | ComponentAfsNavMenu | ComponentCoreFaq | ComponentCoreGraphicLongText | ComponentCoreGraphicText | ComponentCoreLink | ComponentCoreSeo | ComponentCoreText | ComponentIccAdditionalBenefitsSection | ComponentIccAdditionalFaqSection | ComponentIccAdditionalHero | ComponentIccAdditionalRecommendationSection | ComponentIccAdditionalStatsSection | ComponentLandingBenefitsAndPrice | ComponentLandingEasySteps | ComponentLandingFaQs | ComponentLandingFinalCta | ComponentLandingHeroSection | ComponentLayoutFooter | ComponentLayoutHeader | I18NLocale | IccCertificatePage | IccFaq | IccLandingPage | IccWhyInstacertPage | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
+export type GenericMorph = AfsGlobal | AfsLandingPage | ComponentAfsAddress | ComponentAfsFooter | ComponentAfsHeader | ComponentAfsHelpSection | ComponentAfsHelpSectionTab | ComponentAfsHeroSection | ComponentAfsNavMenu | ComponentCoreFaq | ComponentCoreGraphicLongText | ComponentCoreGraphicText | ComponentCoreLink | ComponentCoreSeo | ComponentCoreText | ComponentIccAdditionalBenefitsSection | ComponentIccAdditionalFaqSection | ComponentIccAdditionalHero | ComponentIccAdditionalRecommendationSection | ComponentIccAdditionalStatsSection | ComponentIccLayoutFooter | ComponentIccLayoutHeader | ComponentLandingBenefitsAndPrice | ComponentLandingEasySteps | ComponentLandingFaQs | ComponentLandingFinalCta | ComponentLandingHeroSection | I18NLocale | IccCertificatePage | IccFaq | IccLandingPage | IccWhyInstacertPage | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type I18NLocale = {
   __typename?: 'I18NLocale';
@@ -973,6 +987,8 @@ export type IccLandingPage = {
   FinalCTA: ComponentLandingFinalCta;
   HeroSection: ComponentLandingHeroSection;
   createdAt?: Maybe<Scalars['DateTime']>;
+  footer: ComponentIccLayoutFooter;
+  header: ComponentIccLayoutHeader;
   isVisibleInListView?: Maybe<Scalars['Boolean']>;
   locale?: Maybe<Scalars['String']>;
   localizations?: Maybe<IccLandingPageRelationResponseCollection>;
@@ -1010,6 +1026,8 @@ export type IccLandingPageInput = {
   FAQs?: InputMaybe<ComponentLandingFaQsInput>;
   FinalCTA?: InputMaybe<ComponentLandingFinalCtaInput>;
   HeroSection?: InputMaybe<ComponentLandingHeroSectionInput>;
+  footer?: InputMaybe<ComponentIccLayoutFooterInput>;
+  header?: InputMaybe<ComponentIccLayoutHeaderInput>;
   isVisibleInListView?: InputMaybe<Scalars['Boolean']>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
   versionNumber?: InputMaybe<Scalars['Int']>;

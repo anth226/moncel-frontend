@@ -3,7 +3,6 @@ import jsonata from 'jsonata';
 import { gql } from "@apollo/client";
 
 import { getStoryblokStories } from 'lib';
-import { StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk/cms/types';
 
 import Head from 'components/Head';
 import { Header, Footer } from 'components/layout';
@@ -18,19 +17,12 @@ import { IccLandingPage } from "generated/strapi-types";
 import icxstyles from '../styles/icx.module.scss';
 
 const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const layout = jsonata('content[component="template_layout"]').evaluate(props.layout);
-  // const faqs = jsonata('content.body[component="section_faqs"]').evaluate(props.home);
-  // const pricing: StoryBlokHomePricingContent = jsonata('content.body[component="section_benefits_and_price"]').evaluate(props.home);
-  const footer: StoryBlokFooter = layout.footer?.[0];
-  const header: StoryBlokHeader = layout.header?.[0];
-  // const heroPrimary: StoryBlokCertificateHeroContent = jsonata('body[component="section_hero"]').evaluate(props.home?.content);
-  
   const strapiData:IccLandingPage = props.strapiData.iccLandingPage.data.attributes;
 
   return (
     <div>
       <Head />
-      <Header header={header} />
+      <Header data={strapiData.header} />
       <main className={icxstyles.page}>
         <div className="bg-dark hero-bg">
           <HeroSection data={strapiData.HeroSection} />
@@ -49,7 +41,7 @@ const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
         <div className="bg-dark">
           <CTASection data={strapiData.FinalCTA} />
         </div>
-        <Footer footer={footer} />
+        <Footer data={strapiData.footer} />
       </main>
     </div>
   )
@@ -123,6 +115,37 @@ export const getStaticProps = async () => {
                   href
                   text
                 }
+              }
+              header {
+                logo {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                links { 
+                  href
+                  text
+                }
+              }
+              footer {
+                logo {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                NavLinks {
+                  text
+                  href
+                }
+                LegalLinks {
+                  text
+                  href
+                }
+                Copyright
               }
             }
           }

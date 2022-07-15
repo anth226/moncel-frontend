@@ -72,10 +72,10 @@
     @apply bg-dark-blue border-dark-blue hover:bg-navy-hover text-white font-semibold;
   }
   .btn-invert {
-    @apply border-dark-blue text-dark-blue hover:bg-titan;
+    @apply border-dark-blue text-dark-blue hover:bg-titan font-semibold;
   }
   .btn-invert-white {
-    @apply border-white text-white hover:bg-white/30;
+    @apply border-white text-white hover:bg-white/30 font-semibold;
   }
   .btn-light {
     @apply border-white text-white;
@@ -119,7 +119,7 @@
       @apply h-[55px];
     }
     input[type=submit] {
-      @apply text-center font-medium cursor-pointer md:w-fit border-1 border-solid transition-all no-underline normal-case inline-block rounded-md px-4 py-4 font-sans bg-dark-blue border-dark-blue hover:bg-navy-hover text-white mt-6;
+      @apply text-center font-semibold cursor-pointer md:w-fit border-1 border-solid transition-all no-underline normal-case inline-block rounded-md px-4 py-4 font-sans bg-dark-blue border-dark-blue hover:bg-navy-hover text-white mt-6;
       width:99% !important;
     }
     li {

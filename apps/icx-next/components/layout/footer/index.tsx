@@ -2,11 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './styles.module.scss';
 
-import { StoryBlokFooter } from 'moncel-one-sdk/cms/types';
+import { ComponentIccLayoutFooter } from "generated/strapi-types";
 
-const Footer = ({ footer }: { footer: StoryBlokFooter}) => {
-    const logo = footer.logo?.image;
-    const { navigation, copyright, terms } = footer;
+const Footer = ({ data }: { data: ComponentIccLayoutFooter}) => {
+    const logo = data.logo?.data?.attributes?.url || "";
+
+    const { NavLinks: navLinks, LegalLinks: legalLinks, Copyright: copyright } = data;
 
     return <div className="footer">
         <nav className="container">
@@ -17,8 +18,9 @@ const Footer = ({ footer }: { footer: StoryBlokFooter}) => {
                 </div>
                 <div className="col-12 col-md-9 text-center text-md-end">
                     <div className={styles.linksTop}>
-                        {navigation.map((link) => {
-                            return <Link href={link.url} key={`footer-navigation-${link.label}`}>{link.label}</Link>
+                        {( navLinks || []).map(link => {
+                            if(!link) return null;
+                            return <Link href={link.href} key={`footer-navigation-${link.text}`}>{link.text}</Link>
                         })}
                     </div>
 
@@ -27,15 +29,14 @@ const Footer = ({ footer }: { footer: StoryBlokFooter}) => {
             <div className="row text-center text-md-start">
                 <p>{copyright}</p>
                 <div className={styles.linksBottom}>
-                    {terms.map((link) => {
-                        return <Link href={link.url} key={`footer-terms-${link.label}`}>{link.label}</Link>
+                    {(legalLinks || []).map(link => {
+                        if(!link) return null;
+                        return <Link href={link.href} key={`footer-terms-${link.text}`}>{link.text}</Link>
                     })}
                 </div>
             </div>
         </nav>
-    </div>
-        
-      
+    </div>;
 };
 
 export default Footer;
