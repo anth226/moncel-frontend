@@ -1694,6 +1694,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/inter@npm:^4.5.11":
+  version: 4.5.11
+  resolution: "@fontsource/inter@npm:4.5.11"
+  checksum: 5d30b0c40f04b4bfc74cbae0ba87aceba1204ee43706d779ef2183959a01fe56b724cadad996ecca920f5be30058c75ca9eb0b58957d57982a3d6711341150b0
+  languageName: node
+  linkType: hard
+
 "@fortawesome/fontawesome-common-types@npm:6.1.1":
   version: 6.1.1
   resolution: "@fortawesome/fontawesome-common-types@npm:6.1.1"
@@ -22371,6 +22378,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "userve@workspace:apps/userve"
   dependencies:
+    "@fontsource/inter": ^4.5.11
     "@loadable/component": ^5.15.2
     "@mdx-js/mdx": ^1.6.22
     "@mdx-js/react": ^1.6.22
