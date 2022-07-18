@@ -17,11 +17,11 @@ const BlogTag = ({ tag }: { tag: string }) => {
 
 const BlogCard = ({ blog, fileNode }: { blog: Pick<BlogPostCardStoryblok, "tags" | "title" | "link" | "summary">, fileNode: LocalFileSource | null }) => {
     const tags = (blog.tags || "").split(',');
-    return <div className="card flex flex-col rounded-2xl overflow-hidden bg-white shadow-xl">
+    return <div className="card flex flex-col rounded-xl overflow-hidden bg-white shadow-xl">
         <div>
             <div className="card-image">
                 <Link to={blog.link || ""}>
-                    <DynamicImage fileNode={fileNode} alt={`preview image for blog post "${blog.title}"`} imgStyle={{borderTopRightRadius:'1rem',borderTopLeftRadius:'1rem'}}/>
+                    <DynamicImage fileNode={fileNode} alt={`preview image for blog post "${blog.title}"`} imgStyle={{borderTopRightRadius:'.5rem',borderTopLeftRadius:'.5rem'}}/>
                 </Link>
             </div>
             <div className="card-body">
@@ -77,8 +77,8 @@ const FeaturedBlogsSection = (props: FeaturedBlogStoryblok & StoryblokStoryProps
         return <BlogCard blog={fakeBlogPost} fileNode={fakeFilenode as LocalFileSource} />;
     });
     return <Section>
-            <Header2>{props.title}</Header2>
-            <Text>{props.description}</Text>
+            <Header2 className="w-full md:w-1/2">{props.title}</Header2>
+            <Text className="w-full md:w-1/2 mb-10">{props.description}</Text>
             <div className="flex flex-col md:grid md:grid-cols-3 grid-flow-md:row gap-10">
                 { rssBlogItems ? rssBlogComponent : defaultBlogComponent }
             </div>

@@ -24,7 +24,7 @@
   }
   .footer {
     a {
-      @apply font-sans font-medium hover:underline hover:text-navy;
+      @apply font-sans font-normal hover:underline hover:text-navy;
     }
   }
   .p {
@@ -69,13 +69,13 @@
     @apply text-center font-medium cursor-pointer w-full md:w-fit border-1 border-solid transition-all no-underline normal-case inline-block rounded-lg px-6 py-4 font-sans;
   }
   .btn-primary {
-    @apply bg-dark-blue border-dark-blue hover:bg-navy-hover text-white font-semibold;
+    @apply bg-dark-blue border-dark-blue hover:bg-navy-hover text-white font-medium;
   }
   .btn-invert {
-    @apply border-dark-blue text-dark-blue hover:bg-titan font-semibold;
+    @apply border-dark-blue text-dark-blue hover:bg-titan font-medium;
   }
   .btn-invert-white {
-    @apply border-white text-white hover:bg-white/30 font-semibold;
+    @apply border-white text-white hover:bg-white/30 font-medium;
   }
   .btn-light {
     @apply border-white text-white;

@@ -20,7 +20,7 @@ module.exports = {
         "dodger": "#4756FF", // highlight
         "cornflower": "#707bFF", // tags
         "melrose": "#C2C7FF", // accreditation
-        "hawkes": "#E1E4FE66", // gradient bg
+        "hawkes": "#E1E4FE", // gradient bg
         "gallery": "#F0F0F0", // card tag bg
         "hawkes-blue": "#E7EEFE", // card tag bg
       },
@@ -58,6 +58,10 @@ module.exports = {
         extrabold: 800,
         black: 900,
     },
+    maxWidth: {
+      '6xl': '71.25rem',
+      'full': '71.25rem',
+    }
   },
   plugins: [
     require('tw-elements/dist/plugin')

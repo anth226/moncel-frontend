@@ -23,25 +23,27 @@ const MOBILE_DROPDOWN_ID = "mobile-dropdown";
 
 const Header = () => {
     const isMobileMenuOpen = useAppSelector(state => state.navbar.isMobileMenuOpen);
-    return <nav className={`${isMobileMenuOpen ? "fixed z-10 accordion mx-0" : "flex md:mx-4"} justify-between w-full md:w-auto xl:max-w-6xl lg:mx-4 xl:m-auto md:py-4 border-b-1 border-mischka`} id={NAVBAR_ID}>
+    return <nav className={`${isMobileMenuOpen ? "fixed z-10 accordion mx-0 w-full" : "flex md:mx-4 w-max-6xl"} justify-between md:justify-center md:w-auto xl:max-w-6xl lg:mx-4 xl:m-auto md:py-4 lg:py-0 border-b-1 border-mischka lg:border-transparent`} id={NAVBAR_ID}>
 
         {/* Desktop+ menu */}
-        <div className="hidden lg:flex items-center">
-            <Link to="/">
-                <StaticImage src="../../images/usx-logo-solid.svg" alt="Userve" width={100} />
-            </Link>
-            <div className="flex gap-6 ml-6 text-bluewood font-medium text-base">
-                <HeaderLink to="/us/courses">Courses</HeaderLink>
-                <HeaderLink to="/us/business/accounts">Business</HeaderLink>
-                <HeaderLink to="https://blog.userve.com/us">Blog</HeaderLink>
-                <HeaderLink to="/us/about/about-us">About Us</HeaderLink>
-                <HeaderLink to="https://help.userve.com/knowledge">Help Center</HeaderLink>
-                <HeaderLink to="/us/about/contact-us">Contact</HeaderLink>
+        <div className="flex justify-between lg:w-[1140px] lg:py-4 lg:border-b-1 lg:border-mischka">
+            <div className="hidden lg:flex items-center content-start">
+                <Link to="/">
+                    <StaticImage src="../../images/usx-logo-solid.svg" alt="Userve" width={100} />
+                </Link>
+                <div className="flex gap-6 ml-6 text-bluewood font-medium text-base">
+                    <HeaderLink to="/us/courses">Courses</HeaderLink>
+                    <HeaderLink to="/us/business/accounts">Business</HeaderLink>
+                    <HeaderLink to="https://blog.userve.com/us">Blog</HeaderLink>
+                    <HeaderLink to="/us/about/about-us">About Us</HeaderLink>
+                    <HeaderLink to="https://help.userve.com/knowledge">Help Center</HeaderLink>
+                    <HeaderLink to="/us/about/contact-us">Contact</HeaderLink>
+                </div>
             </div>
-        </div>
-        <div className="hidden lg:flex flex-row items-center text-bluewood font-medium">
-            <Phone className="px-3 py-2 rounded" />
-            <a href="https://my.userve.com/customer/account/login" className="ml-6">Login</a>
+            <div className="hidden lg:flex flex-row items-center text-bluewood font-medium">
+                <Phone className="px-3 py-2 rounded" />
+                <a href="https://my.userve.com/customer/account/login" className="ml-6">Login</a>
+            </div>
         </div>
 
         {/* mobile-tablet */}
