@@ -31,8 +31,8 @@ export default ({ data }: PageProps<DataProps>) => {
     <Head seo={seoContent} />
     <Layout>
       <main>
-        <SectionFullWidth className="bg-gradient-to-b from-hawkes to-white">
-          <Section className="grid grid-cols-12 md:gap-10">
+        <SectionFullWidth className="bg-gradient-to-b from-lilac to-white">
+          <Section className="grid grid-cols-12">
             <ContactSection {...contactContent} />
           </Section>
         </SectionFullWidth>

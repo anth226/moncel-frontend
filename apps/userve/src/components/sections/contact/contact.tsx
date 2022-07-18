@@ -22,7 +22,7 @@ const ContactSection = (props: ContactStoryblok) => {
     };
 
     return <>
-        <div className="col-span-12 md:col-span-4 lg:col-span-3">
+        <div className="col-span-12 md:col-span-4 md:mr-20">
             <div>
                 <div className="flex flex-col">
                     <Header1 className="!text-4xl">{props.title || ""}</Header1>
@@ -42,29 +42,29 @@ const ContactSection = (props: ContactStoryblok) => {
                 </div>
             </div>
         </div>
-        <div className="col-span-12 md:col-span-8 lg:col-span-9 col-end-13">
+        <div className="col-span-12 md:col-span-8 col-end-13">
             <ul className="hidden md:grid nav nav-tabs mb-8 gap-8 grid-cols-12" id="tabs-tabFill"
                 role="tablist">
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
                     <a href="#tabs-individual" className="nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start active" id="tabs-home-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-individual" role="tab"
                         aria-controls="tabs-individual" aria-selected="true">Individual Enrollment
-                        <img src="https://a.storyblok.com/f/153125/x/a5f3d43234/usx_lg_profile.svg" className="mt-4 w-[50px] mx-auto" alt="Individual Enrollment" loading="lazy" width={50} height={50}></img>
+                        <img src="https://a.storyblok.com/f/153125/x/a5f3d43234/usx_lg_profile.svg" className="mt-4 w-[50px] h-[50px] mx-auto" alt="Individual Enrollment" loading="lazy" width={50} height={50}></img>
                     </a>
                 </li>
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
                     <a href="#tabs-business" className="nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start" id="tabs-profile-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-business" role="tab"
                         aria-controls="tabs-business" aria-selected="false">Business Enrollment
-                        <img src="https://a.storyblok.com/f/153125/x/448802eb43/usx_lg_store.svg" className="mt-4 w-[50px] mx-auto" alt="Business Enrollment" loading="lazy" width={50} height={45}></img></a>
+                        <img src="https://a.storyblok.com/f/153125/x/448802eb43/usx_lg_store.svg" className="mt-4 w-[50px] h-[50px] mx-auto" alt="Business Enrollment" loading="lazy" width={50} height={45}></img></a>
                 </li>
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
                     <a href="#tabs-support" className="nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start" id="tabs-messages-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-support" role="tab"
                         aria-controls="tabs-support" aria-selected="false">Student Support
-                        <img src="https://a.storyblok.com/f/153125/x/06f817bd4c/usx_lg_support-male.svg" className="mt-4 w-[50px] mx-auto" alt="Student Support" loading="lazy" width={50} height={61}></img></a>
+                        <img src="https://a.storyblok.com/f/153125/x/06f817bd4c/usx_lg_support-male.svg" className="mt-4 w-[50px] h-[50px] mx-auto" alt="Student Support" loading="lazy" width={50} height={61}></img></a>
                 </li>
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
                     <a href="#tabs-general" className="nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start" id="tabs-messages-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-general" role="tab"
                         aria-controls="tabs-general" aria-selected="false"><div>General</div>
-                        <img src="https://a.storyblok.com/f/153125/x/d00700cb55/usx_lg_chat.svg" className="mt-4 w-[50px] mx-auto" alt="General" loading="lazy" width={50} height={57}></img></a>
+                        <img src="https://a.storyblok.com/f/153125/x/d00700cb55/usx_lg_chat.svg" className="mt-4 w-[50px] h-[50px] mx-auto" alt="General" loading="lazy" width={50} height={57}></img></a>
                 </li>
             </ul>
 
