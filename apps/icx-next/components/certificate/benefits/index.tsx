@@ -1,16 +1,17 @@
 import Image from 'next/image';
 
-import { StoryBlokCertificateBenefitContent, StoryBlokCard } from 'moncel-one-sdk/cms/types';
+import { ComponentIccAdditionalBenefitsSection, ComponentCoreGraphicText } from "generated/strapi-types";
 
-const Benefits = ({ benefits }: { benefits: StoryBlokCertificateBenefitContent}) => {
-    const { benefits: cards } = benefits;
+const strapiURL = process.env.STRAPI_URL;
 
+const Benefits = ({ data }: { data: ComponentIccAdditionalBenefitsSection}) => {
     return <div className="row ps-6 pe-4 text-center text-md-start">
-        {cards.map((card: StoryBlokCard, i) => {
+        {(data.Benefits || []).map((benefit: ComponentCoreGraphicText | null, i) => {
+            if(!benefit) return null;
             return <div className="col-12 col-md-6 mb-5" key={`benefits-${i}`}>
-                <Image src={card.icon.image} width={55} height={50} layout="fixed" alt={`benefits-${i}-icon`}/>
-                <h5 className="mt-3">{card.title}</h5>
-                <p className="mb-0">{card.description}</p>
+                <Image src={`${strapiURL}${benefit.image?.data?.attributes?.url || ""}`} width={55} height={50} layout="fixed" alt={`benefits-${i}-icon`}/>
+                <h5 className="mt-3">{benefit.title}</h5>
+                <p className="mb-0">{benefit.description}</p>
             </div>;
         })}
     </div>;

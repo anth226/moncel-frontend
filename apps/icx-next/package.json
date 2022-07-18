@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "develop": "yarn dev",
-    "build": "yarn gen-strapi-types && next build",
+    "build": "yarn gen:strapi-types && next build",
     "start": "next start -p 3001",
     "lint": "next lint"
   },

@@ -1,5 +1,6 @@
 import type { InferGetStaticPropsType } from 'next'
 import jsonata from 'jsonata';
+import { gql } from "@apollo/client";
 
 import { getStoryblokStories } from 'lib';
 import { StoryBlokCertificateHeroContent, StoryBlokCertificateBenefitContent, StoryBlokCertificateRecommendationContent, StoryBlokCertificateStatisticsContent, StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokFaqsSection } from 'moncel-one-sdk/cms/types';
@@ -11,27 +12,26 @@ import Statistics from 'components/certificate/statistics';
 import Faqs from 'components/certificate/faq';
 import SidebarCTA from 'components/sidebar-cta';
 import OneCol from 'components/layout/one-col';
+import { client } from 'lib/strapi/graphql';
+import { IccCertificatePage } from "generated/strapi-types";
 
 const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const layout = jsonata('content[component="template_layout"]').evaluate(props.layout);
     const header: StoryBlokHeader = layout.header?.[0];
     const footer: StoryBlokFooter = layout.footer?.[0];
-    const heroSecondary: StoryBlokCertificateHeroContent = jsonata('body[component="section_hero_secondary"]').evaluate(props.certificate?.content);
-    const benefits: StoryBlokCertificateBenefitContent = jsonata('body[component="section_benefits"]').evaluate(props.certificate?.content);
-    const recommendations: StoryBlokCertificateRecommendationContent = jsonata('body[component="section_recommendation"]').evaluate(props.certificate?.content);
-    const statistics: StoryBlokCertificateStatisticsContent = jsonata('body[component="section_statistics"]').evaluate(props.certificate?.content);
-    const faqs: StoryBlokFaqsSection = jsonata('body[component="section_faqs_secondary"]').evaluate(props.certificate?.content);
+
+    const strapiData: IccCertificatePage = props.strapiData.iccCertificatePage.data.attributes;
 
     return <div>
         <OneCol header={header} footer={footer}>
             <div className="bg-primary">
-                <CertificateHero hero={heroSecondary} />
+                <CertificateHero data={strapiData.HeroSection} />
             </div>
             
             <div className="container pb-0">
                 <div className="row">
                     <div className="col-12 col-md-7 col-lg-8">
-                        <Benefits benefits={benefits} />  
+                        <Benefits data={strapiData.BenefitsSection} />  
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-md-7 col-lg-8">
-                            <Recommendations recommendations={recommendations} />
+                            <Recommendations data={strapiData.RecommendationSection} />
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
             <div className="container">
                 <div className="row">
                     <div className="col-12 col-md-6">
-                        <Statistics statistics={statistics} /> 
+                        <Statistics data={strapiData.StatsSection} /> 
                     </div>
                 </div>
             </div>
@@ -55,7 +55,7 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-md-7 col-lg-8">
-                            <Faqs faqs={faqs} />
+                            <Faqs data={strapiData.FaqsSection} />
                         </div>
                     </div>
                 </div>
@@ -64,7 +64,7 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <SidebarCTA />
+                            <SidebarCTA data={strapiData.HeroSection} />
                         </div>
                     </div>
                 </div>
@@ -79,6 +79,83 @@ export default Certificate;
 export const getStaticProps = async () => {
     const stories = { stories: await getStoryblokStories() };
     const layout = jsonata("stories[slug='layout']").evaluate(stories);
-    const certificate: StoryblokStory = jsonata('stories[name="Certificate"]').evaluate(stories);
-    return { props: { certificate, layout } };
+
+    const { data } = await client.query({
+        query: gql`
+        query {
+            iccCertificatePage {
+              data {
+                attributes {
+                  HeroSection {
+                    title
+                    HeroList {
+                      text
+                    }
+                    ProductName
+                    ProductPrice
+                    ProductList {
+                      text
+                    }
+                    Button {
+                      text
+                      href
+                    }
+                  }
+                  BenefitsSection {
+                    Benefits {
+                      title
+                      description
+                      image {
+                        data {
+                          attributes{
+                            previewUrl
+                            url
+                          }
+                        }
+                      }
+                    }
+                  }
+                  RecommendationSection {
+                    Title
+                    Recommendations {
+                      title
+                      description
+                      image {
+                        data {
+                          attributes {
+                            previewUrl
+                            url
+                          }
+                        }
+                      }
+                    }
+                  }
+                  StatsSection {
+                    Stats {
+                      title
+                      description
+                      image {
+                        data{
+                          attributes{
+                            url
+                            previewUrl
+                          }
+                        }
+                      }
+                    }
+                  }
+                  FaqsSection {
+                    title
+                    FAQs {
+                      Question
+                      Answer
+                    }
+                  }
+                  
+                }
+              }
+            }
+          }`
+    });
+    return { props: { strapiData: data, layout } };
 }
