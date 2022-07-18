@@ -28,11 +28,11 @@ export const Header3 = (props: PropTypes) => {
 }
 
 export const Header4 = (props: PropTypes) => {
-    return <h4 className={`text-2xl font-bold mb-6 text-bluewood ${props.className || ""}`}>{props.children}</h4>
+    return <h4 className={`text-2xl font-semibold mb-6 text-bluewood ${props.className || ""}`}>{props.children}</h4>
 }
 
 export const Header5 = (props: PropTypes) => {
-    return <h5 className={`text-md font-semibold mb-4 text-bluewood leading-6 ${props.className || ""}`}>{props.children}</h5>
+    return <h5 className={`text-lg font-semibold mb-4 text-bluewood leading-6 ${props.className || ""}`}>{props.children}</h5>
 }
 
 export const SubText = (props: PropTypes) => {

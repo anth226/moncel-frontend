@@ -26,7 +26,7 @@ const Header = () => {
     return <nav className={`${isMobileMenuOpen ? "fixed z-10 accordion mx-0 w-full" : "flex md:mx-4 w-max-6xl"} justify-between md:justify-center md:w-auto xl:max-w-6xl lg:mx-4 xl:m-auto md:py-4 lg:py-0 border-b-1 border-mischka lg:border-transparent`} id={NAVBAR_ID}>
 
         {/* Desktop+ menu */}
-        <div className="flex justify-between lg:w-[1140px] lg:py-4 lg:border-b-1 lg:border-mischka">
+        <div className="hidden lg:flex justify-between lg:w-[1140px] max-w-6xl lg:py-4 lg:border-b-1 lg:border-mischka">
             <div className="hidden lg:flex items-center content-start">
                 <Link to="/">
                     <StaticImage src="../../images/usx-logo-solid.svg" alt="Userve" width={100} />
