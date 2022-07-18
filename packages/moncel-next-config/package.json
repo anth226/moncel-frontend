@@ -3,14 +3,11 @@
   "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
-  "bin": {
-    "gen-strapi-types": "./strapi/bin.js"
-  },
   "files": [
     "eslint-preset.js"
   ],
   "scripts": {
-    "gen:strapi-types": "run graphql-codegen --config ./strapi/codegen.yml && mv generated $INIT_CWD/src"
+    "gen:strapi-types": "run graphql-codegen --config ./strapi/codegen.yml && rm -rf $INIT_CWD/generated && mv generated $INIT_CWD"
   },
   "dependencies": {
     "eslint": "^8.12.0",
