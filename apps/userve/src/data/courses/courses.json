@@ -1145,17 +1145,6 @@
         "productCategoryLabel": "Food Handling"
     },
     {
-        "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
-        "state": "Oregon",
-        "title": "Alcohol Server / Seller Training",
-        "desc": "This course teaches you how to responsibly serve and sell alcohol to help prevent alcohol-related incidents and lawsuits.",
-        "url": "#notify",
-        "type": "al",
-        "button": "invert",
-        "tag": "coming-soon",
-        "productCategoryLabel": "Alcohol Service"
-    },
-    {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
         "state": "Oregon",
         "title": "Food Manager Training",
