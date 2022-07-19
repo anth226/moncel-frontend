@@ -1,21 +1,23 @@
 import { useState } from 'react';
 import { Collapse } from 'react-bootstrap';
+import { gql } from "@apollo/client";
 import ReactMarkdown from 'react-markdown';
 import type { InferGetStaticPropsType } from 'next';
-import jsonata from 'jsonata';
-import { getStoryblokStories } from 'lib';
-import { StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokFaqsSection } from 'moncel-one-sdk/cms/types';
+
+import { client } from 'lib/strapi/graphql';
 
 import OneCol from 'components/layout/one-col';
 import SidebarCTA from 'components/sidebar-cta';
 import styles from 'styles/icx_secondary.module.scss';
 
+import { IccCertificatePage, IccFaq, IccLandingPage } from "generated/strapi-types";
+
 const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const [ expanded, setExpanded ] = useState(-1);
-    const layout = jsonata('content[component="template_layout"]').evaluate(props.layout);
-    const header: StoryBlokHeader = layout.header?.[0];
-    const footer: StoryBlokFooter = layout.footer?.[0];
-    const faqs: StoryBlokFaqsSection = jsonata('content.body[component="section_faqs_secondary"]').evaluate(props.faqs);
+
+    const strapiData: IccFaq = props.strapiData.IccFaq.data.attributes;
+    const layoutData: Pick<IccLandingPage, "header" | "footer" | "HeroSection"> = props.strapiData.iccLandingPage.data.attributes;
+    const sidebarData: Pick<IccCertificatePage, "HeroSection"> = props.strapiData.iccCertificatePage.data.attributes;
 
     const handleClick = (i: number) => {
         if(i === expanded) {
@@ -27,7 +29,7 @@ const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     };
 
     return <div className={styles.page}>
-        <OneCol header={header} footer={footer}>
+        <OneCol header={layoutData.header} footer={layoutData.footer}>
             <div className="bg-primary">
                 <div className="container">
                     <div className="row">
@@ -35,7 +37,7 @@ const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             <h1 className="text-center text-md-start">FAQs</h1>
                         </div>
                         <div className="col-12 col-md-5 col-lg-4 d-none d-md-flex justify-content-end">
-                            <SidebarCTA />
+                            <SidebarCTA data={sidebarData.HeroSection} />
                         </div>
                     </div>
                 </div>
@@ -45,10 +47,11 @@ const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     <div className="row">
                         <div className="accordion col-12 col-md-7 col-lg-8">
                             {
-                                faqs.faqs_cards.map((card, i) => {
+                                (strapiData.FAQs?.FAQs || []).map((card, i) => {
+                                    if(!card) return null;
                                     return <div className="card mb-3 rounded-0" key={`faq-${i}`}>
-                                        <button className="btn btn-link text-start p-3" onClick={() => handleClick(i)}>{card.question}</button>
-                                        <Collapse className="px-3 pt-3" in={i === expanded}><div><ReactMarkdown>{card.answer}</ReactMarkdown></div></Collapse>
+                                        <button className="btn btn-link text-start p-3" onClick={() => handleClick(i)}>{card.Question}</button>
+                                        <Collapse className="px-3 pt-3" in={i === expanded}><div><ReactMarkdown>{card.Answer || ""}</ReactMarkdown></div></Collapse>
                                     </div>
                                 })
                             }
@@ -60,7 +63,7 @@ const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <SidebarCTA />
+                            <SidebarCTA data={sidebarData.HeroSection} />
                         </div>
                     </div>
                 </div>
@@ -73,8 +76,86 @@ const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 export default Faqs;
 
 export const getStaticProps = async () => {
-    const stories = { stories: await getStoryblokStories() };
-    const layout = jsonata("stories[slug='layout']").evaluate(stories);
-    const faqs: StoryblokStory = jsonata('stories[full_slug="ICX/faqs"]').evaluate(stories);
-    return { props: { stories, faqs, layout } };
+
+    const { data } = await client.query({
+        query: gql`
+            query {
+                iccLandingPage {
+                    data {
+                        attributes {
+                            header {
+                            logo {
+                                data {
+                                attributes {
+                                    url
+                                }
+                                }
+                            }
+                            links { 
+                                href
+                                text
+                            }
+                            }
+                            footer {
+                            logo {
+                                data {
+                                attributes {
+                                    url
+                                }
+                                            }
+                            }
+                            NavLinks {
+                                text
+                                href
+                            }
+                            LegalLinks {
+                                text
+                                href
+                            }
+                            Copyright
+                            }
+                        }
+                    }
+                }
+                
+                iccFaq {
+                    data {
+                        attributes {
+                            FAQs {
+                                title
+                                FAQs {
+                                Question
+                                Answer
+                                }
+                            }
+                        }
+                    }
+                }
+
+                iccCertificatePage {
+                    data {
+                      attributes {
+                        HeroSection {
+                          title
+                          HeroList {
+                            text
+                          }
+                          ProductName
+                          ProductPrice
+                          ProductList {
+                            text
+                          }
+                          Button {
+                            text
+                            href
+                          }
+                        }
+                      }
+                    }
+                }
+            
+            }
+        `
+    });
+    return { props: { strapiData: data } };
 }

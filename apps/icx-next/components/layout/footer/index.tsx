@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 import { ComponentIccLayoutFooter } from "generated/strapi-types";
 
 const Footer = ({ data }: { data: ComponentIccLayoutFooter}) => {
-    const logo = data.logo?.data?.attributes?.url || "";
+    const logo = data.logo?.data?.attributes?.url ? `${process.env.STRAPI_URL}${data.logo?.data?.attributes?.url}` : "";
 
     const { NavLinks: navLinks, LegalLinks: legalLinks, Copyright: copyright } = data;
 

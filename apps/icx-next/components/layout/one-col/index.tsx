@@ -1,22 +1,22 @@
 
 import { Header, Footer } from 'components/layout';
 
-import { StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk/cms/types';
+import { ComponentIccLayoutHeader, ComponentIccLayoutFooter } from "generated/strapi-types";
 
 import icxstyles from 'styles/icx_secondary.module.scss'
 
 interface LayoutProps {
-    header: StoryBlokHeader;
-    footer: StoryBlokFooter;
+    header: ComponentIccLayoutHeader;
+    footer: ComponentIccLayoutFooter;
     children: JSX.Element | JSX.Element[];
 }
 const OneCol = (props: LayoutProps) => {
     const { header, footer, children } = props;
     return <div>
-        <Header header={header}/>
+        <Header data={header}/>
         <div className={icxstyles.page}>
             { children }
-            <Footer footer={footer} />
+            <Footer data={footer} />
         </div>
     </div>
 }

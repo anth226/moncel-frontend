@@ -3,7 +3,6 @@ import jsonata from 'jsonata';
 import { gql } from "@apollo/client";
 
 import { getStoryblokStories } from 'lib';
-import { StoryBlokCertificateHeroContent, StoryBlokCertificateBenefitContent, StoryBlokCertificateRecommendationContent, StoryBlokCertificateStatisticsContent, StoryblokStory, StoryBlokHeader, StoryBlokFooter, StoryBlokFaqsSection } from 'moncel-one-sdk/cms/types';
 
 import CertificateHero from 'components/certificate/hero';
 import Benefits from 'components/certificate/benefits';
@@ -13,17 +12,13 @@ import Faqs from 'components/certificate/faq';
 import SidebarCTA from 'components/sidebar-cta';
 import OneCol from 'components/layout/one-col';
 import { client } from 'lib/strapi/graphql';
-import { IccCertificatePage } from "generated/strapi-types";
+import { IccCertificatePage, IccLandingPage } from "generated/strapi-types";
 
 const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-    const layout = jsonata('content[component="template_layout"]').evaluate(props.layout);
-    const header: StoryBlokHeader = layout.header?.[0];
-    const footer: StoryBlokFooter = layout.footer?.[0];
-
     const strapiData: IccCertificatePage = props.strapiData.iccCertificatePage.data.attributes;
-
+    const layoutData: Pick<IccLandingPage, "header" | "footer"> = props.strapiData.iccLandingPage.data.attributes;
     return <div>
-        <OneCol header={header} footer={footer}>
+        <OneCol header={layoutData.header} footer={layoutData.footer}>
             <div className="bg-primary">
                 <CertificateHero data={strapiData.HeroSection} />
             </div>
@@ -77,8 +72,6 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 export default Certificate;
 
 export const getStaticProps = async () => {
-    const stories = { stories: await getStoryblokStories() };
-    const layout = jsonata("stories[slug='layout']").evaluate(stories);
 
     const { data } = await client.query({
         query: gql`
@@ -194,5 +187,5 @@ export const getStaticProps = async () => {
             }
           }`
     });
-    return { props: { strapiData: data, layout } };
+    return { props: { strapiData: data } };
 }

@@ -50,9 +50,6 @@ const Home = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 export default Home;
 
 export const getStaticProps = async () => {
-  const stories = { stories: await getStoryblokStories() };
-  const layout = jsonata("stories[slug='layout']").evaluate(stories);
-  const home = jsonata("stories[name='Home']").evaluate(stories);
 
   const { data } = await client.query({
     query: gql`
@@ -154,8 +151,6 @@ export const getStaticProps = async () => {
     `
   });
   return { props: {
-    layout,
-    home,
     strapiData: data
   } };
 };

@@ -587,6 +587,7 @@ export type ComponentIccAdditionalHero = {
   ProductList?: Maybe<Array<Maybe<ComponentCoreText>>>;
   ProductName?: Maybe<Scalars['String']>;
   ProductPrice?: Maybe<Scalars['String']>;
+  closing?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   title?: Maybe<Scalars['String']>;
 };
@@ -611,6 +612,7 @@ export type ComponentIccAdditionalHeroInput = {
   ProductList?: InputMaybe<Array<InputMaybe<ComponentCoreTextInput>>>;
   ProductName?: InputMaybe<Scalars['String']>;
   ProductPrice?: InputMaybe<Scalars['String']>;
+  closing?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['ID']>;
   title?: InputMaybe<Scalars['String']>;
 };
@@ -1042,11 +1044,11 @@ export type IccLandingPageRelationResponseCollection = {
 
 export type IccWhyInstacertPage = {
   __typename?: 'IccWhyInstacertPage';
-  HeroSection?: Maybe<ComponentIccAdditionalHero>;
-  RecommendationSection?: Maybe<ComponentIccAdditionalRecommendationSection>;
+  HeroSection: ComponentIccAdditionalHero;
+  RecommendationSection: ComponentIccAdditionalRecommendationSection;
   createdAt?: Maybe<Scalars['DateTime']>;
   publishedAt?: Maybe<Scalars['DateTime']>;
-  title?: Maybe<Scalars['String']>;
+  title: Scalars['String'];
   updatedAt?: Maybe<Scalars['DateTime']>;
 };
 
