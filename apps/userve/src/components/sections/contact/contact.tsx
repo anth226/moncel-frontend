@@ -5,7 +5,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { ContactStoryblok } from 'src/storyblok-component-types';
 import { Header1, Header5, Text } from 'src/components/core/typography';
 import HubspotContactForm from 'src/components/shared/Form';
-  
+import { DynamicImage} from 'src/lib/images';
+
 interface ReactProps {
     target?: string;
     id?: string;
@@ -22,7 +23,6 @@ const ContactSection = (props: ContactStoryblok) => {
             <a href={`#${props.target}`} className="nav-link bg-white hover:bg-white py-2 px-4 block whitespace-no-wrap hover:no-underline" id={`tabs-${props.id}-tabFill`} data-bs-toggle="pill" data-bs-target={`#${props.target}`}role="tab" aria-controls={props.target} aria-selected="false" onClick={() => setMobileMenuOpen(false)}>{props.title}</a>
         </li>;
     };
-
     return <>
         <div className="col-span-12 md:col-span-4 md:mr-10 lg:mr-20">
             <div>
@@ -30,16 +30,22 @@ const ContactSection = (props: ContactStoryblok) => {
                     <Header1 className="!text-4xl">{props.title || ""}</Header1>
                     <Text>{props.desc || ""}</Text>
                     <div className="flex-row gap-4 items-start mb-4 hidden md:flex">
-                        <img src={imageData.phone.nodes[0].publicURL} alt="Phone" width={20} height={20} loading="lazy"/>
-                        <ReactMarkdown>{props.phone || ""}</ReactMarkdown>
+                        <DynamicImage fileNode={imageData.phone.nodes[0]} alt="Phone" width={20} height={20} loading="lazy"/>
+                        <div>
+                            <ReactMarkdown>{props.phone || ""}</ReactMarkdown>
+                        </div>
                     </div>
                     <div className="flex-row gap-4 items-start mb-4 hidden md:flex">
-                        <img src={imageData.hours.nodes[0].publicURL} alt="Hours" width={20} height={20} loading="lazy"/>
-                        <ReactMarkdown>{props.hours || ""}</ReactMarkdown>
+                        <DynamicImage fileNode={imageData.hours.nodes[0]} alt="Hours" width={20} height={20} loading="lazy"/>
+                        <div>
+                            <ReactMarkdown>{props.hours || ""}</ReactMarkdown>
+                        </div>
                     </div>
                     <div className="flex-row gap-4 items-start mb-6 hidden md:flex">
-                        <img src={imageData.address.nodes[0].publicURL} alt="Address" width={18} height={18} loading="lazy"/>
-                        <ReactMarkdown>{props.address || ""}</ReactMarkdown>
+                        <DynamicImage fileNode={imageData.address.nodes[0]} alt="Address" width={18} height={18} loading="lazy"/>
+                        <div>
+                            <ReactMarkdown>{props.address || ""}</ReactMarkdown>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -50,25 +56,25 @@ const ContactSection = (props: ContactStoryblok) => {
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
                     <a href="#tabs-individual" className="nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start active" id="tabs-home-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-individual" role="tab"
                         aria-controls="tabs-individual" aria-selected="true">Individual Enrollment
-                        <img src={imageData.profile.nodes[0].publicURL} alt="Individual Enrollment" width={50} height={50} loading="lazy" className="mt-4 w-[50px] h-[50px] mx-auto"/>
+                         <DynamicImage fileNode={imageData.profile.nodes[0]} alt="Individual Enrollment" width={50} height={50} loading="lazy" className="mt-4 w-[50px] h-[50px] mx-auto"/>
                     </a>
                 </li>
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
                     <a href="#tabs-business" className="nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start" id="tabs-profile-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-business" role="tab"
                         aria-controls="tabs-business" aria-selected="false">Business Enrollment
-                        <img src={imageData.store.nodes[0].publicURL} alt="Business Enrollment" width={50} height={50} loading="lazy" className="mt-4 w-[50px] h-[50px] mx-auto"/>
+                         <DynamicImage fileNode={imageData.store.nodes[0]} alt="Business Enrollment" width={50} height={50} loading="lazy" className="mt-4 w-[50px] h-[50px] mx-auto"/>
                     </a>
                 </li>
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
                     <a href="#tabs-support" className="nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start" id="tabs-messages-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-support" role="tab"
                         aria-controls="tabs-support" aria-selected="false">Student Support
-                        <img src={imageData.support.nodes[0].publicURL} alt="Student Support" width={50} height={50} loading="lazy" className="mt-4 w-[50px] h-[50px] mx-auto"/>
+                         <DynamicImage fileNode={imageData.support.nodes[0]} alt="Student Support" width={50} height={50} loading="lazy" className="mt-4 w-[50px] h-[50px] mx-auto"/>
                     </a>
                 </li>
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
                     <a href="#tabs-general" className="nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start" id="tabs-messages-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-general" role="tab"
                         aria-controls="tabs-general" aria-selected="false"><div>General</div>
-                        <img src={imageData.chat.nodes[0].publicURL} alt="General" width={50} height={50} loading="lazy" className="mt-4 w-[50px] h-[50px] mx-auto"/>
+                         <DynamicImage fileNode={imageData.chat.nodes[0]} alt="General" width={50} height={50} loading="lazy" className="mt-4 w-[50px] h-[50px] mx-auto"/>
                     </a>
                 </li>
             </ul>
@@ -111,15 +117,15 @@ const ContactSection = (props: ContactStoryblok) => {
         <div className="col-span-12 block md:hidden mt-10">
             <div className="flex flex-col">
                 <div className="flex flex-row gap-4 items-start mb-6">
-                    <img src={imageData.phone.nodes[0].publicURL} alt="Phone" width={20} height={20} loading="lazy"/>
+                    <DynamicImage fileNode={imageData.phone.nodes[0]} alt="Phone" width={20} height={20} loading="lazy"/>
                     <ReactMarkdown>{props.phone}</ReactMarkdown>
                 </div>
                 <div className="flex flex-row gap-4 items-start mb-6">
-                    <img src={imageData.hours.nodes[0].publicURL} alt="Hours" width={20} height={20} loading="lazy"/>
+                    <DynamicImage fileNode={imageData.hours.nodes[0]} alt="Hours" width={20} height={20} loading="lazy"/>
                     <ReactMarkdown>{props.hours}</ReactMarkdown>
                 </div>
                 <div className="flex flex-row gap-4 items-start">
-                    <img src={imageData.address.nodes[0].publicURL} alt="Address" width={18} height={18} loading="lazy"/>
+                    <DynamicImage fileNode={imageData.address.nodes[0]} alt="Address" width={18} height={18} loading="lazy"/>
                     <ReactMarkdown>{props.address}</ReactMarkdown>
                 </div>
             </div>
