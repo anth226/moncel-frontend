@@ -16,8 +16,7 @@ const CoursesSection = loadable(() => import('src/components/sections/courses/co
 
 // styles
 const pageStyles = {
-    color: "#232129",
-    fontFamily: "-apple-system, Roboto, sans-serif, serif",
+    fontFamily: "Inter,sans-serif",
 }
 
 enum SLUGS {

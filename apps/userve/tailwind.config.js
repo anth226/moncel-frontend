@@ -20,9 +20,11 @@ module.exports = {
         "dodger": "#4756FF", // highlight
         "cornflower": "#707bFF", // tags
         "melrose": "#C2C7FF", // accreditation
-        "hawkes": "#E1E4FE66", // gradient bg
+        "hawkes": "#E1E4FE", // gradient bg
         "gallery": "#F0F0F0", // card tag bg
         "hawkes-blue": "#E7EEFE", // card tag bg
+        "titan":"#F4F5FF", // gradient bg
+        "hint-green": "#EBFFF2", // accreditation bg
       },
     },
     fontFamily: {
@@ -36,7 +38,7 @@ module.exports = {
       'lg': '1.125rem',
       'xl': '1.25rem',
       '2xl': ['1.5rem','1.2em'],
-      '3xl': ['1.875rem','1.2em'],
+      '3xl': ['2rem','1.2em'],
       '4xl': ['2.5rem','1.2em'],
       '5xl': ['3rem','1.2em'],
       '6xl': ['4rem','1.2em'],
@@ -44,6 +46,7 @@ module.exports = {
     },
     borderWidth: {
       DEFAULT: "1px",
+      0: "0px",
       1: "1px",
       2: "2px",
     },
@@ -58,6 +61,12 @@ module.exports = {
         extrabold: 800,
         black: 900,
     },
+    maxWidth: {
+      '1/2': '50%',
+      '2/3': '66%',
+      '6xl': '71.25rem',
+      'full': '71.25rem',
+    }
   },
   plugins: [
     require('tw-elements/dist/plugin')

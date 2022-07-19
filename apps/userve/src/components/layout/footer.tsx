@@ -51,7 +51,7 @@ const imageQuery = graphql`
 
 const MobileFooter = () => {
     const imageData = useStaticQuery(imageQuery);
-    return <div className="md:hidden w-full m-auto flex flex-col px-4 pt-12">
+    return <div className="md:hidden w-full m-auto flex flex-col px-4 pt-12 bg-athens">
         <div className="flex justify-between">
             <Link to="/us">
                 <img src={imageData.logo.nodes[0].publicURL} alt="Userve" width={100} height={33} className="mb-6" />
@@ -99,7 +99,7 @@ const DesktopFooter = () => {
             <div className="col-span-2">
                 <div className="grid grid-cols-4 grid-flow-row gap-2 text-md text-lynch">
                     <div className="col-span-4">
-                        <h5 className="text-bluewood font-semibold text-md">SOLUTIONS</h5>
+                        <h5 className="text-bluewood font-semibold text-[14.4px] tracking-[1px]">SOLUTIONS</h5>
                     </div>
                     <Link to="/us/courses">Courses</Link>
                     <Link to="/us/business/accounts">Business</Link>
@@ -113,7 +113,7 @@ const DesktopFooter = () => {
             <div className="col-start-2 col-span-2">
                 <div className="grid grid-cols-4 grid-flow-row gap-2 text-md text-lynch">
                     <div className="col-span-4">
-                        <h5 className="text-bluewood font-semibold text-md">LEGAL</h5>
+                        <h5 className="text-bluewood font-semibold text-[14.4px] tracking-[1px]">LEGAL</h5>
                     </div>
                     <Link to="/us/legal/cookie-policy">Cookie Policy</Link>
                     <Link to="/us/legal/terms-of-use">Terms of Use</Link>

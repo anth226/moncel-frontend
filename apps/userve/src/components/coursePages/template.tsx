@@ -70,7 +70,7 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
         <Layout>
             <main style={pageStyles}>
                 <HeroSection content={heroContent} context={pageContext} heroStory={heroStory} />
-                <CourseInfoSection {...courseInfoContent} className="bg-gradient-to-b from-hawkes to-white" story={courseInfoStory} />
+                <CourseInfoSection {...courseInfoContent} className="bg-gradient-to-b from-titan to-white" story={courseInfoStory} />
                 <BenefitsSection {...benefitsContent} story={benefitsStory}/>
                 <TestimonialsSection {...testimonialsContent} />
 

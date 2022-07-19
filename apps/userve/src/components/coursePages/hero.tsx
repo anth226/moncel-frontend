@@ -19,15 +19,15 @@ const medalIconGraphicPath = `${IMAGE_DIR_PATH}/usx_medal.svg`;
 const dollarIconGraphicPath = `${IMAGE_DIR_PATH}/usx_dollar.svg`;
 const infoIconGraphicPath = `${IMAGE_DIR_PATH}/usx_i.svg`;
 
-const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?: string }) => <div className={`bg-melrose rounded-3xl text-sm px-4 py-[6px] mb-6 w-fit flex flex-row items-center ${props.className}`}>
-    <StaticImage src={medalIconGraphicPath} alt="Medallion Icon" className="mr-1" width={14} height={14}></StaticImage>
+const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?: string }) => <div className={`bg-melrose rounded-2xl text-sm px-4 py-[6px] mb-6 text-center ${props.className}`}>
+    <StaticImage src={medalIconGraphicPath} alt="Medallion Icon" className="mr-1 mt-1" width={15} height={16}></StaticImage>
     {props.children}
 </div>;
 
 const MoneyBackGuarantee = ({x}:{x:CourseType}) => {
     const lang = courseLang(x);
-    return <div className="bg-green-100 text-green-700 rounded-xl p-2 my-4 md:my-6 flex flex-row items-center justify-center text-sm text-center">
-        <StaticImage src={dollarIconGraphicPath} alt="Dollar Icon" className="mr-2" width={20} height={13}></StaticImage>
+    return <div className="bg-hint-green text-green-700 rounded-xl p-2 my-4 md:my-6 flex flex-row items-center justify-center text-[12.8px] text-center">
+        <StaticImage src={dollarIconGraphicPath} alt="Dollar Icon" className="hidden lg:block mr-2" width={20} height={13}></StaticImage>
         {lang == "lang-es" ? "Garantía de devolución de dinero" : "100% Money Back Guarantee"}
         <Tooltip message={lang == "lang-es" ? "¡Estamos seguros de que te van a encantar nuestros cursos! Si no es así, te haremos un reembolso completo de acuerdo con nuestra política de devoluciones." : "We're confident you'll love our courses! If not, we provide full refunds subject to our refund policy."}><StaticImage src={infoIconGraphicPath} alt="Info Icon" className="ml-2" width={16} height={16}></StaticImage>
         </Tooltip>
@@ -116,9 +116,9 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
         <div className="md:col-start-2 md:col-span-2 md:row-start-1 row-span-2">
             {imageComp}
         </div>
-        <div className="col-start-1 col-span-1 md:row-start-1 row-span-3 flex flex-col h-full">
+        <div className="col-start-1 col-span-1 md:row-start-1 row-span-3 flex flex-col h-full lg:mr-16">
             {content.tag ? <Tag>{content.tag}</Tag> : null}
-            <Header1 className="leading-8 !text-3xl md:!text-4xl">{title}</Header1>
+            <Header1 className="leading-8 !text-3xl md:!text-[2.25rem]">{title}</Header1>
             <Text>{content.desc || ""}</Text>
             <div className="mb-6 text-4xl font-extrabold">{content.price}</div>
 

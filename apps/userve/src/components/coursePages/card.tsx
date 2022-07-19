@@ -65,9 +65,9 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
     let imageComp;
 
     if (fileNode) {
-        imageComp = <DynamicImage fileNode={fileNode} alt={`${title} course preview image`} imgStyle={{borderTopRightRadius:'1rem',borderTopLeftRadius:'1rem'}}/>
+        imageComp = <DynamicImage fileNode={fileNode} alt={`${title} course preview image`} imgStyle={{borderTopRightRadius:'.5rem',borderTopLeftRadius:'.5rem'}}/>
     } else if (defaultGraphicFileNode) {
-            imageComp = <DynamicImage fileNode={defaultGraphicFileNode} alt={`${title}`} imgStyle={{borderTopRightRadius:'1rem',borderTopLeftRadius:'1rem'}}/>
+            imageComp = <DynamicImage fileNode={defaultGraphicFileNode} alt={`${title}`} imgStyle={{borderTopRightRadius:'.5rem',borderTopLeftRadius:'.5rem'}}/>
     } else {
             imageComp = null;
     }
@@ -78,7 +78,7 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
     } else {
         language = "Spanish"
     }
-    return <div className={`font-sans card flex flex-col rounded-2xl overflow-hidden bg-white shadow-xl ${props.className}`} data-test={`course-card-${encodeURIComponent(courseTitle || "")}`}>
+    return <div className={`font-sans card flex flex-col rounded-xl overflow-hidden bg-white shadow-xl ${props.className}`} data-test={`course-card-${encodeURIComponent(courseTitle || "")}`}>
         <div>
             <div className={ props.state ? `card-image ${tag == "coming-soon" ? "coming-soon" : "available"}` : "card-image"}>
                 { tag == "coming-soon" ? <a className="cursor-pointer" data-bs-toggle="modal" data-bs-target={url}>{imageComp}</a> : <a className="cursor-pointer" href={url}>{imageComp}</a>}
