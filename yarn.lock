@@ -19902,13 +19902,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"smartlook-client@npm:^7.0.1":
-  version: 7.0.1
-  resolution: "smartlook-client@npm:7.0.1"
-  checksum: aa17de12ca8c41d0d089c823922957fde4997c9e2571222af326f96270e4298d61491905b54ea312e6c8933d2be9ffcba9ae7985f83496b065c0f3f287d46f0a
-  languageName: node
-  linkType: hard
-
 "snake-case@npm:^2.1.0":
   version: 2.1.0
   resolution: "snake-case@npm:2.1.0"
@@ -22426,7 +22419,6 @@ __metadata:
     react-responsive: ^9.0.0-beta.6
     redux: ^4.1.2
     sass: ^1.49.11
-    smartlook-client: ^7.0.1
     start-server-and-test: ^1.14.0
     storyblok: ^3.10.4
     storyblok-generate-ts: ^1.4.1
