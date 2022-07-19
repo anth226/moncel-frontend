@@ -35,7 +35,6 @@ const CardButton = (props: ReactProps) => {
             buttonText = "Empieza Aquí"
         }
     }
-console.log(props)
     return (<span>
         { notify == "coming-soon" ? <a data-bs-toggle="modal" data-bs-target={courseUrl}><ButtonTransparent className="text-dark-blue border-dark-blue hover:bg-lynch hover:bg-opacity-10">{buttonText}</ButtonTransparent></a> : <a href={courseUrl}><ButtonTransparent className="text-white bg-dark-blue border-dark-blue hover:bg-navy">{buttonText}</ButtonTransparent></a>}
     </span>)
