@@ -16,7 +16,7 @@ export const genHighlightMarkup = (s: string, highlights: string[]) => {
 };
 
 export const Header1 = (props: PropTypes) => {
-    return <h1 className={`text-4xl md:text-5xl font-bold mb-6 text-bluewood ${props.className || ""}`}>{props.children}</h1>
+    return <h1 className={`text-4xl lg:text-5xl font-bold mb-6 text-bluewood ${props.className || ""}`}>{props.children}</h1>
 }
 
 export const Header2 = (props: PropTypes) => {
@@ -28,7 +28,7 @@ export const Header3 = (props: PropTypes) => {
 }
 
 export const Header4 = (props: PropTypes) => {
-    return <h4 className={`text-2xl font-bold mb-6 text-bluewood ${props.className || ""}`}>{props.children}</h4>
+    return <h4 className={`text-2xl font-semibold mb-6 text-bluewood ${props.className || ""}`}>{props.children}</h4>
 }
 
 export const Header5 = (props: PropTypes) => {

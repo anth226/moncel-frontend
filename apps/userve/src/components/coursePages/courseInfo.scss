@@ -1,0 +1,16 @@
+.accordion {
+    [aria-expanded="false"] {
+        @apply bg-white;
+    }
+    [aria-expanded="true"] {
+        @apply bg-lilac;
+    }
+    .faq-alt {
+        [aria-expanded="false"] {
+            @apply bg-white md:bg-lilac border-1 border-melrose md:border-transparent;
+        }
+        [aria-expanded="true"] {
+            @apply bg-lilac border-1 border-dodger md:border-transparent;
+        }
+    }
+}

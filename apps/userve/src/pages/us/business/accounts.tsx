@@ -18,8 +18,7 @@ const BusinessSection = loadable(() => import('src/components/sections/landing/b
 
 // styles
 const pageStyles = {
-    color: "#232129",
-    fontFamily: "-apple-system, Roboto, sans-serif, serif",
+    fontFamily: "Inter,sans-serif",
 }
 
 enum SLUGS {
