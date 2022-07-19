@@ -48,9 +48,9 @@ const BusinessButton = ({x}:{x:CourseType}) => {
     return <div>
         <div className="hidden md:block w-full border border-navy p-4 rounded-lg mt-6 text-center">
             <h3 className="text-bluewood text-sm leading-5 font-semibold">{lang == "lang-es" ? "Necesito Una Cuenta Comercial?" : "Need a Business Account?"}</h3>
-            <Link to="/us/about/contact-us" className="text-dark-blue font-normal text-xs leading-4 hover:underline">{lang == "lang-es" ? "Hablar Con Un Asesor" : "Speak With An Advisor"}</Link>
+            <a href="https://hello.userve.com/schedule" target="_blank" className="text-dark-blue font-normal text-xs leading-4 hover:underline">{lang == "lang-es" ? "Hablar Con Un Asesor" : "Speak With An Advisor"}</a>
         </div>
-        <Link to="/us/about/contact-us" className="md:hidden btn btn-invert border-2 border-melrose text-dark-blue mt-4">{lang == "lang-es" ? "Necesito Una Cuenta Comercial?" : "Need a Business Account?"}</Link>
+        <a href="https://hello.userve.com/schedule" target="_blank" className="md:hidden btn btn-invert border-2 border-melrose text-dark-blue mt-4">{lang == "lang-es" ? "Necesito Una Cuenta Comercial?" : "Need a Business Account?"}</a>
     </div>
 };
 
