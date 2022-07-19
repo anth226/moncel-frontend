@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
 import ReactMarkdown from 'react-markdown';
 
 import { Text, Header1, Header2, Header5 } from 'src/components/core/typography';
@@ -11,25 +10,23 @@ import { getFilename, findMatchingLocalFileNode, DynamicImage, Slug, LocalFileSo
 import { IconCardStoryblok, CoursePageStoryblok, BassetPurchaseModalStoryblok } from "src/storyblok-component-types";
 import PurchaseButton from './lib/purchaseFlow';
 import { Tooltip } from './tooltip';
-import { Link } from '@reach/router';
 
-// images - non-optimized
-const IMAGE_DIR_PATH = "../../images";
-const medalIconGraphicPath = `${IMAGE_DIR_PATH}/usx_medal.svg`;
-const dollarIconGraphicPath = `${IMAGE_DIR_PATH}/usx_dollar.svg`;
-const infoIconGraphicPath = `${IMAGE_DIR_PATH}/usx_i.svg`;
-
-const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?: string }) => <div className={`bg-melrose rounded-2xl text-sm px-4 py-[6px] mb-6 text-center ${props.className}`}>
-    <StaticImage src={medalIconGraphicPath} alt="Medallion Icon" className="mr-1 mt-1" width={15} height={16}></StaticImage>
-    {props.children}
-</div>;
+const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?: string }) => {
+    const imageData = useStaticQuery(imageQuery);
+    return <div className={`bg-melrose rounded-xl text-sm px-4 py-[6px] mb-6 text-center w-fit content-start ${props.className || ""}`}>
+        <DynamicImage fileNode={imageData.medal.nodes[0]} alt="Medallion Icon" width={15} height={15} className="mr-1 -mt-1 inline" loading="lazy"/>
+        {props.children}
+    </div>;
+}
 
 const MoneyBackGuarantee = ({x}:{x:CourseType}) => {
     const lang = courseLang(x);
+    const imageData = useStaticQuery(imageQuery);
     return <div className="bg-hint-green text-green-700 rounded-xl p-2 my-4 md:my-6 flex flex-row items-center justify-center text-[12.8px] text-center">
-        <StaticImage src={dollarIconGraphicPath} alt="Dollar Icon" className="hidden lg:block mr-2" width={20} height={13}></StaticImage>
+        <DynamicImage fileNode={imageData.dollar.nodes[0]} alt="Dollar Icon" width={15} height={15} className="hidden lg:block mr-2" loading="lazy"/>
         {lang == "lang-es" ? "Garantía de devolución de dinero" : "100% Money Back Guarantee"}
-        <Tooltip message={lang == "lang-es" ? "¡Estamos seguros de que te van a encantar nuestros cursos! Si no es así, te haremos un reembolso completo de acuerdo con nuestra política de devoluciones." : "We're confident you'll love our courses! If not, we provide full refunds subject to our refund policy."}><StaticImage src={infoIconGraphicPath} alt="Info Icon" className="ml-2" width={16} height={16}></StaticImage>
+        <Tooltip message={lang == "lang-es" ? "¡Estamos seguros de que te van a encantar nuestros cursos! Si no es así, te haremos un reembolso completo de acuerdo con nuestra política de devoluciones." : "We're confident you'll love our courses! If not, we provide full refunds subject to our refund policy."}>
+        <DynamicImage fileNode={imageData.info.nodes[0]} alt="Info Icon" width={14} height={14} className="ml-2" loading="lazy"/>
         </Tooltip>
     </div>;
 };
@@ -129,7 +126,7 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
             <MoneyBackGuarantee x={context.type} />
             <Features features={content.features || []} heroStory={heroStory}/>
         </div>
-        <div className="md:col-start-2 col-span-2 md:row-start-3">
+        <div className="md:col-start-2 col-span-2 md:row-start-3 lg:mt-6">
             <Header2 className="!text-2xl">{content.subtitle || ""}</Header2>
             <Benefits benefits={content.benefits || []} heroStory={heroStory} />
         </div>
@@ -187,6 +184,33 @@ query {
                 gatsbyImageData
             }
             publicURL
+        }
+    }
+    medal:allFile(filter: { name: { eq: "usx_medal" }}) {
+        nodes {
+            name
+            publicURL
+            childImageSharp {
+                gatsbyImageData
+            }
+        }
+    }
+    dollar:allFile(filter: { name: { eq: "usx_dollar" }}) {
+        nodes {
+            name
+            publicURL
+            childImageSharp {
+                gatsbyImageData
+            }
+        }
+    }
+    info:allFile(filter: { name: { eq: "usx_info" }}) {
+        nodes {
+            name
+            publicURL
+            childImageSharp {
+                gatsbyImageData
+            }
         }
     }
 }

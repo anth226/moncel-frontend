@@ -9,16 +9,16 @@ import { StoryblokStoryProps, getFilename, findMatchingLocalFileNode, DynamicIma
 const AboutUsSection = (props: AboutUsStoryblok & StoryblokStoryProps) => {
     const localImageFileNode = findMatchingLocalFileNode(getFilename(props.image?.filename || ""), props.story);
     return <Section>
-        <div className={`bg-${ props.bg_version } cta rounded-xl grid grid-cols-12 grid-flow-row shadow-lg`}>
-            <div className="col-span-12 md:col-span-6 text-white flex flex-col justify-center p-10 md:py-10 md:px-10 lg:py-14 lg:pl-14">
+        <div className={`bg-${ props.bg_version } cta rounded-xl grid grid-cols-12 shadow-lg`}>
+            <div className="col-span-12 md:col-span-6 text-white flex flex-col justify-center p-10 lg:py-14 lg:pl-14">
                 <Header2 className="!text-white">{props.header || ""}</Header2>
                 <Text className="!mb-8">{props.subheader || ""}</Text>
                 <a href={props.url}>
                     <ButtonTransparent className="w-fit text-white border-white hover:bg-white hover:bg-opacity-10">{props.link_text || ""}</ButtonTransparent>
                 </a>
             </div>
-            <div className="md:col-span-6 hidden justify-center relative md:flex self-end">
-                <DynamicImage fileNode={localImageFileNode} alt="About Userve" className="block absolute max-w-[430px] bottom-0" />
+            <div className="hidden md:flex justify-center md:col-span-6 relative self-end">
+                <DynamicImage fileNode={localImageFileNode} alt="About Userve" className="!absolute bottom-0 max-w-[430px]" />
             </div>
         </div>
     </Section>;
