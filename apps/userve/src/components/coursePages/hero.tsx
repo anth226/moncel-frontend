@@ -19,7 +19,7 @@ const medalIconGraphicPath = `${IMAGE_DIR_PATH}/usx_medal.svg`;
 const dollarIconGraphicPath = `${IMAGE_DIR_PATH}/usx_dollar.svg`;
 const infoIconGraphicPath = `${IMAGE_DIR_PATH}/usx_i.svg`;
 
-const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?: string }) => <div className={`bg-melrose rounded-3xl text-sm px-4 py-[6px] mb-6 text-center ${props.className}`}>
+const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?: string }) => <div className={`bg-melrose rounded-2xl text-sm px-4 py-[6px] mb-6 text-center ${props.className}`}>
     <StaticImage src={medalIconGraphicPath} alt="Medallion Icon" className="mr-1 mt-1" width={15} height={16}></StaticImage>
     {props.children}
 </div>;
