@@ -134,7 +134,7 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
             <MoneyBackGuarantee x={context.type} />
             <Features features={content.features || []} heroStory={heroStory}/>
         </div>
-        <div className="md:col-start-2 col-span-2 md:row-start-3">
+        <div className="md:col-start-2 col-span-2 md:row-start-3 lg:mt-6">
             <Header2 className="!text-2xl">{content.subtitle || ""}</Header2>
             <Benefits benefits={content.benefits || []} heroStory={heroStory} />
         </div>
