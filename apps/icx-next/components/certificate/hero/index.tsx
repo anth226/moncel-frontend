@@ -1,23 +1,22 @@
-import { StoryBlokCertificateHeroContent, ComponentListItem } from 'moncel-one-sdk/cms/types';
 import SidebarCTA from 'components/sidebar-cta';
+import { ComponentIccAdditionalHero, ComponentCoreText } from 'generated/strapi-types';
 
-const CertificateHero2 = ({ hero }: { hero: StoryBlokCertificateHeroContent }) => {
-    const heroBody = hero.body?.[0] || {};
-    const heroListItems = ("list_items" in heroBody) ? heroBody.list_items : [];
+const CertificateHero2 = ({ data }: { data: ComponentIccAdditionalHero }) => {
     return <div className="container">
         <div className="row">
             <div className="col-12 col-md-7 col-lg-8">
-                <h1 className="mb-4 text-center text-md-start">{hero.title}</h1>
+                <h1 className="mb-4 text-center text-md-start">{data.title}</h1>
                 <ul className="list-container">
-                {heroListItems.map((listItem: ComponentListItem, i) => {
+                {(data.HeroList || []).map((listItem: ComponentCoreText | null, i: number) => {
+                    if(!listItem) return null;
                     return <li key={`hero-list-item-${i}}`} className="mb-3">
                         {listItem.text}
-                    </li>
+                    </li>;
                 })}
                 </ul>
             </div>
             <div className="col-12 col-md-5 col-lg-4 d-none d-md-flex justify-content-end">
-                <SidebarCTA />
+                <SidebarCTA data={data} />
             </div>
         </div>
     </div>

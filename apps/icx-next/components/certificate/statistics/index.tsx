@@ -1,14 +1,15 @@
 
-import { StoryBlokCertificateStatisticsContent } from 'moncel-one-sdk/cms/types';
 import styles from './styles.module.scss';
 
-const Statistics = ({ statistics: statisticsContent }: { statistics: StoryBlokCertificateStatisticsContent }) => {
-    const { statistics } = statisticsContent;
+import { ComponentIccAdditionalStatsSection } from "generated/strapi-types";
+
+const Statistics = ({ data }: { data: ComponentIccAdditionalStatsSection }) => {
 
     return <div className={styles.section}>
-        { statistics.map((stat, i) => {
+        { (data.Stats || []).map((stat, i) => {
+            if(!stat) return null;
             return <div className="d-flex align-items-center" key={`statistics-${i}`}>
-                <div className="statistic pe-3">{stat.percent}<sup>%</sup></div>
+                <div className="statistic pe-3">{stat.title}<sup>%</sup></div>
                 <div className="display-4">{stat.description}</div>
             </div>
         })}

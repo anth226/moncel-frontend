@@ -1,5 +1,6 @@
 import type { InferGetStaticPropsType } from 'next'
 import jsonata from 'jsonata';
+import { gql } from "@apollo/client";
 
 import { getStoryblokStories } from 'lib';
 import { StoryblokStory, StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk/cms/types';
@@ -8,25 +9,25 @@ import Hero from 'components/why-instacert/hero';
 import Recommendations from 'components/certificate/recommendation';
 import SidebarCTA from 'components/sidebar-cta';
 import OneCol from 'components/layout/one-col';
+import { client } from 'lib/strapi/graphql';
+
+import { IccWhyInstacertPage, IccLandingPage } from "generated/strapi-types";
 
 const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
-    const layout = jsonata('content[component="template_layout"]').evaluate(props.layout);
-    const header: StoryBlokHeader = layout.header?.[0];
-    const footer: StoryBlokFooter = layout.footer?.[0];
-    const heroSecondary = jsonata('content.body[component="section_hero_secondary"]').evaluate(props.whyInstacert);
-    const recommendations = jsonata('content.body[component="section_recommendation"]').evaluate(props.whyInstacert);
+    const strapiData: IccWhyInstacertPage = props.strapiData.iccWhyInstacertPage.data.attributes;
+    const layoutData: Pick<IccLandingPage, "header" | "footer"> = props.strapiData.iccLandingPage.data.attributes;
 
     return <div>
-        <OneCol header={header} footer={footer}>
+        <OneCol header={layoutData.header} footer={layoutData.footer}>
             <div className="bg-primary">
-                <Hero hero={heroSecondary} />
+                <Hero data={strapiData} />
             </div>
             <div className="bg-light">
                 <div className="container">
                     <div className="row">
                         <div className="col-12 col-md-7 col-lg-8">
-                            <Recommendations recommendations={recommendations} />
+                            <Recommendations data={strapiData.RecommendationSection} />
                         </div>
                     </div>
                 </div>
@@ -35,7 +36,7 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-12">
-                            <SidebarCTA />
+                            <SidebarCTA data={strapiData.HeroSection} />
                         </div>
                     </div>
                 </div>
@@ -48,8 +49,85 @@ const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 export default Certificate;
 
 export const getStaticProps = async () => {
-    const stories = { stories: await getStoryblokStories() };
-    const layout = jsonata("stories[slug='layout']").evaluate(stories);
-    const whyInstacert: StoryblokStory = jsonata('stories[full_slug="ICX/why-instacert"]').evaluate(stories);
-    return { props: { stories, whyInstacert, layout } };
+    const { data } = await client.query({
+        query: gql`
+        query {
+            iccLandingPage {
+                data {
+                  attributes {
+                    header {
+                      logo {
+                        data {
+                          attributes {
+                            url
+                          }
+                        }
+                      }
+                      links { 
+                          href
+                        text
+                      }
+                    }
+                    footer {
+                      logo {
+                        data {
+                          attributes {
+                            url
+                          }
+                                    }
+                      }
+                      NavLinks {
+                        text
+                        href
+                      }
+                      LegalLinks {
+                        text
+                        href
+                      }
+                      Copyright
+                    }
+                  }
+                }
+            }
+            iccWhyInstacertPage {
+                data {
+                  attributes {
+                    title
+                    HeroSection {
+                      title
+                      closing
+                      HeroList {
+                          text
+                      }
+                      ProductName
+                      ProductList {
+                          text
+                      }
+                      ProductPrice
+                      Button {
+                          text
+                          href
+                      }
+                    }
+                    RecommendationSection {
+                      Title
+                      Recommendations {
+                          image {
+                            data {
+                              attributes {
+                                url
+                              }
+                            }
+                          }
+                          title
+                          description
+                      }
+                    }
+                  }
+                }
+            }
+        }
+        `
+    });
+    return { props: { strapiData: data } };
 }
