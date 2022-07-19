@@ -51,7 +51,7 @@ const imageQuery = graphql`
 
 const MobileFooter = () => {
     const imageData = useStaticQuery(imageQuery);
-    return <div className="md:hidden w-full m-auto flex flex-col px-4 pt-12">
+    return <div className="md:hidden w-full m-auto flex flex-col px-4 pt-12 bg-athens">
         <div className="flex justify-between">
             <Link to="/us">
                 <img src={imageData.logo.nodes[0].publicURL} alt="Userve" width={100} height={33} className="mb-6" />

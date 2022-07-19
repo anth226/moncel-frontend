@@ -23,6 +23,8 @@ module.exports = {
         "hawkes": "#E1E4FE", // gradient bg
         "gallery": "#F0F0F0", // card tag bg
         "hawkes-blue": "#E7EEFE", // card tag bg
+        "titan":"#F4F5FF", // gradient bg
+        "hint-green": "#EBFFF2", // accreditation bg
       },
     },
     fontFamily: {
@@ -60,6 +62,8 @@ module.exports = {
         black: 900,
     },
     maxWidth: {
+      '1/2': '50%',
+      '2/3': '66%',
       '6xl': '71.25rem',
       'full': '71.25rem',
     }
