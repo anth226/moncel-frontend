@@ -21,8 +21,8 @@ const infoIconGraphicPath = `${IMAGE_DIR_PATH}/usx_i.svg`;
 
 const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?: string }) => {
     const imageData = useStaticQuery(imageQuery);
-    return <div className={`bg-melrose rounded-2xl text-sm px-4 py-[6px] mb-6 text-center w-fit flex flex-column ${props.className}`}>
-        <img src={imageData.medal.nodes[0].publicURL} alt="Medallion Icon" width={15} height={15} className="mr-1" loading="lazy"/>
+    return <div className={`bg-melrose rounded-xl text-sm px-4 py-[6px] mb-6 text-center w-fit content-start ${props.className || ""}`}>
+        <img src={imageData.medal.nodes[0].publicURL} alt="Medallion Icon" width={15} height={15} className="mr-1 -mt-1 inline" loading="lazy"/>
         {props.children}
     </div>;
 }
