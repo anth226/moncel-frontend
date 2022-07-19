@@ -35,7 +35,7 @@ const BlogCard = ({ blog, fileNode }: { blog: Pick<BlogPostCardStoryblok, "tags"
             </div>
         </div>
         <div className="card-button">
-            <a className="btn btn-primary w-full" href={blog.link || ""}>Learn More</a>
+            <a className="btn btn-invert w-full" href={blog.link || ""}>Read More</a>
         </div>
     </div>
 };
