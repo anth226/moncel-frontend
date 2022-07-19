@@ -2,11 +2,13 @@ import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import ReactMarkdown from 'react-markdown';
 
-import { Header2, Text } from 'src/components/core/typography';
+import { Header2, Header5 } from 'src/components/core/typography';
 import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { CoursePageInfoSectionStoryblok } from 'src/storyblok-component-types';
 import { ExternalLink } from '../core';
 import { getFilename, findMatchingLocalFileNode, DynamicImage, Slug } from 'src/lib';
+
+import "./courseInfo.scss";
 
 interface StoryProps {
     story: Slug;
@@ -29,16 +31,16 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
                 </div>
                 <div className="accordion w-full" id={`accordion_${random}`}>
                     {infoCards.map((card, i) => {
-                        return <div className="border-solid border-1 p-6 border-slate-300 bg-white rounded-xl mb-6 last:mb-0 w-full" key={`info-${i}`}>
-                            <button className={`accordion-button !text-navy !shadow-none ${i == "0" ? "" : "collapsed"}`} type="button" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} aria-expanded={i == "0" ? "true" : "false"} aria-controls={`collapse_${random}_${i}`} id={`heading_${random}_${i}`}>
-                                {card.Title || ""}
-                            </button>
-                         
-                            <div id={`collapse_${random}_${i}`} className={i == "0" ? "accordion-collapse collapse show" : "accordion-collapse collapse"} aria-labelledby={`heading_${random}_${i}`} data-bs-parent={`#accordion_${random}`}>
-                                <div className="accordion-body">
-                                    <ReactMarkdown>{card.Description || ""}</ReactMarkdown>
+                        return <div className={`border-solid border-1 rounded-xl mb-6 overflow-hidden cursor-pointer last:mb-0 w-full ${props.layout == "title-right" ? "border-dodger" : "faq-alt"}`} key={`info-${i}`}>
+                            <div className={`!text-navy !shadow-none p-6 rounded-xl ${props.layout == "title-right" ? "" : "faq-item"} ${i == 0 ? "" : "collapsed"}`} data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} aria-expanded={i == 0 ? "true" : "false"} aria-controls={`collapse_${random}_${i}`} id={`heading_${random}_${i}`}>
+                                <Header5 className="mb-0 !text-navy">{card.Title || ""}</Header5>
+
+                                <div id={`collapse_${random}_${i}`} className={i == 0 ? "accordion-collapse collapse show" : "accordion-collapse collapse"} aria-labelledby={`heading_${random}_${i}`} data-bs-parent={`#accordion_${random}`}>
+                                    <div className="accordion-body">
+                                        <ReactMarkdown>{card.Description || ""}</ReactMarkdown>
+                                    </div>
                                 </div>
-                            </div>
+                            </div>               
                         </div>
                     })}
                 </div>
@@ -46,7 +48,6 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
                     {props.disclaimer == '' ? '' : <ReactMarkdown className="text-center">{props.disclaimer}</ReactMarkdown>}
                 </div>
             </div>
-
         </Section>
     </SectionFullWidth>;
 }
