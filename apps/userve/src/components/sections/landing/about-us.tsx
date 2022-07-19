@@ -18,7 +18,7 @@ const AboutUsSection = (props: AboutUsStoryblok & StoryblokStoryProps) => {
                 </a>
             </div>
             <div className="hidden md:flex justify-center md:col-span-6 relative self-end">
-                <DynamicImage fileNode={localImageFileNode} alt="About Userve" className="absolute bottom-0 max-w-[450px]" />
+                <DynamicImage fileNode={localImageFileNode} alt="About Userve" className="!absolute bottom-0 max-w-[430px]" />
             </div>
         </div>
     </Section>;
