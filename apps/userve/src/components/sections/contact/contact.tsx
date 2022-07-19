@@ -22,7 +22,7 @@ const ContactSection = (props: ContactStoryblok) => {
     };
 
     return <>
-        <div className="col-span-12 md:col-span-4 md:mr-20">
+        <div className="col-span-12 md:col-span-4 md:mr-10 lg:mr-20">
             <div>
                 <div className="flex flex-col">
                     <Header1 className="!text-4xl">{props.title || ""}</Header1>
