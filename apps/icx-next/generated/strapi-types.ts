@@ -864,7 +864,7 @@ export type FloatFilterInput = {
   startsWith?: InputMaybe<Scalars['Float']>;
 };
 
-export type GenericMorph = AfsGlobal | AfsLandingPage | ComponentAfsAddress | ComponentAfsFooter | ComponentAfsHeader | ComponentAfsHelpSection | ComponentAfsHelpSectionTab | ComponentAfsHeroSection | ComponentAfsNavMenu | ComponentCoreFaq | ComponentCoreGraphicLongText | ComponentCoreGraphicText | ComponentCoreLink | ComponentCoreSeo | ComponentCoreText | ComponentIccAdditionalBenefitsSection | ComponentIccAdditionalFaqSection | ComponentIccAdditionalHero | ComponentIccAdditionalRecommendationSection | ComponentIccAdditionalStatsSection | ComponentIccLayoutFooter | ComponentIccLayoutHeader | ComponentLandingBenefitsAndPrice | ComponentLandingEasySteps | ComponentLandingFaQs | ComponentLandingFinalCta | ComponentLandingHeroSection | I18NLocale | IccCertificatePage | IccFaq | IccLandingPage | IccLegal | IccWhyInstacertPage | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
+export type GenericMorph = AfsGlobal | AfsLandingPage | ComponentAfsAddress | ComponentAfsFooter | ComponentAfsHeader | ComponentAfsHelpSection | ComponentAfsHelpSectionTab | ComponentAfsHeroSection | ComponentAfsNavMenu | ComponentCoreFaq | ComponentCoreGraphicLongText | ComponentCoreGraphicText | ComponentCoreLink | ComponentCoreSeo | ComponentCoreText | ComponentIccAdditionalBenefitsSection | ComponentIccAdditionalFaqSection | ComponentIccAdditionalHero | ComponentIccAdditionalRecommendationSection | ComponentIccAdditionalStatsSection | ComponentIccLayoutFooter | ComponentIccLayoutHeader | ComponentLandingBenefitsAndPrice | ComponentLandingEasySteps | ComponentLandingFaQs | ComponentLandingFinalCta | ComponentLandingHeroSection | I18NLocale | IccCertificatePage | IccContact | IccFaq | IccLandingPage | IccLegal | IccWhyInstacertPage | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type I18NLocale = {
   __typename?: 'I18NLocale';
@@ -955,6 +955,86 @@ export type IccCertificatePageInput = {
   RecommendationSection?: InputMaybe<ComponentIccAdditionalRecommendationSectionInput>;
   StatsSection?: InputMaybe<ComponentIccAdditionalStatsSectionInput>;
   publishedAt?: InputMaybe<Scalars['DateTime']>;
+};
+
+export type IccContact = {
+  __typename?: 'IccContact';
+  ButtonLabel?: Maybe<Scalars['String']>;
+  EmailLabel?: Maybe<Scalars['String']>;
+  EmailPlaceholder?: Maybe<Scalars['String']>;
+  FirstNameLabel?: Maybe<Scalars['String']>;
+  FirstNamePlaceholder?: Maybe<Scalars['String']>;
+  InvalidEmail?: Maybe<Scalars['String']>;
+  InvalidFirstName?: Maybe<Scalars['String']>;
+  InvalidLastName?: Maybe<Scalars['String']>;
+  InvalidMessage?: Maybe<Scalars['String']>;
+  InvalidPhone?: Maybe<Scalars['String']>;
+  InvalidSubject?: Maybe<Scalars['String']>;
+  LastNameLabel?: Maybe<Scalars['String']>;
+  LastNamePlaceholder?: Maybe<Scalars['String']>;
+  LeadNote?: Maybe<Scalars['String']>;
+  MessageLabel?: Maybe<Scalars['String']>;
+  MessagePlaceholder?: Maybe<Scalars['String']>;
+  MobileButtonLabel?: Maybe<Scalars['String']>;
+  PhoneLabel?: Maybe<Scalars['String']>;
+  PhonePlaceholder?: Maybe<Scalars['String']>;
+  SubjectLabel?: Maybe<Scalars['String']>;
+  SubjectPlaceholder?: Maybe<Scalars['String']>;
+  createdAt?: Maybe<Scalars['DateTime']>;
+  description?: Maybe<Scalars['String']>;
+  locale?: Maybe<Scalars['String']>;
+  localizations?: Maybe<IccContactRelationResponseCollection>;
+  publishedAt?: Maybe<Scalars['DateTime']>;
+  title?: Maybe<Scalars['String']>;
+  updatedAt?: Maybe<Scalars['DateTime']>;
+};
+
+
+export type IccContactLocalizationsArgs = {
+  publicationState?: InputMaybe<PublicationState>;
+};
+
+export type IccContactEntity = {
+  __typename?: 'IccContactEntity';
+  attributes?: Maybe<IccContact>;
+  id?: Maybe<Scalars['ID']>;
+};
+
+export type IccContactEntityResponse = {
+  __typename?: 'IccContactEntityResponse';
+  data?: Maybe<IccContactEntity>;
+};
+
+export type IccContactInput = {
+  ButtonLabel?: InputMaybe<Scalars['String']>;
+  EmailLabel?: InputMaybe<Scalars['String']>;
+  EmailPlaceholder?: InputMaybe<Scalars['String']>;
+  FirstNameLabel?: InputMaybe<Scalars['String']>;
+  FirstNamePlaceholder?: InputMaybe<Scalars['String']>;
+  InvalidEmail?: InputMaybe<Scalars['String']>;
+  InvalidFirstName?: InputMaybe<Scalars['String']>;
+  InvalidLastName?: InputMaybe<Scalars['String']>;
+  InvalidMessage?: InputMaybe<Scalars['String']>;
+  InvalidPhone?: InputMaybe<Scalars['String']>;
+  InvalidSubject?: InputMaybe<Scalars['String']>;
+  LastNameLabel?: InputMaybe<Scalars['String']>;
+  LastNamePlaceholder?: InputMaybe<Scalars['String']>;
+  LeadNote?: InputMaybe<Scalars['String']>;
+  MessageLabel?: InputMaybe<Scalars['String']>;
+  MessagePlaceholder?: InputMaybe<Scalars['String']>;
+  MobileButtonLabel?: InputMaybe<Scalars['String']>;
+  PhoneLabel?: InputMaybe<Scalars['String']>;
+  PhonePlaceholder?: InputMaybe<Scalars['String']>;
+  SubjectLabel?: InputMaybe<Scalars['String']>;
+  SubjectPlaceholder?: InputMaybe<Scalars['String']>;
+  description?: InputMaybe<Scalars['String']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']>;
+  title?: InputMaybe<Scalars['String']>;
+};
+
+export type IccContactRelationResponseCollection = {
+  __typename?: 'IccContactRelationResponseCollection';
+  data: Array<IccContactEntity>;
 };
 
 export type IccFaq = {
@@ -1150,6 +1230,7 @@ export type Mutation = {
   __typename?: 'Mutation';
   createAfsGlobalLocalization?: Maybe<AfsGlobalEntityResponse>;
   createAfsLandingPageLocalization?: Maybe<AfsLandingPageEntityResponse>;
+  createIccContactLocalization?: Maybe<IccContactEntityResponse>;
   createIccLandingPageLocalization?: Maybe<IccLandingPageEntityResponse>;
   createUploadFile?: Maybe<UploadFileEntityResponse>;
   /** Create a new role */
@@ -1159,6 +1240,7 @@ export type Mutation = {
   deleteAfsGlobal?: Maybe<AfsGlobalEntityResponse>;
   deleteAfsLandingPage?: Maybe<AfsLandingPageEntityResponse>;
   deleteIccCertificatePage?: Maybe<IccCertificatePageEntityResponse>;
+  deleteIccContact?: Maybe<IccContactEntityResponse>;
   deleteIccFaq?: Maybe<IccFaqEntityResponse>;
   deleteIccLandingPage?: Maybe<IccLandingPageEntityResponse>;
   deleteIccLegal?: Maybe<IccLegalEntityResponse>;
@@ -1183,6 +1265,7 @@ export type Mutation = {
   updateAfsLandingPage?: Maybe<AfsLandingPageEntityResponse>;
   updateFileInfo: UploadFileEntityResponse;
   updateIccCertificatePage?: Maybe<IccCertificatePageEntityResponse>;
+  updateIccContact?: Maybe<IccContactEntityResponse>;
   updateIccFaq?: Maybe<IccFaqEntityResponse>;
   updateIccLandingPage?: Maybe<IccLandingPageEntityResponse>;
   updateIccLegal?: Maybe<IccLegalEntityResponse>;
@@ -1205,6 +1288,13 @@ export type MutationCreateAfsGlobalLocalizationArgs = {
 
 export type MutationCreateAfsLandingPageLocalizationArgs = {
   data?: InputMaybe<AfsLandingPageInput>;
+  id?: InputMaybe<Scalars['ID']>;
+  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
+};
+
+
+export type MutationCreateIccContactLocalizationArgs = {
+  data?: InputMaybe<IccContactInput>;
   id?: InputMaybe<Scalars['ID']>;
   locale?: InputMaybe<Scalars['I18NLocaleCode']>;
 };
@@ -1238,6 +1328,11 @@ export type MutationDeleteAfsGlobalArgs = {
 
 
 export type MutationDeleteAfsLandingPageArgs = {
+  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
+};
+
+
+export type MutationDeleteIccContactArgs = {
   locale?: InputMaybe<Scalars['I18NLocaleCode']>;
 };
 
@@ -1325,6 +1420,12 @@ export type MutationUpdateIccCertificatePageArgs = {
 };
 
 
+export type MutationUpdateIccContactArgs = {
+  data: IccContactInput;
+  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
+};
+
+
 export type MutationUpdateIccFaqArgs = {
   data: IccFaqInput;
 };
@@ -1399,6 +1500,7 @@ export type Query = {
   i18NLocale?: Maybe<I18NLocaleEntityResponse>;
   i18NLocales?: Maybe<I18NLocaleEntityResponseCollection>;
   iccCertificatePage?: Maybe<IccCertificatePageEntityResponse>;
+  iccContact?: Maybe<IccContactEntityResponse>;
   iccFaq?: Maybe<IccFaqEntityResponse>;
   iccLandingPage?: Maybe<IccLandingPageEntityResponse>;
   iccLegal?: Maybe<IccLegalEntityResponse>;
@@ -1438,6 +1540,12 @@ export type QueryI18NLocalesArgs = {
 
 
 export type QueryIccCertificatePageArgs = {
+  publicationState?: InputMaybe<PublicationState>;
+};
+
+
+export type QueryIccContactArgs = {
+  locale?: InputMaybe<Scalars['I18NLocaleCode']>;
   publicationState?: InputMaybe<PublicationState>;
 };
 

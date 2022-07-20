@@ -1,8 +1,5 @@
 import type { InferGetStaticPropsType } from 'next'
-import jsonata from 'jsonata';
 import { gql } from "@apollo/client";
-
-import { getStoryblokStories } from 'lib';
 
 import CertificateHero from 'components/certificate/hero';
 import Benefits from 'components/certificate/benefits';

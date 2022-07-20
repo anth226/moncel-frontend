@@ -41,6 +41,7 @@ src/generated/*
 .vscode
 .env.local
 
-# remove this
 yarn.lock
+
+generated
 

@@ -15,7 +15,7 @@ const Privacy = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) =
     const strapiData: IccLegal = props.strapiData.iccLegal.data.attributes;
     const layoutData: Pick<IccLandingPage, "header" | "footer" | "HeroSection"> = props.strapiData.iccLandingPage.data.attributes;
     const sidebarData: Pick<IccCertificatePage, "HeroSection"> = props.strapiData.iccCertificatePage.data.attributes;
-    debugger;
+
     if(router.isFallback) {
         return null;
     }
