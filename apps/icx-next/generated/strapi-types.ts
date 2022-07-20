@@ -864,7 +864,7 @@ export type FloatFilterInput = {
   startsWith?: InputMaybe<Scalars['Float']>;
 };
 
-export type GenericMorph = AfsGlobal | AfsLandingPage | ComponentAfsAddress | ComponentAfsFooter | ComponentAfsHeader | ComponentAfsHelpSection | ComponentAfsHelpSectionTab | ComponentAfsHeroSection | ComponentAfsNavMenu | ComponentCoreFaq | ComponentCoreGraphicLongText | ComponentCoreGraphicText | ComponentCoreLink | ComponentCoreSeo | ComponentCoreText | ComponentIccAdditionalBenefitsSection | ComponentIccAdditionalFaqSection | ComponentIccAdditionalHero | ComponentIccAdditionalRecommendationSection | ComponentIccAdditionalStatsSection | ComponentIccLayoutFooter | ComponentIccLayoutHeader | ComponentLandingBenefitsAndPrice | ComponentLandingEasySteps | ComponentLandingFaQs | ComponentLandingFinalCta | ComponentLandingHeroSection | I18NLocale | IccCertificatePage | IccFaq | IccLandingPage | IccWhyInstacertPage | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
+export type GenericMorph = AfsGlobal | AfsLandingPage | ComponentAfsAddress | ComponentAfsFooter | ComponentAfsHeader | ComponentAfsHelpSection | ComponentAfsHelpSectionTab | ComponentAfsHeroSection | ComponentAfsNavMenu | ComponentCoreFaq | ComponentCoreGraphicLongText | ComponentCoreGraphicText | ComponentCoreLink | ComponentCoreSeo | ComponentCoreText | ComponentIccAdditionalBenefitsSection | ComponentIccAdditionalFaqSection | ComponentIccAdditionalHero | ComponentIccAdditionalRecommendationSection | ComponentIccAdditionalStatsSection | ComponentIccLayoutFooter | ComponentIccLayoutHeader | ComponentLandingBenefitsAndPrice | ComponentLandingEasySteps | ComponentLandingFaQs | ComponentLandingFinalCta | ComponentLandingHeroSection | I18NLocale | IccCertificatePage | IccFaq | IccLandingPage | IccLegal | IccWhyInstacertPage | UploadFile | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsUser;
 
 export type I18NLocale = {
   __typename?: 'I18NLocale';
@@ -1042,6 +1042,36 @@ export type IccLandingPageRelationResponseCollection = {
   data: Array<IccLandingPageEntity>;
 };
 
+export type IccLegal = {
+  __typename?: 'IccLegal';
+  createdAt?: Maybe<Scalars['DateTime']>;
+  privacy: Scalars['String'];
+  publishedAt?: Maybe<Scalars['DateTime']>;
+  refund: Scalars['String'];
+  security: Scalars['String'];
+  terms: Scalars['String'];
+  updatedAt?: Maybe<Scalars['DateTime']>;
+};
+
+export type IccLegalEntity = {
+  __typename?: 'IccLegalEntity';
+  attributes?: Maybe<IccLegal>;
+  id?: Maybe<Scalars['ID']>;
+};
+
+export type IccLegalEntityResponse = {
+  __typename?: 'IccLegalEntityResponse';
+  data?: Maybe<IccLegalEntity>;
+};
+
+export type IccLegalInput = {
+  privacy?: InputMaybe<Scalars['String']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']>;
+  refund?: InputMaybe<Scalars['String']>;
+  security?: InputMaybe<Scalars['String']>;
+  terms?: InputMaybe<Scalars['String']>;
+};
+
 export type IccWhyInstacertPage = {
   __typename?: 'IccWhyInstacertPage';
   HeroSection: ComponentIccAdditionalHero;
@@ -1131,6 +1161,7 @@ export type Mutation = {
   deleteIccCertificatePage?: Maybe<IccCertificatePageEntityResponse>;
   deleteIccFaq?: Maybe<IccFaqEntityResponse>;
   deleteIccLandingPage?: Maybe<IccLandingPageEntityResponse>;
+  deleteIccLegal?: Maybe<IccLegalEntityResponse>;
   deleteIccWhyInstacertPage?: Maybe<IccWhyInstacertPageEntityResponse>;
   deleteUploadFile?: Maybe<UploadFileEntityResponse>;
   /** Delete an existing role */
@@ -1154,6 +1185,7 @@ export type Mutation = {
   updateIccCertificatePage?: Maybe<IccCertificatePageEntityResponse>;
   updateIccFaq?: Maybe<IccFaqEntityResponse>;
   updateIccLandingPage?: Maybe<IccLandingPageEntityResponse>;
+  updateIccLegal?: Maybe<IccLegalEntityResponse>;
   updateIccWhyInstacertPage?: Maybe<IccWhyInstacertPageEntityResponse>;
   updateUploadFile?: Maybe<UploadFileEntityResponse>;
   /** Update an existing role */
@@ -1304,6 +1336,11 @@ export type MutationUpdateIccLandingPageArgs = {
 };
 
 
+export type MutationUpdateIccLegalArgs = {
+  data: IccLegalInput;
+};
+
+
 export type MutationUpdateIccWhyInstacertPageArgs = {
   data: IccWhyInstacertPageInput;
 };
@@ -1364,6 +1401,7 @@ export type Query = {
   iccCertificatePage?: Maybe<IccCertificatePageEntityResponse>;
   iccFaq?: Maybe<IccFaqEntityResponse>;
   iccLandingPage?: Maybe<IccLandingPageEntityResponse>;
+  iccLegal?: Maybe<IccLegalEntityResponse>;
   iccWhyInstacertPage?: Maybe<IccWhyInstacertPageEntityResponse>;
   me?: Maybe<UsersPermissionsMe>;
   uploadFile?: Maybe<UploadFileEntityResponse>;
@@ -1411,6 +1449,11 @@ export type QueryIccFaqArgs = {
 
 export type QueryIccLandingPageArgs = {
   locale?: InputMaybe<Scalars['I18NLocaleCode']>;
+  publicationState?: InputMaybe<PublicationState>;
+};
+
+
+export type QueryIccLegalArgs = {
   publicationState?: InputMaybe<PublicationState>;
 };
 
