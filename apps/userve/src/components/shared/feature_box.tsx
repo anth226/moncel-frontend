@@ -21,7 +21,7 @@ const FeatureBoxSection = (props: FeatureBoxStoryblok) => {
         <Section className="grid grid-cols-12">
             <Header2 className="col-span-12 md:col-span-9">{props.title}</Header2>
 
-            <div className="col-span-12 grid grid-cols-12 md:grid-rows-2 gap-0 md:gap-10">
+            <div className="col-span-12 grid grid-cols-12 md:grid-rows-2 gap-0 md:gap-7">
                 {(props.list || []).map((list, i) => {
                     return <List {...list} key={`list-${i}`} />;
                 })}

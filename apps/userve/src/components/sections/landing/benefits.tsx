@@ -21,7 +21,7 @@ const BenefitsSection = (props: BenefitsStoryblok) => {
     return <SectionFullWidth className={`bg-white ${props.className || ""}`}>
         <Section>
             <div className="max-w-full md:max-w-[60%]" dangerouslySetInnerHTML={genHighlightMarkup(title, highlightWords)} />
-                <div className="flex flex-col md:grid md:grid-cols-3 grid-flow-row gap-10">
+                <div className="flex flex-col md:grid md:grid-cols-3 grid-flow-row gap-7">
                     { cards.map((card, i) => <div key={`benefits-card-${i}`}><BenefitsCard card={card}/></div> )}
                 </div>
         </Section>

@@ -79,7 +79,7 @@ const FeaturedBlogsSection = (props: FeaturedBlogStoryblok & StoryblokStoryProps
     return <Section>
             <Header2 className="w-full md:w-1/2">{props.title}</Header2>
             <Text className="w-full md:w-1/2 mb-10">{props.description}</Text>
-            <div className="flex flex-col md:grid md:grid-cols-3 grid-flow-md:row gap-10">
+            <div className="flex flex-col md:grid md:grid-cols-3 grid-flow-md:row gap-7">
                 { rssBlogItems ? rssBlogComponent : defaultBlogComponent }
             </div>
         </Section>

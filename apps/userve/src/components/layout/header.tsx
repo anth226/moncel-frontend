@@ -31,7 +31,7 @@ const Header = () => {
                 <Link to="/">
                     <StaticImage src="../../images/usx-logo-solid.svg" alt="Userve" width={100} />
                 </Link>
-                <div className="flex gap-6 ml-6 text-bluewood font-medium text-base">
+                <div className="flex gap-8 ml-6 text-bluewood font-medium text-base">
                     <HeaderLink to="/us/courses">Courses</HeaderLink>
                     <HeaderLink to="/us/business/accounts">Business</HeaderLink>
                     <HeaderLink to="https://blog.userve.com/us">Blog</HeaderLink>
