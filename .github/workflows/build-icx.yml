@@ -38,6 +38,7 @@ jobs:
           USERVE_STORYBLOK_TOKEN: ${{ secrets.USERVE_STORYBLOK_TOKEN }}
           STORYBLOK_TOKEN: ${{ secrets.ICX_NEXT_STORYBLOK_TOKEN }}
           STORYBLOK_SITE_NAME: ${{ secrets.ICX_NEXT_STORYBLOK_SITE_NAME }}
+          STRAPI_URL: ${{ secrets.STRAPI_URL }}
         run: echo "Using yarn version $(yarn --version)"
       - run: yarn
       - name: Full build
@@ -45,4 +46,5 @@ jobs:
           USERVE_STORYBLOK_TOKEN: ${{ secrets.USERVE_STORYBLOK_TOKEN }}
           STORYBLOK_TOKEN: ${{ secrets.ICX_NEXT_STORYBLOK_TOKEN }}
           STORYBLOK_SITE_NAME: ${{ secrets.ICX_NEXT_STORYBLOK_SITE_NAME }}
+          STRAPI_URL: ${{ secrets.STRAPI_URL }}
         run: yarn build
