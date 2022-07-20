@@ -69,8 +69,8 @@ const IndexPage = ({ data }: PageProps<DataProps>) => {
 
           {/* Featured Courses */}
           <SectionFullWidth className="bg-[url('../images/usx-home-courses.jpg')] bg-cover bg-center">
-            <Section className="flex flex-col md:grid md:grid-cols-3 gap-10 items-stretch -mb-36">
-              <div className="col-start-1">
+            <Section className="flex flex-col md:grid md:grid-cols-3 gap-7 items-stretch -mb-36">
+              <div className="col-start-1 lg:pr-2">
                 <Header2><span className="text-white">{coursesContent.title || ""}</span></Header2>
                 <Text><span className="text-white">{coursesContent.description || ""}</span></Text>
               </div>

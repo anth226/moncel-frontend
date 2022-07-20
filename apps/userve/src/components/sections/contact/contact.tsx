@@ -51,7 +51,7 @@ const ContactSection = (props: ContactStoryblok) => {
             </div>
         </div>
         <div className="col-span-12 md:col-span-8 col-end-13">
-            <ul className="hidden md:grid nav nav-tabs mb-8 gap-8 grid-cols-12" id="tabs-tabFill"
+            <ul className="hidden md:grid nav nav-tabs mb-8 gap-7 grid-cols-12" id="tabs-tabFill"
                 role="tablist">
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
                     <a href="#tabs-individual" className="nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start active" id="tabs-home-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-individual" role="tab"

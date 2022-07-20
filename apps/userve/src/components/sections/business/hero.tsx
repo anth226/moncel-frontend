@@ -21,7 +21,7 @@ export default (props: HeroStoryblok & StoryblokStoryProps) => {
                 </a>
             </div>
         </div>
-        <div className="order-1 md:order-12 col-span-12 md:col-span-5 lg:col-span-6 mb-6 md:mb-0 lg:ml-10 flex justify-center">
+        <div className="order-1 md:order-12 col-span-12 md:col-span-5 lg:col-span-6 mb-6 md:mb-0 lg:ml-12 flex justify-center">
             <DynamicImage fileNode={imageFileNode} alt={props.title || "hero image"} className="max-w-[320px] md:max-w-full" />
         </div>
     </Section>
