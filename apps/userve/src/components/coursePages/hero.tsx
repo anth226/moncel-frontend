@@ -22,7 +22,7 @@ const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?
 const MoneyBackGuarantee = ({x}:{x:CourseType}) => {
     const lang = courseLang(x);
     const imageData = useStaticQuery(imageQuery);
-    return <div className="bg-hint-green text-green-700 rounded-xl p-2 my-4 md:my-6 flex flex-row items-center justify-center text-[12.8px] text-center">
+    return <div className="bg-hint-green text-green-700 rounded-xl p-2 mt-4 mb-6 flex flex-row items-center justify-center text-[12.8px] text-center">
         <DynamicImage fileNode={imageData.dollar.nodes[0]} alt="Dollar Icon" width={15} height={15} className="hidden lg:block mr-2" loading="lazy"/>
         {lang == "lang-es" ? "Garantía de devolución de dinero" : "100% Money Back Guarantee"}
         <Tooltip message={lang == "lang-es" ? "¡Estamos seguros de que te van a encantar nuestros cursos! Si no es así, te haremos un reembolso completo de acuerdo con nuestra política de devoluciones." : "We're confident you'll love our courses! If not, we provide full refunds subject to our refund policy."}>
@@ -43,7 +43,7 @@ const EnrollButton = ({ children, courseType }: { children: React.ReactNode, cou
 const BusinessButton = ({x}:{x:CourseType}) => {
     const lang = courseLang(x);
     return <div>
-        <div className="hidden md:block w-full border border-navy p-4 rounded-lg mt-6 text-center">
+        <div className="hidden md:block w-full border border-navy p-4 rounded-lg mt-4 text-center">
             <h3 className="text-bluewood text-sm leading-5 font-semibold">{lang == "lang-es" ? "Necesito Una Cuenta Comercial?" : "Need a Business Account?"}</h3>
             <a href="https://hello.userve.com/schedule" target="_blank" className="text-dark-blue font-normal text-xs leading-4 hover:underline">{lang == "lang-es" ? "Hablar Con Un Asesor" : "Speak With An Advisor"}</a>
         </div>
@@ -116,8 +116,8 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
         <div className="col-start-1 col-span-1 md:row-start-1 row-span-3 flex flex-col h-full lg:mr-16">
             {content.tag ? <Tag>{content.tag}</Tag> : null}
             <Header1 className="leading-8 !text-3xl md:!text-[2.25rem]">{title}</Header1>
-            <Text>{content.desc || ""}</Text>
-            <div className="mb-6 text-4xl font-extrabold">{content.price}</div>
+            <Text className="!mb-4">{content.desc || ""}</Text>
+            <div className="mb-4 text-4xl font-extrabold">{content.price}</div>
 
             <EnrollButton courseType={{ type: context.type, enroll: context.enroll || "" }}>
                 <p className="text-inherit !mb-0" data-test="enroll-button">{lang == "lang-es" ? "Regístrate" : "Enroll Now"}</p>
