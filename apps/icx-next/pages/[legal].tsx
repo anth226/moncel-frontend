@@ -91,9 +91,9 @@ export const getStaticProps = async ({ params }: LegalRouteParams) => {
                             header {
                             logo {
                                 data {
-                                attributes {
-                                    url
-                                }
+                                    attributes {
+                                        url
+                                    }
                                 }
                             }
                             links { 

@@ -8,7 +8,7 @@ import { client } from 'lib/strapi/graphql';
 import styles from 'styles/icx_secondary.module.scss';
 
 const Contact = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
-    const strapiData: IccContact = props.strapiData.iccCertificatePage.data.attributes;
+    const strapiData: IccContact = props.strapiData.iccContact.data.attributes;
     const layoutData: Pick<IccLandingPage, "header" | "footer"> = props.strapiData.iccLandingPage.data.attributes;
     const sidebarData: Pick<IccCertificatePage, "HeroSection"> = props.strapiData.iccCertificatePage.data.attributes;
 
