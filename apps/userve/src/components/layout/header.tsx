@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import { useLocation } from '@reach/router';
 import { StaticImage } from "gatsby-plugin-image";
 
@@ -17,19 +18,21 @@ import HelpIcon from '../../images/usx_menu_question.svg';
 import MailIcon from '../../images/usx_menu_mail.svg';
 
 import ArrowIcon from '../../images/usx_menu_arrow.svg';
+import { DynamicImage } from 'src/lib';
 
 const NAVBAR_ID = "navbar";
 const MOBILE_DROPDOWN_ID = "mobile-dropdown";
 
 const Header = () => {
     const isMobileMenuOpen = useAppSelector(state => state.navbar.isMobileMenuOpen);
+    const imageData = useStaticQuery(imageQuery);
     return <nav className={`${isMobileMenuOpen ? "fixed z-10 accordion mx-0 w-full" : "flex md:mx-4 w-max-6xl"} justify-between md:justify-center md:w-auto xl:max-w-6xl lg:mx-4 xl:m-auto md:py-4 lg:py-0 border-b-1 lg:border-b-0 border-mischka lg:border-transparent `} id={NAVBAR_ID}>
 
         {/* Desktop+ menu */}
         <div className="hidden lg:flex justify-between lg:w-[1140px] max-w-6xl lg:py-4 border-b-0 lg:border-b-1 lg:border-mischka">
             <div className="hidden lg:flex items-center content-start">
                 <Link to="/">
-                    <StaticImage src="../../images/usx-logo-solid.svg" alt="Userve" width={100} />
+                    <DynamicImage fileNode={imageData.logo.nodes[0]} alt="Userve" width={100} height={33} loading="lazy"/>
                 </Link>
                 <div className="flex gap-8 ml-6 text-bluewood font-medium text-base">
                     <HeaderLink to="/us/courses">Courses</HeaderLink>
@@ -132,3 +135,17 @@ const Logo = () => {
 };
 
 export default Header;
+
+const imageQuery = graphql`
+    query {
+        logo:allFile(filter: { name: { eq: "usx-logo-solid" }}) {
+            nodes {
+                name
+                publicURL
+                childImageSharp {
+                    gatsbyImageData
+                  }
+            }
+        }
+    }
+`;
