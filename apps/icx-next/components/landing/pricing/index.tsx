@@ -13,7 +13,8 @@ const PricingSection = ({ data }: { data: ComponentLandingBenefitsAndPrice }) =>
         <div className="col-12 col-md-6 col-lg-4 order-1 order-md-2 pb-4 pb-md-0">
             <ul className="list-container ms-4">
                 { (data.benefits || []).map((benefit, i) => {
-                    return <li key={`pricing-benefits-${i}`} className="mb-3">{benefit!.text}</li>
+                    if(!benefit) return null;
+                    return <li key={`pricing-benefits-${i}`} className="mb-3">{benefit.text}</li>
                 })}
             </ul>
         </div>

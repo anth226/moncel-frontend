@@ -1,4 +1,3 @@
-import { StoryBlokCertificateHeroContent, ComponentListItem, ComponentList } from 'moncel-one-sdk/cms/types';
 import SidebarCTA from 'components/sidebar-cta';
 import { IccWhyInstacertPage } from "generated/strapi-types";
 

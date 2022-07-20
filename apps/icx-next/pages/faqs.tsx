@@ -15,7 +15,7 @@ import { IccCertificatePage, IccFaq, IccLandingPage } from "generated/strapi-typ
 const Faqs = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const [ expanded, setExpanded ] = useState(-1);
 
-    const strapiData: IccFaq = props.strapiData.IccFaq.data.attributes;
+    const strapiData: IccFaq = props.strapiData.iccFaq.data.attributes;
     const layoutData: Pick<IccLandingPage, "header" | "footer" | "HeroSection"> = props.strapiData.iccLandingPage.data.attributes;
     const sidebarData: Pick<IccCertificatePage, "HeroSection"> = props.strapiData.iccCertificatePage.data.attributes;
 
