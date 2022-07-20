@@ -25,7 +25,7 @@ const Sidebar = ({ data }: { data: ComponentIccAdditionalHero }) => {
             { (data.ProductList || []).map((t: ComponentCoreText | null) => {
                 if(!t) return null;
                 return <li className="pb-1">{t.text}</li>
-            })};
+            })}
         </ul>
         <div className="display-2 price my-0 mt-lg-2 mb-lg-3 text-white">{data.ProductPrice}</div>
         { data.Button ? <Link href={data.Button.href} passHref><div className="btn btn-primary">{data.Button.text}</div></Link> : null }
