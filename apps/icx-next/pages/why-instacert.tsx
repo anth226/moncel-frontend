@@ -1,9 +1,5 @@
 import type { InferGetStaticPropsType } from 'next'
-import jsonata from 'jsonata';
 import { gql } from "@apollo/client";
-
-import { getStoryblokStories } from 'lib';
-import { StoryblokStory, StoryBlokHeader, StoryBlokFooter } from 'moncel-one-sdk/cms/types';
 
 import Hero from 'components/why-instacert/hero';
 import Recommendations from 'components/certificate/recommendation';

@@ -1,7 +1,7 @@
 export type FaqCard = {
     question: string;
     answer: string;
-    [key: string]: any;
+    [key: string]: unknown;
 };
 
 export type SectionFAQsData = {

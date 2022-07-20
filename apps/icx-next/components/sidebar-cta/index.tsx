@@ -9,13 +9,13 @@ interface Point {
 const Sidebar = ({ data }: { data: ComponentIccAdditionalHero }) => {
 
     useScrollPosition(( { currPos }:Point ) => {
-        const sidebar = document.getElementById('sidebar-cta')!;
+        const sidebar = document.getElementById('sidebar-cta');
         const position = currPos.y;
 
         if (position <= -120) {
-            sidebar.classList.add('affix');
+            sidebar?.classList.add('affix');
         } else {
-            sidebar.classList.remove('affix');
+            sidebar?.classList.remove('affix');
         }
     })
     
