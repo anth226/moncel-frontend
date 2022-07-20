@@ -65,7 +65,7 @@ enum TITLES {
     terms= "Terms of Use",
     security= "Security Policy",
     refund= "Refund Policy"
-};
+}
 
 interface LegalRouteParams {
     params: { legal: keyof typeof TITLES }

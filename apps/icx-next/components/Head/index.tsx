@@ -1,5 +1,3 @@
-
-// @ts-nocheck
 import Head from 'next/head';
 
 const _Head = () => {
