@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 
 import { Section } from 'src/components/core/Section';
 import { HeroStoryblok } from 'src/storyblok-component-types';
-import { Text } from 'src/components/core/typography';
+import { Header1, Text } from 'src/components/core/typography';
 import { DynamicImage, getFilename, findMatchingLocalFileNode, StoryblokStoryProps } from 'src/lib/images';
 
 export default (props: HeroStoryblok & StoryblokStoryProps) => {
