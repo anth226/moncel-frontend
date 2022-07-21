@@ -1,4 +1,3 @@
-// import { StoryBlokCertificateHeroContent } from 'moncel-one-sdk/cms/types';
 import { useMediaQuery } from 'react-responsive'
 import ReactMarkdown from 'react-markdown'
 import { ComponentLandingHeroSection } from 'generated/strapi-types';
@@ -8,7 +7,6 @@ import Link from 'next/link';
 
 const strapiURL = process.env.STRAPI_URL;
 
-// const Hero = ({ hero }: { hero: StoryBlokCertificateHeroContent  }) => {
 const Hero = ({ data }: { data: ComponentLandingHeroSection  }) => {
     const isTablet = useMediaQuery({
         query: '(max-width: 768px)'
