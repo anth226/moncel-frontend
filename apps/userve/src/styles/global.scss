@@ -1,6 +1,9 @@
 @tailwind base;
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   body {
     @apply font-sans;
   }
@@ -73,6 +76,9 @@
   }
   .checktitle {
     padding:0 0 1rem 2rem;
+    h5 {
+      @apply mb-4;
+    }
     &::before {
       content: url(https://a.storyblok.com/f/153125/x/34afe2de07/usx-check.svg);
       position:absolute;
