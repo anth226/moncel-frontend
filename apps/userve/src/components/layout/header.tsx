@@ -21,7 +21,11 @@ import ArrowIcon from '../../images/usx_menu_arrow.svg';
 const NAVBAR_ID = "navbar";
 const MOBILE_DROPDOWN_ID = "mobile-dropdown";
 
-const Header = () => {
+export interface HeaderProps {
+    highlightPathname?: string;
+};
+
+const Header = ({ highlightPathname }: HeaderProps) => {
     const isMobileMenuOpen = useAppSelector(state => state.navbar.isMobileMenuOpen);
     return <nav className={`${isMobileMenuOpen ? "fixed z-10 accordion mx-0 w-full" : "flex md:mx-4 w-max-6xl"} justify-between md:justify-center md:w-auto xl:max-w-6xl lg:mx-4 xl:m-auto md:py-4 lg:py-0 border-b-1 lg:border-b-0 border-mischka lg:border-transparent `} id={NAVBAR_ID}>
 
@@ -32,12 +36,12 @@ const Header = () => {
                     <StaticImage src="../../images/usx-logo-solid.svg" alt="Userve" width={100} />
                 </Link>
                 <div className="flex gap-8 ml-6 text-bluewood font-medium text-base">
-                    <HeaderLink to="/us/courses">Courses</HeaderLink>
-                    <HeaderLink to="/us/business/accounts">Business</HeaderLink>
-                    <HeaderLink to="https://blog.userve.com/us">Blog</HeaderLink>
-                    <HeaderLink to="/us/about/about-us">About Us</HeaderLink>
-                    <HeaderLink to="https://help.userve.com/knowledge">Help Center</HeaderLink>
-                    <HeaderLink to="/us/about/contact-us">Contact</HeaderLink>
+                    <HeaderLink to="/us/courses" highlightPathname={highlightPathname}>Courses</HeaderLink>
+                    <HeaderLink to="/us/business/accounts" highlightPathname={highlightPathname}>Business</HeaderLink>
+                    <HeaderLink to="https://blog.userve.com/us" highlightPathname={highlightPathname}>Blog</HeaderLink>
+                    <HeaderLink to="/us/about/about-us" highlightPathname={highlightPathname}>About Us</HeaderLink>
+                    <HeaderLink to="https://help.userve.com/knowledge" highlightPathname={highlightPathname}>Help Center</HeaderLink>
+                    <HeaderLink to="/us/about/contact-us" highlightPathname={highlightPathname}>Contact</HeaderLink>
                 </div>
             </div>
             <div className="hidden lg:flex flex-row items-center text-bluewood font-medium">
@@ -60,9 +64,9 @@ const Header = () => {
     </nav>;
 }
 
-const HeaderLink = ({ to, children }: { to: string, children: JSX.Element | JSX.Element[] | string }) => {
+const HeaderLink = ({ to, children, highlightPathname }: { to: string, highlightPathname?: string, children: JSX.Element | JSX.Element[] | string }) => {
     const location = useLocation();
-    const className = (to === location.pathname) ? "border-navy py-2 " : "border-transparent py-2";
+    const className = (to === location.pathname || to === highlightPathname) ? "border-navy py-2 " : "border-transparent py-2";
     return <Link to={to} className={`border-b-1 ${className}`}>{children}</Link>
 };
 
@@ -71,7 +75,7 @@ const HamburgerMenu = () => {
     const isMobileMenuOpen = useAppSelector(state => state.navbar.isMobileMenuOpen);
     return <button className="inline-flex items-center justify-center p2 rounded-md" aria-controls="mobile-menu" aria-expanded="false" aria-label="mobile header hamburger menu" onClick={() => dispatch(toggleNavbarOpen())}>
         {isMobileMenuOpen ? <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#000b8f" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg> : <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#000b8f" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>}
-    </button>
+    </button>;
 };
 
 const MobileMenu = () => {
