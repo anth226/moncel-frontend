@@ -67,7 +67,7 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
     
     return <div>
         <Head seo={seoContent} coursePageContext={pageContext} />
-        <Layout>
+        <Layout headerProps={{ highlightPathname: "/us/courses" }}>
             <main style={pageStyles}>
                 <HeroSection content={heroContent} context={pageContext} heroStory={heroStory} />
                 <CourseInfoSection {...courseInfoContent} className="bg-gradient-to-b from-titan to-white" story={courseInfoStory} />
@@ -80,9 +80,8 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
             </main>
         </Layout>
     </div>
-}
+};
 
-{/* const query = ``; // query default copy, then query copy for this url */}
 export const pageQuery = graphql`
   query {
     hero:allStoryblokEntry(filter: {full_slug: {regex: "/^courses/course-pages/hero/[^/]*$/"}}) {

@@ -8,7 +8,7 @@ import { LegalPageStoryblok, SeoStoryblok } from "src/storyblok-component-types"
 import { TextSection } from 'src/components/legal';
 
 const pageStyles = {
-    fontFamily: "Inter,sans-serif",
+     fontFamily: "Inter,sans-serif",
 }
 
 export default ({ pageContext }: PageProps<DataProps, LegalPageStoryblok, SeoStoryblok>) => {
@@ -38,7 +38,7 @@ export const pageQuery = graphql`
     seo:allStoryblokEntry(filter: {full_slug: {eq: "seo"}}) {
       nodes {
         full_slug
-        slug 
+        slug
         content
       }
     }
