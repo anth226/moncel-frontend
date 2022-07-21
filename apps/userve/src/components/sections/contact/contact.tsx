@@ -118,15 +118,21 @@ const ContactSection = (props: ContactStoryblok) => {
             <div className="flex flex-col">
                 <div className="flex flex-row gap-4 items-start mb-6">
                     <DynamicImage fileNode={imageData.phone.nodes[0]} alt="Phone" width={20} height={20} loading="lazy"/>
-                    <ReactMarkdown>{props.phone}</ReactMarkdown>
+                    <div>
+                        <ReactMarkdown>{props.phone}</ReactMarkdown>
+                    </div>
                 </div>
                 <div className="flex flex-row gap-4 items-start mb-6">
                     <DynamicImage fileNode={imageData.hours.nodes[0]} alt="Hours" width={20} height={20} loading="lazy"/>
-                    <ReactMarkdown>{props.hours}</ReactMarkdown>
+                    <div>
+                        <ReactMarkdown>{props.hours}</ReactMarkdown>
+                    </div>
                 </div>
                 <div className="flex flex-row gap-4 items-start">
                     <DynamicImage fileNode={imageData.address.nodes[0]} alt="Address" width={18} height={18} loading="lazy"/>
-                    <ReactMarkdown>{props.address}</ReactMarkdown>
+                    <div>
+                        <ReactMarkdown>{props.address}</ReactMarkdown>
+                    </div>
                 </div>
             </div>
         </div>

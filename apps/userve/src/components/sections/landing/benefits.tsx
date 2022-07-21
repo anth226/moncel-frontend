@@ -2,8 +2,7 @@ import React from "react";
 import { Section, SectionFullWidth } from 'src/components/core/Section';
 
 import { BenefitsStoryblok, IconCardStoryblok } from 'src/storyblok-component-types';
-import { genHighlightMarkup } from "src/components/core/typography";
-
+import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Header5, Text } from 'src/components/core/typography';
 
 const BenefitsCard = ({ card }: { card: IconCardStoryblok }) => {
@@ -17,10 +16,11 @@ const BenefitsCard = ({ card }: { card: IconCardStoryblok }) => {
 const BenefitsSection = (props: BenefitsStoryblok) => {
     const cards = props.benefits_cards || [];
     const title = props.title || "";
-    const highlightWords = (props.highlight_words || "").split(',');
     return <SectionFullWidth className={`bg-white ${props.className || ""}`}>
         <Section>
-            <div className="max-w-full md:max-w-[60%]" dangerouslySetInnerHTML={genHighlightMarkup(title, highlightWords)} />
+                <div className="max-w-full md:max-w-[60%] mt-0 md:mt-6 lg:mt-0">
+                    <ReactMarkdown>{title}</ReactMarkdown>
+                </div>
                 <div className="flex flex-col md:grid md:grid-cols-3 grid-flow-row gap-7">
                     { cards.map((card, i) => <div key={`benefits-card-${i}`}><BenefitsCard card={card}/></div> )}
                 </div>

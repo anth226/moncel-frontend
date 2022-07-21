@@ -74,7 +74,7 @@ const MobileFooter = () => {
         <Header5 className="mt-6">Legal</Header5>
 
         <div className="grid grid-cols-2 grid-flow-row gap-2 w-full text-md text-lynch">
-            <Link to="/us/legal/cookie-policy">Cookie Policy</Link>
+            <Link to="/us/legal/cookie-policy">Cookies Policy</Link>
             <Link to="/us/legal/terms-of-use">Terms of Use</Link>
             <Link to="/us/legal/refund-policy">Refund Policy</Link>
             <Link to="/us/legal/privacy-policy">Privacy Policy</Link>
@@ -89,14 +89,14 @@ const DesktopFooter = () => {
     const imageData = useStaticQuery(imageQuery);
     return <div className="hidden md:block footer bg-athens py-12 lg:py-16 px-4">
         <div className="lg:max-w-6xl lg:mx-auto grid grid-cols-3 grid-flow-row border-b-1 border-mischka pb-8 mb-8">
-            <div className="col-span-1 flex-col items-start text-navy font-normal">
+            <div className="col-span-1 row-span-2 flex-col items-start text-navy font-normal">
                 <Link to="/us">
                     <img src={imageData.logo.nodes[0].publicURL} alt="Userve" width={100} height={33} className="mb-6" loading="lazy"/>
                 </Link>
                 <Phone className="mb-6" />
                 <Social />
             </div>
-            <div className="col-span-2">
+            <div className="col-span-2 mb-6">
                 <div className="grid grid-cols-4 grid-flow-row gap-2 text-md text-lynch">
                     <div className="col-span-4">
                         <h5 className="text-bluewood font-semibold text-[14.4px] tracking-[1px]">SOLUTIONS</h5>
@@ -115,7 +115,7 @@ const DesktopFooter = () => {
                     <div className="col-span-4">
                         <h5 className="text-bluewood font-semibold text-[14.4px] tracking-[1px]">LEGAL</h5>
                     </div>
-                    <Link to="/us/legal/cookie-policy">Cookie Policy</Link>
+                    <Link to="/us/legal/cookie-policy">Cookies Policy</Link>
                     <Link to="/us/legal/terms-of-use">Terms of Use</Link>
                     <Link to="/us/legal/refund-policy">Refund Policy</Link>
                     <Link to="/us/legal/privacy-policy">Privacy Policy</Link>
