@@ -1,4 +1,5 @@
-[[redirects]]
-  from = "/cms/*"
-  to = "http://167.99.181.174:1337/:splat"
-  status = 200
+[build]
+  base = "apps/icx-next"
+  publish = "apps/icx-next/.next"
+  command = "echo 'foo'"
+

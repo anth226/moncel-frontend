@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002Fwhy-instacert","\u002Fcontact","\u002F","\u002Ffaqs","\u002Ffood-handler-certificate","\u002F[legal]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()

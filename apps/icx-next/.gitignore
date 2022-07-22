@@ -9,7 +9,7 @@
 /coverage
 
 # next.js
-/.next/
+# /.next/ # UNCOMMENT THIS WHEN CI IS BACK 
 /out/
 
 # production
@@ -25,9 +25,8 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-.env.development.local
-.env.test.local
-.env.production.local
+# local environment
+.env*
 
 # vercel
 .vercel
