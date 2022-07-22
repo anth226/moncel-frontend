@@ -69,7 +69,7 @@ const Benefits = ({ benefits, heroStory }: { benefits: IconCardStoryblok[], hero
         {benefits.map((benefit, i) => {
             const gatsbyImageFileNode = findMatchingLocalFileNode(getFilename(benefit.Icon?.filename || ""), heroStory);
             return <div className="flex flex-col gap-4 items-start" key={`benefits-${i}`}>
-                <DynamicImage fileNode={gatsbyImageFileNode} width={60} height={60} className="block max-w-none h-16 mb-4" alt={benefit.Title || ""} />
+                <DynamicImage fileNode={gatsbyImageFileNode} width={60} height={60} className="block max-w-none h-16" alt={benefit.Title || ""} />
                 <Header5 className="!mb-0">{benefit.Title || ""}</Header5>
                 <Text className="!mb-0">{benefit.Description || ""}</Text>
             </div>
