@@ -215,7 +215,10 @@
       @apply text-2xl md:text-2xl lg:text-3xl font-bold mb-6 text-bluewood;
     }
     h4 {
-      @apply text-2xl font-bold mb-4 text-bluewood;
+      @apply text-2xl font-semibold mb-4 text-bluewood;
+      strong {
+        @apply font-semibold;
+      }
     }
     h5 {
       @apply text-lg font-semibold mb-4 text-bluewood leading-6;
