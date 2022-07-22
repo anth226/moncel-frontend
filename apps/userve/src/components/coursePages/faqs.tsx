@@ -25,7 +25,7 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
                 <ul className="hidden md:flex col-span-4 nav nav-tabs flex-col flex-wrap list-none border-b-0 pl-0 mr-20" id="tabs-tabFaq" role="tablist">
                     {faqCards.map((faq, i) => {
                         return <li className="nav-item mb-4" role="presentation" key={i}>
-                        <h2 className={i == 0 ? "active" : ""} aria-controls={`#tabs-${i}-faq`} aria-selected={i == 0 ? true : false} id={`#tabs-${i}-tabfaq`} data-bs-toggle="pill" data-bs-target={`#tabs-${i}-faq`} role="tab"><a href={`#tabs-${i}-faq`} className={`text-lg text-navy font-semibold mb-2 hover:no-underline border-b-1 border-transparent hover:border-navy pb-2 w-full block cursor-pointer ${i == 0 ? "active" : ""}`}>{faq.title}</a></h2></li>
+                        <h2 className={i == 0 ? "active" : ""} aria-controls={`#tabs-${i}-faq`} aria-selected={i == 0 ? true : false} id={`#tabs-${i}-tabfaq`} data-bs-toggle="pill" data-bs-target={`#tabs-${i}-faq`} role="tab"><a href={`#tabs-${i}-faq`} className={`text-lg text-navy font-semibold mb-2 hover:no-underline border-b-1 border-transparent hover:border-navy pb-2 w-full block cursor-pointer leading-6 ${i == 0 ? "active" : ""}`}>{faq.title}</a></h2></li>
                     })}
                 </ul>
                 <div className="col-span-12 md:col-span-8 tab-content" id="tabs-tabContentFaq">

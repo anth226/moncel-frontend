@@ -51,7 +51,7 @@ const TabsSection = (props: AboutUsStoryblok & StoryblokStoryProps) => {
             <div className="md:hidden accordion col-span-12" id="accordion-cta-mobile">
                 {tabsContent.map((tab: AboutUsStoryblok, i:number) => {
                     return <div className={`faq relative p-6 pl-14 !shadow-none rounded-xl mb-6 last:mb-0 w-full ${i == 0 ? "hidden" : ""}`} data-bs-toggle="collapse" data-bs-target={`#collapse-${i}-cta`} aria-expanded={i == 0 ? "true" : "false"} aria-controls={`collapse-${i}-cta`} key={i}>
-                        <h2 className="font-semibold !text-navy text-lg cursor-pointer md:mb-2" id={`heading-${i}-cta`}>{tab.title}</h2>
+                        <h2 className="font-semibold !text-navy text-lg cursor-pointer mb-0 md:mb-2 leading-6" id={`heading-${i}-cta`}>{tab.title}</h2>
 
                         <div id={`collapse-${i}-cta`} className={`accordion-collapse collapse ${i == 0 ? "show" : ""}`} aria-labelledby={`heading-${i}-cta`} data-bs-parent="#accordion-cta-mobile">
                             <div className="accordion-body">

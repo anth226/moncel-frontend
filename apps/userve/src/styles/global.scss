@@ -1,6 +1,9 @@
 @tailwind base;
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   body {
     @apply font-sans;
   }
@@ -73,6 +76,9 @@
   }
   .checktitle {
     padding:0 0 1rem 2rem;
+    h5 {
+      @apply mb-4;
+    }
     &::before {
       content: url(https://a.storyblok.com/f/153125/x/34afe2de07/usx-check.svg);
       position:absolute;
@@ -142,7 +148,7 @@
       }
     }
     fieldset {
-      @apply pb-2;
+      @apply pb-4;
       max-width:100%;
       div {
         &:last-child {
@@ -209,7 +215,10 @@
       @apply text-2xl md:text-2xl lg:text-3xl font-bold mb-6 text-bluewood;
     }
     h4 {
-      @apply text-2xl font-bold mb-4 text-bluewood;
+      @apply text-2xl font-semibold mb-4 text-bluewood;
+      strong {
+        @apply font-semibold;
+      }
     }
     h5 {
       @apply text-lg font-semibold mb-4 text-bluewood leading-6;
