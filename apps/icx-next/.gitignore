@@ -9,7 +9,7 @@
 /coverage
 
 # next.js
-# /.next/ # UNCOMMENT THIS WHEN CI IS BACK 
+/.next/
 /out/
 
 # production

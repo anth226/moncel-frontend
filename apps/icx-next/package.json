@@ -24,6 +24,7 @@
     "graphql": "^16.5.0",
     "jsonata": "^1.8.6",
     "moncel-one-sdk": "*",
+    "netlify-cli": "^10.11.1",
     "next": "12.1.0",
     "qs": "^6.10.3",
     "react": "17.0.2",
@@ -36,6 +37,7 @@
     "tailwindcss": "^3.0.23"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.13.0",
     "@types/node": "17.0.21",
     "@types/react": "17.0.40",
     "@types/react-bootstrap": "^0.32.29",
