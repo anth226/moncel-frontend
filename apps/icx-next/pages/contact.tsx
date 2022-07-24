@@ -4,6 +4,7 @@ import { IccContact, IccLandingPage, IccCertificatePage } from "generated/strapi
 import OneCol from 'components/layout/one-col';
 import SidebarCTA from 'components/sidebar-cta';
 import { client } from 'lib/strapi/graphql';
+import { findAndDownloadStrapiFiles } from 'moncel-one-sdk';
 
 import styles from 'styles/icx_secondary.module.scss';
 
@@ -103,6 +104,7 @@ export const getStaticProps = async () => {
                       logo {
                         data {
                           attributes {
+                            __typename
                             url
                           }
                         }
@@ -116,6 +118,7 @@ export const getStaticProps = async () => {
                       logo {
                         data {
                           attributes {
+                            __typename
                             url
                           }
                                     }
@@ -186,5 +189,7 @@ export const getStaticProps = async () => {
             }
         }`
     });
+    await findAndDownloadStrapiFiles(data);
+
     return { props: { strapiData: data } };
 };

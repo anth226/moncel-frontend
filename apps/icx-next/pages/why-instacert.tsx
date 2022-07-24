@@ -6,6 +6,7 @@ import Recommendations from 'components/certificate/recommendation';
 import SidebarCTA from 'components/sidebar-cta';
 import OneCol from 'components/layout/one-col';
 import { client } from 'lib/strapi/graphql';
+import { findAndDownloadStrapiFiles } from 'moncel-one-sdk';
 
 import { IccWhyInstacertPage, IccLandingPage } from "generated/strapi-types";
 
@@ -55,6 +56,7 @@ export const getStaticProps = async () => {
                       logo {
                         data {
                           attributes {
+                            __typename
                             url
                           }
                         }
@@ -68,6 +70,7 @@ export const getStaticProps = async () => {
                       logo {
                         data {
                           attributes {
+                            __typename
                             url
                           }
                                     }
@@ -111,6 +114,7 @@ export const getStaticProps = async () => {
                           image {
                             data {
                               attributes {
+                                __typename
                                 url
                               }
                             }
@@ -125,5 +129,6 @@ export const getStaticProps = async () => {
         }
         `
     });
+    await findAndDownloadStrapiFiles(data);
     return { props: { strapiData: data } };
 }

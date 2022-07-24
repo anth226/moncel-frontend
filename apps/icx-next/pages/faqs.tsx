@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import type { InferGetStaticPropsType } from 'next';
 
 import { client } from 'lib/strapi/graphql';
+import { findAndDownloadStrapiFiles } from 'moncel-one-sdk';
 
 import OneCol from 'components/layout/one-col';
 import SidebarCTA from 'components/sidebar-cta';
@@ -87,6 +88,7 @@ export const getStaticProps = async () => {
                             logo {
                                 data {
                                 attributes {
+                                    __typename
                                     url
                                 }
                                 }
@@ -100,6 +102,7 @@ export const getStaticProps = async () => {
                             logo {
                                 data {
                                 attributes {
+                                    __typename
                                     url
                                 }
                                             }
@@ -157,5 +160,6 @@ export const getStaticProps = async () => {
             }
         `
     });
+    await findAndDownloadStrapiFiles(data);
     return { props: { strapiData: data } };
 }

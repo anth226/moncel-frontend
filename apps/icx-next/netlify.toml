@@ -10,4 +10,3 @@
   to = "/static/:splat"
   status = 301
   force = true
-

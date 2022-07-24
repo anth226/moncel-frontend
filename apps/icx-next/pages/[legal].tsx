@@ -6,9 +6,9 @@ import ReactMarkdown from 'react-markdown';
 import { client } from 'lib/strapi/graphql';
 import OneCol from 'components/layout/one-col';
 import SidebarCTA from 'components/sidebar-cta';
+import { findAndDownloadStrapiFiles } from 'moncel-one-sdk';
 
 import { IccCertificatePage, IccLegal, IccLandingPage } from "generated/strapi-types";
-import React from 'react';
 
 const Legal = (props: (Awaited<ReturnType<typeof getStaticProps>>)['props']) => {
     const router = useRouter();
@@ -92,6 +92,7 @@ export const getStaticProps = async ({ params }: LegalRouteParams) => {
                             logo {
                                 data {
                                     attributes {
+                                        __typename
                                         url
                                     }
                                 }
@@ -105,6 +106,7 @@ export const getStaticProps = async ({ params }: LegalRouteParams) => {
                             logo {
                                 data {
                                 attributes {
+                                    __typename
                                     url
                                 }
                                             }
@@ -159,5 +161,6 @@ export const getStaticProps = async ({ params }: LegalRouteParams) => {
             }
         `
     });
+    await findAndDownloadStrapiFiles(data);
     return { props: { strapiData: data, title, pathname } };
 }

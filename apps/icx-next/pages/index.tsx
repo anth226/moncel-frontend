@@ -9,6 +9,7 @@ import PricingSection from 'components/landing/pricing';
 import FAQSection from 'components/landing/faq';
 import CTASection from 'components/landing/cta';
 import { client } from "lib/strapi/graphql";
+import { findAndDownloadStrapiFiles } from 'moncel-one-sdk';
 import { IccLandingPage } from "generated/strapi-types";
 
 import icxstyles from '../styles/icx.module.scss';
@@ -64,6 +65,7 @@ export const getStaticProps = async () => {
                 HeroImage {
                   data {
                     attributes {
+                      __typename
                       url
                       previewUrl
                     }
@@ -76,6 +78,7 @@ export const getStaticProps = async () => {
                   image {
                     data {
                       attributes {
+                        __typename
                         url
                       }
                     }
@@ -114,6 +117,7 @@ export const getStaticProps = async () => {
                 logo {
                   data {
                     attributes {
+                      __typename
                       url
                     }
                   }
@@ -127,6 +131,7 @@ export const getStaticProps = async () => {
                 logo {
                   data {
                     attributes {
+                      __typename
                       url
                     }
                   }
@@ -147,6 +152,8 @@ export const getStaticProps = async () => {
       }
     `
   });
+  await findAndDownloadStrapiFiles(data);
+
   return { props: {
     strapiData: data
   } };

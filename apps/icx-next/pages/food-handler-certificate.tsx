@@ -9,6 +9,7 @@ import Faqs from 'components/certificate/faq';
 import SidebarCTA from 'components/sidebar-cta';
 import OneCol from 'components/layout/one-col';
 import { client } from 'lib/strapi/graphql';
+import { findAndDownloadStrapiFiles } from 'moncel-one-sdk';
 import { IccCertificatePage, IccLandingPage } from "generated/strapi-types";
 
 const Certificate = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -80,6 +81,7 @@ export const getStaticProps = async () => {
                       logo {
                         data {
                           attributes {
+                            __typename
                             url
                           }
                         }
@@ -93,6 +95,7 @@ export const getStaticProps = async () => {
                       logo {
                         data {
                           attributes {
+                            __typename
                             url
                           }
                                     }
@@ -184,5 +187,6 @@ export const getStaticProps = async () => {
             }
           }`
     });
+    await findAndDownloadStrapiFiles(data);
     return { props: { strapiData: data } };
 }
