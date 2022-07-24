@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import { ComponentLandingEasySteps } from 'generated/strapi-types';
 
-const strapiURL = process.env.STRAPI_URL || "";
-
 const StepsSection = ({ data }: { data: ComponentLandingEasySteps  }) => {
     return <div className="row text-center text-md-start">
         <div className="col-12 col-md-3 mb-3 mb-md-0">
@@ -13,7 +11,7 @@ const StepsSection = ({ data }: { data: ComponentLandingEasySteps  }) => {
         {
             data.steps.map((step, i) => {
                 if(!step) return null;
-                const imagesrc = step.image?.data?.attributes?.url ? `${strapiURL}${step.image.data.attributes.url}` : "";
+                const imagesrc = step.image?.data?.attributes?.url ? step.image.data.attributes.url : "";
                 return <div className="col-12 col-md-3 mb-3 mb-md-0" key={`easy-step-${i}`}>
                     <Image alt={`${step.title}-icon`} src={imagesrc} width={90} height={90} layout="fixed" />
                     <h5 className="mt-2">{step.title}</h5>

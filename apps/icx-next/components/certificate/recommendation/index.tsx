@@ -13,7 +13,7 @@ const Recommendation = ({ data }: { data: ComponentIccAdditionalRecommendationSe
         <div className="row display-flex">
             {(data.Recommendations || []).map((quote, i) => {
                 if(!quote) return null;
-                const imgSrc = quote?.image?.data?.attributes?.url ? `${process.env.STRAPI_URL}${quote?.image?.data?.attributes?.url}` : "";
+                const imgSrc = quote?.image?.data?.attributes?.url ? quote?.image?.data?.attributes?.url : "";
                 return <div className="col-12 col-md-6 mb-4 mb-md-0" key={`recommendation-card-${i}`}>
                     <Image src={imgSrc} width={150} height={27} layout="fixed" alt={`recommendation-card-${i}-icon`} />
                     <blockquote className="mt-3">{quote.title}</blockquote>

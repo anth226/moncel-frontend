@@ -5,8 +5,6 @@ import { ComponentLandingHeroSection } from 'generated/strapi-types';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const strapiURL = process.env.STRAPI_URL;
-
 const Hero = ({ data }: { data: ComponentLandingHeroSection  }) => {
     const isTablet = useMediaQuery({
         query: '(max-width: 768px)'
@@ -23,7 +21,7 @@ const Hero = ({ data }: { data: ComponentLandingHeroSection  }) => {
                 <div style={{
                     width: imageDimensions[0],
                     height: imageDimensions[1],
-                }}><Image src={`${strapiURL}${data.HeroImage.data[0]?.attributes?.url || ""}`} alt={data.title} width={350} height={311} /></div>
+                }}><Image src={data.HeroImage.data[0]?.attributes?.url || ""} alt={data.title} width={350} height={311} /></div>
             </div> }
         </div>
     </div>
