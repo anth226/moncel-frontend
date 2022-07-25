@@ -17,8 +17,8 @@ const downloadFile = async (url: string) => {
 
     const filename = parseFilename(url);
 
-    const response = await axios.get(`${baseUrl}${url}`);
-    fs.writeFileSync(`${DOWNLOAD_DIR}/${filename}`, response.data);
+    const response = await axios.get(`${baseUrl}${url}`, { responseType: 'arraybuffer' });
+    fs.writeFileSync(`${DOWNLOAD_DIR}/${filename}`, response.data, 'binary');
     return true;
 }
 /**
