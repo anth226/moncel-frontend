@@ -8,5 +8,10 @@ module.exports = withTM({
   },
   env: {
     STRAPI_URL: process.env.STRAPI_URL,
-  }
+  },
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+
+    return config;
+  },
 });

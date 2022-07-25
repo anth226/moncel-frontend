@@ -5,6 +5,7 @@ import Nav from 'react-bootstrap/Nav'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
+import { imageLoader } from 'lib';
 import { ComponentIccLayoutHeader } from "generated/strapi-types";
 
 const Header = ({ data }: { data: ComponentIccLayoutHeader }) => {
@@ -13,7 +14,7 @@ const Header = ({ data }: { data: ComponentIccLayoutHeader }) => {
         <Navbar expand="md" className="m-0 p-0">
             <Container className="py-3">
                 <Navbar.Brand href="/" className="d-flex align-items-center">
-                    <Image src={data.logo?.data?.attributes?.url || ""} alt="icx-logo" width={160} height={30} />
+                    <Image src={data.logo?.data?.attributes?.url || ""} loader={imageLoader} alt="icx-logo" width={160} height={30} />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" className="m-0 p-0"><FontAwesomeIcon className="mobile-menu" icon={faBars} /></Navbar.Toggle>
                 <Navbar.Collapse id="basic-navbar-nav">

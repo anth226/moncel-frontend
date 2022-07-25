@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './styles.module.scss';
 
+import { imageLoader } from 'lib';
 import { ComponentIccLayoutFooter } from "generated/strapi-types";
 
 const Footer = ({ data }: { data: ComponentIccLayoutFooter}) => {
@@ -14,7 +15,7 @@ const Footer = ({ data }: { data: ComponentIccLayoutFooter}) => {
 
             <div className="row mb-3 d-flex align-items-center">
                 <div className="col-12 col-md-3 text-center text-md-start mb-3 mb-md-0">
-                    <Link href="/" passHref><a><Image src={logo} width={179} height={32} layout="fixed" alt="footer-logo" /></a></Link>
+                    <Link href="/" passHref><a><Image src={logo} loader={imageLoader} width={179} height={32} layout="fixed" alt="footer-logo" /></a></Link>
                 </div>
                 <div className="col-12 col-md-9 text-center text-md-end">
                     <div className={styles.linksTop}>

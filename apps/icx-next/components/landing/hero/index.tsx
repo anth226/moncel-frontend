@@ -5,12 +5,13 @@ import { ComponentLandingHeroSection } from 'generated/strapi-types';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { imageLoader } from 'lib';
+
 const Hero = ({ data }: { data: ComponentLandingHeroSection  }) => {
     const isTablet = useMediaQuery({
         query: '(max-width: 768px)'
     });
     const imageDimensions = isTablet ? [270, 240] : [350, 311];
-
     return <div className="container">
         <div className="row align-items-center px-4 px-sm-0">
             <div className="col-12 col-md-7 col-lg-6 py-0 py-md-8 text-center text-md-start">
@@ -21,7 +22,7 @@ const Hero = ({ data }: { data: ComponentLandingHeroSection  }) => {
                 <div style={{
                     width: imageDimensions[0],
                     height: imageDimensions[1],
-                }}><Image src={data.HeroImage.data[0]?.attributes?.url || ""} alt={data.title} width={350} height={311} /></div>
+                }}><Image src={data.HeroImage.data[0]?.attributes?.url || ""} loader={imageLoader} alt={data.title} width={350} height={311} /></div>
             </div> }
         </div>
     </div>
