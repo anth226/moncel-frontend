@@ -28,13 +28,13 @@ interface IOverrides {
 
 };
 type GQLNode = { __typename?: string, [key: string]: GQLNode } | Array<GQLNode> | string | null | undefined;
-export const findStrapiFilesToDownload = async (strapiGqlNode: GQLNode, overrides?: IOverrides) => {
+export const findAndDownloadStrapiFiles = async (strapiGqlNode: GQLNode, overrides?: IOverrides) => {
     const LOCAL_ASSET_TYPENAME = "UploadFile";
     const KEYS_TO_MATCH = ["url"]; // names of properties that are URLs to download
     
     if(typeof strapiGqlNode === 'string' || strapiGqlNode == null) {} // do nothing
     else if(strapiGqlNode instanceof Array) {
-        for(let node of strapiGqlNode) findStrapiFilesToDownload(node);
+        for(let node of strapiGqlNode) findAndDownloadStrapiFiles(node);
     }
     else if(typeof strapiGqlNode == 'object' && "__typename" in strapiGqlNode && strapiGqlNode.__typename == LOCAL_ASSET_TYPENAME) {
         for(let key of KEYS_TO_MATCH) {
@@ -46,7 +46,7 @@ export const findStrapiFilesToDownload = async (strapiGqlNode: GQLNode, override
     }
     else {
         for (let key of Object.keys(strapiGqlNode)) {
-            findStrapiFilesToDownload(strapiGqlNode[key]);
+            findAndDownloadStrapiFiles(strapiGqlNode[key]);
         }
     }
 };
