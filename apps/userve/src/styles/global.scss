@@ -57,13 +57,10 @@
   }
   .checklist {
     ul {
-      list-style-image: url(https://a.storyblok.com/f/153125/x/34afe2de07/usx-check.svg);
+      @apply ml-5;
+      list-style-image: url('src/images/usx-check.svg');
       li {
-        margin-left:20px;
-        padding:0 0 1rem 10px;
-        &:last-child {
-          padding:0 0 0 10px;
-        }
+        @apply pl-4 pr-4 pb-4 last:pb-0 mb-4 last:mb-0 md:mb-0;
       }
     }
     &.form {
