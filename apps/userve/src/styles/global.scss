@@ -66,7 +66,7 @@
     &.form {
       ul {
         li {
-          padding:0 0 0 10px;
+          @apply pl-4 pb-0 md:pb-4 md:last:pb-0;
         }
       }
     }

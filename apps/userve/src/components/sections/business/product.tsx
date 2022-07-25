@@ -9,11 +9,11 @@ import { Header3 } from 'src/components/core/typography';
 
 const ProductFormSection = (props: ProductFormStoryblok) => {
     return <SectionFullWidth>
-                <div id="buslmform" className="bg-cover bg-[url('https://www.userve.com/hubfs/web-assets/usx_business_bg.jpg')]">
+                <div id="buslmform" className="bg-cover bg-[url('src/images/usx_business_bg.jpg')]">
                     <Section className="grid grid-cols-12">
                         <div className="order-first col-span-12 md:col-span-6 mb-10 md:mb-0">
                             <Header3><span className="text-white">{props.title}</span></Header3>
-                            <div className="text-white checklist form"><ReactMarkdown>{props.description}</ReactMarkdown></div>
+                            <div className="text-white checklist form mb-2 md:mb-0"><ReactMarkdown>{props.description}</ReactMarkdown></div>
                             <a href={props.url} target={props.target} className="btn btn-invert-white mt-6">{props.button}</a>
                         </div>
                         <div className="col-span-1"/>
