@@ -50,7 +50,7 @@
   status = 301
   force = true
 
-# faq
+# Redirects for legacy pages with links to resources that no longer exist
 [[redirects]]
   from = "/us/faq/userve-faq"
   to = "https://help.userve.com/knowledge"
@@ -101,4 +101,3 @@
   # if one has been set, or the root directory if
   # a base hasn’t been set.
   # directory = "functions/"
-  
