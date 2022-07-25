@@ -22,7 +22,9 @@ const Hero = ({ data }: { data: ComponentLandingHeroSection  }) => {
                 <div style={{
                     width: imageDimensions[0],
                     height: imageDimensions[1],
-                }}><Image src={data.HeroImage.data[0]?.attributes?.url || ""} loader={imageLoader} alt={data.title} width={350} height={311} /></div>
+                }}>
+                    {/* <Image src={data.HeroImage.data[0]?.attributes?.url || ""} loader={imageLoader} alt={data.title} width={350} height={311} /></div> */}
+                    <Image src="/icc-value.png" loader={imageLoader} alt={data.title} width={350} height={311} /></div>
             </div> }
         </div>
     </div>

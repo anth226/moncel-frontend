@@ -1,17 +1,21 @@
 import axios from 'axios';
 import fs from 'fs';
 
+const FILENAME_PATTERN = /\/([^\/]+)$/;
+
+export const parseFilename = (s: string) => {
+    const match = s.match(FILENAME_PATTERN);
+    if(match == null) {
+        throw Error(`Build unable to parse file name from ${s}`);
+    }
+    return match[1];
+};
 
 const downloadFile = async (url: string) => {
-    const filenamePattern = /\/([^\/]+)$/;
     const baseUrl = process.env.STRAPI_URL;
     const DOWNLOAD_DIR = `${process.cwd()}/public`;
 
-    const filenameMatch = url.match(filenamePattern);
-    if(filenameMatch == null) {
-        throw Error(`Build unable to parse file name from ${url}`);
-    }
-    const filename = filenameMatch[1];
+    const filename = parseFilename(url);
 
     const response = await axios.get(`${baseUrl}${url}`);
     fs.writeFileSync(`${DOWNLOAD_DIR}/${filename}`, response.data);
