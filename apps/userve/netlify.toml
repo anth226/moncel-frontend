@@ -50,6 +50,13 @@
   status = 301
   force = true
 
+# faq
+[[redirects]]
+  from = "/us/faq/userve-faq"
+  to = "https://help.userve.com/knowledge"
+  status = 301
+  force = true
+
 # Default to /us
 [[redirects]]
   from = "/"
