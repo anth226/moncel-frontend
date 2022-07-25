@@ -24,7 +24,7 @@ const MoneyBackGuarantee = ({x}:{x:CourseType}) => {
     const imageData = useStaticQuery(imageQuery);
     return <div className="bg-hint-green text-green-700 rounded-xl p-2 mt-4 mb-6 flex flex-row items-center justify-center text-[12.8px] text-center">
         <DynamicImage fileNode={imageData.dollar.nodes[0]} alt="Dollar Icon" width={15} height={15} className="hidden lg:block mr-2" loading="lazy"/>
-        {lang == "lang-es" ? "Garantía de devolución de dinero" : "100% Money Back Guarantee"}
+        {lang == "lang-es" ? "Garantía de devolución de dinero" : "100% Money-Back Guarantee"}
         <Tooltip message={lang == "lang-es" ? "¡Estamos seguros de que te van a encantar nuestros cursos! Si no es así, te haremos un reembolso completo de acuerdo con nuestra política de devoluciones." : "We're confident you'll love our courses! If not, we provide full refunds subject to our refund policy."}>
         <DynamicImage fileNode={imageData.info.nodes[0]} alt="Info Icon" width={14} height={14} className="ml-2" loading="lazy"/>
         </Tooltip>

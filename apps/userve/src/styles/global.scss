@@ -29,7 +29,7 @@
   }
   p,
   li {
-    color: #72809d;
+    @apply text-lynch;
     a {
       @apply font-semibold text-navy hover:underline;
     }
@@ -57,19 +57,16 @@
   }
   .checklist {
     ul {
-      list-style-image: url(https://a.storyblok.com/f/153125/x/34afe2de07/usx-check.svg);
+      @apply ml-5;
+      list-style-image: url('src/images/usx-check.svg');
       li {
-        margin-left:20px;
-        padding:0 0 1rem 10px;
-        &:last-child {
-          padding:0 0 0 10px;
-        }
+        @apply pl-4 pr-4 pb-4 last:pb-0 mb-4 last:mb-0 md:mb-0;
       }
     }
     &.form {
       ul {
         li {
-          padding:0 0 0 10px;
+          @apply pl-4 pb-0 md:pb-4 md:last:pb-0;
         }
       }
     }
@@ -80,7 +77,7 @@
       @apply mb-4;
     }
     &::before {
-      content: url(https://a.storyblok.com/f/153125/x/34afe2de07/usx-check.svg);
+      content: url('src/images/usx-check.svg');
       position:absolute;
       margin-left:-2rem;
     }

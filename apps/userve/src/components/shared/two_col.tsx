@@ -4,10 +4,9 @@ import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { TwoColStoryblok, ListStoryblok } from 'src/storyblok-component-types';
 import { Header2, Header5, Text } from 'src/components/core/typography';
 import { StoryblokStoryProps, getFilename, findMatchingLocalFileNode, DynamicImage } from 'src/lib/images';
-import { ButtonTransparent } from './buttons';
 
 const List = (list: ListStoryblok) => {
-    return <div className="col-span-12 md:col-span-6 checktitle">
+    return <div className="col-span-12 md:col-span-6 checktitle mb-4 last:mb-0 md:mb-0">
         {list.title == '' ? '' : <Header5 className="mb-1">{list.title}</Header5>}
         <ul className="mb-0 pb-0"><li className="mb-0 pb-0">{list.description}</li></ul>
     </div>
