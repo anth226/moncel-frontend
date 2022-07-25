@@ -6,8 +6,8 @@ import { Header2 } from 'src/components/core/typography';
 
 const Quote = (quote: QuoteStoryblok) => {
     return <div className={`flex flex-col items-center w-full ${quote.num == 1 ? "hidden md:flex" : ""}`}>
-        <div className="py-4 px-4 md:px-8 text-md md:text-xl text-center">{quote.quote}</div>
-        <div className="text-slate-500 font-bold">{quote.author}</div>
+        <div className="px-4 pb-6 text-xl text-center text-bluewood">{quote.quote}</div>
+        <div className="text-lynch font-bold">{quote.author}</div>
     </div>
 };
 
