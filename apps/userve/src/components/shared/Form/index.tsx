@@ -39,7 +39,7 @@ const HubspotContactForm = (props: FormInfo) => {
     };
     
     return (
-        <div id="hubspotForm" onBlur={updateState}>
+        <div id="hubspotForm" onSubmit={updateState}>
             <div id={`hub-${hubId}`} className={`p-8 rounded-md bg-white ${props.className || ""}`}></div>
         </div>
     );
