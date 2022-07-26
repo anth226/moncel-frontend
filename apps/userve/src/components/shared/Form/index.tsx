@@ -30,7 +30,8 @@ const HubspotContactForm = (props: FormInfo) => {
         });
     }, []);
   
-    const handleChange = () => {
+    // Add state selected by the user to hidden field in form, if applicable
+    const updateState = () => {
         let input = document.querySelector('input[name="state_notification"]')
         if (!input) return;
         input.value = state;
@@ -38,7 +39,7 @@ const HubspotContactForm = (props: FormInfo) => {
     };
     
     return (
-        <div id="hubspotForm" onBlur={handleChange}>
+        <div id="hubspotForm" onBlur={updateState}>
             <div id={`hub-${hubId}`} className={`p-8 rounded-md bg-white ${props.className || ""}`}></div>
         </div>
     );
