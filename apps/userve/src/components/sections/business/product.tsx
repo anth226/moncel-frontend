@@ -18,7 +18,7 @@ const ProductFormSection = (props: ProductFormStoryblok) => {
                         </div>
                         <div className="col-span-1"/>
                         <div className="order-last col-span-12 md:col-span-5">
-                            <HubspotContactForm portalId="21498581" formId="3d517e57-c03c-499c-9763-52e1bba23c52" hubId="enq" state="Vancouver"/>
+                            <HubspotContactForm portalId="21498581" formId="3d517e57-c03c-499c-9763-52e1bba23c52" hubId="enq" />
                         </div>
                     </Section>
                 </div>
