@@ -46,12 +46,4 @@ const HubspotContactForm = (props: FormInfo) => {
 
 }
 
-
-
-
-
-
-// console.log('state:', state)
-// console.log('input:', input)
-
 export default HubspotContactForm;
