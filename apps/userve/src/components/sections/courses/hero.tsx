@@ -15,7 +15,7 @@ export default (props: HeroStoryblok) => {
             <Text>{props.description || ""}</Text>
             <StatePicker />
         </div>
-        <div className="order-1 md:order-12 md:col-start-7 col-span-12 md:col-span-6 mb-6 md:mb-0 flex justify-center pl-12">
+        <div className="order-1 md:order-12 md:col-start-7 col-span-12 md:col-span-6 mb-6 md:mb-0 flex justify-center md:pl-12">
             <DynamicImage fileNode={fileNode} alt={props.title || ""} className="max-w-[300px] md:max-w-full rounded-xl drop-shadow-xl"/>
         </div>
     </Section>
