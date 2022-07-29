@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-
 import { Section } from 'src/components/core/Section';
 import Card from 'src/components/coursePages/card'
 import { CourseCardStoryblok } from 'src/storyblok-component-types';
@@ -43,6 +42,10 @@ export default ({ coursePageContent }: { coursePageContent: CoursePageStoryblok[
         }
         return _storyblokDataByCourseType;
     }, {} as StoryblokDataByCourseType);
+
+    const showNotifyModal = () => {
+        dispatch(toggleModal(payload));
+    }
     const [ courses, setCourses ] = useState<CourseData[]>([]);
 
     useEffect(() => {

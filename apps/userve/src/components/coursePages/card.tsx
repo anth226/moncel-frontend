@@ -1,5 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
+
+import { useAppDispatch, AppActions } from 'src/store';
 import { courseLang } from 'src/lib/courseLang';
 import { StoryblokStoryProps, getFilename, findMatchingLocalFileNode, DynamicImage } from 'src/lib/images';
 import { CourseCardStoryblok } from 'src/storyblok-component-types';
@@ -20,9 +22,14 @@ interface ReactProps {
 }
 
 const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & StoryblokStoryProps) => {
-    // const { url, title, desc, image } = props;
+    const dispatch = useAppDispatch();
+    const { toggleModal } = AppActions;
     let url, title, desc, image, type, courseTitle, tag, fileNode, productCategoryLabel;
     const lang = courseLang(props.type);
+
+    const showNotifyModal = () => {
+        dispatch(toggleModal("courseNotifyModal"));
+    }
 
     if ("component" in props) {
         // Component has been passed a CourseCardStoryblok as props
@@ -81,7 +88,7 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
     return <div className={`font-sans card flex flex-col rounded-xl overflow-hidden bg-white shadow-xl ${props.className}`} data-test={`course-card-${encodeURIComponent(courseTitle || "")}`}>
         <div>
             <div className={ props.state ? `card-image ${tag == "coming-soon" ? "coming-soon" : "available"}` : "card-image"}>
-                { tag == "coming-soon" ? <a className="cursor-pointer" data-bs-toggle="modal" data-bs-target={url}>{imageComp}</a> : <a className="cursor-pointer" href={url}>{imageComp}</a>}
+                { tag == "coming-soon" ? <a className="cursor-pointer" onClick={showNotifyModal}>{imageComp}</a> : <a className="cursor-pointer" href={url}>{imageComp}</a>}
             </div>
 
             <div className="card-body">
@@ -94,7 +101,7 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
                     </div>
                 </div> : null }
 
-                { tag == "coming-soon" ? <a className="text-bluewood text-lg font-semibold leading-4 cursor-pointer hover:underline" data-bs-toggle="modal" data-bs-target={url}>{courseTitle}</a> : <a className="text-bluewood text-lg font-semibold leading-4 cursor-pointer hover:underline" href={url}>{courseTitle}</a> }
+                { tag == "coming-soon" ? <a className="text-bluewood text-lg font-semibold leading-4 cursor-pointer hover:underline" onClick={showNotifyModal}>{courseTitle}</a> : <a className="text-bluewood text-lg font-semibold leading-4 cursor-pointer hover:underline" href={url}>{courseTitle}</a> }
                 <p className="text-lynch mt-4">{desc}</p>
             </div>
         </div>

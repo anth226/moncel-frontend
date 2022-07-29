@@ -16,15 +16,13 @@ const HubspotContactForm = (props: FormInfo) => {
         document.body.appendChild(script);
 
         script.addEventListener('load', () => {
-            // @TS-ignore
-            if (window.hbspt) {
-                // @TS-ignore
+            if ('hbspt' in window) {
                 window.hbspt.forms.create({
                     region: "na1",
                     portalId: portalId,
                     formId: formId,
                     target: '#hub-' + hubId
-                })
+                });
             }
         });
     }, []);
