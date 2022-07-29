@@ -8,7 +8,6 @@ import { Header3 } from 'src/components/core/typography';
 import { useAppSelector } from 'src/store';
 import { CourseData, CourseType } from 'src/components/coursePages/types';
 import { CoursePageStoryblok } from "src/storyblok-component-types";
-import NotifyFormSection from 'src/components/coursePages/notify';
 
 interface CourseEdge {
     node: CourseData;
@@ -57,7 +56,6 @@ export default ({ coursePageContent }: { coursePageContent: CoursePageStoryblok[
                 return <Card {...courseData} key={`course-card-${i}`} showButton={true} />
             }) }
         </div>
-        <NotifyFormSection state={selectedState}/>
     </Section>
 };
 
