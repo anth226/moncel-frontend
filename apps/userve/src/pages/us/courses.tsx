@@ -6,7 +6,6 @@ import Layout from 'src/components/layout';
 import Head from 'src/components/head';
 
 import { HeroSection } from 'src/components/sections/courses';
-import NotifyFormSection from 'src/components/coursePages/notify';
 import { DataProps } from 'src/lib/storyblokSourceTypes';
 import { CoursePageStoryblok, AboutUsStoryblok } from 'src/storyblok-component-types';
 
@@ -59,7 +58,6 @@ const CoursePage = ({ data }: PageProps<DataProps>) => {
                     <AboutUsSection {...ctaContent} story={ctaSlug} />
                 </main>
             </Layout>
-            <NotifyFormSection />
         </div>
     )
 }
