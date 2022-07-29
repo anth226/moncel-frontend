@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, navigate } from 'gatsby';
+import { navigate } from 'gatsby';
 
 import { CourseTypeData } from 'src/components/coursePages/types';
 import { useAppDispatch, AppActions } from 'src/store';
@@ -23,7 +23,7 @@ type RedirectAction = {
 
 type PurchaseActionResponse = ModalAction | RedirectAction;
 
-export const MODALS: Record<string, React.FC> = {
+export const MODALS = {
     basset: BassetModal,
 };
 
@@ -32,7 +32,7 @@ export const purchaseFlow = (courseType: CourseTypeData): PurchaseActionResponse
         return {
             action: PurchaseActions.MODAL,
             payload: courseType.type,
-        }
+        } as ModalAction;
     }
     else if(!!courseType.enroll) {
         return {
@@ -68,4 +68,3 @@ const PurchaseButton = ({ children, courseType }: PurchaseButtonProps) => {
 };
 
 export default PurchaseButton;
-

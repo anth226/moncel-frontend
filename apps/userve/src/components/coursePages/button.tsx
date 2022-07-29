@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ButtonTransparent } from 'src/components/shared';
+import { useAppDispatch, AppActions } from 'src/store';
 
 interface ReactProps {
     lang: string;
@@ -12,7 +13,12 @@ interface ReactProps {
 }
 
 const CardButton = (props: ReactProps) => {
-    
+    const dispatch = useAppDispatch();
+    const { toggleModal } = AppActions;
+
+    const showNotifyModal = () => {
+        dispatch(toggleModal("courseNotifyModal"));
+    }
     let buttonText;
     let lang = props.lang;
     let notify = props.tag;
@@ -36,7 +42,7 @@ const CardButton = (props: ReactProps) => {
         }
     }
     return (<span>
-        { notify == "coming-soon" ? <a data-bs-toggle="modal" data-bs-target={courseUrl}><ButtonTransparent className="text-dark-blue border-dark-blue hover:bg-lynch hover:bg-opacity-10">{buttonText}</ButtonTransparent></a> : <a href={courseUrl}><ButtonTransparent className="text-white bg-dark-blue border-dark-blue hover:bg-navy">{buttonText}</ButtonTransparent></a>}
+        { notify == "coming-soon" ? <a onClick={showNotifyModal}><ButtonTransparent className="text-dark-blue border-dark-blue hover:bg-lynch hover:bg-opacity-10">{buttonText}</ButtonTransparent></a> : <a href={courseUrl}><ButtonTransparent className="text-white bg-dark-blue border-dark-blue hover:bg-navy">{buttonText}</ButtonTransparent></a>}
     </span>)
 
 };

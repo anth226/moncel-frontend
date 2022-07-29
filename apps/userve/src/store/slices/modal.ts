@@ -1,9 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { MODALS as coursePurchaseFlowModals } from 'src/components/coursePages/lib/purchaseFlow';
+import { default as courseNotifyModal } from 'src/components/coursePages/lib/notify';
 
 export const AllModals = {
     ...coursePurchaseFlowModals,
+    ...{ courseNotifyModal: courseNotifyModal },
 };
+
 export type AllModalNames = keyof typeof AllModals | null;
 
 interface ActiveModalSlice {
@@ -22,7 +25,7 @@ const navbarSlice = createSlice({
         toggleModal: (state, action: PayloadAction<AllModalNames>) => {
           state.activeModal = action.payload;
         },
-      }
+    },
 });
 
 export default navbarSlice;
