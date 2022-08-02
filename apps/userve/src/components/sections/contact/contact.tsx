@@ -1,3 +1,4 @@
+import { useLocation } from '@reach/router';
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { graphql, useStaticQuery } from 'gatsby';
@@ -14,9 +15,18 @@ interface ReactProps {
     className?: string;
 }
 
+enum ContactFormTabIds {
+    INDIVIDUAL="#tabs-individual",
+    BUSINESS="#tabs-business",
+    SUPPORT="#tabs-support",
+    GENERAL="#tabs-general",
+}
+
 const ContactSection = (props: ContactStoryblok) => {
     const imageData = useStaticQuery(imageQuery);
+    const location = useLocation();
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+    debugger;
 
     const MobileMenuItem = (props:ReactProps) => {
         return <li className={`nav-item ${props.className}`} role="presentation">
@@ -54,26 +64,26 @@ const ContactSection = (props: ContactStoryblok) => {
             <ul className="hidden md:grid nav nav-tabs mb-8 gap-7 grid-cols-12" id="tabs-tabFill"
                 role="tablist">
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
-                    <a href="#tabs-individual" className="nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start active" id="tabs-home-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-individual" role="tab"
-                        aria-controls="tabs-individual" aria-selected="true">Individual Enrollment
+                    <a href={ContactFormTabIds.INDIVIDUAL} className={`nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start ${location.hash === ContactFormTabIds.INDIVIDUAL ? "active" : ""}`} id="tabs-home-tabFill" data-bs-toggle="pill" data-bs-target={ContactFormTabIds.INDIVIDUAL} role="tab"
+                        aria-controls="tabs-individual" aria-selected={location.hash === ContactFormTabIds.INDIVIDUAL}>Individual Enrollment
                          <DynamicImage fileNode={imageData.profile.nodes[0]} alt="Individual Enrollment" width={50} height={50} loading="lazy" className="mt-4 w-[50px] h-[50px] mx-auto"/>
                     </a>
                 </li>
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
-                    <a href="#tabs-business" className="nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start" id="tabs-profile-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-business" role="tab"
-                        aria-controls="tabs-business" aria-selected="false">Business Enrollment
+                    <a href={ContactFormTabIds.BUSINESS} className={`nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start ${location.hash === ContactFormTabIds.BUSINESS ? "active" : ""}`} id="tabs-profile-tabFill" data-bs-toggle="pill" data-bs-target={ContactFormTabIds.BUSINESS} role="tab"
+                        aria-controls="tabs-business" aria-selected={location.hash === ContactFormTabIds.BUSINESS}>Business Enrollment
                          <DynamicImage fileNode={imageData.store.nodes[0]} alt="Business Enrollment" width={50} height={50} loading="lazy" className="mt-4 w-[50px] h-[50px] mx-auto"/>
                     </a>
                 </li>
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
-                    <a href="#tabs-support" className="nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start" id="tabs-messages-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-support" role="tab"
-                        aria-controls="tabs-support" aria-selected="false">Student Support
+                    <a href={ContactFormTabIds.SUPPORT} className={`nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start ${location.hash === ContactFormTabIds.SUPPORT ? "active" : ""}`} id="tabs-messages-tabFill" data-bs-toggle="pill" data-bs-target={ContactFormTabIds.SUPPORT} role="tab"
+                        aria-controls="tabs-support" aria-selected={location.hash === ContactFormTabIds.SUPPORT}>Student Support
                          <DynamicImage fileNode={imageData.support.nodes[0]} alt="Student Support" width={50} height={50} loading="lazy" className="mt-4 w-[50px] h-[50px] mx-auto"/>
                     </a>
                 </li>
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
-                    <a href="#tabs-general" className="nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start" id="tabs-messages-tabFill" data-bs-toggle="pill" data-bs-target="#tabs-general" role="tab"
-                        aria-controls="tabs-general" aria-selected="false"><div>General</div>
+                    <a href={ContactFormTabIds.GENERAL} className={`nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start ${location.hash === ContactFormTabIds.GENERAL ? "active" : ""}`} id="tabs-messages-tabFill" data-bs-toggle="pill" data-bs-target={ContactFormTabIds.GENERAL} role="tab"
+                        aria-controls="tabs-general" aria-selected={location.hash === ContactFormTabIds.GENERAL}><div>General</div>
                          <DynamicImage fileNode={imageData.chat.nodes[0]} alt="General" width={50} height={50} loading="lazy" className="mt-4 w-[50px] h-[50px] mx-auto"/>
                     </a>
                 </li>
@@ -100,16 +110,16 @@ const ContactSection = (props: ContactStoryblok) => {
             </div>
 
             <div className="tab-content" id="tabs-tabContentFill">
-                <div className="tab-pane fade show active" id="tabs-individual" role="tabpanel" aria-labelledby="tabs-home-tabFill">
+                <div className={`tab-pane fade ${location.hash === ContactFormTabIds.INDIVIDUAL ? "show active" : ""}`} id="tabs-individual" role="tabpanel" aria-labelledby="tabs-home-tabFill">
                     <HubspotContactForm portalId="21498581" formId="ce0ce7ff-c3fe-4ba5-b756-a851de2e5cb7" hubId="ind" className="p-0 md:p-8 bg-transparent !shadow-none md:bg-white md:!shadow-lg" />
                 </div>
-                <div className="tab-pane fade" id="tabs-business" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
+                <div className={`tab-pane fade ${location.hash === ContactFormTabIds.BUSINESS ? "show active" : ""}`} id="tabs-business" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
                     <HubspotContactForm portalId="21498581" formId="d9990f75-9696-45f7-a914-53127b508254" hubId="bus" className="p-0 md:p-8 bg-transparent !shadow-none md:bg-white md:!shadow-lg" />
                 </div>
-                <div className="tab-pane fade" id="tabs-support" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
+                <div className={`tab-pane fade ${location.hash === ContactFormTabIds.SUPPORT ? "show active" : ""}`} id="tabs-support" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
                     <HubspotContactForm portalId="21498581" formId="2821dfb1-e4b4-4267-81dd-a6691ab71671" hubId="sup" className="p-0 md:p-8 bg-transparent !shadow-none md:bg-white md:!shadow-lg" />
                 </div>
-                <div className="tab-pane fade" id="tabs-general" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
+                <div className={`tab-pane fade ${location.hash === ContactFormTabIds.GENERAL ? "show active" : ""}`} id="tabs-general" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
                     <HubspotContactForm portalId="21498581" formId="38cfb103-d6e5-4248-90f1-df9a1a90210d" hubId="gen" className="p-0 md:p-8 bg-transparent !shadow-none md:bg-white md:!shadow-lg" />
                 </div>
             </div>
@@ -119,19 +129,19 @@ const ContactSection = (props: ContactStoryblok) => {
                 <div className="flex flex-row gap-4 items-start mb-6">
                     <DynamicImage fileNode={imageData.phone.nodes[0]} alt="Phone" width={20} height={20} loading="lazy"/>
                     <div>
-                        <ReactMarkdown>{props.phone}</ReactMarkdown>
+                        <ReactMarkdown>{props.phone || ""}</ReactMarkdown>
                     </div>
                 </div>
                 <div className="flex flex-row gap-4 items-start mb-6">
                     <DynamicImage fileNode={imageData.hours.nodes[0]} alt="Hours" width={20} height={20} loading="lazy"/>
                     <div>
-                        <ReactMarkdown>{props.hours}</ReactMarkdown>
+                        <ReactMarkdown>{props.hours || ""}</ReactMarkdown>
                     </div>
                 </div>
                 <div className="flex flex-row gap-4 items-start">
                     <DynamicImage fileNode={imageData.address.nodes[0]} alt="Address" width={18} height={18} loading="lazy"/>
                     <div>
-                        <ReactMarkdown>{props.address}</ReactMarkdown>
+                        <ReactMarkdown>{props.address || ""}</ReactMarkdown>
                     </div>
                 </div>
             </div>
