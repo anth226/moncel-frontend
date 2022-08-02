@@ -7,11 +7,11 @@
     }
     .faq-alt {
         @apply border-transparent;
-        [aria-expanded="false"] {
+        .faq-item {
             @apply bg-white md:bg-lilac border-1 border-melrose md:border-transparent;
         }
-        [aria-expanded="true"] {
-            @apply bg-lilac border-1 border-dodger md:border-transparent;
-        }
+    }
+    .course-outline {
+        @apply bg-white border-1 border-dodger;
     }
 }

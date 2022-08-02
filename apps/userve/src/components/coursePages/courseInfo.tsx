@@ -19,6 +19,8 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
     const random = Math.floor(Math.random() * 100000) + 1;
     const heroImageLocalFileNode = findMatchingLocalFileNode(getFilename(props.image?.filename || ""), props.story);
 
+
+
     return <SectionFullWidth className={props.className || ""}>
         <Section className="grid grid-cols-12 md:gap-10">
             <div className="col-span-12 md:col-span-4 lg:mr-16">
@@ -31,10 +33,12 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
                 </div>
                 <div className="accordion w-full" id={`accordion_${random}`}>
                     {infoCards.map((card, i) => {
-                        return <div className={`border-solid border-1 rounded-xl mb-6 overflow-hidden cursor-pointer last:mb-0 w-full ${props.layout == "title-right" ? "border-dodger" : "faq-alt"}`} key={`info-${i}`}>
-                            <div className={`!text-navy !shadow-none p-6 rounded-xl ${props.layout == "title-right" ? "" : "faq-item"} ${i == 0 ? "" : "collapsed"}`} data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} aria-expanded={i == 0 ? "true" : "false"} aria-controls={`collapse_${random}_${i}`} id={`heading_${random}_${i}`}>
-                                <Header5 className="mb-0 !text-navy">{card.Title || ""}</Header5>
-
+                        return <div className={`border-solid border-1 rounded-xl mb-6 overflow-hidden last:mb-0 w-full ${props.layout == "title-right" ? "" : "faq-alt"}`} key={`info-${i}`}>
+                            <div className={`!text-navy !shadow-none p-6 rounded-xl ${props.layout == "title-right" ? "course-outline" : "faq-item"}`}>
+                                <div className={`!bg-transparent cursor-pointer ${i == 0 ? "" : "collapsed"}`} data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} aria-expanded={i == 0 ? "true" : "false"} aria-controls={`collapse_${random}_${i}`} id={`heading_${random}_${i}`}>
+                                    <Header5 className="mb-0 !text-navy">{card.Title || ""}</Header5>
+                                </div>
+                                
                                 <div id={`collapse_${random}_${i}`} className={i == 0 ? "accordion-collapse collapse show" : "accordion-collapse collapse"} aria-labelledby={`heading_${random}_${i}`} data-bs-parent={`#accordion_${random}`}>
                                     <div className="accordion-body">
                                         <ReactMarkdown>{card.Description || ""}</ReactMarkdown>

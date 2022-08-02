@@ -36,19 +36,23 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
                             <h2 className="md:hidden text-lg text-navy font-semibold mb-4">{faqGroup.title}</h2>
                             
                             <div className="accordion w-full relative mb-6 md:mb-0" id={`accordion_${random}`}>
+
                                 {faqGroup.faq?.map((y,i) => {
-                                    return  <div className="faq p-6 pl-14 !shadow-none collapsed md:!bg-lilac rounded-xl mb-6 w-full" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} aria-expanded="false" aria-controls={`collapse_${random}_${i}`} id={`heading_${random}_${i}`} key={`info-${i}`}>
-                                        <h3 className="font-semibold !text-navy text-lg cursor-pointer md:mb-2">{y.title || ""}</h3>
+                                    return  <div className="faq p-6 pl-14 !shadow-none collapsed md:!bg-lilac rounded-xl mb-6 w-full"  key={`info-${i}`}>
+                                        <h3 className="font-semibold !text-navy text-lg cursor-pointer md:mb-2 !bg-transparent" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} aria-controls={`collapse_${random}_${i}`} id={`heading_${random}_${i}`} aria-expanded="false">{y.title || ""}</h3>
 
-                                        <ReactMarkdown className="intro">{y.intro || ""}</ReactMarkdown>
-
+                                        <div className="intro !bg-transparent" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} id={`heading_${random}_${i}`} aria-expanded="false">
+                                            <ReactMarkdown>{y.intro || ""}</ReactMarkdown>
+                                        </div>
+                                        
                                         <div id={`collapse_${random}_${i}`} className="accordion-collapse collapse" aria-labelledby={`heading_${random}_${i}`} data-bs-parent={`#accordion_${random}`}>
                                             <div className="accordion-body">
+                                                <ReactMarkdown>{y.intro || ""}</ReactMarkdown>
                                                 <ReactMarkdown>{y.desc || ""}</ReactMarkdown>
                                             </div>
                                         </div>
 
-                                        <p className="hidden md:block read-more text-navy mt-2 cursor-pointer">Read More</p>
+                                        <p className="hidden md:block read-more text-navy mt-2 cursor-pointer !bg-transparent" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} aria-controls={`collapse_${random}_${i}`} id={`heading_${random}_${i}`} aria-expanded="false">Read More</p>
                                     </div>
                                 })}
                             </div>

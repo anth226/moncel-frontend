@@ -3,6 +3,12 @@
   .intro {
     @apply overflow-hidden h-0 md:h-6;
   }
+  .intro[aria-expanded="true"] {
+    @apply hidden;
+  }
+  .read-more[aria-expanded="true"] {
+    @apply hidden;
+  }
 }
 .faq[aria-expanded="true"] {
   @apply border border-dodger bg-lilac md:border-lilac md:bg-lilac before:absolute before:-rotate-180 before:content-[url('src/images/usx-down-arrow.svg')];
