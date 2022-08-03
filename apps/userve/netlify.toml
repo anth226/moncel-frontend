@@ -38,22 +38,22 @@
 
 # blog
 [[redirects]]
-  from = "/us/resources/blog"
-  to = "https://blog.userve.com/us"
+  from = "/us/resources/blog/*"
+  to = "https://blog.userve.com/us/:splat"
   status = 301
   force = true
 
 # A redirect rule with many of the supported properties
 [[redirects]]
-  from = "/us/about/knowledge"
-  to = "https://help.userve.com/knowledge"
+  from = "/us/about/knowledge/*"
+  to = "https://help.userve.com/knowledge/:splat"
   status = 301
   force = true
 
 # Redirects for legacy pages with links to resources that no longer exist
 [[redirects]]
-  from = "/us/faq/userve-faq"
-  to = "https://help.userve.com/knowledge"
+  from = "/us/faq/userve-faq/*"
+  to = "https://help.userve.com/knowledge/:splat"
   status = 301
   force = true
 
