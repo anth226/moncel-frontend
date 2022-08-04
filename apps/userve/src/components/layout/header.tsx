@@ -67,7 +67,7 @@ const Header = ({ highlightPathname }: HeaderProps) => {
     </nav>;
 }
 
-const HeaderLink = ({ to, children, highlightPathname, target }: { to: string, highlightPathname?: string, children: JSX.Element | JSX.Element[] | string, target?: string }) => {
+const HeaderLink = ({ to, children, highlightPathname, ...rest }: { to: string, highlightPathname?: string, children: JSX.Element | JSX.Element[] | string, target?: string }) => {
     const location = useLocation();
     const className = (to === location.pathname || to === highlightPathname) ? "border-navy py-2 " : "border-transparent py-2";
     return <Link to={to} className={`border-b-1 ${className}`} target={target}>{children}</Link>
