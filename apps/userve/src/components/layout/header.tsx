@@ -119,7 +119,7 @@ const MobileLink = ({ displayName, href, icon, ...rest }: MobileLinkProps) => {
             dispatch(toggleNavbarOpen(false));
         }
     }
-    return <Link to={href} className="w-full active:bg-lilac" onClick={handleClick} target={target}>
+    return <Link to={href} className="w-full active:bg-lilac" onClick={handleClick} {...rest}>
         <div className="w-screen">
             <div className="flex justify-between border-b-1 border-mischka mx-4 py-4">
                 <div className="flex items-center gap-4">
