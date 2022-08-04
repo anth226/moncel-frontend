@@ -110,7 +110,7 @@ interface MobileLinkProps {
     target?: string
 }
 
-const MobileLink = ({ displayName, href, icon, target }: MobileLinkProps) => {
+const MobileLink = ({ displayName, href, icon, ...rest }: MobileLinkProps) => {
     const dispatch = useAppDispatch();
     const location = useLocation();
 
