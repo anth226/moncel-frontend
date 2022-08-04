@@ -67,7 +67,7 @@ const MobileFooter = () => {
             <Link to="/us/business/accounts">Business</Link>
             <ExternalLink to="https://blog.userve.com/us">Blog</ExternalLink>
             <Link to="/us/about/about-us">About Us</Link>
-            <ExternalLink to="https://help.userve.com/knowledge">Help Center</ExternalLink>
+            <ExternalLink to="https://help.userve.com/" target="_blank">Help Center</ExternalLink>
             <Link to="/us/about/contact-us">Contact</Link>
         </div>
 
@@ -105,7 +105,7 @@ const DesktopFooter = () => {
                     <Link to="/us/business/accounts">Business</Link>
                     <ExternalLink to="https://blog.userve.com/us">Blog</ExternalLink>
                     <Link to="/us/about/about-us">About Us</Link>
-                    <ExternalLink to="https://help.userve.com/knowledge">Help Center</ExternalLink>
+                    <ExternalLink to="https://help.userve.com/" target="_blank">Help Center</ExternalLink>
                     <Link to="/us/about/contact-us">Contact</Link>
                     
                 </div>
