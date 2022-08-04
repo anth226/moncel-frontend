@@ -43,7 +43,7 @@ const Header = ({ highlightPathname }: HeaderProps) => {
                     <HeaderLink to="/us/business/accounts" highlightPathname={highlightPathname}>Business</HeaderLink>
                     <HeaderLink to="https://blog.userve.com/us" highlightPathname={highlightPathname}>Blog</HeaderLink>
                     <HeaderLink to="/us/about/about-us" highlightPathname={highlightPathname}>About Us</HeaderLink>
-                    <HeaderLink to="https://help.userve.com/knowledge" highlightPathname={highlightPathname}>Help Center</HeaderLink>
+                    <HeaderLink to="https://help.userve.com" target="_blank" highlightPathname={highlightPathname}>Help Center</HeaderLink>
                     <HeaderLink to="/us/about/contact-us" highlightPathname={highlightPathname}>Contact</HeaderLink>
                 </div>
             </div>
@@ -67,10 +67,10 @@ const Header = ({ highlightPathname }: HeaderProps) => {
     </nav>;
 }
 
-const HeaderLink = ({ to, children, highlightPathname }: { to: string, highlightPathname?: string, children: JSX.Element | JSX.Element[] | string }) => {
+const HeaderLink = ({ to, children, highlightPathname, ...rest }: { to: string, highlightPathname?: string, children: JSX.Element | JSX.Element[] | string, target?: string }) => {
     const location = useLocation();
     const className = (to === location.pathname || to === highlightPathname) ? "border-navy py-2 " : "border-transparent py-2";
-    return <Link to={to} className={`border-b-1 ${className}`}>{children}</Link>
+    return <Link to={to} className={`border-b-1 ${className}`} {...rest}>{children}</Link>
 };
 
 const HamburgerMenu = () => {
@@ -91,7 +91,7 @@ const MobileMenu = () => {
                     <MobileLink displayName="Business" href="/us/business/accounts" icon={BusinessIcon} />
                     <MobileLink displayName="Blog" href="https://blog.userve.com/us" icon={ResourcesIcon} />
                     <MobileLink displayName="About Us" href="/us/about/about-us" icon={AboutIcon} />
-                    <MobileLink displayName="Help Center" href="https://help.userve.com/knowledge" icon={HelpIcon} />
+                    <MobileLink displayName="Help Center" href="https://help.userve.com" icon={HelpIcon} target="_blank"/>
                     <MobileLink displayName="Contact" href="/us/about/contact-us" icon={MailIcon} />
                 </div>
                 <div className="flex flex-col gap-4 grow items-center justify-end text-bluewood font-medium w-full p-4">
@@ -107,9 +107,10 @@ interface MobileLinkProps {
     displayName: string,
     href: string,
     icon: typeof CoursesIcon,
+    target?: string
 }
 
-const MobileLink = ({ displayName, href, icon }: MobileLinkProps) => {
+const MobileLink = ({ displayName, href, icon, ...rest }: MobileLinkProps) => {
     const dispatch = useAppDispatch();
     const location = useLocation();
 
@@ -118,7 +119,7 @@ const MobileLink = ({ displayName, href, icon }: MobileLinkProps) => {
             dispatch(toggleNavbarOpen(false));
         }
     }
-    return <Link to={href} className="w-full active:bg-lilac" onClick={handleClick}>
+    return <Link to={href} className="w-full active:bg-lilac" onClick={handleClick} {...rest}>
         <div className="w-screen">
             <div className="flex justify-between border-b-1 border-mischka mx-4 py-4">
                 <div className="flex items-center gap-4">
