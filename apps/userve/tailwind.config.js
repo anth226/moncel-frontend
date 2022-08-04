@@ -25,6 +25,8 @@ module.exports = {
         "hawkes-blue": "#E7EEFE", // card tag bg
         "titan":"#F4F5FF", // gradient bg
         "hint-green": "#EBFFF2", // accreditation bg
+        "cinderella": "#FEE1DC", // alt tag bg color
+        "milano": "#CC2306", // alt tag text color
       },
     },
     fontFamily: {
