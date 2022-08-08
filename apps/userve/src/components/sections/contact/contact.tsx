@@ -25,8 +25,8 @@ enum ContactFormTabIds {
 const ContactSection = (props: ContactStoryblok) => {
     const imageData = useStaticQuery(imageQuery);
     const location = useLocation();
+    const isClient = typeof window !== "undefined";
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-    debugger;
 
     const MobileMenuItem = (props:ReactProps) => {
         return <li className={`nav-item ${props.className}`} role="presentation">
@@ -61,7 +61,7 @@ const ContactSection = (props: ContactStoryblok) => {
             </div>
         </div>
         <div className="col-span-12 md:col-span-8 col-end-13">
-            <ul className="hidden md:grid nav nav-tabs mb-8 gap-7 grid-cols-12" id="tabs-tabFill"
+            { !isClient ? null : <ul className="hidden md:grid nav nav-tabs mb-8 gap-7 grid-cols-12" id="tabs-tabFill"
                 role="tablist">
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
                     <a href={ContactFormTabIds.INDIVIDUAL} className={`nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start ${location.hash === ContactFormTabIds.INDIVIDUAL ? "active" : ""}`} id="tabs-home-tabFill" data-bs-toggle="pill" data-bs-target={ContactFormTabIds.INDIVIDUAL} role="tab"
@@ -87,7 +87,7 @@ const ContactSection = (props: ContactStoryblok) => {
                          <DynamicImage fileNode={imageData.chat.nodes[0]} alt="General" width={50} height={50} loading="lazy" className="mt-4 w-[50px] h-[50px] mx-auto"/>
                     </a>
                 </li>
-            </ul>
+            </ul> }
 
             <div className="block md:hidden">
                 <Header5>How Can We Help You?</Header5>
@@ -108,8 +108,7 @@ const ContactSection = (props: ContactStoryblok) => {
                     )}  
                 </div>
             </div>
-
-            <div className="tab-content" id="tabs-tabContentFill">
+            { !isClient ? null : <div className="tab-content" id="tabs-tabContentFill">
                 <div className={`tab-pane fade ${location.hash === ContactFormTabIds.INDIVIDUAL ? "show active" : ""}`} id="tabs-individual" role="tabpanel" aria-labelledby="tabs-home-tabFill">
                     <HubspotContactForm portalId="21498581" formId="ce0ce7ff-c3fe-4ba5-b756-a851de2e5cb7" hubId="ind" className="p-0 md:p-8 bg-transparent !shadow-none md:bg-white md:!shadow-lg" />
                 </div>
@@ -122,7 +121,7 @@ const ContactSection = (props: ContactStoryblok) => {
                 <div className={`tab-pane fade ${location.hash === ContactFormTabIds.GENERAL ? "show active" : ""}`} id="tabs-general" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
                     <HubspotContactForm portalId="21498581" formId="38cfb103-d6e5-4248-90f1-df9a1a90210d" hubId="gen" className="p-0 md:p-8 bg-transparent !shadow-none md:bg-white md:!shadow-lg" />
                 </div>
-            </div>
+            </div> }
         </div>
         <div className="col-span-12 block md:hidden mt-10">
             <div className="flex flex-col">
