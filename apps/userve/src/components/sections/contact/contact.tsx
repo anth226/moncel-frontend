@@ -26,7 +26,7 @@ const ContactSection = (props: ContactStoryblok) => {
     const imageData = useStaticQuery(imageQuery);
     const location = useLocation();
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-    debugger;
+    console.log(`Location: ${JSON.stringify(location)}`)
 
     const MobileMenuItem = (props:ReactProps) => {
         return <li className={`nav-item ${props.className}`} role="presentation">
