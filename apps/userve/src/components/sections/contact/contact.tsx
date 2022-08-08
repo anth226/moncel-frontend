@@ -1,5 +1,5 @@
-import { useLocation } from '@reach/router';
-import React, { useState } from 'react';
+import { useLocation, navigate } from '@reach/router';
+import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { graphql, useStaticQuery } from 'gatsby';
 
@@ -26,7 +26,12 @@ const ContactSection = (props: ContactStoryblok) => {
     const imageData = useStaticQuery(imageQuery);
     const location = useLocation();
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-    console.log(`Location: ${JSON.stringify(location)}`)
+
+    // Initial load with anchor tags is not working in netlify
+    console.log(location.hash === ContactFormTabIds.SUPPORT);
+    useEffect(() => {
+        if(!!location.hash) navigate(`${location.pathname}${location.hash}`);
+    }, []);
 
     const MobileMenuItem = (props:ReactProps) => {
         return <li className={`nav-item ${props.className}`} role="presentation">
