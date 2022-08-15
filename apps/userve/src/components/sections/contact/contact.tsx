@@ -100,10 +100,10 @@ const ContactSection = (props: ContactStoryblok) => {
                     </button>
                     {isMobileMenuOpen && (
                         <ul className="nav nav-tabs absolute hidden text-bluewood pt-1 group-hover:block z-40 border-1 w-full" id="tabs-tabFill" role="tablist">
-                            <MobileMenuItem target="tabs-individual" id="home" title="Individual Enrollment" className="border-b"/>
-                            <MobileMenuItem target="tabs-business" id="profile" title="Business Accounts" className="border-b"/>
-                            <MobileMenuItem target="tabs-support" id="messages" title="Student Support" className="border-b"/>
-                            <MobileMenuItem target="tabs-general" id="messages" title="General"/>
+                            <MobileMenuItem target="tabs-individual" id="mobile-menu-link-individual" title="Individual Enrollment" className="border-b"/>
+                            <MobileMenuItem target="tabs-business" id="mobile-menu-link-accounts" title="Business Accounts" className="border-b"/>
+                            <MobileMenuItem target="tabs-support" id="mobile-menu-link-support" title="Student Support" className="border-b"/>
+                            <MobileMenuItem target="tabs-general" id="mobile-menu-link-general" title="General"/>
                         </ul>
                     )}  
                 </div>
