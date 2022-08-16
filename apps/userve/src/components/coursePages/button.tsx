@@ -10,8 +10,7 @@ interface ReactProps {
     tag: string | null;
     url: string;
     courseUrl?: HTMLElement | string;
-    state?:string;
-    title?:string;
+    modalProps?: { [ key: string ]: unknown };
 }
 
 const CardButton = (props: ReactProps) => {
@@ -19,7 +18,7 @@ const CardButton = (props: ReactProps) => {
     const { toggleModal } = AppActions;
 
     const showNotifyModal = () => {
-        dispatch(toggleModal({ modalName: "courseNotifyModal", modalProps: { state: props.state, title: props.title } }));
+        dispatch(toggleModal({ modalName: "courseNotifyModal", modalProps:props.modalProps }));
     }
 
     let buttonText;

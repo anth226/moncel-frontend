@@ -107,7 +107,7 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
         </div>
         {props.showButton ?
             <div className="card-button">
-                <CardButton lang={lang} tag={tag || ""} url={url || ""} state={props.state} title={props.title}/>
+                <CardButton lang={lang} tag={tag || ""} url={url || ""} modalProps={{state: props.state, title: props.title }}/>
             </div> : null
         }
     </div>
