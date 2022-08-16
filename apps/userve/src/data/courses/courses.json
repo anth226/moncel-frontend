@@ -1456,17 +1456,6 @@
         "productCategoryLabel": "Alcohol Service"
     },
     {
-        "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
-        "state": "Washington",
-        "title": "Food Handler Training",
-        "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
-        "url": "#notify",
-        "type": "fh",
-        "button": "invert",
-        "tag": "coming-soon",
-        "productCategoryLabel": "Food Handling"
-    },
-    {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
         "state": "Washington",
         "title": "Food Manager Training",
