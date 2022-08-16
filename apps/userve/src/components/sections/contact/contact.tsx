@@ -71,8 +71,8 @@ const ContactSection = (props: ContactStoryblok) => {
                 </li>
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
                     <a href={ContactFormTabIds.BUSINESS} className={`nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start ${location.hash === ContactFormTabIds.BUSINESS ? "active" : ""}`} id="tabs-profile-tabFill" data-bs-toggle="pill" data-bs-target={ContactFormTabIds.BUSINESS} role="tab"
-                        aria-controls="tabs-business" aria-selected={location.hash === ContactFormTabIds.BUSINESS}>Business Enrollment
-                         <DynamicImage fileNode={imageData.store.nodes[0]} alt="Business Enrollment" width={50} height={50} loading="lazy" className="mt-4 w-[50px] h-[50px] mx-auto"/>
+                        aria-controls="tabs-business" aria-selected={location.hash === ContactFormTabIds.BUSINESS}>Business Accounts
+                         <DynamicImage fileNode={imageData.store.nodes[0]} alt="Business Accounts" width={50} height={50} loading="lazy" className="mt-4 w-[50px] h-[50px] mx-auto"/>
                     </a>
                 </li>
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
@@ -100,10 +100,10 @@ const ContactSection = (props: ContactStoryblok) => {
                     </button>
                     {isMobileMenuOpen && (
                         <ul className="nav nav-tabs absolute hidden text-bluewood pt-1 group-hover:block z-40 border-1 w-full" id="tabs-tabFill" role="tablist">
-                            <MobileMenuItem target="tabs-individual" id="home" title="Individual Enrollment" className="border-b"/>
-                            <MobileMenuItem target="tabs-business" id="profile" title="Business Enrollment" className="border-b"/>
-                            <MobileMenuItem target="tabs-support" id="messages" title="Student Support" className="border-b"/>
-                            <MobileMenuItem target="tabs-general" id="messages" title="General"/>
+                            <MobileMenuItem target="tabs-individual" id="mobile-menu-link-individual" title="Individual Enrollment" className="border-b"/>
+                            <MobileMenuItem target="tabs-business" id="mobile-menu-link-accounts" title="Business Accounts" className="border-b"/>
+                            <MobileMenuItem target="tabs-support" id="mobile-menu-link-support" title="Student Support" className="border-b"/>
+                            <MobileMenuItem target="tabs-general" id="mobile-menu-link-general" title="General"/>
                         </ul>
                     )}  
                 </div>

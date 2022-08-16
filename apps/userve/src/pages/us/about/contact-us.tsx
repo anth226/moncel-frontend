@@ -32,7 +32,7 @@ export default ({ data }: PageProps<DataProps>) => {
     <Layout>
       <main>
         <SectionFullWidth className="bg-gradient-to-b from-lilac to-white">
-          <Section className="grid grid-cols-12">
+          <Section id="contact" className="grid grid-cols-12">
             <ContactSection {...contactContent} />
           </Section>
         </SectionFullWidth>

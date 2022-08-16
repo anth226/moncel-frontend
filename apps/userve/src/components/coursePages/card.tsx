@@ -27,10 +27,6 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
     let url, title, desc, image, type, courseTitle, tag, fileNode, productCategoryLabel;
     const lang = courseLang(props.type);
 
-    const showNotifyModal = () => {
-        dispatch(toggleModal("courseNotifyModal"));
-    }
-
     if ("component" in props) {
         // Component has been passed a CourseCardStoryblok as props
         url = props.link;
@@ -62,9 +58,13 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
         }
     }
 
+    const showNotifyModal = () => {
+        dispatch(toggleModal({ modalName: "courseNotifyModal", modalProps: { state: props.state, title: props.title } }));
+    }
+
     const imageData = useStaticQuery(imageQuery);
     let defaultGraphicFileNode: LocalFileSource | undefined;
-    
+
     if (props.type) {
         defaultGraphicFileNode = imageData[props.type].nodes[0];
     }
@@ -72,11 +72,11 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
     let imageComp;
 
     if (fileNode) {
-        imageComp = <DynamicImage fileNode={fileNode} alt={`${title} course preview image`} imgStyle={{borderTopRightRadius:'.5rem',borderTopLeftRadius:'.5rem'}}/>
+        imageComp = <DynamicImage fileNode={fileNode} alt={`${title} course preview image`} imgStyle={{ borderTopRightRadius: '.5rem', borderTopLeftRadius: '.5rem' }} />
     } else if (defaultGraphicFileNode) {
-            imageComp = <DynamicImage fileNode={defaultGraphicFileNode} alt={`${title}`} imgStyle={{borderTopRightRadius:'.5rem',borderTopLeftRadius:'.5rem'}}/>
+        imageComp = <DynamicImage fileNode={defaultGraphicFileNode} alt={`${title}`} imgStyle={{ borderTopRightRadius: '.5rem', borderTopLeftRadius: '.5rem' }} />
     } else {
-            imageComp = null;
+        imageComp = null;
     }
 
     let language;
@@ -87,27 +87,27 @@ const Card = (props: (CourseData | CourseCardStoryblok) & ReactProps & Storyblok
     }
     return <div className={`font-sans card flex flex-col rounded-xl overflow-hidden bg-white shadow-xl ${props.className}`} data-test={`course-card-${encodeURIComponent(courseTitle || "")}`}>
         <div>
-            <div className={ props.state ? `card-image ${tag == "coming-soon" ? "coming-soon" : "available"}` : "card-image"}>
-                { tag == "coming-soon" ? <a className="cursor-pointer" onClick={showNotifyModal}>{imageComp}</a> : <a className="cursor-pointer" href={url}>{imageComp}</a>}
+            <div className={props.state ? `card-image ${tag == "coming-soon" ? "coming-soon" : "available"}` : "card-image"}>
+                {tag == "coming-soon" ? <a className="cursor-pointer" onClick={showNotifyModal}>{imageComp}</a> : <a className="cursor-pointer" href={url}>{imageComp}</a>}
             </div>
 
             <div className="card-body">
-                { props.state ? <div>
+                {props.state ? <div>
                     <div className="flex flex-row">
                         {/* product category */}
-                        { productCategoryLabel ? <div className="mr-3 text-xs bg-cornflower text-white mb-4 px-2 py-1 rounded w-fit">{productCategoryLabel}</div> : null }
+                        {productCategoryLabel ? <div className="mr-3 text-xs bg-cornflower text-white mb-4 px-2 py-1 rounded w-fit">{productCategoryLabel}</div> : null}
                         {/* language */}
-                        { lang ? <div className="text-xs bg-gallery text-bluewood mb-4 px-2 py-1 rounded w-fit">{language}</div> : null }
+                        {lang ? <div className="text-xs bg-gallery text-bluewood mb-4 px-2 py-1 rounded w-fit">{language}</div> : null}
                     </div>
-                </div> : null }
+                </div> : null}
 
-                { tag == "coming-soon" ? <a className="text-bluewood text-lg font-semibold leading-4 cursor-pointer hover:underline" onClick={showNotifyModal}>{courseTitle}</a> : <a className="text-bluewood text-lg font-semibold leading-4 cursor-pointer hover:underline" href={url}>{courseTitle}</a> }
+                {tag == "coming-soon" ? <a className="text-bluewood text-lg font-semibold leading-4 cursor-pointer hover:underline" onClick={showNotifyModal}>{courseTitle}</a> : <a className="text-bluewood text-lg font-semibold leading-4 cursor-pointer hover:underline" href={url}>{courseTitle}</a>}
                 <p className="text-lynch mt-4">{desc}</p>
             </div>
         </div>
-        { props.showButton ?
+        {props.showButton ?
             <div className="card-button">
-                <CardButton lang={lang} tag={tag || ""} url={url || ""}/>
+                <CardButton lang={lang} tag={tag || ""} url={url || ""} modalProps={{state: props.state, title: props.title }}/>
             </div> : null
         }
     </div>

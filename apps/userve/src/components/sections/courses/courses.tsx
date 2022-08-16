@@ -43,15 +43,13 @@ export default ({ coursePageContent }: { coursePageContent: CoursePageStoryblok[
         return _storyblokDataByCourseType;
     }, {} as StoryblokDataByCourseType);
 
-    const showNotifyModal = () => {
-        dispatch(toggleModal(payload));
-    }
     const [ courses, setCourses ] = useState<CourseData[]>([]);
-
+    
     useEffect(() => {
         setCourses(retrieveCourseData(selectedState, courseEdges));
     }, [selectedState]);
     if(!selectedState) return null;
+
     return <Section className="!py-0">
         <Header3>{`Courses available in ${selectedState}`}</Header3>
         <div className="flex flex-col md:grid md:grid-cols-3 grid-flow-md:row gap-7">

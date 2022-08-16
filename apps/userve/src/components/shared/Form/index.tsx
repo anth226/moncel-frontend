@@ -5,10 +5,13 @@ interface FormInfo {
     formId: string;
     className?: string;
     hubId: string;
+    state?: string | null;
+    title?: string | null;
 }
 
 const HubspotContactForm = (props: FormInfo) => {
-    const { portalId, formId, hubId } = props;
+    const { portalId, formId, hubId, state, title } = props;
+    const course = state + ' ' + title;
 
     useEffect(() => {
         const script = document.createElement('script');
@@ -27,8 +30,16 @@ const HubspotContactForm = (props: FormInfo) => {
         });
     }, []);
 
+    // Add state selected by the user to hidden field in form, if applicable
+    const updateState = () => {
+        let input = document.querySelector('input[name="state_notification"]')
+        if (!input) return;
+        input.value = course;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+    };
+
     return (
-        <div id="hubspotForm">
+        <div id="hubspotForm" onSubmit={updateState}>
             <div id={`hub-${hubId}`} className={`p-8 rounded-md bg-white ${props.className || ""}`}></div>
         </div>
     );

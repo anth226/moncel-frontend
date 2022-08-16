@@ -58,7 +58,7 @@ const PurchaseButton = ({ children, courseType }: PurchaseButtonProps) => {
             navigate(payload);
         }
         else if(action == PurchaseActions.MODAL) {
-            dispatch(toggleModal(payload));
+            dispatch(toggleModal({modalName:payload}));
         }
     }
 

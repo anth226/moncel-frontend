@@ -20,7 +20,6 @@ const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?
 }
 
 const Alert = (props: { children: string | JSX.Element | JSX.Element[], className?: string }) => {
-    console.log(props)
     const imageData = useStaticQuery(imageQuery);
     return <div className="bg-cinderella text-milano rounded-xl p-2 mb-2 flex flex-row items-center justify-center text-[12.8px] text-center">
         <DynamicImage fileNode={imageData.alert.nodes[0]} alt="Alert Icon" width={12} height={12} className="hidden lg:block mr-2" loading="lazy"/>
@@ -40,10 +39,10 @@ const MoneyBackGuarantee = ({x}:{x:CourseType}) => {
     </div>;
 };
 
-const EnrollButton = ({ children, courseType }: { children: React.ReactNode, courseType: CourseTypeData }) => {
+const EnrollButton = ({ children, courseType, id }: { children: React.ReactNode, courseType: CourseTypeData, id:string }) => {
     // basset needs a modal
     return <PurchaseButton courseType={courseType}>
-        <div className="btn btn-primary w-full">
+        <div id={id} className="btn btn-primary w-full">
             { children }
         </div>
     </PurchaseButton>
@@ -118,7 +117,7 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
     // replace state placeholder with state name
     if (!content.price) throw Error(`Price was not found for page ${context.url}`);
 
-    return <Section className="flex flex-col md:grid grid-cols-1 md:grid-cols-3 gap-10 grid-flow-col md:grid-flow-row">
+    return <Section id="course-page-product-hero" className="flex flex-col md:grid grid-cols-1 md:grid-cols-3 gap-10 grid-flow-col md:grid-flow-row">
         <div className="md:col-start-2 md:col-span-2 md:row-start-1 row-span-2">
             {imageComp}
         </div>
@@ -128,7 +127,7 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
             <Text className="!mb-4">{content.desc || ""}</Text>
             <div className="mb-4 text-4xl font-extrabold">{content.price}</div>
 
-            <EnrollButton courseType={{ type: context.type, enroll: context.enroll || "" }}>
+            <EnrollButton id="course-page-enroll-button" courseType={{ type: context.type, enroll: context.enroll || "" }}>
                 <p className="text-inherit !mb-0" data-test="enroll-button">{lang == "lang-es" ? "Regístrate" : "Enroll Now"}</p>
             </EnrollButton>
             <BusinessButton x={context.type}/>

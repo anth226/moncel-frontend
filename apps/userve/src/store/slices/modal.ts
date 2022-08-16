@@ -11,7 +11,17 @@ export type AllModalNames = keyof typeof AllModals | null;
 
 interface ActiveModalSlice {
     activeModal: AllModalNames | null;
+    modalProps?: ModalProps;
 }
+
+interface ModalProps {
+    [key: string]: unknown;
+}
+
+type ToggleModalAction = {
+    modalName: AllModalNames;
+    modalProps?: ModalProps;
+} | null;
 
 const initialState: ActiveModalSlice = {
     activeModal: null,
@@ -22,8 +32,14 @@ const navbarSlice = createSlice({
     name: 'modal',
     initialState,
     reducers: {
-        toggleModal: (state, action: PayloadAction<AllModalNames>) => {
-          state.activeModal = action.payload;
+        toggleModal: (state, action: PayloadAction<ToggleModalAction>, modalProps?: ModalProps ) => {
+            if (action.payload == null) {
+                state.activeModal = null;
+                state.modalProps = undefined;
+                return
+            }
+          state.activeModal = action.payload.modalName;
+          state.modalProps = action.payload.modalProps;
         },
     },
 });

@@ -6,6 +6,7 @@ import { AllModals } from 'src/store/slices/modal';
 const MODAL_BG_ID = "modal-darkened-background";
 const GlobalModal = () => {
     const activeModal = useAppSelector(state => state.activeModal.activeModal);
+    const modalProps = useAppSelector(state => state.activeModal.modalProps);
     const dispatch = useAppDispatch();
     const { toggleModal } = AppActions;
 
@@ -19,7 +20,7 @@ const GlobalModal = () => {
         onClick={(e) => {
             if('id' in e.target && (e.target as HTMLDivElement).id == MODAL_BG_ID) dispatch(toggleModal(null));
         }}>
-        <Component />
+        <Component {...modalProps} />
     </div>
 };
 
