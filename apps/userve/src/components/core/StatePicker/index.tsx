@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'gatsby';
 
 import { useAppDispatch, useAppSelector, AppActions } from 'src/store';
@@ -11,12 +11,17 @@ const STATE_SELECT_PLACEHOLDER = "Select Your State";
 
 const StatePicker = () => {
     const dispatch = useAppDispatch();
-    const selectedState = useAppSelector(state => state.selectedState.selected) || "";
+    const [ selectedState, setSelectedState ] = useState(STATE_SELECT_PLACEHOLDER);
+    // const selectedState = useAppSelector(state => state.selectedState.selected) || "";
 
     const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newState = (e.target.value === STATE_SELECT_PLACEHOLDER) ? "" : e.target.value;
+        setSelectedState(newState);
+    }
+
+    const handleSelectButton = (e: React.MouseEvent<HTMLButtonElement>) => {
+        const newState = (selectedState === STATE_SELECT_PLACEHOLDER) ? "" : selectedState;
         dispatch(selectState(newState));
-        e.target.value = "Select Your State";
     }
 
     useEffect(() => {
@@ -53,7 +58,7 @@ const StatePicker = () => {
             </select>
             <div className={`text-2xl text-navy opacity-50 font-semibold leading-7 pt-1 font-sans`} data-test="statepicker-value">{selectedState || "\u00A0"}</div>
         </div>
-        <Link to={ButtonHref}><button className="btn btn-primary px-4 py-4 min-w-[180px] w-full md:w-auto m" data-test="statepicker-btn">Find Your Course</button></Link>
+        <Link to={ButtonHref}><button className="btn btn-primary px-4 py-4 min-w-[180px] w-full md:w-auto m" data-test="statepicker-btn" onClick={handleSelectButton}>Find Your Course</button></Link>
     </div>;
 };
 
