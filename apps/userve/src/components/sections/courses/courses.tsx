@@ -50,7 +50,7 @@ export default ({ coursePageContent }: { coursePageContent: CoursePageStoryblok[
     }, [selectedState]);
     if(!selectedState) return null;
 
-    return <Section className="!py-0">
+    return <Section className="!py-0" id="courses-page-courses-available-section">
         <Header3>{`Courses available in ${selectedState}`}</Header3>
         <div className="flex flex-col md:grid md:grid-cols-3 grid-flow-md:row gap-7">
             { courses.map((courseData, i) => {

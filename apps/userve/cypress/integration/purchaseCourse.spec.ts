@@ -19,7 +19,8 @@ describe('State picker', () => {
     let state = 'Illinois';
     const expectedCourseTitle = "Illinois BASSET Certification";
     cy.get('[data-test=statepicker]').select(state).wait(500);
-    cy.get('[data-test=statepicker-value]').should('have.text', state);
+    cy.get('[data-test=statepicker-btn]').click().wait(500);
+    cy.get('#courses-page-courses-available-section h3').should('contain.text', state);
     const statepickerBtn = cy.get('[data-test=statepicker-btn]');
     statepickerBtn.click().wait(500);
     cy.get('[data-test=statepicker-value]').should('have.text', state);
