@@ -27,7 +27,7 @@ const ContactSection = (props: ContactStoryblok) => {
     const location = useLocation();
     const isClient = typeof window !== "undefined";
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+    debugger;
     const MobileMenuItem = (props:ReactProps) => {
         return <li className={`nav-item ${props.className}`} role="presentation">
             <a href={`#${props.target}`} className="nav-link bg-white hover:bg-white py-2 px-4 block whitespace-no-wrap hover:no-underline" id={`tabs-${props.id}-tabFill`} data-bs-toggle="pill" data-bs-target={`#${props.target}`}role="tab" aria-controls={props.target} aria-selected="false" onClick={() => setMobileMenuOpen(false)}>{props.title}</a>
@@ -64,8 +64,8 @@ const ContactSection = (props: ContactStoryblok) => {
             { !isClient ? null : <ul className="hidden md:grid nav nav-tabs mb-8 gap-7 grid-cols-12" id="tabs-tabFill"
                 role="tablist">
                 <li className="nav-item col-span-6 lg:col-span-3 text-center h-full" role="presentation">
-                    <a href={ContactFormTabIds.INDIVIDUAL} className={`nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start ${location.hash === ContactFormTabIds.INDIVIDUAL ? "active" : ""}`} id="tabs-home-tabFill" data-bs-toggle="pill" data-bs-target={ContactFormTabIds.INDIVIDUAL} role="tab"
-                        aria-controls="tabs-individual" aria-selected={location.hash === ContactFormTabIds.INDIVIDUAL}>Individual Enrollment
+                    <a href={ContactFormTabIds.INDIVIDUAL} className={`nav-link w-full font-bold text-bluewood bg-white p-6 rounded-lg normal-case h-full hover:no-underline hover:bg-navy hover:bg-opacity-10 !shadow-md flex flex-col justify-start ${!location.hash || location.hash === ContactFormTabIds.INDIVIDUAL ? "active" : ""}`} id="tabs-home-tabFill" data-bs-toggle="pill" data-bs-target={ContactFormTabIds.INDIVIDUAL} role="tab"
+                        aria-controls="tabs-individual" aria-selected={!location.hash || location.hash === ContactFormTabIds.INDIVIDUAL}>Individual Enrollment
                          <DynamicImage fileNode={imageData.profile.nodes[0]} alt="Individual Enrollment" width={50} height={50} loading="lazy" className="mt-4 w-[50px] h-[50px] mx-auto"/>
                     </a>
                 </li>
@@ -109,7 +109,7 @@ const ContactSection = (props: ContactStoryblok) => {
                 </div>
             </div>
             { !isClient ? null : <div className="tab-content" id="tabs-tabContentFill">
-                <div className={`tab-pane fade ${location.hash === ContactFormTabIds.INDIVIDUAL ? "show active" : ""}`} id="tabs-individual" role="tabpanel" aria-labelledby="tabs-home-tabFill">
+                <div className={`tab-pane fade ${!location.hash || location.hash === ContactFormTabIds.INDIVIDUAL ? "show active" : ""}`} id="tabs-individual" role="tabpanel" aria-labelledby="tabs-home-tabFill">
                     <HubspotContactForm portalId="21498581" formId="ce0ce7ff-c3fe-4ba5-b756-a851de2e5cb7" hubId="ind" className="p-0 md:p-8 bg-transparent !shadow-none md:bg-white md:!shadow-lg" />
                 </div>
                 <div className={`tab-pane fade ${location.hash === ContactFormTabIds.BUSINESS ? "show active" : ""}`} id="tabs-business" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
