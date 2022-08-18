@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'gatsby';
 
 import { useAppDispatch, useAppSelector, AppActions } from 'src/store';
@@ -13,16 +13,24 @@ const GEOLOCATION_STATE_FALLBACK = "California";
 const StatePicker = () => {
     const dispatch = useAppDispatch();
     const selectedState = useAppSelector(state => state.selectedState.selected) || "";
+    const [ statePickerState, setStatePickerState ] = useState(selectedState || STATE_SELECT_PLACEHOLDER);
 
     const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newState = (e.target.value === STATE_SELECT_PLACEHOLDER) ? "" : e.target.value;
+        setStatePickerState(newState);
+    }
+
+    const handleSelectButton = (e: React.MouseEvent<HTMLButtonElement>) => {
+        const newState = (selectedState === STATE_SELECT_PLACEHOLDER) ? "" : statePickerState;
         dispatch(selectState(newState));
-        e.target.value = "Select Your State";
-    };
+        setStatePickerState(newState);
+    }
 
     useEffect(() => {
         getState().then((state) => {
-            dispatch(selectState(state || GEOLOCATION_STATE_FALLBACK ));
+            const newState = state || GEOLOCATION_STATE_FALLBACK
+            dispatch(selectState(newState));
+            setStatePickerState(newState)
         });
     }, []);
 
@@ -44,7 +52,7 @@ const StatePicker = () => {
             <label htmlFor="stateSelect" className="font-medium font-sans">Select Your State</label>
             <select id="stateSelect" onChange={handleSelect} className="bg-transparent absolute outline-0 pb-9 z-10 appearance-none text-base w-full opacity-0" data-test="statepicker">
                 {StateList.map(state => {
-                    if (selectedState == state) {
+                    if (statePickerState == state) {
                         selected = true;
                     } else {
                         selected = false;
@@ -52,9 +60,9 @@ const StatePicker = () => {
                     return <option key={`option-${state}`} selected={selected}>{state || STATE_SELECT_PLACEHOLDER}</option>
                 })}
             </select>
-            <div className={`text-2xl text-navy opacity-50 font-semibold leading-7 pt-1 font-sans`} data-test="statepicker-value">{selectedState || "\u00A0"}</div>
+            <div className={`text-2xl text-navy opacity-50 font-semibold leading-7 pt-1 font-sans`} data-test="statepicker-value">{statePickerState || "\u00A0"}</div>
         </div>
-        <Link to={ButtonHref}><button className="btn btn-primary px-4 py-4 min-w-[180px] w-full md:w-auto m" data-test="statepicker-btn">Find Your Course</button></Link>
+        <Link to={ButtonHref}><button className="btn btn-primary px-4 py-4 min-w-[180px] w-full md:w-auto m" data-test="statepicker-btn" onClick={handleSelectButton}>Find Your Course</button></Link>
     </div>;
 };
 
