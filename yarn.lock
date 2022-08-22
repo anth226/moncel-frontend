@@ -13428,6 +13428,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gatsby-plugin-no-index@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "gatsby-plugin-no-index@npm:1.0.2"
+  checksum: 61bd042a26380eed525470fafd5fc874e2aa162648b7b86f9dc2caf131cab1798df3f73137f9b851b9fb86a132b66a3e634a539dacaa2f83b1e257227d155a62
+  languageName: node
+  linkType: hard
+
 "gatsby-plugin-page-creator@npm:^4.16.0":
   version: 4.16.0
   resolution: "gatsby-plugin-page-creator@npm:4.16.0"
@@ -27968,6 +27975,7 @@ __metadata:
     gatsby-plugin-manifest: ^4.14.0
     gatsby-plugin-mdx: ^3.11.1
     gatsby-plugin-netlify-redirect: ^1.0.0
+    gatsby-plugin-no-index: ^1.0.2
     gatsby-plugin-postcss: ^5.11.0
     gatsby-plugin-react-head: ^1.1.0
     gatsby-plugin-react-helmet: ^5.15.0
