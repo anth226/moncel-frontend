@@ -118,7 +118,9 @@ const config: GatsbyConfig = {
     options: {
       disable: true,
     },
-  }]
+  },
+  ( process.env.IS_SANDBOX ? 'gatsby-plugin-no-index' : '' ) // prevent sandbox site from being indexed and stealing traffic
+  ]
 };
 
 export default config;
