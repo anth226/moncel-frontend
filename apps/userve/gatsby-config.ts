@@ -121,4 +121,8 @@ const config: GatsbyConfig = {
   }]
 };
 
+if(process.env.IS_SANDBOX) {
+  config.plugins!.push('gatsby-plugin-no-index');
+}
+
 export default config;
