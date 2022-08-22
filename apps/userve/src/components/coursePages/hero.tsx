@@ -93,6 +93,9 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
         case (context.type === "fh"):
             defaultGraphicFileNode = imageData.foodHandler.nodes[0];
             break;
+        case (context.type === "fh_ansi_ca"):
+            defaultGraphicFileNode = imageData.fh_ansi_ca.nodes[0];
+            break;
         case (context.type === "al"):
             defaultGraphicFileNode = imageData.alcoholServer.nodes[0];
             break;
@@ -134,6 +137,7 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
             { content.alert ? <Alert>{content.alert}</Alert> : null}    
             <MoneyBackGuarantee x={context.type} />
             <Features features={content.features || []} heroStory={heroStory}/>
+            {content.disclaimer ? <p className="text-sm mt-4">{ content.disclaimer }</p> : null}
         </div>
         <div className="md:col-start-2 col-span-2 md:row-start-3 lg:mt-6">
             <Header2 className="!text-2xl">{content.subtitle || ""}</Header2>
@@ -146,6 +150,16 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
 const imageQuery = graphql`
 query {
     foodHandler:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+        nodes {
+            name
+            extension
+            childImageSharp {
+                gatsbyImageData
+            }
+            publicURL
+        }
+    }
+    fh_ansi_ca:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
         nodes {
             name
             extension

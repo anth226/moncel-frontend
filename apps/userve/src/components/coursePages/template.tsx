@@ -19,6 +19,8 @@ const pageStyles = {
 
 export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData>) => {
     // Retrieve storyblok data by section
+    console.log('data',data)
+    console.log('pageContext',pageContext)
     const heroStories = data.hero?.nodes || [];
     const courseInfoStories = data.courseInfo?.nodes || [];
     const benefitsStories = data.benefits?.nodes || [];
@@ -59,7 +61,7 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
     }
 
     let faqVersion;
-    if (pageContext.type == "rbs") {
+    if (pageContext.type == "rbs" || pageContext.type == "fh_ansi_ca") {
       faqVersion = "rbs"
     } else {
       faqVersion = "default"

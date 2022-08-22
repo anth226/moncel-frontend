@@ -151,12 +151,11 @@
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "California",
-        "title": "Food Handler Training",
-        "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
-        "url": "#notify",
-        "type": "fh",
-        "button": "invert",
-        "tag": "coming-soon",
+        "title": "ANSI Food Handler Training",
+        "desc": "Userve's California food handler training program online teaches food handlers to work with food safely to obtain an ANSI-accredited food handler card in California.",
+        "url": "/us/ca/food-service/ansi-food-handler-training",
+        "type": "fh_ansi_ca",
+        "button": "primary",
         "productCategoryLabel": "Food Handling"
     },
     {

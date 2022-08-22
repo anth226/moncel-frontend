@@ -195,6 +195,9 @@
           @apply mt-6;
         }
       }
+      &:last-child {
+        @apply mb-0;
+      }
     }
   }
   .gatsby-image-wrapper [data-main-image] {

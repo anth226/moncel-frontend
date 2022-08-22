@@ -10,6 +10,11 @@
         "label": "Food safety"
     },
     {
+        "type": "fh_ansi_ca",
+        "enroll": "https://my.userve.com/urlcheckout/add?product=6&amp;qty=1",
+        "label": "Food safety"
+    },
+    {
         "type": "rbs",
         "enroll": "https://my.userve.com/urlcheckout/add?product=2&amp;qty=1",
         "label": "Alcohol service"

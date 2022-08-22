@@ -18,11 +18,16 @@
       ul {
         @apply relative;
         li {
-          @apply pl-8 before:content-[url('src/images/usx-check-white.svg')] before:absolute before:left-0 before:w-[15px] before:h-[12px];
+          @apply pl-8 before:content-[url('src/images/usx-check-white.svg')] before:absolute before:left-0 before:w-[15px] before:h-[12px] list-none ml-0 mt-0;
         }
       }
       &.active {
         @apply hidden md:grid;
+      }
+    }
+    ul {
+      li {
+        @apply ml-4 mt-2 list-disc pl-2; 
       }
     }
   }
