@@ -7,6 +7,7 @@ import { CoursePageInfoSectionStoryblok } from 'src/storyblok-component-types';
 import { Slug } from 'src/lib';
 
 import "./faqs.scss";
+import RichText from '../core/RichText';
 
 interface StoryProps {
     story: Slug;
@@ -14,12 +15,11 @@ interface StoryProps {
 
 export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
     const faqCards = props.faq || [];
-
     return <SectionFullWidth className={props.className || ""}>
         <Section>
-            <div className="col-span-12">
+            <div className="col-span-12"> 
                 <Header2>{props.title}</Header2>
-                <ReactMarkdown className="mb-10 hidden md:block">{props.desc || ""}</ReactMarkdown>
+                <RichText className="mb-10 hidden md:block" document={props.desc}/>
             </div>
             <div className="grid grid-cols-12">
                 <ul className="hidden md:flex col-span-4 nav nav-tabs flex-col flex-wrap list-none border-b-0 pl-0 mr-20" id="tabs-tabFaq" role="tablist">
