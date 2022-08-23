@@ -13,8 +13,14 @@
     @media only screen and (max-width: 767px) {
       @apply block opacity-100;
     }
+    h3 {
+      @apply mb-4 text-2xl font-semibold text-lynch;
+    }
     &.first {
       @apply h-full bg-[url('src/images/usx-cta-background.svg')] bg-cover bg-bottom;
+      h3 {
+        @apply text-white;
+      }
       ul {
         @apply relative;
         li {
