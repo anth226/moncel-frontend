@@ -19,8 +19,6 @@ const pageStyles = {
 
 export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData>) => {
     // Retrieve storyblok data by section
-    console.log('data',data)
-    console.log('pageContext',pageContext)
     const heroStories = data.hero?.nodes || [];
     const courseInfoStories = data.courseInfo?.nodes || [];
     const benefitsStories = data.benefits?.nodes || [];
