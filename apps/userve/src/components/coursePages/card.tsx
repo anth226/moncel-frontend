@@ -137,7 +137,57 @@ const imageQuery = graphql`
                 publicURL
             }
         }
+        fh_ansi_az:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+            nodes {
+                name
+                extension
+                childImageSharp {
+                    gatsbyImageData
+                }
+                publicURL
+            }
+        }
         fh_ansi_ca:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+            nodes {
+                name
+                extension
+                childImageSharp {
+                    gatsbyImageData
+                }
+                publicURL
+            }
+        }
+        fh_ansi_hi:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+            nodes {
+                name
+                extension
+                childImageSharp {
+                    gatsbyImageData
+                }
+                publicURL
+            }
+        }
+        fh_ansi_il:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+            nodes {
+                name
+                extension
+                childImageSharp {
+                    gatsbyImageData
+                }
+                publicURL
+            }
+        }
+        fh_ansi_nm:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+            nodes {
+                name
+                extension
+                childImageSharp {
+                    gatsbyImageData
+                }
+                publicURL
+            }
+        }
+        fh_ansi_tx:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
             nodes {
                 name
                 extension

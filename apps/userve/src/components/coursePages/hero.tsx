@@ -93,8 +93,23 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
         case (context.type === "fh"):
             defaultGraphicFileNode = imageData.foodHandler.nodes[0];
             break;
+        case (context.type === "fh_ansi_az"):
+            defaultGraphicFileNode = imageData.fh_ansi_az.nodes[0];
+            break;
         case (context.type === "fh_ansi_ca"):
             defaultGraphicFileNode = imageData.fh_ansi_ca.nodes[0];
+            break;
+        case (context.type === "fh_ansi_hi"):
+            defaultGraphicFileNode = imageData.fh_ansi_hi.nodes[0];
+            break;
+        case (context.type === "fh_ansi_il"):
+            defaultGraphicFileNode = imageData.fh_ansi_il.nodes[0];
+            break;
+        case (context.type === "fh_ansi_nm"):
+            defaultGraphicFileNode = imageData.fh_ansi_nm.nodes[0];
+            break;
+        case (context.type === "fh_ansi_tx"):
+            defaultGraphicFileNode = imageData.fh_ansi_tx.nodes[0];
             break;
         case (context.type === "al"):
             defaultGraphicFileNode = imageData.alcoholServer.nodes[0];
@@ -159,7 +174,57 @@ query {
             publicURL
         }
     }
+    fh_ansi_az:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+        nodes {
+            name
+            extension
+            childImageSharp {
+                gatsbyImageData
+            }
+            publicURL
+        }
+    }
     fh_ansi_ca:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+        nodes {
+            name
+            extension
+            childImageSharp {
+                gatsbyImageData
+            }
+            publicURL
+        }
+    }
+    fh_ansi_hi:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+        nodes {
+            name
+            extension
+            childImageSharp {
+                gatsbyImageData
+            }
+            publicURL
+        }
+    }
+    fh_ansi_il:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+        nodes {
+            name
+            extension
+            childImageSharp {
+                gatsbyImageData
+            }
+            publicURL
+        }
+    }
+    fh_ansi_nm:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+        nodes {
+            name
+            extension
+            childImageSharp {
+                gatsbyImageData
+            }
+            publicURL
+        }
+    }
+    fh_ansi_tx:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
         nodes {
             name
             extension

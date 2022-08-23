@@ -61,8 +61,8 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
     }
 
     let faqVersion;
-    if (pageContext.type == "rbs" || pageContext.type == "fh_ansi_ca") {
-      faqVersion = "rbs"
+    if (pageContext.type == "rbs" || pageContext.type.includes('ansi')) {
+      faqVersion = "updated"
     } else {
       faqVersion = "default"
     };
@@ -78,7 +78,7 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
 
                 { faqVersion == "default" && <span><CourseInfoSection {...faqsContent} story={faqsStory}/><AboutUsSection {...accountsContent} story={accountsStory}/><BenefitsSection {...featuresContent} story={featuresStory} /></span> }
 
-                { faqVersion == "rbs" && <span><TabsSection {...accountsContent} story={accountsStory}/><FaqsSection {...faqsContent} story={faqsStory}/></span> }
+                { faqVersion == "updated" && <span><TabsSection {...accountsContent} story={accountsStory}/><FaqsSection {...faqsContent} story={faqsStory}/></span> }
             </main>
         </Layout>
     </div>

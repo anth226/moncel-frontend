@@ -10,7 +10,32 @@
         "label": "Food safety"
     },
     {
+        "type": "fh_ansi_az",
+        "enroll": "https://my.userve.com/urlcheckout/add?product=6&amp;qty=1",
+        "label": "Food safety"
+    },
+    {
         "type": "fh_ansi_ca",
+        "enroll": "https://my.userve.com/urlcheckout/add?product=6&amp;qty=1",
+        "label": "Food safety"
+    },
+    {
+        "type": "fh_ansi_hi",
+        "enroll": "https://my.userve.com/urlcheckout/add?product=6&amp;qty=1",
+        "label": "Food safety"
+    },
+    {
+        "type": "fh_ansi_il",
+        "enroll": "https://my.userve.com/urlcheckout/add?product=6&amp;qty=1",
+        "label": "Food safety"
+    },
+    {
+        "type": "fh_ansi_nm",
+        "enroll": "https://my.userve.com/urlcheckout/add?product=6&amp;qty=1",
+        "label": "Food safety"
+    },
+    {
+        "type": "fh_ansi_tx",
         "enroll": "https://my.userve.com/urlcheckout/add?product=6&amp;qty=1",
         "label": "Food safety"
     },
