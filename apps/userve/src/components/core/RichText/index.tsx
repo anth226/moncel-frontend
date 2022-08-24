@@ -1,8 +1,8 @@
 import React from 'react';
-import { render } from 'storyblok-rich-text-react-renderer-ts';
+import { render, StoryblokRichtext } from 'storyblok-rich-text-react-renderer-ts';
 
 interface RichTextProps {
-    document: any;
+    document: StoryblokRichtext;
     className?: string;
 }
 
