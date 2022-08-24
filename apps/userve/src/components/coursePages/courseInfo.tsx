@@ -9,6 +9,7 @@ import { ExternalLink } from '../core';
 import { getFilename, findMatchingLocalFileNode, DynamicImage, Slug } from 'src/lib';
 
 import "./courseInfo.scss";
+import RichText from '../core/RichText';
 
 interface StoryProps {
     story: Slug;
@@ -49,7 +50,7 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
                     })}
                 </div>
                 <div className="mt-6">
-                    {props.disclaimer == '' ? '' : <ReactMarkdown className="text-center">{props.disclaimer}</ReactMarkdown>}
+                    {props.disclaimer == '' ? '' : <RichText className="text-center text-lynch" document={props.disclaimer}/>}
                 </div>
             </div>
         </Section>
