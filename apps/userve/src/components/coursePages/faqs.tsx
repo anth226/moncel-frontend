@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import { Header2 } from 'src/components/core/typography';
 import { Section, SectionFullWidth } from 'src/components/core/Section';
@@ -61,7 +60,7 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
                     })}
                 </div>
             </div>
-            <ReactMarkdown className="md:hidden">{props.desc || ""}</ReactMarkdown>
+            <RichText className="md:hidden" document={props.desc || ""}/>
         </Section>
     </SectionFullWidth>;
 }
