@@ -19,7 +19,7 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
         <Section>
             <div className="col-span-12"> 
                 <Header2>{props.title}</Header2>
-                <RichText className="mb-10 hidden md:block" document={props.desc}/>
+                <RichText className="mb-10 hidden md:block" document={props.desc || ""}/>
             </div>
             <div className="grid grid-cols-12">
                 <ul className="hidden md:flex col-span-4 nav nav-tabs flex-col flex-wrap list-none border-b-0 pl-0 mr-20" id="tabs-tabFaq" role="tablist">
@@ -42,13 +42,13 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
                                         <h3 className="font-semibold !text-navy text-lg cursor-pointer md:mb-2 !bg-transparent" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} aria-controls={`collapse_${random}_${i}`} id={`heading_${random}_${i}`} aria-expanded="false">{y.title || ""}</h3>
 
                                         <div className="intro !bg-transparent" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} id={`heading_${random}_${i}`} aria-expanded="false">
-                                            <ReactMarkdown>{y.intro || ""}</ReactMarkdown>
+                                            <RichText className="text-lynch" document={y.intro || ""}/>
                                         </div>
                                         
                                         <div id={`collapse_${random}_${i}`} className="accordion-collapse collapse" aria-labelledby={`heading_${random}_${i}`} data-bs-parent={`#accordion_${random}`}>
                                             <div className="accordion-body">
-                                                <ReactMarkdown>{y.intro || ""}</ReactMarkdown>
-                                                <ReactMarkdown>{y.desc || ""}</ReactMarkdown>
+                                                <RichText className="text-lynch" document={y.intro || ""}/>
+                                                {y.desc && <RichText className="text-lynch" document={y.desc || ""}/>}
                                             </div>
                                         </div>
 
