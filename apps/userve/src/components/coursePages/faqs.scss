@@ -9,6 +9,11 @@
   .read-more[aria-expanded="true"] {
     @apply hidden;
   }
+  .accordion-body {
+    div {
+      @apply mb-4 last:mb-0;
+    }
+  }
 }
 .faq[aria-expanded="true"] {
   @apply border border-dodger bg-lilac md:border-lilac md:bg-lilac before:absolute before:-rotate-180 before:content-[url('src/images/usx-down-arrow.svg')];
