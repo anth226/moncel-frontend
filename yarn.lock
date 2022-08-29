@@ -3261,6 +3261,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@marvr/storyblok-rich-text-types@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@marvr/storyblok-rich-text-types@npm:2.0.1"
+  checksum: 412883786e47c1bd0c42c881f30408909178b4053976c658f7c0b2ce9ade652093c5d66127b19b4b12438c80d831259eae93fed2ddfd345eaebdbe71fdebfc5b
+  languageName: node
+  linkType: hard
+
 "@mdx-js/mdx@npm:^1.6.22":
   version: 1.6.22
   resolution: "@mdx-js/mdx@npm:1.6.22"
@@ -25447,6 +25454,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"storyblok-rich-text-react-renderer-ts@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "storyblok-rich-text-react-renderer-ts@npm:3.2.0"
+  dependencies:
+    "@marvr/storyblok-rich-text-types": ^2.0.1
+  peerDependencies:
+    react: ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: 4c6cc82d2b848d7bf8aa7985fb8ba0f85728619d1463dd75e5aadee1df9ad8c3abf3adecb03fcd8776bd2c01946c3904f33f4e960beab14a6f69a03eb9ac1e81
+  languageName: node
+  linkType: hard
+
 "storyblok@npm:^3.10.4":
   version: 3.10.5
   resolution: "storyblok@npm:3.10.5"
@@ -28005,6 +28023,7 @@ __metadata:
     start-server-and-test: ^1.14.0
     storyblok: ^3.10.4
     storyblok-generate-ts: ^1.4.1
+    storyblok-rich-text-react-renderer-ts: ^3.2.0
     tailwindcss: ^3.1.0
     tw-elements: ^1.0.0-alpha12
     typescript: ^4.6.3
