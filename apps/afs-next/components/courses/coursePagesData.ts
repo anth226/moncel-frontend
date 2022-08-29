@@ -30,7 +30,7 @@ export const coursePageOverviewData: GridTemplateProps = {
     title: "Food Handler Course",
     description: "The Food Handler course is recommended for all food workers and is designed to meet federal requirements for food safety training.",
     imageSrc: "/food-handler.jpg",
-    href: "/courses/food-safety-supervisor",
+    href: "/courses/food-handler-course",
   },
   {
     title: "NSW Recertification",
