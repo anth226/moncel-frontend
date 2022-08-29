@@ -1,7 +1,18 @@
+import { ApolloClient, InMemoryCache } from "@apollo/client";
 import axios from 'axios';
 import fs from 'fs';
+import { ImageLoaderProps } from 'next/image';
 
 const FILENAME_PATTERN = /\/([^\/]+)$/;
+
+export const nextImageLoader = (resolverProps: ImageLoaderProps) => {
+    return `/${parseFilename(resolverProps.src)}`;
+};
+
+export const graphqlClient = new ApolloClient({
+    uri: `${process.env.STRAPI_URL}/graphql`,
+    cache: new InMemoryCache(),
+});
 
 export const parseFilename = (s: string) => {
     const match = s.match(FILENAME_PATTERN);
@@ -31,7 +42,7 @@ const downloadFile = async (url: string) => {
 interface IOverrides {
 
 };
-type GQLNode = { __typename?: string, [key: string]: GQLNode } | Array<GQLNode> | string | null | undefined;
+type GQLNode = { __typename?: string, [key: string]: GQLNode | unknown } | Array<GQLNode> | string | null | undefined;
 export const findAndDownloadStrapiFiles = async (strapiGqlNode: GQLNode, overrides?: IOverrides) => {
     const LOCAL_ASSET_TYPENAME = "UploadFile";
     const KEYS_TO_MATCH = ["url"]; // names of properties that are URLs to download
@@ -40,7 +51,7 @@ export const findAndDownloadStrapiFiles = async (strapiGqlNode: GQLNode, overrid
     else if(strapiGqlNode instanceof Array) {
         for(let node of strapiGqlNode) findAndDownloadStrapiFiles(node);
     }
-    else if(typeof strapiGqlNode == 'object' && "__typename" in strapiGqlNode && strapiGqlNode.__typename == LOCAL_ASSET_TYPENAME) {
+    else if(typeof strapiGqlNode === 'object' && "__typename" in strapiGqlNode && strapiGqlNode.__typename == LOCAL_ASSET_TYPENAME) {
         for(let key of KEYS_TO_MATCH) {
             if(key in strapiGqlNode) {
                 // precondition: keys in KEYS_TO_MATCH must be urls when typenames match
@@ -48,9 +59,9 @@ export const findAndDownloadStrapiFiles = async (strapiGqlNode: GQLNode, overrid
             }
         }
     }
-    else {
+    else if (typeof strapiGqlNode === 'object') {
         for (let key of Object.keys(strapiGqlNode)) {
-            findAndDownloadStrapiFiles(strapiGqlNode[key]);
+            findAndDownloadStrapiFiles(strapiGqlNode[key] as GQLNode);
         }
     }
 };
