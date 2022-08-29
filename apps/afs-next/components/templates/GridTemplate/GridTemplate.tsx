@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import NextLink from 'next/link';
 
 import { GridTemplateProps, GridTemplateCard } from '../types';
 import { Header2, Header4, Text } from 'components/core/typography';
@@ -30,12 +31,16 @@ interface GridCardProps {
     card: GridTemplateCard;
     parentId: string;
     index: number;
+    href?: string;
 }
 const GridCard = (props: GridCardProps) => {
     const { card, parentId, index } = props;
+
+    const imageComp = card.href ? <NextLink href={card.href}><span className="link"><Image src={card.imageSrc} alt={`grid-card-${card.title}`} height={125} width={222}/></span></NextLink> : <Image src={card.imageSrc} alt={`grid-card-${card.title}`} height={125} width={222}/>;
+    const titleComp = card.href ? <NextLink href={card.href}><span className="link hover:decoration-afs-green"><Header4 className="text-afs-green">{card.title}</Header4></span></NextLink> : <Header4 className="text-afs-green">{card.title}</Header4>;
     return <div className="flex flex-col items-start border-[1px] border-afs-green p-4 md:w-[238px]" id={`${parentId}-card-${index}`}>
-        <Image src={card.imageSrc} alt={`grid-card-${card.title}`} height={125} width={222}/>
-        <Header4 className="text-afs-green">{card.title}</Header4>
+        { imageComp }
+        { titleComp }
         <Text>{card.description}</Text>
     </div>;
 };

@@ -2,13 +2,14 @@ import { ReactNode } from 'react';
 import NextLink from 'next/link';
 import Image from 'next/image';
 import Layout from 'components/core/layout';
+import { CoursesBackground, coursePageOverviewData } from 'components/courses';
 import { Header3, Header5, Text, Link } from 'components/core';
 import { RowsTemplate } from 'components/templates';
 
-import styles from '../styles.module.scss';
+import styles from './styles.module.scss';
 
 const TemplateData = {
-  ...LawsRequirementsOverviewData,
+  ...coursePageOverviewData,
   pathname: "laws-requirements/role/for-employees",
   displayPathname: "LAWS & REQUIREMENTS/BY ROLE/FOOD SAFETY LAWS & REQUIREMENTS FOR EMPLOYEES",
   header: "Food Safety Laws & Requirements For Employees",
@@ -18,7 +19,7 @@ const TemplateData = {
 const Page = () => {
   return (
     <Layout>
-      <LawsRequirementsBackground><RowsTemplate {...TemplateData}>
+      <CoursesBackground><RowsTemplate {...TemplateData}>
         <>
           <Section1 />
           <Divider />
@@ -28,7 +29,7 @@ const Page = () => {
           <Divider />
           <Section4 />
         </>
-        </RowsTemplate></LawsRequirementsBackground>
+        </RowsTemplate></CoursesBackground>
     </Layout>
   );
 };

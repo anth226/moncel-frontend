@@ -6,6 +6,9 @@ export const navigationData: NavigationProps = {
       { text:'Overview', href: '/courses' },
       { text:'Food Safety Supervisor', href:'/courses/food-safety-supervisor' },
       { text:'Food Handler Course', href:'/courses/food-handler-course' },
+      { text: 'NSW Recertification', href: '/courses/nsw-recertification' },
+      { text: 'Food Safety Manager', href: '/courses/food-safety-manager' },
+      { text: 'Introduction to Food Safety', href: 'courses/introduction-to-food-safety-course' }
     ],
 };
 
