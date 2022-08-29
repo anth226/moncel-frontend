@@ -11,4 +11,4 @@ const getBlogPosts = async (...params: Parameters<Client["cms"]["blogs"]["blogPo
   return await client.cms.blogs.blogPosts.blogPostsApi.getPage(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, PAGE_SIZE);
 };
 
-export default getBlogPosts;
+export default { getBlogPosts };

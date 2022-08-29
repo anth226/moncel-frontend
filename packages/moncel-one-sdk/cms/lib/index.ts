@@ -1,3 +1,3 @@
 export * from './markdown';
 export * from './strapi';
-export * from './hubspot';
+export { default as hubspot } from './hubspot';

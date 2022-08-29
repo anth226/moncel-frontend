@@ -6,7 +6,7 @@ import { RowsTemplate } from 'components/templates';
 import { LawsRequirementsOverviewData } from 'components/laws-requirements/lawsRequirementsPageData';
 import { LawsRequirementsBackground } from 'pages/laws-requirements';
 
-import { Divider, ListItem, IconCard } from 'components/laws-requirements';
+import { Divider, ListItem, IconCard } from 'components/core/templates';
 import styles from '../styles.module.scss';
 
 const TemplateData = {
@@ -29,8 +29,6 @@ const Page = () => {
           <Section3 />
           <Divider />
           <Section4 />
-          <Divider />
-          <Section5 />
         </>
         </RowsTemplate></LawsRequirementsBackground>
     </Layout>
