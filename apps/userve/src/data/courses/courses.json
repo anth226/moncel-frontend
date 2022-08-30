@@ -70,7 +70,7 @@
         "title": "ANSI Food Handler Training",
         "desc": "Userve's Arizona online food handler training program teaches food handlers to work with food safely to obtain an ANSI-accredited food handler card in Arizona.",
         "url": "/us/az/food-service/ansi-food-handler-training",
-        "type": "fh_ansi_az",
+        "type": "fh_ansi",
         "button": "primary",
         "productCategoryLabel": "Food Handling"
     },
@@ -153,7 +153,7 @@
         "title": "ANSI Food Handler Training (excl. San Diego)",
         "desc": "Userve's California online food handler training program teaches food handlers to work with food safely to obtain an ANSI-accredited food handler card in California (excluding San Diego).",
         "url": "/us/ca/food-service/ansi-food-handler-training",
-        "type": "fh_ansi_ca",
+        "type": "fh_ansi",
         "button": "primary",
         "productCategoryLabel": "Food Handling"
     },
@@ -163,7 +163,7 @@
         "title": "ANSI Food Handler Training (San Diego)",
         "desc": "Userve's California online food handler training program teaches food handlers to work with food safely to obtain an ANSI-accredited food handler card in San Diego, California.",
         "url": "#notify",
-        "type": "fh_ansi_ca",
+        "type": "fh_ansi",
         "button": "invert",
         "tag": "coming-soon",
         "productCategoryLabel": "Food Handling"
@@ -332,7 +332,7 @@
         "title": "ANSI Food Handler Training",
         "desc": "Userve's Hawaii online food handler training program teaches food handlers to work with food safely to obtain an ANSI-accredited food handler card in Hawaii.",
         "url": "/us/hi/food-service/ansi-food-handler-training",
-        "type": "fh_ansi_hi",
+        "type": "fh_ansi",
         "button": "primary",
         "productCategoryLabel": "Food Handling"
     },
@@ -395,7 +395,7 @@
         "title": "ANSI Food Handler Training",
         "desc": "Userve's Illinois online food handler training program teaches food handlers to work with food safely to obtain an ANSI-accredited food handler card in Illinois.",
         "url": "/us/il/food-service/ansi-food-handler-training",
-        "type": "fh_ansi_il",
+        "type": "fh_ansi",
         "button": "primary",
         "productCategoryLabel": "Food Handling"
     },
@@ -923,7 +923,7 @@
         "title": "ANSI Food Handler Training",
         "desc": "Userve's New Mexico online food handler training program teaches food handlers to work with food safely to obtain an ANSI-accredited food handler card in New Mexico.",
         "url": "/us/nm/food-service/ansi-food-handler-training",
-        "type": "fh_ansi_nm",
+        "type": "fh_ansi",
         "button": "primary",
         "productCategoryLabel": "Food Handling"
     },
@@ -1326,7 +1326,7 @@
         "title": "ANSI Food Handler Training",
         "desc": "Userve's Texas online food handler training program teaches food handlers to work with food safely to obtain an ANSI-accredited food handler card in Texas.",
         "url": "/us/tx/food-service/ansi-food-handler-training",
-        "type": "fh_ansi_tx",
+        "type": "fh_ansi",
         "button": "primary",
         "productCategoryLabel": "Food Handling"
     },
