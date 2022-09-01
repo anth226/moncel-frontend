@@ -8,6 +8,8 @@ import { CovidSlide, FoodSafetyCardSlide, HaccpSlide, FoodSafetyDecalSlide, Food
 const DEFAULT_INDICATOR_ID = "carousel-indicators";
 
 const SlideControl = (props: SlideControlProps) => {
+
+
   const { active, ariaLabel, ...rest } = props;
   return <button type="button"
     className={`bg-white h-[10px] w-[10px] rounded-xl ${active ? "" : "opacity-25"}`}
@@ -54,7 +56,7 @@ const Carousel = (props: CarouselProps) => {
       </div>
 
       {/* Carousel indicators */}
-      <div className="absolute w-full flex justify-center right-0 bottom-0 left-0 gap-1 p-0 mb-4">
+      <div className="hidden absolute w-full md:flex justify-center right-0 bottom-0 left-0 gap-1 p-0 mb-4">
           { scrollSnaps.map((_, i) => {
             return <SlideControl active={i == selectedIndex} ariaLabel={`Slide ${i}`} key={`carousel-indicator-${i}`} onClick={() => { handleCarouselIndicatorClick(i); }} />;
           })}

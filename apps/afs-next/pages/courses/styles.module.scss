@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+
+.laws-requirements {
+    ul li {
+        list-style-type: square;
+        &::marker {
+            color: black;
+        }
+
+        a {
+            font-weight: bold;
+            color: $afs-green;
+            text-decoration: underline;
+        }
+    }
+    ol li {
+        list-style-type: decimal;
+        &::marker {
+            color: black;
+        }
+
+        a {
+            font-weight: bold;
+            color: $afs-green;
+            text-decoration: underline;
+        }
+    }
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
