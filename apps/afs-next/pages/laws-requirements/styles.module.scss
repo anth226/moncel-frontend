@@ -13,6 +13,11 @@
             text-decoration: underline;
         }
     }
+
+    ul.checklist li {
+        list-style-image: url('/icon-library-2_checkmark-green.svg');
+        list-style-type: none;
+    }
     ol li {
         list-style-type: decimal;
         &::marker {
