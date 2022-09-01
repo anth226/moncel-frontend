@@ -31,15 +31,15 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
     let heroStory, courseInfoStory, benefitsStory, accountsStory, featuresStory, testimonialsStory, faqsStory, seoStory; 
 
     if (pageContext.type == "fh_ansi") {
-      // Filter storyblok data by the fh_ansi course type
-      heroStory = heroStories.filter(slug => slug.slug === pageContext.state.replace(/\s+/g, '').toLowerCase())[0];
-      courseInfoStory = courseInfoStories.filter(slug => slug.slug === pageContext.state.replace(/\s+/g, '').toLowerCase())[0];
-      benefitsStory = benefitsStories.filter(slug => slug.slug === pageContext.state.replace(/\s+/g, '').toLowerCase())[0];
-      accountsStory = accountsStories.filter(slug => slug.slug === pageContext.state.replace(/\s+/g, '').toLowerCase())[0];
-      featuresStory = featuresStories.filter(slug => slug.slug === pageContext.state.replace(/\s+/g, '').toLowerCase())[0];
-      testimonialsStory = testimonialsStories.filter(slug => slug.slug === pageContext.state.replace(/\s+/g, '').toLowerCase())[0];
-      faqsStory = faqsStories.filter(slug => slug.slug === pageContext.state.replace(/\s+/g, '').toLowerCase())[0];
-      seoStory = seoStories.filter(slug => slug.slug === pageContext.state.replace(/\s+/g, '').toLowerCase())[0];
+      // Filter storyblok data by the fh_ansi course type and state
+      heroStory = heroStories.filter(story => story.full_slug.match("courses/course-pages/hero/fh_ansi/")).filter(slug => slug.slug.toLowerCase().match(pageContext.state.replace(/\s+/g, '').toLowerCase()))[0];
+      courseInfoStory = courseInfoStories.filter(story => story.full_slug.match("courses/course-pages/course-info/fh_ansi/")).filter(slug => slug.slug.toLowerCase().match(pageContext.state.replace(/\s+/g, '').toLowerCase()))[0];
+      benefitsStory = benefitsStories.filter(story => story.full_slug.match("courses/course-pages/benefits/fh_ansi/")).filter(slug => slug.slug.toLowerCase().match(pageContext.state.replace(/\s+/g, '').toLowerCase()))[0];
+      accountsStory = accountsStories.filter(story => story.full_slug.match("courses/course-pages/accounts/fh_ansi/")).filter(slug => slug.slug.toLowerCase().match(pageContext.state.replace(/\s+/g, '').toLowerCase()))[0];
+      featuresStory = featuresStories.filter(story => story.full_slug.match("courses/course-pages/features/fh_ansi/")).filter(slug => slug.slug.toLowerCase().match(pageContext.state.replace(/\s+/g, '').toLowerCase()))[0];
+      testimonialsStory = testimonialsStories.filter(story => story.full_slug.match("courses/course-pages/testimonials/fh_ansi/")).filter(slug => slug.slug.toLowerCase().match(pageContext.state.replace(/\s+/g, '').toLowerCase()))[0];
+      faqsStory = faqsStories.filter(story => story.full_slug.match("courses/course-pages/faqs/fh_ansi/")).filter(slug => slug.slug.toLowerCase().match(pageContext.state.replace(/\s+/g, '').toLowerCase()))[0];
+      seoStory = seoStories.filter(story => story.full_slug.match("courses/course-pages/seo/fh_ansi/")).filter(slug => slug.slug.toLowerCase().match(pageContext.state.replace(/\s+/g, '').toLowerCase()))[0];
     } else {
       // Filter storyblok data by the course type for this page
       heroStory = heroStories.filter(slug => slug.slug === pageContext.type)[0];
