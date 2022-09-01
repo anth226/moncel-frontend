@@ -4,6 +4,9 @@ const withMDX = require('@next/mdx')();
 
 const nextConfig = {
   reactStrictMode: true,
+  compiler: {
+    styledComponents: true,
+  },
   images: {
     domains: ['localhost', '167.99.181.174']
   },

@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.laws-requirements {
+.courses {
     ul li {
         list-style-type: square;
         &::marker {
@@ -12,6 +12,10 @@
             color: $afs-green;
             text-decoration: underline;
         }
+    }
+    ul.checklist li {
+        list-style-image: url('/icon-library-2_checkmark-green.svg');
+        list-style-type: none;
     }
     ol li {
         list-style-type: decimal;

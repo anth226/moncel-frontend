@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
-import NextImage from 'next/image';
+import NextImage, { StaticImageData } from 'next/image';
 import NextLink from 'next/link';
 
-import { Header5 } from 'components/core/typography';
+import { Header5, Text } from 'components/core/typography';
 
 export const Divider = () => <div className="mb-[30px] border-b-[1px] border-afs-light-gray col-span-3" />;
 export const ListItem = ({ children }: { children: ReactNode }) => <li className="ml-4 my-1.5">{ children }</li>;
@@ -25,4 +25,19 @@ export const IconCard = (props: IconCardProps) => {
       { props.children }
     </div>
   </div>;
+};
+
+interface ImageBannerCardProps {
+  imageSrc: string | StaticImageData;
+  title: string;
+  description: string;
+}
+
+export const ImageBannerCard = (props: ImageBannerCardProps) => {
+  const { imageSrc, title, description } = props;
+  return <div className="flex flex-col w-full">
+      <NextImage src={imageSrc} alt={`image-graphic-for-card-${title}`} layout="responsive"  />
+      <div className="bg-afs-green text-white w-full flex justify-center items-center p-4"><Text>{title.toUpperCase()}</Text></div>
+      <div className="bg-white text-afs-green p-4"><Text className="">{description}</Text></div>
+  </div>
 };

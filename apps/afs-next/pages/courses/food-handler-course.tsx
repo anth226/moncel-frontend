@@ -1,10 +1,18 @@
-import { ReactNode } from 'react';
-import NextLink from 'next/link';
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Statistic from 'components/core/Statistic';
 import Image from 'next/image';
 import Layout from 'components/core/layout';
 import { CoursesBackground, coursePageOverviewData } from 'components/courses';
-import { Header3, Header5, Text, Link } from 'components/core';
+import { Header3, Header4, Text } from 'components/core';
+import { Divider, ListItem, IconCard, ImageBannerCard } from 'components/core/templates';
 import { RowsTemplate } from 'components/templates';
+import { LogosCarousel } from 'components/core/Carousel';
+import AIFSMembershipGraphic from 'public/courses/food-handler/fh-aifs-membership.jpg';
+import FoodSafetyCardGraphic from 'public/courses/food-handler/fh-food-safety-card.jpg';
+import FHRecallAlerts from 'public/courses/food-handler/fh-recall-alerts.jpg';
+
 
 import styles from './styles.module.scss';
 
@@ -28,166 +36,159 @@ const Page = () => {
           <Section3 />
           <Divider />
           <Section4 />
+          <LogosCarousel className="col-span-3" />
         </>
         </RowsTemplate></CoursesBackground>
     </Layout>
   );
 };
 
-const Divider = () => <div className="mb-[30px] border-b-[1px] border-afs-light-gray col-span-3" />;
-const ListItem = ({ children }: { children: ReactNode }) => <li className="ml-4 my-1.5">{ children }</li>;
-
-interface IconCardProps {
-  imageSrc: string;
-  href?: string;
-  title: string;
-  children: ReactNode;
-  className?: string;
-}
-const IconCard = (props: IconCardProps) => {
-  const iconComp = <Image src={props.imageSrc} alt={`for-job-seekers-icon-${props.title}`} width={32} height={32} layout="fixed" />;
-  return <div className={`flex flex-row ${props.className}`}>
-    <div className="w-10 mr-3">
-      { props.href ? <NextLink href={props.href}>{iconComp}</NextLink> : iconComp }
-    </div>
-    <div className="flex flex-col">
-      <Header5 className="pb-2">{props.title}</Header5>
-      { props.children }
-    </div>
-  </div>;
-};
-
 const Section1 = () => {
-  return <div className="col-span-3">
-    <Header3 className="text-afs-green font-semibold pb-6">Start your career the food safe way</Header3>
-    <div className={`${styles["laws-requirements"]} col-span-3`}>
-      <div className="flex flex-col pr-4">
-        <Text className="pb-5">Food safety training is crucial for two main reasons:</Text>
+  return <div className="col-span-3 grid grid-cols-3" id="section-1">
+    <div className={`${styles["courses"]} col-span-3`}>
+      <div className="flex flex-col pr-4 col-span-3 md:col-span-1">
+        <Text className="pb-5">In Australia, the Food Standards Code requires anyone who works with food to be trained in food safety.</Text>
+        <Text className="pb-5">When you study online with AIFS you will:</Text>
         <ol>
-          <ListItem>It enables you to meet your legal requirements</ListItem>
-          <ListItem>It helps you protect your customers lives</ListItem>
+          <ListItem>attain a nationally recognised skillset</ListItem>
+          <ListItem>complete your course faster</ListItem>
+          <ListItem>enjoy the many benefits of AIFS Membership</ListItem>
+
         </ol>
-        <Text className="pb-5">{`If you're already working in the industry you've probably had some food safety training.`}</Text>
-        <Text className="pb-5">Now may be the ideal time to boost your expertise by completing a nationally recognised food safety course.</Text>
       </div>
-      <Image src="/laws-requirements/role/photo_employees.jpg" alt="laws-requirements-for-employees-graphic" layout="fixed" width={325} height={183}/>
+      <Image src="/courses/fh-food-handler.jpg" alt="laws-requirements-for-employees-graphic" layout="fixed" width={325} height={183}/>
     </div>
   </div>;
 };
 
 const Section2 = () => {
-  return <div className="col-span-3">
+  return <div className="col-span-3" id="section-2">
     <Header3 className="text-afs-green font-semibold pb-6">Food safety training is required for every food job</Header3>
-    <div className={`${styles["laws-requirements"]} col-span-3`}>
+    <div className={`${styles["courses"]} col-span-3`}>
       <div className="flex flex-col pr-4">
-        <Text className="pb-5">Everyone who works with food needs to complete training. This is not just a requirement for people who work in hospitality, it applies to food workers in all kinds of businesses that handle food, such as:</Text>
-        <Text className="pb-5">Learn about the recognised units of competency for Food Safety Supervisor training in your sector.</Text>
-        <div className={`grid grid-cols-2`}>
-          <ul>
-            <ListItem>Cafes, restaurants and takeaways</ListItem>
-            <ListItem>Hotels and motels</ListItem>
-            <ListItem>Bars, pubs and clubs</ListItem>
-            <ListItem>Event and conferences centres</ListItem>
-            <ListItem>Casinos and gaming venues</ListItem>
-            <ListItem>Market stalls</ListItem>
-            <ListItem>Convenience stores</ListItem>
-            <ListItem>Supermarkets</ListItem>
-            <ListItem>Service stations</ListItem>
-          </ul>
-          <ul>
-            <ListItem>Groceries, butchers, delis and bakeries</ListItem>
-            <ListItem>Food based charity organisations</ListItem>
-            <ListItem>Catering businesses</ListItem>
-            <ListItem>Hospitals or hospices</ListItem>
-            <ListItem>Child care or aged care facilities</ListItem>
-            <ListItem>School canteens or tuckshops</ListItem>
-            <ListItem>Food processing facilities</ListItem>
-            <ListItem>Canneries, milleries or breweries</ListItem>
-            <ListItem>Food delivery or storage services</ListItem>
+      <div className="grid grid-cols-2 grid-flow-row gap-7">
+        <IconCard
+          imageSrc={"/laws-requirements/icon_stroke_green_checkmark_box_stroke_tick.svg"}
+          title="Official AIFS Food Handler Course"
+          >
+          <Text className="pb-3.5">Accepted as meeting all requirements of the Food Standards Code for Food Handlers.</Text>
+        </IconCard>
+        <IconCard
+          imageSrc={"/laws-requirements/role/icon_stroke_green_calendar_clock.svg"}
+          title="Finish in a few hours, or take your time"
+          >
+          <Text className="pb-3.5">Complete your food safety training in just a few hours, or take up to 12 months.</Text>
+        </IconCard>
+        <IconCard
+          imageSrc={"/laws-requirements/icon_stroke_green_laptop.svg"}
+          title="Study online, whenever you want"
+          >
+          <Text className="pb-3.5">Enjoy the convenience of doing your training anywhere, at any time of the day or night.</Text>
+        </IconCard>
+        <IconCard
+          imageSrc={"/icons/icon_stroke_green_stopwatch.svg"}
+          title="Receive your documents fast"
+          >
+          <Text className="pb-3.5">Receive your documents within 48 hours of course completion. If you need them faster, just get in touch!</Text>
+        </IconCard>
+        <IconCard
+          imageSrc={"/icons/icon_stroke_green_thumbsup.svg"}
+          title="100% recommended rating"
+          >
+          <Text className="pb-3.5">Feel confident taking an AIFS course that 100% of students would recommend to a friend.</Text>
+        </IconCard>
+        <IconCard
+          imageSrc={"/icons/icon_stroke_green_australia.svg"}
+          title="Recognised throughout Australia"
+          >
+          <Text className="pb-3.5">Be sure of acceptance with a course {`that's`} recognised throughout all of Australia.</Text>
+        </IconCard>
+        <IconCard
+          imageSrc={"/icons/icon_stroke_green_member.svg"}
+          title="Get 12 months of free AIFS Membership"
+          >
+          <Text className="pb-3.5">Receive updates, tools, resources and more to promote and boost your food handling knowledge.</Text>
+        </IconCard>
+        <IconCard
+          imageSrc={"/laws-requirements/role/icon_stroke_green_trainer.svg"}
+          title="Get the support you need"
+          >
+          <Text className="pb-3.5">Our qualified trainers are here to provide the support you need when you need it.</Text>
+        </IconCard>
 
-          </ul>
-        </div>
+      </div>
+        
       </div>
     </div>
   </div>;
 };
 
 const Section3 = () => {
-  return <div className="col-span-3">
-    <Header3 className="text-afs-green font-semibold pb-6">Which food safety course do I need to do?</Header3>
-    <div className={`${styles["laws-requirements"]} col-span-3`}>
-      <div className="flex flex-col pr-4">
-        <Text className="pb-5">The training you need will depend on the type of job you want. The two main courses to choose from are:</Text>
-        <div className="grid grid-cols-2 grid-flow-row gap-7">
-          <IconCard
-            imageSrc={"/laws-requirements/icon_stroke_green_fh.svg"}
-            title="Food Handler Course"
-            href="/courses/food-handler-course"
-            >
-              <Text className="pb-3.5">This course meets federal requirements that anyone who works with food needs food safety training.</Text>
-              <Text className="pb-3.5">It helps your job prospects too. Food business managers know that they don’t need to spend time and money on your food safety training.</Text>
-              <NextLink href="/courses/food-handler-course"><Link className="font-semibold">Learn more about this course.</Link></NextLink>
-            </IconCard>
-            <IconCard
-            imageSrc={"/laws-requirements/icon_stroke_green_FSS.svg"}
-            title="Food Safety Supervisor"
-            href="/courses/food-handler-course"
-            >
-              <Text className="pb-3.5">The Food Safety Supervisor Course meets specific state legislation including for NSW, QLD, VIC and ACT.</Text>
-              <Text className="pb-3.5">Every food business in these states needs at least one nationally recognised Food Safety Supervisor on staff. This course greatly boosts your employability.</Text>
-              <NextLink href="/courses/food-safety-supervisor"><Link className="font-semibold">Learn more about this course.</Link></NextLink>
-            </IconCard>
-        </div>
-      </div>
+  return <div className="col-span-3" id="section-3">
+    <div className="w-full flex flex-col items-center mb-4">
+        <Header3 className="text-afs-green font-medium">With AIFS, You Get More than Just a Training Course</Header3>
+        <Header4 className="text-[#999] font-medium">Discover the complimentary member benefits for you and your food business</Header4>
+    </div>
+    <div className="w-full grid items-start grid-cols-1 md:grid-cols-3 gap-7">
+      <Accordion >
+        <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full" classes={{ root: 'p-0'}}>
+          <ImageBannerCard
+            title="AIFS Membership"
+            description="A complimentary 12-month AIFS Membership is included with all AIFS nationally recognised accredited training courses."
+            imageSrc={AIFSMembershipGraphic} />
+        </AccordionSummary>
+        <AccordionDetails>
+          <Text className="text-afs-green p-4">Your membership includes food safety tools, resources and updates that benefit you, your business and your customers.</Text>
+        </AccordionDetails>
+      </Accordion>
+
+      <Accordion >
+        <AccordionSummary id="food-handler-course-benefits-card-2" className="w-full" classes={{ root: 'p-0'}}>
+          <ImageBannerCard
+            title="Food Safety Card"
+            description="You'll receive a handy wallet-sized blue Food Safety Card that contains official proof of your food safety training."
+            imageSrc={FoodSafetyCardGraphic} />
+        </AccordionSummary>
+        <AccordionDetails>
+          <Text className="text-afs-green p-4">Just keep your card in your pocket at work, so {`you're`} always ready to show Health Inspectors during surprise food audits.</Text>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion >
+        <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full" classes={{ root: 'p-0'}}>
+          <ImageBannerCard
+            title="Food Safety Updates"
+            description="As an AIFS member you'll have access to the latest food safety news that may affect the food business where you work."
+            imageSrc={FHRecallAlerts} />
+        </AccordionSummary>
+        <AccordionDetails>
+          <Text className="text-afs-green p-4">With these tools, be confident that {`you're`} protecting your customers in every way possible.</Text>
+        </AccordionDetails>
+      </Accordion>
     </div>
   </div>;
 };
 
 const Section4 = () => {
-  return <div className="col-span-3">
-    <Header3 className="text-afs-green font-semibold pb-6">Which food safety course do I need to do?</Header3>
-    <div className={`${styles["laws-requirements"]} col-span-3`}>
-      <div className="flex flex-col pr-4">
-        <Text className="pb-5">The training you need will depend on the type of job you want. The two main courses to choose from are:</Text>
-        <div className="grid grid-cols-2 grid-flow-row gap-7">
-          <IconCard
-            imageSrc={"/laws-requirements/icon_stroke_green_fh.svg"}
-            title="Get trained as a Food Handler"
-            >
-              <Text className="pb-3.5">At a minimum, complete the Food Handler training course so that you have the skills you need to work with food safely.</Text>
-            </IconCard>
-            <IconCard
-            imageSrc={"/laws-requirements/icon_stroke_green_FSS.svg"}
-            title="Get trained as a Food Safety Supervisor"
-            >
-              <Text className="pb-3.5">To boost your chances of finding a job, consider a Food Safety Supervisor course that offers extra skills and knowledge.</Text>
-            </IconCard>
-            <IconCard
-            imageSrc={"/laws-requirements/icon_stroke_green_checkmark_box_stroke_tick.svg"}
-            title="Do compliance-guaranteed training"
-            >
-              <Text className="pb-3.5">AIFS food safety training is approved to meet all federal, state and local government legislation.</Text>
-            </IconCard>
-            <IconCard
-            imageSrc={"/laws-requirements/icon_stroke_green_factory.svg"}
-            title="Check your food sector"
-            >
-              <Text className="pb-3.5">Food Safety Supervisor training is sector-specific. Be sure to do the right course for the sector you want to work in.</Text>
-            </IconCard>
-            <IconCard
-            imageSrc={"/laws-requirements/icon_stroke_green_nsw.svg"}
-            title="NSW Food Authority approved"
-            >
-              <Text className="pb-3.5">Obtain your NSW Food Authority certificate when you complete the official AIFS Food Safety Supervisor course.</Text>
-            </IconCard>
-            <IconCard
-            imageSrc={"/laws-requirements/icon_stroke_green_member.svg"}
-            title="Become an AIFS Member"
-            >
-              <Text className="pb-3.5">Continue to build your skills with our member-only resources. Receive a free membership with one of our nationally recognized training courses.</Text>
-            </IconCard>
+  return <div className="col-span-3" id="section-4">
+        <div className="w-full flex flex-col items-center mb-4">
+        <Header3 className="text-afs-green font-medium">Trusted and Recommended Throughout Australia</Header3>
+        <Header4 className="text-[#999] font-medium">Relied on by the Australian food industry for a quality training experience</Header4>
+        <Text className="py-8 text-afs-green">Discover why Food Handlers love this course</Text>
+        <div className="w-full flex flex-col md:flex-row gap-8">
+          <Statistic>
+            <Header3 className="text-afs-green">100<sup>%</sup></Header3>
+            <Text className="text-afs-green">of students would recommend this course to others</Text>
+          </Statistic>
+          <Statistic>
+            <Header3 className="text-afs-green">98<sup>%</sup></Header3>
+            <Text className="text-afs-green">of students rate this course assessment as good or excellent</Text>
+          </Statistic>
+          <Statistic>
+            <Header3 className="text-afs-green">10/10</Header3>
+            <Text className="text-afs-green">of students say that this food safety course is easy to use</Text>
+          </Statistic>
         </div>
-      </div>
+        <Text className="py-8 text-afs-green">Trusted by thousands of companies</Text>
     </div>
   </div>;
 };

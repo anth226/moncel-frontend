@@ -44,10 +44,10 @@ const Carousel = (props: CarouselProps) => {
 
   return <div id={id} className="w-auto relative" >
       {/* Carousel slides */}
-      {/* Minimal embla setup has two wrappers (overflow and scroll) to detect scroll snaps: https://www.embla-carousel.com/get-started/react/ */}
+      {/* Minimal embla setup has two wrappers (overflow and scroll container) to detect scroll snaps: https://www.embla-carousel.com/get-started/react/ */}
       <div className="w-full overflow-hidden" ref={viewportRef}>
         <div className="flex flex-row">
-          <CovidSlide />
+        <CovidSlide />
           <FoodSafetyCardSlide />
           <HaccpSlide />
           <FoodSafetyDecalSlide />
@@ -66,3 +66,4 @@ const Carousel = (props: CarouselProps) => {
 };
 
 export default Carousel;
+export { default as LogosCarousel } from './logosCarousel';
