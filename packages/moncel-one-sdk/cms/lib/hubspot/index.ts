@@ -1,7 +1,7 @@
-import hubspot, { Client } from '@hubspot/api-client';
+import { Client } from '@hubspot/api-client';
 
 const ACCESS_TOKEN = process.env.HUBSPOT_ACCESS_TOKEN;
-const client = new hubspot.Client({ accessToken: ACCESS_TOKEN });
+const client = new Client({ accessToken: ACCESS_TOKEN });
 const PAGE_SIZE = 10;
 
 const getBlogPosts = async (...params: Parameters<Client["cms"]["blogs"]["blogPosts"]["blogPostsApi"]["getPage"]>) => {
