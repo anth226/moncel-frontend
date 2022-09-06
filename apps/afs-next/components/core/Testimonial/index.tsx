@@ -6,7 +6,7 @@ interface TestimonialProps {
     author: string;
     authorIntro: string;
     children: ReactNode;
-};
+}
 
 const Testimonial = (props: TestimonialProps) => {
     return <div className="flex flex-row p-4 gap-4 border-[1px] border-afs-light-green">

@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import { Header4, Text} from 'components/core/typography';
 
 interface StatisticProps {
     children: ReactNode;

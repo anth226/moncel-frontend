@@ -99,7 +99,7 @@ const Section3 = () => {
         <div className="grid grid-cols-2 grid-flow-row gap-7">
           <div>
             <Header5 className="pb-3.5">Food Safety Supervisor requirements</Header5>
-            <Text className="pb-3.5">In NSW, VIC, QLD and ACT, it's a mandatory requirement that transport and distribution businesses have at least one Food Safety Supervisor on their staff at all times.</Text>
+            <Text className="pb-3.5">In NSW, VIC, QLD and ACT, {`it's`} a mandatory requirement that transport and distribution businesses have at least one Food Safety Supervisor on their staff at all times.</Text>
             <Text className="pb-3.5">This means at least one person must have:</Text>
             <ul className={styles["checklist"]}>
               <ListItem>undergone nationally recognised training</ListItem>
@@ -113,13 +113,13 @@ const Section3 = () => {
               <ListItem>you will receive your regular Statement of Attainment when you complete your Food Safety Supervisor training with AIFS</ListItem>
               <ListItem>you will also receive a certificate issued by the NSW Food Authority</ListItem>
             </ul>
-            <Text className="pb-3.5">If you're applying for a new food business licence, you'll be asked for the certificate number from this document.</Text>
+            <Text className="pb-3.5">If {`you're`} applying for a new food business licence, {`you'll`} be asked for the certificate number from this document.</Text>
             <NextLink href="/courses/food-safety-supervisor"><Link className="font-semibold underline">Click here to learn more about this course.</Link></NextLink>
           </div>
           <div>
             <Header5 className="pb-3.5">Food Handler requirements</Header5>
             <Text className="pb-3.5">Federal legislation (governed by FSANZ) states that all Food Handlers must be trained in food safety.</Text>
-            <Text className="pb-3.5">Many people are surprised to learn that Food Handlers aren't just those employees who work in the kitchen.</Text>
+            <Text className="pb-3.5">Many people are surprised to learn that Food Handlers {`aren't`} just those employees who work in the kitchen.</Text>
             <Text className="pb-3.5">A Food Handler can also be someone who:</Text>
             <ul>
               <ListItem>Serves food to customers</ListItem>
@@ -127,7 +127,7 @@ const Section3 = () => {
               <ListItem>Delivers food</ListItem>
               <ListItem>Cleans equipment and utensils</ListItem>
             </ul>
-            <Text className="pb-3.5">Simply put, anyone that comes into contact with food or food equipment in a food business is a 'Food Handler'.</Text>
+            <Text className="pb-3.5">Simply put, anyone that comes into contact with food or food equipment in a food business is a {`'Food Handler'`}.</Text>
             <Text className="pb-3.5">All Food Handlers require the necessary food safety training to perform this role.</Text>
             <Text className="pb-3.5">The Food Handler Course offered by AIFS has been designed to meet this requirement.</Text>
             <NextLink href="/courses/food-handler-course"><Link className="font-semibold underline">Click here to learn more about this course.</Link></NextLink>
@@ -162,7 +162,7 @@ return <div className="col-span-3">
       </ul>
       <Header5 className="pb-3.5">Bridging Course</Header5>
       <Text>SITXFSA001 is one of the two units required to qualify as a Food Safety Supervisor. The Australian Institute of Food Safety allows students who have completed this unit to complete a bridging course, at a later date, in order to upgrade to become a qualified Food Safety Supervisor.</Text>
-      <NextLink href="/contact"><Link className="font-semibold underline">Contact our support team if you'd like more information about this course.</Link></NextLink>
+      <NextLink href="/contact"><Link className="font-semibold underline">Contact our support team if {`you'd`} like more information about this course.</Link></NextLink>
     </div>
   </div>;
 };

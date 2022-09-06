@@ -1,6 +1,4 @@
 import { ReactNode } from 'react';
-import NextImage from 'next/image';
-import { Text } from 'components/core/typography';
 export * from './coursePagesData';
 
 export const CoursesBackground = ({ children }: { children: ReactNode }) => {
