@@ -1,7 +1,8 @@
 
 import NextImage, { StaticImageData } from 'next/image';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
+import Slider from "react-slick";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 import LogoNestle from 'public/logos/logo_nestle.svg';
 import LogoSubway from 'public/logos/logo_subway.svg';
@@ -30,30 +31,41 @@ const DEFAULT_LOGOS: Array<StaticImageData> = [
     LogoRydges,
     LogoTgiFridays,
     LogoLendardsChicken,
-    LogoBP
+    LogoBP,
 ];
+
+const SLIDER_OPTIONS = {
+    className: "slider variable-width",
+    centerMode: false,
+    draggable: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    speed: 250,
+    slidesToShow: 7,
+    slidesToScroll: 1,
+};
 
 interface LogosProps {
     id?: string;
     logos?: Array<StaticImageData>
     className?: string;
-}
+};
+
 const Logos = (props: LogosProps) => {
     const id = props.id || DEFAULT_ID;
-    const [ viewportRef ] = useEmblaCarousel({ align: "start", loop: true, slidesToScroll: 2 }, [ Autoplay({ delay: 2000 }) ]);
 
     const _logos = props.logos || DEFAULT_LOGOS;
 
-    return <div className={`w-full overflow-hidden ${props.className || ""}`} ref={viewportRef} id={id}>
-        <div className="flex flex-row">
-            { _logos.map(logo => <Slide src={logo} />) }
-            {/* duplicate slides here, but keep scroll snaps same to fix infinite loop */}
-        </div>
+    return <div className={`w-full overflow-hidden ${props.className || ""}`} id={id}>
+        <Slider {...SLIDER_OPTIONS} className="max-w-screen">
+            { _logos.map((logo, i) => <Slide src={logo} key={`logo-${i}`} />) }
+        </Slider>
     </div>
 };
 
 const Slide = ({ src }: { src: StaticImageData }) => {
-    return <NextImage src={src} />;
+    return <NextImage src={src} width={118} height={70} layout="fixed" />;
 };
 
 export default Logos;

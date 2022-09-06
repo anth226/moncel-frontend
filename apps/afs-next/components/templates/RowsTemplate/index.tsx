@@ -16,7 +16,7 @@ const RowsTemplate = (props: RowsTemplateProps) => {
             <NavigationComponent {...props.navigation} />
         </div>
         <div className="row-start-3 lg:row-start-2 col-span-12 lg:col-span-9">
-            <div className="grid grid-cols-1 lg:grid-cols-3 grid-flow-row gap-5 mb-10">
+            <div className="grid grid-cols-1 lg:grid-cols-3 grid-flow-row gap-5 mb-10 mt-8">
                 { props.children }
             </div>
         </div>

@@ -1,11 +1,14 @@
 import { ReactNode } from 'react';
 import NextImage, { StaticImageData } from 'next/image';
 import NextLink from 'next/link';
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
 
 import { Header5, Text } from 'components/core/typography';
 
 export const Divider = () => <div className="mb-[30px] border-b-[1px] border-afs-light-gray col-span-3" />;
-export const ListItem = ({ children }: { children: ReactNode }) => <li className="ml-4 my-1.5">{ children }</li>;
+export const ListItem = ({ children }: { children?: ReactNode }) => <li className="ml-4 my-1.5">{ children }</li>;
 
 interface IconCardProps {
   imageSrc: string;
@@ -40,4 +43,19 @@ export const ImageBannerCard = (props: ImageBannerCardProps) => {
       <div className="bg-afs-green text-white w-full flex justify-center items-center p-4"><Text>{title.toUpperCase()}</Text></div>
       <div className="bg-white text-afs-green p-4"><Text className="">{description}</Text></div>
   </div>
+};
+
+interface CollapsibleTableCellProps {
+  summary: ReactNode;
+  details: ReactNode;
+}
+export const CollapsibleTableCell = (props: CollapsibleTableCellProps) => {
+  return <Accordion classes={{ root: "shadow-none p-0 border-[1px] border-afs-green" }}>
+    <AccordionSummary className="bg-afs-light-gray w-full" classes={{ root: 'p-3 border-[1px] border-afs-green', content: 'p-0 m-0'}} expandIcon="+">
+      { props.summary }
+    </AccordionSummary>
+    <AccordionDetails>
+      { props.details }
+    </AccordionDetails>
+  </Accordion>
 };
