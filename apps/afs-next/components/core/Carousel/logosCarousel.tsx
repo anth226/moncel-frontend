@@ -50,7 +50,7 @@ interface LogosProps {
     id?: string;
     logos?: Array<StaticImageData>
     className?: string;
-};
+}
 
 const Logos = (props: LogosProps) => {
     const id = props.id || DEFAULT_ID;

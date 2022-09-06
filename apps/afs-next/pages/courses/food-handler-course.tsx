@@ -56,7 +56,7 @@ interface SectionProps {
   children: ReactNode;
 }
 
-const SectionContainer = ({ id, children, className }: SectionProps) => <div className={`col-span-3 ${className} ${styles['courses']}`}>{ children }</div>;
+const SectionContainer = ({ id, children, className }: SectionProps) => <div className={`col-span-3 ${className} ${styles['courses']}`} id={id}>{ children }</div>;
 
 const Section1 = () => {
   return <SectionContainer className="col-span-3" id="section-1">
