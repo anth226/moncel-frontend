@@ -19,9 +19,11 @@ const BenefitsCard = ({ card, fileNode }: { card: IconCardStoryblok, fileNode: L
 interface StoryProps {
     story: Slug;
 }
+
 export default (props: BenefitsStoryblok & StoryProps) => {
     const cards = props.benefits_cards || [];
-    const title = props.title || "";
+    const title = (props.title || "").replace("$STATE", props.state);
+    
     return <SectionFullWidth className={`bg-white ${props.className || ""}`}>
         <Section>
             <Header2 className="max-w-full md:max-w-2/3">{title}</Header2>

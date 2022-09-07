@@ -14,10 +14,12 @@ interface StoryProps {
 
 export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
     const faqCards = props.faq || [];
+    const title = (props.title || "").replace("$STATE", props.state);
+
     return <SectionFullWidth className={props.className || ""}>
         <Section>
             <div className="col-span-12"> 
-                <Header2>{props.title}</Header2>
+                <Header2>{title}</Header2>
                 <RichText className="mb-10 hidden md:block" document={props.desc || ""}/>
             </div>
             <div className="grid grid-cols-12">
@@ -37,17 +39,18 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
                             <div className="accordion w-full relative mb-6 md:mb-0" id={`accordion_${random}`}>
 
                                 {faqGroup.faq?.map((y,i) => {
+                                    const faqTitle = (y.title || "").replace("$STATE", props.state);
                                     return  <div className="faq p-6 pl-14 !shadow-none collapsed md:!bg-lilac rounded-xl mb-6 w-full"  key={`info-${i}`}>
-                                        <h3 className="font-semibold !text-navy text-lg cursor-pointer md:mb-2 !bg-transparent" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} aria-controls={`collapse_${random}_${i}`} id={`heading_${random}_${i}`} aria-expanded="false">{y.title || ""}</h3>
+                                        <h3 className="font-semibold !text-navy text-lg cursor-pointer md:mb-2 !bg-transparent" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} aria-controls={`collapse_${random}_${i}`} id={`heading_${random}_${i}`} aria-expanded="false">{faqTitle || ""}</h3>
 
                                         <div className="intro !bg-transparent" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} id={`heading_${random}_${i}`} aria-expanded="false">
-                                            <RichText className="text-lynch" document={y.intro || ""}/>
+                                            <RichText className="text-lynch" document={y.intro || ""} state={props.state}/>
                                         </div>
                                         
                                         <div id={`collapse_${random}_${i}`} className="accordion-collapse collapse" aria-labelledby={`heading_${random}_${i}`} data-bs-parent={`#accordion_${random}`}>
                                             <div className="accordion-body">
-                                                <RichText className="text-lynch" document={y.intro || ""}/>
-                                                {y.desc && <RichText className="text-lynch" document={y.desc || ""}/>}
+                                                <RichText className="text-lynch" document={y.intro || ""} state={props.state}/>
+                                                {y.desc && <RichText className="text-lynch" document={y.desc || ""} state={props.state}/>}
                                             </div>
                                         </div>
 
