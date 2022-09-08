@@ -9,6 +9,7 @@ import { ExternalLink } from '../core';
 import { getFilename, findMatchingLocalFileNode, DynamicImage, Slug } from 'src/lib';
 
 import "./courseInfo.scss";
+import RichText from '../core/RichText';
 
 interface StoryProps {
     story: Slug;
@@ -29,7 +30,7 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
             </div>
             <div className="col-span-12 md:col-span-8 col-end-13">
                 <div className="p">
-                    {props.layout == "title-right" ? <div className="mb-6"><Header2>{props.title}</Header2><ReactMarkdown>{props.desc}</ReactMarkdown></div> : ""}
+                    {props.layout == "title-right" ? <div className="mb-6"><Header2>{props.title}</Header2><RichText document={props.desc} className="text-lynch"/></div> : ""}
                 </div>
                 <div className="accordion w-full" id={`accordion_${random}`}>
                     {infoCards.map((card, i) => {
@@ -49,7 +50,7 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
                     })}
                 </div>
                 <div className="mt-6">
-                    {props.disclaimer == '' ? '' : <ReactMarkdown className="text-center">{props.disclaimer}</ReactMarkdown>}
+                    {props.disclaimer == '' ? '' : <RichText className="text-center text-lynch" document={props.disclaimer}/>}
                 </div>
             </div>
         </Section>

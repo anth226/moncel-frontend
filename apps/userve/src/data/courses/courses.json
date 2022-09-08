@@ -65,6 +65,16 @@
         "productCategoryLabel": "Food Handling"
     },
     {
+        "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
+        "state": "Arizona",
+        "title": "ANSI Food Handler Training",
+        "desc": "Userve's Arizona online food handler training program teaches food handlers to work with food safely to obtain an ANSI-accredited food handler card in Arizona.",
+        "url": "/us/az/food-service/ansi-food-handler-training",
+        "type": "fh_ansi",
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
+    },
+    {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Arizona",
         "title": "Alcohol Server / Seller Training",
@@ -74,17 +84,6 @@
         "button": "invert",
         "tag": "coming-soon",
         "productCategoryLabel": "Alcohol Service"
-    },
-    {
-        "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
-        "state": "Arizona",
-        "title": "Food Handler Training",
-        "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
-        "url": "#notify",
-        "type": "fh",
-        "button": "invert",
-        "tag": "coming-soon",
-        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -151,10 +150,20 @@
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "California",
-        "title": "Food Handler Training",
-        "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
+        "title": "ANSI Food Handler Training (excl. San Diego)",
+        "desc": "Userve's California online food handler training program teaches food handlers to work with food safely to obtain an ANSI-accredited food handler card in California (excluding San Diego).",
+        "url": "/us/ca/food-service/ansi-food-handler-training",
+        "type": "fh_ansi",
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
+    },
+    {
+        "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
+        "state": "California",
+        "title": "ANSI Food Handler Training (San Diego)",
+        "desc": "Userve's California online food handler training program teaches food handlers to work with food safely to obtain an ANSI-accredited food handler card in San Diego, California.",
         "url": "#notify",
-        "type": "fh",
+        "type": "fh_ansi",
         "button": "invert",
         "tag": "coming-soon",
         "productCategoryLabel": "Food Handling"
@@ -320,12 +329,11 @@
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Hawaii",
-        "title": "Food Handler Training",
-        "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
-        "url": "#notify",
-        "type": "fh",
-        "button": "invert",
-        "tag": "coming-soon",
+        "title": "ANSI Food Handler Training",
+        "desc": "Userve's Hawaii online food handler training program teaches food handlers to work with food safely to obtain an ANSI-accredited food handler card in Hawaii.",
+        "url": "/us/hi/food-service/ansi-food-handler-training",
+        "type": "fh_ansi",
+        "button": "primary",
         "productCategoryLabel": "Food Handling"
     },
     {
@@ -384,12 +392,11 @@
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Illinois",
-        "title": "Food Handler Training",
-        "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
-        "url": "#notify",
-        "type": "fh",
-        "button": "invert",
-        "tag": "coming-soon",
+        "title": "ANSI Food Handler Training",
+        "desc": "Userve's Illinois online food handler training program teaches food handlers to work with food safely to obtain an ANSI-accredited food handler card in Illinois.",
+        "url": "/us/il/food-service/ansi-food-handler-training",
+        "type": "fh_ansi",
+        "button": "primary",
         "productCategoryLabel": "Food Handling"
     },
     {
@@ -911,6 +918,16 @@
         "productCategoryLabel": "Food Handling"
     },
     {
+        "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
+        "state": "New Mexico",
+        "title": "ANSI Food Handler Training",
+        "desc": "Userve's New Mexico online food handler training program teaches food handlers to work with food safely to obtain an ANSI-accredited food handler card in New Mexico.",
+        "url": "/us/nm/food-service/ansi-food-handler-training",
+        "type": "fh_ansi",
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
+    },
+    {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "New Mexico",
         "title": "Alcohol Server / Seller Training",
@@ -920,17 +937,6 @@
         "button": "invert",
         "tag": "coming-soon",
         "productCategoryLabel": "Alcohol Service"
-    },
-    {
-        "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
-        "state": "New Mexico",
-        "title": "Food Handler Training",
-        "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
-        "url": "#notify",
-        "type": "fh",
-        "button": "invert",
-        "tag": "coming-soon",
-        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",
@@ -1315,6 +1321,16 @@
         "productCategoryLabel": "Food Handling"
     },
     {
+        "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
+        "state": "Texas",
+        "title": "ANSI Food Handler Training",
+        "desc": "Userve's Texas online food handler training program teaches food handlers to work with food safely to obtain an ANSI-accredited food handler card in Texas.",
+        "url": "/us/tx/food-service/ansi-food-handler-training",
+        "type": "fh_ansi",
+        "button": "primary",
+        "productCategoryLabel": "Food Handling"
+    },
+    {
         "image": "/hubfs/course-assets/usx_al_ge_hero.jpg",
         "state": "Texas",
         "title": "Alcohol Server / Seller Training",
@@ -1324,17 +1340,6 @@
         "button": "invert",
         "tag": "coming-soon",
         "productCategoryLabel": "Alcohol Service"
-    },
-    {
-        "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
-        "state": "Texas",
-        "title": "Food Handler Training",
-        "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
-        "url": "#notify",
-        "type": "fh",
-        "button": "invert",
-        "tag": "coming-soon",
-        "productCategoryLabel": "Food Handling"
     },
     {
         "image": "/hubfs/course-assets/usx_fm_ge_hero.jpg",

@@ -13,16 +13,27 @@
     @media only screen and (max-width: 767px) {
       @apply block opacity-100;
     }
+    h3 {
+      @apply mb-4 text-2xl font-semibold text-lynch;
+    }
     &.first {
       @apply h-full bg-[url('src/images/usx-cta-background.svg')] bg-cover bg-bottom;
+      h3 {
+        @apply leading-6 text-mischka text-base font-medium md:text-white md:text-2xl md:font-semibold;
+      }
       ul {
         @apply relative;
         li {
-          @apply pl-8 before:content-[url('src/images/usx-check-white.svg')] before:absolute before:left-0 before:w-[15px] before:h-[12px];
+          @apply pl-8 before:content-[url('src/images/usx-check-white.svg')] before:absolute before:left-0 before:w-[15px] before:h-[12px] list-none ml-0 mt-0;
         }
       }
       &.active {
         @apply hidden md:grid;
+      }
+    }
+    ul {
+      li {
+        @apply ml-4 mt-2 list-disc pl-2; 
       }
     }
   }
@@ -46,5 +57,12 @@
   }
   li {
     @apply mb-2;
+  }
+}
+#accordion-cta-mobile {
+  .accordion-body {
+    h3 {
+      @apply mb-4 text-lynch;
+    }
   }
 }

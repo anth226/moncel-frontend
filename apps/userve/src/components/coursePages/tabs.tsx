@@ -41,7 +41,7 @@ const TabsSection = (props: AboutUsStoryblok & StoryblokStoryProps) => {
                     return <div className={`tab-pane fade p-8 h-auto md:h-100 relative ${i == 0 ? "show active first bg-lynch" : "bg-lilac"}`} id={`tabs-${i}-cta`} role="tabpanel" aria-labelledby={`tabs-${i}-tabcta`} key={i}>
                         <ReactMarkdown className={i == 0 ? "mischka" : ""}>{tab.body || ""}</ReactMarkdown>
                         {i == 0 && <div className="hidden lg:block absolute bottom-0 right-8">
-                            <DynamicImage fileNode={localImageFileNode} alt="About Userve" className="block max-w-[350px] " />
+                            <DynamicImage fileNode={localImageFileNode} alt="About Userve" className="block max-w-[275px] " />
                         </div> }
                     </div>
                 })}  
