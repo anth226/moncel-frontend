@@ -1,6 +1,6 @@
 import React from "react";
 import ReactMarkdown from 'react-markdown';
-import HubspotContactForm from 'src/components/shared/Form';
+import { HubspotContactForm } from 'src/components/shared/Form';
 
 import { Section, SectionFullWidth } from 'src/components/core/Section';
 import { ProductFormStoryblok } from 'src/storyblok-component-types';

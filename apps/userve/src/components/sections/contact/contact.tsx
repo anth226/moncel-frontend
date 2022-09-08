@@ -5,7 +5,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 import { ContactStoryblok } from 'src/storyblok-component-types';
 import { Header1, Header5, Text } from 'src/components/core/typography';
-import HubspotContactForm from 'src/components/shared/Form';
+import { HubspotContactForm, FormspreeSupportForm } from 'src/components/shared/Form';
+
+
 import { DynamicImage} from 'src/lib/images';
 
 interface ReactProps {
@@ -27,7 +29,7 @@ const ContactSection = (props: ContactStoryblok) => {
     const location = useLocation();
     const isClient = typeof window !== "undefined";
     const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-    debugger;
+
     const MobileMenuItem = (props:ReactProps) => {
         return <li className={`nav-item ${props.className}`} role="presentation">
             <a href={`#${props.target}`} className="nav-link bg-white hover:bg-white py-2 px-4 block whitespace-no-wrap hover:no-underline" id={`tabs-${props.id}-tabFill`} data-bs-toggle="pill" data-bs-target={`#${props.target}`}role="tab" aria-controls={props.target} aria-selected="false" onClick={() => setMobileMenuOpen(false)}>{props.title}</a>
@@ -116,7 +118,7 @@ const ContactSection = (props: ContactStoryblok) => {
                     <HubspotContactForm portalId="21498581" formId="d9990f75-9696-45f7-a914-53127b508254" hubId="bus" className="p-0 md:p-8 bg-transparent !shadow-none md:bg-white md:!shadow-lg" />
                 </div>
                 <div className={`tab-pane fade ${location.hash === ContactFormTabIds.SUPPORT ? "show active" : ""}`} id="tabs-support" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
-                    <HubspotContactForm portalId="21498581" formId="2821dfb1-e4b4-4267-81dd-a6691ab71671" hubId="sup" className="p-0 md:p-8 bg-transparent !shadow-none md:bg-white md:!shadow-lg" />
+                    <FormspreeSupportForm className="p-0 md:p-8 bg-transparent !shadow-none md:bg-white md:!shadow-lg"/>
                 </div>
                 <div className={`tab-pane fade ${location.hash === ContactFormTabIds.GENERAL ? "show active" : ""}`} id="tabs-general" role="tabpanel" aria-labelledby="tabs-profile-tabFill">
                     <HubspotContactForm portalId="21498581" formId="38cfb103-d6e5-4248-90f1-df9a1a90210d" hubId="gen" className="p-0 md:p-8 bg-transparent !shadow-none md:bg-white md:!shadow-lg" />
