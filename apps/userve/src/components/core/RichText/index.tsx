@@ -7,23 +7,26 @@ interface RichTextProps {
     state?: string;
 }
 
+interface ReplacePlaceholderProps {
+    str?: React.ReactNode | string;
+}
+
 function RichText({ document, className, state }:RichTextProps) {
     // document is the rich text object you receive from Storyblok,
     // in the form { type: "doc", content: [ ... ] }
     // return <div className={className}>{render(document)}</div>;
     
-    let newState : string;
-    if (state) {
-        newState = state;
-    } else {
-        newState = "";
-    }
+    const newState = state || "";
 
+    function ReplacePlaceholder({str}:ReplacePlaceholderProps) {
+        return <span>{str.toString().replaceAll("$STATE", newState) || ""}</span>;
+    }
+    
     return <div className={className}>{render(document, {
         // replace $STATE placeholder in RichText component with a defined state
-        defaultStringResolver: (str) => (<p>{(str).replaceAll("$STATE", newState)}</p>),
+        defaultStringResolver: (str) => <p><ReplacePlaceholder str={str}/></p>,
         markResolvers: {
-            code: (children) => <span>{children.toString().replaceAll("$STATE", newState) || ""}</span>
+            code: (children) => <ReplacePlaceholder str={children}/>
         }
     })}</div>;
     
