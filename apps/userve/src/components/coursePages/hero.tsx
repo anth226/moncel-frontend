@@ -112,13 +112,10 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
             defaultGraphicFileNode = imageData.basset.nodes[0];
     }
 
-    const title = (content.title || "").replace("$STATE", context.state);
-    const desc = (content.desc || "").replaceAll("$STATE", context.state);
-    const subtitle = (content.subtitle || "").replace("$STATE", context.state);
     const lang = courseLang(context.type);
 
     const gatsbyImageFileNode = findMatchingLocalFileNode(getFilename(content.Image?.filename || ""), heroStory);
-    const imageComp = <DynamicImage fileNode={gatsbyImageFileNode || defaultGraphicFileNode} alt={title || "Hero image"} className="rounded-xl" imgStyle={{borderRadius:'1rem'}}/>;
+    const imageComp = <DynamicImage fileNode={gatsbyImageFileNode || defaultGraphicFileNode} alt={content.title || "Hero image"} className="rounded-xl" imgStyle={{borderRadius:'1rem'}}/>;
     // replace state placeholder with state name
     if (!content.price) throw Error(`Price was not found for page ${context.url}`);
 
@@ -128,8 +125,8 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
         </div>
         <div className="col-start-1 col-span-1 md:row-start-1 row-span-3 flex flex-col h-full lg:mr-16">
             {content.tag ? <Tag>{content.tag}</Tag> : null}
-            <Header1 className="leading-8 !text-3xl md:!text-[2.25rem]">{title}</Header1>
-            <Text className="!mb-4">{desc || ""}</Text>
+            <Header1 className="leading-8 !text-3xl md:!text-[2.25rem]">{content.title || ""}</Header1>
+            <Text className="!mb-4">{content.desc || ""}</Text>
             <div className="mb-4 text-4xl font-extrabold">{content.price}</div>
 
             <EnrollButton id="course-page-enroll-button" courseType={{ type: context.type, enroll: context.enroll || "" }}>
@@ -142,7 +139,7 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
             {content.disclaimer ? <p className="text-sm mt-4">{ content.disclaimer }</p> : null}
         </div>
         <div className="md:col-start-2 col-span-2 md:row-start-3 lg:mt-6">
-            <Header2 className="!text-2xl">{subtitle || ""}</Header2>
+            <Header2 className="!text-2xl">{content.subtitle || ""}</Header2>
             <Benefits benefits={content.benefits || []} heroStory={heroStory} />
         </div>
     </Section>;
