@@ -80,9 +80,9 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
     };
 
     // Replace $STATE with a defined state
-    heroContent = JSON.parse(JSON.stringify(heroContent).toString().replaceAll("$STATE", pageContext.state));
-    benefitsContent = JSON.parse(JSON.stringify(benefitsContent).toString().replaceAll("$STATE", pageContext.state));
-    faqsContent = JSON.parse(JSON.stringify(faqsContent).toString().replaceAll("$STATE", pageContext.state));
+    heroContent = JSON.parse(JSON.stringify(heroContent).replaceAll("$STATE", pageContext.state));
+    benefitsContent = JSON.parse(JSON.stringify(benefitsContent).replaceAll("$STATE", pageContext.state));
+    faqsContent = JSON.parse(JSON.stringify(faqsContent).replaceAll("$STATE", pageContext.state));
 
     return <div>
         <Head seo={seoContent} coursePageContext={pageContext} />
