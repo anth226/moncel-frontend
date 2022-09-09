@@ -14,7 +14,6 @@ interface StoryProps {
 
 export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
     const faqCards = props.faq || [];
-
     return <SectionFullWidth className={props.className || ""}>
         <Section>
             <div className="col-span-12"> 
