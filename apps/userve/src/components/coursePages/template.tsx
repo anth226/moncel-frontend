@@ -95,7 +95,7 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
 
                 { faqVersion == "default" && <span><CourseInfoSection {...faqsContent} story={faqsStory}/><AboutUsSection {...accountsContent} story={accountsStory}/><BenefitsSection {...featuresContent} story={featuresStory} /></span> }
 
-                { faqVersion == "updated" && <span><TabsSection {...accountsContent} story={accountsStory}/><FaqsSection {...faqsContent} story={faqsStory} state={pageContext.state || ""}/></span> }
+                { faqVersion == "updated" && <span><TabsSection {...accountsContent} story={accountsStory}/><FaqsSection {...faqsContent} story={faqsStory} /></span> }
             </main>
         </Layout>
     </div>
