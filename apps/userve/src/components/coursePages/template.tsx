@@ -83,14 +83,14 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
     heroContent = JSON.parse(JSON.stringify(heroContent).toString().replaceAll("$STATE", pageContext.state));
     benefitsContent = JSON.parse(JSON.stringify(benefitsContent).toString().replaceAll("$STATE", pageContext.state));
     faqsContent = JSON.parse(JSON.stringify(faqsContent).toString().replaceAll("$STATE", pageContext.state));
-    
+
     return <div>
         <Head seo={seoContent} coursePageContext={pageContext} />
         <Layout headerProps={{ highlightPathname: "/us/courses" }}>
             <main style={pageStyles}>
                 <HeroSection content={heroContent} context={pageContext} heroStory={heroStory} />
                 <CourseInfoSection {...courseInfoContent} className="bg-gradient-to-b from-titan to-white" story={courseInfoStory} />
-                <BenefitsSection {...benefitsContent} story={benefitsStory} state={pageContext.state || ""}/>
+                <BenefitsSection {...benefitsContent} story={benefitsStory} />
                 <TestimonialsSection {...testimonialsContent} />
 
                 { faqVersion == "default" && <span><CourseInfoSection {...faqsContent} story={faqsStory}/><AboutUsSection {...accountsContent} story={accountsStory}/><BenefitsSection {...featuresContent} story={featuresStory} /></span> }

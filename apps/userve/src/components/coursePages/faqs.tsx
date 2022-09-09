@@ -42,13 +42,13 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
                                         <h3 className="font-semibold !text-navy text-lg cursor-pointer md:mb-2 !bg-transparent" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} aria-controls={`collapse_${random}_${i}`} id={`heading_${random}_${i}`} aria-expanded="false">{y.title || ""}</h3>
 
                                         <div className="intro !bg-transparent" data-bs-toggle="collapse" data-bs-target={`#collapse_${random}_${i}`} id={`heading_${random}_${i}`} aria-expanded="false">
-                                            <RichText className="text-lynch" document={y.intro || ""} state={props.state}/>
+                                            <RichText className="text-lynch" document={y.intro || ""}/>
                                         </div>
                                         
                                         <div id={`collapse_${random}_${i}`} className="accordion-collapse collapse" aria-labelledby={`heading_${random}_${i}`} data-bs-parent={`#accordion_${random}`}>
                                             <div className="accordion-body">
-                                                <RichText className="text-lynch" document={y.intro || ""} state={props.state}/>
-                                                {y.desc && <RichText className="text-lynch" document={y.desc || ""} state={props.state}/>}
+                                                <RichText className="text-lynch" document={y.intro || ""}/>
+                                                {y.desc && <RichText className="text-lynch" document={y.desc || ""}/>}
                                             </div>
                                         </div>
 
