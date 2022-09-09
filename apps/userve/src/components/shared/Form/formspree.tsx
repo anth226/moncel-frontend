@@ -78,6 +78,7 @@ const FormspreeSupportForm = (props: FormInfo) => {
                             className="form-control"
                             id="form-enquiry-phone"
                             placeholder="e.g. 400-123-4567"
+                            minLength={10}
                             maxLength={40}
                         />
                     </div>
