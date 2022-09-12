@@ -50,12 +50,11 @@ const EnrollButton = ({ children, courseType, id }: { children: React.ReactNode,
 
 const BusinessButton = ({x}:{x:CourseType}) => {
     const lang = courseLang(x);
-    return <div className="mb-6">
-        <div className="hidden md:block w-full border border-navy p-4 rounded-lg mt-4 text-center">
+    return <div>
+        <div className="w-full mt-4 text-center">
             <h3 className="text-bluewood text-sm leading-5 font-semibold">{lang == "lang-es" ? "Necesito Una Cuenta Comercial?" : "Need a Business Account?"}</h3>
             <a href="https://hello.userve.com/schedule" target="_blank" className="text-dark-blue font-normal text-xs leading-4 hover:underline">{lang == "lang-es" ? "Hablar Con Un Asesor" : "Speak With An Advisor"}</a>
         </div>
-        <a href="https://hello.userve.com/schedule" target="_blank" className="md:hidden btn btn-invert border-2 border-melrose text-dark-blue mt-4">{lang == "lang-es" ? "Necesito Una Cuenta Comercial?" : "Need a Business Account?"}</a>
     </div>
 };
 
@@ -65,7 +64,7 @@ const Features = ({ features, heroStory }: { features: IconCardStoryblok[], hero
         {features.map((feature, i) => {
             const gatsbyImageFileNode = findMatchingLocalFileNode(getFilename(feature.Icon?.filename || ""), heroStory);
             return <div className="flex flex-row gap-3 items-baseline" key={`features-${i}`}>
-                <DynamicImage fileNode={gatsbyImageFileNode} width={20} height={20} alt={feature.Title || ""} className="block max-w-none w-4" />
+                <DynamicImage fileNode={gatsbyImageFileNode} width={20} height={20} alt={feature.Title || ""} className="block max-w-none w-4 mr-2" />
                 <ReactMarkdown>{feature.Title || ""}</ReactMarkdown>
             </div>
         })}
@@ -125,22 +124,24 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
             {imageComp}
         </div>
         <div className="col-start-1 col-span-1 md:row-start-1 row-span-3 flex flex-col h-full lg:mr-16 text-center md:text-left">
-            <Header1 className="leading-8 !text-3xl md:!text-[2.25rem] mb-0">{title}</Header1>
+            <Header1 className="leading-8 !text-2xl mb-0">{title}</Header1>
             {content.tag ? <Tag>{content.tag}</Tag> : null}
             <Text className="!my-4">{content.desc || ""}</Text>
-            <div className="mb-4 text-4xl font-extrabold">{content.price}</div>
+            <div className="bg-hawkes-blue p-6 mb-6 rounded-md">
+                <div className="mb-4 text-2xl font-extrabold text-center">{content.price}</div>
+                <EnrollButton id="course-page-enroll-button" courseType={{ type: context.type, enroll: context.enroll || "" }}>
+                    <p className="text-inherit !mb-0" data-test="enroll-button">{lang == "lang-es" ? "Regístrate" : "Enroll Now"}</p>
+                </EnrollButton>
+                <BusinessButton x={context.type}/>
+            </div>
 
-            <EnrollButton id="course-page-enroll-button" courseType={{ type: context.type, enroll: context.enroll || "" }}>
-                <p className="text-inherit !mb-0" data-test="enroll-button">{lang == "lang-es" ? "Regístrate" : "Enroll Now"}</p>
-            </EnrollButton>
-            <BusinessButton x={context.type}/>
             { content.alert ? <Alert>{content.alert}</Alert> : null}    
             <MoneyBackGuarantee x={context.type} />
             <Features features={content.features || []} heroStory={heroStory}/>
             {content.disclaimer ? <p className="text-sm mt-4">{ content.disclaimer }</p> : null}
         </div>
         <div className="md:col-start-2 col-span-2 md:row-start-3 lg:mt-6 text-center md:text-left">
-            <Header2 className="!text-2xl">{content.subtitle || ""}</Header2>
+            <Header2 className="text-2xl md:!text-3xl lg:!text-4xl">{content.subtitle || ""}</Header2>
             <Benefits benefits={content.benefits || []} heroStory={heroStory} />
         </div>
     </Section>;
