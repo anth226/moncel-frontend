@@ -30,7 +30,7 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
             </div>
             <div className={props.layout == "title-left" || heroImageLocalFileNode ? "col-span-12 md:col-span-8 col-end-13" : "col-span-12 col-end-13"}>
                 <div className="p">
-                    {props.layout == "title-right" ? <div className="mb-6"><Header2>{props.title}</Header2><RichText document={props.desc} className="text-lynch"/></div> : ""}
+                    {props.layout == "title-right" ? <div className="mb-6 text-center md:text-left"><Header2>{props.title}</Header2><RichText document={props.desc} className="text-lynch"/></div> : ""}
                 </div>
                 <div className="accordion w-full" id={`accordion_${random}`}>
                     {infoCards.map((card, i) => {
