@@ -24,11 +24,11 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
 
     return <SectionFullWidth className={props.className || ""}>
         <Section className="grid grid-cols-12 md:gap-10">
-            <div className="col-span-12 md:col-span-4 lg:mr-16">
+            <div className={props.layout == "title-left" || heroImageLocalFileNode ? "col-span-12 md:col-span-4 lg:mr-16" : "hidden"}>
                 {props.layout == "title-left" ? <><Header2>{props.title}</Header2><ReactMarkdown>{props.desc}</ReactMarkdown></> : ''}
                 {!heroImageLocalFileNode ? '' : <DynamicImage fileNode={heroImageLocalFileNode} alt={props.title} className="mb-6 md:mb-0"/> }
             </div>
-            <div className="col-span-12 md:col-span-8 col-end-13">
+            <div className={props.layout == "title-left" || heroImageLocalFileNode ? "col-span-12 md:col-span-8 col-end-13" : "col-span-12 col-end-13"}>
                 <div className="p">
                     {props.layout == "title-right" ? <div className="mb-6"><Header2>{props.title}</Header2><RichText document={props.desc} className="text-lynch"/></div> : ""}
                 </div>
