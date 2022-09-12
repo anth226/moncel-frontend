@@ -13,7 +13,7 @@ import { Tooltip } from './tooltip';
 
 const Tag = (props: { children: string | JSX.Element | JSX.Element[], className?: string }) => {
     const imageData = useStaticQuery(imageQuery);
-    return <div className={`bg-melrose rounded-xl text-sm px-4 py-[6px] mb-6 text-center w-fit content-start ${props.className || ""}`}>
+    return <div className={`text-sm text-center md:text-left w-full mt-2 text-dark-blue ${props.className || ""}`}>
         <DynamicImage fileNode={imageData.medal.nodes[0]} alt="Medallion Icon" width={15} height={15} className="mr-1 -mt-1 inline" loading="lazy"/>
         {props.children}
     </div>;
@@ -61,7 +61,7 @@ const BusinessButton = ({x}:{x:CourseType}) => {
 
 
 const Features = ({ features, heroStory }: { features: IconCardStoryblok[], heroStory: Slug }) => {
-    return <div className="flex flex-col gap-4">
+    return <div className="flex flex-col gap-4 text-left">
         {features.map((feature, i) => {
             const gatsbyImageFileNode = findMatchingLocalFileNode(getFilename(feature.Icon?.filename || ""), heroStory);
             return <div className="flex flex-row gap-3 items-baseline" key={`features-${i}`}>
@@ -76,7 +76,7 @@ const Benefits = ({ benefits, heroStory }: { benefits: IconCardStoryblok[], hero
     return <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {benefits.map((benefit, i) => {
             const gatsbyImageFileNode = findMatchingLocalFileNode(getFilename(benefit.Icon?.filename || ""), heroStory);
-            return <div className="flex flex-col gap-4 items-start" key={`benefits-${i}`}>
+            return <div className="flex flex-col gap-4 items-center md:items-start" key={`benefits-${i}`}>
                 <DynamicImage fileNode={gatsbyImageFileNode} width={60} height={60} className="block max-w-none h-16" alt={benefit.Title || ""} />
                 <Header5 className="!mb-0">{benefit.Title || ""}</Header5>
                 <Text className="!mb-0">{benefit.Description || ""}</Text>
@@ -124,10 +124,10 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
         <div className="md:col-start-2 md:col-span-2 md:row-start-1 row-span-2">
             {imageComp}
         </div>
-        <div className="col-start-1 col-span-1 md:row-start-1 row-span-3 flex flex-col h-full lg:mr-16">
+        <div className="col-start-1 col-span-1 md:row-start-1 row-span-3 flex flex-col h-full lg:mr-16 text-center md:text-left">
+            <Header1 className="leading-8 !text-3xl md:!text-[2.25rem] mb-0">{title}</Header1>
             {content.tag ? <Tag>{content.tag}</Tag> : null}
-            <Header1 className="leading-8 !text-3xl md:!text-[2.25rem]">{title}</Header1>
-            <Text className="!mb-4">{content.desc || ""}</Text>
+            <Text className="!my-4">{content.desc || ""}</Text>
             <div className="mb-4 text-4xl font-extrabold">{content.price}</div>
 
             <EnrollButton id="course-page-enroll-button" courseType={{ type: context.type, enroll: context.enroll || "" }}>
@@ -139,7 +139,7 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
             <Features features={content.features || []} heroStory={heroStory}/>
             {content.disclaimer ? <p className="text-sm mt-4">{ content.disclaimer }</p> : null}
         </div>
-        <div className="md:col-start-2 col-span-2 md:row-start-3 lg:mt-6">
+        <div className="md:col-start-2 col-span-2 md:row-start-3 lg:mt-6 text-center md:text-left">
             <Header2 className="!text-2xl">{content.subtitle || ""}</Header2>
             <Benefits benefits={content.benefits || []} heroStory={heroStory} />
         </div>

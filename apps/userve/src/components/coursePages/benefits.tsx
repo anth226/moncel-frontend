@@ -7,7 +7,7 @@ import { findMatchingLocalFileNode, getFilename, Slug, LocalFileSource, DynamicI
 
 const BenefitsCard = ({ card, fileNode }: { card: IconCardStoryblok, fileNode: LocalFileSource | null }) => {
     const imgComp = !!fileNode ? <DynamicImage fileNode={fileNode} alt={`${card.Title} card icon`} className="h-16" width={60} height={60}/> : <img src={card.Icon?.filename || ""} alt={`${card.Title}`} width={60} height={60} className="block max-w-none h-16 mb-4"/>
-    return <div className="flex flex-col">
+    return <div className="flex flex-col items-center md:items-start">
         <div className="flex mb-6">
             { imgComp }
         </div>
@@ -24,8 +24,8 @@ export default (props: BenefitsStoryblok & StoryProps) => {
     const title = props.title || "";
     return <SectionFullWidth className={`bg-white ${props.className || ""}`}>
         <Section>
-            <Header2 className="max-w-full">{title}</Header2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-7">
+            <Header2 className="max-w-full text-center md:text-left">{title}</Header2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-7 text-center md:text-left">
                     { cards.map((card, i) => {
                         const localImageFileNode = findMatchingLocalFileNode(getFilename(card.Icon?.filename || ""), props.story);
                         return <div key={`benefits-card-${i}`}><BenefitsCard card={card} fileNode={localImageFileNode} /></div>

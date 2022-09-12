@@ -60,7 +60,7 @@ export default (props: CoursePageInfoSectionStoryblok & StoryProps) => {
                     })}
                 </div>
             </div>
-            <RichText className="md:hidden" document={props.desc || ""}/>
+            <RichText className="md:hidden text-center" document={props.desc || ""}/>
         </Section>
     </SectionFullWidth>;
 }

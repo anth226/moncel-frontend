@@ -23,7 +23,7 @@ const TabsSection = (props: AboutUsStoryblok & StoryblokStoryProps) => {
         </div>
 
         {/* Component Header */}
-        <div className="col-span-12">
+        <div className="col-span-12 text-center md:text-left">
             <Header2>{props.header || ""}</Header2>
         </div>
         {/* Tabs */}
