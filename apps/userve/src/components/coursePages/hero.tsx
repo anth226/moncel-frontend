@@ -30,7 +30,7 @@ const Alert = (props: { children: string | JSX.Element | JSX.Element[], classNam
 const MoneyBackGuarantee = ({x}:{x:CourseType}) => {
     const lang = courseLang(x);
     const imageData = useStaticQuery(imageQuery);
-    return <div className="bg-hint-green text-green-700 rounded-xl p-2 mb-6 flex flex-row items-center justify-center text-[12.8px] text-center">
+    return <div className="bg-hint-green text-green-700 rounded-xl p-2 mb-8 flex flex-row items-center justify-center text-[12.8px] text-center">
         <DynamicImage fileNode={imageData.dollar.nodes[0]} alt="Dollar Icon" width={15} height={15} className="hidden lg:block mr-2" loading="lazy"/>
         {lang == "lang-es" ? "Garantía de devolución de dinero" : "100% Money-Back Guarantee"}
         <Tooltip message={lang == "lang-es" ? "¡Estamos seguros de que te van a encantar nuestros cursos! Si no es así, te haremos un reembolso completo de acuerdo con nuestra política de devoluciones." : "We're confident you'll love our courses! If not, we provide full refunds subject to our refund policy."}>
@@ -127,7 +127,7 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
             <Header1 className="leading-8 !text-2xl mb-0">{title}</Header1>
             {content.tag ? <Tag>{content.tag}</Tag> : null}
             <Text className="!my-4">{content.desc || ""}</Text>
-            <div className="bg-hawkes-blue p-6 mb-6 rounded-md">
+            <div className="bg-hawkes-blue p-6 mt-4 mb-6 rounded-md">
                 <div className="mb-4 text-2xl font-extrabold text-center">{content.price}</div>
                 <EnrollButton id="course-page-enroll-button" courseType={{ type: context.type, enroll: context.enroll || "" }}>
                     <p className="text-inherit !mb-0" data-test="enroll-button">{lang == "lang-es" ? "Regístrate" : "Enroll Now"}</p>
