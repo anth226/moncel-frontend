@@ -10,7 +10,7 @@
     }
   }
   .tab-pane {
-    @apply h-full bg-[url('src/images/usx-cta-light-background.svg')] bg-cover bg-bottom;
+    @apply h-full bg-[url('src/images/usx-cta-light-background.svg')] bg-contain bg-no-repeat bg-bottom;
     @media only screen and (max-width: 767px) {
       @apply block opacity-100;
     }
