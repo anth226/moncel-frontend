@@ -10,6 +10,7 @@
     }
   }
   .tab-pane {
+    @apply h-full;
     @media only screen and (max-width: 767px) {
       @apply block opacity-100;
     }
@@ -33,7 +34,11 @@
     }
     ul {
       li {
-        @apply ml-4 mt-2 list-disc pl-2; 
+        @apply ml-4 mt-2 list-disc pl-2 lg:max-w-[60%]; 
+        
+      }
+      :first-child {
+        @apply lg:max-w-full;
       }
     }
   }
