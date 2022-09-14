@@ -111,11 +111,10 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
             defaultGraphicFileNode = imageData.basset.nodes[0];
     }
 
-    const title = (content.title || "").replace("$STATE", context.state);
     const lang = courseLang(context.type);
 
     const gatsbyImageFileNode = findMatchingLocalFileNode(getFilename(content.Image?.filename || ""), heroStory);
-    const imageComp = <DynamicImage fileNode={gatsbyImageFileNode || defaultGraphicFileNode} alt={title || "Hero image"} className="rounded-xl" imgStyle={{borderRadius:'1rem'}}/>;
+    const imageComp = <DynamicImage fileNode={gatsbyImageFileNode || defaultGraphicFileNode} alt={content.title || "Hero image"} className="rounded-xl" imgStyle={{borderRadius:'1rem'}}/>;
     // replace state placeholder with state name
     if (!content.price) throw Error(`Price was not found for page ${context.url}`);
 
@@ -135,7 +134,7 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
                 <BusinessButton x={context.type}/>
             </div>
 
-            { content.alert ? <Alert>{content.alert}</Alert> : null}    
+            { content.alert ? <Alert>{content.alert}</Alert> : null}
             <MoneyBackGuarantee x={context.type} />
             <Features features={content.features || []} heroStory={heroStory}/>
             {content.disclaimer ? <p className="text-sm mt-4">{ content.disclaimer }</p> : null}

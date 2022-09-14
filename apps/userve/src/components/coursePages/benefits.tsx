@@ -13,15 +13,16 @@ const BenefitsCard = ({ card, fileNode }: { card: IconCardStoryblok, fileNode: L
         </div>
         <Header5>{card.Title || ""}</Header5>
         <Text className="mb-0">{card.Description || ""}</Text>
-    </div>    
+    </div>
 };
 
 interface StoryProps {
     story: Slug;
 }
+
 export default (props: BenefitsStoryblok & StoryProps) => {
     const cards = props.benefits_cards || [];
-    const title = props.title || "";
+
     return <SectionFullWidth className={`bg-white ${props.className || ""}`}>
         <Section>
             <Header2 className="max-w-full text-center md:text-left">{title}</Header2>
@@ -32,5 +33,5 @@ export default (props: BenefitsStoryblok & StoryProps) => {
                     })}
                 </div>
         </Section>
-    </SectionFullWidth>  
+    </SectionFullWidth>
 };

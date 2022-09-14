@@ -73,11 +73,16 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
     }
 
     let faqVersion;
-    if (pageContext.type == "rbs" || pageContext.type == "fh_ansi") {
+    if (["rbs","fh_ansi","fh"].indexOf(pageContext.type) > -1) {
       faqVersion = "updated"
     } else {
       faqVersion = "default"
     };
+
+    // Replace $STATE with a defined state
+    heroContent = JSON.parse(JSON.stringify(heroContent).replaceAll("$STATE", pageContext.state));
+    benefitsContent = JSON.parse(JSON.stringify(benefitsContent).replaceAll("$STATE", pageContext.state));
+    faqsContent = JSON.parse(JSON.stringify(faqsContent).replaceAll("$STATE", pageContext.state));
 
     return <div>
         <Head seo={seoContent} coursePageContext={pageContext} />
@@ -85,12 +90,12 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
             <main style={pageStyles}>
                 <HeroSection content={heroContent} context={pageContext} heroStory={heroStory} />
                 <CourseInfoSection {...courseInfoContent} className="bg-gradient-to-b from-titan to-white" story={courseInfoStory} />
-                <BenefitsSection {...benefitsContent} story={benefitsStory}/>
+                <BenefitsSection {...benefitsContent} story={benefitsStory} />
                 <TestimonialsSection {...testimonialsContent} />
 
                 { faqVersion == "default" && <span><CourseInfoSection {...faqsContent} story={faqsStory}/><AboutUsSection {...accountsContent} story={accountsStory}/><BenefitsSection {...featuresContent} story={featuresStory} /></span> }
 
-                { faqVersion == "updated" && <span><TabsSection {...accountsContent} story={accountsStory}/><FaqsSection {...faqsContent} story={faqsStory}/></span> }
+                { faqVersion == "updated" && <span><TabsSection {...accountsContent} story={accountsStory}/><FaqsSection {...faqsContent} story={faqsStory} /></span> }
             </main>
         </Layout>
     </div>
