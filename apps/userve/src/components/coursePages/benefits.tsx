@@ -19,12 +19,13 @@ const BenefitsCard = ({ card, fileNode }: { card: IconCardStoryblok, fileNode: L
 interface StoryProps {
     story: Slug;
 }
+
 export default (props: BenefitsStoryblok & StoryProps) => {
     const cards = props.benefits_cards || [];
-    const title = props.title || "";
+    
     return <SectionFullWidth className={`bg-white ${props.className || ""}`}>
         <Section>
-            <Header2 className="max-w-full md:max-w-2/3">{title}</Header2>
+            <Header2 className="max-w-full md:max-w-2/3">{props.title}</Header2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 grid-flow-row gap-7">
                     { cards.map((card, i) => {
                         const localImageFileNode = findMatchingLocalFileNode(getFilename(card.Icon?.filename || ""), props.story);
