@@ -123,7 +123,7 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
             {imageComp}
         </div>
         <div className="col-start-1 col-span-1 md:row-start-1 row-span-3 flex flex-col h-full lg:mr-16 text-center md:text-left">
-            <Header1 className="leading-8 !text-2xl mb-0">{title}</Header1>
+            <Header1 className="leading-8 !text-2xl mb-0">{content.title || ""}</Header1>
             {content.tag ? <Tag>{content.tag}</Tag> : null}
             <Text className="!my-4">{content.desc || ""}</Text>
             <div className="bg-hawkes-blue p-6 mt-4 mb-6 rounded-md">
