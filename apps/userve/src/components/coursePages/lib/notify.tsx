@@ -1,5 +1,5 @@
 import React, { MouseEvent } from "react";
-import HubspotContactForm from 'src/components/shared/Form';
+import { HubspotContactForm } from 'src/components/shared/Form';
 
 import { Header3, Text } from 'src/components/core/typography';
 import { useAppDispatch, AppActions } from 'src/store';
