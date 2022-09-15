@@ -14,18 +14,19 @@ const TabsSection = (props: AboutUsStoryblok & StoryblokStoryProps) => {
     const firstTab = tabsContent[0];
 
     return <Section>
+        {/* Component Header */}
+        <div className="col-span-12 text-center md:text-left">
+            <Header2>{props.header || ""}</Header2>
+        </div>
+
         {/* Mobile Only CTA  */}
-        <div className={`tab-cta md:hidden bg-${ props.bg_version } bg-contain bg-bottom cta rounded-2xl grid grid-cols-12 grid-flow-row shadow-lg mb-20 overflow-hidden`}>
+        <div className={`tab-cta md:hidden bg-${ props.bg_version } bg-contain bg-bottom cta rounded-2xl grid grid-cols-12 grid-flow-row shadow-lg mb-10 overflow-hidden`}>
             <div className="tab-pane first col-span-12 md:col-span-6 mischka flex flex-col justify-center p-10 md:py-14 md:pl-14 md:pr-0">
                 <Header2 className="!text-white">{firstTab.title || ""}</Header2>
                 <ReactMarkdown>{firstTab.body || ""}</ReactMarkdown>
             </div>
         </div>
 
-        {/* Component Header */}
-        <div className="col-span-12">
-            <Header2>{props.header || ""}</Header2>
-        </div>
         {/* Tabs */}
         <div className="tab-cta grid grid-cols-12 rounded-xl overflow-hidden md:border-2 md:border-lilac">
             <ul className="hidden md:flex col-span-4 nav nav-tabs flex-col flex-wrap list-none border-b-0 pl-0" id="tabs-tabcta" role="tablist">
@@ -38,11 +39,12 @@ const TabsSection = (props: AboutUsStoryblok & StoryblokStoryProps) => {
             {/* Desktop Body - Tabs */}
             <div className="hidden md:block col-span-12 md:col-span-8 tab-content md:bg-lilac" id="tabs-tabcontentcta">
                 {tabsContent.map((tab: AboutUsStoryblok, i:number) => {
+                    const localImageFileNode = findMatchingLocalFileNode(getFilename(tab.image?.filename || ""), props.story);
                     return <div className={`tab-pane fade p-8 h-auto md:h-100 relative ${i == 0 ? "show active first bg-lynch" : "bg-lilac"}`} id={`tabs-${i}-cta`} role="tabpanel" aria-labelledby={`tabs-${i}-tabcta`} key={i}>
                         <ReactMarkdown className={i == 0 ? "mischka" : ""}>{tab.body || ""}</ReactMarkdown>
-                        {i == 0 && <div className="hidden lg:block absolute bottom-0 right-8">
-                            <DynamicImage fileNode={localImageFileNode} alt="About Userve" className="block max-w-[275px] " />
-                        </div> }
+                        <div className="hidden lg:block absolute bottom-0 right-8">
+                            <DynamicImage fileNode={localImageFileNode} alt="About Userve" className="block max-w-[275px] max-h-[275px]" />
+                        </div>
                     </div>
                 })}  
             </div>
