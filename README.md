@@ -1,4 +1,4 @@
-This is the monorepo for Moncel's Gatbsy/NextJS websites. Please use yarn v3.x.
+This is the monorepo for Moncel's Gatbsy/NextJS websites. Please use yarn v3.x. Node 16 is LTS as of writing/setup; I recommend using (nvm)[https://github.com/nvm-sh/nvm] to ensure you are on appropriate versions of node and yarn. 
 
 ### Apps and Packages
 
