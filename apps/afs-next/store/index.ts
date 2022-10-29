@@ -3,10 +3,12 @@ import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
 import { createWrapper } from 'next-redux-wrapper';
 import mobileMenuSlice from './slices/mobilemenu';
+import modalSlice from './slices/modals'
 
 export const store = configureStore({
     reducer: {
       mobileMenu: mobileMenuSlice.reducer,
+      modal: modalSlice.reducer,
     },
 });
 
@@ -16,6 +18,7 @@ export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 export const useAppDispatch = () => useDispatch<AppDispatch>();
 export const AppActions = {
   ...mobileMenuSlice.actions,
+  ...modalSlice.actions,
 };
 
 export const wrapper = createWrapper<Store<RootState>>(() => store);

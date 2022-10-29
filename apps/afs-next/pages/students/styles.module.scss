@@ -1,0 +1,41 @@
+@import "../../styles/variables";
+
+.comp-table {
+    /* apply classes to all table children dynamically */
+    overflow-x:auto;
+    overflow-y: hidden;
+    min-height: .01%;
+    @apply block w-full;
+    th {
+        @apply bg-teal text-white py-3 px-4 border border-teal;
+        h3 {
+            font-weight: 600;
+        }
+    }
+    td {
+        @apply border border-teal p-3;
+        
+    }
+}
+
+.markdown-container {
+    p {
+        padding-bottom: 15px;
+    }
+    ul {
+        li {
+            padding: 0 0 7.5px 0;
+        }
+        :last-child {
+            padding: 0 0 15px;
+        }
+    }
+    li::before {
+        background-image: url('/icon-library-2_checkmark-green.svg');
+        display: inline-block;
+        margin: 0.1rem 1rem 0 0;
+    }
+    :last-child {
+        padding-bottom: 0;
+    }
+}

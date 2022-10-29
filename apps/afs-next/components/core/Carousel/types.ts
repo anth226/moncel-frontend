@@ -1,10 +1,12 @@
+import { StaticImageData } from 'next/image';
+
 export interface CarouselProps {
     id?: string;
 }
 
 type Orientation = "left" | "right";
 export interface CarouselSlideProps {
-    background: string;
+    background: StaticImageData;
     title: string;
     description: string | Array<string>;
     linkText?: string;

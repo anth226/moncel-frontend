@@ -1,23 +1,25 @@
 import { ReactNode } from 'react';
 import Layout from 'components/core/layout';
 import { GridTemplate } from 'components/templates';
-import { coursePageOverviewData } from 'components/courses/coursePagesData';
+import { LawsRequirementsSectorOverviewData, navigationSectorPageData } from 'components/laws-requirements/lawsRequirementsPageData';
 
-export const CoursesBackground = ({ children }: { children: ReactNode }) => {
-  return <div className="bg-afs-light-gray w-screen">
-      <div className={`hidden lg:block bg-[url('/Banner_courses.jpg')] bg-afs-light-gray py-16 bg-no-repeat w-full`}>
+export const LawsBackground = ({ children }: { children: ReactNode }) => {
+  return <div className="w-full border-t-1 border-white">
+      <div className={`hidden lg:block bg-haze py-16 bg-[url('/Banner_laws.jpg')] bg-no-repeat w-full bg-[length:100%_400px]`}>
           { children }
       </div>
-      <div className="md:hidden bg-afs-light-gray py-16 w-full">
+      <div className="lg:hidden w-full">
           { children }
       </div>
   </div>;
 };
 
 const Home = () => {
+  const pageData = LawsRequirementsSectorOverviewData;
+  pageData.navigation = navigationSectorPageData;
   return (
     <Layout>
-      <CoursesBackground><GridTemplate {...coursePageOverviewData}/></CoursesBackground>
+      <LawsBackground><GridTemplate {...LawsRequirementsSectorOverviewData}/></LawsBackground>
     </Layout>
   );
 };

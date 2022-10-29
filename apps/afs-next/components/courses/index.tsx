@@ -2,11 +2,11 @@ import { ReactNode } from 'react';
 export * from './coursePagesData';
 
 export const CoursesBackground = ({ children }: { children: ReactNode }) => {
-    return <div className="bg-afs-light-gray w-screen">
-        <div className={`hidden lg:block bg-[url('/Banner_courses.jpg')] bg-afs-light-gray py-16 bg-no-repeat w-full`}>
+    return <div className="w-full border-t-1 border-white">
+        <div className={`hidden lg:block bg-haze py-16 bg-[url('/Banner_courses.jpg')] bg-no-repeat w-full bg-[length:100%_400px]`}>
             { children }
         </div>
-        <div className="md:hidden bg-afs-light-gray py-16 w-full">
+        <div className="lg:hidden w-full">
             { children }
         </div>
     </div>;

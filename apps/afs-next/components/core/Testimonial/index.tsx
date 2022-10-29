@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import NextImage, { StaticImageData } from 'next/image';
+import { Text } from '../typography';
 
 interface TestimonialProps {
     imageSrc: string | StaticImageData;
@@ -9,16 +10,16 @@ interface TestimonialProps {
 }
 
 const Testimonial = (props: TestimonialProps) => {
-    return <div className="flex flex-row p-4 gap-4 border-[1px] border-afs-light-green">
+    return <div className="flex flex-row p-4 gap-4 border border-mint">
         <div className="flex flex-col">
-            <NextImage src={props.imageSrc} width={70} height={70} />
-            <p className="text-xs text-afs-green mt-4">{props.author}</p>
+            <NextImage src={props.imageSrc} width={70} height={70} layout="fixed"/>
+            <p className="text-xs text-afs-green mt-2">{props.author}</p>
             <p className="text-xs text-[#ccc]">{props.authorIntro}</p>
         </div>
         <div>
-            <p className="font-[1em] text-afs-green italic">
+            <Text className="!text-teal italic leading-5">
                 { props.children }
-            </p>
+            </Text>
         </div>
     </div>;
 };

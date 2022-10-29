@@ -1,0 +1,19 @@
+.quicklist {
+    ul {
+        list-style-position: outside;
+        li {
+            line-height: 1.5em;
+            list-style-type: none;
+            &:after {
+                content: url('/icon_stroke_green_arrow_right.svg');
+                float: right;
+                margin-right: 0.25em;
+                width: 4px;
+            }
+            // &:nth-child(5) {
+            //     @apply border-t-1 border-red-600 border-b-0;
+            // }
+        }
+    }
+}
+

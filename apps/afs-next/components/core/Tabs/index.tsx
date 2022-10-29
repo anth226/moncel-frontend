@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
-import { Header5, Text } from 'components/core/typography';
+import { Header5 } from 'components/core/typography';
+import NextImage, { StaticImageData } from 'next/image';
 
 interface ITab {
     index: number;
@@ -11,35 +12,34 @@ const Tab = ({ children, index, onClick, activeTab }: ITab) => {
     const _handleClick = () => {
         onClick(index);
     };
-
     const isActive = (activeTab == index);
-    const bgColor = isActive ? "white" : "afs-green";
-    const textColor = isActive ? "afs-green" : "white";
-    const activeBgColor = isActive ? "white" : "afs-green-light";
-
-    return <div className={`flex flex-col items-center justify-center cursor-pointer bg-${bgColor} text-${textColor} hover:bg-${activeBgColor} active:bg-white active:text-afs-green border-white border-r-[1px]`}  onClick={_handleClick}>
-        <Text className="white">Information on</Text>
-        <Header5 className="white">{ children }</Header5>
+    return <div className={`flex flex-col items-center justify-center cursor-pointer text-teal hover:bg-haze active:bg-mint active:text-teal border-teal border p-6 text-center`}  onClick={_handleClick}>
+        {children}
     </div>;
 };
 
+export interface TabButton {
+    title: string;
+    icon: StaticImageData;
+}
+
 export interface ITabs {
-    tabNames: Array<string>;
+    tabNames: Array<TabButton>;
     helpText?: string;
     activeTab: number;
     handleTabClick: React.Dispatch<React.SetStateAction<number>>;
 }
-
+  
 const Tabs = (props: ITabs) => {
-    return <div className="w-full grid grid-flow-row grid-cols-3 bg-afs-green text-white h-16">
-        {/* Navbar */}
-        <div className="col-span-1 border-r-[1px] border-white flex justify-start items-center">
-            <Text>{ props.helpText || "Here to provide the help you need..." }</Text>
-        </div>
-        <div className="col-span-2 grid grid-flow-row grid-cols-3">
-            {props.tabNames.map((tabname, i) => {
-                return <Tab index={i} onClick={props.handleTabClick} activeTab={props.activeTab} key={`${tabname}-tab`}>{tabname}</Tab>;
+    return <div className="w-full grid grid-flow-row">
+        <div className="grid grid-flow-row grid-cols-2 md:grid-cols-4 gap-6">            
+            {props.tabNames.map((content, i) => {
+                return <Tab index={i} onClick={props.handleTabClick} activeTab={props.activeTab} key={`${i}-tab`}> 
+                    <Header5 className="text-[18px] font-semibold mb-4">{content.title}</Header5>
+                    <NextImage src={content.icon} width={75} height={75} />
+                </Tab>;
             })}
+
         </div>
     </div>;
 };

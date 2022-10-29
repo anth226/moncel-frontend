@@ -11,7 +11,7 @@ export const navigationData: NavigationProps = {
     ],
 };
 
-export const LawsRequirementsOverviewData: Omit<RowsTemplateProps, "children"> = {
+export const LawsRequirementsPageData: Omit<RowsTemplateProps, "children"> = {
   id: "laws-requirements-page-overview-body-section",
   pathname: "/laws-requirements/role/for-job-seekers",
   displayPathname: "LAWS & REQUIREMENTS/BY ROLE/FOOD SAFETY LAWS & REQUIREMENTS/FOR JOB SEEKERS",

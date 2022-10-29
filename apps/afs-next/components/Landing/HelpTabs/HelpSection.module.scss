@@ -1,20 +1,14 @@
 .markdown-container {
     p {
-        padding-bottom: 8px;
+        padding-bottom: 15px;
     }
-    
-    li {
-        padding: 8px 0;
+    :last-child {
+        padding-bottom: 0;
     }
-    li::before {
-        background-image: url('/icon-library-2_checkmark-green.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        height: 12px;
-        width: 18px;
-        content: "";
-        display: inline-block;
-        margin: 0.1rem 1rem 0 0;
+    ul {
+        @apply pb-4;
+        li {
+            @apply pb-2 last:pb-0;
+        }
     }
-    
 }

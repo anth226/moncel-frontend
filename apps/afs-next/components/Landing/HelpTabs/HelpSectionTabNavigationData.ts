@@ -34,7 +34,7 @@ const data: {[key: string]: HelpSectionTabNavigationMenuData} = {
             { text: "Food Retail Sector", href: "/laws-requirements/food-sectors/retail"},
             { text: "Health & Community Sector", href: "/laws-requirements/food-sectors/health-community"},
             { text: "Food Processing Sector", href: "/laws-requirements/food-sectors/food-processing"},
-            { text: "Introduction to Food Safety", href: "/courses/introduction-to-food-safety-course"},
+            { text: "Transport & Distribution Sector", href: "/laws-requirements/food-sectors/transport-distribution"},
         ]
     },
     "Laws & Requirements by Industry Location": {
@@ -43,7 +43,7 @@ const data: {[key: string]: HelpSectionTabNavigationMenuData} = {
         links: [
             { text: "New South Wales", href: "/laws-requirements/location/new-south-wales"},
             { text: "Victoria", href: "/laws-requirements/location/victoria"},
-            { text: "Queensland", href: "/laws-requirements/role/queensland"},
+            { text: "Queensland", href: "/laws-requirements/location/queensland"},
             { text: "Australian Capital Territory", href: "/laws-requirements/location/act"},
             { text: "SA / NT / WA / TAS", href: "/laws-requirements/location/sa-nt-wa-tas"},
         ]

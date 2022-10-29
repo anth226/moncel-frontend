@@ -6,7 +6,7 @@ interface ISection {
 }
 
 export const Section = ({ children, className }: ISection) => {
-    return <div className={`w-screen ${className}`}>
-        <div className="m-auto padded-section">{children}</div>
+    return <div className={`w-full ${className}`}>
+        <div className="m-auto">{children}</div>
     </div>;
 };

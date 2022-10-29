@@ -1,27 +1,32 @@
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import Layout from 'components/core/layout';
-import { Text } from 'components/core';
-import RowsTemplate, { Section }  from 'components/templates/RowsTemplate';
-import { LawsRequirementsOverviewData } from 'components/laws-requirements/lawsRequirementsPageData';
-import styles from './styles.module.scss';
+import { Text, Header3 } from 'components/core';
+import RowsTemplate from 'components/templates/RowsTemplate';
+import { LawsRequirementsPageData } from 'components/laws-requirements/lawsRequirementsPageData';
+import { IntroBox, Divider } from 'components/core/templates';
+import { SectionContainer } from 'components/core/SectionContainer';
+
+import RoleGraphic from 'public/laws-requirements/photo_newbusiness.jpg';
+import SectorGraphic from 'public/laws-requirements/photo_hospitality.jpg';
+import LocationGraphic from 'public/laws-requirements/photo_vic.jpg';
 
 export const LawsRequirementsBackground = ({ children }: { children: ReactNode }) => {
-  return <div className="bg-afs-light-gray w-screen">
-      <div className={`hidden md:block bg-[url('/laws-requirements/banner_laws_requirements.jpg')] bg-afs-light-gray py-16 bg-no-repeat w-full`}>
-          { children }
-      </div>
-      {/* don't show background on tablets and smaller */}
-      <div className="md:hidden bg-afs-light-gray w-full">
-          { children }
-      </div>
+  return <div className="w-full border-t-1 border-white">
+    <div className={`hidden lg:block bg-haze py-16 bg-[url('/laws-requirements/banner_laws_requirements.jpg')]  bg-no-repeat w-full bg-[length:100%_400px]`}>
+      {children}
+    </div>
+    <div className="lg:hidden w-full">
+      {children}
+    </div>
   </div>;
 };
+
 
 const Home = () => {
   return (
     <Layout>
-      <LawsRequirementsBackground><RowsTemplate {...LawsRequirementsOverviewData}>
+      <LawsRequirementsBackground><RowsTemplate {...LawsRequirementsPageData}>
         <>
           <RoleSection />
           <Divider />
@@ -29,12 +34,10 @@ const Home = () => {
           <Divider />
           <LocationSection />
         </>
-        </RowsTemplate></LawsRequirementsBackground>
+      </RowsTemplate></LawsRequirementsBackground>
     </Layout>
   );
 };
-
-const Divider = () => <div className="mb-[30px] border-b-[1px] border-afs-light-gray col-span-3" />;
 
 type LinkType = { text: string, href: string };
 const RoleSectionLinkData: Array<LinkType> = [
@@ -46,20 +49,17 @@ const RoleSectionLinkData: Array<LinkType> = [
 ];
 
 const RoleSection = () => {
-  return <Section 
-    title="By Role"
-    imageSrc="/laws-requirements/photo_newbusiness.jpg"
-    className={styles["laws-requirements"]}
->
-    <div className="flex flex-col pr-4">
-      <Text className="pb-5">Find out more about food safety training and legislation in relation to your role in the food industry.</Text>
+  return <SectionContainer className="col-span-3" id="laws-requirements-by-role">
+    <Header3 className="pb-4">By Role</Header3>
+    <IntroBox imageSrc={RoleGraphic} alt="By Role" >
+      <Text>Find out more about food safety training and legislation in relation to your role in the food industry.</Text>
       <ul>
-        { RoleSectionLinkData.map((link, i) => {
-            return <li className="ml-4 my-1.5" key={`role-section-link-${i}`}><Link href={link.href}><a className="link">{link.text}</a></Link></li>;
+        {RoleSectionLinkData.map((link, i) => {
+          return <li className="my-1.5" key={`role-section-link-${i}`}><Link href={link.href}><a className="link">{link.text}</a></Link></li>;
         })}
       </ul>
-    </div>
-  </Section>;
+    </IntroBox>
+  </SectionContainer>;
 };
 
 const SectorSectionLinkData: Array<LinkType> = [
@@ -71,21 +71,18 @@ const SectorSectionLinkData: Array<LinkType> = [
 ];
 
 const SectorSection = () => {
-  return <Section 
-    title="By Sector"
-    imageSrc="/laws-requirements/photo_hospitality.jpg"
-    className={styles["laws-requirements"]}
-    >
-      <div className="flex flex-col pr-4">
-        <Text className="pb-5">Food safety training in Australia is sector specific. To be a compliant Food Safety Supervisor you need to complete training for the correct food sector.</Text>
-        <Text className="pb-5">Learn about the recognised units of competency for Food Safety Supervisor training in your sector.</Text>
-        <ul>
-          { SectorSectionLinkData.map((link, i) => {
-              return <li className="ml-4 my-1.5" key={`role-section-link-${i}`}><Link href={link.href}><a className="link">{link.text}</a></Link></li>;
-          })}
-        </ul>
-      </div>
-  </Section>;
+  return <SectionContainer className="col-span-3" id="laws-requirements-food-sectors">
+    <Header3 className="pb-4">Food Sectors</Header3>
+    <IntroBox imageSrc={SectorGraphic} alt="Food Sectors">
+      <Text>Food safety training in Australia is sector specific. To be a compliant Food Safety Supervisor you need to complete training for the correct food sector.</Text>
+      <Text>Learn about the recognised units of competency for Food Safety Supervisor training in your sector.</Text>
+      <ul>
+        {SectorSectionLinkData.map((link, i) => {
+          return <li className="my-1.5" key={`role-section-link-${i}`}><Link href={link.href}><a className="link">{link.text}</a></Link></li>;
+        })}
+      </ul>
+    </IntroBox>
+  </SectionContainer>;
 };
 
 const LocationSectionLinkData: Array<LinkType> = [
@@ -96,21 +93,18 @@ const LocationSectionLinkData: Array<LinkType> = [
   { text: "SA / NT / WA / TAS", href: "/laws-requirements/location/sa-nt-wa-tas" },
 ];
 const LocationSection = () => {
-  return <Section 
-    title="By Location"
-    imageSrc="/laws-requirements/photo_vic.jpg"
-    className={styles["laws-requirements"]}
-    >
-      <div className="flex flex-col pr-4">
-        <Text className="pb-5">Food safety laws and requirements differ across the states and territories of Australia. It&apos;s important to understand the regulations you need to follow to be compliant.</Text>
-        <Text className="pb-5">Find out more about the laws and requirements where your business operates.</Text>
-        <ul>
-          { LocationSectionLinkData.map((link, i) => {
-              return <li className="ml-4 my-1.5" key={`role-section-link-${i}`}><Link href={link.href}><a className="link">{link.text}</a></Link></li>;
-          })}
-        </ul>
-      </div>
-  </Section>;
+  return <SectionContainer className="col-span-3" id="laws-requirements-by-location">
+    <Header3 className="pb-4">By Location</Header3>
+    <IntroBox imageSrc={LocationGraphic} alt="By Location">
+      <Text>Food safety laws and requirements differ across the states and territories of Australia. It&apos;s important to understand the regulations you need to follow to be compliant.</Text>
+      <Text>Find out more about the laws and requirements where your business operates.</Text>
+      <ul>
+        {LocationSectionLinkData.map((link, i) => {
+          return <li className="my-1.5" key={`role-section-link-${i}`}><Link href={link.href}><a className="link">{link.text}</a></Link></li>;
+        })}
+      </ul>
+    </IntroBox>
+  </SectionContainer>;
 };
 
 export default Home;

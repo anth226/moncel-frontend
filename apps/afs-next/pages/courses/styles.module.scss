@@ -1,37 +1,47 @@
 @import "../../styles/variables";
 
-.courses {
-    ul li {
-        list-style-type: square;
-        &::marker {
-            color: black;
-        }
+// .courses {
+//     ul li {
+//         @apply ml-4 pl-2 relative list-square;
+//         &::marker {
+//             @apply text-mine;
+//         }
+//         a {
+//             @apply text-teal underline font-semibold;
+//         }
+//     }
+//     ul.checklist li {
+//         @apply ml-0 pl-6 relative;
+//         list-style-type: none;
+//         &::before {
+//             content: url('/icon-library-2_checkmark-green.svg');
+//             width:12px;
+//             height:12px;
+//             display: inline-block;
+//             position: absolute;
+//             left:0;
+//         }
+//     }
+//     ol li {
+//         list-style-type: decimal;
+//         &::marker {
+//             color: black;
+//         }
 
-        a {
-            font-weight: bold;
-            color: $afs-green;
-            text-decoration: underline;
-        }
-    }
-    ul.checklist li {
-        list-style-image: url('/icon-library-2_checkmark-green.svg');
-        list-style-type: none;
-    }
-    ol li {
-        list-style-type: decimal;
-        &::marker {
-            color: black;
-        }
+//         a {
+//             font-weight: bold;
+//             color: $afs-green;
+//             text-decoration: underline;
+//         }
+//     }
+// }
 
-        a {
-            font-weight: bold;
-            color: $afs-green;
-            text-decoration: underline;
-        }
-    }
+.subtitle {
+    @apply text-emperor font-medium text-xl text-center leading-6;
 }
 
-.left-large {
-    display: grid;
-    grid-template-columns: 1fr auto;
+.image {
+    height:183px;
+    width:325px;
+    @apply order-first md:order-last w-full relative;
 }

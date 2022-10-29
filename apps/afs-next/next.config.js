@@ -8,7 +8,14 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ['localhost', '167.99.181.174']
+    domains: ['localhost', '167.99.181.174'],
+    formats: ['image/avif', 'image/webp'],
+  },
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require("moncel-next-config/scripts/sitemap-generator");
+    }
+    return config;
   },
 };
 

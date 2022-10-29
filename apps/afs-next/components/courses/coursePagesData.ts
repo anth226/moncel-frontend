@@ -14,8 +14,8 @@ export const navigationData: NavigationProps = {
 
 export const coursePageOverviewData: GridTemplateProps = {
   id: 'course-page-overview-body-section',
-  pathname: '/courses/food-safety-supervisor',
-  displayPathname: '/Food Safety Courses/Food Safety Supervisor Course',
+  pathname: '/courses',
+  displayPathname: 'Food Safety Courses',
   navigation: navigationData,
   header: 'Food Safety Courses',
   subheader: 'Get the food safety training you need to meet compliance requirements and boost your career skills with a nationally recognised AIFS Food Safety Course.',
@@ -23,13 +23,13 @@ export const coursePageOverviewData: GridTemplateProps = {
   cards: [{
     title: "Food Safety Supervisor",
     description: "The nationally recognised Food Safety Supervisor course is approved to meet all state legislative requirements including for NSW, QLD, VIC and ACT.",
-    imageSrc: "/food-safety-supervisor.jpg",
+    imageSrc: "/courses/food-safety-supervisor.jpg",
     href: "/courses/food-safety-supervisor",
   },
   {
     title: "Food Handler Course",
     description: "The Food Handler course is recommended for all food workers and is designed to meet federal requirements for food safety training.",
-    imageSrc: "/food-handler.jpg",
+    imageSrc: "/courses/food-handler.jpg",
     href: "/courses/food-handler-course",
   },
   {
@@ -41,7 +41,7 @@ export const coursePageOverviewData: GridTemplateProps = {
   {
     title: "Food Safety Manager",
     description: "This in-depth course is designed to help food business managers ensure that food safety standards are met across their entire business.",
-    imageSrc: "/courses/fsm_0.jpg",
+    imageSrc: "/courses/fsm.jpg",
     href: "/courses/food-safety-manager",
   },
   {
@@ -50,4 +50,13 @@ export const coursePageOverviewData: GridTemplateProps = {
     imageSrc: "/courses/intro-food-worker.jpg",
     href: "/courses/introduction-to-food-safety-course",
   }]
+};
+
+export const haccpNavigationData: NavigationProps = {
+    title: "HACCP Programs",
+    links: [
+      { text:'Overview', href: '/haccp-programs' },
+      { text:'What is HACCP?', href:'/haccp-programs/what-is-haccp' },
+      { text:'HACCP Food Safety Plan', href:'/haccp-programs/haccp-food-safety-plan-kit' },
+    ],
 };

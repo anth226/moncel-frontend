@@ -1,17 +1,26 @@
-import { ReactNode } from 'react';
-import NextLink from 'next/link';
-import Image from 'next/image';
 import Layout from 'components/core/layout';
-import { Header3, Header5, Text, Link } from 'components/core';
+import { Header3, Text } from 'components/core';
 import { RowsTemplate } from 'components/templates';
-import { LawsRequirementsOverviewData } from 'components/laws-requirements/lawsRequirementsPageData';
+import { LawsRequirementsPageData, navigationSectorPageData } from 'components/laws-requirements/lawsRequirementsPageData';
 import { LawsRequirementsBackground } from 'pages/laws-requirements';
 import styles from '../styles.module.scss';
+import { Divider, IntroBox, ListItem, CollapsibleTableCell, CollapsibleCellGroup } from 'components/core/templates';
+import HowToComply from '../../../components/laws-requirements/shared/how-to-comply';
+import TrainingRequirements from '../../../components/laws-requirements/shared/training-requirements';
+
+const TemplateData = {
+  ...LawsRequirementsPageData,
+  pathname: "laws-requirements/food-sectors/food-processing",
+  displayPathname: "LAWS & REQUIREMENTS/BY FOOD SECTOR/FOOD SAFETY TRAINING REQUIREMENTS FOR FOOD PROCESSING",
+  header: "Food Safety Training Requirements for Food Processing",
+  subheader: "Food safety training in food processing businesses - learn who requires it, how to comply and what is a properly trained Food Safety Supervisor and Food Handler.",
+  navigation: navigationSectorPageData,
+};
 
 const Page = () => {
   return (
     <Layout>
-      <LawsRequirementsBackground><RowsTemplate {...LawsRequirementsOverviewData}>
+      <LawsRequirementsBackground><RowsTemplate {...TemplateData}>
         <>
           <Section1 />
           <Divider />
@@ -26,158 +35,116 @@ const Page = () => {
   );
 };
 
-const Divider = () => <div className="mb-[30px] border-b-[1px] border-afs-light-gray col-span-3" />;
-const ListItem = ({ children }: { children: ReactNode }) => <li className="ml-4 my-1.5">{ children }</li>;
-
-interface IconCardProps {
-  imageSrc: string;
-  href?: string;
-  title: string;
-  children: ReactNode;
-  className?: string;
-}
-const IconCard = (props: IconCardProps) => {
-  const iconComp = <Image src={props.imageSrc} alt={`for-job-seekers-icon-${props.title}`} width={32} height={32} layout="fixed" />;
-  return <div className={`flex flex-row ${props.className}`}>
-    <div className="w-10 mr-3">
-      { props.href ? <NextLink href={props.href}>{iconComp}</NextLink> : iconComp }
-    </div>
-    <div className="flex flex-col">
-      <Header5 className="pb-2">{props.title}</Header5>
-      { props.children }
-    </div>
-  </div>;
-};
-
 const Section1 = () => {
   return <div className="col-span-3">
-    <Header3 className="text-afs-green font-semibold pb-6">Start your career the food safe way</Header3>
+    <Header3 className="pb-4">Food safety training for food processing</Header3>
     <div className={`${styles["laws-requirements"]} col-span-3`}>
-      <div className="flex flex-col pr-4">
-        <Text className="pb-5">The food sector is an exciting and growing industry to work in whether you are at home or abroad.</Text>
-        <Text className="pb-5">If you’re considering a career in the food industry, having an understanding of food safety is vital.</Text>
-        <Text className="pb-5">This isn’t just the law. You must be confident that your actions {"don't"} make your customers sick — or worse.</Text>
-      </div>
-      <Image src="/laws-requirements/role/photo_jobseekers.jpg" alt="laws-requirements-for-job-seekers-graphic" layout="fixed" width={325} height={183}/>
+      <IntroBox imageSrc="/laws-requirements/food-sectors/photo_foodprocessing.jpg" alt="laws-requirements-for-employees-graphic" className={`${styles["laws-requirements"]}`}>
+        <Text>If you manufacture or process foods in a factory, farm, shop or anywhere else, you and your employees need the right training to meet food safety laws.</Text>
+        <Text>A food processing business is any business where food is manufactured or processed, including:</Text>
+        <ul className="!mb-0">
+          <ListItem>Airline caterers</ListItem>
+          <ListItem>Wholesale bakers</ListItem>
+          <ListItem>Breweries and wine producers</ListItem>
+          <ListItem>Canneries</ListItem>
+          <ListItem>Packers</ListItem>
+          <ListItem>Producers of pre-prepared meals</ListItem>
+          <ListItem>Small scale farm and home food producers</ListItem>
+        </ul>
+      </IntroBox>
     </div>
   </div>;
 };
 
 const Section2 = () => {
-  return <div className="col-span-3">
-    <Header3 className="text-afs-green font-semibold pb-6">Food safety training is required for every food job</Header3>
-    <div className={`${styles["laws-requirements"]} col-span-3`}>
-      <div className="flex flex-col pr-4">
-        <Text className="pb-5">Everyone who works with food needs to complete training. This is not just a requirement for people who work in hospitality, it applies to food workers in all kinds of businesses that handle food, such as:</Text>
-        <Text className="pb-5">Learn about the recognised units of competency for Food Safety Supervisor training in your sector.</Text>
-        <div className={`grid grid-cols-2`}>
-          <ul>
-            <ListItem>Cafes, restaurants and takeaways</ListItem>
-            <ListItem>Hotels and motels</ListItem>
-            <ListItem>Bars, pubs and clubs</ListItem>
-            <ListItem>Event and conferences centres</ListItem>
-            <ListItem>Casinos and gaming venues</ListItem>
-            <ListItem>Market stalls</ListItem>
-            <ListItem>Convenience stores</ListItem>
-            <ListItem>Supermarkets</ListItem>
-            <ListItem>Service stations</ListItem>
-          </ul>
-          <ul>
-            <ListItem>Groceries, butchers, delis and bakeries</ListItem>
-            <ListItem>Food based charity organisations</ListItem>
-            <ListItem>Catering businesses</ListItem>
-            <ListItem>Hospitals or hospices</ListItem>
-            <ListItem>Child care or aged care facilities</ListItem>
-            <ListItem>School canteens or tuckshops</ListItem>
-            <ListItem>Food processing facilities</ListItem>
-            <ListItem>Canneries, milleries or breweries</ListItem>
-            <ListItem>Food delivery or storage services</ListItem>
-
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>;
+  return <HowToComply />;
 };
 
 const Section3 = () => {
-  return <div className="col-span-3">
-    <Header3 className="text-afs-green font-semibold pb-6">Which food safety course do I need to do?</Header3>
-    <div className={`${styles["laws-requirements"]} col-span-3`}>
-      <div className="flex flex-col pr-4">
-        <Text className="pb-5">The training you need will depend on the type of job you want. The two main courses to choose from are:</Text>
-        <div className="grid grid-cols-2 grid-flow-row gap-7">
-          <IconCard
-            imageSrc={"/laws-requirements/icon_stroke_green_fh.svg"}
-            title="Food Handler Course"
-            href="/courses/food-handler-course"
-            >
-              <Text className="pb-3.5">This course meets federal requirements that anyone who works with food needs food safety training.</Text>
-              <Text className="pb-3.5">It helps your job prospects too. Food business managers know that they don’t need to spend time and money on your food safety training.</Text>
-              <NextLink href="/courses/food-handler-course"><Link className="font-semibold">Learn more about this course.</Link></NextLink>
-            </IconCard>
-            <IconCard
-            imageSrc={"/laws-requirements/icon_stroke_green_FSS.svg"}
-            title="Food Safety Supervisor"
-            href="/courses/food-handler-course"
-            >
-              <Text className="pb-3.5">The Food Safety Supervisor Course meets specific state legislation including for NSW, QLD, VIC and ACT.</Text>
-              <Text className="pb-3.5">Every food business in these states needs at least one nationally recognised Food Safety Supervisor on staff. This course greatly boosts your employability.</Text>
-              <NextLink href="/courses/food-safety-supervisor"><Link className="font-semibold">Learn more about this course.</Link></NextLink>
-            </IconCard>
-        </div>
-      </div>
-    </div>
-  </div>;
+  return <TrainingRequirements title="Training requirements for food processing businesses" version="FSS2" /> ;
 };
 
 const Section4 = () => {
-  return <div className="col-span-3">
-    <Header3 className="text-afs-green font-semibold pb-6">Which food safety course do I need to do?</Header3>
-    <div className={`${styles["laws-requirements"]} col-span-3`}>
-      <div className="flex flex-col pr-4">
-        <Text className="pb-5">The training you need will depend on the type of job you want. The two main courses to choose from are:</Text>
-        <div className="grid grid-cols-2 grid-flow-row gap-7">
-          <IconCard
-            imageSrc={"/laws-requirements/icon_stroke_green_fh.svg"}
-            title="Get trained as a Food Handler"
-            >
-              <Text className="pb-3.5">At a minimum, complete the Food Handler training course so that you have the skills you need to work with food safely.</Text>
-            </IconCard>
-            <IconCard
-            imageSrc={"/laws-requirements/icon_stroke_green_FSS.svg"}
-            title="Get trained as a Food Safety Supervisor"
-            >
-              <Text className="pb-3.5">To boost your chances of finding a job, consider a Food Safety Supervisor course that offers extra skills and knowledge.</Text>
-            </IconCard>
-            <IconCard
-            imageSrc={"/laws-requirements/icon_stroke_green_checkmark_box_stroke_tick.svg"}
-            title="Do compliance-guaranteed training"
-            >
-              <Text className="pb-3.5">AIFS food safety training is approved to meet all federal, state and local government legislation.</Text>
-            </IconCard>
-            <IconCard
-            imageSrc={"/laws-requirements/icon_stroke_green_factory.svg"}
-            title="Check your food sector"
-            >
-              <Text className="pb-3.5">Food Safety Supervisor training is sector-specific. Be sure to do the right course for the sector you want to work in.</Text>
-            </IconCard>
-            <IconCard
-            imageSrc={"/laws-requirements/icon_stroke_green_nsw.svg"}
-            title="NSW Food Authority approved"
-            >
-              <Text className="pb-3.5">Obtain your NSW Food Authority certificate when you complete the official AIFS Food Safety Supervisor course.</Text>
-            </IconCard>
-            <IconCard
-            imageSrc={"/laws-requirements/icon_stroke_green_member.svg"}
-            title="Become an AIFS Member"
-            >
-              <Text className="pb-3.5">Continue to build your skills with our member-only resources. Receive a free membership with one of our nationally recognized training courses.</Text>
-            </IconCard>
+  return <div className={`${styles["laws-requirements"]} col-span-3`}>
+      <Header3 className="pb-4">Units of Competency</Header3>
+      <div className="grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-x-12 gap-y-8">
+        <div className="flex flex-col">
+          <Text>When you complete nationally recognised training, you are awarded a Statement of Attainment which lists the units of competency that you have obtained.</Text>
+          <Text>When a Health Inspector inspects your premises, {`they'll`} check that your Statement of Attainment has the correct units of competency.</Text>
+          <Text className="font-semibold">Food Safety Supervisor course</Text>
+          <Text>After successfully completing the Food Safety Supervisor course for the food processing sector, you will be awarded the following units:</Text>
+          <ul className="checklist pb-4">
+            <ListItem>FBPFSY1002 Follow work procedures to maintain food safety</ListItem>
+            <ListItem>FBPFSY2002 Apply food safety procedures</ListItem>
+          </ul>
+          <Text className="font-semibold">Food Handler course</Text>
+          <Text>After successfully completing the Food Handler course for the food processing sector, you will be awarded the following unit:</Text>
+          <ul className="checklist">
+            <ListItem>FBPFSY2002 Apply food safety procedures</ListItem>
+          </ul>
+        </div>
+        {/* Tablet */}
+        <div className="flex flex-col">
+          <CollapsibleCellGroup>
+            <CollapsibleTableCell
+                summary={<Text className="!text-teal ">CURRENT UNITS</Text> }
+                details={<div>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row font-bold gap-10">
+                    <p className="text-emperor col-span-1">UNIT CODE</p>
+                    <p className="text-emperor col-span-3">UNIT TITLE</p>
+                  </div>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row gap-10">
+                    <p className="col-span-1">FBPFSY1002</p>
+                    <p className="col-span-3">Follow work procedures to maintain food safety</p>
+                  </div>
+                  <div className="w-full p-3 grid grid-cols-4 grid-flow-row gap-10">
+                    <p className="col-span-1">FBPFSY2002</p>
+                    <p className="col-span-3">Apply food safety procedures</p>
+                  </div>
+                </div>}
+                detailsClasses={{ root: "p-0 text-sm" }}
+                />
+            <CollapsibleTableCell
+                summary={<Text className="!text-teal">EXPIRED UNITS</Text> }
+                details={<div>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row font-bold gap-10">
+                    <p className="text-afs-gray col-span-1">UNIT CODE</p>
+                    <p className="text-afs-gray col-span-3">UNIT TITLE</p>
+                  </div>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row gap-10">
+                    <p className="col-span-1">FBPFSY1001</p>
+                    <p className="col-span-3">Follow work procedures to maintain food safety</p>
+                  </div>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row gap-10">
+                    <p className="col-span-1">FBPFSY2001</p>
+                    <p className="col-span-3">Implement the food safety program and procedures</p>
+                  </div>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row gap-10">
+                    <p className="col-span-1">FDFCORFSY1A</p>
+                    <p className="col-span-3">Follow work procedures to maintain food safety</p>
+                  </div>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row gap-10">
+                    <p className="col-span-1">FDFCORFSY2A</p>
+                    <p className="col-span-3">Implement the food safety program and procedures</p>
+                  </div>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row gap-10">
+                    <p className="col-span-1">FDFFS1001A</p>
+                    <p className="col-span-3">Follow work procedures to maintain food safety</p>
+                  </div>
+                  <div className="w-full p-3 grid grid-cols-4 grid-flow-row gap-10">
+                    <p className="col-span-1">FDFFS2001A</p>
+                    <p className="col-span-3">Implement the food safety program and procedures</p>
+                  </div>
+                </div>}
+                detailsClasses={{ root: "p-0 text-sm" }}
+                />
+            </CollapsibleCellGroup>
+          <Text className="font-semibold mt-8 !text-teal">Important Information</Text>
+          <Text>All current units replace any expired units of competency.</Text>
+          <Text>The units of competency awarded by AIFS are always current, however some out-of-date websites may still refer to expired units.</Text>
         </div>
       </div>
-    </div>
-  </div>;
+    </div>;
 };
 
 export default Page;
