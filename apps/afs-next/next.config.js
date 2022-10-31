@@ -8,7 +8,7 @@ const nextConfig = {
     styledComponents: true,
   },
   images: {
-    domains: ['localhost', '167.99.181.174'],
+    domains: ['localhost', '167.99.181.174', 'blog.foodsafety.com.au'],
     formats: ['image/avif', 'image/webp'],
   },
   webpack: (config, { isServer }) => {
