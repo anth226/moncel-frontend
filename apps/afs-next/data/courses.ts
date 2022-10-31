@@ -6,6 +6,7 @@ export enum Courses {
     NSWRecertification="NSWRecertification",
     IntroToFoodSafety="IntroToFoodSafety",
     HACCP="HACCP",
+    Membership="Membership",
 }
 
 export type CourseType = {
@@ -67,6 +68,14 @@ export const courseData: Record<Courses, CourseType> = {
         nationallyRecognized: false,
         checkout: "https://my.foodsafety.com.au/checkout/cart/add?product=25&qty=1",
     },
+    [Courses.Membership]: {
+        longName: "AIFS Membership",
+        price: "$99.95",
+        memberPrice: "",
+        prerequisites: "None",
+        nationallyRecognized: false,
+        checkout: "/membership/checkout",
+    }
 };
 
 export default courseData;

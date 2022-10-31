@@ -13,6 +13,7 @@ export const AllModals: Record<Exclude<AllModalNames, null>, FC> = {
     [ Courses.NSWRecertification ]: NSWRecertificationModal,
     [ Courses.IntroToFoodSafety ]: IntroToFoodSafetyModal,
     [ Courses.HACCP ]: HACCPModal,
+    [ Courses.Membership ]: () => null,
     Login: LoginModal,
 };
 

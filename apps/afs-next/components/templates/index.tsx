@@ -14,6 +14,7 @@ import NRTLogo from 'public/nrt-logo-color.svg';
 import ArrowRightIcon from 'public/icon_stroke_green_arrow_right.svg';
 import styles from './styles.module.scss';
 import Button from 'components/core/Button';
+import { Courses } from 'data/courses';
 
 export const PathnameComponent = (props: { displayPathname: string, pathname: string }) => {
     return <div className="hidden md:flex flex-row mb-4">
@@ -37,16 +38,16 @@ export const NavigationComponent = (props: NavigationProps) => {
     </div>;
 };
 
-export const checkoutDesktop = () => {
-    return
-}
-
 export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) => {
+    const router = useRouter();
     const borderBClass = "border-b-[1px] border-solid border-teal";
     const dispatch = useAppDispatch();
     const handleClick = () => {
         if (!props.course) {
             throw Error(`Cannot open checkout modal for course ${props.course}`);
+        }
+        if (props.course == Courses.Membership) {
+            router.push('/membership/checkout');
         }
         dispatch(toggleModal(props.course));
     }
@@ -63,7 +64,7 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
                 window.removeEventListener('hashchange', handleHashChange);
             };
         }
-    }, [])
+    }, []);
 
     return <div>
         <div className={`sticky top-8 hidden lg:flex flex-col border border-solid border-teal w-full h-fit border-b-0`}>
@@ -74,8 +75,8 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
             <div className={`${borderBClass} flex flex-col items-center p-4 gap-3.5`}>
                 <Button variant="secondary" className="!px-0 !py-4 w-full" onClick={handleClick} id="purchase-button">
                     <span>
-                        <Header4 className="text-base xl:text-xl font-bold -mb-2 leading-5">START ONLINE NOW</Header4>
-                        <Text className="!text-[10px] xl:!text-sm !text-white font-semibold xl:font-bold tracking-wide !leading-4 xl:!leading-5 mt-1 xl:mt-0">BEGIN IN JUST 30 SECONDS</Text>
+                        <Header4 className="text-base xl:text-xl font-bold -mb-2 leading-5">{props.course == "Membership" ? "JOIN TODAY" : "START ONLINE NOW"}</Header4>
+                        <Text className="!text-[10px] xl:!text-sm !text-white font-semibold xl:font-bold tracking-wide !leading-4 xl:!leading-5 mt-1 xl:mt-0">{ props.course == "Membership" ? "BECOME AN AIFS MEMBER" : "BEGIN IN JUST 30 SECONDS"}</Text>
                     </span>
                 </Button>
 
@@ -86,7 +87,7 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
                 <div className="grid grid-cols-3 w-full">
                     <div className="border-b-[1px] border-afs-light-gray w-full col-span-3" />
                     <div className="w-full grid grid-cols-4 xl:grid-cols-5 items-center col-span-3 py-2 gap-2">
-                        <p className="text-xs text-dove font-semibold col-span-2 xl:col-span-3">ONLINE COURSE</p>
+                        <p className="text-xs text-dove font-semibold col-span-2 xl:col-span-3">{`${props.course === 'Membership' ? "12-month membership" : "ONLINE COURSE"}`}</p>
                         <div className="flex col-span-2 text-left">
                             <span className="col-span-1 bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-2">?</span>
                             <p className="text-sm text-dove font-semibold col-span-1 text-end">{props.price}</p>

@@ -32,6 +32,7 @@ import Icon2 from 'public/icons/icon_stroke_green_circle_num2.svg';
 
 import styles from './styles.module.scss';
 import { TwoCol } from 'components/core/TwoCol';
+import { Courses } from 'data/courses';
 
 const TemplateData: Omit<RowsTemplateProps, "children"> = {
   pathname: "membership/membership-program",
@@ -39,7 +40,22 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
   header: "Membership Program",
   subheader: "AIFS Membership gives you access to food safety resources, news and updates that protect and benefit you, your business and your customers.",
   navigation: membershipNavigationData,
-  id: "membership-program-page-body-section"
+  id: "membership-program-page-body-section",
+  sidebarType: "checkout",
+  checkout: {
+    course: Courses.Membership,
+    courseTitle: "AIFS Membership",
+    price: "$99.95",
+    memberPrice: "",
+    showLogo: false,
+    links: [
+      { text: "WHAT'S INCLUDED", href: "#intro" },
+      { text: "BENEFITS FOR FOOD WORKERS", href: "#workers" },
+      { text: "BENEFITS FOR EMPLOYERS", href: "#employers" },
+      { text: "HOW TO BECOME A MEMBER", href: "#how" },
+      { text: "COMMON QUESTIONS", href: "#common-questions" },
+    ],
+  },
 };
 
 const Page = () => {
