@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import NextImage from 'next/image';
+import NextImage, { StaticImageData } from 'next/image';
 
 import { Link } from 'components/core';
 import { Header2 } from 'components/core/typography';
@@ -54,7 +54,7 @@ const formatDate = (date: Date) => {
 interface BlogCard {
     title: string;
     link: string;
-    imgSrc: string;
+    imgSrc: string | StaticImageData;
     pubDate?: string;
 }
 const BlogCard = ({ element }: { element: Element | BlogCard }) => {
