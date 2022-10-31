@@ -5,31 +5,77 @@ import { Link } from 'components/core';
 import { Header2 } from 'components/core/typography';
 
 import { readRSS } from 'lib/rss';
+import Guides06 from 'public/guides06.jpg';
+import Guides01 from 'public/guides01.jpg';
+import Guides02 from 'public/guides02.jpg';
+import Guides03 from 'public/guides03.jpg';
+import Guides07 from 'public/guides07.jpg';
 
 const blogUrl = "https://blog.foodsafety.com.au/blog/rss.xml";
 const newsUrl = "https://blog.foodsafety.com.au/news/rss.xml";
-
+// guides won't have a feed for the foreseeable future
+const FAKE_GUIDE_RSS_DATA = [
+    {
+        title: "AIFS Guide to Pandemic Response for Food Businesses",
+        link: "https://resources.foodsafety.com.au/guides/pandemic-response-food-business",
+        imgSrc: Guides06,
+        pubDate: "",
+    },
+    {
+        title: "AIFS Guide to Building a Food Safety Program",
+        link: "https://resources.foodsafety.com.au/guides/building-a-food-safety-program",
+        imgSrc: Guides01,
+        pubDate: "",
+    },
+    {
+        title: "AIFS Guide to Building a Positive Food Safety Culture",
+        link: "https://resources.foodsafety.com.au/guides/building-food-safety-culture",
+        imgSrc: Guides02,
+        pubDate: "",
+    },
+    {
+        title: "AIFS Guide to Allergen Management for Food Businesses",
+        link: "https://resources.foodsafety.com.au/guides/food-allergen-management",
+        imgSrc: Guides03,
+        pubDate: "",
+    },
+    {
+        title: "AIFS Guide to Food Service to Vulnerable Persons",
+        link: "https://resources.foodsafety.com.au/guides/food-service-vulnerable-persons",
+        imgSrc: Guides07,
+        pubDate: "",
+    },
+]
 
 const formatDate = (date: Date) => {
     return new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric', day: 'numeric' }).format(date);
 }
 
-const BlogCard = ({ element }: { element: Element }) => {
-    const parser = new DOMParser();
-        const encodedDescription = parser.parseFromString(element.querySelector('description')?.textContent || "", 'text/html');
-        const data = {
-            title: element.querySelector('title')?.textContent || "",
-            link: element.querySelector('link')?.innerHTML || "",
-            tags: element.querySelector('category')?.innerHTML || "",
-            pubDate: element.querySelector('pubDate')?.innerHTML || "",
-            imgSrc: encodedDescription.querySelector('img')?.src || "",
+interface BlogCard {
+    title: string;
+    link: string;
+    imgSrc: string;
+    pubDate?: string;
+}
+const BlogCard = ({ element }: { element: Element | BlogCard }) => {
+    let data;
+    if(element instanceof Element) {
+        const parser = new DOMParser();
+            const encodedDescription = parser.parseFromString(element.querySelector('description')?.textContent || "", 'text/html');
+            data = {
+                title: element.querySelector('title')?.textContent || "",
+                link: element.querySelector('link')?.innerHTML || "",
+                pubDate: element.querySelector('pubDate')?.innerHTML || "",
+                imgSrc: encodedDescription.querySelector('img')?.src || "",
         }
-        
+    } else {
+        data = element;
+    }
     return <div className="grid-cols-3 grid border-t-[1px] border-alto pt-4 gap-4">
         <div className="col-span-1 pr-4 pt-1"><NextImage src={data.imgSrc} width={78} height={44} layout="responsive" /></div>
         <div className="col-span-2 flex flex-col justify-start items-start">
             <Link href={data.link} className="no-underline text-left">{data.title}</Link>
-            <p className="text-silver">{formatDate(new Date(data.pubDate))}</p>
+            { data.pubDate ? <p className="text-silver">{formatDate(new Date(data.pubDate))}</p> : null }
         </div>
     </div>;
 };
@@ -54,12 +100,11 @@ const BlogSection = () => {
 
         {/* Desktop */}
         { (!newsItems || !blogItems) ? null : <div className="w-full lg:grid grid-cols-3 gap-4 hidden">
-            {/* <div className="col-span-1 gap-4"> */}
                 {[0,1,2,3,4].map((row: number) => {
                     return <>
                         <BlogCard element={newsItems[row]} />
                         <BlogCard element={blogItems[row]} />
-                        <BlogCard element={newsItems[row]} />
+                        <BlogCard element={FAKE_GUIDE_RSS_DATA[row]} />
                     </>
                 })
             }
