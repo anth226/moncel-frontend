@@ -1,4 +1,4 @@
-import { useEffect, useReducer, useState, Dispatch } from "react";
+import { useEffect, useReducer, useState, Dispatch, SetStateAction } from "react";
 import NextImage from 'next/image';
 
 import Head from 'components/core/layout/head';
@@ -108,16 +108,11 @@ interface TextFieldProps {
     value: string;
     type?: string;
     error: string | undefined;
-    dispatch: Dispatch<Partial<{
-        firstName: string;
-        lastName: string;
-        email: string;
-        verifyEmail: string;
-    }>>;
+    dispatch: Dispatch<Partial<typeof Checkout.initialFormData>>;
 }
 
 const TextField = (props: TextFieldProps) => {
-    const  [ localVal, setLocalVal ] = useState(props.value);
+    const [ localVal, setLocalVal ] = useState(props.value);
     const handleBlur = (e: React.FormEvent<HTMLInputElement>) => {
         props.dispatch({ [props.fieldname]: e.currentTarget.value })
     }
@@ -130,6 +125,34 @@ const TextField = (props: TextFieldProps) => {
         { props.error ? <div id={`${props.fieldname}-errors`} className="text-red-500">{props.error}</div> : null }
     </div>
 };
+
+interface AddressFieldProps {
+    dispatch: Dispatch<Partial<typeof Checkout.initialFormData>>;
+    address1: string,
+    address2: string,
+    error?: string,
+}
+
+const AddressField = (props: AddressFieldProps) => {
+    const [ address1, setAddress1 ] = useState(props.address1);
+    const [ address2, setAddress2 ] = useState(props.address2);
+
+    const handleChange = (setVal: Dispatch<SetStateAction<string>>) =>  (e: React.FormEvent<HTMLInputElement>) => {
+        setVal(e.currentTarget.value);
+    }
+
+    const handleBlur = () => {
+        props.dispatch({
+            address1,
+            address2,
+        });
+    };
+    return <div className="flex flex-col w-full">
+        <label htmlFor="address-1-field" className="text-teal">Address</label>
+        <input id={`address-1-field`} name="address-1-field" type="text" className="rounded border-silver border-1 p-2 mb-2" onChange={handleChange(setAddress1)} onBlur={handleBlur} value={address1} />
+        <input id={`address-1-field`} name="address-2-field" type="text" className="rounded border-silver border-1 p-2" onChange={handleChange(setAddress2)} onBlur={handleBlur} value={address2} />
+    </div>
+}
 
 const Form = () => {
     const cardContainerId = "card-element";
@@ -145,6 +168,12 @@ const Form = () => {
             <TextField htmlName="last-name" fieldname="lastName" label="Last Name" value={data['lastName']} error={errors['lastName']} dispatch={dispatch} />
             <TextField htmlName="email" fieldname="email" label="Email" type="email" value={data['email']} error={errors['email']} dispatch={dispatch} />
             <TextField htmlName="confemail" fieldname="verifyEmail" label="Verify Email" type="email" value={data['verifyEmail']} error={errors['verifyEmail']} dispatch={dispatch} />
+            <AddressField address1={data['address1']} address2={data['address2']}dispatch={dispatch} error={errors['address1']} />
+            <div className="w-full grid grid-cols-2 gap-2">
+                <div className="col-span-1"><TextField htmlName="city" fieldname="city" label="City" value={data['city']} error={errors['city']} dispatch={dispatch} /></div>
+                <div className="col-span-1"><TextField htmlName="province" fieldname="province" label="State" value={data['province']} error={errors['province']} dispatch={dispatch} /></div>
+                <div className="col-span-1"><TextField htmlName="postalCode" fieldname="postalCode" label="Postal Code" value={data['postalCode']} error={errors['postalCode']} dispatch={dispatch} /></div>
+            </div>
             <div className="flex flex-col">
                 <label className="text-teal">Payment Authorization</label>
                 <div id={cardContainerId} className="rounded border-silver border-1 p-2" />
