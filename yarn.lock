@@ -12511,20 +12511,20 @@ __metadata:
   linkType: hard
 
 "embla-carousel-react@npm:^7.0.0-rc04":
-  version: 7.0.1
-  resolution: "embla-carousel-react@npm:7.0.1"
+  version: 7.0.4
+  resolution: "embla-carousel-react@npm:7.0.4"
   dependencies:
-    embla-carousel: 7.0.1
+    embla-carousel: 7.0.4
   peerDependencies:
     react: ^18.1.0
-  checksum: c58a3d2d195a2d1f0797f43222dba73f771f2cd8d4ffe178af941376c8e82a8c77a30868280b59c90c48542ef4eea399c8e1e332de2405854a0a624d619b98d9
+  checksum: 7c2637acacee710bf83609ea68cb824344b6cd2b0ffb1294372edddc0a54ab7169eb65093bdf57aa9563287f442f3826d6e24f7801abb51fcb54f8088ae3e82d
   languageName: node
   linkType: hard
 
-"embla-carousel@npm:7.0.1":
-  version: 7.0.1
-  resolution: "embla-carousel@npm:7.0.1"
-  checksum: d2cdf98aa12599aa013cebf850cb5dab66af1e6e48a5bbb80448709fa34487a53953560db2fbd7832f5df650886c3e36e65d39fca3e4ef54eb22a977392407a0
+"embla-carousel@npm:7.0.4":
+  version: 7.0.4
+  resolution: "embla-carousel@npm:7.0.4"
+  checksum: 86db5cf5305b5c560dbf9c64242d3b08a6ac2c0038c667cf8cf6b1414d627df1d3e2bbe0d72cbf76d3094da1e126d60aac3af9a9c505e5d93665a11101789220
   languageName: node
   linkType: hard
 
@@ -21820,6 +21820,8 @@ __metadata:
     eslint-config-next: ^12.1.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-react: 7.28.0
+    globby: ^11.0.1
+    next-sitemap: ^3.1.23
   languageName: unknown
   linkType: soft
 

@@ -1,7 +1,7 @@
 import axios from "axios";
-import { Router } from 'next/router';
+import { NextRouter } from 'next/router';
 import { Reducer, Dispatch } from "react";
-import { loadStripe, Stripe, StripeCardElement, PaymentMethodCreateParams, PaymentMethod } from '@stripe/stripe-js';
+import { loadStripe, Stripe, StripeCardElement, PaymentMethodCreateParams, } from '@stripe/stripe-js';
 
 const TEST_KEY = "pk_test_VpppYHXesCXeyfoCRp7WYjyC";
 
@@ -34,7 +34,7 @@ export const mountStripe = async (cardFieldContainer: string) => {
           displayError.textContent = '';
         }
     });
-
+    return { stripe, cardElement };
 }
 
 export const initialFormData = {
@@ -168,40 +168,44 @@ export const reducer: Reducer<typeof initialFormState, Partial<typeof initialFor
     return newState;
 };
 
-interface PersonDetails {
-  firstName: string,
-  lastName: string,
-  email: string,
-  paymentId: string,
-  province: string,
-  country: string,
-  address1: string,
-  address2: string,
-  city: string,
-  postalCode: string,
-}
+export const submitPayment = (stripe: Stripe, router: NextRouter, cardElement: StripeCardElement) => async (formData: typeof initialFormData) => {
+  // Create payment method via stripe
+  const paymentMethodResult = await createPayment(stripe, cardElement)({
+    firstName: formData.firstName,
+    lastName: formData.lastName,
+    email: formData.email,
+    address: {
+      line1: formData.address1,
+      line2: formData.address2,
+      city: formData.city,
+      state: formData.province,
+      postal_code: formData.postalCode,
+      country: 'AU',
+    }
+  });
 
-export const submitPayment = (stripe: Stripe, router: Router, cardElement: StripeCardElement) => async (paymentMethod: PaymentMethod, formData: PersonDetails) => {
-    
+  if(!paymentMethodResult) {
+    // creating payment method failed; createPayment should have displayed the error so here we do nothing
+    return;
+  }
   //If saved, we can use the ID to create an order via. the server
   const person = {
     'first_name': formData.firstName,
     'last_name': formData.lastName,
     'email': formData.email,
-    'payment_id': paymentMethod.id,
+    'payment_id': paymentMethodResult.id,
     'sku': 'AFSMEM01',
     'province': formData.province,
-    'country': formData.country,
-    promo: "",
+    'country': "AU",
   }
 
   // Was a promo code used?
-  let lastPromo = '';
-  const queryString = new URLSearchParams(window.location.search);
-  if (queryString.has('promo')) {
-    person.promo = queryString.get('promo')!;
-    lastPromo = person.promo;
-  }
+  // let lastPromo = '';
+  // const queryString = new URLSearchParams(window.location.search);
+  // if (queryString.has('promo')) {
+  //   person.promo = queryString.get('promo')!;
+  //   lastPromo = person.promo;
+  // }
 
 //   // Send data to customer.io
 //   if (_cio && _cio.identify) {
@@ -357,7 +361,7 @@ interface BillingDetails {
   address: PaymentMethodCreateParams.BillingDetails.Address,
 }
 
-export const createPayment = (stripe: Stripe, cardElement: StripeCardElement, dispatch: Dispatch<Partial<typeof initialFormData>>) => async (billingDetails: BillingDetails) => {
+export const createPayment = (stripe: Stripe, cardElement: StripeCardElement) => async (billingDetails: BillingDetails) => {
     // Send payment details to Stripe
     const {paymentMethod, error} = await stripe.createPaymentMethod({
       'type': 'card',
@@ -375,7 +379,6 @@ export const createPayment = (stripe: Stripe, cardElement: StripeCardElement, di
       } else if(displayError) {
         displayError.textContent = '';
       }
-
       return false; // signal failure
     } else {
       return paymentMethod;

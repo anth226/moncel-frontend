@@ -1,5 +1,7 @@
-import { useEffect, useReducer, useState, Dispatch, SetStateAction } from "react";
+import { useEffect, useReducer, useState, useCallback, Dispatch, SetStateAction } from "react";
 import NextImage from 'next/image';
+import { useRouter } from 'next/router';
+import { Stripe, StripeCardElement } from '@stripe/stripe-js';
 
 import Head from 'components/core/layout/head';
 import CopyrightFooter from 'components/core/layout/footer/copyright';
@@ -151,14 +153,43 @@ const AddressField = (props: AddressFieldProps) => {
         <label htmlFor="address-1-field" className="text-teal">Address</label>
         <input id={`address-1-field`} name="address-1-field" type="text" className="rounded border-silver border-1 p-2 mb-2" onChange={handleChange(setAddress1)} onBlur={handleBlur} value={address1} />
         <input id={`address-1-field`} name="address-2-field" type="text" className="rounded border-silver border-1 p-2" onChange={handleChange(setAddress2)} onBlur={handleBlur} value={address2} />
+        { props.error ? <div id="address-errors" className="text-red-500">{props.error}</div> : null }
     </div>
 }
 
 const Form = () => {
+    const [ stripe, setStripe ] = useState<Stripe | undefined>(undefined);
+    const [ cardElement, setCardElement ] = useState<StripeCardElement | undefined>(undefined);
+    const router = useRouter();
     const cardContainerId = "card-element";
+
+    const submitPayment = useCallback((formData: typeof Checkout.initialFormData) => {
+        if(!stripe || !router || !cardElement) return;
+        return Checkout.submitPayment(stripe, router, cardElement)(formData);
+            
+    }, [stripe, cardElement, router]);
     useEffect(() => {
-        Checkout.mountStripe(cardContainerId);
+        (async () => {
+            const mountResult = await Checkout.mountStripe(cardContainerId);
+            if(mountResult) {
+                const { stripe, cardElement } = mountResult;
+                setStripe(stripe);
+                setCardElement(cardElement)
+            } else {
+                const displayError = document.getElementById('card-errors');
+                if(displayError) displayError.textContent = "Error loading Stripe. Please contact us or try again later.";
+                console.error('Error loading stripe');
+            }
+        })();
     }, []);
+
+    const handleSubmit = async () => {
+        if(!submitPayment) {
+            console.error('submit attempted before stripe loaded');
+            return;
+        }
+        await submitPayment(data);
+    }
     const [{ valid, data, errors }, dispatch] = useReducer(Checkout.reducer, Checkout.initialFormState);
 
     return <div className="col-span-1 md:col-span-2 flex flex-col gap-6">
@@ -185,14 +216,18 @@ const Form = () => {
                     I acknowledge and authorise that the credit card I have provided will be securely charged.
                 </label>
             </div>
-            <CheckoutButton disabled={!valid}/>
+            <CheckoutButton disabled={!valid} handleSubmit={handleSubmit} />
         </form>
     </div>
 
 };
 
-const CheckoutButton = ({ disabled }: { disabled?: boolean }) => {
-    return <input type="submit" value="SUBMIT SECURE PAYMENT" id="submit" className="bg-teal rounded p-3.5 text-white font-semibold disabled:opacity-50" disabled={disabled}/>
+interface CheckoutButtonProps {
+    disabled?: boolean;
+    handleSubmit: () => Promise<void>;
+}
+const CheckoutButton = ({ disabled, handleSubmit }: CheckoutButtonProps) => {
+    return <input value="SUBMIT SECURE PAYMENT" id="submit" className="bg-teal rounded p-3.5 text-white font-semibold disabled:opacity-50" disabled={disabled} onClick={handleSubmit}/>
 }
 
 const Divider = () => <div className="col-span-3 border-b-[1px] border-afs-light-green my-4" />;
