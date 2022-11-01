@@ -37,7 +37,10 @@ export const FoodHandlerModal = () => {
         if(!selectedCourse) {
             throw Error(ERRORS.checkoutCourseNotSelected);
         }
-        router.push(`${FHData.checkout}${FHCourseProductMap[selectedCourse]}`);
+        if(window) {
+            window.open(`${FHData.checkout}${FHCourseProductMap[selectedCourse]}`)
+        }
+        // router.push(`${FHData.checkout}${FHCourseProductMap[selectedCourse]}`);
     }
 
     const cancel = () => {
@@ -108,7 +111,10 @@ export const FoodSafetySupervisorModal = () => {
     const { toggleModal } = AppActions;
 
     const checkout = () => {
-        router.push(FSSData.checkout);
+        // router.push(FSSData.checkout);
+        if(window) {
+            window.open(FSSData.checkout);
+        }
     }
 
     const cancel = () => {
@@ -179,7 +185,10 @@ export const FoodManagerModal = () => {
         if(!termsAccepted) {
             throw Error(ERRORS.checkoutTermsNotAccepted);
         }
-        router.push(`${FMData.checkout}`);
+        if(window) {
+            // router.push(`${FMData.checkout}`);
+            window.open(`${FMData.checkout}`);
+        }
     }
 
     const cancel = () => {
@@ -223,6 +232,7 @@ export const NSWRecertificationModal = () => {
 
     const checkout = () => {
         router.push(NSWData.checkout);
+        if(window) window.open(NSWData.checkout);
     }
 
     const cancel = () => {
@@ -282,7 +292,8 @@ export const IntroToFoodSafetyModal = () => {
         if(!termsAccepted) {
             throw Error(ERRORS.checkoutTermsNotAccepted);
         }
-        router.push(`${FMData.checkout}`);
+        // router.push(`${FMData.checkout}`);
+        if(window) window.open(`${FMData.checkout}`);
     }
 
     const cancel = () => {
@@ -328,6 +339,7 @@ export const HACCPModal = () => {
         if(!termsAccepted) {
             throw Error(ERRORS.checkoutTermsNotAccepted);
         }
+        if(window) window.open(`${HACCPData.checkout}`);
         router.push(`${HACCPData.checkout}`);
     }
 
