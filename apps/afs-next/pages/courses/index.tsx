@@ -16,7 +16,7 @@ export const CoursesBackground = ({ children }: { children: ReactNode }) => {
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout pageTitle={`Food Safety Courses | Online Food Handling Training & More | AIFS`} metaDescription='Get the food safety training you need to meet compliance requirements and boost your career skills with a nationally recognised AIFS Food Safety Course.'>
       <CoursesBackground><GridTemplate {...coursePageOverviewData}/></CoursesBackground>
     </Layout>
   );

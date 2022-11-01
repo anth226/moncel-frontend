@@ -20,7 +20,7 @@ const TemplateData = {
 
 const Page = () => {
   return (
-    <Layout>
+    <Layout pageTitle={`Food Safety Training Requirements for Transport & Distribution | AIFS`} metaDescription='Food safety training for transport and distribution - learn who requires it and what is a properly trained Food Safety Supervisor and Food Handler.'>
       <LawsRequirementsBackground><RowsTemplate {...TemplateData}>
         <>
           <Section1 />

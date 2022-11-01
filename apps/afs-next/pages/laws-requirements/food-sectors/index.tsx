@@ -18,7 +18,7 @@ const Home = () => {
   const pageData = LawsRequirementsSectorOverviewData;
   pageData.navigation = navigationSectorPageData;
   return (
-    <Layout>
+    <Layout pageTitle='Food Safety Training Requirements by Food Sector | AIFS' metaDescription='To meet food safety laws, food workers need to complete sector specific training. Find your correct sector and understand your training requirements.'>
       <LawsBackground><GridTemplate {...LawsRequirementsSectorOverviewData}/></LawsBackground>
     </Layout>
   );

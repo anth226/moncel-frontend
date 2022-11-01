@@ -36,7 +36,7 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
 
 const Page = () => {
   return (
-    <Layout>
+    <Layout pageTitle='The Official AIFS Food Safety Decal | AIFS' metaDescription="Show customers at your door that you're serious about food safety and care about their health, with the widely recognised Food Safety Decal.">
       <MembershipBackground><RowsTemplate {...TemplateData}>
         <>
           <HeroSection />

@@ -28,7 +28,7 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
 
 const Page = () => {
   return (
-    <Layout>
+    <Layout pageTitle='Why Food Safety is Important for Food Businesses | AIFS' metaDescription="Every year in Australia, hundreds of food businesses are closed down due to food safety issues. Don't let your business become a statistic.">
       <BusinessBackground><RowsTemplate {...TemplateData}>
         <>
           <HeroSection />

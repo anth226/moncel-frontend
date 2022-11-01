@@ -18,7 +18,7 @@ const TemplateData = {
 
 const Page = () => {
   return (
-    <Layout>
+    <Layout pageTitle={`Food Safety Laws & Requirements for Job Seekers | AIFS`} metaDescription="Working with food is rewarding, whether you’re a part-time pizza maker or a head chef. Whatever your role, don't forget that food safety is crucial to your career."> 
       <LawsRequirementsBackground><RowsTemplate {...TemplateData}>
         <>
           <Section1 />

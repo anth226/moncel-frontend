@@ -20,7 +20,7 @@ const TemplateData = {
 
 const Page = () => {
   return (
-    <Layout>
+    <Layout pageTitle='Food Safety Training Requirements for Hospitality | AIFS' metaDescription="If you have a business that prepares and serves food to customers it's classified as a hospitality business.">
       <LawsRequirementsBackground><RowsTemplate {...TemplateData}>
         <>
           <Section1 />

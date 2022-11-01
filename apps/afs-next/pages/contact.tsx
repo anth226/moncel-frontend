@@ -65,7 +65,7 @@ const MainSection = () => <div className="">
 </div>
 
 const ContactPage = () => {
-return <Layout>
+return <Layout pageTitle='Contact Us | AIFS' metaDescription="If you'd like to get in contact with someone at AIFS simply give us a call or send us an email.">
     <ContactBackground>
         <NoSidebarTemplate {...TemplateData}>
             <div className="col-span-12 md:col-span-3">

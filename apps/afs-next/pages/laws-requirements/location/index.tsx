@@ -18,7 +18,7 @@ const Home = () => {
   const pageData = LawsRequirementsLocationOverviewData;
   pageData.navigation = navigationLocationPageData;
   return (
-    <Layout>
+    <Layout pageTitle={`Food Safety Laws & Legislation for Australian States & Territories | AIFS`} metaDescription="Food safety laws differ across the states and territories of Australia. It's important to ensure that you're meeting federal, state and local requirements.">
       <LawsBackground><GridTemplate {...LawsRequirementsLocationOverviewData}/></LawsBackground>
     </Layout>
   );

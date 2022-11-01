@@ -57,7 +57,7 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
 
 const Page = () => {
   return (
-    <Layout isCoursePage={true}>
+    <Layout isCoursePage={true} pageTitle='Food Safety Supervisor Certificate Renewal NSW | Available Online | AIFS' metaDescription='Approved by the NSW Food Authority, this course is for food workers required to renew their Food Safety Supervisor training.'>
       <CoursesBackground><RowsTemplate {...TemplateData}>
         <>
           <HeroSection />

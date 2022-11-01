@@ -234,7 +234,7 @@ const Divider = () => <div className="col-span-3 border-b-[1px] border-afs-light
 
 const Page = () => {
     return <div className="w-screen h-screen">
-        <Head title="AIFS Membership Checkout" />
+        <Head title="AIFS Membership Checkout" description="AIFS is Australia's leading provider of Food Safety Supervisor and Food Handler training. Courses are Nationally Recognised and accepted by local health authorities." />
         <Header />
         <Main />
         <CopyrightFooter />

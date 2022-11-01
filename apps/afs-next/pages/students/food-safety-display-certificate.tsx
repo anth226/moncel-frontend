@@ -30,7 +30,7 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
 
 const Page = () => {
   return (
-    <Layout>
+    <Layout pageTitle='Food Safety Display Certificate' metaDescription="Put customers' minds at ease and showcase your professional food safety training by presenting an AIFS Food Safety Display Certificate in your business.">
       <StudentsBackground><RowsTemplate {...TemplateData}>
         <>
           <HeroSection />

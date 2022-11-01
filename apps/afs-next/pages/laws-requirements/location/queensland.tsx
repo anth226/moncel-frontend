@@ -20,7 +20,7 @@ const TemplateData = {
 
 const Page = () => {
   return (
-    <Layout>
+    <Layout metaDescription="Learn about all the laws governing businesses in QLD that sell and produce food, how to comply with these laws, and the serious consequences if you don't." pageTitle={`'Food Safety Laws & Legislation Queensland | AIFS'`}>
       <LawsRequirementsBackground><RowsTemplate {...TemplateData}>
         <>
           <Section1 />
