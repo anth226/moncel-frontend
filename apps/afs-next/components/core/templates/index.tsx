@@ -82,7 +82,7 @@ export const ExpandIcon = () => <span className="text-teal">+</span>;
 
 export const CollapsibleTableCell = (props: CollapsibleTableCellProps) => {
   return <Accordion square classes={{ root: `!shadow-none !border-teal !border-t !border-l !border-r ${props.last ? '!border-b' : ''}` }} disableGutters {...props.accordionProps} expanded={props.expanded} onClick={props.onClick}>
-    <AccordionSummary className="!bg-haze w-full text-sm font-medium !px-3 !py-2 !border-b !border-teal !border-solid -mb-[1px]" classes={{ root: '!py-0 !px-3 min-h-0', content: ''}} expandIcon={<ExpandIcon/>}>
+    <AccordionSummary className="!bg-haze w-full text-sm font-medium !px-3 !py-2 !border-b !border-teal !border-solid !-mb-[1px]" classes={{ root: '!py-0 !px-3 min-h-0', content: ''}} expandIcon={<ExpandIcon/>}>
       { props.summary }
     </AccordionSummary>
     <AccordionDetails classes={{ root: '!m-0 !p-4' }} >
@@ -164,7 +164,7 @@ export const ExpandibleFAQ = (props: ExpandibleFAQProps) => {
           boxShadow: 0,
       }} disableGutters>
       <AccordionSummary classes={{ root: "!p-0 !m-0"}}>
-        <a className="link text-teal font-medium underline !p-0 !m-0">Read More</a>
+        <a className="text-teal font-medium underline !p-0 !m-0">Read More</a>
       </AccordionSummary>
       <AccordionDetails classes={{ root: "!p-0 !m-0"}}>
         { props.details }
