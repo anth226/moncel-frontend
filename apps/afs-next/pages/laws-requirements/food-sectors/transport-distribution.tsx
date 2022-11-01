@@ -91,17 +91,17 @@ const Section4 = () => {
             <CollapsibleTableCell
                 summary={<Text className="!text-teal ">CURRENT UNITS</Text> }
                 details={<div>
-                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row font-bold gap-10">
-                    <p className="text-emperor col-span-1">UNIT CODE</p>
-                    <p className="text-emperor col-span-3">UNIT TITLE</p>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-7 grid-flow-row font-bold ">
+                    <p className="text-emperor col-span-2">UNIT CODE</p>
+                    <p className="text-emperor col-span-5">UNIT TITLE</p>
                   </div>
-                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row gap-10">
-                    <p className="col-span-1">SITXFSA005</p>
-                    <p className="col-span-3">Use hygienic practices for food safety</p>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-7 grid-flow-row ">
+                    <p className="col-span-2">SITXFSA005</p>
+                    <p className="col-span-5">Use hygienic practices for food safety</p>
                   </div>
-                  <div className="w-full p-3 grid grid-cols-4 grid-flow-row gap-10">
-                    <p className="col-span-1">SITXFSA006</p>
-                    <p className="col-span-3">Participate in safe food handling practices</p>
+                  <div className="w-full p-3 grid grid-cols-7 grid-flow-row ">
+                    <p className="col-span-2">SITXFSA006</p>
+                    <p className="col-span-5">Participate in safe food handling practices</p>
                   </div>
                 </div>}
                 detailsClasses={{ root: "p-0 text-sm" }}
@@ -109,33 +109,33 @@ const Section4 = () => {
             <CollapsibleTableCell
                 summary={<Text className="!text-teal">EXPIRED UNITS</Text> }
                 details={<div>
-                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row font-bold gap-10">
-                    <p className="text-afs-gray col-span-1">UNIT CODE</p>
-                    <p className="text-afs-gray col-span-3">UNIT TITLE</p>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-7 grid-flow-row font-bold ">
+                    <p className="text-afs-gray col-span-2">UNIT CODE</p>
+                    <p className="text-afs-gray col-span-5">UNIT TITLE</p>
                   </div>
-                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row gap-10">
-                    <p className="col-span-1">SITXFSA001</p>
-                    <p className="col-span-3">Use hygienic practices for food safety</p>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-7 grid-flow-row ">
+                    <p className="col-span-2">SITXFSA001</p>
+                    <p className="col-span-5">Use hygienic practices for food safety</p>
                   </div>
-                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row gap-10">
-                    <p className="col-span-1">SITXFSA002</p>
-                    <p className="col-span-3">Participate in safe food handling practices</p>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-7 grid-flow-row ">
+                    <p className="col-span-2">SITXFSA002</p>
+                    <p className="col-span-5">Participate in safe food handling practices</p>
                   </div>
-                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row gap-10">
-                    <p className="col-span-1">SITXFSA101</p>
-                    <p className="col-span-3">Use hygienic practices for food safety</p>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-7 grid-flow-row ">
+                    <p className="col-span-2">SITXFSA101</p>
+                    <p className="col-span-5">Use hygienic practices for food safety</p>
                   </div>
-                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row gap-10">
-                    <p className="col-span-1">SITXFSA201</p>
-                    <p className="col-span-3">Participate in safe food handling practice</p>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-7 grid-flow-row ">
+                    <p className="col-span-2">SITXFSA201</p>
+                    <p className="col-span-5">Participate in safe food handling practice</p>
                   </div>
-                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row gap-10">
-                    <p className="col-span-1">SITXFSA001A</p>
-                    <p className="col-span-3">Implement food safety procedures</p>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-7 grid-flow-row ">
+                    <p className="col-span-2">SITXFSA001A</p>
+                    <p className="col-span-5">Implement food safety procedures</p>
                   </div>
-                  <div className="w-full p-3 grid grid-cols-4 grid-flow-row gap-10">
-                    <p className="col-span-1">SITXOHS002A</p>
-                    <p className="col-span-3">Follow workplace hygiene procedures</p>
+                  <div className="w-full p-3 grid grid-cols-7 grid-flow-row ">
+                    <p className="col-span-2">SITXOHS002A</p>
+                    <p className="col-span-5">Follow workplace hygiene procedures</p>
                   </div>
                 </div>}
                 detailsClasses={{ root: "p-0 text-sm" }}
