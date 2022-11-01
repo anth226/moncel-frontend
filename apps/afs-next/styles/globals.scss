@@ -30,13 +30,6 @@
     padding-bottom: 45px;
     margin: auto;
   }
-  .link {
-    cursor: pointer;
-    color: #099;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
   .markdown-container {
     p {
       padding-bottom: 15px;
@@ -171,7 +164,7 @@ ol {
       @apply mb-2 last:mb-0;
     }
     ol {
-      @apply mt-2;
+      @apply mt-2 pl-4;
     }
   }
 }

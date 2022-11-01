@@ -33,13 +33,12 @@ const LEGAL_POLICY_LINKS: Array<Link> = [
     { text: "Terms of Use", href: "/legal/terms-of-use" },
     { text: "Privacy Policy", href: "/legal/privacy-policy" },
     { text: "Security Policy", href: "/legal/security-policy" },
-    { text: "Employment Policy", href: "/legal/membership-policy" },
+    { text: "Membership Policy", href: "/legal/membership-policy" },
     { text: "Enrolment Policy", href: "/legal/enrolment-policy" },
     { text: "Payment Policy", href: "/legal/payment-policy" },
 ];
 
-const GOVERNMENT_PUBLIC_HEALTH_LINKS: Array<Link> = [
-    { text: "Food Standards Australia & New Zealand", href: "http://www.foodstandards.gov.au/" },
+const GOVERNMENT_PUBLIC_HEALTH_LINKS: Array<Link> = [  
     { text: "NSW Food Authority", href: "http://www.foodauthority.nsw.gov.au/" },
     { text: "NSW Department of Health", href: "https://www.health.nsw.gov.au/" },
     { text: "VIC Department of Health", href: "https://www2.health.vic.gov.au/" },
@@ -49,6 +48,7 @@ const GOVERNMENT_PUBLIC_HEALTH_LINKS: Array<Link> = [
     { text: "WA Department of Health", href: "https://www.sahealth.sa.gov.au/wps/wcm/connect/Public+Content/SA+Health+Internet/" },
     { text: "TAS Department of Health", href: "https://www.sahealth.sa.gov.au/wps/wcm/connect/Public+Content/SA+Health+Internet/" },
     { text: "NT Department of Health", href: "https://www.sahealth.sa.gov.au/wps/wcm/connect/Public+Content/SA+Health+Internet/" },
+    { text: "Food Standards Australia & New Zealand", href: "http://www.foodstandards.gov.au/" },
 ];
 
 const FooterLink = ({ href, children, ...rest }: { children: JSX.Element | JSX.Element[] | string, href: string, [ key:string ]: unknown }) => {

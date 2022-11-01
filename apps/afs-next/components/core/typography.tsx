@@ -46,7 +46,7 @@ export const P = Text;
 
 export const Link = (props: LinkType) => {
     const { className, href, children, ...rest } = props;
-    return <a className={`text-teal text-md hover:cursor-pointer hover:underline ${className || ""}`} href={href} {...rest}>{children}</a>;
+    return <a className={`text-teal font-medium underline hover:no-underline hover:cursor-pointer ${className || ""}`} href={href} {...rest}>{children}</a>;
 };
 
 export const A = Link;

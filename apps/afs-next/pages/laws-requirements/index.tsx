@@ -55,7 +55,7 @@ const RoleSection = () => {
       <Text>Find out more about food safety training and legislation in relation to your role in the food industry.</Text>
       <ul>
         {RoleSectionLinkData.map((link, i) => {
-          return <li className="my-1.5" key={`role-section-link-${i}`}><Link href={link.href}><a className="link">{link.text}</a></Link></li>;
+          return <li className="my-1.5" key={`role-section-link-${i}`}><Link href={link.href}>{link.text}</Link></li>;
         })}
       </ul>
     </IntroBox>
@@ -78,7 +78,7 @@ const SectorSection = () => {
       <Text>Learn about the recognised units of competency for Food Safety Supervisor training in your sector.</Text>
       <ul>
         {SectorSectionLinkData.map((link, i) => {
-          return <li className="my-1.5" key={`role-section-link-${i}`}><Link href={link.href}><a className="link">{link.text}</a></Link></li>;
+          return <li className="my-1.5" key={`role-section-link-${i}`}><Link href={link.href}>{link.text}</Link></li>;
         })}
       </ul>
     </IntroBox>
@@ -100,7 +100,7 @@ const LocationSection = () => {
       <Text>Find out more about the laws and requirements where your business operates.</Text>
       <ul>
         {LocationSectionLinkData.map((link, i) => {
-          return <li className="my-1.5" key={`role-section-link-${i}`}><Link href={link.href}><a className="link">{link.text}</a></Link></li>;
+          return <li className="my-1.5" key={`role-section-link-${i}`}><Link href={link.href}>{link.text}</Link></li>;
         })}
       </ul>
     </IntroBox>

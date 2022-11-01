@@ -43,7 +43,7 @@ const FSS2 = () => {
       <ListItem>a certificate issued by the NSW Food Authority</ListItem>
     </ul>
     <Text>If {`you're`} applying for a new food business licence, {`you'll`} be asked for the certificate number from this document.</Text>
-    <NextLink href="/courses/food-safety-supervisor"><Link className="font-semibold underline">Click here to learn more about this course.</Link></NextLink>
+    <Link href="/courses/food-safety-supervisor">Click here to learn more about this course.</Link>
   </div>  
 )};
 
@@ -73,7 +73,7 @@ export const TrainingRequirements = (props:TrainingRequirementsProps) => {
             <Text>Simply put, anyone that comes into contact with food or food equipment in a food business is a {`'Food Handler'`}.</Text>
             <Text>All Food Handlers require the necessary food safety training to perform this role.</Text>
             <Text>The Food Handler Course offered by AIFS has been designed to meet this requirement.</Text>
-            <NextLink href="/courses/food-handler-course"><Link className="font-semibold underline">Click here to learn more about this course.</Link></NextLink>
+            <Link href="/courses/food-handler-course">Click here to learn more about this course.</Link>
           </div>
         </div>
       </div>

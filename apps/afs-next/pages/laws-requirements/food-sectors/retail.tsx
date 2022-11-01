@@ -89,13 +89,13 @@ const Section4 = () => {
             <CollapsibleTableCell
                 summary={<Text className="!text-teal ">CURRENT UNITS</Text> }
                 details={<div>
-                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row font-bold gap-10">
-                    <p className="text-emperor col-span-1">UNIT CODE</p>
-                    <p className="text-emperor col-span-3">UNIT TITLE</p>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-7 grid-flow-row font-bold ">
+                    <p className="text-emperor col-span-2">UNIT CODE</p>
+                    <p className="text-emperor col-span-5">UNIT TITLE</p>
                   </div>
-                  <div className="w-full p-3 grid grid-cols-4 grid-flow-row gap-10">
-                    <p className="col-span-1">SIRRFSA001</p>
-                    <p className="col-span-3">Handle food safely in a retail environment</p>
+                  <div className="w-full p-3 grid grid-cols-7 grid-flow-row ">
+                    <p className="col-span-2">SIRRFSA001</p>
+                    <p className="col-span-5">Handle food safely in a retail environment</p>
                   </div>
                 </div>}
                 detailsClasses={{ root: "p-0 text-sm" }}
@@ -103,17 +103,17 @@ const Section4 = () => {
             <CollapsibleTableCell
                 summary={<Text className="!text-teal">EXPIRED UNITS</Text> }
                 details={<div>
-                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row font-bold gap-10">
-                    <p className="text-afs-gray col-span-1">UNIT CODE</p>
-                    <p className="text-afs-gray col-span-3">UNIT TITLE</p>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-7 grid-flow-row font-bold ">
+                    <p className="text-afs-gray col-span-2">UNIT CODE</p>
+                    <p className="text-afs-gray col-span-5">UNIT TITLE</p>
                   </div>
-                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-4 grid-flow-row gap-10">
-                    <p className="col-span-1">SIRRFSA001A</p>
-                    <p className="col-span-3">Apply retail food safety practices</p>
+                  <div className="w-full border-b-[1px] border-teal p-3 grid grid-cols-7 grid-flow-row ">
+                    <p className="col-span-2">SIRRFSA001A</p>
+                    <p className="col-span-5">Apply retail food safety practices</p>
                   </div>
-                  <div className="w-full p-3 grid grid-cols-4 grid-flow-row gap-10">
-                    <p className="col-span-1">WRRLP6C</p>
-                    <p className="col-span-3">Apply retail food safety practices</p>
+                  <div className="w-full p-3 grid grid-cols-7 grid-flow-row ">
+                    <p className="col-span-2">WRRLP6C</p>
+                    <p className="col-span-5">Apply retail food safety practices</p>
                   </div>
                 </div>}
                 detailsClasses={{ root: "p-0 text-sm" }}
