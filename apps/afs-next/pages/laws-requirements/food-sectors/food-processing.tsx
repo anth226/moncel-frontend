@@ -38,7 +38,7 @@ const Page = () => {
 const Section1 = () => {
   return <div className="col-span-3">
     <Header3 className="pb-4">Food safety training for food processing</Header3>
-    <div className={`${styles["laws-requirements"]} col-span-5`}>
+    <div className={`${styles["laws-requirements"]} col-span-3`}>
       <IntroBox imageSrc="/laws-requirements/food-sectors/photo_foodprocessing.jpg" alt="laws-requirements-for-employees-graphic" className={`${styles["laws-requirements"]}`}>
         <Text>If you manufacture or process foods in a factory, farm, shop or anywhere else, you and your employees need the right training to meet food safety laws.</Text>
         <Text>A food processing business is any business where food is manufactured or processed, including:</Text>
