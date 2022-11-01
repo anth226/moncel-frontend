@@ -1,4 +1,4 @@
-import { ReactNode, Children, cloneElement, isValidElement, useState } from 'react';
+import { ReactNode, Children, cloneElement, isValidElement, useState, MouseEvent } from 'react';
 import NextImage, { StaticImageData } from 'next/image';
 import NextLink from 'next/link';
 import Accordion, { AccordionProps } from '@mui/material/Accordion';
@@ -81,8 +81,9 @@ interface CollapsibleTableCellProps {
 export const ExpandIcon = () => <span className="text-teal">+</span>;
 
 export const CollapsibleTableCell = (props: CollapsibleTableCellProps) => {
-  return <Accordion square classes={{ root: `!shadow-none !border-teal !border-t !border-l !border-r ${props.last ? '!border-b' : ''}` }} disableGutters {...props.accordionProps} expanded={props.expanded} onClick={props.onClick}>
-    <AccordionSummary className="!bg-haze w-full text-sm font-medium !px-3 !py-2 !border-b !border-teal border-solid -mb-[1px]" classes={{ root: '!py-0 !px-3 min-h-0', content: ''}} expandIcon={<ExpandIcon/>}>
+
+  return <Accordion square classes={{ root: `!shadow-none !border-teal !border-t !border-l !border-r ${props.last ? '!border-b' : ''}` }} disableGutters {...props.accordionProps} expanded={props.expanded}>
+    <AccordionSummary className="!bg-haze w-full text-sm font-medium !px-3 !py-2 !border-b !border-teal border-solid -mb-[1px]" classes={{ root: '!py-0 !px-3 min-h-0', content: ''}} expandIcon={<ExpandIcon/>} onClick={props.onClick}>
       { props.summary }
     </AccordionSummary>
     <AccordionDetails classes={props.detailsClasses}>
