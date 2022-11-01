@@ -152,6 +152,7 @@ interface ExpandibleFAQProps {
 }
 
 export const ExpandibleFAQ = (props: ExpandibleFAQProps) => {
+  console.log(props)
   return <div className="flex flex-col w-full">
     { props.summary }
     <Accordion sx={{
@@ -163,10 +164,10 @@ export const ExpandibleFAQ = (props: ExpandibleFAQProps) => {
           },
           boxShadow: 0,
       }} disableGutters>
-      <AccordionSummary classes={{ root: "p-0 m-0"}}>
+      <AccordionSummary classes={{ root: "!p-0 !m-0"}}>
         <a className="link text-teal font-medium underline !p-0 !m-0">Read More</a>
       </AccordionSummary>
-      <AccordionDetails classes={{ root: "p-0 m-0"}}>
+      <AccordionDetails classes={{ root: "!p-0 !m-0"}}>
         { props.details }
       </AccordionDetails>
     </Accordion>
