@@ -152,7 +152,6 @@ interface ExpandibleFAQProps {
 }
 
 export const ExpandibleFAQ = (props: ExpandibleFAQProps) => {
-  console.log(props)
   return <div className="flex flex-col w-full">
     { props.summary }
     <Accordion sx={{
