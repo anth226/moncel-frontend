@@ -10,6 +10,9 @@ import { Header2, Header4, Text } from 'components/core/typography';
 import { useAppDispatch, AppActions } from 'store';
 const { toggleModal } = AppActions;
 
+import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
+import { styled } from '@mui/material/styles';
+
 import NRTLogo from 'public/nrt-logo-color.svg';
 import ArrowRightIcon from 'public/icon_stroke_green_arrow_right.svg';
 import styles from './styles.module.scss';
@@ -37,6 +40,17 @@ export const NavigationComponent = (props: NavigationProps) => {
         })}
     </div>;
 };
+
+const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
+    <Tooltip {...props} arrow classes={{ popper: className }} />
+))(({ theme }) => ({
+    [`& .${tooltipClasses.arrow}`]: {
+        color: theme.palette.common.black,
+    },
+    [`& .${tooltipClasses.tooltip}`]: {
+        backgroundColor: theme.palette.common.black,
+    },
+}));
 
 export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) => {
     const router = useRouter();
@@ -76,7 +90,7 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
                 <Button variant="secondary" className="!px-0 !py-4 w-full" onClick={handleClick} id="purchase-button">
                     <span>
                         <Header4 className="text-base xl:text-xl font-bold -mb-2 leading-5">{props.course == "Membership" ? "JOIN TODAY" : "START ONLINE NOW"}</Header4>
-                        <Text className="!text-[10px] xl:!text-sm !text-white font-semibold xl:font-bold tracking-wide !leading-4 xl:!leading-5 mt-1 xl:mt-0">{ props.course == "Membership" ? "BECOME AN AIFS MEMBER" : "BEGIN IN JUST 30 SECONDS"}</Text>
+                        <Text className="!text-[10px] xl:!text-sm !text-white font-semibold xl:font-bold tracking-wide !leading-4 xl:!leading-5 mt-1 xl:mt-0">{props.course == "Membership" ? "BECOME AN AIFS MEMBER" : "BEGIN IN JUST 30 SECONDS"}</Text>
                     </span>
                 </Button>
 
@@ -86,29 +100,33 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
 
                 <div className="grid grid-cols-3 w-full">
                     <div className="border-b-[1px] border-afs-light-gray w-full col-span-3" />
-                    <div className="w-full grid grid-cols-4 xl:grid-cols-5 items-center col-span-3 py-2 gap-2">
-                        <p className="text-xs text-dove font-semibold col-span-2 xl:col-span-3">{`${props.course === 'Membership' ? "12-month membership" : "ONLINE COURSE"}`}</p>
-                        <div className="flex col-span-2 text-left">
-                            <span className="col-span-1 bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-2">?</span>
-                            <p className="text-sm text-dove font-semibold col-span-1 text-end">{props.price}</p>
+                    <div className="w-full grid grid-cols-6 items-center col-span-3 py-2 gap-2">
+                        <div className="flex col-span-4 justify-between">
+                            <p className="text-xs text-dove font-semibold ">{`${props.course === 'Membership' ? "12-month membership" : "ONLINE COURSE"}`}</p>
+                            <BootstrapTooltip title="Provides up to 12 months enrolment in this course" placement="top" arrow>
+                                <span className="bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-0 xl:mr-6">?</span>
+                            </BootstrapTooltip>                
                         </div>
+                        <p className="col-span-1 text-sm text-dove font-semibold  text-end">{props.price}</p>
                     </div>
                     {props.memberPrice ? <>
                         <div className="border-b-[1px] border-afs-light-gray w-full col-span-3" />
-                        <div className="w-full grid grid-cols-4 xl:grid-cols-5 items-center col-span-3 py-2 gap-2">
-                            <p className="text-xs text-dove font-semibold col-span-2 xl:col-span-3">AIFS MEMBERSHIP</p>
-                            <div className="flex col-span-2 text-left">
-                                <span className="col-span-1 bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-2">?</span>
-                                <p className="col-span-1 text-sm text-dove font-semibold  text-end">{props.memberPrice}</p>
+                        <div className="w-full grid grid-cols-4 xl:grid-cols-6 items-center col-span-3 py-2 gap-2">
+                            <div className="flex col-span-3 xl:col-span-4 justify-between">
+                                <p className="text-xs text-dove font-semibold ">AIFS MEMBERSHIP</p>
+                                <BootstrapTooltip title="Provides 12 months of complimentary AIFS membership" placement="top" arrow>
+                                    <span className="bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-0 xl:mr-6">?</span>
+                                </BootstrapTooltip>                
                             </div>
+                            <p className="col-span-1 text-sm text-dove font-semibold text-end">{props.memberPrice}</p>
                         </div>
                         <div className="border-b-[1px] border-afs-light-gray w-full col-span-3" />
                     </> : null}
                 </div>
 
-                {props.showLogo ? <div className="flex flex-row gap-2">
-                    <p className="text-dove text-xs">Training delivered by Australian Institute of Food Safety (Registered Training Organisation) (RTO #41127)</p>
-                    <div className="grow"><NextImage src={NRTLogo} width={73} height={58} layout="fixed" /></div>
+                {props.showLogo ? <div>
+                    <div className="w-[53px] xl:w-[73px] float-right"><NextImage src={NRTLogo} width={73} height={58} layout="responsive" /></div>
+                    <p className="text-emperor text-xs table-cell">Training delivered by Australian Institute of Food Safety (Registered Training Organisation) (RTO #41127)</p>
                 </div> : null}
 
             </div>
