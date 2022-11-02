@@ -106,7 +106,7 @@ const Section4 = () => {
                     <p className="col-span-5">Oversee the day-to-day implementation of food safety in the workplace</p>
                   </div>
                 </div>}
-                detailsClasses={{ root: "p-0 text-sm" }}
+                detailsClasses={{ root: "!p-0 text-sm" }}
                 />
             <CollapsibleTableCell
                 summary={<Text className="!text-teal">EXPIRED UNITS</Text> }
@@ -140,7 +140,7 @@ const Section4 = () => {
                     <p className="col-span-5">Apply and monitor food safety requirements</p>
                   </div>
                 </div>}
-                detailsClasses={{ root: "p-0 text-sm" }}
+                detailsClasses={{ root: "!p-0 text-sm" }}
                 />
             </CollapsibleCellGroup>
           <Text className="font-semibold mt-8 !text-teal">Important Information</Text>
