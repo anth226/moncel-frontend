@@ -12,7 +12,6 @@ const Tab = ({ children, index, onClick, activeTab }: ITab) => {
         onClick(index);
     };
     const isActive = (activeTab == index);
-    console.log(isActive)
     return <div className={`z-10 flex flex-col items-center justify-center cursor-pointer text-teal px-4 py-3 text-center hover:border-teal ${isActive ? "bg-alabaster border-t border-x border-teal" : "bg-white border border-t-mint border-x-mint border-b-teal"}`} onClick={_handleClick}>
         {children}
     </div>;
