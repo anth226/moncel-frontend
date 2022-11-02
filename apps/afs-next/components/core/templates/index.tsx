@@ -87,7 +87,7 @@ export const CollapsibleTableCell = (props: CollapsibleTableCellProps) => {
     <AccordionSummary className="!bg-haze w-full text-sm font-medium !px-3 !py-2 !border-b !border-teal border-solid -mb-[1px]" classes={{ root: '!py-0 !px-3 min-h-0', content: ''}} expandIcon={<ExpandIcon/>} onClick={props.onClick}>
       { props.summary }
     </AccordionSummary>
-    <AccordionDetails classes={{ root: '!m-0 !p-4' }} >
+    <AccordionDetails classes={props.detailsClasses} >
       { props.details }
     </AccordionDetails>
   </Accordion>
