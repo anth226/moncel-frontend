@@ -66,7 +66,6 @@ export const ImageBannerCard = (props: ImageBannerCardProps) => {
       <div className="bg-teal w-full flex justify-center items-center p-4"><Header3 className="!text-white !text-sm !mb-0 font-semibold">{title.toUpperCase()}</Header3></div>
       <div className="bg-white text-teal p-4"><Text className="!text-teal text-semibold">{description}</Text></div>
       <div className="icon"><NextImage src="/icons/icon_stroke_green_arrow_down.svg" width={15} height={8}></NextImage></div>
-
   </div>
 };
 
