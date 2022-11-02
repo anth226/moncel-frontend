@@ -94,7 +94,7 @@ const Section3 = () => {
 };
 
 const Section4 = () => {
-  return <WhatHappensDontComply version="V1" p3="For serious breaches of legislation, the NSW Food Authority may prosecute employees, proprietors, managers and/or individual company directors." p4="In NSW, the names of food businesses that have breached food safety legislation are available to the public via a 'Name & Shame' list."/>;
+  return <WhatHappensDontComply version="V1" subtitle="If a food business fails to meet these food safety training requirements, the consequences are serious." p3="For serious breaches of legislation, the NSW Food Authority may prosecute employees, proprietors, managers and/or individual company directors." p4="In NSW, the names of food businesses that have breached food safety legislation are available to the public via a 'Name & Shame' list."/>;
 };
 
 export default Page;

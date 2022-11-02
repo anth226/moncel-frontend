@@ -83,7 +83,7 @@ const Section3 = () => {
 };
 
 const Section4 = () => {
-  return <WhatHappensDontComply version="V1" p3="For serious breaches of legislation, the ACT Health Protection Agency may prosecute employees, proprietors, managers and/or individual company directors." p4="In the ACT, the names of food businesses that have breached food safety legislation are available to the public via the Register of Food Offences." p4_title="Register of food offences"/>;
+  return <WhatHappensDontComply version="V1" subtitle="The consequences of not complying with the relevant food safety legislation can be serious." p3="For serious breaches of legislation, the ACT Health Protection Agency may prosecute employees, proprietors, managers and/or individual company directors." p4="In the ACT, the names of food businesses that have breached food safety legislation are available to the public via the Register of Food Offences." p4_title="Register of food offences"/>;
 };
 
 export default Page;

@@ -43,7 +43,7 @@ const Section2 = () => {
 };
 
 const Section4 = () => {
-  return <WhatHappensDontComply version="V2"/>;
+  return <WhatHappensDontComply version="V3"/>;
 };
 
 
