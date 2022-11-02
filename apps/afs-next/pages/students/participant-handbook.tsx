@@ -61,7 +61,7 @@ const HeroSection = () => {
         <ListItem>Complaints {`&`} Appeals</ListItem>
         <ListItem>Ceasing to Operate</ListItem>
       </ul>
-      <Link href="/docs/afs-participant-handbook.pdf" className="font-semibold">Click here to access the Participant Handbook PDF.</Link>
+      <Link href="/docs/afs-participant-handbook.pdf" target="_blank">Click here to access the Participant Handbook PDF.</Link>
     </IntroBox>
   </SectionContainer>;
 };

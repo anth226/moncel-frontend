@@ -8,6 +8,7 @@ interface LinkType extends HTMLAttributes<HTMLAnchorElement> {
     className?:string;
     children: ReactNode;
     href?: string;
+    target?: string;
 }
 
 export const Header1 = (props: PropType) => {
