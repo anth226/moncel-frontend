@@ -23,7 +23,7 @@ const HEADER_NAVIGATION_DATA: Array<Link> = [
     { href: "https://blog.foodsafety.com.au/blog", text: "Blog" }, // netlify redirect
     { href: "https://blog.foodsafety.com.au/news", text: "News" },
     { href: "/faq", text: "FAQ" },
-    { href: "/", text: "Home" },
+    { href: "https://my.foodsafety.com.au/customer/account/login/", text: "My Courses" },
 ];
 
 const HEADER_BANNER_NAVIGATION_DATA: Array<Link> = [
@@ -137,7 +137,7 @@ const DesktopHeader = () => {
                     { linkElements }
                     <label htmlFor="keyword search"></label>
                     <input id="keyword search" name="keyword search" type="text" placeholder="Search" className="px-2 py-1 border-silver border-1 rounded-l ml-3 text-sm leading-2 outline-none" />
-                    <Button id="button-keyword-search" variant="primary" className="!px-2 !py-2 rounded-none rounded-r"><Image src="/icon_search.svg" alt="search icon" width={12} height={12} /></Button>
+                    <Button id="button-keyword-search" variant="primary" className="!px-[6px] !py-[6px] rounded-none rounded-r"><Image src="/icon_search.svg" alt="search icon" width={14} height={14} /></Button>
                 </nav>
                 <div className="flex flex-row justify-end items-center gap-5">
                     <Button id="button-account-login" variant="secondary" className="py-1 px-5 capitalize" onClick={toggleLogin}><div className="mr-2 mt-[3px]"><Image src="/btn-img-lock.png" alt="Account login icon" width={12} height={14} /></div><div>Account Login</div></Button>
