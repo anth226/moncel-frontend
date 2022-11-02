@@ -32,9 +32,9 @@ export const NavigationComponent = (props: NavigationProps) => {
     const router = useRouter();
     // Implement smooth scroll
     const handleLinkClick = (href: string) => (e: MouseEvent<HTMLAnchorElement>) => {
-        if(document) {
+        if (document) {
             e.preventDefault();
-        
+
             document.querySelector(`[href='${href}']`)?.scrollIntoView({
                 behavior: 'smooth'
             });
@@ -62,6 +62,18 @@ const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
     },
 }));
 
+const TooltipRegular = () => {
+    return <BootstrapTooltip title="Provides up to 12 months enrolment in this course" placement="top" arrow>
+        <span className="bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-0 xl:mr-6">?</span>
+    </BootstrapTooltip>
+}
+
+const TooltipMembership = () => {
+    return <BootstrapTooltip title="Provides 12 of access to AIFS resources" placement="top" arrow>
+        <span className="bg-silver text-white rounded-xl px-1 py-0.5 text-xs">?</span>
+    </BootstrapTooltip>
+}
+
 export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) => {
     const router = useRouter();
     const borderBClass = "border-b-[1px] border-solid border-teal";
@@ -78,7 +90,7 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
 
     // Implement smooth scroll
     const handleLinkClick = (href: string) => (e: MouseEvent<HTMLAnchorElement>) => {
-        if(document && window) {
+        if (document && window) {
             e.preventDefault();
             document.querySelector(`[href='${href}']`)?.scrollIntoView({
                 behavior: 'smooth'
@@ -122,11 +134,9 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
                 <div className="grid grid-cols-3 w-full">
                     <div className="border-b-[1px] border-afs-light-gray w-full col-span-3" />
                     <div className="w-full grid grid-cols-6 items-center col-span-3 py-2 gap-2">
-                        <div className="flex col-span-4 justify-between">
-                            <p className="text-xs text-dove font-semibold ">{`${props.course === 'Membership' ? "12-month membership" : "ONLINE COURSE"}`}</p>
-                            <BootstrapTooltip title="Provides up to 12 months enrolment in this course" placement="top" arrow>
-                                <span className="bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-0 xl:mr-6">?</span>
-                            </BootstrapTooltip>                
+                        <div className="flex col-span-4 justify-between items-center">
+                            <p className="text-xs text-dove font-semibold uppercase">{`${props.course === 'Membership' ? "12-month membership" : "ONLINE COURSE"}`}</p>
+                            {props.course === 'Membership' ? <TooltipMembership/> : <TooltipRegular/>}
                         </div>
                         <p className="col-span-1 text-sm text-dove font-semibold  text-end">{props.price}</p>
                     </div>
@@ -137,7 +147,7 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
                                 <p className="text-xs text-dove font-semibold ">AIFS MEMBERSHIP</p>
                                 <BootstrapTooltip title="Provides 12 months of complimentary AIFS membership" placement="top" arrow>
                                     <span className="bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-0 xl:mr-6">?</span>
-                                </BootstrapTooltip>                
+                                </BootstrapTooltip>
                             </div>
                             <p className="col-span-1 text-sm text-dove font-semibold text-end">{props.memberPrice}</p>
                         </div>
@@ -153,7 +163,7 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
             </div>
 
             {props.links.map((link, i) => {
-                return <a href={link.href} onClick={handleLinkClick(link.href)} className={`no-underline ${borderBClass} ${anchor === link.href ? "bg-haze" : ""} hover:bg-afs-light-gray text-teal p-4 flex flex-row justify-between items-center`} key={`checkout-link-${i}`}>
+                return <a href={link.href} onClick={handleLinkClick(link.href)} className={`no-underline ${borderBClass} ${anchor === link.href ? "bg-haze" : ""} hover:bg-afs-light-gray text-teal p-[14px] flex flex-row justify-between items-center`} key={`checkout-link-${i}`}>
                     <p className="text-[14px] font-medium leading-4">{link.text.toUpperCase()}</p>
                     <NextImage src={ArrowRightIcon} width={8} height={8} />
                 </a>

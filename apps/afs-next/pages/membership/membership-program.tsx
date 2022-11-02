@@ -52,7 +52,7 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
       { text: "WHAT'S INCLUDED", href: "#intro" },
       { text: "BENEFITS FOR FOOD WORKERS", href: "#workers" },
       { text: "BENEFITS FOR EMPLOYERS", href: "#employers" },
-      { text: "HOW TO BECOME A MEMBER", href: "#how" },
+      { text: "HOW TO BECOME A MEMBER", href: "#membership" },
       { text: "COMMON QUESTIONS", href: "#common-questions" },
     ],
   },
@@ -89,7 +89,7 @@ interface SectionProps {
 const SectionContainer = ({ id, children, className }: SectionProps) => <div className={`col-span-3 ${className} ${styles['courses']}`} id={id}>{children}</div>;
 
 const HeroSection = () => {
-  return <SectionContainer className="col-span-3" id="section-memberhsip-program-hero">
+  return <SectionContainer className="col-span-3" id="section-membership-program-hero">
     <Header3 className="pb-4">Membership benefits with invaluable returns.</Header3>
     <IntroBox imageSrc={HeroGraphic} alt="haccp-program-graphic">
       <Text>{`Ensure your business keeps food safety 'front of mind' with AIFS Membership for you and your employees.`}</Text>
@@ -100,7 +100,7 @@ const HeroSection = () => {
 };
 
 const WhatsIncluded = () => {
-  return <div className="col-span-3" id="section-2">
+  return <div className="col-span-3" id="intro">
     <Header3 className="pb-4">{`What's included in my membership?`}</Header3>
     <TwoCol>
       <IconCard
@@ -132,7 +132,7 @@ const WhatsIncluded = () => {
 };
 
 const FoodWorkerBenefits = () => {
-  return <div className="col-span-3" id="section-2">
+  return <div className="col-span-3" id="workers">
     <Header3>Member benefits for food workers</Header3>
     <Header4 className="text-emperor pb-8">What can AIFS Membership offer me?</Header4>
     <TwoCol>
@@ -177,7 +177,7 @@ const FoodWorkerBenefits = () => {
 };
 
 const EmployerBenefits = () => {
-  return <div className="col-span-3" id="section-2">
+  return <div className="col-span-3" id="employers">
     <Header3>Member benefits for employers</Header3>
     <Header4 className="text-emperor pb-8">What can AIFS Membership do for my business?</Header4>
     <TwoCol>
@@ -222,7 +222,7 @@ const EmployerBenefits = () => {
 };
 
 const BecomeAIFSMember = () => {
-  return <div className="col-span-3" id="section-2">
+  return <div className="col-span-3" id="membership">
     <Header3 className="pb-4">How do I become an AIFS Member?</Header3>
     <Text className="pb-4">There are two ways to become an AIFS Member</Text>
     <TwoCol>
