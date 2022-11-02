@@ -132,6 +132,23 @@ ol {
   }
 }
 
+.featured {
+  .MuiAccordionSummary-content {
+    .icon {
+      margin:0px auto !important;
+      display:block !important;
+      padding-bottom:10px;
+      transition: all 0.4s ease;
+    }
+    &.Mui-expanded {
+      .icon {
+        transition: all 0.4s ease;
+        padding-bottom:0;
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
 
 /** 
 * mdx generates unstyled html; use this class to apply styles to children

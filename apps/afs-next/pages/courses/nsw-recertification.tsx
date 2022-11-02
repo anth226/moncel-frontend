@@ -188,7 +188,7 @@ const CourseInclusionsSection = () => {
       <Text className={styles["subtitle"]}>Discover the complimentary member benefits for you and your food business</Text>
     </div>
     <div className="w-full grid items-start grid-cols-1 md:grid-cols-3 gap-8">
-      <Accordion square disableGutters className="border border-mint !shadow-none">
+      <Accordion square disableGutters className="border border-mint !shadow-none featured">
         <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0' }}>
           <ImageBannerCard
             title="AIFS Membership"
@@ -200,7 +200,7 @@ const CourseInclusionsSection = () => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion square disableGutters className="border border-mint !shadow-none">
+      <Accordion square disableGutters className="border border-mint !shadow-none featured">
         <AccordionSummary id="food-handler-course-benefits-card-2" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0' }}>
           <ImageBannerCard
             title="Food Safety Card"
@@ -211,7 +211,7 @@ const CourseInclusionsSection = () => {
           <Text className="!text-teal">Just keep your card in your pocket at work, so {`you're`} always ready to show Health Inspectors during surprise food audits.</Text>
         </AccordionDetails>
       </Accordion>
-      <Accordion square disableGutters className="border border-mint !shadow-none">
+      <Accordion square disableGutters className="border border-mint !shadow-none featured">
         <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0' }}>
           <ImageBannerCard
             title="Business Signage"
