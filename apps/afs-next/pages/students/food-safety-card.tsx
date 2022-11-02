@@ -98,28 +98,16 @@ const BenefitsSection = () => {
         <Text>{`Food Safety Cards can't be replicated like paper, and contain unique ID information that can be validated on demand.`}</Text>
       </IconCard>
       <IconCard
-        imageSrc={"/icons/icon_stroke_green_thumbsup.svg"}
-        title="Blue and green cards"
-      >
-        <Text>Feel confident taking an AIFS course that 100% of students would recommend to a friend.</Text>
-      </IconCard>
-      <IconCard
-        imageSrc={"/icons/icon_stroke_green_australia.svg"}
-        title="Recognised throughout Australia"
-      >
-        <Text>Be sure of acceptance with a course {`that's`} recognised throughout all of Australia.</Text>
-      </IconCard>
-      <IconCard
         imageSrc={"/icons/icon_stroke_green_member_card.svg"}
         title="Blue and green cards"
       >
-        <Text>{`When you complete Food Handler training you'll get a Blue Card, after completing Food Safety Supervisor training you'll receive a Green Card.`}</Text>
+        <Text>When you complete Food Handler training {`you'll`} get a Blue Card, after completing Food Safety Supervisor training {`you'll`} receive a Green Card.</Text>
       </IconCard>
       <IconCard
-        imageSrc={"/laws-requirements/role/icon_stroke_green_trainer.svg"}
+        imageSrc={"/icons/icon_stroke_green_member.svg"}
         title="No extra charge"
       >
-        <Text>Food Safety Cards are sent to you at no extra charge upon completion of the AIFS Food Handler or Food Safety Supervisor course. </Text>
+        <Text>Food Safety Cards are sent to you at no extra charge upon completion of the AIFS Food Handler or Food Safety Supervisor course.</Text>
       </IconCard>
     </TwoCol>
   </div>;
