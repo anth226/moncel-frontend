@@ -12,7 +12,7 @@ const LandingPageLogos = () => {
 }
 const Home = () => {
   return (
-    <Layout pageTitle='Thank You For Your Enquiry' metaDescription='Your enquiry has been received and a customer support representative will be in touch with you shortly.'>
+    <Layout pageTitle='Food Safety Courses | Online Food Safety Training and More | AIFS' metaDescription="AIFS is Australia's leading provider of Food Safety Supervisor and Food Handler training. Courses are Nationally Recognised and accepted by local health authorities.">
       <Carousel id="heroCarousel" />
       <HelpSection />
       <LandingPageLogos />
