@@ -57,7 +57,7 @@ const HeroSection = () => {
     <IntroBox imageSrc={HeroGraphic} alt="business-food-safety-hero-graphic" >
       <Text>A food safety incident can have a crippling impact on a business. Just one employee not washing their hands properly can poison thousands of customers.</Text>
       <Text>With an expert team of food safety professionals, the Australian Institute of Food Safety can deliver:</Text>
-      <ul className={`${styles['checklist']}`}>
+      <ul className="checklist">
         <ListItem>compliance with all food safety training laws</ListItem>
         <ListItem>exceptional staff training</ListItem>
         <ListItem>ongoing support and development</ListItem>
