@@ -5,7 +5,7 @@ import { LegalBackground } from 'components/legal';
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout pageTitle='Food Safety Courses | Online Food Safety Training and More' metaDescription="AIFS is Australia's leading provider of Food Safety Supervisor and Food Handler training. Courses are Nationally Recognised and accepted by local health authorities.">
       <LegalBackground><GridTemplate {...legalOverviewData}/></LegalBackground>
     </Layout>
   );

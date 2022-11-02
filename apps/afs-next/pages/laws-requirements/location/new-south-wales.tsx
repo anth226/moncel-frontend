@@ -21,7 +21,7 @@ const TemplateData = {
 
 const Page = () => {
   return (
-    <Layout>
+    <Layout pageTitle={`Food Safety Laws & Legislation New South Wales | AIFS`} metaDescription="Learn about the laws governing businesses in NSW that sell and produce food, how to comply with these laws and the serious consequences if you don't.">
       <LawsRequirementsBackground><RowsTemplate {...TemplateData}>
         <>
           <Section1 />

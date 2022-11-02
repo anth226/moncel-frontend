@@ -26,7 +26,7 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
 
 const Page = () => {
   return (
-    <Layout>
+    <Layout pageTitle='The Mission of Australian Institute of Food Safety | AIFS' metaDescription='At AIFS our mission is clear. We want to reduce food-borne illness within Australia through education, promotion and advocacy for better food safety.'>
       <AboutBackground><RowsTemplate {...TemplateData}>
         <>
           <HeroSection />

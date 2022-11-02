@@ -16,7 +16,7 @@ export const AboutBackground = ({ children }: { children: ReactNode }) => {
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout pageTitle='About Us | AIFS' metaDescription='At AIFS, our mission is to reduce food-borne illness in Australia. To do this, we help food workers gain the essential food safety skills to protect their customers.'>
       <AboutBackground><GridTemplate {...aboutOverviewData}/></AboutBackground>
     </Layout>
   );

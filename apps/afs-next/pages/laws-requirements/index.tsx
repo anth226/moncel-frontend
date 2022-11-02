@@ -25,7 +25,7 @@ export const LawsRequirementsBackground = ({ children }: { children: ReactNode }
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout pageTitle={`Food Safety Laws & Legislation Australia | AIFS`} metaDescription='Get the latest, easy-to-understand information on food safety legal requirements and how they affect you - based on your role, sector and location.'>
       <LawsRequirementsBackground><RowsTemplate {...LawsRequirementsPageData}>
         <>
           <RoleSection />

@@ -60,7 +60,7 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
 
 const Page = () => {
   return (
-    <Layout isCoursePage={true}>
+    <Layout isCoursePage={true} pageTitle='AIFS Official Food Safety Membership Program | AIFS' metaDescription='AIFS membership gives you free access to food safety tools, credentials, support and updates that protect and benefit you, your business and your customers.'>
       <MembershipBackground><RowsTemplate {...TemplateData}>
         <>
           <HeroSection />

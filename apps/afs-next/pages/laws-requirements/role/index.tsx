@@ -20,7 +20,7 @@ const Home = () => {
   const pageData = LawsRequirementsRoleOverviewData;
   pageData.navigation = navigationRolePageData;
   return (
-    <Layout>
+    <Layout pageTitle={`Food Safety Laws & Requirements by Role | AIFS`} metaDescription="Confused by food safety laws and how they apply to you? Whether you're new or established in the food industry, AIFS will guide you in the right direction.">
       <LawsBackground><GridTemplate {...pageData}/></LawsBackground>
     </Layout>
   );

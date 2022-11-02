@@ -1,6 +1,12 @@
 import { RowsTemplateProps, NavigationProps, GridTemplateProps } from 'components/templates/types';
 import { LinkType } from 'types';
 
+import JobSeekersPreview from "public/laws-requirements/role/photo_jobseekers.jpg";
+import EmployeesPreview from "public/laws-requirements/role/photo_employees.jpg";
+import NewBusinessPreview from "public/laws-requirements/role/photo_newbusiness.jpg";
+import EstablishedBusinessPreview from "public/laws-requirements/role/photo_establishedbusiness.jpg";
+import TrainingManagersPreview from "public/laws-requirements/role/photo_trainingmanagers.jpg";
+
 export const navigationData: NavigationProps = {
     title: "Laws & Requirements",
     links: [
@@ -91,31 +97,31 @@ export const LawsRequirementsRoleOverviewData: GridTemplateProps = {
   cards: [{
     title: "Food Safety Laws & Requirements for Job Seekers",
     description: "Searching for a job in the food industry? Food safety training is required by law and boosts your job prospects.",
-    imageSrc: "/laws-requirements/role/photo_jobseekers.jpg",
+    imageSrc: JobSeekersPreview,
     href: "/laws-requirements/role/for-job-seekers",
   },
   {
     title: "Food Safety Laws & Requirements for Employees",
     description: "Ensure your food safety training is up-to-date and nationally recognised - while protecting your customers.",
-    imageSrc: "/laws-requirements/role/photo_employees.jpg",
+    imageSrc: EmployeesPreview,
     href: "/laws-requirements/role/for-employees",
   },
   {
     title: "Food Safety Laws & Requirements for New Businesses",
     description: "Find out how to meet your legal requirements, get a food business licence and the proper training required.",
-    imageSrc: "/laws-requirements/role/photo_newbusiness.jpg",
+    imageSrc: NewBusinessPreview,
     href: "/laws-requirements/role/for-new-businesses",
   },
   {
     title: "Food Safety Laws & Requirements for Established Businesses",
     description: "As staff move and laws change, make sure you're meeting the latest state and federal compliance requirements.",
-    imageSrc: "/laws-requirements/role/photo_establishedbusiness.jpg",
+    imageSrc: EstablishedBusinessPreview,
     href: "/laws-requirements/role/for-established-businesses",
   },
   {
     title: "Food Safety Laws & Requirements for Training Managers",
     description: "Need to train multiple employees? Make sure they get the proper training they need for their location and food sector.",
-    imageSrc: "/laws-requirements/role/photo_trainingmanagers.jpg",
+    imageSrc: TrainingManagersPreview,
     href: "/laws-requirements/role/for-training-managers",
   }],
 };

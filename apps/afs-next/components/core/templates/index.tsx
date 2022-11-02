@@ -1,4 +1,4 @@
-import { ReactNode, Children, cloneElement, isValidElement, useState } from 'react';
+import { ReactNode, Children, cloneElement, isValidElement, useState, MouseEvent } from 'react';
 import NextImage, { StaticImageData } from 'next/image';
 import NextLink from 'next/link';
 import Accordion, { AccordionProps } from '@mui/material/Accordion';
@@ -66,8 +66,8 @@ export const ImageBannerCard = (props: ImageBannerCardProps) => {
       <div className="bg-teal w-full flex justify-center items-center p-4"><Header3 className="!text-white !text-sm !mb-0 font-semibold">{title.toUpperCase()}</Header3></div>
       <div className="bg-white text-teal p-4"><Text className="!text-teal text-semibold">{description}</Text></div>
       <div className="icon"><NextImage src="/icons/icon_stroke_green_arrow_down.svg" width={15} height={8}></NextImage></div>
-      
-  </div> 
+
+  </div>
 };
 
 interface CollapsibleTableCellProps {
@@ -83,8 +83,9 @@ interface CollapsibleTableCellProps {
 export const ExpandIcon = () => <span className="text-teal">+</span>;
 
 export const CollapsibleTableCell = (props: CollapsibleTableCellProps) => {
-  return <Accordion square classes={{ root: `!shadow-none !border-teal !border-t !border-l !border-r ${props.last ? '!border-b' : ''}` }} disableGutters {...props.accordionProps} expanded={props.expanded} onClick={props.onClick}>
-    <AccordionSummary className="!bg-haze w-full text-sm font-medium !px-3 !py-2 !border-b !border-teal !border-solid !-mb-[1px]" classes={{ root: '!py-0 !px-3 min-h-0', content: ''}} expandIcon={<ExpandIcon/>}>
+
+  return <Accordion square classes={{ root: `!shadow-none !border-teal !border-t !border-l !border-r ${props.last ? '!border-b' : ''}` }} disableGutters {...props.accordionProps} expanded={props.expanded}>
+    <AccordionSummary className="!bg-haze w-full text-sm font-medium !px-3 !py-2 !border-b !border-teal border-solid -mb-[1px]" classes={{ root: '!py-0 !px-3 min-h-0', content: ''}} expandIcon={<ExpandIcon/>} onClick={props.onClick}>
       { props.summary }
     </AccordionSummary>
     <AccordionDetails classes={{ root: '!m-0 !p-4' }} >

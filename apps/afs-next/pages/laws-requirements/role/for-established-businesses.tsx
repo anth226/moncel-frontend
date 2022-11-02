@@ -19,7 +19,7 @@ const TemplateData = {
 
 const Page = () => {
   return (
-    <Layout>
+    <Layout pageTitle={`Food Safety Laws & Requirements for Established Businesses | AIFS`} metaDescription="As staff move and laws change, make sure you're meeting the latest state and federal compliance requirements.">
       <LawsRequirementsBackground><RowsTemplate {...TemplateData}>
         <>
           <Section1 />

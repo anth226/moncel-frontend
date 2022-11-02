@@ -20,7 +20,7 @@ const TemplateData = {
 
 const Page = () => {
   return (
-    <Layout>
+    <Layout pageTitle={`Food Safety Laws & Legislation Australian Capital Territory | AIFS`} metaDescription="Learn about all the laws governing businesses in the ACT that sell and produce food, how to comply with these laws, and the serious consequences if you don't.">
       <LawsRequirementsBackground><RowsTemplate {...TemplateData}>
         <>
           <Section1 />

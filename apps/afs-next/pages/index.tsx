@@ -12,7 +12,7 @@ const LandingPageLogos = () => {
 }
 const Home = () => {
   return (
-    <Layout>
+    <Layout pageTitle='Thank You For Your Enquiry' metaDescription='Your enquiry has been received and a customer support representative will be in touch with you shortly.'>
       <Carousel id="heroCarousel" />
       <HelpSection />
       <LandingPageLogos />

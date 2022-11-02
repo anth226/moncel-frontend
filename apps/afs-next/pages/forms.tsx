@@ -23,7 +23,7 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
 
 const Page = () => {
   return (
-    <Layout>
+    <Layout pageTitle='Student Forms for Food Safety Courses | AIFS' metaDescription="Need to complete an AIFS form? You're in the right place. Explore our full library of student forms here.">
       <StudentsBackground><RowsTemplate {...TemplateData}>
         <>
           <Main />

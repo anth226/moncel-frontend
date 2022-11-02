@@ -16,7 +16,7 @@ export const CoursesBackground = ({ children }: { children: ReactNode }) => {
 
 const Home = () => {
   return (
-    <Layout>
+    <Layout pageTitle='HACCP Food Safety Programs' metaDescription='Learn more about HACCP Food Safety Programs. AIFS makes building a Food Safety Program quick and easy. Get the information and tools you need.'>
       <CoursesBackground><GridTemplate {...haccpOverviewData}/></CoursesBackground>
     </Layout>
   );

@@ -23,7 +23,7 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
 
 const Page = () => {
   return (
-    <Layout>
+    <Layout pageTitle='Thank You For Your Enquiry' metaDescription='Your enquiry has been received and a customer support representative will be in touch with you shortly.'    >
       <AboutBackground><RowsTemplate {...TemplateData}>
         <>
           <HeroSection />

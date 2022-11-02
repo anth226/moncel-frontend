@@ -43,7 +43,7 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
 
 const Page = () => {
   return (
-    <Layout isCoursePage={true}>
+    <Layout isCoursePage={true} pageTitle='HACCP Food Safety Plan Kit | For Food Safety Programs | AIFS' metaDescription='The HACCP Food Safety Plan Kit comes with all the tools you need to develop a compliant Food Safety Plan. Templates, samples, video courses and more.'>
       <CoursesBackground><RowsTemplate {...TemplateData}>
         <>
           <Section1 />

@@ -8,6 +8,7 @@ import Analytics from 'components/core/Analytics';
 
 interface LayoutProps {
     pageTitle?: string;
+    metaDescription?: string;
     className?: string;
     children: ReactNode;
     isCoursePage?: boolean;
@@ -18,7 +19,7 @@ const CourseCheckoutSpace = () => {
     return <div className="h-24 bg-teal lg:hidden"/>
 }
 
-const Layout = ({ children, className, isCoursePage, pageTitle }: LayoutProps) => {
+const Layout = ({ children, className, isCoursePage, pageTitle, metaDescription }: LayoutProps) => {
     // TODO: Mobile menu redux
 
     useEffect(() => {
@@ -26,7 +27,7 @@ const Layout = ({ children, className, isCoursePage, pageTitle }: LayoutProps) =
     }, []);
 
     return <div className={`w-full ${className || ""}`}>
-        <Head title={pageTitle} />
+        <Head title={pageTitle} description={metaDescription} />
         <Header />
             { children }
         <Footer />

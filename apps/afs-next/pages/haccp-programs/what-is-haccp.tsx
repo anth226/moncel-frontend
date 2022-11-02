@@ -29,7 +29,7 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
 
 const Page = () => {
   return (
-    <Layout>
+    <Layout pageTitle='What is HACCP? | Is It Required for Food Safety Programs? | AIFS' metaDescription='Learn more about the 7 principles of HACCP and how they can help you to take control of the food safety risks in your business.'>
       <CoursesBackground><RowsTemplate {...TemplateData}>
         <>
           <Section1 />

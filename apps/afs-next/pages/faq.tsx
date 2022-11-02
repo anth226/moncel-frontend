@@ -78,7 +78,7 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
     
 };
 
-const FaqPage = () => <Layout>
+const FaqPage = () => <Layout pageTitle='Frequently Asked Questions: Food Safety Courses | AIFS' metaDescription='Get answers to your questions with the Australian Institute of Food Safety’s Frequently Asked Questions section.'>
     <CoursesBackground>
         <RowsTemplate {...TemplateData}>
             <>

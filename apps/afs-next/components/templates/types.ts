@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { StaticImageData } from 'next/image';
 import { LinkType } from "types";
 import { Courses } from "data/courses";
 
@@ -19,7 +20,7 @@ export interface CheckoutSidebarComponentProps {
 export interface GridTemplateCard {
     title: string;
     description: string;
-    imageSrc: string;
+    imageSrc: string | StaticImageData;
     buttonText?: string;
     href: string;
 }

@@ -50,7 +50,7 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
 
 const Page = () => {
   return (
-    <Layout isCoursePage={true}>
+    <Layout isCoursePage={true} pageTitle='Introduction to Food Safety | Online Training Course | AIFS' metaDescription='For those looking to learn basic food safety skills before starting to work with food, this intro course is the perfect stepping stone to the next level.'>
       <CoursesBackground><RowsTemplate {...TemplateData}>
         <>
           <HeroSection />

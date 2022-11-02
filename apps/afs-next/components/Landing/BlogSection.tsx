@@ -72,7 +72,7 @@ const BlogCard = ({ element }: { element: Element | BlogCard }) => {
         data = element;
     }
     return <div className="grid-cols-3 grid border-t-[1px] border-alto pt-4 gap-4">
-        <div className="col-span-1 pr-4 pt-1"><NextImage src={data.imgSrc} width={78} height={44} layout="responsive" /></div>
+        <div className="col-span-1 pr-4 pt-1"><NextImage src={data.imgSrc} blurDataURL={typeof data.imgSrc == "string" ? data.imgSrc : undefined} placeholder="blur" width={78} height={44} layout="responsive" /></div>
         <div className="col-span-2 flex flex-col justify-start items-start">
             <Link href={data.link} className="no-underline text-left">{data.title}</Link>
             { data.pubDate ? <p className="text-silver">{formatDate(new Date(data.pubDate))}</p> : null }

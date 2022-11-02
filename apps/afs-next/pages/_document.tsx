@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
-    <Html style={{scrollBehavior:'smooth'}}>
+    <Html>
       <Head>
         <link href="https://use.typekit.net/ssh4fpp.css" rel="stylesheet" />
         {/* tracking */}
