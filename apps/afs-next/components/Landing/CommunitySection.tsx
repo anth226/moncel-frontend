@@ -30,7 +30,7 @@ const GridCell = ({ imageSrc, title, href }: GridCellProps) => {
             <Image src={imageSrc} width={330} height={186} alt={`Thumbnail image for ${title} resource`} />
             <div className="text-teal font-semibold pb-3 pt-2">{title}</div>
         </a></Link>
-        <Button id={`button-learn-more-${title.replace(" ", "_")}`} variant="invert" className="text-sm tracking-wide py-3 w-full"><a href={href} target="_blank" rel="noreferrer" className="uppercase">Learn More</a></Button>
+        <Button id={`button-learn-more-${title.replace(" ", "_")}`} variant="invert" className="text-sm tracking-wide py-3 w-full"><a href={href} className="uppercase">Learn More</a></Button>
     </div>;
 };
 
