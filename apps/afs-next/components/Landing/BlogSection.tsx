@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import NextImage, { StaticImageData } from 'next/image';
 
 import { Link } from 'components/core';
-import { Header2 } from 'components/core/typography';
+import { Header3, Header4 } from 'components/core/typography';
 
 import { readRSS } from 'lib/rss';
 import Guides06 from 'public/guides06.jpg';
@@ -71,11 +71,11 @@ const BlogCard = ({ element }: { element: Element | BlogCard }) => {
     } else {
         data = element;
     }
-    return <div className="grid-cols-3 grid border-t-[1px] border-alto pt-4 gap-4">
-        <div className="col-span-1 pr-4 pt-1"><NextImage src={data.imgSrc} blurDataURL={typeof data.imgSrc == "string" ? data.imgSrc : undefined} placeholder="blur" width={78} height={44} layout="responsive" /></div>
-        <div className="col-span-2 flex flex-col justify-start items-start">
-            <Link href={data.link} className="no-underline text-left">{data.title}</Link>
-            { data.pubDate ? <p className="text-silver">{formatDate(new Date(data.pubDate))}</p> : null }
+    return <div className="grid-cols-5 grid border-t-[1px] border-alto pt-4">
+        <div className="col-span-2 pr-4"><NextImage src={data.imgSrc} blurDataURL={typeof data.imgSrc == "string" ? data.imgSrc : undefined} placeholder="blur" width={78} height={44} layout="responsive" /></div>
+        <div className="col-span-3 flex flex-col justify-start items-start">
+            <Link href={data.link} className="no-underline hover:!underline !font-semibold leading-5 text-left">{data.title}</Link>
+            { data.pubDate ? <p className="text-silver uppercase text-sm font-medium">{formatDate(new Date(data.pubDate))}</p> : null }
         </div>
     </div>;
 };
@@ -95,32 +95,36 @@ const BlogSection = () => {
         if(!blogItems || !newsItems) getRSSData();
     }, []);
 
-    return <div className="padded-section bg-white section-vertical-padding flex flex-col items-center px-4 text-center md:text-left">
-        <Header2 className="text-teal mb-4">Stay up-to-date with the latest in food safety</Header2>
+    return <div className="padded-section bg-white section-vertical-padding flex flex-col items-center text-center md:text-left">
+        <Header3 className="text-teal mb-8">Stay up-to-date with the latest in food safety</Header3>
 
         {/* Desktop */}
-        { (!newsItems || !blogItems) ? null : <div className="w-full lg:grid grid-cols-3 gap-4 hidden">
+        { (!newsItems || !blogItems) ? null : <div>
+            <div className="w-full md:grid grid-cols-3 gap-8 hidden">
+                <Header4 className="text-teal mb-4">Australian Food Safety News</Header4>
+                <Header4 className="text-teal mb-4">The Food Safety Blog</Header4>
+                <Header4 className="text-teal mb-4">AIFS Members-only Guides</Header4>
+            </div>
+            <div className="w-full md:grid grid-cols-3 gap-x-8 gap-y-4 hidden">             
                 {[0,1,2,3,4].map((row: number) => {
                     return <>
                         <BlogCard element={newsItems[row]} />
                         <BlogCard element={blogItems[row]} />
                         <BlogCard element={FAKE_GUIDE_RSS_DATA[row]} />
                     </>
-                })
-            }
+                })}
+            </div>
           </div>
         }
 
         {/* Mobile */}
-        { (!newsItems || !blogItems) ? null : <div className="w-full flex flex-col gap-4 lg:hidden">
+        { (!newsItems || !blogItems) ? null : <div className="w-full flex flex-col gap-4 md:hidden">
             {Array.from(newsItems).slice(0,5).map((element: Element) => <BlogCard element={element} />)}
         </div>
 
         }
     </div>;
 };
-
-const Divider = () => <div className="w-full border-b-[1px] border-alto my-4" />;
 
 /**
  * MEMBERS-only GUIDES WILL BE STATIC UNTIL IMPLEMENTED DYNAMICALLY
