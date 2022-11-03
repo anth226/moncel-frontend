@@ -173,8 +173,8 @@ const Section3 = () => {
       <Text className={styles["subtitle"]}>Discover the complimentary member benefits for you and your food business</Text>
     </div>
     <div className="w-full grid items-start grid-cols-1 md:grid-cols-3 gap-8">
-      <Accordion square disableGutters className="border border-mint shadow-none">
-        <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: 'p-0 m-0', content: 'p-0 m-0' }}>
+      <Accordion square disableGutters className="border border-mint !shadow-none featured">
+        <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0' }}>
           <ImageBannerCard
             title="AIFS Membership"
             description="A complimentary 12-month AIFS Membership is included with all AIFS nationally recognised accredited training courses."
@@ -185,8 +185,8 @@ const Section3 = () => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion square disableGutters className="border border-mint shadow-none">
-        <AccordionSummary id="food-handler-course-benefits-card-2" className="w-full m-0 p-0" classes={{ root: 'p-0 m-0', content: 'p-0 m-0' }}>
+      <Accordion square disableGutters className="border border-mint !shadow-none featured">
+        <AccordionSummary id="food-handler-course-benefits-card-2" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0' }}>
           <ImageBannerCard
             title="Food Safety Card"
             description="You'll receive a handy wallet-sized blue Food Safety Card that contains official proof of your food safety training."
@@ -196,8 +196,8 @@ const Section3 = () => {
           <Text className="!text-teal">Just keep your card in your pocket at work, so {`you're`} always ready to show Health Inspectors during surprise food audits.</Text>
         </AccordionDetails>
       </Accordion>
-      <Accordion square disableGutters className="border border-mint shadow-none">
-        <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: 'p-0 m-0', content: 'p-0 m-0' }}>
+      <Accordion square disableGutters className="border border-mint !shadow-none featured">
+        <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0' }}>
           <ImageBannerCard
             title="Food Safety Updates"
             description="As an AIFS member you'll have access to the latest food safety news that may affect the food business where you work."
@@ -360,7 +360,7 @@ const CourseOutlineSection = () => {
                 <ListItem>Lesson 13 - Controlling {`&`} Reporting on Food Safety Hazards</ListItem>
               </ul>
             </>}
-            detailsClasses={{ root: 'p-4' }} />
+            detailsClasses={{ root: '!p-4' }} />
           <CollapsibleTableCell
             summary={<Text className="!text-teal uppercase">Assessment Process</Text>}
             details={<>
@@ -375,7 +375,7 @@ const CourseOutlineSection = () => {
               <Text className="font-semibold">Quality Assurance Process</Text>
               <Text>As part of our quality assurance process, we reserve the right to contact you or your nominated observer to conduct a competency conversation or verification of assessment prior to awarding certification. </Text>
             </>}
-            detailsClasses={{ root: 'p-4' }}
+            detailsClasses={{ root: '!p-4' }}
           />
           <CollapsibleTableCell
             summary={<Text className="!text-teal uppercase">Prerequisites</Text>}
@@ -391,7 +391,7 @@ const CourseOutlineSection = () => {
               </ul>
               <Text>If you have any concerns about the skills required to participate in this course, please contact us and {`we'll`} be happy to discuss your situation.</Text>
             </>}
-            detailsClasses={{ root: 'p-4' }}
+            detailsClasses={{ root: '!p-4' }}
           />
           <CollapsibleTableCell
             summary={<Text className="!text-teal uppercase">Technical Requirements</Text>}
@@ -405,14 +405,14 @@ const CourseOutlineSection = () => {
               <Text>Some of the forms that you need to complete (such as the Observer Report) are in PDF format. Ensure that you have the <NextLink href="https://get.adobe.com/reader/"><a target="_blank">latest version of Adobe PDF Reader.</a></NextLink></Text>
               <Text>AIFS courses work on most computers, laptops, tablets and mobile devices.</Text>
             </>}
-            detailsClasses={{ root: 'p-4' }} />
+            detailsClasses={{ root: '!p-4' }} />
           <CollapsibleTableCell
             summary={<Text className="!text-teal uppercase">Course Preview</Text>}
             details={<>
               <Text>Click on the {`'Play'`} button below to watch a preview of the Food Handler course.</Text>
               <div dangerouslySetInnerHTML={{ __html: `<script src="https://fast.wistia.com/embed/medias/6fg1h2nf6l.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:75.1% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_6fg1h2nf6l seo=false videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/6fg1h2nf6l/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>` }} />
             </>}
-            detailsClasses={{ root: 'p-4' }} />
+            detailsClasses={{ root: '!p-4' }} />
         </CollapsibleCellGroup>
       </div>
     </div>
@@ -441,7 +441,7 @@ const IndustrySectorSection = () => {
 
               <Text className="italic">{`When you complete the Food Handler course for the Hospitality sector, you're halfway to becoming a Food Safety Supervisor. Contact our support team if you'd like to discuss upgrading your training to attain the full Food Safety Supervisor skill set.`}</Text>
             </>}
-            detailsClasses={{ root: 'p-4' }} />
+            detailsClasses={{ root: '!p-4' }} />
           <CollapsibleTableCell
             summary={<Text className="!text-teal uppercase">Health {`&`} Community Sector</Text>}
             details={<>
@@ -451,7 +451,7 @@ const IndustrySectorSection = () => {
                 <ListItem>HLTFSE001 Follow basic food safety practices</ListItem>
               </ul>
             </>}
-            detailsClasses={{ root: 'p-4' }} />
+            detailsClasses={{ root: '!p-4' }} />
           <CollapsibleTableCell
             summary={<Text className="!text-teal uppercase">Food Processing Sector</Text>}
             details={<>
@@ -528,7 +528,7 @@ const WhatIsSection = () => {
                 <ListItem>develop safe food handling skills</ListItem>
               </ul>
             </>}
-            detailsClasses={{ root: 'p-4' }} />
+            detailsClasses={{ root: '!p-4' }} />
           <CollapsibleTableCell
             summary={<Text className="!text-teal uppercase">STATEMENT OF ATTAINMENT</Text>}
             details={<>
@@ -543,7 +543,7 @@ const WhatIsSection = () => {
               </ul>
               <Text className="mt-4">The training provided by AIFS is nationally recognised and accepted across Australia.</Text>
             </>}
-            detailsClasses={{ root: 'p-4' }} />
+            detailsClasses={{ root: '!p-4' }} />
           <CollapsibleTableCell
             summary={<Text className="!text-teal uppercase">NATIONALLY RECOGNISED TRAINING</Text>}
             details={<>
@@ -555,7 +555,7 @@ const WhatIsSection = () => {
                 <ListItem>is recommended by Health Inspectors</ListItem>
               </ul>
             </>}
-            detailsClasses={{ root: 'p-4' }} />
+            detailsClasses={{ root: '!p-4' }} />
         </CollapsibleCellGroup>
       </div>
     </div>

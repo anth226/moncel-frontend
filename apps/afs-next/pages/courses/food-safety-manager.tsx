@@ -143,8 +143,8 @@ const CourseInclusionsSection = () => {
       <Text className={styles["subtitle"]}>With AIFS, you get more than just a training course</Text>
     </div>
     <div className="w-full grid items-start grid-cols-1 md:grid-cols-3 gap-8">
-      <Accordion square disableGutters className="border border-mint shadow-none">
-        <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: 'p-0 m-0', content: 'p-0 m-0' }}>
+      <Accordion square disableGutters className="border border-mint !shadow-none featured">
+        <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0' }}>
           <ImageBannerCard
             title="ONLINE COURSE"
             description="The course is suitable for people who have a good understanding of food safety."
@@ -155,8 +155,8 @@ const CourseInclusionsSection = () => {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion square disableGutters className="border border-mint shadow-none">
-        <AccordionSummary id="food-handler-course-benefits-card-2" className="w-full m-0 p-0" classes={{ root: 'p-0 m-0', content: 'p-0 m-0' }}>
+      <Accordion square disableGutters className="border border-mint !shadow-none featured">
+        <AccordionSummary id="food-handler-course-benefits-card-2" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0' }}>
           <ImageBannerCard
             title="DISPLAY CERTIFICATE"
             description="Upon completion of the course, you will receive a downloadable certificate by email."
@@ -166,8 +166,8 @@ const CourseInclusionsSection = () => {
           <Text className="!text-teal">This is a great way to show customers that your food business is serious about food safety and cares about protecting their health.</Text>
         </AccordionDetails>
       </Accordion>
-      <Accordion square disableGutters className="border border-mint shadow-none">
-        <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: 'p-0 m-0', content: 'p-0 m-0' }}>
+      <Accordion square disableGutters className="border border-mint !shadow-none featured">
+        <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0' }}>
           <ImageBannerCard
             title="ACCESS TO RESOURCES"
             description="Access to hundreds of blogs and the latest news to help you continue your education."
@@ -281,7 +281,7 @@ const CourseOutlineSection = () => {
               </ul>
               <Text>{`At the end of each lesson, there is a multiple choice quiz. You must score 100% to move on to the next lesson. You have unlimited attempts to pass each quiz, so if you don't pass the first time, just try again.`}</Text>
             </>}
-            detailsClasses={{ root: 'p-4' }} />
+            detailsClasses={{ root: '!p-4' }} />
 
           <CollapsibleTableCell
             summary={<Text className="!text-teal uppercase">Technical Requirements</Text>}
@@ -295,14 +295,14 @@ const CourseOutlineSection = () => {
               <Text>To be able to open and print your downloadable certificate issued upon completion of the course, you will need to have a PDF reader installed on your computer. <NextLink href="https://get.adobe.com/reader/"><a target="_blank">Click here to get the latest version of Adobe PDF Reader.</a></NextLink></Text>
               <Text>AIFS courses work on most computers, laptops, tablets and mobile devices.</Text>
             </>}
-            detailsClasses={{ root: 'p-4' }} />
+            detailsClasses={{ root: '!p-4' }} />
           <CollapsibleTableCell
             summary={<Text className="!text-teal uppercase">COURSE PREVIEW</Text> }
             details={<>
               <Text>Click on the {`'Play'`} button below to watch a preview of the Food Safety Manager course.</Text>
               <div dangerouslySetInnerHTML={{__html: `<script src="https://fast.wistia.com/embed/medias/6fg1h2nf6l.jsonp" async></script><script src="https://fast.wistia.com/assets/external/E-v1.js" async></script><div class="wistia_responsive_padding" style="padding:75.1% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><div class="wistia_embed wistia_async_6fg1h2nf6l seo=false videoFoam=true" style="height:100%;position:relative;width:100%"><div class="wistia_swatch" style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;"><img src="https://fast.wistia.com/embed/medias/6fg1h2nf6l/swatch" style="filter:blur(5px);height:100%;object-fit:contain;width:100%;" alt="" aria-hidden="true" onload="this.parentNode.style.opacity=1;" /></div></div></div></div>`}} />
             </>}
-            detailsClasses={{ root: 'p-4' }} />
+            detailsClasses={{ root: '!p-4' }} />
         </CollapsibleCellGroup>
       </div>
     </div>
