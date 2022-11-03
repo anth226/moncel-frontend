@@ -52,7 +52,7 @@ const HeroSection = () => {
     <IntroBox imageSrc={HeroGraphic} alt="business-food-safety-hero-graphic">
       <Text>Finding time to understand complex food safety training requirements and laws can be hard when you’re busy running or setting up a small food business.</Text>
       <Text>At AIFS, we provide you and your staff with the training, support and tools you need to quickly:</Text>
-      <ul className={`${styles['checklist']}`}>
+      <ul className="checklist">
         <ListItem>comply with state and federal requirements</ListItem>
         <ListItem>protect your customers and livelihood</ListItem>
         <ListItem>attract more business through the door</ListItem>

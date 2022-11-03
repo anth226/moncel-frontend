@@ -51,7 +51,7 @@ interface FormInfoProps {
 const FormInfo = ({ header, body, formLinkRef, formLinkText }: FormInfoProps) => <div className="flex flex-col w-full gap-2">
   <Header3>{header}</Header3>
   <Text>{body}</Text>
-  <Link href={formLinkRef}>{formLinkText}</Link>
+  <Link href={formLinkRef} target="_blank">{formLinkText}</Link>
 </div>;
 
 const Main = () => {

@@ -115,7 +115,7 @@ const ProtectYourBusinessSection = () => {
         <ListItem>follow the Food Safety Program diligently</ListItem>
       </ul>
 
-      <Text>How to setup and maintain a Food Safety Program based on HACCP principles is explained in the <Link href="/haccp-programs/haccp-food-safety-plan-kit">AIFS HACCP Food Safety Plan Kit</Link>. The kit was designed to help food businesses create a Food Safety Program that is compliant and tailored to the needs of their business.</Text>
+      <Text>How to setup and maintain a Food Safety Program based on HACCP principles is explained in the <Link href="/haccp-food-safety-plan-kit">AIFS HACCP Food Safety Plan Kit</Link>. The kit was designed to help food businesses create a Food Safety Program that is compliant and tailored to the needs of their business.</Text>
     </IntroBox>
   </SectionContainer>;
 };

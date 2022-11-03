@@ -55,7 +55,7 @@ const HeroSection = () => {
     <IntroBox imageSrc={HeroGraphic} alt="business-food-safety-hero-graphic">
       <Text>At AIFS, we help busy food businesses by taking the complexity and confusion out of staff food safety training.</Text>
       <Text>As a Business Account client you can quickly and easily:</Text>
-      <ul className={`${styles['checklist']}`}>
+      <ul className="checklist">
         <ListItem>enrol multiple employees in courses</ListItem>
         <ListItem>get priority support</ListItem>
         <ListItem>opt for monthly invoicing</ListItem>

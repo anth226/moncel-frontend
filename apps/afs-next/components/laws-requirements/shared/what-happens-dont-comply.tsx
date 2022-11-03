@@ -7,6 +7,7 @@ interface WhatHappensDontComplyProps {
   p3?: string;
   p4?: string;
   p4_title?: string;
+  subtitle?: string;
 }
 
 interface CardProps {
@@ -87,14 +88,46 @@ const V2 = () => {
   )
 };
 
+const V3 = () => {
+  return (<>
+    <IconCard
+      imageSrc={"/icons/icon_stroke_green_closed_sign.svg"}
+      title="Suspended or cancelled licence"
+    >
+      <Text>For serious offences, food business licences may be suspended or cancelled. This effectively closes your food business and prevents further trading.</Text>
+    </IconCard>
+    <IconCard
+      imageSrc={"/icons/icon_stroke_green_invoice.svg"}
+      title="Significant fines"
+    >
+      <Text>Fines (penalty notices) may be issued for each offence committed. These often run into tens of thousands of dollars.</Text>
+    </IconCard>
+    <IconCard
+      imageSrc={"/icons/icon_stroke_green_judge.svg"}
+      title="Prosecution"
+    >
+      <Text>For serious breaches of legislation, food safety enforcement agencies may start prosecution proceedings against your food business.</Text>
+    </IconCard>
+    <IconCard
+      imageSrc={"/icons/icon_stroke_green_thumbsdown.svg"}
+      title="Brand & reputation damage"
+    >
+      <Text>If a serious food safety incident occurs and is widely reported in the media, your business could struggle to recover its reputation.</Text>
+    </IconCard>
+  </>
+  )
+};
+
 export const WhatHappensDontComply = (props: WhatHappensDontComplyProps) => {
   return <div className="col-span-3">
     <Header3 className="pb-4">What happens if I {`don't`} comply?</Header3>
     <div className={`${styles["laws-requirements"]} col-span-3`}>
       <div className="flex flex-col">
-        <Text className="pb-4">If a food business fails to meet these food safety training requirements, the consequences are serious.</Text>
+        { props.subtitle ? <Text className="pb-4">{ props.subtitle}</Text> : null }
         <div className="grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-x-12 gap-y-8">
-          { props.version == "V1" ? <V1 p3={props.p3} p4={props.p4} p4_title={props.p4_title}/> : <V2 /> }
+          { props.version == "V1" ? <V1 p3={props.p3} p4={props.p4} p4_title={props.p4_title}/> : null }
+          { props.version == "V2" ? <V2 /> : null }      
+          { props.version == "V3" ? <V3 />  : null }     
         </div>
       </div>
     </div>

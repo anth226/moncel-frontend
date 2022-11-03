@@ -60,7 +60,7 @@ const MenuItem = (props: Props) => {
                 <Column>
                     <Header5 className="text-emperor leading-6 text-base font-medium">By Role</Header5>
                     <Divider />
-                    <ul>
+                    <ul className="border-b border-mystic">
                         { BY_ROLE_LINKS.map((link, i) => <ListItem key={`nav-role-link-${i}`}><Link {...link}/></ListItem>)}
                     </ul>
                 </Column>
@@ -68,7 +68,7 @@ const MenuItem = (props: Props) => {
                 <Column>
                     <Header5 className="text-emperor leading-6 text-base font-medium">By Food Sector</Header5>
                     <Divider />
-                    <ul>
+                    <ul className="border-b border-mystic">
                         { BY_SECTOR_LINKS.map((link, i) => <ListItem key={`nav-sector-link-${i}`}><Link {...link}/></ListItem>)}
                     </ul>
                 </Column>
@@ -76,7 +76,7 @@ const MenuItem = (props: Props) => {
                 <Column>
                     <Header5 className="text-emperor leading-6 text-base font-medium">By Location</Header5>
                     <Divider />
-                    <ul>
+                    <ul className="border-b border-mystic">
                         { BY_LOCATION_LINKS.map((link, i) => <ListItem key={`nav-location-link-${i}`}><Link {...link}/></ListItem>)}
                     </ul>
                 </Column>

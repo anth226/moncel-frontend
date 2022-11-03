@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
-import { Text } from 'components/core/typography';
+import { Header5 } from 'components/core/typography';
+import NextImage, { StaticImageData } from 'next/image';
 
 interface ITab {
     index: number;
@@ -12,14 +13,14 @@ const Tab = ({ children, index, onClick, activeTab }: ITab) => {
         onClick(index);
     };
     const isActive = (activeTab == index);
-    return <div className={`z-10 flex flex-col items-center justify-center cursor-pointer text-teal px-4 py-3 text-center hover:border-teal ${isActive ? "bg-alabaster border-t border-x border-teal" : "bg-white border border-t-mint border-x-mint border-b-teal"}`} onClick={_handleClick}>
+    return <div className={`flex flex-col items-center justify-center cursor-pointer text-teal hover:bg-haze active:bg-mint active:text-teal border-teal border p-6 text-center`}  onClick={_handleClick}>
         {children}
     </div>;
 };
 
 export interface TabButton {
     title: string;
-    code?: string;
+    icon: StaticImageData;
 }
 
 export interface ITabs {
@@ -31,11 +32,11 @@ export interface ITabs {
   
 const Tabs = (props: ITabs) => {
     return <div className="w-full grid grid-flow-row">
-        <div className="flex gap-1">            
+        <div className="grid grid-flow-row grid-cols-2 md:grid-cols-4 gap-6">            
             {props.tabNames.map((content, i) => {
                 return <Tab index={i} onClick={props.handleTabClick} activeTab={props.activeTab} key={`${i}-tab`}> 
-                    <Text className="hidden md:block uppercase !text-teal !font-semibold text-sm mb-0">{content.title}</Text>
-                    <Text className="md:hidden uppercase !text-teal !font-semibold text-sm mb-0">{content.code}</Text>
+                    <Header5 className="text-[18px] font-semibold mb-4">{content.title}</Header5>
+                    <NextImage src={content.icon} width={75} height={75} />
                 </Tab>;
             })}
 

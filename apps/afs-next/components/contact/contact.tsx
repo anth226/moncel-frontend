@@ -5,7 +5,7 @@ import IconHeadphones from 'public/icons/icon_headphones.svg';
 import IconMyself from 'public/icons/icon_myself.svg';
 import IconPeople from 'public/icons/icon_people.svg';
 
-import Tabs from 'components/core/Tabs';
+import Tabs from 'components/core/ContactTabs';
 import { Section } from 'components/core/Section';
 import { FormspreeSupportForm, HubspotContactForm }from 'components/core/Forms';
 
