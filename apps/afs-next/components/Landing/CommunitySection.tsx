@@ -52,7 +52,7 @@ const CommunitySection = () => {
                     <div className="float-right ml-4 block">
                         <NextImage src="/logo_ozharvest.svg" width="75" height="35" layout="fixed" alt="Oz Harvest"/>
                     </div>
-                    <Text>OzHarvestFor every Food Safety Supervisor course enrolment, {`we'll`} help to feed two people in need in partnership with OzHarvest. For every Food Handler enrolment, {`we'll`} help to feed one person.</Text>
+                    <Text>For every Food Safety Supervisor course enrolment, {`we'll`} help to feed two people in need in partnership with OzHarvest. For every Food Handler enrolment, {`we'll`} help to feed one person.</Text>
                     <Text>Our team work closely with OzHarvest and volunteer regularly to help collect, prepare and distribute food to vulnerable people in our community.</Text>
                     <Text className="italic"><sub>Photo Credit: OzHarvest CEO CookOff 2016</sub></Text>
                 </div>
