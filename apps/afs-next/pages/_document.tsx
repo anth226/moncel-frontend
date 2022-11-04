@@ -1,11 +1,17 @@
-import { Html, Head, Main, NextScript } from 'next/document';
 
-export default function Document() {
+// eslint-disable-next-line
+const newrelic = require("newrelic");
+
+import Document, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from 'next/document';
+
+const _Document = (props: DocumentInitialProps & { browserTimingHeader: string}) => {
+
+  
   return (
     <Html>
       <Head>
         <link href="https://use.typekit.net/ssh4fpp.css" rel="stylesheet" />
-        {/* tracking */}
+        <script type="text/javascript" src="js/newrelic.js" />
       </Head>
       <body>
         <Main />
@@ -14,3 +20,5 @@ export default function Document() {
     </Html>
   );
 }
+
+export default _Document;
