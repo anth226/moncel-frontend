@@ -23,6 +23,19 @@ yarn build
 
 When installing a yarn dependency for a specific app, please run `yarn add` and update the `package.json` within the directory for that app, and include `yarn.lock` from the root of the monorepo when making PRs. 
 
+### Deploy an image to DO container registry
+
+```
+docker tag afs-next registry.digitalocean.com/moncel-frontend-deploys/afs-next
+```
+
+(build the afs-next from the Dockerfile in root)
+
+`doctl` quickstart 
+https://docs.digitalocean.com/products/container-registry/quickstart/
+
+Container registry instructions: https://docs.digitalocean.com/products/container-registry/quickstart/
+
 ## Useful Links
 
 Learn more about the power of Turborepo:
