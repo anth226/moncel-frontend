@@ -7,10 +7,13 @@
     @apply text-2xl font-bold mb-2 text-teal;
   }
   label {
-    @apply text-[14px] mb-2 block;
+    @apply text-[14px] mb-0 block font-medium;
   }
   label[placeholder="Enter your Industry Subsector"] {
-    @apply mt-4;
+    @apply mt-2 mb-0;
+  }
+  legend {
+    @apply text-[12px] text-teal mb-1;
   }
   input[type="text"],
   input[type="email"],

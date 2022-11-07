@@ -28,7 +28,7 @@ const ContactSection = () => {
                 <div className={`flex flex-col`}>
                     {(activeTab === 0) ? <HubspotContactForm portalId="21498581" formId="1e766965-8443-4c11-93e3-d91c17543aa8" hubId="ind" className="p-0 md:p-6 border border-teal" title="Enrolling Yourself" /> : null}
 
-                    {(activeTab === 1) ? <HubspotContactForm portalId="21498581" formId="c19c64ca-a0d3-4915-859a-a5a210294127" hubId="bus" className="p-0 md:p-6 border border-teal" title="Enrolling Staff" /> : null}
+                    {(activeTab === 1) ? <HubspotContactForm portalId="21498581" formId="4be94404-2b06-4e8b-af06-dd999855a66e" hubId="bus" className="p-0 md:p-6 border border-teal" title="Enrolling Staff" /> : null}
 
                     {(activeTab === 2) ? <FormspreeSupportForm className="p-0 md:p-6 border border-teal" title="Student Support"/> : null}
 

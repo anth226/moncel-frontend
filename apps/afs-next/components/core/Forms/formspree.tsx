@@ -34,6 +34,7 @@ const FormspreeSupportForm = (props: FormInfo) => {
                         <label htmlFor="firstname"
                         >First Name<span className="required">*</span></label
                         >
+                        <legend>Please enter your first name</legend>
                         <input
                             required
                             name="firstname"
@@ -48,6 +49,7 @@ const FormspreeSupportForm = (props: FormInfo) => {
                         <label htmlFor="lastname"
                         >Last Name<span className="required">*</span></label
                         >
+                        <legend>Please enter your last name</legend>
                         <input
                             required
                             name="lastname"
@@ -65,6 +67,7 @@ const FormspreeSupportForm = (props: FormInfo) => {
                         <label htmlFor="email"
                         >Email Address<span className="required">*</span></label
                         >
+                        <legend>Please enter your work email address</legend>
                         <input
                             required
                             name="email"
@@ -79,6 +82,7 @@ const FormspreeSupportForm = (props: FormInfo) => {
                         <label htmlFor="phone"
                         >Phone Number<span className="required">*</span></label
                         >
+                        <legend>Please enter your mobile phone number</legend>
                         <input
                             required
                             type="text"
@@ -94,6 +98,7 @@ const FormspreeSupportForm = (props: FormInfo) => {
 
                 <div className="grid grid-cols-1 mb-4">
                     <label>Do you have a User ID? <span className="required">*</span></label>
+                    <legend>Your User ID is the 10 character identifier that you use to login to the website. It is provided to you in your welcome email.</legend>
                     <div className="grid grid-cols-1">
                         <div className="flex">
                             <input type="radio" id="yes" name="user-account" value="yes" className="mr-2 h-6" checked={student === 'yes'} onChange={handleChange} required/>
@@ -104,7 +109,6 @@ const FormspreeSupportForm = (props: FormInfo) => {
                             <label htmlFor="no">No, I {`don't`} have a User ID</label>
                         </div>
                     </div>
-                    <span className="text-teal">Your User ID is the 10 character identifier that you use to login to the website. It is provided to you in your welcome email.</span>
                 </div>
 
                 {(student == "yes") && (<div> <div className="grid grid-cols-1 mb-4" id="user-student">
@@ -114,6 +118,7 @@ const FormspreeSupportForm = (props: FormInfo) => {
                 
                 <div className="grid grid-cols-1 mb-4">
                     <label htmlFor="type-of-problem">Type of Problem <span className="required">*</span></label>
+                    <legend>Please select a reason for this support enquiry</legend>
                     <select required className="form-control" name="type-of-problem" id="form-enquiry-type-of-problem" defaultValue="">
                         <option disabled value="" > -- Choose Option -- </option>
                         <option value="CASCRS">Course / Assessment / Quiz Issue</option>
@@ -126,13 +131,14 @@ const FormspreeSupportForm = (props: FormInfo) => {
                 <div className="grid grid-cols-1">
                     <div className="mb-4">
                         <label htmlFor="subject">Subject<span className="required">*</span></label>
+                        <legend>In just a few words, describe your enquiry</legend>
                         <input
                             required
                             name="subject"
                             type="text"
                             className="form-control"
                             id="form-enquiry-subject"
-                            placeholder="In just a few words, describe your enquiry."
+                            placeholder="e.g. I can't log into my account"
                             maxLength={255}
                         />
                     </div>
@@ -141,6 +147,7 @@ const FormspreeSupportForm = (props: FormInfo) => {
                 <div className="grid grid-cols-1">
                     <div className="mb-4">
                         <label htmlFor="message">Description<span className="required">*</span></label>
+                        <legend>Provide any additional comments regarding your enquiry.</legend>
                         <textarea
                             required
                             name="message"
@@ -148,7 +155,7 @@ const FormspreeSupportForm = (props: FormInfo) => {
                             id="form-enquiry-message"
                             rows={10}
                             cols={50}
-                            placeholder="Provide any additional comments regarding your enquiry."
+                            placeholder="e.g. These are the steps I've taken..."
                             maxLength={32000}
                         ></textarea>
                     </div>
