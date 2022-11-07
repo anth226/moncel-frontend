@@ -11,7 +11,7 @@ const _Document = (props: DocumentInitialProps & { browserTimingHeader: string})
     <Html>
       <Head>
         <link href="https://use.typekit.net/ssh4fpp.css" rel="stylesheet" />
-        <script type="text/javascript" src="js/newrelic.js" />
+        <script type="text/javascript" src="js/newrelic.js" async />
       </Head>
       <body>
         <Main />
