@@ -9,12 +9,12 @@ import ResourceMenuGraphic from 'public/afs-menu-resources.webp';
 
 const ID: NavMenuIdentifier = "resources";
 const RESOURCE_LINKS = [
-    { text: "Guides", href: "/guides" },
-    { text: "Posters", href: "/posters" },
-    { text: "Templates", href: "/templates" },
-    { text: "Fact Sheets", href: "/fact-sheets" },
-    { text: "Videos", href: "/videos" },
-    { text: "Food Recalls", href: "/food-recalls" },
+    { text: "Guides", href: "https://resources.foodsafety.com.au/guides" },
+    { text: "Posters", href: "https://resources.foodsafety.com.au/posters" },
+    { text: "Templates", href: "https://resources.foodsafety.com.au/templates" },
+    { text: "Fact Sheets", href: "https://resources.foodsafety.com.au/fact-sheets" },
+    { text: "Videos", href: "https://resources.foodsafety.com.au/videos" },
+    { text: "Food Recalls", href: "https://resources.foodsafety.com.au/food-recalls" },
     { text: "Food Safety Blog", href: "https://blog.foodsafety.com.au/blog" },
     { text: "Food Safety News", href: "https://blog.foodsafety.com.au/news" },
 ];
@@ -71,7 +71,7 @@ const MenuItem = (props: Props) => {
 
 const Column = ({ children }: { children: ReactNode, className?: string }) => <div className={`${styles["quicklist"]} flex flex-col`}>{ children }</div>
 const Divider = () => <div className="w-full border-b-[1px] border-teal my-4" />;
-const Link = ({ text, href }: { text: string, href: string }) => <a className="link text-teal no-underline hover:underline font-medium" href={href}>{text}</a>
+const Link = ({ text, href }: { text: string, href: string }) => <a className="link text-teal no-underline hover:underline font-medium" href={href} target="_blank">{text}</a>
 const ListItem = ({ children }: { children: ReactNode }) => <li className="p-0 m-0 border-mystic border-y py-2 text-sm -mb-[1px]">{ children }</li>
 
 export default MenuItem;
