@@ -23,7 +23,7 @@ const PRODUCT_LINKS: Array<Link> = [
 
 const ABOUT_US_LINKS: Array<Link> = [
     { text: "Our Mission", href: "/about/our-mission" },
-    { text: "Media Centre", href: "/media" },
+    { text: "Media Centre", href: "https://blog.foodsafety.com.au/media" },
     { text: "AIFS in the Community", href: "/about/community" },
     { text: "Employment", href: "/about/employment" },
     { text: "Contact Us", href: "/contact" },

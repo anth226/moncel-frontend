@@ -5,7 +5,7 @@ export const aboutNavigationData: NavigationProps = {
     links: [
       { text:'Overview', href: '/about' },
       { text:'Our Mission', href:'/about/our-mission' },
-      { text:'Media Centre', href:'/about/media' },
+      { text:'Media Centre', href:'https://blog.foodsafety.com.au/media' },
       { text:'AIFS in the Community', href:'/about/community' },
       { text:'Employment', href:'/about/employment' },
       { text:'Contact Us', href:'/contact' },
@@ -30,7 +30,7 @@ export const aboutOverviewData: GridTemplateProps = {
     title: "Media Centre",
     description: "Writing an article or need comments on a food safety story? We'd love to talk with you and provide the information you need.",
     imageSrc: "/about/photo_media.jpg",
-    href: "/media",
+    href: "https://blog.foodsafety.com.au/media",
   },
   {
     title: "In The Community",
