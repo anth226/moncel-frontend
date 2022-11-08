@@ -38,7 +38,7 @@ const Page = () => {
 };
 
 const Section1 = () => {
-  return <FoodSafetyLeg title="NSW food safety legislation" pt2="NSW government food safety laws" imageSrc="/laws-requirements/location/photo_nsw.jpg" alt="laws-requirements-for-employees-graphic" />;
+  return <FoodSafetyLeg title="NSW food safety legislation" pt2="NSW government food safety laws" imageSrc="/laws-requirements/location/photo_nsw.jpg" alt="NSW food safety legislation" />;
 };
 
 const Section2 = () => {

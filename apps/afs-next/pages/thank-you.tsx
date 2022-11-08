@@ -43,7 +43,7 @@ const SectionContainer = ({ id, children, className }: SectionProps) => <div cla
 
 const HeroSection = () => {
   return <SectionContainer className="col-span-3" id="students-hero-section">
-    <IntroBox imageSrc={HeroGraphic} alt="Thank you for purchasing 12 months of AIFS Membership.">
+    <IntroBox imageSrc={HeroGraphic} alt="Your enquiry has been received">
       <Text>Your enquiry has been received and a customer support representative will be in touch with you shortly.</Text>
       <Text>In the meantime why not take a look at our <NextLink href="/faq">frequently asked questions</NextLink>, checkout our <NextLink href="https://blog.foodsafety.com.au/blog"><a target="_blank">blog</a></NextLink>, <NextLink href="https://blog.foodsafety.com.au/news"><a target="_blank">news</a></NextLink> or return to the <NextLink href="/">homepage</NextLink>.</Text>
     </IntroBox>

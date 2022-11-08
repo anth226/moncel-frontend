@@ -41,7 +41,7 @@ const Page = () => {
 const Section1 = () => {
   return <div className="col-span-3">
     <Header3 className="pb-4">Food safety compliance is crucial</Header3>
-    <IntroBox imageSrc="/laws-requirements/role/photo_trainingmanagers.jpg" alt="laws-requirements-for-employees-graphic" >
+    <IntroBox imageSrc="/laws-requirements/role/photo_trainingmanagers.jpg" alt="Food safety compliance is crucial" >
     <Text>Food safety training can pose many challenges to large organisations:</Text>
     <div className={`${styles["laws-requirements"]} col-span-3`}>
       <div className="flex flex-col">

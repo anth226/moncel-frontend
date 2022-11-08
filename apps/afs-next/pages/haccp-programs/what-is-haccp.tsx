@@ -48,7 +48,7 @@ const Page = () => {
 
 const Section1 = () => {
   return <SectionContainer id="section-haccp-hero">
-    <IntroBox imageSrc={HaccpProgramGraphic}  alt="haccp-program-graphic">
+    <IntroBox imageSrc={HaccpProgramGraphic}  alt="What is HACCP?">
       <Text>{`‘HACCP’ stands for Hazard Analysis Critical Control Points, and is a food safety and risk assessment plan that was initially developed in the 1960s by NASA and a group of food safety specialists. These two groups came together to solve two critical problems facing NASA's crewed space missions: crumbs and disease-producing microorganisms (e.g. bacteria, viruses) or toxins.`}</Text>
       <Text>{`Today, HACCP principles form the basis of Food Safety Programs that are accepted worldwide. HACCP principles can be applied to processes throughout every stage of the food supply chain, including production, preparation, packaging and distribution, and are used to manage food safety across many different types of food businesses.`}</Text>
     </IntroBox>
@@ -110,7 +110,7 @@ const Section2 = () => {
 const WhatIsSection = () => {
     return <SectionContainer id="haccp-legal-requirement">
       <Header3 className="pb-4">A HACCP Food Safety Program is a legal requirement</Header3>
-      <IntroBox imageSrc={WhatIsHaccpGraphic} alt="food-handler-course-hero-image" layout={false}>
+      <IntroBox imageSrc={WhatIsHaccpGraphic} alt="A HACCP Food Safety Program is a legal requirement" layout={false}>
           <Text>For most food businesses in Australia, having a Food Safety Program based on the 7 principles of HACCP is a legal requirement. <a href="https://www.legislation.gov.au/Details/F2011C00551" target="_blank" rel="noreferrer">Standard 3.2.1 of the Food Standards Code</a> (‘the Code’) enables:</Text>
           <Text className="italic">“States and Territories to require food businesses to implement a food safety program based upon the HACCP concepts. The food safety program is to be implemented and reviewed by the food business, and is subject to periodic audit by a suitably qualified food safety auditor.”</Text>
           <Text>{`It's important that food businesses have a Food Safety Plan as part of their Food Safety Program. This includes documented evidence that all food preparation steps and activities have been identified. When an Environmental Health Officer (EHO) audits your food business, they will review your Food Safety Program and its records.`}</Text>
@@ -121,7 +121,7 @@ const WhatIsSection = () => {
 const ProtectSection = () => {
     return <SectionContainer id="haccp-protect-customers">
       <Header3 className="pb-4">Protect your customers and your brand</Header3>
-      <IntroBox imageSrc={ProtectGraphic} alt="food-handler-course-hero-image">
+      <IntroBox imageSrc={ProtectGraphic} alt="Protect your customers and your brand">
               <Text>With food poisoning incidents making front page news and horror stories exploding across social media, food safety is becoming increasingly more important. Not only is a HACCP Food Safety Program a legal requirement, but it can also protect your business from being the cause of a food-borne illness outbreak or causing severe allergic reactions from food allergens.</Text>
               <Text>Protect your customers and your business from a food safety incident and ensure your Food Safety Program is compliant with the <a href="/haccp-food-safety-plan-kit">AIFS HACCP Food Safety Plan Kit.</a></Text>
       </IntroBox>

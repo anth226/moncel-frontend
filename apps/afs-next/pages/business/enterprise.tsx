@@ -54,7 +54,7 @@ const SectionContainer = ({ id, children, className }: SectionProps) => <div cla
 const HeroSection = () => {
   return <SectionContainer className="col-span-3" id="hero-section">
     <Header3 className="pb-4">You {`can't`} afford to risk food safety</Header3>
-    <IntroBox imageSrc={HeroGraphic} alt="business-food-safety-hero-graphic" >
+    <IntroBox imageSrc={HeroGraphic} alt="You can't afford to risk food safety" >
       <Text>A food safety incident can have a crippling impact on a business. Just one employee not washing their hands properly can poison thousands of customers.</Text>
       <Text>With an expert team of food safety professionals, the Australian Institute of Food Safety can deliver:</Text>
       <ul className="checklist">

@@ -30,7 +30,7 @@ const LeftColLayout = (props: CarouselSlideProps) => {
       <Header1 className={`${props.colourPrimaryClass || ""} drop-shadow-md text-[27px]`}>{props.title}</Header1>
       {(props.description instanceof Array) ? props.description.map((line, i) => <Text key={`${props.title}-slide-description-${i}`} className={`${props.colourSecondaryClass || ""} drop-shadow-md`}>{line}</Text>) : <Text className={`!text-lg lg:!text-xl ${props.colourSecondaryClass || "!text-white"}`}>{props.description}</Text>}
       <Link href={props.link}><a className={`${props.colourPrimaryClass || "!text-white"} lg:text-2xl font-bold link drop-shadow-md no-underline hover:underline`}>{props.linkText || "Learn more"}</a></Link>
-      {props.images ? <div className="hidden xl:flex"><NextImage src={`${props.images}`} width={444} height={145} layout="fixed" /></div> : null}
+      {props.images ? <div className="hidden xl:flex"><NextImage src={`${props.images}`} width={444} height={145} layout="fixed" alt={`${props.title}`} /></div> : null}
     </div>
     <div className="flex mr-28">
     </div>

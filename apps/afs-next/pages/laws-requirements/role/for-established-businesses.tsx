@@ -40,7 +40,7 @@ const Page = () => {
 const Section1 = () => {
   return <div className="col-span-3">
     <Header3 className="pb-4">Comply with all laws. All the time.</Header3>
-    <IntroBox imageSrc="/laws-requirements/role/photo_establishedbusiness.jpg" alt="laws-requirements-for-employees-graphic" className={`${styles["laws-requirements"]}`}>
+    <IntroBox imageSrc="/laws-requirements/role/photo_establishedbusiness.jpg" alt="Comply with all laws" className={`${styles["laws-requirements"]}`}>
     <Text>If you manage an established food business,{`you've`} probably got a food safety plan in place and have your most senior staff trained in food safety.</Text>
         <Text>But as things change you need to be sure {`you're`} always meeting your state and federal compliance requirements. For example:</Text>
         <ul className="mb-4">

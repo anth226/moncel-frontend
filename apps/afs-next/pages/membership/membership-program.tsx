@@ -91,7 +91,7 @@ const SectionContainer = ({ id, children, className }: SectionProps) => <div cla
 const HeroSection = () => {
   return <SectionContainer className="col-span-3" id="section-membership-program-hero">
     <Header3 className="pb-4">Membership benefits with invaluable returns.</Header3>
-    <IntroBox imageSrc={HeroGraphic} alt="haccp-program-graphic">
+    <IntroBox imageSrc={HeroGraphic} alt="Membership benefits with invaluable returns">
       <Text>{`Ensure your business keeps food safety 'front of mind' with AIFS Membership for you and your employees.`}</Text>
       <Text>As an AIFS Member, you (and the business you work with) will be recognised by Health Inspectors and rewarded by customers for your professional approach to food safety.</Text>
       <Text>A 12-month Membership can be purchased for only $99.95/year. Or get it for free with any AIFS nationally recognised course.</Text>

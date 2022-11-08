@@ -100,7 +100,7 @@ const SectionContainer = ({ id, children, className }: SectionProps) => <div cla
 
 const HeroSection = () => {
   return <SectionContainer className="col-span-3" id="section-hero">
-    <IntroBox imageSrc="/courses/food-manager/fsm.jpg" alt="food-manager-hero-graphic">
+    <IntroBox imageSrc="/courses/food-manager/fsm.jpg" alt="Food Safety Manager Training Course and Certification">
       <Text>This course is designed to help you understand everything you need to know about managing food safety in a food business and keeping your customers safe from food safety hazards.</Text>
       <Text>Learn how to deal with food-borne illness and allergy incidents, how to design and organise workflow to maximise food safety as well as advanced food handling and preparation skills. </Text>
     </IntroBox>

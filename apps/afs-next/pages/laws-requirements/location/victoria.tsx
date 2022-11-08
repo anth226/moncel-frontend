@@ -37,7 +37,7 @@ const Page = () => {
 };
 
 const Section1 = () => {
-  return <FoodSafetyLeg title="VIC food safety legislation" pt2="VIC government food safety laws" imageSrc="/laws-requirements/location/photo_vic.jpg" alt="laws-requirements-for-employees-graphic" />;
+  return <FoodSafetyLeg title="VIC food safety legislation" pt2="VIC government food safety laws" imageSrc="/laws-requirements/location/photo_vic.jpg" alt="VIC food safety legislation" />;
 };
 
 const Section2 = () => {

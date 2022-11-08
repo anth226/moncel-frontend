@@ -40,7 +40,7 @@ const Section1 = () => {
   return <div className="col-span-3">
     <Header3 className="pb-4">Food safety training for retail</Header3>
     <div className={`${styles["laws-requirements"]} col-span-3`}>
-      <IntroBox imageSrc="/laws-requirements/food-sectors/photo_retail.jpg" alt="laws-requirements-for-employees-graphic" className={`${styles["laws-requirements"]}`}>
+      <IntroBox imageSrc="/laws-requirements/food-sectors/photo_retail.jpg" alt="Food safety training for retail" className={`${styles["laws-requirements"]}`}>
         <Text>Whether you run a market stall or supermarket, you and your employees need the right training to meet food safety laws.</Text>
         <Text>A retail business is any business where food is sold to customers (usually to be consumed elsewhere), including:</Text>
         <ul className="!mb-0">

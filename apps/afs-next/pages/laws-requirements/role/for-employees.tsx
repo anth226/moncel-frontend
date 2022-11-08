@@ -40,7 +40,7 @@ const Page = () => {
 const Section1 = () => {
   return <div className="col-span-3">
     <Header3 className="pb-4">Enhance your skills. Keep customers safe.</Header3>
-    <IntroBox imageSrc="/laws-requirements/role/photo_employees.jpg" alt="laws-requirements-for-employees-graphic" className={`${styles["laws-requirements"]}`}>
+    <IntroBox imageSrc="/laws-requirements/role/photo_employees.jpg" alt="Enhance your skills" className={`${styles["laws-requirements"]}`}>
         <Text>Food safety training is crucial for two main reasons:</Text>
         <ol>
           <ListItem>It enables you to meet your legal requirements</ListItem>

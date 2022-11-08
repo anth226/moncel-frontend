@@ -61,7 +61,7 @@ const Page = () => {
 
 const Section1 = () => {
   return <SectionContainer id="section-haccp-hero">
-    <IntroBox imageSrc={HaccpProgramGraphic} alt="haccp-program-graphic" >
+    <IntroBox imageSrc={HaccpProgramGraphic} alt="HACCP Food Safety Plan Kit" >
       <Text>With the right Food Safety Program, you can take control of the food safety risks in your business.</Text>
       <Text>{`If you need to create a Food Safety Plan (an essential part of your Food Safety Program) but don’t know where to start, the AIFS HACCP Food Safety Plan Kit is exactly what you need.`}</Text>
       <ul>
@@ -123,7 +123,7 @@ const WhatIsSection = () => {
       <Header3>{`What's in the kit?`}</Header3>
       <Header4 className="text-emperor">Get everything you need to build a compliant Food Safety Plan</Header4>
     </div>
-    <IntroBox imageSrc={WhatsInKit} alt="food-handler-course-hero-image">
+    <IntroBox imageSrc={WhatsInKit} alt="What's in the kit?">
       <Text className="">By law, most food businesses in Australia are required to have a Food Safety Plan as part of their Food Safety Program. The AIFS HACCP Food Safety Plan Kit comes with all the tools you need to develop a compliant Food Safety Plan with ease.</Text>
       <Text>{`It covers all the steps and principles of HACCP and provides step-by-step instructions on how to complete your Food Safety Plan. You’ll get:`}</Text>
       <ul className={`mb-4 checklist`}>

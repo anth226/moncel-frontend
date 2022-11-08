@@ -44,7 +44,7 @@ const Page = () => {
 };
 
 const Section1 = () => {
-  return <FoodSafetyLeg imageSrc="/laws-requirements/location/photo_australia.jpg" alt="laws-requirements-for-employees-graphic" />;
+  return <FoodSafetyLeg imageSrc="/laws-requirements/location/photo_australia.jpg" alt="Food Safety Laws & Legislation SA / NT / WA / TAS | AIFS" />;
 };
 
 const Section2 = () => {

@@ -57,7 +57,7 @@ const SectionContainer = ({ id, children, className }: SectionProps) => <div cla
 const HeroSection = () => {
   return <SectionContainer className="col-span-3" id="students-hero-section">
     <Header3 className="pb-4">Helping Australians in need</Header3>
-    <IntroBox imageSrc={HeroGraphic} alt="students-food-card-hero-graphic">
+    <IntroBox imageSrc={HeroGraphic} alt="Helping Australians in need">
       <Text>There are a number of food-related issues in Australia that need addressing:</Text>
       <ul className="mb-4">
         <ListItem>1 in 5 Australians suffer food-borne illness each year</ListItem>
@@ -74,7 +74,7 @@ const HeroSection = () => {
 const SharingSection = () => {
   return <div className="col-span-3" id="section-2">
     <Header3 className="pb-4">Sharing public health information and tools</Header3>
-    <IntroBox imageSrc={ResourcesGraphic} alt="students-food-card-hero-graphic" layout={false}>
+    <IntroBox imageSrc={ResourcesGraphic} alt="Sharing public health information and tools" layout={false}>
       <Text>Our mission is to reduce food-borne illness within Australia by educating, advocating and promoting food safety.</Text>
       <Text>We believe that food safety training and education is key.</Text>
       <Text>{`That's`} why {`we're`} always producing and releasing how-to guides, posters, templates, videos, webinars and articles free of charge to food businesses and the general public.</Text>
@@ -85,7 +85,7 @@ const SharingSection = () => {
 const OzSection = () => {
   return <div className="col-span-3" id="section-2">
     <Header3 className="pb-4">Helping to feed the vulnerable</Header3>
-    <IntroBox imageSrc={MealsGraphic} alt="students-food-card-hero-graphic">
+    <IntroBox imageSrc={MealsGraphic} alt="Helping to feed the vulnerable">
       <Text>We work closely with OzHarvest, a food rescue charity that collects quality excess food from food businesses and delivers it, direct and free of charge, to hundreds of charities.</Text>
       <Text>OzHarvest relies on donations to fund its operations — and {`that's`} where AIFS helps.</Text>
       <Text>For every student who enrols in a <NextLink href="/courses/food-safety-supervisor">Food Safety Supervisor</NextLink> course with AIFS, we donate enough funds to feed two people in need.</Text>
@@ -97,7 +97,7 @@ const OzSection = () => {
 const VolunteerSection = () => {
   return <div className="col-span-3" id="section-2">
     <Header3 className="pb-4">Volunteering to help the less fortunate</Header3>
-    <IntroBox imageSrc={VolGraphic} alt="students-food-card-hero-graphic" layout={false}>
+    <IntroBox imageSrc={VolGraphic} alt="Volunteering to help the less fortunate" layout={false}>
       <Text>Through our association with OzHarvest, the AIFS team volunteers regularly to help the less fortunate.</Text>
       <Text>Some of the activities {`we've`} been involved in include:</Text>
       <ul>
@@ -112,7 +112,7 @@ const VolunteerSection = () => {
 const AwarenessSection = () => {
   return <SectionContainer className="col-span-3" id="students-hero-section">
     <Header3 className="pb-4">Raising public awareness about food safety</Header3>
-    <IntroBox imageSrc={MediaGraphic} alt="students-food-card-hero-graphic">
+    <IntroBox imageSrc={MediaGraphic} alt="Raising public awareness about food safety">
       <Text>Food-borne illness is not often discussed by the public or reported in the media — until a scandal happens.</Text>
       <Text>Our goal is to make food safety a topic that food service workers and consumers think about before incidents occur.</Text>
       <Text>The AIFS team raises public awareness through:</Text>

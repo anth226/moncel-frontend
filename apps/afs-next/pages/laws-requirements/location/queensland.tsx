@@ -37,7 +37,7 @@ const Page = () => {
 };
 
 const Section1 = () => {
-  return <FoodSafetyLeg title="QLD food safety legislation" pt2="QLD government food safety laws" imageSrc="/laws-requirements/location/photo_qld.jpg" alt="laws-requirements-for-employees-graphic" />;
+  return <FoodSafetyLeg title="QLD food safety legislation" pt2="QLD government food safety laws" imageSrc="/laws-requirements/location/photo_qld.jpg" alt="QLD food safety legislation" />;
 };
 
 const Section2 = () => {

@@ -57,7 +57,7 @@ const SectionContainer = ({ id, children, className }: SectionProps) => <div cla
 const HeroSection = () => {
   return <SectionContainer className="col-span-3" id="students-hero-section">
     <Header3 className="pb-4">{`Show customers you're serious about food safety`}</Header3>
-    <IntroBox imageSrc={HeroGraphic} alt="students-food-card-hero-graphic">
+    <IntroBox imageSrc={HeroGraphic} alt="Show customers you're serious about food safety">
       <Text>{`When you complete AIFS Food Safety Supervisor training you'll receive a Food Safety Display Certificate to display at work.`}</Text>
       <Text>The Display Certificate:</Text>
       <ul className="checklist">

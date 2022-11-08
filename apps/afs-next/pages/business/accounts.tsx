@@ -52,7 +52,7 @@ const SectionContainer = ({ id, children, className }: SectionProps) => <div cla
 const HeroSection = () => {
   return <SectionContainer className="col-span-3" id="hero-section">
     <Header3 className="pb-4">Manage your food safety training with ease</Header3>
-    <IntroBox imageSrc={HeroGraphic} alt="business-food-safety-hero-graphic">
+    <IntroBox imageSrc={HeroGraphic} alt="Manage your food safety training with ease">
       <Text>At AIFS, we help busy food businesses by taking the complexity and confusion out of staff food safety training.</Text>
       <Text>As a Business Account client you can quickly and easily:</Text>
       <ul className="checklist">
