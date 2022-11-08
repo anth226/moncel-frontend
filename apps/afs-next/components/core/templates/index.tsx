@@ -1,4 +1,4 @@
-import { ReactNode, Children, cloneElement, isValidElement, useState, MouseEvent } from 'react';
+import { ReactNode, Children, cloneElement, isValidElement, useState, MutableRef } from 'react';
 import NextImage, { StaticImageData } from 'next/image';
 import NextLink from 'next/link';
 import Accordion, { AccordionProps } from '@mui/material/Accordion';
@@ -7,7 +7,11 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 
 import { Header3, Text } from 'components/core/typography';
 
-export const Divider = () => <div className="border-b-[1px] border-alto col-span-3" />;
+interface DividerProps {
+  _ref?: MutableRef<HTMLElement | null>,
+}
+
+export const Divider = ({ _ref }: DividerProps) => <div className="border-b-[1px] border-alto col-span-3" ref={_ref} />;
 export const ListItem = ({ children }: { children?: ReactNode }) => <li className="mb-2 last:mb-0">{ children }</li>;
 
 interface IconCardProps {

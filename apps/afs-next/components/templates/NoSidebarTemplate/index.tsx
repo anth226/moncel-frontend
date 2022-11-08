@@ -2,8 +2,7 @@ import { ReactNode } from 'react';
 import NextImage from 'next/image';
 import { Header2, Header3, Text } from 'components/core/typography';
 import { NoSidebarTemplateProps } from '../types';
-import { PathnameComponent, NavigationComponent, CheckoutSidebarComponent } from 'components/templates';
-import GlobalModal from 'components/core/Modal';
+import { PathnameComponent } from 'components/templates';
 
 const Template = (props: NoSidebarTemplateProps) => {
     const HeaderComponent = (typeof props.header === "string") ? <Header2 className="text-teal font-semibold">{props.header}</Header2> : props.header;

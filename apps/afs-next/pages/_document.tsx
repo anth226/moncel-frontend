@@ -1,7 +1,4 @@
 
-// eslint-disable-next-line
-const newrelic = require("newrelic");
-
 import Document, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from 'next/document';
 
 const _Document = (props: DocumentInitialProps & { browserTimingHeader: string}) => {

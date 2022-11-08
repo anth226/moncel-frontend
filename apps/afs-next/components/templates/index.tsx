@@ -34,7 +34,6 @@ export const NavigationComponent = (props: NavigationProps) => {
     const handleLinkClick = (href: string) => (e: MouseEvent<HTMLAnchorElement>) => {
         if (document) {
             e.preventDefault();
-
             document.querySelector(`[href='${href}']`)?.scrollIntoView({
                 behavior: 'smooth'
             });
@@ -92,7 +91,8 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
     const handleLinkClick = (href: string) => (e: MouseEvent<HTMLAnchorElement>) => {
         if (document && window) {
             e.preventDefault();
-            document.querySelector(`[href='${href}']`)?.scrollIntoView({
+            
+            document.querySelector(href)?.scrollIntoView({
                 behavior: 'smooth'
             });
             window.history.pushState({}, document.title, href)

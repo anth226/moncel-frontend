@@ -1,9 +1,10 @@
-import { ReactNode, useState } from 'react';
+import { ReactNode, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import NextLink from 'next/link';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
+import useIsOnScreen from 'lib/useIsOnScreen';
 
 import Layout from 'components/core/layout';
 import Statistic from 'components/core/Statistic';
@@ -32,6 +33,15 @@ import Community from 'components/courses/community';
 import { Courses } from 'data/courses';
 import styles from './styles.module.scss';
 
+const ANCHOR_IDS = {
+  courseInclusions: "course-inclusions",
+  testimonials: "testimonials",
+  courseOutline: "course-outline",
+  industrySectors: "industry-sectors",
+  what: "what",
+  commonQuestions: "common-questions",
+};
+
 const TemplateData: Omit<RowsTemplateProps, "children"> = {
   ...coursePageOverviewData,
   pathname: "courses/food-safety-supervisor",
@@ -49,17 +59,30 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
     memberPrice: "FREE",
     showLogo: true,
     links: [
-      { text: "WHAT'S INCLUDED", href: "#course-inclusions" },
-      { text: "WHAT OUR STUDENTS SAY", href: "#testimonials" },
-      { text: "COURSE OUTLINE", href: "#course-outline" },
-      { text: "INDUSTRY SECTORS", href: "#industry-sectors" },
-      { text: "WHAT IS A FOOD SAFETY SUPERVISOR?", href: "#what" },
-      { text: "COMMON QUESTIONS", href: "#common-questions" },
+      { text: "WHAT'S INCLUDED", href: `#${ANCHOR_IDS.courseInclusions}` },
+      { text: "WHAT OUR STUDENTS SAY", href: `#${ANCHOR_IDS.testimonials}` },
+      { text: "COURSE OUTLINE", href: `#${ANCHOR_IDS.courseOutline}` },
+      { text: "INDUSTRY SECTORS", href: `#${ANCHOR_IDS.industrySectors}` },
+      { text: "WHAT IS A FOOD SAFETY SUPERVISOR?", href: `#${ANCHOR_IDS.what}` },
+      { text: "COMMON QUESTIONS", href: `#${ANCHOR_IDS.commonQuestions}` },
     ]
   },
 };
 
 const Page = () => {
+  const courseInclusionsScrollRef = useIsOnScreen(ANCHOR_IDS.courseInclusions);
+  const testimonialsScrollRef = useIsOnScreen(ANCHOR_IDS.testimonials);
+  const courseOutlineScrollRef = useIsOnScreen(ANCHOR_IDS.courseOutline)
+  const industrySectorsScrollRef = useIsOnScreen(ANCHOR_IDS.industrySectors)
+  const whatIsSectionRef = useIsOnScreen(ANCHOR_IDS.what);
+  const commonQuestionsScrollRef = useIsOnScreen(ANCHOR_IDS.commonQuestions);
+
+  useEffect(() => {
+    const newHashStr = courseInclusionsScrollRef || testimonialsScrollRef || industrySectorsScrollRef || whatIsSectionRef || commonQuestionsScrollRef;
+
+    if(newHashStr) window.location.hash = `#${newHashStr}`;
+  }, [courseInclusionsScrollRef, testimonialsScrollRef, courseOutlineScrollRef, industrySectorsScrollRef, whatIsSectionRef, commonQuestionsScrollRef]);
+
   return (
     <Layout isCoursePage={true} pageTitle='Food Safety Supervisor Course | Online Courses Available | AIFS' metaDescription='The Official AIFS Food Safety Supervisor Course. Nationally Recognised. Valid in all states and available for all food sectors. 100% online. Digital Statement of Attainment.'>
       <CoursesBackground><RowsTemplate {...TemplateData}>
@@ -204,7 +227,7 @@ const CourseInclusionsSection = () => {
           <Text className="!text-teal">Just keep your card in your pocket at work, so {`you're`} always ready to show Health Inspectors during surprise food audits.</Text>
         </AccordionDetails>
       </Accordion>
-      <Accordion square disableGutters className="border border-mint !shadow-none featured"> 
+      <Accordion square disableGutters className="border border-mint !shadow-none featured">
         <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0' }}>
           <ImageBannerCard
             title="Business Signage"
@@ -213,7 +236,7 @@ const CourseInclusionsSection = () => {
         </AccordionSummary>
         <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
           <Text className="!text-teal">Use them to show customers that you take their health and safety seriously, and have the high level of training to do so.</Text>
-        </AccordionDetails>   
+        </AccordionDetails>
       </Accordion>
     </div>
   </div>;
