@@ -1,8 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import NextLink from 'next/link';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
+import useIsOnScreen from 'lib/useIsOnScreen';
 
 import Layout from 'components/core/layout';
 import Statistic from 'components/core/Statistic';
@@ -23,6 +24,13 @@ import JaymeeHeadPic from 'public/courses/food-handler/testimonials/jaymee.jpg';
 import { Courses } from 'data/courses';
 import styles from './styles.module.scss';
 
+const ANCHOR_IDS = {
+  courseInclusions: "course-inclusions",
+  testimonials: "testimonials",
+  courseOutline: "course-outline",
+  commonQuestions: "common-questions",
+};
+
 const TemplateData: Omit<RowsTemplateProps, "children"> = {
   ...coursePageOverviewData,
   pathname: "courses/food-safety-manager",
@@ -39,15 +47,26 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
     price: "$299.95",
     showLogo: false,
     links: [
-      { text: "WHAT'S INCLUDED", href: "#course-inclusions" },
-      { text: "WHAT OUR STUDENTS SAY", href: "#testimonials" },
-      { text: "COURSE OUTLINE", href: "#course-outline" },
-      { text: "COMMON QUESTIONS", href: "#common-questions" },
+      { text: "WHAT'S INCLUDED", href: `#${ANCHOR_IDS.courseInclusions}` },
+      { text: "WHAT OUR STUDENTS SAY", href: `#${ANCHOR_IDS.testimonials}` },
+      { text: "COURSE OUTLINE", href: `#${ANCHOR_IDS.courseOutline}` },
+      { text: "COMMON QUESTIONS", href: `#${ANCHOR_IDS.commonQuestions}` },
     ]
   },
 };
 
 const Page = () => {
+  const courseInclusionsScrollRef = useIsOnScreen(ANCHOR_IDS.courseInclusions);
+  const testimonialsScrollRef = useIsOnScreen(ANCHOR_IDS.testimonials);
+  const courseOutlineScrollRef = useIsOnScreen(ANCHOR_IDS.courseOutline)
+  const commonQuestionsScrollRef = useIsOnScreen(ANCHOR_IDS.commonQuestions);
+
+  useEffect(() => {
+    const newHashStr = courseInclusionsScrollRef || testimonialsScrollRef || courseOutlineScrollRef || commonQuestionsScrollRef;
+
+    if(newHashStr) window.location.hash = `#${newHashStr}`;
+  }, [courseInclusionsScrollRef, testimonialsScrollRef, courseOutlineScrollRef, commonQuestionsScrollRef]);
+
   return (
     <Layout isCoursePage={true} pageTitle='Food Safety Supervisor Course | Online Courses Available | AIFS' metaDescription='The Official AIFS Food Safety Supervisor Course. Nationally Recognised. Valid in all states and available for all food sectors. 100% online. Digital Statement of Attainment.'>
       <CoursesBackground><RowsTemplate {...TemplateData}>

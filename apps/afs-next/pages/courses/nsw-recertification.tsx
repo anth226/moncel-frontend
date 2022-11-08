@@ -1,9 +1,10 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import Image from 'next/image';
 import NextLink from 'next/link';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
+import useIsOnScreen from 'lib/useIsOnScreen';
 
 import Layout from 'components/core/layout';
 import Statistic from 'components/core/Statistic';
@@ -28,6 +29,15 @@ import { Courses } from 'data/courses';
 import styles from './styles.module.scss';
 import Community from 'components/courses/community';
 
+const ANCHOR_IDS = {
+  courseInclusions: "course-inclusions",
+  testimonials: "testimonials",
+  courseOutline: "course-outline",
+  industrySectors: "industry-sectors",
+  community: "community",
+  commonQuestions: "common-questions",
+};
+
 const TemplateData: Omit<RowsTemplateProps, "children"> = {
   ...coursePageOverviewData,
   pathname: "courses/food-safety-supervisor",
@@ -45,17 +55,29 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
     memberPrice: "FREE",
     showLogo: true,
     links: [
-      { text: "WHAT'S INCLUDED", href: "#course-inclusions" },
-      { text: "WHAT OUR STUDENTS SAY", href: "#testimonials" },
-      { text: "HELPING THE COMMUNITY", href: "#community" },
-      { text: "COURSE OUTLINE", href: "#course-outline" },
-      { text: "INDUSTRY SECTORS", href: "#industry-sectors" },
-      { text: "COMMON QUESTIONS", href: "#common-questions" },
+      { text: "WHAT'S INCLUDED", href: `#${ANCHOR_IDS.courseInclusions}` },
+      { text: "WHAT OUR STUDENTS SAY", href: `#${ANCHOR_IDS.testimonials}` },
+      { text: "HELPING THE COMMUNITY", href: `#${ANCHOR_IDS.community}` },
+      { text: "COURSE OUTLINE", href: `#${ANCHOR_IDS.courseOutline}` },
+      { text: "INDUSTRY SECTORS", href: `#${ANCHOR_IDS.industrySectors}` },
+      { text: "COMMON QUESTIONS", href: `#${ANCHOR_IDS.commonQuestions}` },
     ]
   },
 };
 
 const Page = () => {
+  const courseInclusionsScrollRef = useIsOnScreen(ANCHOR_IDS.courseInclusions);
+  const testimonialsScrollRef = useIsOnScreen(ANCHOR_IDS.testimonials);
+  const courseOutlineScrollRef = useIsOnScreen(ANCHOR_IDS.courseOutline)
+  const industrySectorsScrollRef = useIsOnScreen(ANCHOR_IDS.industrySectors)
+  const communitySectionRef = useIsOnScreen(ANCHOR_IDS.community);
+  const commonQuestionsScrollRef = useIsOnScreen(ANCHOR_IDS.commonQuestions);
+
+  useEffect(() => {
+    const newHashStr = courseInclusionsScrollRef || testimonialsScrollRef || courseOutlineScrollRef || industrySectorsScrollRef || communitySectionRef || commonQuestionsScrollRef;
+
+    if(newHashStr) window.location.hash = `#${newHashStr}`;
+  }, [courseInclusionsScrollRef, testimonialsScrollRef, courseOutlineScrollRef, industrySectorsScrollRef, communitySectionRef, commonQuestionsScrollRef]);
   return (
     <Layout isCoursePage={true} pageTitle='Food Safety Supervisor Certificate Renewal NSW | Available Online | AIFS' metaDescription='Approved by the NSW Food Authority, this course is for food workers required to renew their Food Safety Supervisor training.'>
       <CoursesBackground><RowsTemplate {...TemplateData}>

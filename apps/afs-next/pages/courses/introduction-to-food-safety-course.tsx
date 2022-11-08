@@ -1,8 +1,9 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import NextLink from 'next/link';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
+import useIsOnScreen from 'lib/useIsOnScreen';
 
 import Layout from 'components/core/layout';
 import Statistic from 'components/core/Statistic';
@@ -24,6 +25,13 @@ import ReadResourcesGraphic from 'public/courses/intro-to-food-safety/intro-read
 import { Courses } from 'data/courses';
 import styles from './styles.module.scss';
 
+const ANCHOR_IDS = {
+  courseInclusions: "course-inclusions",
+  testimonials: "testimonials",
+  courseOutline: "course-outline",
+  commonQuestions: "common-questions",
+};
+
 const TemplateData: Omit<RowsTemplateProps, "children"> = {
   ...coursePageOverviewData,
   pathname: "courses/introduction-to-food-safety-course",
@@ -40,15 +48,25 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
     price: "$49.95",
     showLogo: false,
     links: [
-      { text: "WHAT'S INCLUDED", href: "#course-inclusions" },
-      { text: "WHAT OUR STUDENTS SAY", href: "#testimonials" },
-      { text: "COURSE OUTLINE", href: "#course-outline" },
-      { text: "COMMON QUESTIONS", href: "#common-questions" },
+      { text: "WHAT'S INCLUDED", href: `#${ANCHOR_IDS.courseInclusions}` },
+      { text: "WHAT OUR STUDENTS SAY", href: `#${ANCHOR_IDS.testimonials}` },
+      { text: "COURSE OUTLINE", href: `#${ANCHOR_IDS.courseOutline}` },
+      { text: "COMMON QUESTIONS", href: `#${ANCHOR_IDS.commonQuestions}` },
     ]
   },
 };
 
 const Page = () => {
+  const courseInclusionsScrollRef = useIsOnScreen(ANCHOR_IDS.courseInclusions);
+  const testimonialsScrollRef = useIsOnScreen(ANCHOR_IDS.testimonials);
+  const courseOutlineScrollRef = useIsOnScreen(ANCHOR_IDS.courseOutline)
+  const commonQuestionsScrollRef = useIsOnScreen(ANCHOR_IDS.commonQuestions);
+
+  useEffect(() => {
+    const newHashStr = courseInclusionsScrollRef || testimonialsScrollRef || courseOutlineScrollRef || commonQuestionsScrollRef;
+
+    if(newHashStr) window.location.hash = `#${newHashStr}`;
+  }, [courseInclusionsScrollRef, testimonialsScrollRef, courseOutlineScrollRef, commonQuestionsScrollRef]);
   return (
     <Layout isCoursePage={true} pageTitle='Introduction to Food Safety | Online Training Course | AIFS' metaDescription='For those looking to learn basic food safety skills before starting to work with food, this intro course is the perfect stepping stone to the next level.'>
       <CoursesBackground><RowsTemplate {...TemplateData}>

@@ -1,4 +1,4 @@
-import { ReactNode, Children, cloneElement, isValidElement, useState, MutableRef } from 'react';
+import { ReactNode, Children, cloneElement, isValidElement, useState, MutableRefObject } from 'react';
 import NextImage, { StaticImageData } from 'next/image';
 import NextLink from 'next/link';
 import Accordion, { AccordionProps } from '@mui/material/Accordion';
@@ -8,10 +8,10 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import { Header3, Text } from 'components/core/typography';
 
 interface DividerProps {
-  _ref?: MutableRef<HTMLElement | null>,
+  _ref?: MutableRefObject<HTMLElement | null>,
 }
 
-export const Divider = ({ _ref }: DividerProps) => <div className="border-b-[1px] border-alto col-span-3" ref={_ref} />;
+export const Divider = ({ _ref }: DividerProps) => <div className="border-b-[1px] border-alto col-span-3" />;
 export const ListItem = ({ children }: { children?: ReactNode }) => <li className="mb-2 last:mb-0">{ children }</li>;
 
 interface IconCardProps {
@@ -99,6 +99,7 @@ export const CollapsibleTableCell = (props: CollapsibleTableCellProps) => {
 
 interface CollapsibleCellGroupProps {
   children: ReactNode;
+  initialIndex?: number
 }
 interface CollapsibleCellGroupChild {
   expanded: boolean | undefined;
@@ -108,8 +109,8 @@ interface CollapsibleCellGroupChild {
 /**
  * HOC for creating a group of CollapsibleTableCells where only one can be expanded at a time
  */
-export const CollapsibleCellGroup = ({ children }: CollapsibleCellGroupProps) => {
-  const [ expandedIndex, setExpandedIndex ] = useState<number | undefined>(undefined);
+export const CollapsibleCellGroup = ({ children, initialIndex }: CollapsibleCellGroupProps) => {
+  const [ expandedIndex, setExpandedIndex ] = useState<number | undefined>(initialIndex);
 
   const handleCellClick = (n: number) => () => {
     if(expandedIndex === n) setExpandedIndex(undefined);

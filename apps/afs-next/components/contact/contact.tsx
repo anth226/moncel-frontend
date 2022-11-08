@@ -17,7 +17,7 @@ const tabnames = [
 ];
 
 const ContactSection = () => {
-    const [activeTab, setActiveTab] = useState(0);
+    const [activeTab, setActiveTab] = useState<number | null>(null);
     return <>
         <Section>
             <Tabs tabNames={tabnames} activeTab={activeTab} handleTabClick={setActiveTab} />

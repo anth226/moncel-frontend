@@ -78,7 +78,7 @@ const Page = () => {
   const commonQuestionsScrollRef = useIsOnScreen(ANCHOR_IDS.commonQuestions);
 
   useEffect(() => {
-    const newHashStr = courseInclusionsScrollRef || testimonialsScrollRef || industrySectorsScrollRef || whatIsSectionRef || commonQuestionsScrollRef;
+    const newHashStr = courseInclusionsScrollRef || testimonialsScrollRef || courseOutlineScrollRef || industrySectorsScrollRef || whatIsSectionRef || commonQuestionsScrollRef;
 
     if(newHashStr) window.location.hash = `#${newHashStr}`;
   }, [courseInclusionsScrollRef, testimonialsScrollRef, courseOutlineScrollRef, industrySectorsScrollRef, whatIsSectionRef, commonQuestionsScrollRef]);
@@ -339,7 +339,7 @@ const CourseOutlineSection = () => {
         />
       </div>
       <div className="flex flex-col">
-        <CollapsibleCellGroup>
+        <CollapsibleCellGroup initialIndex={4}>
           <CollapsibleTableCell
             summary={<Text className="!text-teal uppercase">Course Outline</Text>}
             details={<>

@@ -17,7 +17,7 @@ const TemplateData: Omit<NoSidebarTemplateProps, "children"> = {
     ...coursePageOverviewData,
     pathname: "contact",
     displayPathname: "CONTACT US",
-    header:<div>
+    header: <div>
         <Header1 className="text-teal mb-2">Contact Us</Header1>
     </div>,
     subheader: "If you'd like to get in contact with someone at AIFS simply give us a call or send us an email.",

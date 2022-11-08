@@ -4,9 +4,9 @@ import NextImage, { StaticImageData } from 'next/image';
 
 interface ITab {
     index: number;
-    onClick: React.Dispatch<React.SetStateAction<number>>;
+    onClick: React.Dispatch<React.SetStateAction<number | null>>;
     children: ReactNode;
-    activeTab: number;
+    activeTab: number | null;
 }
 const Tab = ({ children, index, onClick, activeTab }: ITab) => {
     const _handleClick = () => {
@@ -26,8 +26,8 @@ export interface TabButton {
 export interface ITabs {
     tabNames: Array<TabButton>;
     helpText?: string;
-    activeTab: number;
-    handleTabClick: React.Dispatch<React.SetStateAction<number>>;
+    activeTab: number | null;
+    handleTabClick: React.Dispatch<React.SetStateAction<number | null>>;
 }
   
 const Tabs = (props: ITabs) => {
