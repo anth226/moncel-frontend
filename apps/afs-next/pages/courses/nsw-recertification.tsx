@@ -356,7 +356,7 @@ const CourseOutlineSection = () => {
 
       </div>
       <div className="flex flex-col">
-        <CollapsibleCellGroup>
+        <CollapsibleCellGroup initialIndex={4}>
           <CollapsibleTableCell
             summary={<Text className="!text-teal uppercase">Course Outline</Text>}
             details={<>
@@ -466,7 +466,7 @@ const IndustrySectorSection = () => {
 
     <div className="w-full grid gap-8 grid-cols-1 md:grid-cols-2">
       <div className="flex flex-col">
-        <CollapsibleCellGroup>
+        <CollapsibleCellGroup initialIndex={0}>
           <CollapsibleTableCell
             summary={<Text className="!text-teal uppercase">Hospitality Sector</Text>}
             details={<><div className="w-full gap-4" style={{

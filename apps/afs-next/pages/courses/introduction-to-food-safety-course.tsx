@@ -283,7 +283,7 @@ const CourseOutlineSection = () => {
         <Text>If you prefer to take your time, we allow 12 months to complete the course and you can start and stop as often as you like.</Text>
       </div>
       <div className="flex flex-col">
-        <CollapsibleCellGroup>
+        <CollapsibleCellGroup initialIndex={2}>
           <CollapsibleTableCell
             summary={<Text className="!text-teal uppercase">COURSE {`&`} ASSESSMENT</Text>}
             details={<>
