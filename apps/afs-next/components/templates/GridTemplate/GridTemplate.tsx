@@ -8,7 +8,6 @@ import { PathnameComponent, NavigationComponent } from 'components/templates';
 import Button from 'components/core/Button';
 
 const GridTemplate = (props: GridTemplateProps) => {
-    debugger;
     return <div id={props.id} className="padded-section grid grid-cols-12 bg-white lg:rounded-[3px] lg:border border-[#0badad33] py-8 lg:p-8 w-full">
         <div className="row-start-1 col-span-12 gap-4 border-solid border-b-[1px] border-teal pb-8 mb-8">
             <PathnameComponent {...props} />
