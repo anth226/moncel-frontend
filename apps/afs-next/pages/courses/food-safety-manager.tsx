@@ -68,7 +68,7 @@ const Page = () => {
   }, [courseInclusionsScrollRef, testimonialsScrollRef, courseOutlineScrollRef, commonQuestionsScrollRef]);
 
   return (
-    <Layout isCoursePage={true} pageTitle='Food Safety Supervisor Course | Online Courses Available | AIFS' metaDescription='The Official AIFS Food Safety Supervisor Course. Nationally Recognised. Valid in all states and available for all food sectors. 100% online. Digital Statement of Attainment.'>
+    <Layout isCoursePage={true} pageTitle='Food Safety Manager Training Course and Certification | AIFS' metaDescription="The AIFS Food Safety Manager course picks up where the Food Safety Supervisor course leaves off. It's the most advanced food safety course offered by AIFS.">
       <CoursesBackground><RowsTemplate {...TemplateData}>
         <>
           <HeroSection />
