@@ -20,7 +20,9 @@ export const legalOverviewData: GridTemplateProps = {
   navigation: legalNavigationData,
   header: 'Legal & Policies',
   subheader: "In this section, you'll learn more about our terms of use, as well as the AIFS policies for privacy, security, membership, enrolment, payments and refunds.",
-  description: "The Australian Institute of Food Safety is pleased to provide you it's products and services, and welcomes new members to the AIFS Membership Program. Before getting started, it's important to familiarise yourself with our terms of use and any policies that may affect your use of our website or learning management systems.",
+  description: `The Australian Institute of Food Safety is pleased to provide you it's products and services, and welcomes new members to the AIFS Membership Program. 
+  
+Before getting started, it's important to familiarise yourself with our terms of use and any policies that may affect your use of our website or learning management systems.`,
   cards: [{
     title: "Privacy Policy",
     description: "AIFS is committed to protecting the privacy of it's customers. This policy outlines how we'll protect your information and the type of information to be collected.",

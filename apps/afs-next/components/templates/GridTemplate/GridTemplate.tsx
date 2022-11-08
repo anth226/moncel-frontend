@@ -3,11 +3,12 @@ import NextImage from 'next/image';
 import { useRouter } from 'next/router';
 
 import { GridTemplateProps, GridTemplateCard } from '../types';
-import { Header1, Header4, Text } from 'components/core/typography';
+import { Header1, Header4, Text, TextBlock } from 'components/core/typography';
 import { PathnameComponent, NavigationComponent } from 'components/templates';
 import Button from 'components/core/Button';
 
 const GridTemplate = (props: GridTemplateProps) => {
+    debugger;
     return <div id={props.id} className="padded-section grid grid-cols-12 bg-white lg:rounded-[3px] lg:border border-[#0badad33] py-8 lg:p-8 w-full">
         <div className="row-start-1 col-span-12 gap-4 border-solid border-b-[1px] border-teal pb-8 mb-8">
             <PathnameComponent {...props} />
@@ -18,7 +19,7 @@ const GridTemplate = (props: GridTemplateProps) => {
             <NavigationComponent {...props.navigation} />
         </div>
         <div className="row-start-3 lg:row-start-2 col-span-12 lg:col-span-9">
-            <Text className="pb-4">{props.description}</Text>
+            <TextBlock className="pb-4">{props.description}</TextBlock>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 { props.cards.map((card, i) => {
                     return <GridCard card={card} parentId={props.id} index={i} />;

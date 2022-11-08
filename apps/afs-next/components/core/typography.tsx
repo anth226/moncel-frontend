@@ -36,7 +36,11 @@ export const SubText = (props: PropType) => {
 };
 
 export const Text = (props: PropType) => {
-    return <span className={`block text-md text-mine mb-4 last:mb-0 leading-6 ${props.className || ""}`}><p>{props.children}</p></span>;
+    return <span className={`block text-md text-mine mb-4 last:mb-0 leading-6 ${props.className || ""}`}>{props.children}</span>;
+};
+
+export const TextBlock = (props: PropType) => {
+    return <span className={`block text-md text-mine mb-4 last:mb-0 leading-6 whitespace-pre-wrap ${props.className || ""}`}>{props.children}</span>;
 };
 
 export const Blockquote = (props: PropType) => {

@@ -19,7 +19,11 @@ export const aboutOverviewData: GridTemplateProps = {
   navigation: aboutNavigationData,
   header: 'About Us',
   subheader: "At AIFS, we have a mission to reduce food-borne illness in Australia. To do this, we help food workers gain the food safety skills they need to protect their customers.",
-  description: "The Australian Institute of Food Safety provides quality food safety education and resources to thousands of food businesses and the general public. Our team is passionate about helping to reduce food-borne illness in Australia and tackling other food issues, such as food waste and hunger. We believe the first step to achieving these goals is quality education. We also donate much needed time and funds to our partner charities.",
+  description: `The Australian Institute of Food Safety provides quality food safety education and resources to thousands of food businesses and the general public.
+
+Our team is passionate about helping to reduce food-borne illness in Australia and tackling other food issues, such as food waste and hunger. 
+  
+We believe the first step to achieving these goals is quality education. We also donate much needed time and funds to our partner charities.`,
   cards: [{
     title: "Our Mission",
     description: "Our mission is to reduce food-borne illness in Australia through education, promotion and advocacy for better food safety.",
