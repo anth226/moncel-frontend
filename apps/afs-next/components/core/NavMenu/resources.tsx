@@ -8,6 +8,7 @@ import styles from './styles.module.scss';
 import ResourceMenuGraphic from 'public/afs-menu-resources.webp';
 
 const ID: NavMenuIdentifier = "resources";
+const HREF = "https://resources.foodsafety.com.au";
 const RESOURCE_LINKS = [
     { text: "Guides", href: "https://resources.foodsafety.com.au/guides" },
     { text: "Posters", href: "https://resources.foodsafety.com.au/posters" },
@@ -35,7 +36,7 @@ const MenuItem = (props: Props) => {
         e.stopPropagation();
     }
     return <div id={`nav-menu-${ID}`} onMouseLeave={closeMenu}>
-        <a className="link text-white no-underline hover:underline font-semibold" onMouseEnter={openMenu}>Resource Library</a>
+        <a href={HREF} className="link text-white no-underline hover:underline font-semibold" onMouseEnter={openMenu}>Resource Library</a>
         <Popper id={ID} open={props.open === ID} anchorEl={props.anchor} placement="bottom-start">
             {/* actual menu */}
             <div className="padded-section bg-white px-7 py-8 grid grid-cols-2 gap-x-8 gap-y-0 grid-flow-row mt-3">
