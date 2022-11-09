@@ -332,7 +332,7 @@ const CourseOutlineSection = () => {
           <ListItem>no hidden fees or charges</ListItem>
         </ul>
         <ExpandibleFAQ
-          summary={<div className="">
+          summary={<div>
             <Text className="font-semibold">NSW Food Authority Requirements</Text>
             <div className="inline float-right ml-4">
                 <NextImage src="/nsw-certificate.webp" width="200" height="283" layout="fixed" alt="Food Safety Supervisor Certificate"/>
