@@ -76,7 +76,7 @@ const LogosSection = () => {
 
 const LegalRequirementsSection = () => {
   return <div className="col-span-3" id="section-2">
-    <Header3 className="pb-4">Food safety legal requirements you need to know</Header3>
+    <Header3 className="pb-4">Food safety laws and requirements you need to know</Header3>
     <Text className="pb-4">Food Safety is governed by two sets of legislation enforced at a local council level by Health Inspectors.</Text>
     <TwoCol>
       <IconCard
@@ -103,7 +103,7 @@ const LegalRequirementsSection = () => {
 
 const ComplianceSection = () => {
   return <div className="col-span-3" id="section-2">
-    <Header3 className="pb-4">What can happen if we {`don't`} comply with food safety laws?</Header3>
+    <Header3 className="pb-4">What can happen if you {`don't`} comply with food safety laws?</Header3>
     <TwoCol>
       <IconCard
         imageSrc={"/icons/icon_stroke_green_closed_sign.svg"}
@@ -149,7 +149,7 @@ const ComplianceSection = () => {
 
 const RiskSection = () => {
   return <div className="col-span-3" id="section-2">
-    <Header3 className="pb-4">How AIFS helps you manage food safety risks?</Header3>
+    <Header3 className="pb-4">How AIFS helps you manage food safety risks</Header3>
     <TwoCol>
       <IconCard
         imageSrc={"/icons/icon_stroke_green_checklist.svg"}

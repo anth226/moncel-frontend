@@ -1,5 +1,6 @@
 import { ReactNode, useEffect } from 'react';
 import Image from 'next/image';
+import NextImage from 'next/image';
 import NextLink from 'next/link';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -281,7 +282,7 @@ const LogosSection = () => {
 
 const Section5 = () => {
   return <div className="col-span-3" id="testimonials">
-    <Header5 className="pb-10 !text-teal w-full text-center">Trusted by thousands of food workers</Header5>
+    <Header5 className="pb-10 !text-teal w-full text-center">Recommended by thousands of food workers</Header5>
     <div className="flex flex-col md:flex-row gap-8">
       <Testimonial
         imageSrc={BinuHeadPic}
@@ -331,8 +332,11 @@ const CourseOutlineSection = () => {
           <ListItem>no hidden fees or charges</ListItem>
         </ul>
         <ExpandibleFAQ
-          summary={<div className="flex flex-col">
+          summary={<div>
             <Text className="font-semibold">NSW Food Authority Requirements</Text>
+            <div className="inline float-right ml-4">
+                <NextImage src="/nsw-certificate.webp" width="200" height="283" layout="fixed" alt="Food Safety Supervisor Certificate"/>
+            </div>
             <Text>To be nominated Food Safety Supervisor for a food premise in NSW, you must complete an NSW Food Authority approved Food Safety Supervisor course once every five years.</Text>
             <Text>AIFS is approved to deliver Food Safety Supervisor training and NSW Food Authority certificates on behalf of the NSW Food Authority.</Text>
             <Text>When your NSW Food Authority certificate is due to expire, you have 90 days to ensure you have completed your recertification.</Text>
