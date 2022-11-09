@@ -61,7 +61,7 @@ const SectionContainer = ({ id, children, className }: SectionProps) => <div cla
 const HeroSection = () => {
   return <SectionContainer className="col-span-3" id="students-hero-section">
     <Header3 className="pb-4">Food safety credentials when you need them</Header3>
-    <IntroBox imageSrc={HeroGraphic} alt="students-food-card-hero-graphic">
+    <IntroBox imageSrc={HeroGraphic} alt="Food safety credentials when you need them">
       <Text>As a food worker, you never know when Health Inspectors might conduct a surprise food audit on your workplace.</Text>
       <Text>The official AIFS Food Safety Card makes it easy to prove that you meet your legal food safety training requirements.</Text>
       <Text>{`You'll receive a complimentary card when you complete one of our nationally recognised food safety courses.`}</Text>
@@ -133,7 +133,7 @@ const TableComparisonSection = () => {
           <td>
             <h3>&nbsp;</h3>
           </td>
-          <td><Image alt="blue food safety card" height={187} src={FSCardFont} width={287} layout="fixed" /></td>
+          <td><Image alt="Blue Food Safety Card" height={187} src={FSCardFont} width={287} layout="fixed" /></td>
           <td><Image alt="Green Food Safety Supervisor Card" height={187} src={FSCardBack} width={287} layout="fixed" /></td>
         </tr>
         <tr>

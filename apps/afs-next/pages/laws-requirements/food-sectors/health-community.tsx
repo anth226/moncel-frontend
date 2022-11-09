@@ -39,7 +39,7 @@ const Section1 = () => {
   return <div className="col-span-3">
     <Header3 className="pb-4">Food safety training for health & community</Header3>
     <div className={`${styles["laws-requirements"]} col-span-3`}>
-      <IntroBox imageSrc="/laws-requirements/food-sectors/photo_healthcommunity.jpg" alt="laws-requirements-for-employees-graphic" className={`${styles["laws-requirements"]}`}>
+      <IntroBox imageSrc="/laws-requirements/food-sectors/photo_healthcommunity.jpg" alt="Food safety training for health & community" className={`${styles["laws-requirements"]}`}>
         <Text>If you work in the health and community sector preparing and/or serving food to vulnerable people, you need the right training to meet food safety laws.</Text>
         <Text>Vulnerable people include the sick, pregnant women, the elderly, children and babies.</Text>
         <Text>Typical health and community organisations include:</Text>

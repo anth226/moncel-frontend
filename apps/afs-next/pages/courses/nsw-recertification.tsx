@@ -115,7 +115,7 @@ const SectionContainer = ({ id, children, className }: SectionProps) => <div cla
 
 const HeroSection = () => {
   return <SectionContainer className="col-span-3" id="hero-section">
-    <IntroBox imageSrc="/courses/nsw-recertification/nsw-recertification.jpg" alt="courses-nsw-recertification-hero-graphic">
+    <IntroBox imageSrc="/courses/nsw-recertification/nsw-recertification.jpg" alt="Food Safety Supervisor Certificate Renewal NSW">
       <Text>Food safety regulations in NSW require food businesses in the hospitality and retail food service sector to appoint at least one trained Food Safety Supervisor. </Text>
       <Text>A Food Safety Supervisor is a person who:</Text>
       <ul className="pb-4">
@@ -475,7 +475,7 @@ const IndustrySectorSection = () => {
               width: '100%',
             }}>
               <Text className="flex-none flex-0 col-span-1">Hospitality businesses prepare and serve food for customers to consume in house.</Text>
-              <Image className="float-right col-span-1" src={HospitalityGraphic} width={150} height={84} layout="fixed" alt="industry-sector-hospitality-graphic" />
+              <Image className="float-right col-span-1" src={HospitalityGraphic} width={150} height={84} layout="fixed" alt="Hospitality Sector" />
             </div>
               <Text>The unit of competency awarded for this course is:</Text>
               <ul className="pb-4">
@@ -494,7 +494,7 @@ const IndustrySectorSection = () => {
               width: '100%',
             }}>
               <Text className="pb-3 flex-none flex-0 col-span-1">Food retail businesses prepare and sell food to customers for consumption elsewhere.</Text>
-              <Image className="float-right col-span-1" src={RetailGraphic} width={150} height={84} layout="fixed" alt="industry-sector-retail-graphic" />
+              <Image className="float-right col-span-1" src={RetailGraphic} width={150} height={84} layout="fixed" alt="Retail Sector" />
             </div>
               <Text>The unit of competency awarded for Retail is:</Text>
               <ul>

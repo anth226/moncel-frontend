@@ -115,7 +115,7 @@ const SectionContainer = ({ id, children, className }: SectionProps) => <div cla
 
 const Section1 = () => {
   return <SectionContainer className="col-span-3" id="section-1">
-    <IntroBox imageSrc='/courses/food-handler.jpg' alt='laws-requirements-for-employees-graphic'>
+    <IntroBox imageSrc='/courses/food-handler.jpg' alt='Food Handler Course'>
       <Text>In Australia, the Food Standards Code requires anyone who works with food to be trained in food safety.</Text>
       <Text>When you study online with AIFS you will:</Text>
       <ul className="checklist">
@@ -517,7 +517,7 @@ const WhatIsSection = () => {
 
     <div className="w-full grid gap-8 grid-cols-1 md:grid-cols-2">
       <div className="flex flex-col">
-        <Image src={FHCHero} alt="food-handler-course-hero-image" width={350} height={197} layout="responsive" />
+        <Image src={FHCHero} alt="What is a Food Handler?" width={350} height={197} layout="responsive" />
         <ExpandibleFAQ
           summary={<div className="flex flex-col">
             <Text className="mt-8">{`A Food Handler is someone who's involved in a food handling activity like preparing, serving, packing, displaying and storing food.`}</Text>

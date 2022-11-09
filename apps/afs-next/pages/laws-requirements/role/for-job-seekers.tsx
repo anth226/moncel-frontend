@@ -37,7 +37,7 @@ const Page = () => {
 const Section1 = () => {
   return <div className="col-span-3">
     <Header3 className="pb-4">Start your career the food safe way</Header3>
-    <IntroBox imageSrc="/laws-requirements/role/photo_jobseekers.jpg" alt="laws-requirements-for-job-seekers-graphic">
+    <IntroBox imageSrc="/laws-requirements/role/photo_jobseekers.jpg" alt="Start your career the food safe way">
         <Text>The food sector is an exciting and growing industry to work in whether you are at home or abroad.</Text>
         <Text>If you’re considering a career in the food industry, having an understanding of food safety is vital.</Text>
         <Text>This isn’t just the law. You must be confident that your actions {"don't"} make your customers sick — or worse.</Text>

@@ -63,7 +63,7 @@ const SectionContainer = ({ id, children, className }: SectionProps) => <div cla
 const HeroSection = () => {
   return <SectionContainer className="col-span-3" id="section-memberhsip-program-hero">
     <Header3 className="pb-4">Promoting food safety is good for business</Header3>
-    <IntroBox imageSrc={HeroGraphic} alt="haccp-program-graphic">
+    <IntroBox imageSrc={HeroGraphic} alt="Promoting food safety is good for business">
       <Text>Food safety and hygiene has a big impact on where people decide to eat or buy food:</Text>
       <ul className="mb-4">
         <ListItem>51% of Australians worry about food safety</ListItem>
@@ -147,7 +147,7 @@ const HowToGetSection = () => {
 const WhereToDisplaySection = () => {
   return <SectionContainer className="col-span-3" id="section-memberhsip-program-hero">
     <Header3 className="pb-4">{`Where should I display my Food Safety Decal?`}</Header3>
-    <IntroBox imageSrc={WhereToDisplayGraphic} alt="haccp-program-graphic" layout={false}>
+    <IntroBox imageSrc={WhereToDisplayGraphic} alt="Where should I display my Food Safety Decal?" layout={false}>
       <div className="flex flex-col pr-6 col-span-3 md:col-span-1 text-afs-dark-gray">
         <Text>The AIFS Food Safety Decal is a double-sided window sticker, designed to be placed on the inside of a window or a glass door.</Text>
         <Text>All you need to do is:</Text>

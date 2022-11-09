@@ -59,7 +59,7 @@ const SectionContainer = ({ id, children, className }: SectionProps) => <div cla
 const HeroSection = () => {
   return <SectionContainer className="col-span-3" id="hero-section">
     <Header3 className="pb-4">Food safety saves people and businesses</Header3>
-    <IntroBox imageSrc={HeroGraphic} alt="business-food-safety-hero-graphic">
+    <IntroBox imageSrc={HeroGraphic} alt="Food safety saves people and businesses">
       <Text>Around 1 in 5 people in Australia suffer from food-borne illness every year. Over 30,000 people are hospitalised.</Text>
       <Text>Between 80 and 90 people die.</Text>
       <Text>If your business causes a food-borne illness outbreak:</Text>
@@ -77,7 +77,7 @@ const HeroSection = () => {
 const StayCompliantSection = () => {
   return <SectionContainer className="col-span-3" id="stay-compliant-section">
     <Header3 className="pb-4">Stay compliant</Header3>
-    <IntroBox imageSrc={StayCompliantGraphic} alt="business-food-safety-hero-graphic" layout={false}>
+    <IntroBox imageSrc={StayCompliantGraphic} alt="Stay compliant" layout={false}>
       <Text>Keeping your business and customers protected starts with the right food safety training for your staff. Food safety training is governed by two sets of legislation:</Text>
       <ol>
         <ListItem><strong>Federal law</strong> - anyone that handles food must be trained in food safety.</ListItem>
@@ -90,7 +90,7 @@ const StayCompliantSection = () => {
 const KeepCustomersSafeSection = () => {
   return <SectionContainer className="col-span-3" id="keep-customers-safe-section">
     <Header3 className="pb-4">Keep your customers safe</Header3>
-    <IntroBox imageSrc={KeepCustomersSafeGraphic} alt="business-food-safety-hero-graphic">
+    <IntroBox imageSrc={KeepCustomersSafeGraphic} alt="Keep your customers safe">
       <Text>Most major food-borne illness outbreaks are caused by one of the following:</Text>
       <ol>
         <ListItem>Poor personal hygiene of food handlers</ListItem>
@@ -106,7 +106,7 @@ const KeepCustomersSafeSection = () => {
 const ProtectYourBusinessSection = () => {
   return <SectionContainer className="col-span-3" id="stay-compliant-section">
     <Header3 className="pb-4">Protect your business</Header3>
-    <IntroBox imageSrc={ProtectYourBusinessGraphic} alt="business-food-safety-hero-graphic" layout={false}>
+    <IntroBox imageSrc={ProtectYourBusinessGraphic} alt="Protect your business" layout={false}>
       <Text>Each year hundreds of Australian food businesses are fined, prosecuted or closed down due to food safety breaches.</Text>
       <Text>Health Inspectors can visit a food premises at any time, without warning. If serious food safety breaches are found the business can be closed down immediately.</Text>
       <Text>To avoid issues, ensure <strong>all staff</strong>:</Text>
@@ -123,7 +123,7 @@ const ProtectYourBusinessSection = () => {
 const StayUpToDateSection = () => {
   return <SectionContainer className="col-span-3" id="stay-up-to-date-section">
     <Header3 className="pb-4">Stay up-to-date with food safety</Header3>
-    <IntroBox imageSrc={StayUpToDateGraphic} alt="stay-up-to-date-graphic">
+    <IntroBox imageSrc={StayUpToDateGraphic} alt="Stay up-to-date with food safety">
       <Text>Running a food business often means long, busy hours, with many things to keep track of which can make food safety low on the priority list.</Text>
       <Text>To help, the Australian Institute of Food Safety offers a 12-month complimentary membership to all students who register in our <Link href="/courses">nationally recognised training courses</Link>.</Text>
       <Text>Members get access to additional food safety resources, including guides, templates, fact sheets, videos, food recalls, newsletters and more.</Text>
@@ -135,7 +135,7 @@ const StayUpToDateSection = () => {
 const ShowCustomersYouCareSection = () => {
   return <SectionContainer className="col-span-3" id="show-customers-you-care-section">
     <Header3 className="pb-4">Show customers your business cares</Header3>
-    <IntroBox imageSrc={ShowCustomersYouCareGraphic} alt="show-customers-you-care-graphic" layout={false}>
+    <IntroBox imageSrc={ShowCustomersYouCareGraphic} alt="Show customers your business cares" layout={false}>
       <Text>With food poisoning incidents making front page news and horror stories exploding across social media, food safety is becoming increasingly important to customers.</Text>
       <Text>All students who complete a <Link href="/courses/food-safety-supervisor" className="font-semibold underline">Food Safety Supervisor</Link> course with AIFS receive an:</Text>
       <ul className="pb-4">

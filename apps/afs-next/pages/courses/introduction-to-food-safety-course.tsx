@@ -100,7 +100,7 @@ const SectionContainer = ({ id, children, className }: SectionProps) => <div cla
 
 const HeroSection = () => {
   return <SectionContainer className="col-span-3" id="hero-section">
-    <IntroBox imageSrc="/courses/intro-to-food-safety/intro-food-worker.jpg" alt="courses-intro-food-safety-hero-graphic">
+    <IntroBox imageSrc="/courses/intro-to-food-safety/intro-food-worker.jpg" alt="Introduction to Food Safety">
       <Text>Getting the basics right early is important for workers starting out in the food industry.</Text>
       <Text>This user-friendly course teaches food workers all the skills and knowledge that they need to prepare and handle food safely.</Text>
       <Text>If {`you're`} looking to get started in the industry, but {`don't`} have any experience, then this is the right course for you.</Text>

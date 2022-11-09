@@ -43,7 +43,7 @@ const Page = () => {
 const Section1 = () => {
   return <div className="col-span-3">
     <Header3 className="text-afs-green font-semibold pb-6">The first step to success is food safety</Header3>
-    <IntroBox imageSrc="/laws-requirements/role/photo_newbusiness.jpg" alt="laws-requirements-for-employees-graphic" className={`${styles["laws-requirements"]}`}>
+    <IntroBox imageSrc="/laws-requirements/role/photo_newbusiness.jpg" alt="The first step to success is food safety" className={`${styles["laws-requirements"]}`}>
         <Text>Every year in Australia, hundreds of businesses are fined or closed down for:</Text>
         <ul className="mb-4">
           <ListItem>not following the correct food safety procedures</ListItem>

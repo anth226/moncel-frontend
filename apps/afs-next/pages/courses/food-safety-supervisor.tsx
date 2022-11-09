@@ -124,7 +124,7 @@ const HeroSection = () => {
   return <SectionContainer className="col-span-3" id="hero-section">
     <IntroBox
       imageSrc={"/courses/food-safety-staff.jpg"}
-      alt="laws-requirements-for-employees-graphic">
+      alt="Food Safety Supervisor Course">
       <Text>By law, most Australian food businesses must employ at least one Food Safety Supervisor in each premises.</Text>
       <Text>When you study online with AIFS you will:</Text>
       <ul className="checklist">
@@ -456,7 +456,7 @@ const IndustrySectorSection = () => {
               width: '100%',
             }}>
               <Text className="flex-none flex-0 col-span-1">Hospitality businesses prepare and serve food for customers to consume in-house.<br /><br />The units of competency awarded for Hospitality are:</Text>
-              <Image className="float-right col-span-1" src={HospitalityGraphic} width={150} height={84} layout="fixed" alt="industry-sector-hospitality-graphic" />
+              <Image className="float-right col-span-1" src={HospitalityGraphic} width={150} height={84} layout="fixed" alt="Hospitality Sector" />
             </div>
               <ul>
                 <ListItem>SITXFSA005 Use hygienic practices for food safety</ListItem>
@@ -473,7 +473,7 @@ const IndustrySectorSection = () => {
               width: '100%',
             }}>
               <Text className="flex-none flex-0 col-span-1">Food retail businesses prepare and sell food to customers for consumption elsewhere.<br /><br />The unit of competency awarded for Retail is:</Text>
-              <Image className="float-right col-span-1" src={RetailGraphic} width={150} height={84} layout="fixed" alt="industry-sector-retail-graphic" />
+              <Image className="float-right col-span-1" src={RetailGraphic} width={150} height={84} layout="fixed" alt="Retail Sector" />
             </div>
               <ul>
                 <ListItem>SIRRFSA001 Handle food safely in a retail environment</ListItem>
@@ -489,7 +489,7 @@ const IndustrySectorSection = () => {
               width: '100%',
             }}>
               <Text className="flex-none flex-0 col-span-1">Food processing businesses manufacture food and have very little direct contact with consumers.<br /><br />The units of competency awarded for Food Processing are:</Text>
-              <Image className="float-right col-span-1" src={FoodProcessingGraphic} width={150} height={84} layout="fixed" alt="food-processing-graphic" />
+              <Image className="float-right col-span-1" src={FoodProcessingGraphic} width={150} height={84} layout="fixed" alt="Food Processing Sector" />
             </div>
               <ul>
                 <ListItem>FBPFSY1002 Follow work procedures to maintain food safety</ListItem>
@@ -506,7 +506,7 @@ const IndustrySectorSection = () => {
               width: '100%',
             }}>
               <Text className="flex-none flex-0 col-span-1">Organisations that serve food to vulnerable people are in the health and community sector.<br /><br />The units of competency awarded for Health {`&`} Community are:</Text>
-              <Image className="float-right col-span-1" src={HealthCommunityGraphic} width={150} height={84} layout="fixed" alt="health-and-community-graphic" />
+              <Image className="float-right col-span-1" src={HealthCommunityGraphic} width={150} height={84} layout="fixed" alt="Health & Community Sector" />
             </div>
               <ul>
                 <ListItem>HLTFSE001 Follow basic food safety practices</ListItem>
@@ -524,7 +524,7 @@ const IndustrySectorSection = () => {
               width: '100%',
             }}>
               <Text className="flex-none flex-0 col-span-1">Any business that transports or stores food is in the transport and distribution sector.<br /><br />The units of competency awarded for Transport and Distribution are:</Text>
-              <Image className="float-right col-span-1" src={TransportDistributionGraphic} width={150} height={84} layout="fixed" alt="transport-distrubition-graphic" />
+              <Image className="float-right col-span-1" src={TransportDistributionGraphic} width={150} height={84} layout="fixed" alt="Transport & Distribution Sector" />
             </div>
               <ul>
                 <ListItem>SITXFSA005 Use hygienic practices for food safety</ListItem>

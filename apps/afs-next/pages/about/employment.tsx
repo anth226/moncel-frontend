@@ -51,7 +51,7 @@ const SectionContainer = ({ id, children, className }: SectionProps) => <div cla
 const HeroSection = () => {
   return <SectionContainer className="col-span-3" id="students-hero-section">
     <Header3 className="pb-4">{`What's`} it like to work with AIFS?</Header3>
-    <IntroBox imageSrc={HeroGraphic} alt="students-food-card-hero-graphic">
+    <IntroBox imageSrc={HeroGraphic} alt="What's it like to work with AIFS?">
       <Text>When you join the AIFS team, {`you're`} not just working for a great organisation - {`you're`} also saving lives.</Text>
       <Text>Our mission is to reduce food-borne illness in Australia by educating, promoting and advocating for better food safety.</Text>
       <Text>{`It's`} something that everyone on the team works towards.</Text>

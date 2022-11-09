@@ -53,7 +53,7 @@ const SectionContainer = ({ id, children, className }: SectionProps) => <div cla
 const HeroSection = () => {
   return <SectionContainer className="col-span-3" id="students-hero-section">
     <Header3 className="pb-4">The importance of food safety</Header3>
-    <IntroBox imageSrc={HeroGraphic} alt="students-food-card-hero-graphic">
+    <IntroBox imageSrc={HeroGraphic} alt="The importance of food safety">
       <Text>Every year in Australia, millions of people get sick and hundreds die as a result of poor food handling practices. Many of these incidents are easily avoidable.</Text>
       <Text>At the Australian Institute of Food Safety, we want to make a difference.</Text>
       <Text className="mb-0">The mission of each and every team member at AIFS is:</Text>
@@ -82,7 +82,7 @@ const FactsSection = () => {
 const HowCanWeSolveSection = () => {
   return <SectionContainer className="col-span-3" id="students-hero-section">
     <Header3 className="pb-4">How can we solve this problem?</Header3>
-    <IntroBox imageSrc={MissionGraphic} alt="students-food-card-hero-graphic">
+    <IntroBox imageSrc={MissionGraphic} alt="How can we solve this problem?">
       <Text>The costs of food-borne illness showcase the great need to strengthen our food safety.</Text>
       <Text>There are 3 major causes of food-borne illness outbreaks in Australia:</Text>
       <ol>

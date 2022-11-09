@@ -40,7 +40,7 @@ const Section1 = () => {
   return <div className="col-span-3">
     <Header3 className="pb-4">Food safety training for hospitality</Header3>
     <div className={`col-span-3`}>
-      <IntroBox imageSrc="/laws-requirements/food-sectors/photo_hospitality.jpg" alt="laws-requirements-for-employees-graphic" className={`${styles["laws-requirements"]}`}>
+      <IntroBox imageSrc="/laws-requirements/food-sectors/photo_hospitality.jpg" alt="Food safety training for hospitality" className={`${styles["laws-requirements"]}`}>
         <Text>If {`you're`} starting or running a hospitality business, you and your employees need the right training to meet food safety laws.</Text>
         <Text>A hospitality business is any business where food is prepared and served to customers and includes:</Text>
         <ul className="!mb-0">

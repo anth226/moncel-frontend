@@ -46,7 +46,7 @@ const SectionContainer = ({ id, children, className }: SectionProps) => <div cla
 const HeroSection = () => {
   return <SectionContainer className="col-span-3" id="students-hero-section">
     <Header3 className="pb-4">A practical guide for all students</Header3>
-    <IntroBox imageSrc={HeroGraphic} alt="students-particpant-handbook-hero-graphic">
+    <IntroBox imageSrc={HeroGraphic} alt="A practical guide for all students">
       <Text>Want to know how AIFS training can work for you?</Text>
       <Text>The AIFS Participant Handbook contains all the information you need covering:</Text>
       <ul className="pb-6">

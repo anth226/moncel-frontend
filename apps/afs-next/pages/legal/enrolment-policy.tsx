@@ -17,7 +17,7 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
 
 const Page = () => {
   return (
-    <Layout pageTitle='Food Safety Courses | Online Food Safety Training and More' metaDescription="AIFS is Australia's leading provider of Food Safety Supervisor and Food Handler training. Courses are Nationally Recognised and accepted by local health authorities.">
+    <Layout pageTitle='Enrolment Policy for Food Safety Courses | AIFS' metaDescription="All students who are enrolled onto an AIFS food safety course are subject to the terms and conditions laid out in this Enrolment Policy.">
       <LegalBackground><RowsTemplate {...TemplateData}>
         <>
           <Section1 />

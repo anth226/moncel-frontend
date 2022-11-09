@@ -60,7 +60,7 @@ const SidebarSection = () => <div className="flex flex-col gap-8">
 const MainSection = () => <div className="">
     <Text>Select the topic {`you'd`} like help with.</Text>
     <ContactSection/>
-    <hr className="border-6 border-sand mb-4"/>
+    <hr className="border-6 border-sand mt-8 mb-4"/>
     <Text>You can also find answers in our <NextLink href="/faq">Frequently Asked Questions</NextLink> section.</Text>
 </div>
 
