@@ -8,7 +8,8 @@ const _Document = (props: DocumentInitialProps & { browserTimingHeader: string})
     <Html>
       <Head>
         <link href="https://use.typekit.net/ssh4fpp.css" rel="stylesheet" />
-        <script type="text/javascript" src="js/newrelic.js" async />
+
+        { process.env.NODE_ENV == "production" ? <script type="text/javascript" src="js/newrelic.js" async /> : null }
       </Head>
       <body>
         <Main />

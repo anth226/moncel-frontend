@@ -44,6 +44,7 @@ const SLIDER_OPTIONS = {
     speed: 250,
     slidesToShow: 8,
     slidesToScroll: 1,
+    swipeToSlide: true,
     responsive: [
         {
             breakpoint: 992,
