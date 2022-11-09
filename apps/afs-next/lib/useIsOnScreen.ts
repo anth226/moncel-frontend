@@ -13,7 +13,7 @@ const useIsOnScreen = (elementId: string) => {
     // act on top-to-top intersection
     const IOOptions: IntersectionObserverInit = {
         // rootMargin: '0px 0px -99%',
-        threshold: 0.8,
+        threshold: 0.9,
     };
 
     const callback = ([entry]: IntersectionObserverEntry[]) => {

@@ -75,9 +75,12 @@ const Page = () => {
   const commonQuestionsScrollRef = useIsOnScreen(ANCHOR_IDS.commonQuestions);
 
   useEffect(() => {
-    const newHashStr = courseInclusionsScrollRef || testimonialsScrollRef || courseOutlineScrollRef || industrySectorsScrollRef || communitySectionRef || commonQuestionsScrollRef;
+    const newHashStr = courseInclusionsScrollRef || testimonialsScrollRef || communitySectionRef || courseOutlineScrollRef || industrySectorsScrollRef || commonQuestionsScrollRef;
 
-    if(newHashStr) window.location.hash = `#${newHashStr}`;
+    if(newHashStr) {
+      // window.history.pushState({}, document.title, `#${newHashStr}`);
+      window.location.hash = `#${newHashStr}`;
+    }
   }, [courseInclusionsScrollRef, testimonialsScrollRef, courseOutlineScrollRef, industrySectorsScrollRef, communitySectionRef, commonQuestionsScrollRef]);
   return (
     <Layout isCoursePage={true} pageTitle='Food Safety Supervisor Certificate Renewal NSW | Available Online | AIFS' metaDescription='Approved by the NSW Food Authority, this course is for food workers required to renew their Food Safety Supervisor training.'>

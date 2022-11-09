@@ -6,7 +6,7 @@ import NextLink from 'next/link';
 export { default as GridTemplate } from './GridTemplate';
 export { default as RowsTemplate } from './RowsTemplate';
 import { NavigationProps, CheckoutSidebarComponentProps } from './types';
-import { Header2, Header4, Text } from 'components/core/typography';
+import { Header2, Header4, P, Text } from 'components/core/typography';
 import { useAppDispatch, AppActions } from 'store';
 const { toggleModal } = AppActions;
 
@@ -74,6 +74,7 @@ const TooltipMembership = () => {
 }
 
 export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) => {
+    const [anchor, setAnchor] = useState<string | null>(null);
     const router = useRouter();
     const borderBClass = "border-b-[1px] border-solid border-teal";
     const dispatch = useAppDispatch();
@@ -88,18 +89,27 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
     }
 
     // Implement smooth scroll
+    const smoothScroll = (element: Element | null) => {
+        if(!element) return;
+        const elementPos = element.getBoundingClientRect().top;
+
+        window.scrollTo({
+            top: elementPos + window.pageYOffset,
+            behavior: 'smooth',
+        });
+    }
+
+
     const handleLinkClick = (href: string) => (e: MouseEvent<HTMLAnchorElement>) => {
         if (document && window) {
             e.preventDefault();
             
-            document.querySelector(href)?.scrollIntoView({
-                behavior: 'smooth'
-            });
-            window.history.pushState({}, document.title, href)
+            smoothScroll(document.querySelector(href));
+            window.history.pushState({}, document.title, href);
+            window.requestIdleCallback(() => setAnchor(href));
         }
     }
 
-    const [anchor, setAnchor] = useState<string | null>(null);
     const handleHashChange = useCallback(() => {
         setAnchor(window.location.hash);
     }, []);
@@ -155,10 +165,10 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
                     </> : null}
                 </div>
 
-                {props.showLogo ? <div>
+                { props.showLogo ? <div>
                     <div className="w-[53px] xl:w-[73px] float-right"><NextImage src={NRTLogo} width={73} height={58} layout="responsive" /></div>
                     <p className="text-emperor text-xs table-cell">Training delivered by Australian Institute of Food Safety (Registered Training Organisation) (RTO #41127)</p>
-                </div> : null}
+                </div> : null }
 
             </div>
 
