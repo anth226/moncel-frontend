@@ -1,0 +1,11 @@
+{
+    "redirects": [
+      { "source": "/sites/:path*", "destination": "https://www.foodsafety.com.au/sites/:path*"},
+      { "source": "/hubfs/:path*", "destination": "https://www.foodsafety.com.au/hubfs/:path*"},
+      { "source": "/mcl/:path*", "destination": "https://www.foodsafety.com.au/mcl/:path*"},
+      { "source": "/cdn-cgi/:path*", "destination": "https://www.foodsafety.com.au/cdn-cgi/:path*"}
+    ],
+    "rewrites": [
+      { "source": "/search", "destination": "https://www.foodsafety.com.au/search/node" }
+    ]
+}

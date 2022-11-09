@@ -78,7 +78,6 @@ const Page = () => {
     const newHashStr = courseInclusionsScrollRef || testimonialsScrollRef || communitySectionRef || courseOutlineScrollRef || industrySectorsScrollRef || commonQuestionsScrollRef;
 
     if(newHashStr) {
-      // window.history.pushState({}, document.title, `#${newHashStr}`);
       window.location.hash = `#${newHashStr}`;
     }
   }, [courseInclusionsScrollRef, testimonialsScrollRef, courseOutlineScrollRef, industrySectorsScrollRef, communitySectionRef, commonQuestionsScrollRef]);

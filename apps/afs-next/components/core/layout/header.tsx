@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { useAppDispatch, useAppSelector, AppActions } from 'store';
 import Button from '../Button';
@@ -108,6 +108,7 @@ const DesktopBannerNavigation = ({ navigationData }: { navigationData: Array<Lin
 };
 
 const DesktopHeader = () => {
+    const [ search, setSearch ] = useState("");
     const router = useRouter();
     const dispatch = useAppDispatch();
     // Create an array of links with dividers then pop the last divider
@@ -122,6 +123,15 @@ const DesktopHeader = () => {
         dispatch(toggleModal("Login"))
     }
 
+    const handleSearchChange = (e: React.FormEvent<HTMLInputElement>) => {
+        setSearch(e.currentTarget.value);
+    }
+    const searchRedirect = (e: React.KeyboardEvent) => {
+        if (e.key === "Enter") {
+            const keys= search.replaceAll(" ", "+")
+            router.push(`/search?keys=${keys}`)
+        }
+    }
     return <div className="hidden lg:flex flex-col w-full items-apart" id="section-header-desktop">
         <SiteNotice />
         <div className="padded-section w-full flex flex-row justify-between p-0">
@@ -136,7 +146,7 @@ const DesktopHeader = () => {
                 <nav className="flex flex-row justify-end items-center" >
                     { linkElements }
                     <label htmlFor="keyword search"></label>
-                    <input id="keyword search" name="keyword search" type="text" placeholder="Search" className="px-2 py-1 border-silver border-1 rounded-l ml-3 text-sm leading-2 outline-none" />
+                    <input id="keyword search" name="keyword search" type="text" placeholder="Search" className="px-2 py-1 border-silver border-1 rounded-l ml-3 text-sm leading-2 outline-none" value={search} onChange={handleSearchChange} onKeyDown={searchRedirect} />
                     <Button id="button-keyword-search" variant="primary" className="!px-[6px] !py-[6px] rounded-none rounded-r"><Image src="/icon_search.svg" alt="search icon" width={14} height={14} /></Button>
                 </nav>
                 <div className="flex flex-row justify-end items-center gap-5">
