@@ -117,9 +117,9 @@ const WhatsIncluded = () => {
       </IconCard>
       <IconCard
         imageSrc={ResourceIcon}
-        title="Provide a business advantage"
+        title="Helpful Resources"
       >
-        <Text>{`Businesses can display the Food Safety Decal while you're employed and an active AIFS member.`}</Text>
+        <Text>{`All the guides, templates, checklists, videos, posters and fact sheets you need to run your food business safely.`}</Text>
       </IconCard>
       <IconCard
         imageSrc={MegaphoneIcon}
