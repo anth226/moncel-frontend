@@ -19,7 +19,9 @@ export const businessOverviewData: GridTemplateProps = {
   navigation: navigationData,
   header: 'Information For Business',
   subheader: `Whether you're starting a local market stall or managing food safety for a national business, AIFS help you meet all legal requirements for food safety training.`,
-  description: "At AIFS we train staff in all types of businesses - from sole traders to some of the biggest companies in Australia. Our tailored solutions meet the requirements of federal, state and industry-specific legislation. Find out more about how we can help your business.",
+  description: `At AIFS we train staff in all types of businesses - from sole traders to some of the biggest companies in Australia. Our tailored solutions meet the requirements of federal, state and industry-specific legislation. 
+  
+Find out more about how we can help your business.`,
   cards: [{
     title: "Why Food Safety?",
     description: "The consequences of a food safety incident can be serious. Learn why food safety needs to be considered a top priority for your business.",
