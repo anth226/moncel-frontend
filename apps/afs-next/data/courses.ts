@@ -25,7 +25,8 @@ export const courseData: Record<Courses, CourseType> = {
         memberPrice: "",
         prerequisites: "None",
         nationallyRecognized: true,
-        checkout: "https://my.foodsafety.com.au/checkout/cart/add?product=13&amp;qty=1",
+        // has multiple options selected so product id should be added on checkout
+        checkout: "https://my.foodsafety.com.au/checkout/cart/add?product=",
     },
     [Courses.FoodHandler]: {
         longName: "Food Handler Online Course",

@@ -110,10 +110,11 @@ export const FoodSafetySupervisorModal = () => {
     const dispatch = useAppDispatch();
     const { toggleModal } = AppActions;
 
+
     const checkout = () => {
-        // router.push(FSSData.checkout);
+        const productID = nswRequired ? 14 : 13;
         if(window) {
-            window.open(FSSData.checkout);
+            window.open(`${FSSData.checkout}${productID}`);
         }
     }
 
@@ -293,7 +294,7 @@ export const IntroToFoodSafetyModal = () => {
             throw Error(ERRORS.checkoutTermsNotAccepted);
         }
         // router.push(`${FMData.checkout}`);
-        if(window) window.open(`${FMData.checkout}`);
+        if(window) window.open(`${IntroData.checkout}`);
     }
 
     const cancel = () => {

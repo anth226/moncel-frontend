@@ -93,6 +93,7 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
         if(!element) return;
         const elementPos = element.getBoundingClientRect().top;
 
+
         window.scrollTo({
             top: elementPos + window.pageYOffset,
             behavior: 'smooth',
@@ -105,18 +106,21 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
             e.preventDefault();
             
             smoothScroll(document.querySelector(href));
+            window.removeEventListener('hashchange', handleHashChange);
             window.history.pushState({}, document.title, href);
+            window.addEventListener('hashchange', handleHashChange);
             window.requestIdleCallback(() => setAnchor(href));
         }
     }
 
-    const handleHashChange = useCallback(() => {
+    const handleHashChange = useCallback((e: HashChangeEvent) => {
+        e.preventDefault();
         setAnchor(window.location.hash);
     }, []);
 
     useEffect(() => {
         if (window) {
-            window.addEventListener('hashchange', handleHashChange);
+            // window.addEventListener('hashchange', handleHashChange);
             return () => {
                 window.removeEventListener('hashchange', handleHashChange);
             };
