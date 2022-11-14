@@ -69,7 +69,7 @@ const TooltipRegular = () => {
 
 const TooltipMembership = () => {
     return <BootstrapTooltip title="Provides 12 of access to AIFS resources" placement="top" arrow>
-        <span className="bg-silver text-white rounded-xl px-1 py-0.5 text-xs">?</span>
+        <span className="bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-0 absolute left-28 xl:left-40">?</span>
     </BootstrapTooltip>
 }
 
@@ -152,7 +152,7 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
                             <p className="text-xs text-dove font-semibold uppercase">{`${props.course === 'Membership' ? "12-month membership" : "ONLINE COURSE"}`}</p>
                             {props.course === 'Membership' ? <TooltipMembership/> : <TooltipRegular/>}
                         </div>
-                        <p className="col-span-1 text-sm text-dove font-semibold  text-end">{props.price}</p>
+                        <p className="col-span-2 text-sm text-dove font-semibold  text-end">{props.price}</p>
                     </div>
                     {props.memberPrice ? <>
                         <div className="border-b-[1px] border-afs-light-gray w-full col-span-3" />
@@ -163,7 +163,7 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
                                     <span className="bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-0 xl:mr-6">?</span>
                                 </BootstrapTooltip>
                             </div>
-                            <p className="col-span-1 text-sm text-dove font-semibold text-end">{props.memberPrice}</p>
+                            <p className="col-span-2 text-sm text-dove font-semibold text-end">{props.memberPrice}</p>
                         </div>
                         <div className="border-b-[1px] border-afs-light-gray w-full col-span-3" />
                     </> : null}
