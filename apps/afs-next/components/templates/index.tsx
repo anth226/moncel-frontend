@@ -63,13 +63,13 @@ const BootstrapTooltip = styled(({ className, ...props }: TooltipProps) => (
 
 const TooltipRegular = () => {
     return <BootstrapTooltip title="Provides up to 12 months enrolment in this course" placement="top" arrow>
-        <span className="bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-0 xl:mr-6">?</span>
+        <span className="bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-0 xl:mr-6 h-5">?</span>
     </BootstrapTooltip>
 }
 
 const TooltipMembership = () => {
     return <BootstrapTooltip title="Provides 12 of access to AIFS resources" placement="top" arrow>
-        <span className="bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-0 absolute left-28 xl:left-40">?</span>
+        <span className="bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-0 absolute left-28 xl:left-40 h-5">?</span>
     </BootstrapTooltip>
 }
 
@@ -156,11 +156,11 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
                     </div>
                     {props.memberPrice ? <>
                         <div className="border-b-[1px] border-afs-light-gray w-full col-span-3" />
-                        <div className="w-full grid grid-cols-4 xl:grid-cols-6 items-center col-span-3 py-2 gap-2">
-                            <div className="flex col-span-3 xl:col-span-4 justify-between">
+                        <div className="w-full grid grid-cols-6 items-center col-span-3 py-2 gap-2">
+                            <div className="flex col-span-4 justify-between items-center">
                                 <p className="text-xs text-dove font-semibold ">AIFS MEMBERSHIP</p>
                                 <BootstrapTooltip title="Provides 12 months of complimentary AIFS membership" placement="top" arrow>
-                                    <span className="bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-0 xl:mr-6">?</span>
+                                    <span className="bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-0 xl:mr-6 h-5">?</span>
                                 </BootstrapTooltip>
                             </div>
                             <p className="col-span-2 text-sm text-dove font-semibold text-end">{props.memberPrice}</p>
