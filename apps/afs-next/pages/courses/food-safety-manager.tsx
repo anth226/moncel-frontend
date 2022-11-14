@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import NextLink from 'next/link';
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -56,20 +56,33 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
 };
 
 const Page = () => {
+  const [anchor, setAnchor] = useState<string | undefined>(undefined);
   const courseInclusionsScrollRef = useIsOnScreen(ANCHOR_IDS.courseInclusions);
   const testimonialsScrollRef = useIsOnScreen(ANCHOR_IDS.testimonials);
   const courseOutlineScrollRef = useIsOnScreen(ANCHOR_IDS.courseOutline)
   const commonQuestionsScrollRef = useIsOnScreen(ANCHOR_IDS.commonQuestions);
 
+  // handle hash scrolling
   useEffect(() => {
     const newHashStr = courseInclusionsScrollRef || testimonialsScrollRef || courseOutlineScrollRef || commonQuestionsScrollRef;
 
-    if(newHashStr) window.location.hash = `#${newHashStr}`;
+    if(newHashStr) {
+      window.history.pushState({}, document.title, `#${newHashStr}`);
+      setAnchor(`#${newHashStr}`);
+    }
+    const handleHashChange = () => {
+      window.requestIdleCallback(() => setAnchor(window.location.hash));
+    };
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashChange', handleHashChange);
+    }
   }, [courseInclusionsScrollRef, testimonialsScrollRef, courseOutlineScrollRef, commonQuestionsScrollRef]);
 
   return (
     <Layout isCoursePage={true} pageTitle='Food Safety Manager Training Course and Certification | AIFS' metaDescription="The AIFS Food Safety Manager course picks up where the Food Safety Supervisor course leaves off. It's the most advanced food safety course offered by AIFS.">
-      <CoursesBackground><RowsTemplate {...TemplateData}>
+      <CoursesBackground><RowsTemplate {...TemplateData} anchor={anchor}>
         <>
           <HeroSection />
           <Divider />

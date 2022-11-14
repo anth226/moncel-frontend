@@ -5,6 +5,8 @@ This is the monorepo for Moncel's Gatbsy/NextJS websites. Please use yarn v3.x. 
 `/apps` contains a separate directory for each site. 
 `/packages` contains any shared library modules that we own and that the sites depend on. If you are looking for the `moncel-one-sdk` that is in here as well. 
 
+Take care to consistently use the same react/react-dom/next.js/redux/etc versions across the monorepo; this is important not just for maintainability, if you have more than one version of react in the project you may start running into cryptic "invalid hooks call" errors. 
+
 ### Utilities
 
 Code quality tools for the NextJS sites follow a shared config that you can find in `packages`.
