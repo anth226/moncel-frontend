@@ -150,6 +150,10 @@ ol {
   }
 }
 
+.hs-form-required {
+  @apply text-[#d50032] ml-1;
+}
+
 /** 
 * mdx generates unstyled html; use this class to apply styles to children
 */

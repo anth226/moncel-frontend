@@ -32,7 +32,7 @@ const FormspreeSupportForm = (props: FormInfo) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 md:gap-2">
                     <div className="mb-4">
                         <label htmlFor="firstname"
-                        >First Name<span className="required">*</span></label
+                        >First Name<span className="hs-form-required">*</span></label
                         >
                         <legend>Please enter your first name</legend>
                         <input
@@ -47,7 +47,7 @@ const FormspreeSupportForm = (props: FormInfo) => {
                     </div>
                     <div className="mb-4">
                         <label htmlFor="lastname"
-                        >Last Name<span className="required">*</span></label
+                        >Last Name<span className="hs-form-required">*</span></label
                         >
                         <legend>Please enter your last name</legend>
                         <input
@@ -65,7 +65,7 @@ const FormspreeSupportForm = (props: FormInfo) => {
                 <div className="grid grid-cols-1 md:grid-cols-2 md:gap-2">
                     <div className="mb-4">
                         <label htmlFor="email"
-                        >Email Address<span className="required">*</span></label
+                        >Email Address<span className="hs-form-required">*</span></label
                         >
                         <legend>Please enter your work email address</legend>
                         <input
@@ -80,7 +80,7 @@ const FormspreeSupportForm = (props: FormInfo) => {
                     </div>
                     <div className="mb-4">
                         <label htmlFor="phone"
-                        >Phone Number<span className="required">*</span></label
+                        >Phone Number<span className="hs-form-required">*</span></label
                         >
                         <legend>Please enter your mobile phone number</legend>
                         <input
@@ -97,7 +97,7 @@ const FormspreeSupportForm = (props: FormInfo) => {
                 </div>
 
                 <div className="grid grid-cols-1 mb-4">
-                    <label>Do you have a User ID? <span className="required">*</span></label>
+                    <label>Do you have a User ID?<span className="hs-form-required">*</span></label>
                     <legend>Your User ID is the 10 character identifier that you use to login to the website. It is provided to you in your welcome email.</legend>
                     <div className="grid grid-cols-1">
                         <div className="flex">
@@ -112,12 +112,12 @@ const FormspreeSupportForm = (props: FormInfo) => {
                 </div>
 
                 {(student == "yes") && (<div> <div className="grid grid-cols-1 mb-4" id="user-student">
-                    <label htmlFor="username">User ID <span className="required">*</span></label>
+                    <label htmlFor="username">User ID<span className="hs-form-required">*</span></label>
                     <input name="username" type="text" className="form-control" id="form-enquiry-username" placeholder="e.g. abc1234567" required />
                 </div></div>)}
                 
                 <div className="grid grid-cols-1 mb-4">
-                    <label htmlFor="type-of-problem">Type of Problem <span className="required">*</span></label>
+                    <label htmlFor="type-of-problem">Type of Problem<span className="hs-form-required">*</span></label>
                     <legend>Please select a reason for this support enquiry</legend>
                     <select required className="form-control" name="type-of-problem" id="form-enquiry-type-of-problem" defaultValue="">
                         <option disabled value="" > -- Choose Option -- </option>
@@ -130,7 +130,7 @@ const FormspreeSupportForm = (props: FormInfo) => {
 
                 <div className="grid grid-cols-1">
                     <div className="mb-4">
-                        <label htmlFor="subject">Subject<span className="required">*</span></label>
+                        <label htmlFor="subject">Subject<span className="hs-form-required">*</span></label>
                         <legend>In just a few words, describe your enquiry</legend>
                         <input
                             required
@@ -146,7 +146,7 @@ const FormspreeSupportForm = (props: FormInfo) => {
 
                 <div className="grid grid-cols-1">
                     <div className="mb-4">
-                        <label htmlFor="message">Description<span className="required">*</span></label>
+                        <label htmlFor="message">Description<span className="hs-form-required">*</span></label>
                         <legend>Provide any additional comments regarding your enquiry.</legend>
                         <textarea
                             required
