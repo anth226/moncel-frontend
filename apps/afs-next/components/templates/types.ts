@@ -15,6 +15,7 @@ export interface CheckoutSidebarComponentProps {
     links: Array<LinkType>;
     course: Courses;
     showLogo: boolean;
+    anchor?: string;
 }
 
 export interface GridTemplateCard {
@@ -51,4 +52,5 @@ export type RowsTemplateProps = NoSidebarTemplateProps & {
     sidebarType?: "checkout" | "navigation" | undefined; // should be a way to intersect this
     navigation?: NavigationProps;
     checkout?: CheckoutSidebarComponentProps;
+    anchor?: string;
 }

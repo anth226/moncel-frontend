@@ -74,7 +74,6 @@ const TooltipMembership = () => {
 }
 
 export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) => {
-    const [anchor, setAnchor] = useState<string | null>(null);
     const router = useRouter();
     const borderBClass = "border-b-[1px] border-solid border-teal";
     const dispatch = useAppDispatch();
@@ -89,43 +88,26 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
     }
 
     // Implement smooth scroll
-    const smoothScroll = (element: Element | null) => {
+    const smoothScroll = (element: Element | null, href: string) => {
         if(!element) return;
         const elementPos = element.getBoundingClientRect().top;
 
-
         window.scrollTo({
-            top: elementPos + window.pageYOffset,
-            behavior: 'smooth',
+            top: elementPos + window.scrollY,
+            behavior: 'smooth'
         });
+        // callback must be resolved by
+        window.setTimeout(() => window.location.hash = href, 800);
+
     }
 
 
     const handleLinkClick = (href: string) => (e: MouseEvent<HTMLAnchorElement>) => {
         if (document && window) {
             e.preventDefault();
-            
-            smoothScroll(document.querySelector(href));
-            window.removeEventListener('hashchange', handleHashChange);
-            window.history.pushState({}, document.title, href);
-            window.addEventListener('hashchange', handleHashChange);
-            window.requestIdleCallback(() => setAnchor(href));
+            smoothScroll(document.querySelector(href), href);
         }
     }
-
-    const handleHashChange = useCallback((e: HashChangeEvent) => {
-        e.preventDefault();
-        setAnchor(window.location.hash);
-    }, []);
-
-    useEffect(() => {
-        if (window) {
-            // window.addEventListener('hashchange', handleHashChange);
-            return () => {
-                window.removeEventListener('hashchange', handleHashChange);
-            };
-        }
-    }, []);
 
     return <div>
         <div className={`sticky top-8 hidden lg:flex flex-col border border-solid border-teal w-full h-fit border-b-0`}>
@@ -177,7 +159,7 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
             </div>
 
             {props.links.map((link, i) => {
-                return <a href={link.href} onClick={handleLinkClick(link.href)} className={`no-underline ${borderBClass} ${anchor === link.href ? "bg-haze" : ""} hover:bg-afs-light-gray text-teal p-[14px] flex flex-row justify-between items-center`} key={`checkout-link-${i}`}>
+                return <a href={link.href} onClick={handleLinkClick(link.href)} className={`no-underline ${borderBClass} ${props.anchor === link.href ? "bg-haze" : ""} hover:bg-afs-light-gray text-teal p-[14px] flex flex-row justify-between items-center`} key={`checkout-link-${i}`}>
                     <p className="text-[14px] font-medium leading-4">{link.text.toUpperCase()}</p>
                     <NextImage src={ArrowRightIcon} width={8} height={8} />
                 </a>

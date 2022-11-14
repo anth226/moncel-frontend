@@ -17,6 +17,7 @@ const COURSE_LINKS = [
     { text: "Food Safety Manager", href: "/courses/food-safety-manager" },
     { text: "Introduction to Food Safety", href: "/courses/introduction-to-food-safety-course" },
 ];
+
 interface Props {
     open: NavMenuIdentifier | null;
     anchor: Element | null;

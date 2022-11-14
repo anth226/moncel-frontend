@@ -1,4 +1,4 @@
-import { ReactNode, useRef, useEffect } from 'react';
+import { ReactNode, useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import NextLink from 'next/link';
 import Accordion from '@mui/material/Accordion';
@@ -70,6 +70,7 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
 };
 
 const Page = () => {
+  const [anchor, setAnchor] = useState<string | undefined>(undefined);
   const courseInclusionsScrollRef = useIsOnScreen(ANCHOR_IDS.courseInclusions);
   const testimonialsScrollRef = useIsOnScreen(ANCHOR_IDS.testimonials);
   const courseOutlineScrollRef = useIsOnScreen(ANCHOR_IDS.courseOutline)
@@ -77,15 +78,28 @@ const Page = () => {
   const whatIsSectionRef = useIsOnScreen(ANCHOR_IDS.what);
   const commonQuestionsScrollRef = useIsOnScreen(ANCHOR_IDS.commonQuestions);
 
+  // handle hash scrolling
   useEffect(() => {
     const newHashStr = courseInclusionsScrollRef || testimonialsScrollRef || courseOutlineScrollRef || industrySectorsScrollRef || whatIsSectionRef || commonQuestionsScrollRef;
 
-    if(newHashStr) window.location.hash = `#${newHashStr}`;
+    if(newHashStr) {
+      window.history.pushState({}, document.title, `#${newHashStr}`);
+      setAnchor(`#${newHashStr}`);
+    }
+
+    const handleHashChange = () => {
+      window.requestIdleCallback(() => setAnchor(window.location.hash));
+    };
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashChange', handleHashChange);
+    }
   }, [courseInclusionsScrollRef, testimonialsScrollRef, courseOutlineScrollRef, industrySectorsScrollRef, whatIsSectionRef, commonQuestionsScrollRef]);
 
   return (
     <Layout isCoursePage={true} pageTitle='Food Safety Supervisor Course | Online Courses Available | AIFS' metaDescription='The Official AIFS Food Safety Supervisor Course. Nationally Recognised. Valid in all states and available for all food sectors. 100% online. Digital Statement of Attainment.'>
-      <CoursesBackground><RowsTemplate {...TemplateData}>
+      <CoursesBackground><RowsTemplate  {...TemplateData} anchor={anchor}>
         <>
           <HeroSection />
           <Divider />

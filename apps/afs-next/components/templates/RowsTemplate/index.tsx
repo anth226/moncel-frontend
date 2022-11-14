@@ -19,7 +19,7 @@ const RowsTemplate = (props: RowsTemplateProps) => {
             throw Error(`RowsTemplate with id ${props.id} specified checkout but did not provide required props`);
             return null; // unreachable return make typescript happy
         }
-        SidebarComponent = <CheckoutSidebarComponent {...props.checkout} />;
+        SidebarComponent = <CheckoutSidebarComponent {...props.checkout} anchor={props.anchor} />;
     }
 
     const HeaderComponent = (typeof props.header === "string") ? <Header1 className="text-teal mb-2">{props.header}</Header1> : props.header;

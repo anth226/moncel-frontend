@@ -1,0 +1,16 @@
+.quicklist {
+    ul {
+        list-style-position: outside;
+        li {
+            line-height: 1.5em;
+            list-style-type: none;
+            &:after {
+                content: url('/icon_stroke_green_arrow_right.svg');
+                float: right;
+                margin-right: 0.25em;
+                width: 4px;
+            }
+        }
+    }
+}
+

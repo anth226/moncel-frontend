@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import Image from 'next/image';
 import NextImage from 'next/image';
 import NextLink from 'next/link';
@@ -67,6 +67,7 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
 };
 
 const Page = () => {
+  const [anchor, setAnchor] = useState<string | undefined>(undefined);
   const courseInclusionsScrollRef = useIsOnScreen(ANCHOR_IDS.courseInclusions);
   const testimonialsScrollRef = useIsOnScreen(ANCHOR_IDS.testimonials);
   const courseOutlineScrollRef = useIsOnScreen(ANCHOR_IDS.courseOutline)
@@ -74,16 +75,26 @@ const Page = () => {
   const communitySectionRef = useIsOnScreen(ANCHOR_IDS.community);
   const commonQuestionsScrollRef = useIsOnScreen(ANCHOR_IDS.commonQuestions);
 
+  // handle hash scrolling
   useEffect(() => {
     const newHashStr = courseInclusionsScrollRef || testimonialsScrollRef || communitySectionRef || courseOutlineScrollRef || industrySectorsScrollRef || commonQuestionsScrollRef;
 
     if(newHashStr) {
-      window.location.hash = `#${newHashStr}`;
+      window.history.pushState({}, document.title, `#${newHashStr}`);
+      setAnchor(`#${newHashStr}`);
+    }
+    const handleHashChange = () => {
+      window.requestIdleCallback(() => setAnchor(window.location.hash));
+    };
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashChange', handleHashChange);
     }
   }, [courseInclusionsScrollRef, testimonialsScrollRef, courseOutlineScrollRef, industrySectorsScrollRef, communitySectionRef, commonQuestionsScrollRef]);
   return (
     <Layout isCoursePage={true} pageTitle='Food Safety Supervisor Certificate Renewal NSW | Available Online | AIFS' metaDescription='Approved by the NSW Food Authority, this course is for food workers required to renew their Food Safety Supervisor training.'>
-      <CoursesBackground><RowsTemplate {...TemplateData}>
+      <CoursesBackground><RowsTemplate {...TemplateData} anchor={anchor}>
         <>
           <HeroSection />
           <Divider />

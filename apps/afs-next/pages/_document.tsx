@@ -1,5 +1,5 @@
 
-import Document, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from 'next/document';
+import Document, { Html, Head, Main, NextScript, DocumentInitialProps } from 'next/document';
 
 const _Document = (props: DocumentInitialProps & { browserTimingHeader: string}) => {
 

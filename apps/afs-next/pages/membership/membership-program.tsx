@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState, useEffect } from 'react';
 import NextLink from 'next/link';
 
 import Layout from 'components/core/layout';
@@ -8,6 +8,7 @@ import { MembershipBackground } from 'components/membership';
 import { Header3, Header4, Text } from 'components/core';
 import { RowsTemplate } from 'components/templates';
 import { RowsTemplateProps } from 'components/templates/types';
+import useIsOnScreen from 'lib/useIsOnScreen';
 
 import HeroGraphic from 'public/membership/photo_membership_program.jpg';
 import NewsLetterIcon from 'public/icons/icon_stroke_green_newsletter.svg';
@@ -34,6 +35,14 @@ import styles from './styles.module.scss';
 import { TwoCol } from 'components/core/TwoCol';
 import { Courses } from 'data/courses';
 
+const ANCHOR_IDS = {
+  intro: 'intro',
+  workers: 'workers',
+  employers: 'employers',
+  membership: 'membership',
+  commonQuestions: 'common-questions',
+};
+
 const TemplateData: Omit<RowsTemplateProps, "children"> = {
   pathname: "membership/membership-program",
   displayPathname: "MEMBERSHIP/MEMBERSHIP PROGRAM",
@@ -59,9 +68,33 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
 };
 
 const Page = () => {
+  const [anchor, setAnchor] = useState<string | undefined>(undefined);
+  const introScrollRef = useIsOnScreen(ANCHOR_IDS.intro);
+  const workersScrollRef = useIsOnScreen(ANCHOR_IDS.workers);
+  const employersScrollRef = useIsOnScreen(ANCHOR_IDS.employers);
+  const membershipScrollRef = useIsOnScreen(ANCHOR_IDS.membership);
+  const commonQuestionsScrollRef = useIsOnScreen(ANCHOR_IDS.commonQuestions);
+
+  useEffect(() => {
+    const newHashStr = introScrollRef || workersScrollRef || employersScrollRef || membershipScrollRef ||  commonQuestionsScrollRef;
+
+    if(newHashStr) {
+      window.history.pushState({}, document.title, `#${newHashStr}`);
+      setAnchor(`#${newHashStr}`);
+    }
+    const handleHashChange = () => {
+      window.requestIdleCallback(() => setAnchor(window.location.hash));
+    };
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashChange', handleHashChange);
+    }
+  }, [introScrollRef, workersScrollRef, employersScrollRef, membershipScrollRef, commonQuestionsScrollRef]);
+  
   return (
     <Layout isCoursePage={true} pageTitle='AIFS Official Food Safety Membership Program | AIFS' metaDescription='AIFS membership gives you free access to food safety tools, credentials, support and updates that protect and benefit you, your business and your customers.'>
-      <MembershipBackground><RowsTemplate {...TemplateData}>
+      <MembershipBackground><RowsTemplate {...TemplateData} anchor={anchor}>
         <>
           <HeroSection />
           <Divider />
