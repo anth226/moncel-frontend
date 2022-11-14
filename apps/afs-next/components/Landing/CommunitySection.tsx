@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import NextImage from 'next/image';
+import { useRouter } from 'next/router';
 
 import { Section } from 'components/core/Section';
 
@@ -25,12 +26,13 @@ interface GridCellProps {
 }
 
 const GridCell = ({ imageSrc, title, href }: GridCellProps) => {
+    const router = useRouter();
     return <div className="border-solid border border-teal flex flex-col items-center p-4">
         <Link href={href}><a className="no-underline hover:underline text-center">
             <Image src={imageSrc} width={330} height={186} alt={`Thumbnail image for ${title} resource`} />
             <div className="text-teal font-semibold pb-3 pt-2">{title}</div>
         </a></Link>
-        <Button id={`button-learn-more-${title.replace(" ", "_")}`} variant="invert" className="text-sm tracking-wide py-3 w-full"><a href={href} className="uppercase">Learn More</a></Button>
+        <Button id={`button-learn-more-${title.replace(" ", "_")}`} variant="invert" className="uppercase text-sm tracking-wide py-3 w-full" onClick={() => router.push(href)}>Learn More</Button>
     </div>;
 };
 
