@@ -1,23 +1,23 @@
 import { Popper } from '@material-ui/core';
-import { ReactNode } from 'react';
+import { ReactNode, SyntheticEvent } from 'react';
 import NextImage from 'next/image';
 import NextLink from 'next/link';
 
 import { NavMenuIdentifier } from '.';
-import { Header4, Header5, Text } from 'components/core/typography';
+import { Header4, Header5, Text } from 'components/core/Typography';
 import styles from './styles.module.scss';
-import CourseMenuGraphic from 'public/afs-menu-course.webp';
+import BusinessMenuGraphic from 'public/afs-menu-business.webp';
 
-const ID: NavMenuIdentifier = "food-safety-courses";
-const HREF = "/courses";
-const COURSE_LINKS = [
-    { text: "Food Safety Supervisor", href: "/courses/food-safety-supervisor" },
-    { text: "Food Handler Course", href: "/courses/food-handler-course" },
-    { text: "NSW Recertification", href: "/courses/nsw-recertification" },
-    { text: "Food Safety Manager", href: "/courses/food-safety-manager" },
-    { text: "Introduction to Food Safety", href: "/courses/introduction-to-food-safety-course" },
+const ID: NavMenuIdentifier = "for-business";
+const HREF="/business";
+const STUDENTS_LINKS = [
+    { text: "Why Food Safety", href: "/business/food-safety" },
+    { text: "Small Business Solutions", href: "/business/small-business" },
+    { text: "Contact Us", href: "/contact" },
+    { text: "Business Accounts", href: "/business/accounts" },
+    { text: "Enterprise Solutions", href: "/business/enterprise" },
+    { text: "Frequently Asked Questions", href: "/faq" },
 ];
-
 interface Props {
     open: NavMenuIdentifier | null;
     anchor: Element | null;
@@ -26,19 +26,22 @@ interface Props {
 
 const MenuItem = (props: Props) => {
 
-    const openMenu = () => {
+    const openMenu = (e: SyntheticEvent) => {
         props.setOpen(ID);
+        e.stopPropagation();
     }
-    const closeMenu = () => {
+    const closeMenu = (e: SyntheticEvent) => {
         props.setOpen(null);
+        e.stopPropagation();
     }
+
     return <div id={`nav-menu-${ID}`} onMouseLeave={closeMenu}>
-        <NextLink href={HREF}><a className="link text-white no-underline hover:underline font-semibold" onMouseEnter={openMenu}> {`Food Safety Courses`}</a></NextLink>
+        <NextLink href={HREF}><a className="link text-white no-underline hover:underline font-semibold" onMouseEnter={openMenu}>For Business</a></NextLink>
         <Popper id={ID} open={props.open === ID} anchorEl={props.anchor} placement="bottom-start">
             {/* actual menu */}
             <div className="padded-section bg-white px-7 py-8 grid grid-cols-2 gap-x-8 gap-y-0 grid-flow-row mt-3">
                 <Column>
-                    <Header4 className="text-teal leading-6">Food Safety Courses</Header4>
+                    <Header4 className="text-teal leading-6">For Business</Header4>
                     <Divider />
                     <div style={{
                         display: "grid",
@@ -46,19 +49,19 @@ const MenuItem = (props: Props) => {
                         gap: "24px",
                     }}>
                         <div className="flex flex-col gap-4">
-                            <Text className="text-sm leading-5 mb-0">Whether {`you're`} a food worker, business owner or training manager, our food safety courses make it easy for you to meet your legal requirements.</Text>
-                            <Text className="text-sm leading-5 mb-0">At AIFS, our courses are nationally recognised throughout Australia. They can be completed online in a few hours and many students receive their certificate on the same day that they finish the course.</Text>
+                            <Text className="text-sm leading-5 mb-0">{`From cafes to catering companies, market stalls to supermarkets, every food business in Australia must meet all federal, state and local requirements for food safety training.`}</Text>
+                            <Text className="text-sm leading-5 mb-0">{`Find out what can happen if you don't comply, and how AIFS can ensure that you do.`}</Text>
                         </div>
-                        <NextImage src={CourseMenuGraphic} width={200} height={112} layout="fixed" />
+                        <NextImage src={BusinessMenuGraphic} width={200} height={112} layout="fixed" />
                     </div>
 
                 </Column>
 
                 <Column>
-                    <Header5 className="text-emperor leading-6 text-base font-medium">Learn more about food safety courses</Header5>
+                    <Header5 className="text-emperor leading-6 text-base font-medium">Learn more about Business Solutions</Header5>
                     <Divider />
                     <ul className="columns-2 gap-x-8">
-                        { COURSE_LINKS.map((link, i) => <ListItem key={`nav-courses-link-${i}`}><Link {...link}/></ListItem>)}
+                        { STUDENTS_LINKS.map((link, i) => <ListItem key={`nav-business-link-${i}`}><Link {...link}/></ListItem>)}
                     </ul>
                 </Column>
                 

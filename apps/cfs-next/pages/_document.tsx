@@ -1,15 +1,13 @@
-
 import Document, { Html, Head, Main, NextScript, DocumentInitialProps } from 'next/document';
 
 const _Document = (props: DocumentInitialProps & { browserTimingHeader: string}) => {
-
   
   return (
     <Html>
       <Head>
         <link href="https://use.typekit.net/ssh4fpp.css" rel="stylesheet" />
-
-        { process.env.NODE_ENV == "production" ? <script type="text/javascript" src="js/newrelic.js" async /> : null }
+        {/* need to create a monitor in newrelic */}
+        {/* { process.env.NODE_ENV == "production" ? <script type="text/javascript" src="js/newrelic.js" async /> : null } */}
       </Head>
       <body>
         <Main />

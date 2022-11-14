@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "variables";
+
+@layer components {
+  .padded-section {
+    margin: auto;
+    @media (min-width: $breakpoint-xl) {
+      // lg desktop
+      max-width: 1170px;
+    }
+    @media (min-width: $breakpoint-lg) and (max-width: ($breakpoint-xl - 1)) {
+      // sm desktop
+      max-width: 970px;
+    }
+    @media (min-width: $breakpoint-md) and (max-width: ($breakpoint-lg - 1)) {
+      // tablet
+      max-width: 720px;
+    }
+    @media (max-width: ($breakpoint-md - 1)) {
+      // mobile
+      max-width: 100vw;
+      @apply px-6;
+    }
+  }
+  .section-vertical-padding {
+    padding-top: 45px;
+    padding-bottom: 45px;
+    margin: auto;
+  }
+  .markdown-container {
+    p {
+      padding-bottom: 15px;
+    }
+    ul {
+      li {
+        padding: 0 0 7.5px 0;
+      }
+      :last-child {
+        padding: 0 0 15px;
+      }
+    }
+    li::before {
+      background-image: url("/icon-library-2_checkmark-green.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 12px;
+      width: 18px;
+      content: "";
+      display: inline-block;
+      margin: 0.1rem 1rem 0 0;
+    }
+    :last-child {
+      padding-bottom: 0;
+    }
+  }
+}
+
+html,
+body {
+  @apply p-0 m-0 text-[15px] text-mine;
+  font-family: proxima-soft, sans-serif;
+}
+
+a {
+  @apply text-teal font-medium underline hover:no-underline cursor-pointer;
+}
+
+Button {
+  a {
+    @apply no-underline text-inherit;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+strong {
+  @apply font-semibold;
+}
+
+ul {
+  li {
+    @apply ml-4 pl-2 relative list-square;
+    &::marker {
+      @apply text-mine;
+    }
+    a {
+      @apply text-teal underline font-semibold;
+    }
+  }
+}
+
+.checklist {
+  li {
+    @apply ml-0 pl-7 relative list-none;
+    &::before {
+      @apply inline-block absolute left-0 h-[12px] w-[12px];
+      content: url("/icon-library-2_checkmark-green.svg");
+    }
+  }
+}
+
+ol {
+  @apply mb-4 ml-4;
+  li {
+    @apply list-decimal;
+    &::marker {
+      @apply text-black;
+    }
+    a {
+      @apply font-semibold text-teal underline hover:no-underline;
+    }
+  }
+}
+
+.arrowlist {
+  &::after {
+    content: url("/icon_stroke_green_arrow_right.svg");
+    @apply mr-1 w-[4px] float-right;
+  }
+}
+
+.featured {
+  .MuiAccordionSummary-content {
+    .icon {
+      margin:0px auto !important;
+      display:block !important;
+      padding-bottom:10px;
+      transition: all 0.4s ease;
+    }
+    &.Mui-expanded {
+      .icon {
+        transition: all 0.4s ease;
+        padding-bottom:0;
+        transform: rotate(-180deg);
+      }
+    }
+  }
+}
+
+/** 
+* mdx generates unstyled html; use this class to apply styles to children
+*/
+.mdx {
+  p {
+    @apply mb-4 last:mb-0;
+  }
+  h3,
+  h4 {
+    font-weight: 600;
+    margin-bottom: 1em;
+  }
+  h3,
+  h4 {
+    font-size: 1em;
+  }
+  a {
+    @apply text-teal font-medium underline hover:no-underline;
+  }
+  ul {
+    @apply list-square mr-4 mb-4;
+    li {
+      @apply mb-2 last:mb-0;
+    }
+  }
+  ol {
+    @apply mb-2;
+    li {
+      @apply mb-2 last:mb-0;
+    }
+    ol {
+      @apply mt-2 pl-4;
+    }
+  }
+}

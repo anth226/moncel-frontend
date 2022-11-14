@@ -4,7 +4,7 @@ import NextImage from 'next/image';
 import NextLink from 'next/link';
 
 import { NavMenuIdentifier } from '.';
-import { Header4, Header5, Text } from 'components/core/typography';
+import { Header4, Header5, Text } from 'components/core/Typography';
 import styles from './styles.module.scss';
 import CourseMenuGraphic from 'public/afs-menu-course.webp';
 
@@ -17,7 +17,6 @@ const COURSE_LINKS = [
     { text: "Food Safety Manager", href: "/courses/food-safety-manager" },
     { text: "Introduction to Food Safety", href: "/courses/introduction-to-food-safety-course" },
 ];
-
 interface Props {
     open: NavMenuIdentifier | null;
     anchor: Element | null;

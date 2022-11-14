@@ -9,7 +9,8 @@ const LandingPageLogos = () => {
     <LogosCarousel />
     <Header4 className="text-teal w-full text-center font-normal mt-6">Trusted and recommended by the Australian Food Industry</Header4>
   </Section>;
-}
+};
+
 const Home = () => {
   return (
     <Layout pageTitle='Food Safety Courses | Online Food Safety Training and More | AIFS' metaDescription="AIFS is Australia's leading provider of Food Safety Supervisor and Food Handler training. Courses are Nationally Recognised and accepted by local health authorities.">
