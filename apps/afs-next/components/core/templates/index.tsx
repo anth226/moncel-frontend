@@ -176,7 +176,7 @@ export const ExpandibleFAQ = (props: ExpandibleFAQProps) => {
           boxShadow: 0,
       }} disableGutters>
       <AccordionSummary classes={{ root: "!p-0 !m-0"}} onClick={toggleReadMore}>
-        <a className="text-teal font-medium underline !p-0 !m-0">
+        <a className="text-teal font-medium !underline !p-0 !m-0">
           {readMore == true ? "Read More" : "Read Less"}</a>
       </AccordionSummary>
       <AccordionDetails classes={{ root: "!p-0 !m-0"}}>
