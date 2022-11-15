@@ -12,7 +12,7 @@ import LogoSumoSalad from 'public/logos/logo_sumo_salad.svg';
 import LogoYmca from 'public/logos/logo_ymca.svg';
 import LogoRedRooster from 'public/logos/logo_red_rooster.svg';
 import LogoSupaIga from 'public/logos/logo_supa_iga.svg';
-import LogoRydges from 'public/logos/logos_rydges.svg';
+import LogoRydges from 'public/logos/logo_rydges.svg';
 import LogoTgiFridays from 'public/logos/logo_tgi_fridays.svg';
 import LogoLendardsChicken from 'public/logos/logo_lenards_chicken.svg';
 import LogoBP from 'public/logos/logo_bp.svg';
@@ -22,6 +22,7 @@ import LogoGrilld from 'public/logos/logo_grilld.svg';
 import LogoKissTheBerry from 'public/logos/logo_kiss_the_berry.svg';
 import LogoSpotless from 'public/logos/logo_spotless.svg';
 import LogoLinfox from 'public/logos/logo_linfox.svg';
+import LogoCaltex from 'public/logos/logo_caltex.svg';
 
 
 const DEFAULT_ID = "carousel-logos";
@@ -44,6 +45,7 @@ const DEFAULT_LOGOS: Array<StaticImageData> = [
     LogoKissTheBerry,
     LogoSpotless,
     LogoLinfox,
+    LogoCaltex,
 ];
 
 const SLIDER_OPTIONS = {
