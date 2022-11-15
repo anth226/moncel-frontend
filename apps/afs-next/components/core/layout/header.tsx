@@ -38,9 +38,10 @@ const HEADER_BANNER_NAVIGATION_DATA: Array<Link> = [
 ];
 
 const ADDITIONAL_MOBILE_NAVIGATION_DATA: Array<Link> = [
+    { href: "/faq", text: "FAQ" },
     { href: "/contact", text: "Contact Us" },
     { href: "https://my.foodsafety.com.au/customer/account/login/", text: "Course Login" },
-    { href: "/contact", text: "Member Login" },
+    { href: "https://resources.foodsafety.com.au/user/login", text: "Member Login" },
 ];
 
 const SiteNoticeContent = <div className="flex gap-2 md:gap-3 items-start text-left md:text-center md:m-auto"><Image src={`/exclamation.svg`} alt="Important" priority width={20} height={20} /><Text className="!text-white uppercase leading-[1rem] md:leading-6 text-sm md:text-base">Covid-19 resources now included with <Link href="/courses"><a className="underline hover:no-underline text-white">all courses</a></Link></Text></div>
