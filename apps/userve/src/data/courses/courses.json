@@ -667,6 +667,16 @@
     {
         "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
         "state": "Michigan",
+        "title": "Allergen Management Training",
+        "desc": "This training program teaches food handlers the essential knowledge they need to understand allergen management and prevent allergen-related incidents in food businesses.",
+        "url": "/us/mi/food-service/allergy-training",
+        "type": "fh_allergen",
+        "button": "primary",
+        "productCategoryLabel": "Allergen Management"
+    },
+    {
+        "image": "/hubfs/course-assets/usx_fh_ge_hero.jpg",
+        "state": "Michigan",
         "title": "Food Handler Training",
         "desc": "This training program teaches food handlers essential knowledge in food safety to help prevent foodborne illness.",
         "url": "/us/mi/food-service/food-handler-training",
