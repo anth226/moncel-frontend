@@ -89,7 +89,6 @@ const MobileMenuCollapse = ({ navigationData }: { navigationData: Array<Link> })
         elements.push(<a href={link.href} className="py-2.5 text-white text-sm no-underline font-semibold border-afs-green-light border-t-[1px]" key={`banner-navigation-link-${link.text}`}>{link.text}</a>);
         return elements;
     }, [] as React.ReactNode[]);
-    linkElements.pop();
     return <div id={MOBILE_MENU_COLLAPSE_ID} className="bg-teal  accordion-collapse collapse" data-bs-parent={MOBILE_MENU_ACCORDION_ID}>
         <div className="flex flex-col padded-section">{ linkElements }</div>
                 
