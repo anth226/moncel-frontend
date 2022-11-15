@@ -16,6 +16,12 @@ import LogoRydges from 'public/logos/logos_rydges.svg';
 import LogoTgiFridays from 'public/logos/logo_tgi_fridays.svg';
 import LogoLendardsChicken from 'public/logos/logo_lenards_chicken.svg';
 import LogoBP from 'public/logos/logo_bp.svg';
+import LogoAustraliaZoo from 'public/logos/logo_australia_zoo.svg';
+import LogoDavidJones from 'public/logos/logo_david_jones.svg';
+import LogoGrilld from 'public/logos/logo_grilld.svg';
+import LogoKissTheBerry from 'public/logos/logo_kiss_the_berry.svg';
+import LogoSpotless from 'public/logos/logo_spotless.svg';
+import LogoLinfox from 'public/logos/logo_linfox.svg';
 
 
 const DEFAULT_ID = "carousel-logos";
@@ -32,6 +38,12 @@ const DEFAULT_LOGOS: Array<StaticImageData> = [
     LogoTgiFridays,
     LogoLendardsChicken,
     LogoBP,
+    LogoAustraliaZoo,
+    LogoDavidJones,
+    LogoGrilld,
+    LogoKissTheBerry,
+    LogoSpotless,
+    LogoLinfox,
 ];
 
 const SLIDER_OPTIONS = {
