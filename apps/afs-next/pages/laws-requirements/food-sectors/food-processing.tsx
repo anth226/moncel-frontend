@@ -85,7 +85,7 @@ const Section4 = () => {
         </div>
         {/* Tablet */}
         <div className="flex flex-col">
-          <CollapsibleCellGroup>
+          <CollapsibleCellGroup initialIndex={0}>
             <CollapsibleTableCell
                 summary={<Text className="!text-teal ">CURRENT UNITS</Text> }
                 details={<div>
