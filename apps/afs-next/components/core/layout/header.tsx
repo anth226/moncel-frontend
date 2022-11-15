@@ -84,11 +84,12 @@ const MobileMenuHamburgerButton = () => {
 };
 
 const MobileMenuCollapse = ({ navigationData }: { navigationData: Array<Link> }) => {
-    const linkElements = navigationData.reduce((elements, link) => {
+    let linkElements = navigationData.reduce((elements, link) => {
         if(!link) return elements;
         elements.push(<a href={link.href} className="py-2.5 text-white text-sm no-underline font-semibold border-afs-green-light border-t-[1px]" key={`banner-navigation-link-${link.text}`}>{link.text}</a>);
         return elements;
     }, [] as React.ReactNode[]);
+    linkElements = linkElements.slice(1);
     return <div id={MOBILE_MENU_COLLAPSE_ID} className="bg-teal  accordion-collapse collapse" data-bs-parent={MOBILE_MENU_ACCORDION_ID}>
         <div className="flex flex-col padded-section">{ linkElements }</div>
                 

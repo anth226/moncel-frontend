@@ -30,15 +30,6 @@ export const PathnameComponent = (props: { displayPathname: string, pathname: st
 
 export const NavigationComponent = (props: NavigationProps) => {
     const router = useRouter();
-    // Implement smooth scroll
-    const handleLinkClick = (href: string) => (e: MouseEvent<HTMLAnchorElement>) => {
-        if (document) {
-            e.preventDefault();
-            document.querySelector(`[href='${href}']`)?.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    }
     const borderClass = "border border-solid border-teal";
     return <div className="flex flex-col w-full mb-8 lg:mb-0">
         <div className={`${borderClass} bg-teal text-white px-3 py-1.5 text-[14px] font-semibold`}>{props.title}</div>

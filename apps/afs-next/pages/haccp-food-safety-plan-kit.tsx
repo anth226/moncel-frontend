@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Layout from 'components/core/layout';
 import { Divider, ListItem, IconCard, ExpandibleFAQ, IntroBox } from 'components/core/templates';
 import { CoursesBackground } from 'components/courses';
@@ -6,6 +7,7 @@ import { RowsTemplate } from 'components/templates';
 import { RowsTemplateProps } from 'components/templates/types';
 import { SectionContainer } from 'components/core/SectionContainer';
 import { Courses } from 'data/courses';
+import useIsOnScreen from 'lib/useIsOnScreen';
 
 import HaccpProgramGraphic from 'public/haccp/afs-haccp.jpg';
 import WhatsInKit from 'public/haccp/afs-haccp-product.jpg';
@@ -17,6 +19,12 @@ import CalendarClockIcon from 'public/icons/icon_stroke_green_calendar_clock.svg
 import GuideIcon from 'public/icons/icon_stroke_green_guide.svg';
 
 import { TwoCol } from 'components/core/TwoCol';
+
+const ANCHOR_IDS = {
+  whatsIncluded: "whats-included",
+  whatsInKit: "whats-in-kit",
+  commonQuestions: "common-questions",
+};
 
 const TemplateData: Omit<RowsTemplateProps, "children"> = {
   pathname: "haccp-food-safety-plan-kit",
@@ -34,17 +42,39 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
     price: "$99.95",
     showLogo: false,
     links: [
-      { text: "WHAT'S INCLUDED", href: "#whats-included" },
-      { text: "WHAT'S IN THE KIT?", href: "#whats-in-kit" },
-      { text: "COMMON QUESTIONS", href: "#common-questions" },
+      { text: "WHAT'S INCLUDED", href: `#${ANCHOR_IDS.whatsIncluded}` },
+      { text: "WHAT'S IN THE KIT?", href: `#${ANCHOR_IDS.whatsInKit}` },
+      { text: "COMMON QUESTIONS", href: `#${ANCHOR_IDS.commonQuestions}` },
     ]
   },
 };
 
 const Page = () => {
+  const [anchor, setAnchor] = useState<string | undefined>(undefined);
+  const whatsIncludedScrollRef = useIsOnScreen(ANCHOR_IDS.whatsIncluded);
+  const whatsInKitScrollRef = useIsOnScreen(ANCHOR_IDS.whatsInKit);
+  const commonQuestionsScrollRef = useIsOnScreen(ANCHOR_IDS.commonQuestions);
+
+  // handle hash scrolling
+  useEffect(() => {
+    const newHashStr = whatsIncludedScrollRef || whatsInKitScrollRef || commonQuestionsScrollRef;
+
+    if(newHashStr) {
+      window.history.pushState({}, document.title, `#${newHashStr}`);
+      setAnchor(`#${newHashStr}`);
+    }
+    const handleHashChange = () => {
+      window.requestIdleCallback(() => setAnchor(window.location.hash));
+    };
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashChange', handleHashChange);
+    }
+  }, [whatsIncludedScrollRef, whatsInKitScrollRef, commonQuestionsScrollRef]);
   return (
     <Layout isCoursePage={true} pageTitle='HACCP Food Safety Plan Kit | For Food Safety Programs | AIFS' metaDescription='The HACCP Food Safety Plan Kit comes with all the tools you need to develop a compliant Food Safety Plan. Templates, samples, video courses and more.'>
-      <CoursesBackground><RowsTemplate {...TemplateData}>
+      <CoursesBackground><RowsTemplate {...TemplateData} anchor={anchor}>
         <>
           <Section1 />
           <Divider />
@@ -75,7 +105,7 @@ const Section1 = () => {
 };
 
 const Section2 = () => {
-  return <SectionContainer id="whats-included">
+  return <SectionContainer id={ANCHOR_IDS.whatsIncluded}>
     <TwoCol>
       <IconCard
         imageSrc={StopwatchIcon}
@@ -118,7 +148,7 @@ const Section2 = () => {
 };
 
 const WhatIsSection = () => {
-  return <SectionContainer id="whats-in-kit">
+  return <SectionContainer id={ANCHOR_IDS.whatsInKit}>
     <div className="col-span-12 pb-8 flex flex-col text-center">
       <Header3>{`What's in the kit?`}</Header3>
       <Header4 className="text-emperor">Get everything you need to build a compliant Food Safety Plan</Header4>
@@ -141,7 +171,7 @@ const WhatIsSection = () => {
 };
 
 const CommonQuestionsSection = () => {
-  return <SectionContainer id="common-questions" className="flex flex-col">
+  return <SectionContainer id={ANCHOR_IDS.commonQuestions} className="flex flex-col">
     <div className="w-full pb-8 flex flex-col text-center">
       <Header3>Common Questions</Header3>
       <Header4 className="text-emperor">Learn more about what our students ask about this course</Header4>
