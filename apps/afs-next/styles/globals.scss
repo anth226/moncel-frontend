@@ -138,13 +138,24 @@ ol {
       margin:0px auto !important;
       display:block !important;
       padding-bottom:10px;
-      transition: all 0.4s ease;
     }
     &.Mui-expanded {
       .icon {
-        transition: all 0.4s ease;
-        padding-bottom:0;
-        transform: rotate(-180deg);
+        display:none !important;
+      }
+    }
+  }
+  .MuiButtonBase-root {
+    .MuiAccordionDetails-root {
+      display:none;
+    }
+    &[aria-expanded="true"] {
+      .MuiAccordionDetails-root {
+        display:block;
+        &::after {
+          content: url("/icons/icon_stroke_green_cross.svg");
+          @apply w-[15px] h-[15px] block m-auto mt-3 mb-1;
+        }
       }
     }
   }

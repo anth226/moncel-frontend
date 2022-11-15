@@ -178,38 +178,38 @@ const CourseInclusionsSection = () => {
     </div>
     <div className="w-full grid items-start grid-cols-1 md:grid-cols-3 gap-8">
       <Accordion square disableGutters className="border border-mint !shadow-none featured">
-        <AccordionSummary id="course-inclusions-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0' }}>
+        <AccordionSummary id="course-inclusions-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0 !flex !flex-col' }}>
           <ImageBannerCard
             title="ONLINE COURSE"
             description="This introductory course is suitable for people who are new to working with food."
             imageSrc={OnlineGraphic} />
+          <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
+            <Text className="!text-teal">{`The straightforward format of the course allows you to complete it step-by-step at a pace that you're comfortable with, revisiting sections as required.`}</Text>
+          </AccordionDetails>
         </AccordionSummary>
-        <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
-          <Text className="!text-teal">{`The straightforward format of the course allows you to complete it step-by-step at a pace that you're comfortable with, revisiting sections as required.`}</Text>
-        </AccordionDetails>
       </Accordion>
 
       <Accordion square disableGutters className="border border-mint !shadow-none featured">
-        <AccordionSummary id="course-inclusions-card-2" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0' }}>
+        <AccordionSummary id="course-inclusions-card-2" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0 !flex !flex-col' }}>
           <ImageBannerCard
             title="OFFICIAL CERTIFICATE"
-            description="Upon successful completion of the course, you’ll receive a Certificate of Completion via email."
+            description="Upon successful completion of the course, you'll receive a Certificate of Completion via email."
             imageSrc={DisplayCertificateGraphic} />
+          <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
+            <Text className="!text-teal">This is a great way to show customers that {`you're`} serious about food safety and protecting their health.</Text>
+          </AccordionDetails>
         </AccordionSummary>
-        <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
-          <Text className="!text-teal">This is a great way to show customers that {`you're`} serious about food safety and protecting their health.</Text>
-        </AccordionDetails>
       </Accordion>
       <Accordion square disableGutters className="border border-mint !shadow-none featured">
-        <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0' }}>
+        <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0 !flex !flex-col' }}>
           <ImageBannerCard
             title="ACCESS TO RESOURCES"
             description="Access to hundreds of blogs and the latest news to help you continue your education."
             imageSrc={ReadResourcesGraphic} />
+          <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
+            <Text className="!text-teal">Purchase an AIFS Membership to gain unlimited access to our entire Resource Library of how-to guides, fact sheets, checklists and more. </Text>
+          </AccordionDetails>
         </AccordionSummary>
-        <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
-          <Text className="!text-teal">Purchase an AIFS Membership to gain unlimited access to our entire Resource Library of how-to guides, fact sheets, checklists and more. </Text>
-        </AccordionDetails>
       </Accordion>
     </div>
   </div>;
