@@ -39,7 +39,7 @@ const HEADER_BANNER_NAVIGATION_DATA: Array<Link> = [
 
 const ADDITIONAL_MOBILE_NAVIGATION_DATA: Array<Link> = [
     { href: "/contact", text: "Contact Us" },
-    { href: "/contact", text: "Course Login" },
+    { href: "https://my.foodsafety.com.au/customer/account/login/", text: "Course Login" },
     { href: "/contact", text: "Member Login" },
 ];
 
