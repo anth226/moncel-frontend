@@ -219,38 +219,38 @@ const CourseInclusionsSection = () => {
     </div>
     <div className="w-full grid items-start grid-cols-1 md:grid-cols-3 gap-8">
       <Accordion square disableGutters className="border border-mint !shadow-none featured">
-        <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0' }}>
+        <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0 !flex !flex-col' }}>
           <ImageBannerCard
             title="AIFS Membership"
             description="A complimentary 12-month AIFS Membership is included with all AIFS nationally recognised accredited training courses."
             imageSrc={AIFSMembershipGraphic} />
+          <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
+            <Text className="!text-teal">Your membership includes food safety tools, resources and updates that benefit you, your business and your customers.</Text>
+          </AccordionDetails>
         </AccordionSummary>
-        <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
-          <Text className="!text-teal">Your membership includes food safety tools, resources and updates that benefit you, your business and your customers.</Text>
-        </AccordionDetails>
       </Accordion>
 
       <Accordion square disableGutters className="border border-mint !shadow-none featured">
-        <AccordionSummary id="food-handler-course-benefits-card-2" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0 flex flex-col' }}>
+        <AccordionSummary id="food-handler-course-benefits-card-2" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0 !flex !flex-col' }}>
           <ImageBannerCard
             title="Food Safety Card"
             description="You'll receive a handy wallet-sized blue Food Safety Card that contains official proof of your food safety training."
             imageSrc={FoodSafetyCardGraphic} />
+          <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
+            <Text className="!text-teal">Just keep your card in your pocket at work, so {`you're`} always ready to show Health Inspectors during surprise food audits.</Text>
+          </AccordionDetails>
         </AccordionSummary>
-        <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
-          <Text className="!text-teal">Just keep your card in your pocket at work, so {`you're`} always ready to show Health Inspectors during surprise food audits.</Text>
-        </AccordionDetails>
       </Accordion>
       <Accordion square disableGutters className="border border-mint !shadow-none featured">
-        <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0' }}>
+        <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0 !flex !flex-col' }}>
           <ImageBannerCard
             title="Business Signage"
             description="Receive the widely recognised 'Serious About Food Safety' window decal and display certificate for your business."
             imageSrc={FHRecallAlerts} />
-        </AccordionSummary>
-        <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
-          <Text className="!text-teal">Use them to show customers that you take their health and safety seriously, and have the high level of training to do so.</Text>
-        </AccordionDetails>
+          <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
+            <Text className="!text-teal">Use them to show customers that you take their health and safety seriously, and have the high level of training to do so.</Text>
+          </AccordionDetails>
+        </AccordionSummary>  
       </Accordion>
     </div>
   </div>;
