@@ -5,7 +5,6 @@ import NextImage from 'next/image';
 import { Section } from 'components/core/Section';
 
 import { Header2, Text } from 'components/core/typography';
-import Button from 'components/core/Button';
 
 const Grid = () => {
     return <div className="grid grid-cols-2 lg:grid-cols-3 grid-flow-row w-full gap-6 mt-6">
@@ -30,7 +29,7 @@ const GridCell = ({ imageSrc, title, href }: GridCellProps) => {
             <Image src={imageSrc} width={330} height={186} alt={`Thumbnail image for ${title} resource`} />
             <div className="text-teal font-semibold pb-3 pt-2">{title}</div>
         </a></Link>
-        <Button id={`button-learn-more-${title.replace(" ", "_")}`} variant="invert" className="text-sm tracking-wide py-3 w-full"><a href={href} className="uppercase">Learn More</a></Button>
+        <Link href={href}><a id={`button-learn-more-${title.replace(" ", "_")}`} className="uppercase text-sm tracking-wide py-3 w-full bg-transparent px-0 lg:px-6 text-teal items-center rounded border border-teal hover:bg-teal hover:text-white hover:cursor-pointer flex justify-center text-center no-underline">Learn More</a></Link>
     </div>;
 };
 
