@@ -20,7 +20,7 @@ export const Header2 = (props: PropType) => {
 };
 
 export const Header3 = (props: PropType) => {
-    return <span className={`inline-block text-2xl md:text-[26px] font-medium leading-6 lg:leading-4 mb-2 text-teal ${props.className}`}><h3>{props.children}</h3></span>;
+    return <span className={`inline-block text-2xl md:text-[26px] font-medium leading-6 lg:leading-4 mb-2 text-mine ${props.className}`}><h3>{props.children}</h3></span>;
 };
 
 export const Header4 = (props: PropType) => {

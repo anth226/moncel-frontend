@@ -46,7 +46,7 @@ const ADDITIONAL_MOBILE_NAVIGATION_DATA: Array<Link> = [
 const SiteNoticeContent = <div className="flex gap-2 md:gap-3 items-start text-left md:text-center md:m-auto"><Image src={`/exclamation.svg`} alt="Important" priority width={20} height={20} /><Text className="!text-white uppercase leading-[1rem] md:leading-6 text-sm md:text-base">Covid-19 resources now included with <Link href="/courses"><a className="underline hover:no-underline text-white">all courses</a></Link></Text></div>
 
 const SiteNotice = () => {
-    return <div className="bg-shakespeare w-full p-[10.5px] md:text-center text-white flex justify-center">
+    return <div className="bg-monarch w-full p-[10.5px] md:text-center text-white flex justify-center">
         { SiteNoticeContent }
     </div>
 };
@@ -114,7 +114,7 @@ const DesktopHeader = () => {
     // Create an array of links with dividers then pop the last divider
     const linkElements = HEADER_NAVIGATION_DATA.reduce((elements, link, i) => {
         if(!link) return elements;
-        elements.push(<a href={link.href} className="mx-1 text-teal text-xs uppercase font-semibold no-underline hover:underline" key={`header-navigation-link-${link.text}`}>{link.text}</a>);
+        elements.push(<a href={link.href} className="mx-1 text-mine text-xs uppercase font-semibold no-underline hover:underline" key={`header-navigation-link-${link.text}`}>{link.text}</a>);
         elements.push(<p className="mx-1 text-xs text-slate-400" key={`header-navigation-divider-${i}`}>/</p>);
         return elements;
     }, [] as React.ReactNode[]) || [];

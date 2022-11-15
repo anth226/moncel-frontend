@@ -65,7 +65,7 @@ body {
 }
 
 a {
-  @apply text-teal font-medium underline hover:no-underline cursor-pointer;
+  @apply text-mine font-medium underline hover:no-underline cursor-pointer;
 }
 
 Button {
@@ -97,7 +97,7 @@ ul {
       @apply text-mine;
     }
     a {
-      @apply text-teal underline font-semibold;
+      @apply text-mine underline font-semibold;
     }
   }
 }
@@ -120,7 +120,7 @@ ol {
       @apply text-black;
     }
     a {
-      @apply font-semibold text-teal underline hover:no-underline;
+      @apply font-semibold text-mine underline hover:no-underline;
     }
   }
 }
@@ -167,7 +167,7 @@ ol {
     font-size: 1em;
   }
   a {
-    @apply text-teal font-medium underline hover:no-underline;
+    @apply text-mine font-medium underline hover:no-underline;
   }
   ul {
     @apply list-square mr-4 mb-4;

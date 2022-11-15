@@ -41,7 +41,7 @@ const MenuItem = (props: Props) => {
             {/* actual menu */}
             <div className="padded-section bg-white px-7 py-8 grid grid-cols-2 gap-x-8 gap-y-0 grid-flow-row mt-3">
                 <Column>
-                    <Header4 className="text-teal leading-6">For Business</Header4>
+                    <Header4 className="text-mine leading-6">For Business</Header4>
                     <Divider />
                     <div style={{
                         display: "grid",
@@ -72,7 +72,7 @@ const MenuItem = (props: Props) => {
 
 const Column = ({ children }: { children: ReactNode, className?: string }) => <div className={`${styles["quicklist"]} flex flex-col`}>{ children }</div>
 const Divider = () => <div className="w-full border-b-[1px] border-teal my-4" />;
-const Link = ({ text, href }: { text: string, href: string }) => <a className="link text-teal no-underline hover:underline font-medium" href={href}>{text}</a>
+const Link = ({ text, href }: { text: string, href: string }) => <a className="link text-mine no-underline hover:underline font-medium" href={href}>{text}</a>
 const ListItem = ({ children }: { children: ReactNode }) => <li className="p-0 m-0 border-mystic border-y py-2 text-sm -mb-[1px]">{ children }</li>
 
 export default MenuItem;

@@ -1,7 +1,22 @@
 /** @type {import('next').NextConfig} */
+const withTM = require("next-transpile-modules")(["moncel-one-sdk"]);
+const withMDX = require('@next/mdx')();
+
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-}
+  compiler: {
+    styledComponents: true,
+  },
+  images: {
+    domains: ['localhost'],
+    formats: ['image/avif', 'image/webp'],
+  },
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require("moncel-next-config/scripts/sitemap-generator");
+    }
+    return config;
+  },
+};
 
-module.exports = nextConfig
+module.exports = withMDX(withTM(nextConfig));
