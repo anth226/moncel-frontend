@@ -172,7 +172,7 @@ query {
             publicURL
         }
     }
-    fh_allergen:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+    fh_allergen:allFile(filter: { name: { eq: "usx_fh_al_hero" } }) {
         nodes {
             name
             extension
