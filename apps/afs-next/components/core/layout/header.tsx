@@ -90,7 +90,7 @@ const MobileMenuCollapse = ({ navigationData }: { navigationData: Array<Link> })
         return elements;
     }, [] as React.ReactNode[]);
     linkElements = linkElements.slice(1);
-    return <div id={MOBILE_MENU_COLLAPSE_ID} className="bg-teal  accordion-collapse collapse" data-bs-parent={MOBILE_MENU_ACCORDION_ID}>
+    return <div id={MOBILE_MENU_COLLAPSE_ID} className="bg-teal  accordion-collapse collapse" >
         <div className="flex flex-col padded-section">{ linkElements }</div>
                 
     </div>;
@@ -100,7 +100,7 @@ const DesktopBannerNavigation = ({ navigationData }: { navigationData: Array<Lin
     if(!navigationData) return null;
     const linkElements = navigationData.reduce((elements, link, i) => {
         if(!link) return elements;
-        elements.push(<a href={link.href} className="text-white no-underline font-semibold text-base whitespace-nowrap hover:underline" key={`banner-navigation-link-${link.text}`}>{link.text}</a>);
+        elements.push(<a href={link.href} className="text-mine no-underline font-semibold text-base whitespace-nowrap hover:underline" key={`banner-navigation-link-${link.text}`}>{link.text}</a>);
         elements.push(<p className="mx-3 text-pasture" key={`banner-navigation-divider-${i}`}>|</p>);
         return elements;
     }, [] as React.ReactNode[]);
