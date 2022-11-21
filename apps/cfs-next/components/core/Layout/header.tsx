@@ -9,8 +9,6 @@ import { Text } from 'components/core/Typography';
 import Image from 'components/core/Image';
 import Link from 'next/link';
 
-import CIFSLogo from 'public/cifs-full-width-white.svg';
-
 const { toggleMobileMenu, toggleModal } = AppActions;
 const MOBILE_MENU_ACCORDION_ID = "mobilemenu-accordion";
 const MOBILE_MENU_COLLAPSE_ID = "mobilemenu-collapse";
@@ -29,7 +27,6 @@ const HEADER_NAVIGATION_DATA: Array<Link> = [
 ];
 
 const HEADER_BANNER_NAVIGATION_DATA: Array<Link> = [
-    { href: "/", text: "Home" },
     { href: "/laws-requirements", text: "Laws & Requirements" },
     { href: "/courses", text: "Food Safety Courses" },
     { href: "/haccp-programs", text: "HACCP Programs"},
@@ -87,12 +84,12 @@ const MobileMenuHamburgerButton = () => {
 };
 
 const MobileMenuCollapse = ({ navigationData }: { navigationData: Array<Link> }) => {
-    let linkElements = navigationData.reduce((elements, link) => {
+    const linkElements = navigationData.reduce((elements, link) => {
         if(!link) return elements;
         elements.push(<a href={link.href} className="py-3 px-4 text-white text-sm no-underline font-semibold border-mine border-t-[1px]" key={`banner-navigation-link-${link.text}`}>{link.text}</a>);
         return elements;
     }, [] as React.ReactNode[]);
-    linkElements = linkElements.slice(1);
+    // linkElements = linkElements.slice(1);
     return <div id={MOBILE_MENU_COLLAPSE_ID} className="bg-bunting accordion-collapse collapse" >
         <div className="flex flex-col">{ linkElements }</div>
                 
