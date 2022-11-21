@@ -6,7 +6,7 @@ import NextLink from 'next/link';
 export { default as GridTemplate } from './GridTemplate';
 export { default as RowsTemplate } from './RowsTemplate';
 import { NavigationProps, CheckoutSidebarComponentProps } from './types';
-import { Header2, Header4, P, Text } from 'components/core/typography';
+import { Header2, Header4, Text } from 'components/core/typography';
 import { useAppDispatch, AppActions } from 'store';
 const { toggleModal } = AppActions;
 
