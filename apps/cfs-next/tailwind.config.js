@@ -53,5 +53,8 @@ module.exports = {
             "alabaster": "#F9F9F9", // Used for backgrounds
         },
       },
-    }
+    },
+    plugins: [
+      require('tw-elements/dist/plugin')
+    ],
 };

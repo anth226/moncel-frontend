@@ -1,5 +1,6 @@
 import Layout from 'components/core/Layout';
-// import Carousel from 'components/core/Carousel';
+import Carousel from 'components/core/Carousel';
+import { HeroSection } from 'components/Landing';
 // import { LogosCarousel } from 'components/core/Carousel';
 // import { Section, Header4 } from 'components/core';
 // import { HelpSection, CommunitySection, BlogSection } from 'components/Landing';
@@ -13,11 +14,11 @@ import Layout from 'components/core/Layout';
 const Home = () => {
   return (
     <Layout>
-      {/* <Carousel id="heroCarousel" />
-      <HelpSection />
-      <LandingPageLogos />
-      <CommunitySection />
-      <BlogSection /> */}
+       <Carousel id="heroCarousel" />
+      <HeroSection />
+      {/* <LandingPageLogos /> */}
+      {/* <CommunitySection /> */}
+      {/* <BlogSection /> */}
     </Layout>
   );
 };

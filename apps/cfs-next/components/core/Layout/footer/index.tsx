@@ -52,7 +52,7 @@ const GOVERNMENT_PUBLIC_HEALTH_LINKS: Array<Link> = [
 ];
 
 const FooterLink = ({ href, children, ...rest }: { children: JSX.Element | JSX.Element[] | string, href: string, [ key:string ]: unknown }) => {
-    return <a className="text-sm text-white leading-4 mb-2 last:mb-0 max-w-[175px] h-auto no-underline hover:underline" href={href} {...rest}>{ children }</a>;
+    return <a className="text-sm text-mine leading-4 mb-2 last:mb-0 max-w-[175px] h-auto no-underline hover:underline" href={href} {...rest}>{ children }</a>;
 };
 
 const MobileFooter = () => {
@@ -73,7 +73,7 @@ const FooterNavigation = () => {
     return <div className="hidden lg:block w-full bg-teal" id="section-footer-navigation">
         <div className="padded-section pt-8 pb-7 bg-teal flex flex-row justify-between gap-2 text-[1rem] lg:text-md w-full">
             {/* Food safety courses */}
-            <div className="flex flex-col text-white no-underline">
+            <div className="flex flex-col text-mine no-underline">
                 <p className="font-semibold pb-2">Food Safety Courses</p>
                 {FOOD_SAFETY_COURSE_LINKS.map(link => {
                     return <FooterLink href={link.href} key={`Food Safety Courses-${link.text}`}>{link.text}</FooterLink>;
@@ -81,7 +81,7 @@ const FooterNavigation = () => {
             </div>
 
             {/* Products */}
-            <div className="flex flex-col text-white no-underline">
+            <div className="flex flex-col text-mine no-underline">
                 <p className="font-semibold pb-2">Products</p>
                 {PRODUCT_LINKS.map(link => {
                     return <FooterLink href={link.href} key={`Products-${link.text}`}>{link.text}</FooterLink>;
@@ -89,7 +89,7 @@ const FooterNavigation = () => {
             </div>
 
             {/* About Us */}
-            <div className="flex flex-col text-white no-underline">
+            <div className="flex flex-col text-mine no-underline">
                 <p className="font-semibold pb-2">About Us</p>
                 {ABOUT_US_LINKS.map(link => {
                     return <FooterLink href={link.href} key={`About Us-${link.text}`}>{link.text}</FooterLink>;
@@ -97,7 +97,7 @@ const FooterNavigation = () => {
             </div>
 
             {/* Legal and policy */}
-            <div className="flex flex-col text-white no-underline">
+            <div className="flex flex-col text-mine no-underline">
                 <p className="font-semibold pb-2">Legal {"&"} Policy</p>
                 {LEGAL_POLICY_LINKS.map(link => {
                     return <FooterLink href={link.href} key={`Legal & Policy-${link.text}`}>{link.text}</FooterLink>;
@@ -106,8 +106,8 @@ const FooterNavigation = () => {
 
             {/* Government & public health */}
             <div className="flex flex-col">
-            <p className="font-semibold text-white pb-2">Government {"&"} Public Health Information</p>
-                <div className="grid grid-cols-2 grid-flow-row gap-x-6  text-white no-underline items-start">
+            <p className="font-semibold text-mine pb-2">Government {"&"} Public Health Information</p>
+                <div className="grid grid-cols-2 grid-flow-row gap-x-6  text-mine no-underline items-start">
                     { GOVERNMENT_PUBLIC_HEALTH_LINKS.map(link => {
                         return <FooterLink href={link.href} key={`Government & Public Health-${link.text}`} target="_blank">{link.text}</FooterLink>;
                     })}

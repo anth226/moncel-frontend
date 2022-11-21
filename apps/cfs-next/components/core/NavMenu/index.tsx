@@ -16,9 +16,9 @@ export const NavMenu = () => {
     const anchorRef = useRef(null);
 
     // clone children and pass setAnchor
-    return <div className="bg-teal text-white w-full py-3">
+    return <div className="bg-teal text-mine w-full py-3">
     <nav className="flex flex-row justify-start padded-section items-start gap-2 xl:gap-3" ref={anchorRef}>
-        <NextLink href="/"><a className="link text-white no-underline hover:underline font-semibold" >Home</a></NextLink>
+        <NextLink href="/"><a className="link text-mine no-underline hover:underline font-semibold" >Home</a></NextLink>
         <Divider />
         <LawsRequirementsMenu 
             open={openEl}
@@ -65,6 +65,6 @@ export const NavMenu = () => {
 </div>;
 };
 
-const Divider = () => <p className="text-niagara">|</p>;
+const Divider = () => <p className="text-niagara select-none">/</p>;
 
 export default NavMenu;

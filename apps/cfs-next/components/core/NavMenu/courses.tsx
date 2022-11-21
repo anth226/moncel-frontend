@@ -32,7 +32,7 @@ const MenuItem = (props: Props) => {
         props.setOpen(null);
     }
     return <div id={`nav-menu-${ID}`} onMouseLeave={closeMenu}>
-        <NextLink href={HREF}><a className="link text-white no-underline hover:underline font-semibold" onMouseEnter={openMenu}> {`Food Safety Courses`}</a></NextLink>
+        <NextLink href={HREF}><a className="link text-mine no-underline hover:underline font-semibold" onMouseEnter={openMenu}> {`Food Safety Courses`}</a></NextLink>
         <Popper id={ID} open={props.open === ID} anchorEl={props.anchor} placement="bottom-start">
             {/* actual menu */}
             <div className="padded-section bg-white px-7 py-8 grid grid-cols-2 gap-x-8 gap-y-0 grid-flow-row mt-3">
@@ -48,7 +48,7 @@ const MenuItem = (props: Props) => {
                             <Text className="text-sm leading-5 mb-0">Whether {`you're`} a food worker, business owner or training manager, our food safety courses make it easy for you to meet your legal requirements.</Text>
                             <Text className="text-sm leading-5 mb-0">At AIFS, our courses are nationally recognised throughout Australia. They can be completed online in a few hours and many students receive their certificate on the same day that they finish the course.</Text>
                         </div>
-                        <NextImage src={CourseMenuGraphic} width={200} height={112} layout="fixed" />
+                        {/* <NextImage src={CourseMenuGraphic} width={200} height={112} layout="fixed" /> */}
                     </div>
 
                 </Column>

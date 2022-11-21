@@ -26,7 +26,7 @@ const Layout = ({ children, className, isCoursePage, pageTitle, metaDescription 
         // global navigation logic (e.g. closing menus)
     }, []);
 
-    return <div className={`w-full ${className || ""}`}>
+    return <div className={`w-full pointer-events-auto ${className || ""}`}>
         <Head title={pageTitle} description={metaDescription} />
         <Header />
             { children }

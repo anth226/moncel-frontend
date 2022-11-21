@@ -6,7 +6,7 @@ import NextLink from 'next/link';
 import { NavMenuIdentifier } from '.';
 import { Header4, Header5, Text } from 'components/core/Typography';
 import styles from './styles.module.scss';
-import StudentsMenuGraphic from 'public/afs-menu-students.webp';
+// import StudentsMenuGraphic from 'public/afs-menu-students.webp';
 
 const ID: NavMenuIdentifier = "for-students";
 const HREF = "/students";
@@ -35,7 +35,7 @@ const MenuItem = (props: Props) => {
         e.stopPropagation();
     }
     return <div id={`nav-menu-${ID}`} onMouseLeave={closeMenu}>
-        <NextLink href={HREF}><a className="link text-white no-underline hover:underline font-semibold" onMouseEnter={openMenu}>For Students</a></NextLink>
+        <NextLink href={HREF}><a className="link text-mine no-underline hover:underline font-semibold" onMouseEnter={openMenu}>For Students</a></NextLink>
         <Popper id={ID} open={props.open === ID} anchorEl={props.anchor} placement="bottom-start">
             {/* actual menu */}
             <div className="padded-section bg-white px-7 py-8 grid grid-cols-2 gap-x-8 gap-y-0 grid-flow-row mt-3">
@@ -51,7 +51,7 @@ const MenuItem = (props: Props) => {
                             <Text className="text-sm leading-5 mb-0">{`If you’re enrolled in an AIFS course and need some help, or want information about studying with us, this section is a great place to start.`}</Text>
                             <Text className="text-sm leading-5 mb-0">{`Take a look through our FAQs and other student resources — if you can’t find what you’re looking for, don’t hesitate to contact our support team.`}</Text>
                         </div>
-                        <NextImage src={StudentsMenuGraphic} width={200} height={112} layout="fixed" />
+                        {/* <NextImage src={StudentsMenuGraphic} width={200} height={112} layout="fixed" /> */}
                     </div>
 
                 </Column>

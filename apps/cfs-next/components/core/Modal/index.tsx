@@ -16,7 +16,7 @@ const GlobalModal = () => {
     if(!Component) return null;
     return <div
         id={MODAL_BG_ID}
-        className="fixed flex items-center justify-center inset-0 w-screen h-screen bg-black/[.4] z-10"
+        className="fixed flex items-center justify-center inset-0 w-screen h-screen bg-black/[.4] z-100"
         onClick={(e) => {
             if('id' in e.target && (e.target as HTMLDivElement).id == MODAL_BG_ID) dispatch(toggleModal(null));
             e.stopPropagation();
