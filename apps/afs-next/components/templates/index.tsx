@@ -30,7 +30,7 @@ export const PathnameComponent = (props: { displayPathname: string, pathname: st
 
 export const NavigationComponent = (props: NavigationProps) => {
     const router = useRouter();
-    const [route, setRoute] = useState(router.pathname);
+    const [route, setRoute] = useState<string | undefined>(undefined);
     useEffect(() => {
         setRoute(router.pathname);
     }, [router.pathname])
