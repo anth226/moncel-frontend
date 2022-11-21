@@ -9701,6 +9701,7 @@ __metadata:
     "@types/node": 18.11.7
     "@types/react": 18.0.24
     "@types/react-dom": 18.0.8
+    embla-carousel-react: ^7.0.5
     eslint: 8.26.0
     eslint-config-next: 13.0.0
     moncel-next-config: "*"
@@ -9710,10 +9711,13 @@ __metadata:
     react: rc
     react-dom: rc
     react-redux: ^8.0.2
+    react-slick: ^0.29.0
     redux: ^4.2.0
     redux-devtools-extension: ^2.13.9
     sharp: ^0.30.7
+    slick-carousel: ^1.8.1
     tailwindcss: ^3.1.4
+    tw-elements: ^1.0.0-alpha12
     typescript: 4.8.4
   languageName: unknown
   linkType: soft
@@ -12647,10 +12651,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"embla-carousel-react@npm:^7.0.5":
+  version: 7.0.5
+  resolution: "embla-carousel-react@npm:7.0.5"
+  dependencies:
+    embla-carousel: 7.0.5
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.1 || ^18.0.0
+  checksum: 9d57f04b1fa22d3b8c5c82c4bf5b7522ec29a1888324cdfe3ec2b69c3440591c430ad741ee5d9e1fcb020bd0e567b61d7a5d599f36c711b4636468d2d8725b07
+  languageName: node
+  linkType: hard
+
 "embla-carousel@npm:7.0.4":
   version: 7.0.4
   resolution: "embla-carousel@npm:7.0.4"
   checksum: 86db5cf5305b5c560dbf9c64242d3b08a6ac2c0038c667cf8cf6b1414d627df1d3e2bbe0d72cbf76d3094da1e126d60aac3af9a9c505e5d93665a11101789220
+  languageName: node
+  linkType: hard
+
+"embla-carousel@npm:7.0.5":
+  version: 7.0.5
+  resolution: "embla-carousel@npm:7.0.5"
+  checksum: 59928624126f4537642c7391d8aacb617ff021e2bf290c2d54693feaa45a6aa04a08f213c98f76696dca67d1d3e681cba3c15bea279e7c336028019e5bdb39ef
   languageName: node
   linkType: hard
 
