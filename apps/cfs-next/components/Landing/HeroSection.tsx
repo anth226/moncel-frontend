@@ -75,13 +75,13 @@ const DesktopHeroSection = () => {
 
                 <div>
                     <div className="border-t-[1px] border-gallery flex flex-row items-center justify-between py-1.5">
-                        <Link href="/about/our-mission"><strong>Our Mission</strong></Link>
+                        <Link href="/about/our-mission"><strong className="cursor-pointer hover:underline">Our Mission</strong></Link>
                     </div>
                     <div className="border-t-[1px] border-gallery flex flex-row items-center justify-between py-1.5">
-                        <Link href="/faq"><strong>FAQs</strong></Link>
+                        <Link href="/faq"><strong className="cursor-pointer hover:underline">FAQs</strong></Link>
                     </div>
                     <div className="border-t-[1px] border-gallery flex flex-row items-center justify-between py-1.5">
-                        <Link href="/contact"><strong>Contact Us</strong></Link>
+                        <Link href="/contact"><strong className="cursor-pointer hover:underline">Contact Us</strong></Link>
                     </div>
                     <div className="border-t-[1px] border-gallery" />
                 </div>

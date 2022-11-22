@@ -6,29 +6,25 @@ type Link = {
     href: string,
     target?: string;
 }
-const FOOD_SAFETY_COURSE_LINKS: Array<Link> = [
-    { text: "Food Safety Supervisor", href: "/courses/food-safety-supervisor" },
-    { text: "Food Handler Course", href: "/courses/food-handler-course" },
-    { text: "NSW Recertification", href: "/courses/nsw-recertification" },
-    { text: "Food Safety Manager", href: "/courses/food-safety-manager" },
-    { text: "Introduction to Food Safety", href: "/courses/introduction-to-food-safety-course" },
-];
 
-const PRODUCT_LINKS: Array<Link> = [
-    { text: "HACCP Food Safety Plan", href: "/haccp-food-safety-plan-kit" },
-    { text: "Membership Plan", href: "/membership/membership-program" },
-    { text: "Resource Library", href: "https://resources.foodsafety.com.au/" },
-    { text: "Food Safety Decal", href: "/membership/food-safety-decal" },
-];
+const NAVIGATION_LINKS: Array<Link> = [
+    { text: "Food Handler Certification", href: "/courses/food-handler-certification-course" },
+    { text: "HACCP Programs", href: "/haccp-programs" },
+    { text: "For Business", href: "/business" },
+    { text: "Membership", href: "/membership" },
+    { text: "Resource Library", href: "https://resources.foodsafety.ca/" },
+]
 
-const ABOUT_US_LINKS: Array<Link> = [
+const ABOUT_LINKS: Array<Link> = [
     { text: "Our Mission", href: "/about/our-mission" },
-    { text: "Media Centre", href: "https://blog.foodsafety.com.au/media" },
-    { text: "AIFS in the Community", href: "/about/community" },
+    { text: "FAQs", href: "/faqs" },
+    { text: "Media", href: "/media" },
     { text: "Employment", href: "/about/employment" },
-    { text: "Contact Us", href: "/contact" },
+    { text: "Student Login", href: "https://my.foodsafety.ca/customer/account/login/" },
+    { text: "Business Login", href: "https://my.foodsafety.ca/customer/account/login/" },
+    { text: "Member Login", href: "https://resources.foodsafety.ca/user/login" },
+    { text: "Contact", href: "/contact" },
 ];
-
 const LEGAL_POLICY_LINKS: Array<Link> = [
     { text: "Terms of Use", href: "/legal/terms-of-use" },
     { text: "Privacy Policy", href: "/legal/privacy-policy" },
@@ -52,7 +48,7 @@ const GOVERNMENT_PUBLIC_HEALTH_LINKS: Array<Link> = [
 ];
 
 const FooterLink = ({ href, children, ...rest }: { children: JSX.Element | JSX.Element[] | string, href: string, [ key:string ]: unknown }) => {
-    return <a className="text-sm text-mine leading-4 mb-2 last:mb-0 max-w-[175px] h-auto no-underline hover:underline" href={href} {...rest}>{ children }</a>;
+    return <a className="text-md font-semibold text-white whitespace-nowrap	 leading-4 mb-2 max-w-[175px] h-auto no-underline hover:underline" href={href} {...rest}>{ children }</a>;
 };
 
 const MobileFooter = () => {
@@ -62,59 +58,46 @@ const MobileFooter = () => {
 };
 
 const TabletPlusFooter = () => {
-    return <div className="hidden md:block">
-        <FooterNavigation />
-        <ContactFooter />
-        <CopyrightFooter />
+    return <div className="hidden md:block bg-clay">
+        <div className="padded-section grid grid-cols-3">
+            <FooterNavigation />
+        </div>
+        {/* <ContactFooter />
+        <CopyrightFooter /> */}
     </div>;
 };
 
+// tablet plus only
 const FooterNavigation = () => {
-    return <div className="hidden lg:block w-full bg-teal" id="section-footer-navigation">
-        <div className="padded-section pt-8 pb-7 bg-teal flex flex-row justify-between gap-2 text-[1rem] lg:text-md w-full">
-            {/* Food safety courses */}
-            <div className="flex flex-col text-mine no-underline">
-                <p className="font-semibold pb-2">Food Safety Courses</p>
-                {FOOD_SAFETY_COURSE_LINKS.map(link => {
-                    return <FooterLink href={link.href} key={`Food Safety Courses-${link.text}`}>{link.text}</FooterLink>;
-                })}
+    let linkElements = NAVIGATION_LINKS.reduce((linkElements, link) => {
+        linkElements.push(<FooterLink href={link.href} key={`footer-navigation-link-${link.text}`}>{link.text}</FooterLink>);
+        linkElements.push(<p className="select-none pb-1">/</p>)
+        return linkElements;
+    }, [] as Array<JSX.Element>);
+    linkElements.pop();
+    return <div className="hidden md:block pt-8 pb-7 w-full col-span-2" id="section-footer-navigation">
+            {/* navigation */}
+            <div className="flex flex-wrap text-white no-underline items-center gap-2 pb-7">
+                { linkElements }
             </div>
 
-            {/* Products */}
-            <div className="flex flex-col text-mine no-underline">
-                <p className="font-semibold pb-2">Products</p>
-                {PRODUCT_LINKS.map(link => {
-                    return <FooterLink href={link.href} key={`Products-${link.text}`}>{link.text}</FooterLink>;
-                })}
-            </div>
+            <div className="w-full border-silver border-t-[1px]" />
 
-            {/* About Us */}
-            <div className="flex flex-col text-mine no-underline">
-                <p className="font-semibold pb-2">About Us</p>
-                {ABOUT_US_LINKS.map(link => {
-                    return <FooterLink href={link.href} key={`About Us-${link.text}`}>{link.text}</FooterLink>;
-                })}
-            </div>
+            <div className="grid grid-cols-4 py-7">
+                {/* titles */}
+                <div className="row-span-1 col-span-4 grid grid-cols-4">
+                    <h4 className="text-white col-span-1">About Us</h4>
+                    <h4 className="text-white col-span-1">{`Legal & Policies`}</h4>
+                    <h4 className="text-white col-span-2">{`Government & Public Health Information`}</h4>
+                </div>
 
-            {/* Legal and policy */}
-            <div className="flex flex-col text-mine no-underline">
-                <p className="font-semibold pb-2">Legal {"&"} Policy</p>
-                {LEGAL_POLICY_LINKS.map(link => {
-                    return <FooterLink href={link.href} key={`Legal & Policy-${link.text}`}>{link.text}</FooterLink>;
-                })}
-            </div>
+                {/* columns */}
+                <div className="col-span-1">
 
-            {/* Government & public health */}
-            <div className="flex flex-col">
-            <p className="font-semibold text-mine pb-2">Government {"&"} Public Health Information</p>
-                <div className="grid grid-cols-2 grid-flow-row gap-x-6  text-mine no-underline items-start">
-                    { GOVERNMENT_PUBLIC_HEALTH_LINKS.map(link => {
-                        return <FooterLink href={link.href} key={`Government & Public Health-${link.text}`} target="_blank">{link.text}</FooterLink>;
-                    })}
                 </div>
             </div>
         </div>
-    </div>;
+    
 };
 
 const Footer = () => {
