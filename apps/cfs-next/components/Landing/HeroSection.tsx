@@ -21,7 +21,8 @@ const IconCard = (props: IconCardProps) => {
         </div>
         
     </div>
-}
+};
+
 const DesktopHeroSection = () => {
     return <Section className={`bg-none hidden lg:block mt-[-100px] z-10 relative ${styles.landing}`}>
         <div className="bg-catskill padded-section grid grid-cols-3">
@@ -64,14 +65,31 @@ const DesktopHeroSection = () => {
             </div>
 
 
-            <div className="col-span-1 bg-white">
+            <div className="flex flex-col gap-7 col-span-1 bg-white p-7">
+                <h4>The Canadian Institute of Food Safety</h4>
+                <div className="flex gap-2">
+                    <p>The Canadian Institute of Food Safety (CIFS) is a forward-thinking education provider dedicated to improving food safety knowledge and skills.</p>
+                    <div><Image src="/maple_leaf.svg"  width="70" height="70" layout="fixed" /></div>
+                </div>
+                <p className="mb-7">{`We work with the public, as well as small, medium and enterprise food businesses in every industry that’s regulated by the Canadian Government.`}</p>
 
+                <div>
+                    <div className="border-t-[1px] border-gallery flex flex-row items-center justify-between py-1.5">
+                        <Link href="/about/our-mission"><strong>Our Mission</strong></Link>
+                    </div>
+                    <div className="border-t-[1px] border-gallery flex flex-row items-center justify-between py-1.5">
+                        <Link href="/faq"><strong>FAQs</strong></Link>
+                    </div>
+                    <div className="border-t-[1px] border-gallery flex flex-row items-center justify-between py-1.5">
+                        <Link href="/contact"><strong>Contact Us</strong></Link>
+                    </div>
+                    <div className="border-t-[1px] border-gallery" />
+                </div>
             </div>
 
         </div>
     </Section>
 };
-
 
 const HeroSection = () => {
 
