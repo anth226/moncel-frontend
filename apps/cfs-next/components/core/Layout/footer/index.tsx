@@ -86,7 +86,7 @@ const FooterNavigation = () => {
     linkElements.pop();
     return <div className="hidden md:block pt-8 pb-7 w-full col-span-2" id="section-footer-navigation">
             {/* navigation */}
-            <div className="flex flex-wrap text-white no-underline items-center gap-2 pb-7">
+            <div className="flex flex-wrap text-white no-underline items-center gap-3 pb-7">
                 { linkElements }
             </div>
 
@@ -94,7 +94,7 @@ const FooterNavigation = () => {
 
             <div className="grid grid-cols-4 py-7">
                 {/* titles */}
-                <div className="row-span-1 col-span-4 grid grid-cols-4">
+                <div className="row-span-1 col-span-4 grid grid-cols-4 mb-2">
                     <h4 className="text-white col-span-1 font-semibold">About Us</h4>
                     <h4 className="text-white col-span-1 font-semibold">{`Legal & Policies`}</h4>
                     <h4 className="text-white col-span-2 font-semibold">{`Government & Public Health Information`}</h4>
