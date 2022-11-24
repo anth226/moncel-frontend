@@ -6,7 +6,7 @@ import NextLink from 'next/link';
 import { NavMenuIdentifier } from '.';
 import { Header4, Header5, Text } from 'components/core/Typography';
 import styles from './styles.module.scss';
-import HaccpMenuGraphic from 'public/afs-menu-haccp.webp';
+// import HaccpMenuGraphic from 'public/afs-menu-haccp.webp';
 
 const ID: NavMenuIdentifier = "haccp-programs";
 const HREF = "/haccp-programs";
@@ -31,7 +31,7 @@ const MenuItem = (props: Props) => {
         e.stopPropagation();
     }
     return <div id={`nav-menu-${ID}`} onMouseLeave={closeMenu}>
-        <NextLink href={HREF}><a className="link text-white no-underline hover:underline font-semibold" onMouseEnter={openMenu}> HACCP Programs</a></NextLink>
+        <NextLink href={HREF}><a className="link text-mine no-underline hover:underline font-semibold" onMouseEnter={openMenu}> HACCP Programs</a></NextLink>
         <Popper id={ID} open={props.open === ID} anchorEl={props.anchor} placement="bottom-start">
             {/* actual menu */}
             <div className="padded-section bg-white px-7 py-8 grid grid-cols-2 gap-x-8 gap-y-0 grid-flow-row mt-3">
@@ -47,7 +47,7 @@ const MenuItem = (props: Props) => {
                             <Text className="text-sm leading-5 mb-0">A Food Safety Program is the implementation of written procedures that help prevent, reduce and eliminate food safety hazards and is a legal requirement for most Australian food businesses.</Text>
                             <Text className="text-sm leading-5 mb-0">If you need to create a Food Safety Program but {`don’t`} know what it is or where to start, AIFS can help.</Text>
                         </div>
-                        <NextImage src={HaccpMenuGraphic} width={200} height={112} layout="fixed" />
+                        {/* <NextImage src={HaccpMenuGraphic} width={200} height={112} layout="fixed" /> */}
                     </div>
 
                 </Column>

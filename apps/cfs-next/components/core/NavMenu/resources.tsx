@@ -5,7 +5,7 @@ import NextImage from 'next/image';
 import { NavMenuIdentifier } from '.';
 import { Header4, Header5, Text } from 'components/core/Typography';
 import styles from './styles.module.scss';
-import ResourceMenuGraphic from 'public/afs-menu-resources.webp';
+// import ResourceMenuGraphic from 'public/afs-menu-resources.webp';
 
 const ID: NavMenuIdentifier = "resources";
 const HREF = "https://resources.foodsafety.com.au";
@@ -36,7 +36,7 @@ const MenuItem = (props: Props) => {
         e.stopPropagation();
     }
     return <div id={`nav-menu-${ID}`} onMouseLeave={closeMenu}>
-        <a href={HREF} className="link text-white no-underline hover:underline font-semibold" onMouseEnter={openMenu}>Resource Library</a>
+        <a href={HREF} className="link text-mine no-underline hover:underline font-semibold" onMouseEnter={openMenu}>Resource Library</a>
         <Popper id={ID} open={props.open === ID} anchorEl={props.anchor} placement="bottom-start">
             {/* actual menu */}
             <div className="padded-section bg-white px-7 py-8 grid grid-cols-2 gap-x-8 gap-y-0 grid-flow-row mt-3">
@@ -52,7 +52,7 @@ const MenuItem = (props: Props) => {
                             <Text className="text-sm leading-5 mb-0">{`The AIFS Resource Library is a collection of food safety resources including templates, posters, guides, videos, fact sheets and more. You can also find the latest food safety news, blog and product recalls.`}</Text>
                             <Text className="text-sm leading-5 mb-0">{`Explore the collection and check back frequently for all the latest news in food safety.`}</Text>
                         </div>
-                        <NextImage src={ResourceMenuGraphic} width={200} height={112} layout="fixed" />
+                        {/* <NextImage src={ResourceMenuGraphic} width={200} height={112} layout="fixed" /> */}
                     </div>
 
                 </Column>

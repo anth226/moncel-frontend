@@ -27,7 +27,6 @@ const HEADER_NAVIGATION_DATA: Array<Link> = [
 ];
 
 const HEADER_BANNER_NAVIGATION_DATA: Array<Link> = [
-    { href: "/", text: "Home" },
     { href: "/laws-requirements", text: "Laws & Requirements" },
     { href: "/courses", text: "Food Safety Courses" },
     { href: "/haccp-programs", text: "HACCP Programs"},
@@ -43,10 +42,10 @@ const ADDITIONAL_MOBILE_NAVIGATION_DATA: Array<Link> = [
     { href: "/contact", text: "Member Login" },
 ];
 
-const SiteNoticeContent = <div className="flex gap-2 md:gap-3 items-start text-left md:text-center md:m-auto"><Image src={`/exclamation.svg`} alt="Important" priority width={20} height={20} /><Text className="!text-white uppercase leading-[1rem] md:leading-6 text-sm md:text-base">Covid-19 resources now included with <Link href="/courses"><a className="underline hover:no-underline text-white">all courses</a></Link></Text></div>
+const SiteNoticeContent = <div className="py-3 flex gap-2 md:gap-3 items-start text-left md:text-center md:m-auto"><Image src={`/exclamation.svg`} alt="Important" priority width={20} height={20} /><Text className="text-white uppercase leading-[1rem] md:leading-6 text-sm md:text-base">Covid-19 resources now included with <Link href="/courses"><a className="underline hover:no-underline text-white">food handler training</a></Link></Text></div>
 
 const SiteNotice = () => {
-    return <div className="bg-monarch w-full p-[10.5px] md:text-center text-white flex justify-center">
+    return <div className="bg-monza w-full p-[10.5px] md:text-center text-mine flex justify-center">
         { SiteNoticeContent }
     </div>
 };
@@ -54,18 +53,20 @@ const SiteNotice = () => {
 const MobileHeader = () => {
     return <div className="flex flex-col w-full" id="section-header-mobile">
         {/* COVID banner + hamburger menu button */}
-        <div className="lg:hidden w-full bg-shakespeare">
-            <div className="padded-section accordion accordion-flush flex justify-between items-center py-3 md:py-2 text-white text-center" id={MOBILE_MENU_ACCORDION_ID}>
+        <div className="lg:hidden w-full bg-monza">
+            <div className="accordion accordion-flush flex justify-between items-center py-3 md:py-4 text-white text-center" id={MOBILE_MENU_ACCORDION_ID}>
                 { SiteNoticeContent }
-                {/* <MobileMenuHamburgerButton /> */}
+                <MobileMenuHamburgerButton />
             </div>
         </div>
 
         {/* Logo row */}
-        <div className="lg:hidden bg-teal w-full py-2">
-            <div className="padded-section flex">
-                <NextLink href="/"><Image src="/cifs-logo-stacked-wide.svg" alt="Australian Institute of Food Safety Logo" priority width={252} height={33} className="m-0 p-0" /></NextLink>
+        <div className="lg:hidden bg-bunting w-full py-2">
+            <div className="flex">
             </div>
+                <NextLink href="/"><Image src="/cifs-full-width-white.svg" alt="Canadian Institute of Food Safety Logo" priority width={252} height={33} className="m-0 p-0" /></NextLink>
+                {/* <NextLink href="/"><Image src={CIFSLogo} alt="Canadian Institute of Food Safety Logo" priority width={252} height={33} className="m-0 p-0" /></NextLink> */}
+                
         </div>
 
         {/* Collapsible mobile menu */}
@@ -75,22 +76,22 @@ const MobileHeader = () => {
 
 
 const MobileMenuHamburgerButton = () => {
-    // const dispatch = useAppDispatch();
-    // const isMobileMenuOpen = useAppSelector(state => state.mobileMenu.isMobileMenuOpen);
-    // return <div className="flex flex-row justify-end items-center"><button className="inline-flex items-center justify-center p2 rounded-md" aria-controls="mobile-menu" aria-expanded="false" aria-label="mobile menu hamburger icon" onClick={() => dispatch(toggleMobileMenu())} data-bs-toggle="collapse" data-bs-target={`#${MOBILE_MENU_COLLAPSE_ID}`}>
-    //     {isMobileMenuOpen ? <svg className="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#ffffff" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg> : <svg className="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#ffffff" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>}
-    // </button></div>;
+    const dispatch = useAppDispatch();
+    const isMobileMenuOpen = useAppSelector(state => state.mobileMenu.isMobileMenuOpen);
+    return <div className="flex flex-row justify-end items-center"><button className="inline-flex items-center justify-center p2 rounded-md" aria-controls="mobile-menu" aria-expanded="false" aria-label="mobile menu hamburger icon" onClick={() => dispatch(toggleMobileMenu())} data-bs-toggle="collapse" data-bs-target={`#${MOBILE_MENU_COLLAPSE_ID}`}>
+        {isMobileMenuOpen ? <svg className="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#ffffff" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg> : <svg className="block h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="#ffffff" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>}
+    </button></div>;
 };
 
 const MobileMenuCollapse = ({ navigationData }: { navigationData: Array<Link> }) => {
     const linkElements = navigationData.reduce((elements, link) => {
         if(!link) return elements;
-        elements.push(<a href={link.href} className="py-2.5 text-white text-sm no-underline font-semibold border-afs-green-light border-t-[1px]" key={`banner-navigation-link-${link.text}`}>{link.text}</a>);
+        elements.push(<a href={link.href} className="py-3 px-4 text-white text-sm no-underline font-semibold border-mine border-t-[1px]" key={`banner-navigation-link-${link.text}`}>{link.text}</a>);
         return elements;
     }, [] as React.ReactNode[]);
-    linkElements.pop();
-    return <div id={MOBILE_MENU_COLLAPSE_ID} className="bg-teal  accordion-collapse collapse" data-bs-parent={MOBILE_MENU_ACCORDION_ID}>
-        <div className="flex flex-col padded-section">{ linkElements }</div>
+    // linkElements = linkElements.slice(1);
+    return <div id={MOBILE_MENU_COLLAPSE_ID} className="bg-bunting accordion-collapse collapse" >
+        <div className="flex flex-col">{ linkElements }</div>
                 
     </div>;
 };
@@ -99,8 +100,8 @@ const DesktopBannerNavigation = ({ navigationData }: { navigationData: Array<Lin
     if(!navigationData) return null;
     const linkElements = navigationData.reduce((elements, link, i) => {
         if(!link) return elements;
-        elements.push(<a href={link.href} className="text-white no-underline font-semibold text-base whitespace-nowrap hover:underline" key={`banner-navigation-link-${link.text}`}>{link.text}</a>);
-        elements.push(<p className="mx-3 text-pasture" key={`banner-navigation-divider-${i}`}>|</p>);
+        elements.push(<a href={link.href} className="text-mine no-underline font-semibold text-base whitespace-nowrap hover:underline" key={`banner-navigation-link-${link.text}`}>{link.text}</a>);
+        elements.push(<p className="mx-3 text-pasture" key={`banner-navigation-divider-${i}`}>/</p>);
         return elements;
     }, [] as React.ReactNode[]);
     linkElements.pop();
@@ -137,7 +138,7 @@ const DesktopHeader = () => {
         <div className="padded-section w-full flex flex-row justify-between p-0">
             {/* column 1 */}
             <div className="flex flex-row flex-auto">
-                <NextLink href="/"><Image src="/cifs-logo-stacked-wide.svg" alt="Australian Institute of Food Safety Logo" priority width={375} height={48} className="hover:cursor-pointer"/></NextLink>
+                <NextLink href="/"><Image src="/cifs-logo-stacked-wide.svg" alt="Australian Institute of Food Safety Logo" priority width={240} height={53} className="hover:cursor-pointer"/></NextLink>
             </div>
 
             {/* column 2 */}
@@ -150,8 +151,8 @@ const DesktopHeader = () => {
                     <Button id="button-keyword-search" variant="primary" className="!px-[6px] !py-[6px] rounded-none rounded-r"><Image src="/icon_search.svg" alt="search icon" width={14} height={14} /></Button>
                 </nav>
                 <div className="flex flex-row justify-end items-center gap-5">
-                    <Button id="button-account-login" variant="secondary" className="py-1 px-5 capitalize" onClick={toggleLogin}><div className="mr-2 mt-[3px]"><Image src="/btn-img-lock.png" alt="Account login icon" width={12} height={14} /></div><div>Account Login</div></Button>
-                    <Button id="button-contact" variant="primary" className="py-1 px-5 capitalize" onClick={() => router.push("/contact")}><span className="mr-2 mt-[3px]"><Image src="/btn-img-phone.png" alt="Contact us icon" width={12} height={14} /></span>Contact Us</Button>
+                    <Button id="button-account-login" variant="secondary" className="py-1 px-5 bg-gradient-to-b from-nepal to-bunting capitalize" onClick={toggleLogin}>Account Login</Button>
+                    <Button id="button-contact" variant="primary" className="py-1 px-5 bg-gradient-to-b from-monza to-monarch capitalize" onClick={() => router.push("/contact")}>Contact Us</Button>
                 </div>
             </div>
 

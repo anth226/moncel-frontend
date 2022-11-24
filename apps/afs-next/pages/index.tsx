@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Layout from 'components/core/layout';
 import Carousel from 'components/core/Carousel';
 import { LogosCarousel } from 'components/core/Carousel';

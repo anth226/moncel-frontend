@@ -13,6 +13,7 @@ const Image = (props: ImageProps) => {
     const { src, ...rest } = props;
     const blurDataURL = typeof src === "string" ? src : undefined;
     return <NextImage src={src} placeholder="blur" blurDataURL={blurDataURL} {...rest}/>
+    // return <NextImage src={src} {...rest}/>
 };
 
 export default Image;

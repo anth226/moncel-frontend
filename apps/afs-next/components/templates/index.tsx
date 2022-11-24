@@ -6,7 +6,7 @@ import NextLink from 'next/link';
 export { default as GridTemplate } from './GridTemplate';
 export { default as RowsTemplate } from './RowsTemplate';
 import { NavigationProps, CheckoutSidebarComponentProps } from './types';
-import { Header2, Header4, P, Text } from 'components/core/typography';
+import { Header2, Header4, Text } from 'components/core/typography';
 import { useAppDispatch, AppActions } from 'store';
 const { toggleModal } = AppActions;
 
@@ -30,20 +30,15 @@ export const PathnameComponent = (props: { displayPathname: string, pathname: st
 
 export const NavigationComponent = (props: NavigationProps) => {
     const router = useRouter();
-    // Implement smooth scroll
-    const handleLinkClick = (href: string) => (e: MouseEvent<HTMLAnchorElement>) => {
-        if (document) {
-            e.preventDefault();
-            document.querySelector(`[href='${href}']`)?.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    }
+    const [route, setRoute] = useState<string | undefined>(undefined);
+    useEffect(() => {
+        setRoute(router.pathname);
+    }, [router.pathname])
     const borderClass = "border border-solid border-teal";
     return <div className="flex flex-col w-full mb-8 lg:mb-0">
         <div className={`${borderClass} bg-teal text-white px-3 py-1.5 text-[14px] font-semibold`}>{props.title}</div>
         {props.links.map((link, i) => {
-            return <div className={`w-full border-teal border-[1px] border-t-0 px-3 py-1.5 ${router.pathname == link.href ? "bg-haze" : ""} hover:bg-haze`} key={`navigation-link-${i}`}>
+            return <div className={`w-full border-teal border-[1px] border-t-0 px-3 py-1.5 ${route == link.href ? "bg-haze" : ""} hover:bg-haze`} key={`navigation-link-${i}`}>
                 <NextLink href={link.href}><a className={`no-underline ${styles["quicklist"]}`}>{link.text}</a></NextLink>
             </div>;
         })}

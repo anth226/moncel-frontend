@@ -102,13 +102,15 @@ ul {
   }
 }
 
-.checklist {
-  li {
-    @apply ml-0 pl-7 relative list-none;
-    &::before {
-      @apply inline-block absolute left-0 h-[12px] w-[12px];
-      content: url("/icon-library-2_checkmark-green.svg");
-    }
+.checklist li {
+  @apply pl-6 ml-0;
+  line-height: 1.75em;
+  list-style-type: none;
+  &::before {
+      @apply inline-block absolute left-0 p-0;
+      content: url('/icon-library-checkmark-blue.svg');
+      height: 22.5px;
+      width: 12px;
   }
 }
 
@@ -184,4 +186,8 @@ ol {
       @apply mt-2 pl-4;
     }
   }
+}
+
+.link {
+  @apply no-underline cursor-pointer hover:underline
 }

@@ -38,9 +38,10 @@ const HEADER_BANNER_NAVIGATION_DATA: Array<Link> = [
 ];
 
 const ADDITIONAL_MOBILE_NAVIGATION_DATA: Array<Link> = [
+    { href: "/faq", text: "FAQ" },
     { href: "/contact", text: "Contact Us" },
-    { href: "/contact", text: "Course Login" },
-    { href: "/contact", text: "Member Login" },
+    { href: "https://my.foodsafety.com.au/customer/account/login/", text: "Course Login" },
+    { href: "https://resources.foodsafety.com.au/user/login", text: "Member Login" },
 ];
 
 const SiteNoticeContent = <div className="flex gap-2 md:gap-3 items-start text-left md:text-center md:m-auto"><Image src={`/exclamation.svg`} alt="Important" priority width={20} height={20} /><Text className="!text-white uppercase leading-[1rem] md:leading-6 text-sm md:text-base">Covid-19 resources now included with <Link href="/courses"><a className="underline hover:no-underline text-white">all courses</a></Link></Text></div>
@@ -83,13 +84,13 @@ const MobileMenuHamburgerButton = () => {
 };
 
 const MobileMenuCollapse = ({ navigationData }: { navigationData: Array<Link> }) => {
-    const linkElements = navigationData.reduce((elements, link) => {
+    let linkElements = navigationData.reduce((elements, link) => {
         if(!link) return elements;
         elements.push(<a href={link.href} className="py-2.5 text-white text-sm no-underline font-semibold border-afs-green-light border-t-[1px]" key={`banner-navigation-link-${link.text}`}>{link.text}</a>);
         return elements;
     }, [] as React.ReactNode[]);
-    linkElements.pop();
-    return <div id={MOBILE_MENU_COLLAPSE_ID} className="bg-teal  accordion-collapse collapse" data-bs-parent={MOBILE_MENU_ACCORDION_ID}>
+    linkElements = linkElements.slice(1);
+    return <div id={MOBILE_MENU_COLLAPSE_ID} className="bg-teal  accordion-collapse collapse" >
         <div className="flex flex-col padded-section">{ linkElements }</div>
                 
     </div>;
@@ -99,7 +100,7 @@ const DesktopBannerNavigation = ({ navigationData }: { navigationData: Array<Lin
     if(!navigationData) return null;
     const linkElements = navigationData.reduce((elements, link, i) => {
         if(!link) return elements;
-        elements.push(<a href={link.href} className="text-white no-underline font-semibold text-base whitespace-nowrap hover:underline" key={`banner-navigation-link-${link.text}`}>{link.text}</a>);
+        elements.push(<a href={link.href} className="text-mine no-underline font-semibold text-base whitespace-nowrap hover:underline" key={`banner-navigation-link-${link.text}`}>{link.text}</a>);
         elements.push(<p className="mx-3 text-pasture" key={`banner-navigation-divider-${i}`}>|</p>);
         return elements;
     }, [] as React.ReactNode[]);

@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript, DocumentInitialProps } from 'next/document';
+import { Html, Head, Main, NextScript, DocumentInitialProps } from 'next/document';
 
 const _Document = (props: DocumentInitialProps & { browserTimingHeader: string}) => {
   
@@ -9,7 +9,7 @@ const _Document = (props: DocumentInitialProps & { browserTimingHeader: string})
         {/* need to create a monitor in newrelic */}
         {/* { process.env.NODE_ENV == "production" ? <script type="text/javascript" src="js/newrelic.js" async /> : null } */}
       </Head>
-      <body>
+      <body className="pointer-events-none">
         <Main />
         <NextScript />
       </body>

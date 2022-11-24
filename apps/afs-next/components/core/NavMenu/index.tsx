@@ -65,6 +65,6 @@ export const NavMenu = () => {
 </div>;
 };
 
-const Divider = () => <p className="text-niagara">|</p>;
+const Divider = () => <p className="text-niagara select-none">|</p>;
 
 export default NavMenu;

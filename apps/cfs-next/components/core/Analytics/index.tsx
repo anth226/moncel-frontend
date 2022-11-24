@@ -4,10 +4,12 @@ import React from 'react';
 // import Mixpanel from './mixpanel';
 // import CustomerIO from './customerio';
 
-export default () => {
+const Analytics = () => {
     return <>
         {/* <GTM />
         <Mixpanel />
         <CustomerIO /> */}
     </>
 };
+
+export default Analytics;
