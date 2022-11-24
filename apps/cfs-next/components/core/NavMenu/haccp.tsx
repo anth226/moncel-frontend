@@ -44,8 +44,8 @@ const MenuItem = (props: Props) => {
                         gap: "24px",
                     }}>
                         <div className="flex flex-col gap-4">
-                            <Text className="text-sm leading-5 mb-0">A Food Safety Program is the implementation of written procedures that help prevent, reduce and eliminate food safety hazards and is a legal requirement for most Australian food businesses.</Text>
-                            <Text className="text-sm leading-5 mb-0">If you need to create a Food Safety Program but {`don’t`} know what it is or where to start, AIFS can help.</Text>
+                            <Text className="text-sm leading-5 mb-0">A HACCP Food Safety Plan, an essential part of a Food Safety Program, is a set of written procedures based on the 7 principles of HACCP that help reduce food safety hazards in a food business.</Text>
+                            <Text className="text-sm leading-5 mb-0">{`If you need to create a Food Safety Plan but don’t know what it is or where to start, CIFS can help.`}</Text>
                         </div>
                         {/* <NextImage src={HaccpMenuGraphic} width={200} height={112} layout="fixed" /> */}
                     </div>

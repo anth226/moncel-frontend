@@ -49,10 +49,9 @@ const MenuItem = (props: Props) => {
                         gap: "24px",
                     }}>
                         <div className="flex flex-col gap-4">
-                            <Text className="text-sm leading-5 mb-0">{`From cafes to catering companies, market stalls to supermarkets, every food business in Australia must meet all federal, state and local requirements for food safety training.`}</Text>
-                            <Text className="text-sm leading-5 mb-0">{`Find out what can happen if you don't comply, and how AIFS can ensure that you do.`}</Text>
+                            <Text className="text-sm leading-5 mb-0">{`How to handle food for public consumption isn’t always common sense. Small mistakes are what usually lead to big problems.`}</Text>
+                            <Text className="text-sm leading-5 mb-0">{`Develop a strong foundation of food safety skills and stay compliant with the CIFS Food Handler Certification Course.`}</Text>
                         </div>
-                        {/* <NextImage src={BusinessMenuGraphic} width={200} height={112} layout="fixed" /> */}
                     </div>
 
                 </Column>

@@ -53,8 +53,8 @@ const MenuItem = (props: Props) => {
                 <Column>
                     <Header4 className="text-mine leading-6">{`Laws & Requirements`}</Header4>
                     <Divider />
-                    <Text className="text-sm leading-5">Laws and requirements around food safety training in Australia can be complex and confusing.</Text>
-                    <Text className="text-sm leading-5 mb-0">Get all the information you need in simple language to understand your responsibilities and to help you make the right food safety decisions.</Text>
+                    <Text className="text-sm leading-5">Canadian food safety laws and requirements can be complex and confusing.</Text>
+                    <Text className="text-sm leading-5 mb-0">At CIFS, we use simple and straightforward language to summarize the food safety laws and requirements that you need follow.</Text>
                 </Column>
 
                 <Column>

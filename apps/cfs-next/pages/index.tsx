@@ -1,6 +1,6 @@
 import Layout from 'components/core/Layout';
 import Carousel from 'components/core/Carousel';
-import { HeroSection } from 'components/Landing';
+import { HeroSection, InfoSection } from 'components/Landing';
 import { LogosCarousel } from 'components/core/Carousel';
 import { Header4 } from 'components/core/Typography';
 // import { HelpSection, CommunitySection, BlogSection } from 'components/Landing';
@@ -18,6 +18,7 @@ const Home = () => {
        <Carousel id="heroCarousel" />
       <HeroSection />
       <LandingPageLogos />
+      <InfoSection />
       {/* <CommunitySection /> */}
       {/* <BlogSection /> */}
     </Layout>
