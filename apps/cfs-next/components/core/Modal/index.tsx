@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useAppDispatch, useAppSelector, AppActions } from 'store';
 import { AllModals } from 'store/modals';
 
