@@ -57,7 +57,7 @@ const MenuItem = (props: Props) => {
                 <Column>
                     <Header5 className="text-emperor leading-6 text-base font-medium">Learn more about food safety courses</Header5>
                     <Divider />
-                    <ul className="columns-2 gap-x-8">
+                    <ul className="grid grid-cols-2 gap-x-8">
                         { COURSE_LINKS.map((link, i) => <ListItem key={`nav-courses-link-${i}`}><Link {...link}/></ListItem>)}
                     </ul>
                 </Column>

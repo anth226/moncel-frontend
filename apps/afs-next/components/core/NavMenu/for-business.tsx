@@ -10,7 +10,7 @@ import BusinessMenuGraphic from 'public/afs-menu-business.webp';
 
 const ID: NavMenuIdentifier = "for-business";
 const HREF="/business";
-const STUDENTS_LINKS = [
+const BUSINESS_LINKS = [
     { text: "Why Food Safety", href: "/business/food-safety" },
     { text: "Small Business Solutions", href: "/business/small-business" },
     { text: "Contact Us", href: "/contact" },
@@ -60,8 +60,8 @@ const MenuItem = (props: Props) => {
                 <Column>
                     <Header5 className="text-emperor leading-6 text-base font-medium">Learn more about Business Solutions</Header5>
                     <Divider />
-                    <ul className="columns-2 gap-x-8">
-                        { STUDENTS_LINKS.map((link, i) => <ListItem key={`nav-business-link-${i}`}><Link {...link}/></ListItem>)}
+                    <ul className="grid grid-cols-2 gap-x-8">
+                        { BUSINESS_LINKS.map((link, i) => <ListItem key={`nav-business-link-${i}`}><Link {...link}/></ListItem>)}
                     </ul>
                 </Column>
                 
