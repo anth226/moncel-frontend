@@ -249,7 +249,7 @@ const Section3 = () => {
 
 const Section4 = () => {
   return <div className="col-span-3" id="section-4">
-    <div className="w-full flex flex-col items-center mb-4">
+    <div className="w-full flex flex-col items-center mb-4 text-center">
       <Header3>Trusted and Recommended Throughout Australia</Header3>
       <Text className={styles["subtitle"]}>Relied on by the Australian food industry for a quality training experience</Text>
       <Header5 className="pt-4 pb-10 text-teal">Discover why Food Handlers love this course</Header5>
