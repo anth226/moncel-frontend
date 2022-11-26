@@ -12,7 +12,7 @@ const RowsTemplate = (props: RowsTemplateProps) => {
             throw Error(`RowsTemplate with id ${props.id} specified navbar but did not provide required props`);
             return null; // unreachable return make typescript happy
         }
-        SidebarComponent = <NavigationComponent {...props.navigation} />;
+        // SidebarComponent = <NavigationComponent {...props.navigation} />;
     }
     if(props.sidebarType === "checkout") {
         if(!props.checkout) {

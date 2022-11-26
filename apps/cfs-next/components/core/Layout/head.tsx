@@ -15,7 +15,7 @@ const _Head = (props: SeoOverrides) => {
         <title>{props.title || DEFAULT_TITLE}</title>
         <meta name="description" content={props.description || DEFAULT_DESC} />
         <link rel="canonical" href={`https://www.foodsafety.ca${router.pathname}`} />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon-4.png" />
         {/* DO NOT put tracking here: https://nextjs.org/docs/advanced-features/custom-document */}
     </Head>;
 };

@@ -9,6 +9,7 @@ export type AllModalNames = keyof typeof Courses | "Login" | null;
 export const AllModals: Record<Exclude<AllModalNames, null>, FC> = {
     // [ Courses.FoodSafetySupervisor ]: FoodSafetySupervisorModal,
     [ Courses.FoodHandler ]: () => null,
+    [ Courses.Membership ]: () => null,
     // [ Courses.FoodManager ]: FoodManagerModal,
     // [ Courses.NSWRecertification ]: NSWRecertificationModal,
     // [ Courses.IntroToFoodSafety ]: IntroToFoodSafetyModal,

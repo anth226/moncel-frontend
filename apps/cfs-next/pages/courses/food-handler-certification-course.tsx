@@ -123,32 +123,32 @@ const IntroSection = () => {
             <IconCard
                 imageSrc={"/icons/icon_stroke_laptop.svg"}
                 title="100% online">
-                    <Text>Access the course on any device with an internet connection and complete your final exam on a computer anywhere, anytime.</Text>
+                <Text>Access the course on any device with an internet connection and complete your final exam on a computer anywhere, anytime.</Text>
             </IconCard>
             <IconCard
                 imageSrc={"/icons/icon_stroke_calendar_clock.svg"}
                 title="Same day certification">
-                    <Text>Complete training and take your final exam on the same day (or take up to 30 days). Receive your certificate within minutes of passing the final exam.</Text>
+                <Text>Complete training and take your final exam on the same day (or take up to 30 days). Receive your certificate within minutes of passing the final exam.</Text>
             </IconCard>
             <IconCard
                 imageSrc={"/icons/icon_stroke_telephone.svg"}
                 title="1-on-1 support">
-                    <Text>Get help when you need it. Our team is available by phone or email to help with technical support, enrolment, payment and learning challenges.</Text>
+                <Text>Get help when you need it. Our team is available by phone or email to help with technical support, enrolment, payment and learning challenges.</Text>
             </IconCard>
             <IconCard
                 imageSrc={"/icons/icon_stroke_maple.svg"}
                 title="Nationally recognized">
-                    <Text>CIFS Certification is approved across Canada, which means there’s no need to recertify to work in different provinces or territories.</Text>
+                <Text>CIFS Certification is approved across Canada, which means there’s no need to recertify to work in different provinces or territories.</Text>
             </IconCard>
             <IconCard
                 imageSrc={"/icons/icon_stroke_member.svg"}
                 title="12 months of free CIFS Membership">
-                    <Text>Get help when you need it. Our team is available by phone or email to help with technical support, enrolment, payment and learning challenges.</Text>
+                <Text>Get help when you need it. Our team is available by phone or email to help with technical support, enrolment, payment and learning challenges.</Text>
             </IconCard>
             <IconCard
                 imageSrc={"/icons/icon_stroke_checkmark_box_stroke_tick.svg"}
                 title="Unlimited exam attempts">
-                    <Text>There's no need to worry about not passing the final exam on the first try. You can retake the exam as many times as needed for free.</Text>
+                <Text>{`There's no need to worry about not passing the final exam on the first try. You can retake the exam as many times as needed for free.`}</Text>
             </IconCard>
         </div>
     </div>;
@@ -166,6 +166,9 @@ const CourseOutlineSection = () => {
         <div className="w-full flex flex-col items-center pb-7">
             <Header3 className="text-monza">Course outline</Header3>
             <Header4 className="text-bunting">Everything you need to become a Certified Food Handler, all in one course.</Header4>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2">
+
         </div>
 
     </div>;
