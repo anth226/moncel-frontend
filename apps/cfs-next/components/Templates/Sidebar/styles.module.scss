@@ -1,0 +1,16 @@
+.path-trailing-element::before {
+    padding: 0 10px;
+    content: "/";
+    @apply text-silver;
+  }
+  
+  .quicklist {
+    @apply text-bunting text-[14px] font-medium block;
+    &:after {
+      content: url("/icon_stroke_green_arrow_right.svg");
+      float: right;
+      margin-right: 0.25em;
+      width: 4px;
+    }
+  }
+  

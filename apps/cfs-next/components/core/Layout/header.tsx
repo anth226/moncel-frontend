@@ -42,7 +42,7 @@ const ADDITIONAL_MOBILE_NAVIGATION_DATA: Array<Link> = [
     { href: "/contact", text: "Member Login" },
 ];
 
-const SiteNoticeContent = <div className="py-3 flex gap-2 md:gap-3 items-start text-left md:text-center md:m-auto"><Image src={`/exclamation.svg`} alt="Important" priority width={20} height={20} /><Text className="text-white uppercase leading-[1rem] md:leading-6 text-sm md:text-base">Covid-19 resources now included with <Link href="/courses"><a className="underline hover:no-underline text-white">food handler training</a></Link></Text></div>
+const SiteNoticeContent = <div className="py-3 flex gap-2 md:gap-3 items-start text-left md:text-center md:m-auto"><Image src={`/exclamation.svg`} alt="Important" priority width={20} height={20} /><Text className="!text-white uppercase leading-[1rem] md:leading-6 text-sm md:text-base">Covid-19 resources now included with <Link href="/courses"><a className="underline hover:no-underline text-white">food handler training</a></Link></Text></div>
 
 const SiteNotice = () => {
     return <div className="bg-monza w-full p-[10.5px] md:text-center text-mine flex justify-center">

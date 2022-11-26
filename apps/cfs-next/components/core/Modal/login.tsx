@@ -29,7 +29,7 @@ const Column = (props: ColumnProps) => {
     return <div className="flex flex-col justify-between col-span-1 items-center p-8 gap-6 even:bg-gradient-to-b from-haze to-white">
         <div className="flex flex-col items-center gap-6">
             <NextImage src={props.imageSrc} />
-            <Header4 className="text-teal">{props.title}</Header4>
+            <Header4 className="text-bunting">{props.title}</Header4>
             <div className={`checklist ${styles["mdx"]}`}>
                 {props.children}
             </div>
@@ -51,7 +51,7 @@ const LoginModal = () => {
         dismissModal();
     }
     // *** live site modal button only displays on desktop, so this will not show on mobile and may look weird on tablet
-    return <div className="hidden md:grid grid-cols-3 bg-white max-w-[900px] border-t-6 border-teal drop-shadow-2xl">
+    return <div className="hidden md:grid grid-cols-3 bg-white max-w-[900px] border-t-6 drop-shadow-2xl">
         <Column imageSrc={StudentsGraphic} title="For Students" buttonText="Students Login" buttonHref="https://my.foodsafety.ca/customer/account/login/"> {<StudentsBody />} </Column>
         <Column imageSrc={BusinessGraphic} title="For Business" buttonText="Business Login" buttonHref="https://my.foodsafety.ca/customer/account/login/"> {<BusinessBody />} </Column>
         <Column imageSrc={MembersGraphic} title="For Members" buttonText="Members Login" buttonHref="https://resources.foodsafety.ca/user/login"> {<MembersBody />} </Column>

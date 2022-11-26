@@ -70,7 +70,7 @@ const MenuItem = (props: Props) => {
 };
 
 const Column = ({ children }: { children: ReactNode, className?: string }) => <div className={`${styles["quicklist"]} flex flex-col`}>{ children }</div>
-const Divider = () => <div className="w-full border-b-[1px] border-teal my-4" />;
+const Divider = () => <div className="w-full border-b-[1px] my-4" />;
 const Link = ({ text, href }: { text: string, href: string }) => <a className="link text-mine no-underline hover:underline font-medium" href={href}>{text}</a>
 const ListItem = ({ children }: { children: ReactNode }) => <li className="p-0 m-0 border-mystic border-y py-2 text-sm -mb-[1px]">{ children }</li>
 
