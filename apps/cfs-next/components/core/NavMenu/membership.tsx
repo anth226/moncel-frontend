@@ -33,41 +33,11 @@ const MenuItem = (props: Props) => {
     }
     return <div id={`nav-menu-${ID}`} onMouseLeave={closeMenu}>
         <NextLink href={HREF}><a className="link text-mine no-underline hover:underline font-semibold" onMouseEnter={openMenu}>Membership</a></NextLink>
-        <Popper id={ID} open={props.open === ID} anchorEl={props.anchor} placement="bottom-start">
-            {/* actual menu */}
-            <div className="padded-section bg-white px-7 py-8 grid grid-cols-2 gap-x-8 gap-y-0 grid-flow-row mt-3">
-                <Column>
-                    <Header4 className="text-mine leading-6">Membership</Header4>
-                    <Divider />
-                    <div style={{
-                        display: "grid",
-                        gridTemplateColumns: "1fr auto",
-                        gap: "24px",
-                    }}>
-                        <div className="flex flex-col gap-4">
-                            <Text className="text-sm leading-5 mb-0">{`If you work with food or train people who do, you’ll benefit greatly from the AIFS Membership Program.`}</Text>
-                            <Text className="text-sm leading-5 mb-0">{`As an AIFS Member, you’ll receive additional resources to help you manage food safety in the business, as well as business signage to show customers you’re serious about their safety.`}</Text>
-                        </div>
-                        {/* <NextImage src={MembershipMenuGraphic} width={200} height={112} layout="fixed" /> */}
-                    </div>
-
-                </Column>
-
-                <Column>
-                    <Header5 className="text-emperor leading-6 text-base font-medium">Learn more about AIFS Membership</Header5>
-                    <Divider />
-                    <ul className="columns-2 gap-x-8">
-                        { MEMBERSHIP_LINKS.map((link, i) => <ListItem key={`nav-membership-links-${i}`}><Link {...link}/></ListItem>)}
-                    </ul>
-                </Column>
-                
-            </div>
-        </Popper>
     </div>;
 };
 
 const Column = ({ children }: { children: ReactNode, className?: string }) => <div className={`${styles["quicklist"]} flex flex-col`}>{ children }</div>
-const Divider = () => <div className="w-full border-b-[1px] border-teal my-4" />;
+const Divider = () => <div className="w-full border-b-[1px] my-4" />;
 const Link = ({ text, href }: { text: string, href: string }) => <a className="link text-mine no-underline hover:underline font-medium" href={href}>{text}</a>
 const ListItem = ({ children }: { children: ReactNode }) => <li className="p-0 m-0 border-mystic border-y py-2 text-sm -mb-[1px]">{ children }</li>
 

@@ -2,19 +2,20 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { FC } from 'react';
 import { Courses } from 'data/courses';
 // import { FoodSafetySupervisorModal, FoodHandlerModal, FoodManagerModal, NSWRecertificationModal, IntroToFoodSafetyModal, HACCPModal } from 'components/courses/checkoutModal';
-// import LoginModal from 'components/core/Modal/login';
+import LoginModal from 'components/core/Modal/login';
 
 export type AllModalNames = keyof typeof Courses | "Login" | null;
 
 export const AllModals: Record<Exclude<AllModalNames, null>, FC> = {
     // [ Courses.FoodSafetySupervisor ]: FoodSafetySupervisorModal,
     [ Courses.FoodHandler ]: () => null,
+    [ Courses.Membership ]: () => null,
     // [ Courses.FoodManager ]: FoodManagerModal,
     // [ Courses.NSWRecertification ]: NSWRecertificationModal,
     // [ Courses.IntroToFoodSafety ]: IntroToFoodSafetyModal,
     // [ Courses.HACCP ]: HACCPModal,
     // [ Courses.Membership ]: () => null,
-    Login: () => null,
+    Login: LoginModal,
 };
 
 interface ActiveModalSlice {

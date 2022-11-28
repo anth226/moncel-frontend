@@ -36,19 +36,13 @@ export const NavMenu = () => {
             setOpen={setOpenEl}
         />
         <Divider />
-        <MembershipMenu 
-            open={openEl}
-            anchor={anchorRef.current}
-            setOpen={setOpenEl}
-        />
-        <Divider />
-        <StudentsMenu
-            open={openEl}
-            anchor={anchorRef.current}
-            setOpen={setOpenEl}
-        />
-        <Divider />
         <BusinessMenu
+            open={openEl}
+            anchor={anchorRef.current}
+            setOpen={setOpenEl}
+        />
+        <Divider />
+        <MembershipMenu 
             open={openEl}
             anchor={anchorRef.current}
             setOpen={setOpenEl}

@@ -53,8 +53,8 @@ const MenuItem = (props: Props) => {
                 <Column>
                     <Header4 className="text-mine leading-6">{`Laws & Requirements`}</Header4>
                     <Divider />
-                    <Text className="text-sm leading-5">Laws and requirements around food safety training in Australia can be complex and confusing.</Text>
-                    <Text className="text-sm leading-5 mb-0">Get all the information you need in simple language to understand your responsibilities and to help you make the right food safety decisions.</Text>
+                    <Text className="text-sm leading-5">Canadian food safety laws and requirements can be complex and confusing.</Text>
+                    <Text className="text-sm leading-5 mb-0">At CIFS, we use simple and straightforward language to summarize the food safety laws and requirements that you need follow.</Text>
                 </Column>
 
                 <Column>
@@ -86,7 +86,7 @@ const MenuItem = (props: Props) => {
 };
 
 const Column = ({ children }: { children: ReactNode, className?: string }) => <div className={`${styles["quicklist"]} flex flex-col`}>{ children }</div>
-const Divider = () => <div className="w-full border-b-[1px] border-teal my-4" />;
+const Divider = () => <div className="w-full border-b-[1px] my-4" />;
 const Link = ({ text, href }: { text: string, href: string }) => <a className="link text-mine no-underline hover:underline font-medium" href={href}>{text}</a>
 const ListItem = ({ children }: { children: ReactNode }) => <li className="p-0 m-0 border-mystic border-t-[1px] py-2 text-sm">{ children }</li>
 

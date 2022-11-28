@@ -25,7 +25,7 @@ const IconCard = (props: IconCardProps) => {
 };
 
 const DesktopHeroSection = () => {
-    return <Section className={`bg-none hidden lg:block mt-[-100px] z-10 relative ${styles.landing}`}>
+    return <Section className={`bg-none hidden lg:block mt-[-100px] relative ${styles.landing}`}>
         <div className="bg-catskill padded-section grid grid-cols-3">
             <div className="col-span-2 h-[500px] p-7 grid grid-cols-2 gap-7">
                 <div className="flex flex-col gap-4">

@@ -51,9 +51,9 @@ const SLIDER_OPTIONS = {
     swipeToSlide: true,
     responsive: [
         {
-            breakpoint: 992,
+            breakpoint: 1200,
             settings: {
-                slidesToShow: 8,
+                slidesToShow: 7,
                 slidesToScroll: 1,
                 infinite: true,
             }
@@ -97,7 +97,7 @@ const Logos = (props: LogosProps) => {
 
     const _logos = props.logos || DEFAULT_LOGOS;
     const overrides = props.sliderOverrides || {};
-    const sliderOptions = { ...SLIDER_OPTIONS, ...overrides }
+    const sliderOptions = { ...SLIDER_OPTIONS, ...overrides };
 
     return <div className={`w-full overflow-hidden ${props.className || ""}`} id={id}>
         <Slider { ...sliderOptions } className="max-w-full mx-4 lg:mx-0">

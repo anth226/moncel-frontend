@@ -9,8 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
     "@material-ui/core": "^4.12.4",
     "@mdx-js/loader": "^2.1.2",
+    "@mdx-js/react": "^2.1.5",
+    "@mui/material": "^5.10.3",
     "@next/mdx": "^12.2.3",
     "@reduxjs/toolkit": "^1.9.0",
     "embla-carousel-react": "^7.0.5",

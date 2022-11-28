@@ -49,10 +49,9 @@ const MenuItem = (props: Props) => {
                         gap: "24px",
                     }}>
                         <div className="flex flex-col gap-4">
-                            <Text className="text-sm leading-5 mb-0">{`The AIFS Resource Library is a collection of food safety resources including templates, posters, guides, videos, fact sheets and more. You can also find the latest food safety news, blog and product recalls.`}</Text>
-                            <Text className="text-sm leading-5 mb-0">{`Explore the collection and check back frequently for all the latest news in food safety.`}</Text>
+                            <Text className="text-sm leading-5 mb-0">{`The CIFS Resource Library is a collection of food safety resources and information. CIFS Members get unlimited access to the entire collection, including guides, templates, posters, fact sheets and videos.`}</Text>
+                            <Text className="text-sm leading-5 mb-0">{`Our food safety blogs and news items are freely available to both CIFS Members and the general public. We encourage you to explore the collection and check back frequently for all the latest news in food safety.`}</Text>
                         </div>
-                        {/* <NextImage src={ResourceMenuGraphic} width={200} height={112} layout="fixed" /> */}
                     </div>
 
                 </Column>
@@ -71,7 +70,7 @@ const MenuItem = (props: Props) => {
 };
 
 const Column = ({ children }: { children: ReactNode, className?: string }) => <div className={`${styles["quicklist"]} flex flex-col`}>{ children }</div>
-const Divider = () => <div className="w-full border-b-[1px] border-teal my-4" />;
+const Divider = () => <div className="w-full border-b-[1px] my-4" />;
 const Link = ({ text, href }: { text: string, href: string }) => <a className="link text-mine no-underline hover:underline font-medium" href={href} target="_blank" rel="noreferrer">{text}</a>
 const ListItem = ({ children }: { children: ReactNode }) => <li className="p-0 m-0 border-mystic border-y py-2 text-sm -mb-[1px]">{ children }</li>
 
