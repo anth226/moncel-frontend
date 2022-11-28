@@ -1,4 +1,4 @@
-export const PROVINCES = [
+const PROVINCES = [
     "Alberta",
     "British Columbia",
     "Manitoba",
@@ -12,4 +12,8 @@ export const PROVINCES = [
     "Quebec",
     "Saskatchewan",
     "Yukon Territory",
-];
+] as const;
+
+export default PROVINCES;
+
+export type PROVINCE = typeof PROVINCES[number];

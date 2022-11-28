@@ -1,10 +1,10 @@
-import { useEffect, useState, useCallback, MouseEvent } from 'react';
+import { MouseEvent, ReactNode } from 'react';
 import { useRouter } from 'next/router';
 import NextImage from 'next/image';
 
-import { Header2, Header4, Text } from 'components/core/Typography';
+import { Header2, Header4, Header5, Text } from 'components/core/Typography';
 import Button from 'components/core/Button';
-import { NavigationProps, CheckoutSidebarComponentProps } from '../types';
+import { CheckoutSidebarComponentProps } from '../types';
 import { useAppDispatch, AppActions } from 'store';
 const { toggleModal } = AppActions;
 import { Courses } from 'data/courses';

@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import Link from 'next/link';
 import Image from 'components/core/Image';
 
-import { PROVINCES } from 'data/provinces';
+import PROVINCES from 'data/provinces';
 import TrainingImage from 'public/training.webp';
 
 const Section = () => {

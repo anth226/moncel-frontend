@@ -3,12 +3,13 @@ import { FC } from 'react';
 import { Courses } from 'data/courses';
 // import { FoodSafetySupervisorModal, FoodHandlerModal, FoodManagerModal, NSWRecertificationModal, IntroToFoodSafetyModal, HACCPModal } from 'components/courses/checkoutModal';
 import LoginModal from 'components/core/Modal/login';
+import CourseCheckoutModal from 'components/core/Modal/courseCheckout';
 
 export type AllModalNames = keyof typeof Courses | "Login" | null;
 
 export const AllModals: Record<Exclude<AllModalNames, null>, FC> = {
     // [ Courses.FoodSafetySupervisor ]: FoodSafetySupervisorModal,
-    [ Courses.FoodHandler ]: () => null,
+    [ Courses.FoodHandler ]: () => <CourseCheckoutModal />,
     [ Courses.Membership ]: () => null,
     // [ Courses.FoodManager ]: FoodManagerModal,
     // [ Courses.NSWRecertification ]: NSWRecertificationModal,
