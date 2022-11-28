@@ -15,6 +15,11 @@
         "label": "Food safety"
     },
     {
+        "type": "fh_allergen",
+        "enroll": "https://my.userve.com/urlcheckout/add?product=19&amp;qty=1",
+        "label": "Food safety"
+    },
+    {
         "type": "rbs",
         "enroll": "https://my.userve.com/urlcheckout/add?product=2&amp;qty=1",
         "label": "Alcohol service"

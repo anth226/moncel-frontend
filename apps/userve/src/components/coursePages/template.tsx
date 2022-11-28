@@ -73,10 +73,13 @@ export default ({ data, pageContext }: PageProps<CourseTemplateProps, CourseData
     }
 
     let faqVersion;
-    if (["rbs","fh_ansi","fh"].indexOf(pageContext.type) > -1) {
-      faqVersion = "updated"
-    } else {
+
+    // Filter old course layout vs new course layout
+    const oldCourses = ["rbses","basset","al"]
+    if ((oldCourses).includes(pageContext.type)) {
       faqVersion = "default"
+    } else {
+      faqVersion = "updated"
     };
 
     // Replace $STATE with a defined state

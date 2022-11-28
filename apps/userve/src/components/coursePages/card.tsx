@@ -147,6 +147,16 @@ const imageQuery = graphql`
                 publicURL
             }
         }
+        fh_allergen:allFile(filter: { name: { eq: "usx_fh_al_hero" } }) {
+            nodes {
+                name
+                extension
+                childImageSharp {
+                    gatsbyImageData
+                }
+                publicURL
+            }
+        }
         al:allFile(filter: { name: { eq: "usx_al_ge_hero" } }) {
             nodes {
                 name

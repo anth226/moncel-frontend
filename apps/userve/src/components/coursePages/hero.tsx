@@ -95,6 +95,9 @@ export default ({ content, heroStory, context }: { content: CoursePageStoryblok,
         case (context.type === "fh_ansi"):
             defaultGraphicFileNode = imageData.fh_ansi.nodes[0];
             break;
+        case (context.type === "fh_allergen"):
+            defaultGraphicFileNode = imageData.fh_allergen.nodes[0];
+            break;
         case (context.type === "al"):
             defaultGraphicFileNode = imageData.alcoholServer.nodes[0];
             break;
@@ -160,6 +163,16 @@ query {
         }
     }
     fh_ansi:allFile(filter: { name: { eq: "usx_fh_ge_hero" } }) {
+        nodes {
+            name
+            extension
+            childImageSharp {
+                gatsbyImageData
+            }
+            publicURL
+        }
+    }
+    fh_allergen:allFile(filter: { name: { eq: "usx_fh_al_hero" } }) {
         nodes {
             name
             extension
