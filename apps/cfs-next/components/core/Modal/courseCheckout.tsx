@@ -62,9 +62,9 @@ const Tabs = (props: ITabs) => {
 const CourseCheckoutModal = () => {
     const [ selectedTab, setSelectedTab ] = useState<number>(0);
     const [selectedProvince, setSelectedProvince] = useState<PROVINCE | null>(null);
+    const dispatch = useAppDispatch();
+    const { toggleModal } = AppActions;
     const closeModal = () => {
-        const dispatch = useAppDispatch();
-        const { toggleModal } = AppActions;
         dispatch(toggleModal(null));
     }
 
