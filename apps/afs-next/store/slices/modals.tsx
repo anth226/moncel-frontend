@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { FC } from 'react';
 import { Courses } from 'data/courses';
-import { FoodSafetySupervisorModal, FoodHandlerModal, FoodManagerModal, NSWRecertificationModal, IntroToFoodSafetyModal, HACCPModal } from 'components/courses/checkoutModal';
+import { FoodSafetySupervisorModal, FoodHandlerModal, FoodManagerModal, NSWRecertificationModal, IntroToFoodSafetyModal, HACCPModal, AllergenModal } from 'components/courses/checkoutModal';
 import LoginModal from 'components/core/Modal/login';
 
 export type AllModalNames = keyof typeof Courses | "Login" | null;
@@ -12,6 +12,7 @@ export const AllModals: Record<Exclude<AllModalNames, null>, FC> = {
     [ Courses.FoodManager ]: FoodManagerModal,
     [ Courses.NSWRecertification ]: NSWRecertificationModal,
     [ Courses.IntroToFoodSafety ]: IntroToFoodSafetyModal,
+    [ Courses.Allergen ]: AllergenModal,
     [ Courses.HACCP ]: HACCPModal,
     [ Courses.Membership ]: () => null,
     Login: LoginModal,

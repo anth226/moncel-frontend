@@ -38,7 +38,7 @@ const GridCard = (props: GridCardProps) => {
     const router = useRouter();
     const { card, parentId, index } = props;
 
-    const imageComp = card.href ? <NextLink href={card.href}><div className="link w-full mb-4 hover:cursor-pointer"><NextImage src={card.imageSrc} blurDataURL={typeof card.imageSrc == "string" ? card.imageSrc : undefined} placeholder="blur" alt={`grid-card-${card.title}`} height={125} width={222} priority layout="responsive"/></div></NextLink> : <NextImage src={card.imageSrc} alt={`grid-card-${card.title}`} height={125} width={222} layout="responsive"/>;
+    const imageComp = card.href ? <NextLink href={card.href}><div className="link w-full mb-4 hover:cursor-pointer"><NextImage src={card.imageSrc} blurDataURL={typeof card.imageSrc == "string" ? card.imageSrc : undefined} placeholder="blur" alt={`grid-card-${card.title}`} height={125} width={222} layout="responsive"/></div></NextLink> : <NextImage src={card.imageSrc} alt={`grid-card-${card.title}`} height={125} width={222} layout="responsive"/>;
     const titleComp = card.href ? <NextLink href={card.href}><span className="link hover:decoration-teal"><Header4 className="text-teal pb-4 font-semibold hover:underline hover:cursor-pointer">{card.title}</Header4></span></NextLink> : <Header4 className="text-teal font-semibold hover:underline hover:cursor-pointer">{card.title}</Header4>;
     return <div className="flex flex-col justify-between border-[1px] border-teal p-4" id={`${parentId}-card-${index}`}>
         <div className="mb-4">

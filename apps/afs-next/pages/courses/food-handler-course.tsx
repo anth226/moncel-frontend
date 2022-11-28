@@ -694,7 +694,7 @@ const CommonQuestionsSection = () => {
         }
         details={<div className="flex flex-col">
           <Text>Choose the industry where you work or plan to work.</Text>
-          <Text>{`If you work (or plan to work) in the Food Retail or Transport & Distribution sectors, we recommend that you choose the Hospitality sector.`}</Text>
+          <Text>If you work (or plan to work) in the Food Retail or Transport & Distribution sectors, we recommend that you choose the Hospitality sector.</Text>
         </div>
         }
       />

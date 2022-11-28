@@ -12,6 +12,7 @@ const FOOD_SAFETY_COURSE_LINKS: Array<Link> = [
     { text: "NSW Recertification", href: "/courses/nsw-recertification" },
     { text: "Food Safety Manager", href: "/courses/food-safety-manager" },
     { text: "Introduction to Food Safety", href: "/courses/introduction-to-food-safety-course" },
+    { text: "Food Allergen Management", href: "/courses/food-allergen-management" },
 ];
 
 const PRODUCT_LINKS: Array<Link> = [

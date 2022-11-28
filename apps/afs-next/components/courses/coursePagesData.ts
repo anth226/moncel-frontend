@@ -8,7 +8,8 @@ export const navigationData: NavigationProps = {
       { text:'Food Handler Course', href:'/courses/food-handler-course' },
       { text: 'NSW Recertification', href: '/courses/nsw-recertification' },
       { text: 'Food Safety Manager', href: '/courses/food-safety-manager' },
-      { text: 'Introduction to Food Safety', href: 'courses/introduction-to-food-safety-course' }
+      { text: 'Introduction to Food Safety', href: 'courses/introduction-to-food-safety-course' },
+      { text: 'Food Allergen Management', href: 'courses/food-allergen-management' }
     ],
 };
 
@@ -49,6 +50,12 @@ export const coursePageOverviewData: GridTemplateProps = {
     description: "The Introduction to Food Safety course is an entry level course designed to teach the basic skills and knowledge needed to handle food safely.",
     imageSrc: "/courses/intro-food-worker.jpg",
     href: "/courses/introduction-to-food-safety-course",
+  },
+  {
+    title: "Food Allergen Management",
+    description: "This course is designed for food handlers who wish to enhance their knowledge in the area of food allergen management.",
+    imageSrc: "/courses/allergen/afs-allergen-management.jpg",
+    href: "/courses/food-allergen-management",
   }]
 };
 

@@ -16,6 +16,7 @@ const COURSE_LINKS = [
     { text: "NSW Recertification", href: "/courses/nsw-recertification" },
     { text: "Food Safety Manager", href: "/courses/food-safety-manager" },
     { text: "Introduction to Food Safety", href: "/courses/introduction-to-food-safety-course" },
+    { text: "Food Allergen Management", href: "/courses/food-allergen-management" },
 ];
 
 interface Props {
@@ -47,7 +48,7 @@ const MenuItem = (props: Props) => {
                     }}>
                         <div className="flex flex-col gap-4">
                             <Text className="text-sm leading-5 mb-0">Whether {`you're`} a food worker, business owner or training manager, our food safety courses make it easy for you to meet your legal requirements.</Text>
-                            <Text className="text-sm leading-5 mb-0">At AIFS, our courses are nationally recognised throughout Australia. They can be completed online in a few hours and many students receive their certificate on the same day that they finish the course.</Text>
+                            <Text className="text-sm leading-5 mb-0">At AIFS, most of our courses are nationally recognised throughout Australia. They can be completed online in a few hours, and many students receive their certificate or Statement of Attainment on the same day that they finish their course.</Text>
                         </div>
                         <NextImage src={CourseMenuGraphic} width={200} height={112} layout="fixed" />
                     </div>

@@ -282,6 +282,53 @@ export const NSWRecertificationModal = () => {
     </div>
 };
 
+const AllergenData = courseData[Courses.Allergen];
+export const AllergenModal = () => {
+    const router = useRouter();
+    const dispatch = useAppDispatch();
+    const { toggleModal } = AppActions;
+    const [ termsAccepted, setTermsAccepted ] = useState(false);
+
+    const checkout = () => {
+        if(!termsAccepted) {
+            throw Error(ERRORS.checkoutTermsNotAccepted);
+        }
+        // router.push(`${AllergenData.checkout}`);
+        if(window) window.open(`${AllergenData.checkout}`);
+    }
+
+    const cancel = () => {
+        dispatch(toggleModal(null));
+    }
+    return <div className="flex flex-col bg-white py-6 max-w-[600px]">
+        <Header4 className="font-semibold text-teal px-6">Your Enrolment</Header4>
+        <div className="px-6 text-sm">
+            <Divider />
+            <Text>Check the details below and proceed to checkout.</Text>
+            <div className="grid grid-cols-2 w-full">
+                <Text className="font-semibold mb-0">Course:</Text>
+                <Text className="mb-0">{AllergenData.longName}</Text>
+                <Text className="font-semibold mb-0">Price:</Text>
+                <Text className="mb-0">{AllergenData.price}</Text>
+                <Text className="font-semibold mb-0">Prerequisites:</Text>
+                <Text className="mb-0">{AllergenData.prerequisites}</Text>
+                <Text className="font-semibold mb-0">Nationally Recognized:</Text>
+                <Text className="mb-0">{AllergenData.nationallyRecognized ? "Yes this course is Nationally Recognised" : "No this course is not Nationally Recognised"}</Text>
+            </div>
+            <Divider />
+            <Header5 className="font-semibold pb-4">{`Terms & Conditions`}</Header5>
+            <div className="flex gap-2 items-start">
+                <input id="checkbox-accept-terms" type="checkbox" checked={termsAccepted} onClick={() => setTermsAccepted(!termsAccepted)} className="mt-1"/>
+                <label htmlFor="checkbox-accept-terms">Check here to indicate that you have read and agree to the terms and conditions of the <NextLink href="/legal/enrolment-policy"><a target="_blank">AIFS Enrolment Policy</a></NextLink> and the <NextLink href="/legal/payment-policy"><a target="_blank">AIFS Payment and Refund Policy</a></NextLink>.</label>
+            </div>
+            <div className="flex flex-row justify-between items-center border-t pt-4 mt-4">
+                <Button variant="primary" id="button-fss-checkout-modal-cancel" onClick={cancel} className="capitalize">Cancel</Button>
+                <Button variant="secondary" id="button-fss-checkout-modal-checkout" disabled={!termsAccepted} onClick={checkout}>Proceed to Checkout</Button>
+            </div>
+        </div>
+    </div>
+};
+
 const IntroData = courseData[Courses.IntroToFoodSafety];
 export const IntroToFoodSafetyModal = () => {
     const router = useRouter();

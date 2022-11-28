@@ -13,6 +13,7 @@ const data: {[key: string]: HelpSectionTabNavigationMenuData} = {
             { text: "NSW Recertification", href: "/courses/nsw-recertification"},
             { text: "Food Safety Manager", href: "/courses/food-safety-manager"},
             { text: "Introduction to Food Safety", href: "/courses/introduction-to-food-safety-course"},
+            { text: "Food Allergen Management", href: "/courses/food-allergen-management"},
         ],
     },
     "Laws & Requirements by Role": {

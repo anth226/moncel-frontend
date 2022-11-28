@@ -7,6 +7,7 @@ export enum Courses {
     IntroToFoodSafety="IntroToFoodSafety",
     HACCP="HACCP",
     Membership="Membership",
+    Allergen="Allergen",
 }
 
 export type CourseType = {
@@ -60,6 +61,14 @@ export const courseData: Record<Courses, CourseType> = {
         prerequisites: "None",
         nationallyRecognized: false,
         checkout: "https://my.foodsafety.com.au/checkout/cart/add?product=10&amp;qty=1",
+    },
+    [Courses.Allergen]: {
+        longName: "Food Allergen Management Course",
+        price: "$49.95",
+        memberPrice: "",
+        prerequisites: "None",
+        nationallyRecognized: false,
+        checkout: "https://my.foodsafety.com.au/checkout/cart/add?product=31&amp;qty=1",
     },
     [Courses.HACCP]: {
         longName: "HACCP Food Safety Plan Kit",
