@@ -45,13 +45,14 @@ interface IntroBoxProps {
 
 export const IntroBox = (props: IntroBoxProps) => {
   const { imageSrc, alt, children, className, layout } = props;
+  const imagePlaceholder = typeof props.imageSrc === "string" ? props.imageSrc : undefined;
   return <div>
     <div className={`grid grid-cols-5 gap-8 ${className}`}>
       <div className={`flex flex-col col-span-5 md:col-span-3 order-last ${ layout == false ? "md:order-last" : "md:order-first" }`}>
         { children }
       </div>
       <div className={`order-first ${ layout == false ? "md:order-first" : "md:order-last" } col-span-5 md:col-span-2`}>
-        <NextImage src={imageSrc} alt={alt} width={325} height={183} layout="responsive"  />
+        <NextImage src={imageSrc} alt={alt} width={325} height={183} layout="responsive" placeholder="blur" blurDataURL={ imagePlaceholder } />
       </div>
     </div>
   </div>

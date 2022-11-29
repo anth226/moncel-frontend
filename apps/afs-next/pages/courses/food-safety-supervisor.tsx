@@ -470,7 +470,7 @@ const IndustrySectorSection = () => {
               width: '100%',
             }}>
               <Text className="flex-none flex-0 col-span-1">Hospitality businesses prepare and serve food for customers to consume in-house.<br /><br />The units of competency awarded for Hospitality are:</Text>
-              <Image className="float-right col-span-1" src={HospitalityGraphic} width={150} height={84} layout="fixed" alt="Hospitality Sector" />
+              <Image className="float-right col-span-1" src={HospitalityGraphic} width={150} height={84} layout="fixed" alt="Hospitality Sector" placeholder="blur" />
             </div>
               <ul>
                 <ListItem>SITXFSA005 Use hygienic practices for food safety</ListItem>
@@ -487,7 +487,7 @@ const IndustrySectorSection = () => {
               width: '100%',
             }}>
               <Text className="flex-none flex-0 col-span-1">Food retail businesses prepare and sell food to customers for consumption elsewhere.<br /><br />The unit of competency awarded for Retail is:</Text>
-              <Image className="float-right col-span-1" src={RetailGraphic} width={150} height={84} layout="fixed" alt="Retail Sector" />
+              <Image className="float-right col-span-1" src={RetailGraphic} width={150} height={84} layout="fixed" alt="Retail Sector" placeholder="blur" />
             </div>
               <ul>
                 <ListItem>SIRRFSA001 Handle food safely in a retail environment</ListItem>
@@ -503,7 +503,7 @@ const IndustrySectorSection = () => {
               width: '100%',
             }}>
               <Text className="flex-none flex-0 col-span-1">Food processing businesses manufacture food and have very little direct contact with consumers.<br /><br />The units of competency awarded for Food Processing are:</Text>
-              <Image className="float-right col-span-1" src={FoodProcessingGraphic} width={150} height={84} layout="fixed" alt="Food Processing Sector" />
+              <Image className="float-right col-span-1" src={FoodProcessingGraphic} width={150} height={84} layout="fixed" alt="Food Processing Sector" placeholder="blur" />
             </div>
               <ul>
                 <ListItem>FBPFSY1002 Follow work procedures to maintain food safety</ListItem>
@@ -520,7 +520,7 @@ const IndustrySectorSection = () => {
               width: '100%',
             }}>
               <Text className="flex-none flex-0 col-span-1">Organisations that serve food to vulnerable people are in the health and community sector.<br /><br />The units of competency awarded for Health {`&`} Community are:</Text>
-              <Image className="float-right col-span-1" src={HealthCommunityGraphic} width={150} height={84} layout="fixed" alt="Health & Community Sector" />
+              <Image className="float-right col-span-1" src={HealthCommunityGraphic} width={150} height={84} layout="fixed" alt="Health & Community Sector" placeholder="blur" />
             </div>
               <ul>
                 <ListItem>HLTFSE001 Follow basic food safety practices</ListItem>
@@ -538,7 +538,7 @@ const IndustrySectorSection = () => {
               width: '100%',
             }}>
               <Text className="flex-none flex-0 col-span-1">Any business that transports or stores food is in the transport and distribution sector.<br /><br />The units of competency awarded for Transport and Distribution are:</Text>
-              <Image className="float-right col-span-1" src={TransportDistributionGraphic} width={150} height={84} layout="fixed" alt="Transport & Distribution Sector" />
+              <Image className="float-right col-span-1" src={TransportDistributionGraphic} width={150} height={84} layout="fixed" alt="Transport & Distribution Sector" placeholder="blur" />
             </div>
               <ul>
                 <ListItem>SITXFSA005 Use hygienic practices for food safety</ListItem>
@@ -583,7 +583,7 @@ const WhatIsSection = () => {
 
     <div className="w-full grid gap-8 grid-cols-1 md:grid-cols-2">
       <div className="flex flex-col">
-        <Image src={WhatIsFSS} alt="What is a Food Safety Supervisor?" width={350} height={197} layout="responsive" />
+        <Image src={WhatIsFSS} alt="What is a Food Safety Supervisor?" width={350} height={197} layout="responsive" placeholder="blur" />
         <Text className="mt-8">A Food Safety Supervisor is someone who has the appropriate food safety training to supervise food safety in a business. Food Safety Supervisors are mainly responsible for:</Text>
         <ul className="checklist">
           <ListItem>supervising food handling staff</ListItem>

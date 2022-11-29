@@ -493,7 +493,7 @@ const IndustrySectorSection = () => {
               width: '100%',
             }}>
               <Text className="flex-none flex-0 col-span-1">Hospitality businesses prepare and serve food for customers to consume in house.</Text>
-              <Image className="float-right col-span-1" src={HospitalityGraphic} width={150} height={84} layout="fixed" alt="Hospitality Sector" />
+              <Image className="float-right col-span-1" src={HospitalityGraphic} width={150} height={84} layout="fixed" alt="Hospitality Sector" placeholder="blur" />
             </div>
               <Text>The unit of competency awarded for this course is:</Text>
               <ul className="pb-4">
@@ -512,7 +512,7 @@ const IndustrySectorSection = () => {
               width: '100%',
             }}>
               <Text className="pb-3 flex-none flex-0 col-span-1">Food retail businesses prepare and sell food to customers for consumption elsewhere.</Text>
-              <Image className="float-right col-span-1" src={RetailGraphic} width={150} height={84} layout="fixed" alt="Retail Sector" />
+              <Image className="float-right col-span-1" src={RetailGraphic} width={150} height={84} layout="fixed" alt="Retail Sector" placeholder="blur" />
             </div>
               <Text>The unit of competency awarded for Retail is:</Text>
               <ul>

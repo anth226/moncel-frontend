@@ -133,8 +133,8 @@ const TableComparisonSection = () => {
           <td>
             <h3>&nbsp;</h3>
           </td>
-          <td><Image alt="Blue Food Safety Card" height={187} src={FSCardFont} width={287} layout="fixed" /></td>
-          <td><Image alt="Green Food Safety Supervisor Card" height={187} src={FSCardBack} width={287} layout="fixed" /></td>
+          <td><Image alt="Blue Food Safety Card" height={187} src={FSCardFont} width={287} layout="fixed" placeholder="blur" /></td>
+          <td><Image alt="Green Food Safety Supervisor Card" height={187} src={FSCardBack} width={287} layout="fixed" placeholder="blur" /></td>
         </tr>
         <tr>
           <td>

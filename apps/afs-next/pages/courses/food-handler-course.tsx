@@ -530,7 +530,7 @@ const WhatIsSection = () => {
 
     <div className="w-full grid gap-8 grid-cols-1 md:grid-cols-2">
       <div className="flex flex-col">
-        <Image src={FHCHero} alt="What is a Food Handler?" width={350} height={197} layout="responsive" />
+        <Image src={FHCHero} alt="What is a Food Handler?" width={350} height={197} layout="responsive" placeholder="blur" />
         <ExpandibleFAQ
           summary={<div className="flex flex-col">
             <Text className="mt-8">{`A Food Handler is someone who's involved in a food handling activity like preparing, serving, packing, displaying and storing food.`}</Text>
