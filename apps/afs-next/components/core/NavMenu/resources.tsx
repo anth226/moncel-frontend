@@ -37,7 +37,7 @@ const MenuItem = (props: Props) => {
     }
     return <div id={`nav-menu-${ID}`} onMouseLeave={closeMenu}>
         <a href={HREF} className="link text-white no-underline hover:underline font-semibold" onMouseEnter={openMenu}>Resource Library</a>
-        <Popper id={ID} open={props.open === ID} anchorEl={props.anchor} placement="bottom-start">
+        <Popper id={ID} open={props.open === ID} anchorEl={props.anchor} placement="bottom-start" keepMounted>
             {/* actual menu */}
             <div className="padded-section bg-white px-7 py-8 grid grid-cols-2 gap-x-8 gap-y-0 grid-flow-row mt-3">
                 <Column>

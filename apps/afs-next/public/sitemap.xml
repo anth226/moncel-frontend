@@ -2,367 +2,367 @@
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
     <loc>http://localhost:3000/404</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/_document</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/confirmation</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/contact</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/faq</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/forms</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/haccp-food-safety-plan-kit</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/thank-you</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/about/community</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/about/employment</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/about/index</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/about/our-mission</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/business/accounts</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/business/enterprise</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/business/food-safety</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/business/index</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/business/small-business</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>http://localhost:3000/haccp-programs/index</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>http://localhost:3000/haccp-programs/what-is-haccp</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>http://localhost:3000/laws-requirements/index</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>http://localhost:3000/legal/enrolment-policy</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>http://localhost:3000/legal/index</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>http://localhost:3000/legal/membership-policy</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>http://localhost:3000/legal/payment-policy</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>http://localhost:3000/legal/privacy-policy</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>http://localhost:3000/legal/security-policy</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>http://localhost:3000/legal/terms-of-use</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/courses/food-allergen-management</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/courses/food-handler-course</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/courses/food-safety-manager</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/courses/food-safety-supervisor</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/courses/index</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/courses/introduction-to-food-safety-course</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/courses/nsw-recertification</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/haccp-programs/index</loc>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/haccp-programs/what-is-haccp</loc>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/laws-requirements/index</loc>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/membership/checkout</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/membership/food-safety-decal</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/membership/index</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/membership/membership-program</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/legal/enrolment-policy</loc>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/legal/index</loc>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/legal/membership-policy</loc>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/legal/payment-policy</loc>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/legal/privacy-policy</loc>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/legal/security-policy</loc>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>http://localhost:3000/legal/terms-of-use</loc>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/students/food-safety-card</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/students/food-safety-display-certificate</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/students/index</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/students/participant-handbook</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/food-sectors/food-processing</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/food-sectors/health-community</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/food-sectors/hospitality-sector</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/food-sectors/index</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/food-sectors/retail</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/food-sectors/transport-distribution</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/location/act</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/location/index</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/location/new-south-wales</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/location/queensland</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/location/sa-nt-wa-tas</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/location/victoria</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/role/for-employees</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/role/for-established-businesses</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/role/for-job-seekers</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/role/for-new-businesses</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/role/for-training-managers</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://localhost:3000/laws-requirements/role/index</loc>
-    <lastmod>2022-11-29T12:14:40.268Z</lastmod>
+    <lastmod>2022-11-29T12:26:06.254Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
