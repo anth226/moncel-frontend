@@ -157,7 +157,7 @@ export const FoodSafetySupervisorModal = () => {
                     </div>
                     <Text>Please note. NSW Food Authority Certificates incur an additional $30.00 Government Fee</Text>
                 </div>
-                <NextImage src={NSWCertificateImage} width={100} height={141} layout="fixed"/>
+                <NextImage src={NSWCertificateImage} width={100} height={141} layout="fixed" placeholder="blur" />
             </div>
 
             { !nswRequired ? <div className="mt-4 p-3 border-red-500 border bg-red-100"><Text className="font-semibold mb-0">Please Note: You are <span className="underline">required by law</span> to have a NSW Food Authority Certificate to work as a Food Safety Supervisor in New South Wales.</Text></div> : null }
@@ -266,7 +266,7 @@ export const NSWRecertificationModal = () => {
                     <Text className="mb-0">On completion of your recertification, we will issue you an updated NSW Food Authority Certificate, valid for five years.</Text>
                     <Text className="mb-0">NSW Food Authority Certificates incur an additional $30.00 Government Fee.</Text>
                 </div>
-                <NextImage src={NSWCertificateImage} width={100} height={141} layout="fixed" />
+                <NextImage src={NSWCertificateImage} width={100} height={141} layout="fixed" placeholder="blur" />
             </div>
             <Divider />
             <Header5 className="font-semibold pb-4">{`Terms & Conditions`}</Header5>

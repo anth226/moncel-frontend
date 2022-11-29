@@ -87,7 +87,7 @@ const CartComponent = () => {
         </div>
 
         <div className="w-full pl-7 pb-8">
-            <NextImage src={PaymentMethods} width={150} />
+            <NextImage src={PaymentMethods} width={150} placeholder="blur" />
         </div>
 
         <div className="w-full flex gap-2 items-center">

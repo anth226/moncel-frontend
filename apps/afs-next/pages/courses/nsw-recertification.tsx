@@ -349,7 +349,7 @@ const CourseOutlineSection = () => {
           summary={<div>
             <Text className="font-semibold">NSW Food Authority Requirements</Text>
             <div className="inline float-right ml-4">
-                <NextImage src="/nsw-certificate.webp" width="200" height="283" layout="fixed" alt="Food Safety Supervisor Certificate"/>
+                <NextImage src="/nsw-certificate.webp" width="200" height="283" layout="fixed" alt="Food Safety Supervisor Certificate" placeholder="blur" blurDataURL="/nsw-certificate.webp" />
             </div>
             <Text>To be nominated Food Safety Supervisor for a food premise in NSW, you must complete an NSW Food Authority approved Food Safety Supervisor course once every five years.</Text>
             <Text>AIFS is approved to deliver Food Safety Supervisor training and NSW Food Authority certificates on behalf of the NSW Food Authority.</Text>

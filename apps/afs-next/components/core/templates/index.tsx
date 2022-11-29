@@ -65,8 +65,9 @@ interface ImageBannerCardProps {
 
 export const ImageBannerCard = (props: ImageBannerCardProps) => {
   const { imageSrc, title, description } = props;
+  const imagePlaceholder = typeof imageSrc === "string" ? imageSrc : undefined;
   return <div className="flex flex-col w-full">
-      <NextImage src={imageSrc} alt={`image-graphic-for-card-${title}`} layout="responsive"  />
+      <NextImage src={imageSrc} alt={`image-graphic-for-card-${title}`} layout="responsive" placeholder="blur" blurDataURL={imagePlaceholder}  />
       <div className="bg-teal w-full flex justify-center items-center p-4"><Header3 className="!text-white !text-sm !mb-0 font-semibold">{title.toUpperCase()}</Header3></div>
       <div className="bg-white text-teal p-4 md:min-h-[120px]"><Text className="!text-teal text-semibold">{description}</Text></div>
       <div className="icon"><NextImage src="/icons/icon_stroke_green_arrow_down.svg" width={15} height={8}></NextImage></div>

@@ -42,32 +42,4 @@ const RowsTemplate = (props: RowsTemplateProps) => {
     </div>;
 };
 
-interface SectionProps {
-    title: string;
-    imageSrc: string | StaticImageData;
-    className?: string;
-    children: ReactNode;
-}
-export const Section = (props: SectionProps) => {
-    return <>
-        <div className="col-span-3 hidden lg:grid grid-cols-12 gap-3">
-            <Header3 className="font-semibold col-span-12">{props.title}</Header3>
-            <div className={`${props.className} col-span-7`}>
-                { props.children }
-            </div>
-            <div className="col-span-5">
-                <NextImage src={props.imageSrc} />
-            </div>
-        </div>
-
-        <div className="col-span-3 flex flex-col gap-7 lg:hidden">
-            <Header3 className="font-semibold">{props.title}</Header3>
-            <NextImage src={props.imageSrc} />
-            <div className={`${props.className} col-span-3`}>
-                { props.children }
-            </div>
-        </div>
-    </>;
-  };
-
 export default RowsTemplate;

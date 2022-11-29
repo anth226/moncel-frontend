@@ -40,7 +40,7 @@ const CommunitySection = () => {
                 <Header2 className="col-span-12 row-start-1 text-xl text-teal pb-4 border-b-[1px] border-b-teal w-full mb-4">AIFS in the Community</Header2>
                 <div className={`markdown-container md:row-start-2 col-span-12 mt-7 md:mt-0 md:col-span-7`}>
                     <div className="hidden lg:block float-right ml-4">
-                        <NextImage src="/photo_ozharvest.jpg" width="200" height="112" layout="fixed" alt="Oz Harvest"/>
+                        <NextImage src="/photo_ozharvest.jpg" width="200" height="112" layout="fixed" alt="Oz Harvest" placeholder="blur" blurDataURL="/photo_ozharvest.jpg" />
                     </div>
                     <Text className="">The AIFS Foundation tackles food-related issues throughout Australia.</Text>
                     <Text>Our team are dedicated to reducing the number of people with food-borne illnesses and helping the vulnerable in our community who suffer from hunger.</Text>
@@ -49,7 +49,7 @@ const CommunitySection = () => {
                     <Text>{`That's`} why we provide hundreds of free resources and promote food safety through the media and other channels.</Text>
                     <Text className="font-semibold">Helping OzHarvest feed those in need</Text>
                     <div className="float-right ml-4 block">
-                        <NextImage src="/logo_ozharvest.svg" width="75" height="35" layout="fixed" alt="Oz Harvest"/>
+                        <NextImage src="/logo_ozharvest.svg" width="75" height="35" layout="fixed" alt="Oz Harvest" placeholder="blur" blurDataURL="/logo_ozharvest.svg" />
                     </div>
                     <Text>For every Food Safety Supervisor course enrolment, {`we'll`} help to feed two people in need in partnership with OzHarvest. For every Food Handler enrolment, {`we'll`} help to feed one person.</Text>
                     <Text>Our team work closely with OzHarvest and volunteer regularly to help collect, prepare and distribute food to vulnerable people in our community.</Text>

@@ -28,7 +28,7 @@ const Column = (props: ColumnProps) => {
     const router = useRouter();
     return <div className="flex flex-col justify-between col-span-1 items-center p-8 gap-6 even:bg-gradient-to-b from-haze to-white">
         <div className="flex flex-col items-center gap-6">
-            <NextImage src={props.imageSrc} />
+            <NextImage src={props.imageSrc} placeholder="blur"/>
             <Header4 className="text-teal">{props.title}</Header4>
             <div className={`checklist ${styles["mdx"]}`}>
                 {props.children}
