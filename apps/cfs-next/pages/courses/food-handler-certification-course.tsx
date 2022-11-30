@@ -180,8 +180,8 @@ const LogosSection = () => {
 const CourseOutlineSection = () => {
     return <div className="col-span-3" id={ANCHOR_IDS.courseOutline}>
         <div className="w-full flex flex-col items-center pb-7 text-bunting">
-            <Header3 className="text-monza">Course outline</Header3>
-            <Header4 className="text-bunting">Everything you need to become a Certified Food Handler, all in one course.</Header4>
+            <Header3 className="!text-monza">Course outline</Header3>
+            <Header4 className="!text-bunting">Everything you need to become a Certified Food Handler, all in one course.</Header4>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-7">
             <div className="flex flex-col text-bunting gap-4">
