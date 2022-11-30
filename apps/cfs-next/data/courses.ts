@@ -23,7 +23,7 @@ export const courseData: Record<Courses, CourseType> = {
         checkout: "https://my.foodsafety.com.au/checkout/cart/add?product=",
     },
     [Courses.Membership]: {
-        longName: "AIFS Membership",
+        longName: "CIFS Membership",
         price: "$99.95",
         memberPrice: "",
         prerequisites: "None",

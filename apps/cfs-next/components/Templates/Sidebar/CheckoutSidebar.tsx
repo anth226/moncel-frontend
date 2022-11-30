@@ -56,7 +56,7 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
                 <Button variant="primary" className="!px-0 !py-4 w-full" onClick={handleClick} id="purchase-button">
                     <span>
                         <Header4 className="text-base xl:text-xl font-bold -mb-2 leading-5">{props.course == "Membership" ? "JOIN TODAY" : "START ONLINE NOW"}</Header4>
-                        <Text className="!text-[10px] xl:!text-sm !text-white font-semibold xl:font-bold tracking-wide !leading-4 xl:!leading-5 mt-1 xl:mt-0">{props.course == "Membership" ? "BECOME AN AIFS MEMBER" : "BEGIN IN JUST 30 SECONDS"}</Text>
+                        <Text className="!text-[10px] xl:!text-sm !text-white font-semibold xl:font-bold tracking-wide !leading-4 xl:!leading-5 mt-1 xl:mt-0">{props.course == "Membership" ? "BECOME A CIFS MEMBER" : "BEGIN IN JUST 30 SECONDS"}</Text>
                     </span>
                 </Button>
 
@@ -77,8 +77,8 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
                         <div className="border-b-[1px] border-afs-light-gray w-full col-span-3" />
                         <div className="w-full grid grid-cols-6 items-center col-span-3 py-2 gap-2">
                             <div className="flex col-span-4 justify-between items-center">
-                                <p className="text-xs text-dove font-semibold ">AIFS MEMBERSHIP</p>
-                                <BootstrapTooltip title="Provides 12 months of complimentary AIFS membership" placement="top" arrow>
+                                <p className="text-xs text-dove font-semibold ">CIFS MEMBERSHIP</p>
+                                <BootstrapTooltip title="Provides 12 months of complimentary CIFS membership" placement="top" arrow>
                                     <span className="bg-silver text-white rounded-xl px-1 py-0.5 text-xs mr-0 xl:mr-6 h-5">?</span>
                                 </BootstrapTooltip>
                             </div>

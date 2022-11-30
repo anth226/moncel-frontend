@@ -207,9 +207,9 @@ const CourseOutlineSection = () => {
                                 <p>Module one:</p>
                                 <p>Understanding food safety</p>
                             </div>
-                            <p>Lesson 1 - Food Safety Laws {`&`} Responsibilities</p>
-                            <p>Lesson 2 - Food Contamination {`&`} High-Risk Groups</p>
-                            <p>Lesson 3 - Types of Contamination</p>
+                            <p>Lesson 1 - Understanding food contamination</p>
+                            <p>Lesson 2: Food-borne illness {`&`} allergy management</p>
+                            <p>Lesson 3: Food safety laws {`&`} responsibilities</p>
 
                             <div className="font-semibold mt-4">
                                 <p>Module two:</p>
