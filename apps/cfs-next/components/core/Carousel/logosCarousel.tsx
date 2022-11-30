@@ -107,7 +107,7 @@ const Logos = (props: LogosProps) => {
 };
 
 const Slide = ({ src }: { src: StaticImageData }) => {
-    return <NextImage src={src} width={118} height={70} layout="fixed" />;
+    return <div className="relative px-2 h-[70px]"><NextImage src={src} layout="fill" objectFit="contain" /></div>;
 };
 
 export default Logos;
