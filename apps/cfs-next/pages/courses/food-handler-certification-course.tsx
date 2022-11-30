@@ -201,7 +201,7 @@ const CourseOutlineSection = () => {
             <div className="flex flex-col">
                 <CollapsibleCellGroup initialIndex={0}>
                     <CollapsibleTableCell
-                        summary={<p className="uppercase">Course Outline</p>}
+                        summary={<p className="uppercase hover:underline">Course Outline</p>}
                         details={<>
                             <div className="font-semibold">
                                 <p>Module one:</p>
@@ -229,7 +229,7 @@ const CourseOutlineSection = () => {
                             <p>Lesson 10 - Serving {`&`} dispensing food safely</p>
 
                             <div className="font-semibold mt-4">
-                                <p>Module Four</p>
+                                <p>Module Four:</p>
                                 <p>Managing your food safety plan</p>
                             </div>
                             <p>Lesson 11 - Managing your food safety plan</p>
@@ -237,7 +237,7 @@ const CourseOutlineSection = () => {
                         </>}
                         detailsClasses={{ root: '!p-4 bg-lilac' }} />
                     <CollapsibleTableCell
-                        summary={<p className="uppercase">Certification Process</p>}
+                        summary={<p className="uppercase hover:underline">Certification Process</p>}
                         details={
                             <>
                                 <Text>{`To successfully obtain your CIFS Food Handler Certification, you’re required to complete each lesson and pass a final exam within 30 days.`}</Text>
@@ -248,7 +248,7 @@ const CourseOutlineSection = () => {
                         detailsClasses={{ root: '!p-4 bg-lilac' }} />
 
                     <CollapsibleTableCell
-                        summary={<p className="uppercase">Technical Requirements</p>}
+                        summary={<p className="uppercase hover:underline">Technical Requirements</p>}
                         details={
                             <>
                                 <Text>{`The course can be completed on your mobile phone, tablet or computer. You will need to have a modern web browser and it’s important that you have Javascript enabled. The final exam (which takes only one hour) requires a computer with a webcam, microphone and a reliable internet connection. `}</Text>
@@ -259,7 +259,7 @@ const CourseOutlineSection = () => {
                         detailsClasses={{ root: '!p-4 bg-lilac' }} />
 
                     <CollapsibleTableCell
-                        summary={<p className="uppercase">Provinces and Territories</p>}
+                        summary={<p className="uppercase hover:underline">Provinces and Territories</p>}
                         details={
                             <>
                                 <Text>{`The CIFS Food Handler Certification course is approved/accepted in every province and territory across Canada:`}</Text>
