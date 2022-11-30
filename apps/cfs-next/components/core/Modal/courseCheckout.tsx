@@ -137,7 +137,7 @@ const CourseCheckoutModal = () => {
                 
             </div>
             <div className="w-full flex justify-end">
-                <Button id="course-modal-checkout-button" className="w-[200px] !normal-case py-3.5" disabled={!selectedProvince}>
+                <Button id="course-modal-checkout-button" className="w-[200px] !normal-case py-3.5" disabled={!selectedProvince} onClick={checkout}>
                     Proceed to Checkout
                 </Button>
             </div>
