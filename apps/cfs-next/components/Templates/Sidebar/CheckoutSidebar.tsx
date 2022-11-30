@@ -99,7 +99,7 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
 
         </div>
         <div className="lg:hidden fixed w-full z-30 bottom-6 padded-section pl-0 pr-[3em] md:pr-0">
-            <Button variant="secondary" className="!px-0 !py-4 w-full" onClick={handleClick} id="purchase-button">
+            <Button variant="primary" className="!px-0 !py-4 w-full" onClick={handleClick} id="purchase-button">
                 <span>
                     <Header4 className="text-md xl:text-xl font-semibold -mb-2 leading-6 w-full">SIGN UP ONLINE NOW</Header4>
                     <Text className="text-sm !text-white font-medium tracking-wide !leading-6 !px-4">GET STARTED IN JUST 30 SECONDS</Text>

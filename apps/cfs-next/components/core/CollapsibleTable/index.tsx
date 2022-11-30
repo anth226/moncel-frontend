@@ -16,7 +16,7 @@ interface CollapsibleTableCellProps {
 export const CollapsibleTableCell = (props: CollapsibleTableCellProps) => {
     const summaryBgClass = props.expanded ? "!bg-bunting" : "!bg-catskill";
     const textClass = props.expanded ? "!text-white" : "!text-bunting";
-    return <Accordion square classes={{ root: `!shadow-none text-bunting ${props.last ? '!border-b' : ''}` }} disableGutters {...props.accordionProps} expanded={props.expanded}>
+    return <Accordion square classes={{ root: `!shadow-none !text-bunting ${props.last ? '!border-b' : ''}` }} disableGutters {...props.accordionProps} expanded={props.expanded}>
       <AccordionSummary className={`${summaryBgClass} ${textClass} w-full text-sm font-medium !px-3 !py-2 !-mb-[1px]`} classes={{ root: '!py-0 !px-3 min-h-0 !-mb-[1px]', content: ''}} expandIcon={<ExpandIcon/>} onClick={props.onClick}>
         { props.summary }
       </AccordionSummary>

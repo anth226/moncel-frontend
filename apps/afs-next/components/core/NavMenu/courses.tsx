@@ -50,7 +50,7 @@ const MenuItem = (props: Props) => {
                             <Text className="text-sm leading-5 mb-0">Whether {`you're`} a food worker, business owner or training manager, our food safety courses make it easy for you to meet your legal requirements.</Text>
                             <Text className="text-sm leading-5 mb-0">At AIFS, most of our courses are nationally recognised throughout Australia. They can be completed online in a few hours, and many students receive their certificate or Statement of Attainment on the same day that they finish their course.</Text>
                         </div>
-                        <NextImage src={CourseMenuGraphic} width={200} height={112} layout="fixed" placeholder="blur" />
+                        <NextImage src={CourseMenuGraphic} width={200} height={112} layout="fixed" placeholder="blur" loading="eager" />
                     </div>
 
                 </Column>

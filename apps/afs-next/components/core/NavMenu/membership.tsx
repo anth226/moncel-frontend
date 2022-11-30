@@ -48,7 +48,7 @@ const MenuItem = (props: Props) => {
                             <Text className="text-sm leading-5 mb-0">{`If you work with food or train people who do, you’ll benefit greatly from the AIFS Membership Program.`}</Text>
                             <Text className="text-sm leading-5 mb-0">{`As an AIFS Member, you’ll receive additional resources to help you manage food safety in the business, as well as business signage to show customers you’re serious about their safety.`}</Text>
                         </div>
-                        <NextImage src={MembershipMenuGraphic} width={200} height={112} layout="fixed" placeholder="blur" />
+                        <NextImage src={MembershipMenuGraphic} width={200} height={112} layout="fixed" placeholder="blur" loading="eager" />
                     </div>
 
                 </Column>

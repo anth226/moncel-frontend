@@ -51,7 +51,7 @@ const MenuItem = (props: Props) => {
                             <Text className="text-sm leading-5 mb-0">{`If you’re enrolled in an AIFS course and need some help, or want information about studying with us, this section is a great place to start.`}</Text>
                             <Text className="text-sm leading-5 mb-0">{`Take a look through our FAQs and other student resources — if you can’t find what you’re looking for, don’t hesitate to contact our support team.`}</Text>
                         </div>
-                        <NextImage src={StudentsMenuGraphic} width={200} height={112} layout="fixed" placeholder="blur" />
+                        <NextImage src={StudentsMenuGraphic} width={200} height={112} layout="fixed" placeholder="blur" loading="eager" />
                     </div>
 
                 </Column>

@@ -52,7 +52,7 @@ const MenuItem = (props: Props) => {
                             <Text className="text-sm leading-5 mb-0">{`The AIFS Resource Library is a collection of food safety resources including templates, posters, guides, videos, fact sheets and more. You can also find the latest food safety news, blog and product recalls.`}</Text>
                             <Text className="text-sm leading-5 mb-0">{`Explore the collection and check back frequently for all the latest news in food safety.`}</Text>
                         </div>
-                        <NextImage src={ResourceMenuGraphic} width={200} height={112} layout="fixed" placeholder="blur" />
+                        <NextImage src={ResourceMenuGraphic} width={200} height={112} layout="fixed" placeholder="blur" loading="eager"/>
                     </div>
 
                 </Column>

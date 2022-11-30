@@ -52,7 +52,7 @@ const MenuItem = (props: Props) => {
                             <Text className="text-sm leading-5 mb-0">{`From cafes to catering companies, market stalls to supermarkets, every food business in Australia must meet all federal, state and local requirements for food safety training.`}</Text>
                             <Text className="text-sm leading-5 mb-0">{`Find out what can happen if you don't comply, and how AIFS can ensure that you do.`}</Text>
                         </div>
-                        <NextImage src={BusinessMenuGraphic} width={200} height={112} layout="fixed" placeholder="blur" />
+                        <NextImage src={BusinessMenuGraphic} width={200} height={112} layout="fixed" placeholder="blur" loading="eager" />
                     </div>
 
                 </Column>
