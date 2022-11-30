@@ -96,73 +96,113 @@ const CourseCheckoutModal = () => {
 
     }
 
-    const CourseTab = <div className="md:w-[600px] lg:w-[900px]" id="course-modal">
-        <Tabs tabNames={["For Individuals", "For Business"]} activeTab={selectedTab} handleTabClick={setSelectedTab} />
-        <div className="p-6 bg-lilac grid grid-cols-3">
-            <div className="p-4 border-[1px] border-black col-span-3 md:col-span-2 flex flex-col gap-4">
-                <p className="font-medium">CIFS Food Handler Certification is valid across Canada. To receive the most relevant information for your workplace, please select your province / territory below.</p>
-                <label htmlFor={PROVINCE_FIELDNAME} className="font-bold">SELECT YOUR PROVINCE / TERRITORY <span className="text-red-600">*</span></label>
-                <select
-                className="border border-gallery rounded px-2 py-1"
-                value={selectedProvince}
-                onChange={handleProvinceChange}
-                id={PROVINCE_FIELDNAME}>
-                    <option value="">
-                        <em>Select your Province / Territory</em>
-                    </option>
-                    { PROVINCES.map( province => {
-                        return <option value={province} key={province}>{province}</option>
-                    })}
-                </select>
+    const individualsTab = <div className="p-6 bg-lilac grid grid-cols-3 gap-8 pb-12">
+        <div className="p-4 border-[1px] border-black col-span-3 md:col-span-2 flex flex-col gap-4">
+            <p className="font-medium">CIFS Food Handler Certification is valid across Canada. To receive the most relevant information for your workplace, please select your province / territory below.</p>
+            <label htmlFor={PROVINCE_FIELDNAME} className="font-bold">SELECT YOUR PROVINCE / TERRITORY <span className="text-red-600">*</span></label>
+            <select
+            className="border border-gallery rounded px-2 py-1"
+            value={selectedProvince}
+            onChange={handleProvinceChange}
+            id={PROVINCE_FIELDNAME}>
+                <option value="">
+                    <em>Select your Province / Territory</em>
+                </option>
+                { PROVINCES.map( province => {
+                    return <option value={province} key={province}>{province}</option>
+                })}
+            </select>
 
-                <div className="w-full grid grid-cols-12 mb-6">
-                    {/* table headers */}
-                    <div className="col-span-5 flex flex-col gap-1">
-                        <strong>Course:</strong>
-                        <strong>Price:</strong>
-                        <strong>Prerequisites:</strong>
-                        <strong>Nationally Recognised:</strong>
-                        <strong>Certificate Validity:</strong>
-                        <strong>CIFS Membership:</strong>
-                        <strong>Course Access:</strong>
-                    </div>
-                    {/* table cells */}
-                    <div className="col-span-7 flex flex-col gap-1">
-                        <p>Food Handler Certification Handler</p>
-                        <p>$99.95 + GST / HST</p>
-                        <p>None</p>
-                        <p>Yes</p>
-                        <p>5 years</p>
-                        <p>12 months free (a $74.95 value)</p>
-                        <p>30 days</p>
-                    </div>
-                    
+            <div className="w-full grid grid-cols-12 mb-6">
+                {/* table headers */}
+                <div className="col-span-5 flex flex-col gap-1">
+                    <strong>Course:</strong>
+                    <strong>Price:</strong>
+                    <strong>Prerequisites:</strong>
+                    <strong>Nationally Recognised:</strong>
+                    <strong>Certificate Validity:</strong>
+                    <strong>CIFS Membership:</strong>
+                    <strong>Course Access:</strong>
                 </div>
-                <div className="w-full flex justify-end">
-                    <Button id="course-modal-checkout-button" className="w-[200px] !normal-case py-3.5" disabled={!selectedProvince}>
-                        Proceed to Checkout
-                    </Button>
+                {/* table cells */}
+                <div className="col-span-7 flex flex-col gap-1">
+                    <p>Food Handler Certification Handler</p>
+                    <p>$99.95 + GST / HST</p>
+                    <p>None</p>
+                    <p>Yes</p>
+                    <p>5 years</p>
+                    <p>12 months free (a $74.95 value)</p>
+                    <p>30 days</p>
                 </div>
-
+                
+            </div>
+            <div className="w-full flex justify-end">
+                <Button id="course-modal-checkout-button" className="w-[200px] !normal-case py-3.5" disabled={!selectedProvince}>
+                    Proceed to Checkout
+                </Button>
             </div>
 
-            <div className="col-span-3 md:col-span-1 bg-catskill flex flex-col items-center p-6 gap-2">
+        </div>
+
+        <div className="col-span-3 md:col-span-1">
+            <div className="bg-catskill flex flex-col items-center p-6 gap-2">
                 <strong>Are You Enrolling Your Staff?</strong>
                 <Image src="/icons/icon_stroke_people_new.svg" layout="fixed" width={75} height={75} />
                 <strong>Start a Business Account</strong>
-                <ul className="checklist">
+                <ul className="checklist pb-2">
                     <li>bulk enrol employees</li>
                     <li>monitor student progress</li>
                     <li>get compliance advice</li>
                     <li>receive priority support</li>
                     <li>opt for monthly invoicing</li>
                 </ul>
+                <Button className="w-full normal-case hover:bg-gradient-to-b from-nepal to-bunting hover:!text-white" variant="invert" id="business-enrolment-navigation-button">
+                    Learn More
+                </Button>
+            </div>
+        </div>
+
+        {/* payments */}
+        <div className="flex gap-2">
+            <Image src="/icons/icon_stroke_tick_circle.svg" layout="fixed" width={20} height={20} />
+            <div className="flex flex-col gap-1">
+                <strong>Accepted Payment Methods</strong>
+                <p className="text-sm">CIFS accepts most major credit cards.</p>
+                <div className="w-full relative h-[50px]">
+                    <Image src="/payment-methods.svg" layout="fill" />
+                </div>
+            </div>
+        </div>
+        {/* security */}
+        <div className="flex gap-2">
+            <div><Image src="/icons/icon_stroke_lock.svg" layout="fixed" width={20} height={20} /></div>
+            <div className="flex flex-col gap-1">
+                <strong>Secure Checkout</strong>
+                <p className="text-sm">Your personal information and electronic payments are secured using 128 bit SSL technology.</p>
+            </div>
+        </div>
+        {/* hidden fees */}
+        <div className="flex gap-2">
+            <div><Image src="/icons/icon_stroke_thumbsup.svg" layout="fixed" width={20} height={20} /></div>
+            <div className="flex flex-col gap-1">
+                <strong>No Hidden Fees</strong>
+                <p className="text-sm">Get 30-day course access, unlimited final exam attempts, and the official CIFS Food Handler certificate upon successful completion.</p>
             </div>
         </div>
     </div>;
 
-    if(selectedTab == 0) return CourseTab;
-    if(selectedTab == 1) return null;
+    const businessesTab = <div></div>;
+
+    let body = null;
+    if(selectedTab == 0) body = individualsTab;
+    if(selectedTab == 1) body = businessesTab;
+
+    return <div className="md:w-[600px] lg:w-[900px]" id="course-modal">
+        <Tabs tabNames={["For Individuals", "For Business"]} activeTab={selectedTab} handleTabClick={setSelectedTab} />
+        { body }
+    </div>;
+
+
 };
 
 export default CourseCheckoutModal;
