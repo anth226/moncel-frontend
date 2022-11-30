@@ -38,8 +38,8 @@ const TemplateData: Omit<RowsTemplateProps, "children"> = {
     pathname: "courses/food-handler-certification-course",
     displayPathname: "FOOD SAFETY COURSES/FOOD HANDLER CERTIFICATION COURSE",
     header: <div>
-        <Text className="!text-teal !mb-1 !text-2xl">The Official CIFS</Text>
-        <Header1 className="text-teal mb-2">Food Handler Certification Course</Header1>
+        <Text className="!mb-1 !text-2xl">The Official CIFS</Text>
+        <Header1 className="mb-2">Food Handler Certification Course</Header1>
     </div>,
     subheader: "The industry standard for Food Handler Certification in Canada. Enrol and get certified today.",
     sidebarType: "checkout",

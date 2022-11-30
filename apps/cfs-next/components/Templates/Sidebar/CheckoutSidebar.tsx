@@ -91,7 +91,7 @@ export const CheckoutSidebarComponent = (props: CheckoutSidebarComponentProps) =
             </div>
 
             {props.links.map((link, i) => {
-                return <a href={link.href} onClick={handleLinkClick(link.href)} className={`no-underline ${borderBClass} ${props.anchor === link.href ? "bg-alto" : ""} hover:bg-afs-light-gray text-teal p-[14px] flex flex-row justify-between items-center`} key={`checkout-link-${i}`}>
+                return <a href={link.href} onClick={handleLinkClick(link.href)} className={`no-underline ${borderBClass} ${props.anchor === link.href ? "bg-alto" : ""} p-[14px] flex flex-row justify-between items-center`} key={`checkout-link-${i}`}>
                     <p className="text-[14px] font-medium leading-4">{link.text.toUpperCase()}</p>
                     <NextImage src="/icons/icon_stroke_blue_arrow_right.svg" width={8} height={8} />
                 </a>

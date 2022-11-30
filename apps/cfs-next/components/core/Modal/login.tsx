@@ -56,8 +56,8 @@ const LoginModal = () => {
         <Column imageSrc={BusinessGraphic} title="For Business" buttonText="Business Login" buttonHref="https://my.foodsafety.ca/customer/account/login/"> {<BusinessBody />} </Column>
         <Column imageSrc={MembersGraphic} title="For Members" buttonText="Members Login" buttonHref="https://resources.foodsafety.ca/user/login"> {<MembersBody />} </Column>
         <div className="col-span-3 flex justify-between py-5 mx-6 border-t border-sand">
-            <Link className="link text-teal underline font-medium cursor-pointer" onClick={dismissModal}>Cancel</Link>
-            <Text>Need Help? <a className="link text-teal underline font-medium" onClick={contactNavigate}>Contact Us</a></Text>
+            <Link className="link underline font-medium cursor-pointer" onClick={dismissModal}>Cancel</Link>
+            <Text>Need Help? <a className="link underline font-medium" onClick={contactNavigate}>Contact Us</a></Text>
         </div>
     </div>
 };
