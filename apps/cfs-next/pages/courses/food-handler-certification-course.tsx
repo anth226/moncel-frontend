@@ -16,6 +16,7 @@ import HeroGraphic from 'public/courses/cifs-course.jpg';
 import IconCard from 'components/core/IconCard';
 import { LogosCarousel } from 'components/core/Carousel';
 import ImageBannerCard from 'components/core/ImageBannerCard';
+import ExpandibleFAQ from 'components/core/ExpandibleFAQ';
 import { CollapsibleTableCell, CollapsibleCellGroup } from 'components/core/CollapsibleTable';
 
 import GuidesGraphic from 'public/cifs-guides.jpg';
@@ -105,6 +106,8 @@ const Page = () => {
                     <Divider />
                     <MembershipSection />
                     <Divider />
+                    <CommonQuestionsSection />
+                    <Divider />
                 </>
             </RowsTemplate>
         </CoursesBackground>
@@ -191,7 +194,8 @@ const CourseOutlineSection = () => {
                 </ul>
                 <p>Our software features user-friendly navigation, requiring minimal training and quick onboarding.</p>
                 <p>{`Click on the 'Play' button below to watch a demo of the Food Handler Certification course.`}</p>
-                <div dangerouslySetInnerHTML={{ __html: `<div class="wistia_responsive_padding" style="padding:75.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><iframe src="https://fast.wistia.net/embed/iframe/jxt4z03owg?seo=false&videoFoam=true" title="CFS_Course_Demo_CoursePage Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe></div></div>
+                <div dangerouslySetInnerHTML={{
+                    __html: `<div class="wistia_responsive_padding" style="padding:75.0% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><iframe src="https://fast.wistia.net/embed/iframe/jxt4z03owg?seo=false&videoFoam=true" title="CFS_Course_Demo_CoursePage Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe></div></div>
                 <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script>`}} />
             </div>
             <div className="flex flex-col">
@@ -294,36 +298,36 @@ const MembershipSection = () => {
         <div className="w-full grid items-start grid-cols-1 md:grid-cols-3 gap-8">
             <Accordion square disableGutters className="border border-mint !shadow-none featured" classes={{ root: 'bg-lilac' }}>
                 <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0 !flex !flex-col' }}>
-                <ImageBannerCard
-                    title="Guides, Posters & Fact Sheets"
-                    description="Implement food safety best practices with easy-to-understand guides, printable posters, fact sheets and videos."
-                    imageSrc={GuidesGraphic} />
-                <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
-                    <Text className="!text-bunting">Our members-only guides, posters and fact sheets help you to reinforce food safety knowledge and concepts, and maintain high standards of food safety at all times. </Text>
-                </AccordionDetails>
+                    <ImageBannerCard
+                        title="Guides, Posters & Fact Sheets"
+                        description="Implement food safety best practices with easy-to-understand guides, printable posters, fact sheets and videos."
+                        imageSrc={GuidesGraphic} />
+                    <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
+                        <Text className="!text-bunting">Our members-only guides, posters and fact sheets help you to reinforce food safety knowledge and concepts, and maintain high standards of food safety at all times. </Text>
+                    </AccordionDetails>
                 </AccordionSummary>
             </Accordion>
 
             <Accordion square disableGutters className="border border-mint !shadow-none featured" classes={{ root: 'bg-lilac' }}>
                 <AccordionSummary id="food-handler-course-benefits-card-2" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0 !flex !flex-col' }}>
-                <ImageBannerCard
-                    title="Food Safety Updates"
-                    description="Stay up-to-date on food recalls and changes to food safety laws with our food safety updates and newsletters."
-                    imageSrc={AlertsGraphic} />
-                <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
-                    <Text className="!text-bunting">Get important updates on the latest food recalls to ensure unsafe food is removed from your inventory before it can cause a customer to fall ill.</Text>
-                </AccordionDetails>
+                    <ImageBannerCard
+                        title="Food Safety Updates"
+                        description="Stay up-to-date on food recalls and changes to food safety laws with our food safety updates and newsletters."
+                        imageSrc={AlertsGraphic} />
+                    <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
+                        <Text className="!text-bunting">Get important updates on the latest food recalls to ensure unsafe food is removed from your inventory before it can cause a customer to fall ill.</Text>
+                    </AccordionDetails>
                 </AccordionSummary>
             </Accordion>
             <Accordion square disableGutters className="border border-mint !shadow-none featured" classes={{ root: 'bg-lilac' }}>
                 <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0 !flex !flex-col' }}>
-                <ImageBannerCard
-                    title="Checklists and Templates"
-                    description="Feel confident that your Food Safety Plan is consistently applied with our checklists, sign-off sheets and more. "
-                    imageSrc={ChecklistGraphic} />
-                <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
-                    <Text className="!text-bunting">Checklists, sign-off sheets, cleaning schedules and other forms are an integral part of any Food Safety Plan. We've done the work for you — all you have to do is print and fill them out!</Text>
-                </AccordionDetails>
+                    <ImageBannerCard
+                        title="Checklists and Templates"
+                        description="Feel confident that your Food Safety Plan is consistently applied with our checklists, sign-off sheets and more. "
+                        imageSrc={ChecklistGraphic} />
+                    <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
+                        <Text className="!text-bunting">{`Checklists, sign-off sheets, cleaning schedules and other forms are an integral part of any Food Safety Plan. We've done the work for you — all you have to do is print and fill them out!`}</Text>
+                    </AccordionDetails>
                 </AccordionSummary>
             </Accordion>
         </div>
@@ -332,11 +336,158 @@ const MembershipSection = () => {
 
 const CommonQuestionsSection = () => {
     return <div className="col-span-3" id={ANCHOR_IDS.commonQuestions}>
+        <div className="w-full flex flex-col items-center pb-8 text-center text-bunting">
+            <Header3 className="!text-monza">Common questions</Header3>
+            <Header3 className="!text-bunting">Learn more about what our students ask about this course.</Header3>
+        </div>
+        <div className="grid grid-cols-2 grid-flow-row gap-8">
+            <ExpandibleFAQ
+                summary={<div className="flex flex-col gap-3 mb-3">
+                    <p className="font-semibold">Are there any hidden costs?</p>
+                    <p>No there are no other fees. The fee of $99.95 (plus GST/HST) includes everything you need to get certified. This includes:</p>
+                </div>
+                }
+                details={<div className="flex flex-col gap-3">
+                    <ul className="checklist">
+                        <li>the course</li>
+                        <li>final exam proctoring</li>
+                        <li>unlimited final exam attempts</li>
+                        <li>the official CIFS Food Handler Certificate</li>
+                        <li>all required course learning resources</li>
+                    </ul>
+                </div>
+                }
+            />
+            <ExpandibleFAQ
+                summary={<div className="flex flex-col gap-3 mb-3">
+                    <p className="font-semibold">Is the course 100% online?</p>
+                    <p>The online lessons and multiple choice quizzes take most people around 8 hours to complete.</p>
+                </div>
+                }
+                details={<div className="flex flex-col gap-3">
+                    <p>{`This can vary depending on your food handling experience, English language skills and computer literacy.`}</p>
+                    <p>{`You don’t need to complete the whole course at once – you can start and stop as often as you need. The course software will remember where you’re up to and will prompt you to resume where you left off.`}</p>
+                    <p>{`The final exam works slightly differently. A Certified Proctor will supervise your exam remotely via a webcam on your computer – there’s no need to book in advance as sessions are available 24 hours a day, 7 days a week.`}</p>
+                    <p>{`You have 30 days from the date of enrolment to complete the course in its entirety, including the final exam.`}</p>
+                </div>
+                }
+            />
+            <ExpandibleFAQ
+                summary={<div className="flex flex-col gap-3 mb-3">
+                    <p className="font-semibold">How long does the course take?</p>
+                    <p>HACCP Food Safety Plans are a set of documents designed to identify potential food safety hazards specific to an organisation and outlines corrective actions that will be taken if these hazards occur.</p>
+                </div>
+                }
+                details={<div className="flex flex-col gap-3">
+                    <p>{`You complete all of the lessons and quizzes online. Your final assessment is an online test which you are observed completing by a Certified Proctor via a webcam in your computer.`}</p>
+                    <p>{`There's no need to visit any classrooms or exam centres when you complete a CIFS course.`}</p>
 
+                </div>
+                }
+            />
+            <ExpandibleFAQ
+                summary={<div className="flex flex-col gap-3 mb-3">
+                    <p className="font-semibold">Where can I complete my final exam?</p>
+                    <p>We recommend completing your exam in a quiet place with no one around.</p>
+                </div>
+                }
+                details={<div className="flex flex-col gap-3">
+                    <p>{`If your family or coworkers are within the vicinity of where you’re taking the exam, post a note to let them know what you’re doing and explain to them that you’re engaged in a proctored exam and can’t be distracted or disturbed.`}</p>
+                    <p>{`If you’re taking your exam in a library, coffee shop or office, try to ensure no-one is visible in the background while you attempt the exam.`}</p>
+                </div>
+                }
+            />
+            <ExpandibleFAQ
+                summary={<div className="flex flex-col gap-3 mb-3">
+                    <p className="font-semibold">What skills do I need to complete the course?</p>
+                    <p>The course content is delivered via an automated slide pack, audio narration and course handouts. This allows for us to accommodate students that prefer to learn by reading, listening or watching.</p>
+                </div>
+                }
+                details={<div className="flex flex-col gap-3">
+                    <p className="semibold text-monza">Language, literacy and numeracy skills</p>
+                    <p>{`While we’ve tried to keep the course as simple as possible, there are some technical food safety terms that we do our best to explain. There are also some numerical skills required to read temperatures and perform simple calculations.`}</p>
+                    <p>{`As a general rule, if you can perform the following tasks then you have the language, literacy and numeracy skills to complete the course:`}</p>
+                    <ol>
+                        <li>Use an instant messenger tool</li>
+                        <li>Use email for work purposes</li>
+                        <li>Respond to customer complaints</li>
+                        <li>Follow a recipe</li>
+                    </ol>
+                    <p>At present, our course is available in English only.</p>
+
+                    <p className="semibold text-monza">Computer skills</p>
+                    <p>This is an online course; a basic level of computer literacy is required.</p>
+                    <p>{`You will be required to log in to the course and navigate through the lessons on the online course page. You’ll also receive some information via email so you’ll need to be familiar with the use of your preferred email system.`}</p>
+                    <p>You will also need to download the PDF resources on the course page – this will require the use of Adobe Reader or similar (installed on most computers).</p>
+                    <p>{`If you’re able to browse the internet and send and reply to emails, then you’re likely to have the computer skills required to complete this course.`}</p>
+
+                    <p className="semibold text-monza">Independent study skills</p>
+                    <p>This course is an online self-paced course which means that you can study when you want, where you want – but you must complete the course within 30 days of enrolment.</p>
+                    <p>{`This type of course requires some planning and organization from the student. As there are no scheduled times and sessions, you’ll need to make sure that you allocate adequate time to complete the course. You’ll also need to consider the best way to study and learn using the online tools. Some students like to take lots of notes with a pen and paper, others like to watch the lessons multiple times to let the information sink in.`}</p>
+                    <p>{`It’s a good idea to consider how you’ll approach a self-paced online training course before enrolling.`}</p>
+                    <p>{`If you have any concerns about any of the skills required, please`} <NextLink href="/contact" className="underline font-bold cursor-pointer">contact us</NextLink> {`and we’ll be happy to discuss your situation.`}</p>
+
+                </div>
+                }
+            />
+            <ExpandibleFAQ
+                summary={<div className="flex flex-col gap-3 mb-3">
+                    <p className="font-semibold">Can you tell me more about the final exam?</p>
+                    <p>The final exam has 50 multiple choice questions and a 60-minute time limit. A minimum score of 70% is required to pass the exam. You have an unlimited number of attempts at writing the exam.</p>
+                </div>
+                }
+                details={<div className="flex flex-col gap-3">
+                    <p>{`The final exam requires proctoring. A Proctor is a person who remotely observes while you complete the exam. We have proctors available 24 hours a day, 7 days a week, allowing you to complete the exam at any time that suits you.`}</p>
+                    <p>{`Before starting your exam, the Proctor will need to confirm your identity. To verify your identity, you will need to follow the two steps below: `}</p>
+                    <ol>
+                        <li>{`Provide valid government-issued photo ID. The ID can be from any country, some examples are, driver’s licence, passport, health card, student card or citizenship. (For underage learners, student ID will be accepted). `}</li>
+                        <li>{`The Proctor will take your photo. The photo will match the picture on the government-issued photo ID you have provided. `}</li>
+                    </ol>
+                    <p>Once your identity is validated, you can begin the exam. </p>
+                    <p>You have unlimited attempts to attempt the exam, unless you are suspected of cheating. If you are found to have cheated in your exam then you will be removed from the course and will need to re-enrol and pay for a new course.</p>
+                    <p>To avoid accusations of cheating, never do the following immediately before or during your exam: </p>
+                    <ol>
+                        <li>Have your mobile device, tablet or additional laptop or computer with you or within your reach.</li>
+                        <li>Have any paper or notebooks open or accessible, or take notes or screenshots.</li>
+                        <li>Interact with or be within close proximity of friends, family or coworkers.</li>
+                        <li>Open additional browser windows or have your computer or laptop on split or multiple screen modes. </li>
+                        <li>Have any instant messaging apps open (example: Slack or Google Hangouts).</li>
+                        <li>Leave or turn away from your computer (try to keep your gaze on the screen and keyboard only). </li>
+                        <li>Wear headphones or any earpiece. </li>
+                    </ol>
+                    <p>{`Once you’ve passed the exam, you can request your certificate to be emailed immediately. Most students receive their certificate within 60 minutes of completing the exam.`}</p>
+                </div>
+                }
+            />
+            <ExpandibleFAQ
+                summary={<div className="flex flex-col gap-3 mb-3">
+                    <p className="font-semibold">How do I get my Food Handler Certificate?</p>
+                    <p>You can request your Food Handler Certificate immediately after completing your exam. Most students receive their documents within 60 minutes.</p>
+                </div>
+                }
+                details={<div className="flex flex-col gap-3">
+                    <p>{`We recommend that you print and save a copy of your certificate so that you can easily access it in future. Your access to the course expires after 30 days. It’s important to ensure you have a saved copy before this date.`}</p>
+                </div>
+                }
+            />
+            <ExpandibleFAQ
+                summary={<div className="flex flex-col gap-3 mb-3">
+                    <p className="font-semibold">Do you accommodate people with special needs?</p>
+                    <p>{`We’ve designed our course to try and accommodate for as many requirements as possible. This includes students with disabilities, or with language/literacy needs.`}</p>
+                </div>
+                }
+                details={<div className="flex flex-col gap-3">
+                    <p>{`The course materials are delivered via interactive lessons, via audio and also via downloadable course notes. We’ve done this to try and make the course as accessible as possible.`}</p>
+                    <p>{`Once enrolled in the course, students are also able to interact with a qualified food safety trainer via email or telephone. If other tools such as video conferencing are required, this can be arranged.`}</p>
+                    <p>Please <NextLink href="/contact"><a className="font-bold underline cursor-pointer">contact us</a></NextLink> with any concerns and {`we’ll`} do our best to accommodate any special requirements.</p>
+                </div>
+                }
+            />
+        </div>
     </div>;
 };
 
 const Divider = () => <div className="w-full col-span-3 border-t-[1px] border-catskill" />
-export const ListItem = ({ children }: { children?: ReactNode }) => <li className="mb-2 last:mb-0">{ children }</li>;
+export const ListItem = ({ children }: { children?: ReactNode }) => <li className="mb-2 last:mb-0">{children}</li>;
 
 export default Page;

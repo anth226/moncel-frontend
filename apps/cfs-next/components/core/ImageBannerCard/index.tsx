@@ -6,8 +6,8 @@ interface ImageBannerCardProps {
     imageSrc: string | StaticImageData;
     title: string;
     description: string;
-}
-  
+};
+
 const ImageBannerCard = (props: ImageBannerCardProps) => {
     const { imageSrc, title, description } = props;
     return <div className="flex flex-col w-full">
