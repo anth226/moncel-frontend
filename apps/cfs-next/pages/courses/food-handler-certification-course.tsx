@@ -1,5 +1,9 @@
 import { useState, useEffect, ReactNode } from 'react';
 import NextLink from 'next/link';
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+
 import Layout from 'components/core/Layout';
 import { CoursesBackground, RowsTemplate } from 'components/Templates';
 import { Text, Header1, Header3, Header4, P } from 'components/core/Typography';
@@ -11,7 +15,12 @@ import useIsOnScreen from 'lib/useIsOnScreen';
 import HeroGraphic from 'public/courses/cifs-course.jpg';
 import IconCard from 'components/core/IconCard';
 import { LogosCarousel } from 'components/core/Carousel';
+import ImageBannerCard from 'components/core/ImageBannerCard';
 import { CollapsibleTableCell, CollapsibleCellGroup } from 'components/core/CollapsibleTable';
+
+import GuidesGraphic from 'public/cifs-guides.jpg';
+import AlertsGraphic from 'public/cifs-alerts.jpg';
+import ChecklistGraphic from 'public/cifs-check.jpg';
 
 const ANCHOR_IDS = {
     intro: "intro",
@@ -94,6 +103,8 @@ const Page = () => {
                     <Divider />
                     <CourseOutlineSection />
                     <Divider />
+                    <MembershipSection />
+                    <Divider />
                 </>
             </RowsTemplate>
         </CoursesBackground>
@@ -102,7 +113,7 @@ const Page = () => {
 };
 
 const HeroSection = () => {
-    return <div className="col-span-3 grid grid-cols-12 gap-7" id="hero-section">
+    return <div className="col-span-3 grid grid-cols-12 gap-7 text-bunting" id="hero-section">
         <div className="col-span-12 md:col-span-5">
             <div className="relative w-full aspect-video"><Image src={HeroGraphic} layout="fill" objectFit="cover" /></div>
         </div>
@@ -121,7 +132,7 @@ const HeroSection = () => {
 }
 const IntroSection = () => {
     return <div className="col-span-3" id={ANCHOR_IDS.intro}>
-        <div className="grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-x-12 gap-y-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 grid-flow-row gap-x-12 gap-y-8 text-bunting">
             <IconCard
                 imageSrc={"/icons/icon_stroke_laptop.svg"}
                 title="100% online">
@@ -165,7 +176,7 @@ const LogosSection = () => {
 
 const CourseOutlineSection = () => {
     return <div className="col-span-3" id={ANCHOR_IDS.courseOutline}>
-        <div className="w-full flex flex-col items-center pb-7">
+        <div className="w-full flex flex-col items-center pb-7 text-bunting">
             <Header3 className="text-monza">Course outline</Header3>
             <Header4 className="text-bunting">Everything you need to become a Certified Food Handler, all in one course.</Header4>
         </div>
@@ -276,7 +287,46 @@ const CourseOutlineSection = () => {
 
 const MembershipSection = () => {
     return <div className="col-span-3" id={ANCHOR_IDS.freeMembership}>
+        <div className="w-full flex flex-col items-center pb-8 text-center text-bunting">
+            <Header3 className="!text-monza">More than just a course</Header3>
+            <Header3 className="!text-bunting">CIFS Membership gives you the tools you need to implement food safety.</Header3>
+        </div>
+        <div className="w-full grid items-start grid-cols-1 md:grid-cols-3 gap-8">
+            <Accordion square disableGutters className="border border-mint !shadow-none featured" classes={{ root: 'bg-lilac' }}>
+                <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0 !flex !flex-col' }}>
+                <ImageBannerCard
+                    title="Guides, Posters & Fact Sheets"
+                    description="Implement food safety best practices with easy-to-understand guides, printable posters, fact sheets and videos."
+                    imageSrc={GuidesGraphic} />
+                <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
+                    <Text className="!text-bunting">Our members-only guides, posters and fact sheets help you to reinforce food safety knowledge and concepts, and maintain high standards of food safety at all times. </Text>
+                </AccordionDetails>
+                </AccordionSummary>
+            </Accordion>
 
+            <Accordion square disableGutters className="border border-mint !shadow-none featured" classes={{ root: 'bg-lilac' }}>
+                <AccordionSummary id="food-handler-course-benefits-card-2" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0 !flex !flex-col' }}>
+                <ImageBannerCard
+                    title="Food Safety Updates"
+                    description="Stay up-to-date on food recalls and changes to food safety laws with our food safety updates and newsletters."
+                    imageSrc={AlertsGraphic} />
+                <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
+                    <Text className="!text-bunting">Get important updates on the latest food recalls to ensure unsafe food is removed from your inventory before it can cause a customer to fall ill.</Text>
+                </AccordionDetails>
+                </AccordionSummary>
+            </Accordion>
+            <Accordion square disableGutters className="border border-mint !shadow-none featured" classes={{ root: 'bg-lilac' }}>
+                <AccordionSummary id="food-handler-course-benefits-card-1" className="w-full m-0 p-0" classes={{ root: '!p-0 !m-0', content: '!p-0 !m-0 !flex !flex-col' }}>
+                <ImageBannerCard
+                    title="Checklists and Templates"
+                    description="Feel confident that your Food Safety Plan is consistently applied with our checklists, sign-off sheets and more. "
+                    imageSrc={ChecklistGraphic} />
+                <AccordionDetails className="m-0 pl-4 pr-4 pb-4">
+                    <Text className="!text-bunting">Checklists, sign-off sheets, cleaning schedules and other forms are an integral part of any Food Safety Plan. We've done the work for you — all you have to do is print and fill them out!</Text>
+                </AccordionDetails>
+                </AccordionSummary>
+            </Accordion>
+        </div>
     </div>;
 };
 
