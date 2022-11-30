@@ -24,11 +24,11 @@ const RowsTemplate = (props: RowsTemplateProps) => {
 
     const HeaderComponent = (typeof props.header === "string") ? <Header1 className="mb-2">{props.header}</Header1> : props.header;
 
-    return <div id={props.id} className="padded-section grid grid-cols-12 bg-white lg:rounded-[3px] lg:border border-[#0badad33] py-8 lg:p-8 w-full">
+    return <div id={props.id} className="padded-section grid grid-cols-12 bg-white text-bunting lg:rounded-[3px] lg:border border-[#0badad33] py-8 lg:p-8 w-full">
         <div className="row-start-1 col-span-12 gap-4 border-solid border-b-[1px] pb-8 mb-8">
             <PathnameComponent {...props} />
             { HeaderComponent }
-            { props.subheader ? <Text className="text-[18px] font-medium leading-4 mt-2">{props.subheader}</Text> : null }
+            { props.subheader ? <Text className="text-[18px] !text-bunting font-medium leading-4 mt-2">{props.subheader}</Text> : null }
         </div>
         <div className="row-start-3 lg:row-start-2 col-span-12 lg:col-span-9 pr-4 md:pr-7">
             <div className="grid grid-cols-1 lg:grid-cols-3 grid-flow-row gap-8 text-bunting">
