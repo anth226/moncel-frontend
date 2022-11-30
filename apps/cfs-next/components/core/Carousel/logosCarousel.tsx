@@ -46,7 +46,7 @@ const SLIDER_OPTIONS = {
     autoplay: true,
     autoplaySpeed: 2000,
     speed: 250,
-    slidesToShow: 8,
+    slidesToShow: 11,
     slidesToScroll: 1,
     swipeToSlide: true,
     responsive: [
