@@ -19,7 +19,7 @@
 
   # This is where we will look for your lambda functions
   # functions = "project/functions/"
-
+  ignore = "false"
 
 [[plugins]]
   # Installs the Lighthouse Build Plugin for all deploy contexts
