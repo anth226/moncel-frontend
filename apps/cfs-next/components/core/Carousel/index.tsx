@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { CarouselProps, SlideControlProps } from './types';
-import { CovidSlide, FoodSafetyCardSlide, HaccpSlide, FoodSafetyDecalSlide, FoodSafetySupervisorSlide } from './sections';
+import { FoodAllergenSlide, FoodSafetyCardSlide, HaccpSlide, LawsRequirementsSlide, BusinessSlide } from './sections';
 
 
 const DEFAULT_INDICATOR_ID = "carousel-indicators";
@@ -63,11 +63,11 @@ const Carousel = (props: CarouselProps) => {
       {/* Minimal embla setup has two wrappers (overflow and scroll container) to detect scroll snaps: https://www.embla-carousel.com/get-started/react/ */}
       <div className="w-full overflow-hidden pointer-events-auto cursor-grab" ref={viewportRef}>
         <div className="flex flex-row">
-          <CovidSlide />
           <FoodSafetyCardSlide />
+          <FoodAllergenSlide />
           <HaccpSlide />
-          <FoodSafetyDecalSlide />
-          <FoodSafetySupervisorSlide />
+          <LawsRequirementsSlide />
+          <BusinessSlide />
         </div>
       </div>
 

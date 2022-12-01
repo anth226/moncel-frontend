@@ -1,10 +1,9 @@
 import Image from 'next/image';
-import NextImage from 'next/image';
 import Link from 'next/link';
 import { CarouselSlideProps } from './types';
 import { Header1, Text } from 'components/core/Typography';
 
-import CovidSlideBg from 'public/carousel/cfs-covid-02.jpg';
+import FoodAllergenSlideBg from 'public/carousel/cfs-hero-allergen.jpg';
 import FoodHandlerCourseSlideBg from 'public/carousel/home103.jpg';
 import HaccpSlideBg from 'public/carousel/cfs-haccp-final.jpg';
 import LawsRequirementsSlideBg from 'public/carousel/home100.jpg';
@@ -29,28 +28,28 @@ const SlideTemplate = (props: CarouselSlideProps) => {
     <div className="flex flex-col h-full justify-center items-start gap-4">
       <Header1 className={`drop-shadow-md text-[27px]`}>{props.title}</Header1>
       {(props.description instanceof Array) ? props.description.map((line, i) => <Text key={`${props.title}-slide-description-${i}`} className={`drop-shadow-md`}>{line}</Text>) : <Text className={`!text-lg lg:!text-xl !text-white`}>{props.description}</Text>}
-      <Link href={props.link}><a className={`!text-white bg-gradient-to-b from-nepal to-bunting lg:text-2xl link drop-shadow-md no-underline py-4 w-[300px] text-center hover:underline`}>{props.linkText || "Learn more"}</a></Link>
+      <Link href={props.link}><a className={`!text-white bg-gradient-to-b from-nepal to-bunting lg:text-2xl link drop-shadow-md no-underline hover:!no-underline py-4 w-[300px] text-center hover:!to-nepal border-clay border rounded`}>{props.linkText || "Learn more"}</a></Link>
     </div>
     <div className="flex mr-28">
     </div>
   </div>;
 };
 
-export const CovidSlide = () => {
+export const FoodAllergenSlide = () => {
   return <CarouselSection
-    background={CovidSlideBg}
-    title="Concerned about the impact of COVID-19?"
-    description="Get updated information and the resources your food business needs to navigate the coronavirus pandemic."
-    link="https://resources.foodsafety.ca/topic/covid-19"
+    background={FoodAllergenSlideBg}
+    title="Food Allergen Training"
+    description="Protect your customers and your business from allergen-related incidents. Enrol and get your certificate today."
+    link="/courses/food-allergen-training"
   />;
 };
 
 export const FoodSafetyCardSlide = () => {
   return <CarouselSection
     background={FoodHandlerCourseSlideBg}
-    title="The official AIFS Food Safety Card."
-    description="Food safety credentials when you need them. Be prepared for when your local Health Inspector pays you a visit."
-    link="/students/food-safety-card"
+    title="Enrol and get certified today."
+    description="Enrol and complete your Food Handler Certification on the same day, or take up to 30 days to finish the course."
+    link="/courses/food-handler-certification-course"
   />;
 };
 
@@ -58,25 +57,25 @@ export const HaccpSlide = () => {
   return <CarouselSection
     background={HaccpSlideBg}
     title="Writing a Food Safety Plan?"
-    description="A Food Safety Plan is essential for your Food Safety Program. The AIFS HACCP Food Safety Plan Kit makes building your Food Safety Plan quick and easy."
+    description="A Food Safety Plan is essential for your Food Safety Program. The CIFS HACCP Food Safety Plan Kit makes building your Food Safety Plan quick and easy."
     link="/haccp-food-safety-plan-kit"
   />;
 };
 
-export const FoodSafetyDecalSlide = () => {
+export const LawsRequirementsSlide = () => {
   return <CarouselSection
     background={LawsRequirementsSlideBg}
-    title="Show that you're serious."
-    description="AIFS Members get a Food Safety Decal to show customers and passers-by that their food workers are properly trained and serious about food safety."
-    link="/membership/food-safety-decal"
+    title="Understand the law"
+    description="Be sure that you’re meeting your legal requirements. Your location and role both impact the laws you need to follow."
+    link="/laws-requirements"
   />;
 };
 
-export const FoodSafetySupervisorSlide = () => {
+export const BusinessSlide = () => {
   return <CarouselSection
     background={BusinessSlideBg}
-    title="The course that gets accepted."
+    title="Business solutions to keep you compliant"
     description="Need to enrol multiple employees? CIFS has the tools you need to enrol, manage and ensure compliance for all your Food Handlers."
-    link="/courses/food-safety-supervisor"
+    link="/business"
   />;
 };
