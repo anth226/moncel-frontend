@@ -91,7 +91,7 @@ export const FoodHandlerModal = () => {
             <Divider />
             <Header5 className="font-semibold pb-4">{`Terms & Conditions`}</Header5>
             <div className="flex gap-2 items-start">
-                <input id="checkbox-accept-terms" type="checkbox" checked={termsAccepted} onClick={() => setTermsAccepted(!termsAccepted)} className="mt-1"/>
+                <input id="checkbox-accept-terms" type="checkbox" checked={termsAccepted} onClick={() => setTermsAccepted(!termsAccepted)} className="mt-1 w-4 h-4 flex-none"/>
                 <label htmlFor="checkbox-accept-terms">Check here to indicate that you have read and agree to the terms and conditions of the <NextLink href="/legal/enrolment-policy"><a target="_blank">AIFS Enrolment Policy</a></NextLink> and the <NextLink href="/legal/payment-policy"><a target="_blank">AIFS Payment and Refund Policy</a></NextLink>.</label>
             </div>
             <div className="flex flex-row justify-between items-center border-t pt-4 mt-4">
@@ -163,8 +163,8 @@ export const FoodSafetySupervisorModal = () => {
             { !nswRequired ? <div className="mt-4 p-3 border-red-500 border bg-red-100"><Text className="font-semibold mb-0">Please Note: You are <span className="underline">required by law</span> to have a NSW Food Authority Certificate to work as a Food Safety Supervisor in New South Wales.</Text></div> : null }
             <Divider />
             <Header5 className="font-semibold mb-4">{`Terms & Conditions`}</Header5>
-            <div className="flex gap-2 items-start">
-                <input id="checkbox-accept-terms" type="checkbox" checked={termsAccepted} onClick={() => setTermsAccepted(!termsAccepted)} className="mt-1"/>
+            <div className="flex gap-2">
+                <input id="checkbox-accept-terms" type="checkbox" checked={termsAccepted} onClick={() => setTermsAccepted(!termsAccepted)} className="mt-1 w-4 h-4 flex-none"/>
                 <label htmlFor="checkbox-accept-terms">Check here to indicate that you have read and agree to the terms and conditions of the <NextLink href="/legal/enrolment-policy"><a target="_blank">AIFS Enrolment Policy</a></NextLink> and the <NextLink href="/legal/payment-policy"><a target="_blank">AIFS Payment and Refund Policy</a></NextLink>.</label>
             </div>
             <div className="flex flex-row justify-between items-center border-t pt-4 mt-4 ">
@@ -212,8 +212,8 @@ export const FoodManagerModal = () => {
             </div>
             <Divider />
             <Header5 className="font-semibold pb-4">{`Terms & Conditions`}</Header5>
-            <div className="flex gap-2 items-start">
-                <input id="checkbox-accept-terms" type="checkbox" checked={termsAccepted} onClick={() => setTermsAccepted(!termsAccepted)} className="mt-1"/>
+            <div className="flex gap-2">
+                <input id="checkbox-accept-terms" type="checkbox" checked={termsAccepted} onClick={() => setTermsAccepted(!termsAccepted)} className="mt-1 w-4 h-4 flex-none"/>
                 <label htmlFor="checkbox-accept-terms">Check here to indicate that you have read and agree to the terms and conditions of the <NextLink href="/legal/enrolment-policy"><a target="_blank">AIFS Enrolment Policy</a></NextLink> and the <NextLink href="/legal/payment-policy"><a target="_blank">AIFS Payment and Refund Policy</a></NextLink>.</label>
             </div>
             <div className="flex flex-row justify-between items-center border-t pt-4 mt-4">
@@ -317,8 +317,8 @@ export const AllergenModal = () => {
             </div>
             <Divider />
             <Header5 className="font-semibold pb-4">{`Terms & Conditions`}</Header5>
-            <div className="flex gap-2 items-start">
-                <input id="checkbox-accept-terms" type="checkbox" checked={termsAccepted} onClick={() => setTermsAccepted(!termsAccepted)} className="mt-1"/>
+            <div className="flex gap-2">
+                <input id="checkbox-accept-terms" type="checkbox" checked={termsAccepted} onClick={() => setTermsAccepted(!termsAccepted)} className="mt-1 w-4 h-4 flex-none"/>
                 <label htmlFor="checkbox-accept-terms">Check here to indicate that you have read and agree to the terms and conditions of the <NextLink href="/legal/enrolment-policy"><a target="_blank">AIFS Enrolment Policy</a></NextLink> and the <NextLink href="/legal/payment-policy"><a target="_blank">AIFS Payment and Refund Policy</a></NextLink>.</label>
             </div>
             <div className="flex flex-row justify-between items-center border-t pt-4 mt-4">
@@ -364,8 +364,8 @@ export const IntroToFoodSafetyModal = () => {
             </div>
             <Divider />
             <Header5 className="font-semibold pb-4">{`Terms & Conditions`}</Header5>
-            <div className="flex gap-2 items-start">
-                <input id="checkbox-accept-terms" type="checkbox" checked={termsAccepted} onClick={() => setTermsAccepted(!termsAccepted)} className="mt-1"/>
+            <div className="flex gap-2">
+                <input id="checkbox-accept-terms" type="checkbox" checked={termsAccepted} onClick={() => setTermsAccepted(!termsAccepted)} className="mt-1 w-4 h-4 flex-none"/>
                 <label htmlFor="checkbox-accept-terms">Check here to indicate that you have read and agree to the terms and conditions of the <NextLink href="/legal/enrolment-policy"><a target="_blank">AIFS Enrolment Policy</a></NextLink> and the <NextLink href="/legal/payment-policy"><a target="_blank">AIFS Payment and Refund Policy</a></NextLink>.</label>
             </div>
             <div className="flex flex-row justify-between items-center border-t pt-4 mt-4">
@@ -409,8 +409,8 @@ export const HACCPModal = () => {
             </div>
             <Divider />
             <Header5 className="font-semibold pb-4">{`Terms & Conditions`}</Header5>
-            <div className="flex gap-2 items-start">
-                <input id="checkbox-accept-terms" type="checkbox" checked={termsAccepted} onClick={() => setTermsAccepted(!termsAccepted)} className="mt-1"/>
+            <div className="flex gap-2">
+                <input id="checkbox-accept-terms" type="checkbox" checked={termsAccepted} onClick={() => setTermsAccepted(!termsAccepted)} className="mt-1 w-4 h-4 flex-none"/>
                 <label htmlFor="checkbox-accept-terms">Check here to indicate that you have read and agree to the terms and conditions of the <NextLink href="/legal/enrolment-policy"><a target="_blank">AIFS Enrolment Policy</a></NextLink> and the <NextLink href="/legal/payment-policy"><a target="_blank">AIFS Payment and Refund Policy</a></NextLink>.</label>
             </div>
             <div className="flex flex-row justify-between items-center border-t pt-4 mt-4">
